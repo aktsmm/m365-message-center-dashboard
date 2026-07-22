@@ -32,6 +32,7 @@ try {
 
     if ($messages.messages.Count -ne 3) { throw "Expected 3 messages, got $($messages.messages.Count)." }
     if ($messagesRaw -match 'THIS_BODY|THIS_DETAIL|"body"|"details"') { throw 'Private body/details leaked into public JSON.' }
+    if ($messagesRaw -match '"expiryDateTime"') { throw 'Unsupported Graph expiryDateTime leaked into public JSON.' }
     if ($html -match 'THIS_BODY|THIS_DETAIL') { throw 'Private fixture content leaked into dashboard HTML.' }
     if ((Get-Content -LiteralPath $agentContext -Raw -Encoding UTF8) -notmatch 'THIS_BODY_MUST_NEVER_BE_PUBLISHED') {
         throw 'Transient agent context did not include the message body for summarization.'

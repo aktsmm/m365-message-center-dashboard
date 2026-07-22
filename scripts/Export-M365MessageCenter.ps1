@@ -50,7 +50,6 @@ function Convert-ToPublicMessage {
         endDateTime              = Convert-ToUtcIso $Message.endDateTime
         lastModifiedDateTime     = Convert-ToUtcIso $Message.lastModifiedDateTime
         actionRequiredByDateTime = Convert-ToUtcIso $Message.actionRequiredByDateTime
-        expiryDateTime           = Convert-ToUtcIso $Message.expiryDateTime
         services                 = $services
         tags                     = $tags
     }
@@ -62,7 +61,7 @@ function Get-GraphMessages {
         [switch]$IncludeBody
     )
 
-    $select = 'id,title,category,severity,isMajorChange,startDateTime,endDateTime,lastModifiedDateTime,actionRequiredByDateTime,expiryDateTime,services,tags'
+    $select = 'id,title,category,severity,isMajorChange,startDateTime,endDateTime,lastModifiedDateTime,actionRequiredByDateTime,services,tags'
     if ($IncludeBody) { $select += ',body' }
     $nextLink = "https://graph.microsoft.com/v1.0/admin/serviceAnnouncement/messages?`$select=$select"
     $headers = @{
