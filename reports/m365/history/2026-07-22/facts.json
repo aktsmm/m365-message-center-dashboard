@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "runId": "29941980584",
+    "generatedAt": "2026-07-22T17:21:37.3524675+00:00",
+    "source": "Microsoft Graph",
+    "lookbackDays": 180,
+    "publicFieldPolicy": "Metadata only. Message body, details, tenant identifiers, and credentials are excluded."
+  },
+  "summary": {
+    "total": 74,
+    "majorChanges": 20,
+    "highSeverity": 0,
+    "actionRequired": 7,
+    "actionDueWithin30Days": 2,
+    "updatedLast7Days": 14
+  },
+  "topServices": [
+    {
+      "name": "Microsoft 365 Copilot Chat",
+      "count": 30
+    },
+    {
+      "name": "Microsoft 365 suite",
+      "count": 29
+    },
+    {
+      "name": "Microsoft Entra",
+      "count": 20
+    }
+  ],
+  "priorityIds": {
+    "majorChanges": [
+      "MC1435782",
+      "MC1221452",
+      "MC1426371",
+      "MC1422061",
+      "MC1409305",
+      "MC1325414",
+      "MC1403404",
+      "MC1387532",
+      "MC1152323",
+      "MC1338811",
+      "MC1315217",
+      "MC1282306",
+      "MC1225192",
+      "MC1278920",
+      "MC1268926",
+      "MC1215070",
+      "MC1192661",
+      "MC1188230",
+      "MC1182696",
+      "MC985483"
+    ],
+    "actionDue": [
+      "MC1422074",
+      "MC1422061",
+      "MC1325414",
+      "MC1303719",
+      "MC1300584",
+      "MC1268926",
+      "MC1188230"
+    ],
+    "highSeverity": []
+  }
+}

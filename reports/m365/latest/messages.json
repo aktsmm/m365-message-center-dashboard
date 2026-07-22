@@ -1,0 +1,1449 @@
+{
+  "meta": {
+    "runId": "29941980584",
+    "generatedAt": "2026-07-22T17:21:37.3524675+00:00",
+    "source": "Microsoft Graph",
+    "lookbackDays": 180,
+    "publicFieldPolicy": "Metadata only. Message body, details, tenant identifiers, and credentials are excluded."
+  },
+  "summary": {
+    "total": 74,
+    "majorChanges": 20,
+    "highSeverity": 0,
+    "actionRequired": 7,
+    "actionDueWithin30Days": 2,
+    "updatedLast7Days": 14
+  },
+  "topServices": [
+    {
+      "name": "Microsoft 365 Copilot Chat",
+      "count": 30
+    },
+    {
+      "name": "Microsoft 365 suite",
+      "count": 29
+    },
+    {
+      "name": "Microsoft Entra",
+      "count": 20
+    }
+  ],
+  "messages": [
+    {
+      "id": "MC1435782",
+      "title": "Microsoft Entra ID: Retirement of custom CSS positioning properties in custom branding",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-07-21T22:20:11.0000000+00:00",
+      "endDateTime": "2026-12-20T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-21T22:20:31.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1287370",
+      "title": "(Updated) Auto upgrade of shared calendars from legacy MAPI model to modern REST model",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-04-21T22:51:16.0000000+00:00",
+      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-21T16:23:41.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1419795",
+      "title": "(Updated) PowerPoint for the web: One‑click “Review Presentation” and “Visualize Slide” Copilot skills in the ribbon",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-07T22:31:17.0000000+00:00",
+      "endDateTime": "2026-08-07T22:31:17.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T23:02:51.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1421919",
+      "title": "(Updated) Web content setting in Microsoft 365 Copilot expands across Copilot experiences and moves to Settings",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-09T21:36:38.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T22:44:41.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1434583",
+      "title": "Microsoft 365 Copilot: Configure organization policy link for blocked Copilot Chat users",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-20T22:24:44.0000000+00:00",
+      "endDateTime": "2026-09-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T22:24:54.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1434581",
+      "title": "Use OneDrive-stored user-defined custom skills in PowerPoint Copilot (Mac)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-20T22:23:02.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T22:23:11.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1434580",
+      "title": "Use OneDrive stored user defined custom skills in PowerPoint Copilot (web)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-20T22:22:25.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T22:22:38.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1400824",
+      "title": "(Updated) Microsoft Entra: Self-service password reset CAPTCHA protection updated",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-22T15:17:47.0000000+00:00",
+      "endDateTime": "2026-09-28T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T22:13:25.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1411435",
+      "title": "Microsoft 365 Copilot: Domain exclusion for web grounding",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-01T15:24:20.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T22:01:44.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1221452",
+      "title": "(Update)Microsoft Entra ID: General Availability of passkey profiles and migration for existing Passkeys (FIDO2) tenants",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-01-23T00:54:46.0000000+00:00",
+      "endDateTime": "2026-11-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T18:35:44.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1282568",
+      "title": "(Updated) General Availability: Microsoft Entra passkeys on Windows",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-04-16T21:19:09.0000000+00:00",
+      "endDateTime": "2026-11-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T18:28:33.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1183010",
+      "title": "(Updated) Microsoft 365 Copilot: Q&A in Read Aloud enables real-time voice interactions",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-11-05T00:20:45.0000000+00:00",
+      "endDateTime": "2026-08-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-20T16:06:27.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1430537",
+      "title": "Copilot in Excel: Brand Kit skill",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-17T05:03:20.0000000+00:00",
+      "endDateTime": "2026-09-15T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-17T05:03:25.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1426371",
+      "title": "Microsoft Entra: Passkeys by default and retirement of Microsoft-provided SMS and voice authentication",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-07-13T17:02:10.0000000+00:00",
+      "endDateTime": "2027-02-28T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-16T18:55:54.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1422074",
+      "title": "(Updated) OpenAI models will soon be available as a subprocessor in Microsoft 365 Copilot",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-09T22:17:02.0000000+00:00",
+      "endDateTime": "2026-09-28T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-14T23:38:59.0000000+00:00",
+      "actionRequiredByDateTime": "2026-07-24T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft 365 Copilot Chat",
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1230892",
+      "title": "(Updated) Microsoft 365 Copilot: Updated handling of entity inserts in the Copilot Chat input box",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-02-11T23:19:18.0000000+00:00",
+      "endDateTime": "2026-08-24T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-13T16:09:33.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1423108",
+      "title": "Microsoft Entra: Improved restore experience for Authenticator passkeys on iOS",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-10T22:48:20.0000000+00:00",
+      "endDateTime": "2026-10-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-10T22:48:25.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1423101",
+      "title": "M365 Copilot usage reports – updated reporting experience, faster refresh, and more Copilot usage metrics in Graph API",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-10T22:41:53.0000000+00:00",
+      "endDateTime": "2026-08-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-10T22:43:14.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1319216",
+      "title": "(Updated) Microsoft Teams: In‑meeting toggle to turn Meeting AI on or off",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-05-22T22:24:13.0000000+00:00",
+      "endDateTime": "2026-10-12T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-09T23:02:07.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1422061",
+      "title": "Microsoft Entra ID: Retirement of Custom Controls in Conditional Access and migration to External MFA",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-07-09T21:50:42.0000000+00:00",
+      "endDateTime": "2027-07-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-09T21:50:56.0000000+00:00",
+      "actionRequiredByDateTime": "2027-04-30T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1238432",
+      "title": "(Updated) Microsoft 365 Copilot app: Branded footer customization",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-02-25T01:16:32.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-09T19:24:01.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1411574",
+      "title": "(Updated) Microsoft Entra: System-preferred authentication now applies to first-factor authentication",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-01T18:32:23.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-09T18:20:59.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1419799",
+      "title": "Configurable recovery window for Microsoft 365 Backup",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-07T22:33:42.0000000+00:00",
+      "endDateTime": "2026-09-07T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-07T22:33:50.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update"
+      ]
+    },
+    {
+      "id": "MC1413298",
+      "title": "Roadmap information for Microsoft Copilot Studio and agents transitioning to the Microsoft 365 Roadmap",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-03T02:04:01.0000000+00:00",
+      "endDateTime": "2026-08-02T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-07T17:43:52.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1317195",
+      "title": "(Updated) Microsoft Copilot Notebooks: Introducing Infographics",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-05-20T23:10:10.0000000+00:00",
+      "endDateTime": "2026-08-15T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-07T17:40:27.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1418558",
+      "title": "Change to taskbar pinning behavior for M365 Copilot and companion apps",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-07T02:06:26.0000000+00:00",
+      "endDateTime": "2026-08-27T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-07T02:06:33.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1413301",
+      "title": "New in Catalog Management: Create custom group of sites",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-03T02:05:11.0000000+00:00",
+      "endDateTime": "2026-08-17T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-03T02:05:16.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update"
+      ]
+    },
+    {
+      "id": "MC1384425",
+      "title": "(Updated) Copilot Notebooks available in Microsoft 365 Copilot Chat for Basic users",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-08T22:21:01.0000000+00:00",
+      "endDateTime": "2026-10-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-02T18:49:28.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1409102",
+      "title": "Enabling group support for M365 Copilot Release preferences experience",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-29T17:54:29.0000000+00:00",
+      "endDateTime": "2026-09-28T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-30T17:47:40.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat",
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update"
+      ]
+    },
+    {
+      "id": "MC1409305",
+      "title": "Microsoft Entra: Blocking new assignments to partner tier support roles",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-06-29T22:06:36.0000000+00:00",
+      "endDateTime": "2026-09-24T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-29T22:06:48.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1325414",
+      "title": "(Updated) Microsoft Entra ID SSPR will require registered authentication methods starting September 7, 2026",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-05-28T21:33:16.0000000+00:00",
+      "endDateTime": "2026-10-14T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-26T16:11:38.0000000+00:00",
+      "actionRequiredByDateTime": "2026-09-06T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1146821",
+      "title": "(Updated) Rewrite with Microsoft 365 Copilot Chat coming soon to Edge for Business users",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-09-02T23:22:03.0000000+00:00",
+      "endDateTime": "2026-11-23T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-25T16:11:53.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1403404",
+      "title": "Update to Microsoft Enterprise Content Delivery Network (eCDN) analytics data retention (360 days to 180 days)",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-06-24T22:28:15.0000000+00:00",
+      "endDateTime": "2026-08-27T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-24T22:28:21.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1325422",
+      "title": "(Updated) Microsoft 365 Copilot app: Simplified, chat-centered experience",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-05-28T21:35:41.0000000+00:00",
+      "endDateTime": "2026-09-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-22T22:46:49.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "Deferred feature",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1179154",
+      "title": "(Updated) Microsoft Authenticator app: Upcoming changes to jailbreak and root detection",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-10-24T22:08:24.0000000+00:00",
+      "endDateTime": "2026-07-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-19T15:50:48.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1297982",
+      "title": "(Updated) Use sensitivity labels to block all connected experiences that analyze content in Word, Excel, and PowerPoint",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-05-01T22:48:57.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-18T23:43:40.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1396361",
+      "title": "Microsoft 365 Copilot: Publish organization prompts to Copilot Chat",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-18T23:09:43.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-18T23:09:57.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1395007",
+      "title": "Microsoft Entra: New service plans for Conditional Access and ID Protection for agents",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-17T22:06:36.0000000+00:00",
+      "endDateTime": "2026-09-08T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-17T22:06:47.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite",
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1387532",
+      "title": "(Updated) Microsoft Edge moving to a 2-week release cycle starting with Edge 152",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-06-11T16:57:25.0000000+00:00",
+      "endDateTime": "2026-09-27T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-16T18:44:21.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1187682",
+      "title": "(Updated) Microsoft Edge: Microsoft 365 Copilot will support summarization and contextual grounding",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-11-18T16:21:30.0000000+00:00",
+      "endDateTime": "2026-09-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-16T17:31:05.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1152323",
+      "title": "(Updated) Microsoft 365 Copilot Apps installation on devices with Microsoft 365 Apps",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2025-09-12T23:10:52.0000000+00:00",
+      "endDateTime": "2026-08-28T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-15T17:09:27.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1290821",
+      "title": "(Updated) eSignature for Microsoft 365 - Recipient groups",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-04-24T21:43:30.0000000+00:00",
+      "endDateTime": "2026-11-02T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-12T16:16:53.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1387526",
+      "title": "Microsoft 365 Backup: Full workload backup for SharePoint, OneDrive, and Exchange",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-11T16:46:49.0000000+00:00",
+      "endDateTime": "2026-11-16T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-11T16:46:55.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature"
+      ]
+    },
+    {
+      "id": "MC1385586",
+      "title": "Microsoft 365: Organizational Data – Granular access policy controls for custom attributes",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-09T22:19:34.0000000+00:00",
+      "endDateTime": "2026-09-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-09T22:19:40.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update"
+      ]
+    },
+    {
+      "id": "MC1158329",
+      "title": "(Updated) Microsoft 365 Copilot: Updates to memory and personalization",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-09-23T23:06:08.0000000+00:00",
+      "endDateTime": "2026-08-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-08T23:05:44.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1358831",
+      "title": "Copilot settings in classic Outlook for Windows",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-04T23:09:24.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-04T23:09:36.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1338811",
+      "title": "Microsoft 365 admin center: Retirement of “Add Note” option in support tickets",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-06-03T22:39:19.0000000+00:00",
+      "endDateTime": "2026-08-17T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-06-03T22:39:56.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1326253",
+      "title": "Conditional Access policies now apply to Windows Hello for Business and macOS Platform SSO registration",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-05-29T16:55:15.0000000+00:00",
+      "endDateTime": "2026-08-13T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-05-29T16:56:51.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1174856",
+      "title": "(Updated) Microsoft 365 Copilot: Session persistence enhancement for Copilot chat",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-10-18T06:41:17.0000000+00:00",
+      "endDateTime": "2026-07-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-05-22T20:16:08.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1315217",
+      "title": "Microsoft Copilot Studio – Classic agent creation moves from Teams to web experience, retiring June 30, 2026",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-05-18T21:43:57.0000000+00:00",
+      "endDateTime": "2026-07-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-05-18T21:44:17.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1311978",
+      "title": "Classic Outlook for Windows: User-initiated insights with Copilot",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-05-15T23:14:11.0000000+00:00",
+      "endDateTime": "2026-07-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-05-15T23:14:18.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1148545",
+      "title": "(Updated) Microsoft 365 admin center - Usage reports: Agent usage (preview)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-09-05T22:05:38.0000000+00:00",
+      "endDateTime": "2026-08-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-05-08T20:34:37.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message"
+      ]
+    },
+    {
+      "id": "MC1303719",
+      "title": "Microsoft Entra: Upcoming changes to federatedTokenValidationPolicy default settings",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-05-07T22:39:04.0000000+00:00",
+      "endDateTime": "2026-09-12T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-05-07T22:39:10.0000000+00:00",
+      "actionRequiredByDateTime": "2026-08-11T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact"
+      ]
+    },
+    {
+      "id": "MC1266021",
+      "title": "(Updated) Microsoft 365 Copilot: New chat-first design for the Copilot mobile app",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-03-30T21:48:55.0000000+00:00",
+      "endDateTime": "2026-10-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-05-07T16:17:53.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1300584",
+      "title": "Microsoft Entra: App Instance Lock enabled by default for new applications",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-05-04T15:35:37.0000000+00:00",
+      "endDateTime": "2026-07-23T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-05-04T15:35:57.0000000+00:00",
+      "actionRequiredByDateTime": "2026-05-28T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1189665",
+      "title": "(Updated) Microsoft 365 admin center: Organizational Messages to support email delivery",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-11-25T00:06:23.0000000+00:00",
+      "endDateTime": "2026-07-27T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-04-27T20:57:13.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat",
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1262570",
+      "title": "(Updated) Microsoft 365 Copilot: Updates to license request custom flow",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-03-26T23:36:28.0000000+00:00",
+      "endDateTime": "2026-08-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-04-24T16:18:31.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1287372",
+      "title": "Microsoft Entra ID Governance Account Discovery",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-04-21T22:52:29.0000000+00:00",
+      "endDateTime": "2026-09-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-04-21T22:52:49.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature"
+      ]
+    },
+    {
+      "id": "MC1282306",
+      "title": "Modernized Change Management for Microsoft 365",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-04-16T16:23:08.0000000+00:00",
+      "endDateTime": "2026-08-03T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-04-19T19:49:54.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat",
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1282571",
+      "title": "Copilot entry point changes in Excel",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-04-16T21:20:17.0000000+00:00",
+      "endDateTime": "2026-12-01T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-04-16T21:20:23.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1225192",
+      "title": "Microsoft Entra ID Governance: Azure subscription required to continue using guest governance features",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-01-30T22:53:31.0000000+00:00",
+      "endDateTime": "2026-12-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-04-16T17:18:52.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1278920",
+      "title": "Support for Office LTSC 2021, and additional apps will end on October 13, 2026",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-04-13T16:19:39.0000000+00:00",
+      "endDateTime": "2027-04-13T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-04-13T16:19:55.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1268926",
+      "title": "Microsoft AutoUpdate (MAU) CDN Endpoint Update for Mac",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-04-02T20:59:02.0000000+00:00",
+      "endDateTime": "2026-07-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-04-02T20:59:13.0000000+00:00",
+      "actionRequiredByDateTime": "2026-05-31T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact"
+      ]
+    },
+    {
+      "id": "MC1069563",
+      "title": "Microsoft 365 admin center: Usage reports to manage metered consumption costs for Microsoft 365 Copilot Chat (preview)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-05-07T23:47:17.0000000+00:00",
+      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-03-23T22:03:40.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message"
+      ]
+    },
+    {
+      "id": "MC1254560",
+      "title": "New admin control for AI‑generated code previews in Microsoft 365 Copilot Pages",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-03-17T22:52:11.0000000+00:00",
+      "endDateTime": "2026-07-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-03-17T22:52:18.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1215070",
+      "title": "Microsoft 365 admin center multifactor authentication enforcement",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-01-08T00:50:22.0000000+00:00",
+      "endDateTime": "2026-12-09T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-01-08T01:19:45.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1184647",
+      "title": "(Updated) Retirement of Assignments and Courses adaptive card extensions (ACE) in Viva Connections and SharePoint",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-11-11T00:36:32.0000000+00:00",
+      "endDateTime": "2026-08-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-01-05T21:46:12.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1192661",
+      "title": "Workspaces in Edge: Upcoming migration to improved architecture",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2025-12-06T00:16:04.0000000+00:00",
+      "endDateTime": "2027-05-15T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2025-12-06T00:17:55.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1191944",
+      "title": "Microsoft Excel: Insert Data from Image retires starting July 2026",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-12-03T22:50:20.0000000+00:00",
+      "endDateTime": "2026-08-17T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2025-12-03T22:50:29.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1191924",
+      "title": "Microsoft Entra ID: Enhance protection of the authentication experience by blocking external script injection",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-12-03T21:44:46.0000000+00:00",
+      "endDateTime": "2026-11-25T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2025-12-03T21:44:55.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1188230",
+      "title": "Microsoft Entra ID: Retirement of duplicative properties in passkey (FIDO2) authentication methods policy",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2025-11-19T23:33:48.0000000+00:00",
+      "endDateTime": "2027-12-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2025-11-19T23:34:30.0000000+00:00",
+      "actionRequiredByDateTime": "2027-10-14T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Retirement"
+      ]
+    },
+    {
+      "id": "MC1182696",
+      "title": "Microsoft Defender: Application Guard for Office is being removed",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2025-11-04T00:40:23.0000000+00:00",
+      "endDateTime": "2027-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2025-11-04T00:41:10.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC1143999",
+      "title": "(Updated) Azure Information Protection: Enable multifactor authentication for your Azure tenant by October 1, 2025",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-08-29T00:35:43.0000000+00:00",
+      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2025-09-05T18:55:17.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Updated message",
+        "User impact"
+      ]
+    },
+    {
+      "id": "MC985483",
+      "title": "Microsoft Graph: New default passcode in the Create Meeting API",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2025-01-22T02:03:58.0000000+00:00",
+      "endDateTime": "2027-11-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2025-01-22T02:05:30.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ]
+    }
+  ]
+}
