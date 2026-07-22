@@ -63,15 +63,30 @@ function Get-GraphMessages {
 
     $select = 'id,title,category,severity,isMajorChange,startDateTime,endDateTime,lastModifiedDateTime,actionRequiredByDateTime,services,tags'
     if ($IncludeBody) { $select += ',body' }
-    $nextLink = "https://graph.microsoft.com/v1.0/admin/serviceAnnouncement/messages?`$select=$select"
+    $endpoint = 'https://graph.microsoft.com/v1.0/admin/serviceAnnouncement/messages'
+    $nextLink = "${endpoint}?`$select=$select"
     $headers = @{
         Authorization = "Bearer $Token"
         Prefer        = 'odata.maxpagesize=1000'
     }
     $all = [System.Collections.Generic.List[object]]::new()
+    $hasReadPage = $false
+    $hasRetriedWithoutSelect = $false
 
     while ($nextLink) {
-        $response = Invoke-RestMethod -Method Get -Uri $nextLink -Headers $headers
+        try {
+            $response = Invoke-RestMethod -Method Get -Uri $nextLink -Headers $headers
+        } catch {
+            if (-not $hasReadPage -and -not $hasRetriedWithoutSelect) {
+                $hasRetriedWithoutSelect = $true
+                $nextLink = $endpoint
+                Write-Warning 'The selected Message Center metadata request failed; retrying once without $select.'
+                continue
+            }
+            throw
+        }
+
+        $hasReadPage = $true
         foreach ($message in @($response.value)) { $all.Add($message) }
         $nextLink = if ($response.PSObject.Properties.Name -contains '@odata.nextLink') {
             [string]$response.'@odata.nextLink'

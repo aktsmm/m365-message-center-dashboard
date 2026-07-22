@@ -42,6 +42,33 @@ try {
     if ($html -notmatch 'scoutTheme' -or $html -notmatch '--cp-accent') { throw 'Mandatory artifact theme is missing.' }
     if ($html -match '<script[^>]+src=' -or $html -match '<link[^>]+href=') { throw 'Dashboard contains external resources.' }
 
+    $fallbackOutput = Join-Path $temp 'fallback'
+    $fallbackCalls = [System.Collections.Generic.List[string]]::new()
+    $fixtureResponse = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\m365-messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    function Invoke-RestMethod {
+        param([string]$Method, [string]$Uri, [hashtable]$Headers)
+
+        $fallbackCalls.Add($Uri)
+        if ($fallbackCalls.Count -eq 1) { throw 'Selected metadata request failed.' }
+        return $fixtureResponse
+    }
+
+    & (Join-Path $root 'scripts\Export-M365MessageCenter.ps1') `
+        -AccessToken 'fixture-token' `
+        -OutputDirectory $fallbackOutput `
+        -LookbackDays 365 `
+        -ReferenceTime '2026-07-23T00:00:00Z'
+
+    if ($fallbackCalls.Count -ne 2) { throw "Expected one fallback request, got $($fallbackCalls.Count) requests." }
+    if ($fallbackCalls[0] -notmatch '\$select=') { throw 'Initial Graph request did not use the metadata selection.' }
+    if ($fallbackCalls[1] -ne 'https://graph.microsoft.com/v1.0/admin/serviceAnnouncement/messages') {
+        throw 'Graph fallback request did not use the unselected Message Center endpoint.'
+    }
+    $fallbackMessages = Get-Content -LiteralPath (Join-Path $fallbackOutput 'messages.json') -Raw -Encoding UTF8
+    if ($fallbackMessages -match 'THIS_BODY|THIS_DETAIL|"body"|"details"') {
+        throw 'Graph fallback leaked private body/details into public JSON.'
+    }
+
     Write-Host 'M365 dashboard fixture validation passed.'
 } finally {
     Remove-Item -LiteralPath $temp -Recurse -Force -ErrorAction SilentlyContinue
