@@ -292,9 +292,11 @@ if ($TranslationBatchJson) {
 $translationsById = @{}
 if ($PreviousInsightsPath -and (Test-Path -LiteralPath $PreviousInsightsPath)) {
     $previousInsights = Get-Content -LiteralPath $PreviousInsightsPath -Raw -Encoding UTF8 | ConvertFrom-Json
-    foreach ($translation in @($previousInsights.messageTranslations)) {
-        $id = ([string]$translation.id).Trim().ToUpperInvariant()
-        if ($allowedIdSet.ContainsKey($id)) { $translationsById[$id] = $translation }
+    if ($previousInsights.PSObject.Properties.Name -contains 'messageTranslations') {
+        foreach ($translation in @($previousInsights.messageTranslations)) {
+            $id = ([string]$translation.id).Trim().ToUpperInvariant()
+            if ($allowedIdSet.ContainsKey($id)) { $translationsById[$id] = $translation }
+        }
     }
 }
 foreach ($translation in $validatedTranslations) { $translationsById[$translation.id] = $translation }
