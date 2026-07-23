@@ -61,7 +61,6 @@ function Get-RecentTranslationRuns {
 
 function Wait-ForDispatchedRun {
     param(
-        [Parameter(Mandatory)][DateTimeOffset]$StartedAt,
         [Parameter(Mandatory)][hashtable]$ExistingRunIds
     )
 
@@ -70,8 +69,7 @@ function Wait-ForDispatchedRun {
         $run = @(
             $runs |
                 Where-Object {
-                    -not $ExistingRunIds.ContainsKey([string]$_.id) -and
-                    [DateTimeOffset]::Parse([string]$_.created_at) -ge $StartedAt.AddSeconds(-5)
+                    -not $ExistingRunIds.ContainsKey([string]$_.id)
                 } |
                 Sort-Object id -Descending
         ) | Select-Object -First 1
@@ -88,12 +86,11 @@ function Invoke-VerifiedTranslationBatch {
     foreach ($existingRun in Get-RecentTranslationRuns) {
         $existingRunIds[[string]$existingRun.id] = $true
     }
-    $startedAt = [DateTimeOffset]::UtcNow
     Invoke-Gh -Arguments @(
         'workflow', 'run', 'Microsoft 365 Message Center bounded translations',
         '--repo', $Repository, '--ref', 'main', '-f', "translation_ids=$($Ids -join ',')"
     ) | Out-Null
-    $run = Wait-ForDispatchedRun -StartedAt $startedAt -ExistingRunIds $existingRunIds
+    $run = Wait-ForDispatchedRun -ExistingRunIds $existingRunIds
     & gh run watch $run.id --repo $Repository --exit-status
     if ($LASTEXITCODE -ne 0) {
         throw "Translation run $($run.id) failed."
