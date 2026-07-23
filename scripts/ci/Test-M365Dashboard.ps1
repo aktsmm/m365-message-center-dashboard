@@ -331,6 +331,12 @@ try {
     if ($repositoryLinks -lt 2 -or $html -notmatch 'hero-repo-link|GitHub リポジトリを開く') {
         throw 'Dashboard is missing the accessible hero repository link or footer repository link.'
     }
+    if ($html -notmatch 'https://admin\.microsoft\.com/#/MessageCenter' -or
+        $html -notmatch 'Microsoft 365 管理センターの Message Center を開く' -or
+        $html -notmatch 'target="_blank" rel="noopener noreferrer"' -or
+        $html -notmatch 'サインインと対象テナントでの適切な権限が必要です') {
+        throw 'Dashboard is missing the safe global Microsoft 365 Message Center entry point and access notice.'
+    }
     if ($html -notmatch 'href="about/"') { throw 'Dashboard footer is missing the visible automation explanation link.' }
     if (-not (Test-Path -LiteralPath $aboutPage) -or
         (Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8) -notmatch '毎週の自動更新|GitHub Agentic Workflow') {
@@ -343,6 +349,12 @@ try {
         $aboutHtml -notmatch 'storedTheme.*"light"' -or
         $aboutHtml -match 'prefers-color-scheme') {
         throw 'About page does not share the light-first persistent accessible theme contract.'
+    }
+    if ($aboutHtml -notmatch 'https://admin\.microsoft\.com/#/MessageCenter' -or
+        $aboutHtml -notmatch 'Microsoft 365 管理センターの Message Center を開く' -or
+        $aboutHtml -notmatch 'target="_blank" rel="noopener noreferrer"' -or
+        $aboutHtml -notmatch 'サインインと対象テナントでの適切な権限が必要です') {
+        throw 'About page is missing the safe global Microsoft 365 Message Center entry point and access notice.'
     }
     $renderer = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') -Raw -Encoding UTF8
     if (-not $renderer.Contains('Array.isArray(message.details)')) {
@@ -520,6 +532,8 @@ try {
         $readme -notmatch '最大8カード/週' -or
         $readme -notmatch '74/74' -or
         $readme -notmatch 'GITHUB_TOKEN' -or
+        $readme -notmatch 'https://admin\.microsoft\.com/#/MessageCenter' -or
+        $readme -notmatch 'サインインと対象テナントでの適切な権限が必要です' -or
         $readme -match 'controller-only' -or
         $aboutGenerator -notmatch '月曜日・木曜日 07:17 JST' -or
         $aboutGenerator -notmatch '最大8カード/週' -or

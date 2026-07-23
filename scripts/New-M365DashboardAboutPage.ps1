@@ -75,6 +75,7 @@ $html = @'
     <section class="panel">
       <h2>公開データとリンクの境界</h2>
       <p>MC カードの直接リンクは、その同じ run の Graph snapshot にある同じ MC の HTTPS Message Center URL だけです。関連ドキュメントは、その MC の details に含まれる <code>learn.microsoft.com</code> URL だけを表示します。URL は生成・推測しません。</p>
+      <p><a href="https://admin.microsoft.com/#/MessageCenter" target="_blank" rel="noopener noreferrer">Microsoft 365 管理センターの Message Center を開く</a>には、サインインと対象テナントでの適切な権限が必要です。この静的な公式入口は、MC カードの同一 snapshot・同一 MC に限定した URL 検証を緩和しません。</p>
       <p>safe output は unsafe markup、credential-like 値、snapshot にない MC ID、許可されていない URL、翻訳元メタデータの不一致を拒否します。検証できない場合は、以前に検証済みの翻訳だけを保持し、未処理カードにはデータ未準備を表示します。</p>
     </section>
     <section class="panel">

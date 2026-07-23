@@ -22,6 +22,8 @@ Repository-authored content and generated Pages presentation are licensed under 
 
 Agentic Workflow は URL を生成・推測せず、同一 run の snapshot にある HTTPS の `admin.microsoft.com` / `m365.cloud.microsoft` URL と、同じ MC の `learn.microsoft.com` URL だけを公開します。
 
+ダッシュボードには、静的に記述した [Microsoft 365 管理センターの Message Center](https://admin.microsoft.com/#/MessageCenter) への入口もあります。利用にはサインインと対象テナントでの適切な権限が必要です。この入口は Agentic output やカード別 URL allowlist の対象ではなく、MC カードの同一 snapshot・同一 MC に限定した検証を緩和しません。
+
 ## Twice-weekly automation architecture
 
 月曜日・木曜日 07:17 JST の更新は、次の順序で実行されます。
