@@ -379,7 +379,8 @@ $html = @'
         const translationContent = translation
           ? `<details class="message-content message-translation"><summary>日本語訳と詳細要約</summary>
               <h4>詳細要約</h4><p class="message-body">${escapeHtml(translation.japaneseDetailedSummary).replace(/\r?\n/g, "<br>")}</p>
-              <h4>本文の日本語訳${translation.sourceTruncated ? "（先頭の抜粋）" : ""}</h4>
+              <h4>${translation.sourceTruncated ? "本文の日本語訳（抜粋）" : "本文の日本語訳"}</h4>
+              ${translation.sourceTruncated ? `<p class="insight-pending">原文の先頭 ${escapeHtml(translation.sourceCharacterCount)} 文字を翻訳しています。全文は「Message Center の全文と詳細」で確認してください。</p>` : ""}
               <p class="message-body">${escapeHtml(translation.japaneseBodyTranslation).replace(/\r?\n/g, "<br>")}</p>
             </details>`
           : `<details class="message-content message-translation"><summary>日本語訳と詳細要約</summary>

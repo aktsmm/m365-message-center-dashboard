@@ -96,7 +96,7 @@ try {
         -MessagesJson (Join-Path $temp 'messages.json') `
         -InsightsJson $translationInsightsPath `
         -OutputPath $translationDashboard
-    if ((Get-Content -LiteralPath $translationDashboard -Raw -Encoding UTF8) -notmatch '日本語訳と詳細要約|共同作業コントロールの変更内容') {
+    if ((Get-Content -LiteralPath $translationDashboard -Raw -Encoding UTF8) -notmatch '日本語訳と詳細要約|共同作業コントロールの変更内容|本文の日本語訳（抜粋）|全文は「Message Center の全文と詳細」で確認してください') {
         throw 'Dashboard does not render validated Japanese translations and detailed summaries.'
     }
     & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
