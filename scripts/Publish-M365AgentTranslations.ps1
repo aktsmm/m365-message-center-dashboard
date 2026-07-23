@@ -26,7 +26,15 @@ if (-not ($translationItem[0].PSObject.Properties.Name -contains 'translation_up
 }
 
 $previous = Get-Content -LiteralPath $PreviousInsightsPath -Raw -Encoding UTF8 | ConvertFrom-Json
-$updates = @($previous.messageUpdates)
+$messages = Get-Content -LiteralPath $MessagesJson -Raw -Encoding UTF8 | ConvertFrom-Json
+$currentMessageIds = @{}
+foreach ($message in @($messages.messages)) {
+    $currentMessageIds[([string]$message.id).Trim().ToUpperInvariant()] = $true
+}
+$updates = @(
+    $previous.messageUpdates |
+        Where-Object { $currentMessageIds.ContainsKey((([string]$_.id).Trim().ToUpperInvariant())) }
+)
 if (-not $updates.Count) { throw 'Previous insights do not contain validated message updates.' }
 $legacyUpdates = @($updates | ForEach-Object {
     [ordered]@{
