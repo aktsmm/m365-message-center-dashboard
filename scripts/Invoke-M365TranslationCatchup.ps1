@@ -91,7 +91,7 @@ function Invoke-VerifiedTranslationBatch {
         '--repo', $Repository, '--ref', 'main', '-f', "translation_ids=$($Ids -join ',')"
     ) | Out-Null
     $run = Wait-ForDispatchedRun -ExistingRunIds $existingRunIds
-    & gh run watch $run.id --repo $Repository --exit-status
+    & gh run watch $run.id --repo $Repository --exit-status | Out-Host
     if ($LASTEXITCODE -ne 0) {
         throw "Translation run $($run.id) failed."
     }
