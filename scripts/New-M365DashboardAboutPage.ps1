@@ -27,8 +27,8 @@ $html = @'
   </script>
   <title>更新のしくみ | Microsoft 365 Change Radar</title>
   <style>
-    :root { color-scheme: light; --cp-bg: #f4f7fb; --cp-bg-elevated: #eef4fb; --cp-surface: #fff; --cp-surface-soft: #f8fafc; --cp-border: #cbd5e1; --cp-border-strong: #64748b; --cp-text: #172033; --cp-text-muted: #475569; --cp-link: #005ea8; --cp-accent: #9f1239; --cp-accent-fg: #fff; --cp-shadow: 0 14px 36px rgba(15, 23, 42, 0.1); }
-    html[data-theme="dark"] { color-scheme: dark; --cp-bg: #101827; --cp-bg-elevated: #172033; --cp-surface: #1d2939; --cp-surface-soft: #263548; --cp-border: #41536a; --cp-border-strong: #718096; --cp-text: #f1f5f9; --cp-text-muted: #c1cddd; --cp-link: #7dd3fc; --cp-accent: #fda4af; --cp-accent-fg: #291018; --cp-shadow: 0 16px 40px rgba(0, 0, 0, 0.35); }
+    :root { color-scheme: light; --cp-bg: #f8f4ed; --cp-bg-elevated: #fdfaf5; --cp-surface: #fff; --cp-surface-soft: #f4ede4; --cp-border: #e4d9cc; --cp-border-strong: #a28c77; --cp-text: #2d2822; --cp-text-muted: #665d54; --cp-link: #94412f; --cp-accent: #a33e2c; --cp-accent-fg: #fff; --cp-shadow: 0 18px 48px rgba(45, 40, 34, 0.12); }
+    html[data-theme="dark"] { color-scheme: dark; --cp-bg: #292521; --cp-bg-elevated: #322d28; --cp-surface: #39332d; --cp-surface-soft: #433a32; --cp-border: #5d5044; --cp-border-strong: #86705c; --cp-text: #f4eae0; --cp-text-muted: #d2c1b2; --cp-link: #ffc0a8; --cp-accent: #ffb09c; --cp-accent-fg: #332018; --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.4); }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--cp-bg); color: var(--cp-text); font-family: "Segoe UI", Aptos, Calibri, sans-serif; line-height: 1.6; }
     main { width: min(880px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 80px; }
@@ -51,7 +51,7 @@ $html = @'
   <main>
     <nav class="nav" aria-label="Dashboard navigation">
       <div class="brand">Microsoft 365 Change Radar</div>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false"></button>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="表示テーマをダークに切り替えます" aria-pressed="false"></button>
     </nav>
     <div class="eyebrow">Lab-public automation</div>
     <h1>このダッシュボードの<br>更新のしくみ</h1>
