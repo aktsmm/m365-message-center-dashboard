@@ -21,6 +21,7 @@ param(
     [ValidateRange(200, 2000)][int]$AgentContextBodyMaxChars = 1000,
     [ValidateRange(1, 10)][int]$AgentTranslationBatchSize = 2,
     [ValidateRange(200, 2000)][int]$AgentTranslationBodyMaxChars = 1000,
+    [Nullable[int]]$AgentTranslationBatchIndex,
     [switch]$IncludeContent
 )
 
@@ -341,7 +342,16 @@ if ($AgentContextPath) {
     $translationCandidates = @($messages | Sort-Object id)
     $translationBatchCount = [Math]::Ceiling($translationCandidates.Count / [double]$AgentTranslationBatchSize)
     $translationWeek = [Math]::Floor(($generatedAt - [DateTimeOffset]'2020-01-06T00:00:00Z').TotalDays / 7)
-    $translationBatchIndex = if ($translationBatchCount) { [int]($translationWeek % $translationBatchCount) } else { 0 }
+    $translationBatchIndex = if ($null -ne $AgentTranslationBatchIndex) {
+        if ($AgentTranslationBatchIndex -lt 0 -or $AgentTranslationBatchIndex -ge $translationBatchCount) {
+            throw "Agent translation batch index is outside the current snapshot range: $AgentTranslationBatchIndex"
+        }
+        [int]$AgentTranslationBatchIndex
+    } elseif ($translationBatchCount) {
+        [int]($translationWeek % $translationBatchCount)
+    } else {
+        0
+    }
     $translationBatch = [System.Collections.Generic.List[object]]::new()
     $translationBatchSize = [Math]::Min($AgentTranslationBatchSize, $translationCandidates.Count)
     $translationStartIndex = $translationBatchIndex * $AgentTranslationBatchSize

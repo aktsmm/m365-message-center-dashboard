@@ -1,6 +1,11 @@
 ---
 on:
   workflow_dispatch:
+    inputs:
+      translation_batch_index:
+        description: "Optional zero-based two-message batch index for an operator-run backfill. Run one index at a time."
+        required: false
+        type: string
   workflow_run:
     workflows:
       - "Microsoft 365 Message Center weekly dashboard"
@@ -33,17 +38,36 @@ pre-agent-steps:
 
   - name: Build transient Message Center context
     shell: pwsh
+    env:
+      TRANSLATION_BATCH_INDEX: ${{ inputs.translation_batch_index }}
     run: |
-      ./scripts/Export-M365MessageCenter.ps1 `
-        -OutputDirectory "$env:RUNNER_TEMP/m365-agent-public" `
-        -IncludeContent `
-        -AgentContextPath ".m365-agent-context.json" `
-        -AgentContextLimit 1000 `
-        -AgentContextBodyMaxChars 1000 `
-        -AgentTranslationBatchSize 2 `
-        -AgentTranslationBodyMaxChars 1000 `
-        -LookbackDays 180 `
-        -RunId '${{ github.run_id }}'
+      $translationBatchIndex = $env:TRANSLATION_BATCH_INDEX
+      if ($translationBatchIndex -and $translationBatchIndex -notmatch '^\d+$') {
+        throw 'translation_batch_index must be a non-negative integer.'
+      }
+      $exportArguments = @(
+        '-OutputDirectory'
+        "$env:RUNNER_TEMP/m365-agent-public"
+        '-IncludeContent'
+        '-AgentContextPath'
+        '.m365-agent-context.json'
+        '-AgentContextLimit'
+        '1000'
+        '-AgentContextBodyMaxChars'
+        '1000'
+        '-AgentTranslationBatchSize'
+        '2'
+        '-AgentTranslationBodyMaxChars'
+        '1000'
+        '-LookbackDays'
+        '180'
+        '-RunId'
+        '${{ github.run_id }}'
+      )
+      if ($translationBatchIndex) {
+        $exportArguments += @('-AgentTranslationBatchIndex', [int]$translationBatchIndex)
+      }
+      ./scripts/Export-M365MessageCenter.ps1 @exportArguments
 
   - name: Upload public Message Center snapshot
     uses: actions/upload-artifact@v7
