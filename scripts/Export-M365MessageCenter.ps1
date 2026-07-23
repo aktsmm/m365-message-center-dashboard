@@ -72,28 +72,47 @@ function Convert-ToPublicDetails {
     )
 }
 
-function New-JapaneseSummary {
-    param(
-        [Parameter(Mandatory)][object]$Message,
-        [Parameter(Mandatory)][string[]]$Services
-    )
+function Get-JapaneseCategoryLabel {
+    param([AllowEmptyString()][string]$Category)
 
     $categoryLabels = @{
         PlanForChange     = '変更予定'
         PreventOrFixIssue = '問題の予防または修正'
         StayInformed      = '情報提供'
     }
+    if ($categoryLabels.ContainsKey($Category)) {
+        return $categoryLabels[$Category]
+    }
+    return 'Message Center の更新'
+}
+
+function New-JapaneseTitle {
+    param(
+        [Parameter(Mandatory)][object]$Message,
+        [Parameter(Mandatory)][string[]]$Services
+    )
+
+    $category = Get-JapaneseCategoryLabel -Category ([string]$Message.category)
+    $serviceLabel = if ($Services.Count) { $Services -join '、' } else { 'Microsoft 365' }
+    $title = "$serviceLabel の${category}に関するお知らせ"
+    if ($Message.isMajorChange) { $title += '（主要な変更）' }
+    if ($title.Length -gt 200) { return $title.Substring(0, 200) }
+    return $title
+}
+
+function New-JapaneseSummary {
+    param(
+        [Parameter(Mandatory)][object]$Message,
+        [Parameter(Mandatory)][string[]]$Services
+    )
+
     $severityLabels = @{
         Critical = '重大'
         High     = '高'
         Normal   = '通常'
         Low      = '低'
     }
-    $category = if ($categoryLabels.ContainsKey([string]$Message.category)) {
-        $categoryLabels[[string]$Message.category]
-    } else {
-        'Message Center の更新'
-    }
+    $category = Get-JapaneseCategoryLabel -Category ([string]$Message.category)
     $severity = if ($severityLabels.ContainsKey([string]$Message.severity)) {
         $severityLabels[[string]$Message.severity]
     } else {
@@ -143,6 +162,7 @@ function Convert-ToPublicMessage {
         } else {
             ''
         }
+        $publicMessage.japaneseTitle = New-JapaneseTitle -Message $Message -Services $services
         $publicMessage.japaneseSummary = New-JapaneseSummary -Message $Message -Services $services
         $publicMessage.bodyText = Convert-ToReadableText $bodyContent
         $publicMessage.details = @(Convert-ToPublicDetails -Message $Message)
