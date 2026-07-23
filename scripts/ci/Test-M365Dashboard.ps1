@@ -144,6 +144,30 @@ try {
     if ((Get-Content -LiteralPath $translationDashboard -Raw -Encoding UTF8) -notmatch '日本語訳と詳細要約|共同作業コントロールの変更内容|本文の日本語訳（抜粋）|全文は「Message Center の全文と詳細」で確認してください') {
         throw 'Dashboard does not render validated Japanese translations and detailed summaries.'
     }
+    $translationOnlyOutput = Join-Path $temp 'agent-output-translation-only.json'
+    $stalePreviousInsights = Join-Path $temp 'insights-with-stale-update.json'
+    $translationBridgeInsights = Join-Path $temp 'insights-translation-bridge.json'
+    [ordered]@{
+        items = @([ordered]@{
+            type = 'publish_m365_translations'
+            translation_updates = $agentOutputWithTranslations.items[0].translation_updates
+        })
+    } | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $translationOnlyOutput -Encoding UTF8
+    $previousWithStaleUpdate = Get-Content -LiteralPath $publishedInsights -Raw -Encoding UTF8 | ConvertFrom-Json
+    $previousWithStaleUpdate.messageUpdates += [pscustomobject]@{
+        id = 'MC999999'; japaneseTitle = '古い更新'; japaneseSummary = '現在の snapshot にはない古い更新です。'
+        messageUrl = $null; learnUrls = @()
+    }
+    $previousWithStaleUpdate | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $stalePreviousInsights -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentTranslations.ps1') `
+        -AgentOutputPath $translationOnlyOutput `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -TranslationBatchJson $translationBatchPath `
+        -PreviousInsightsPath $stalePreviousInsights `
+        -OutputPath $translationBridgeInsights
+    if ((Get-Content -LiteralPath $translationBridgeInsights -Raw -Encoding UTF8) -match 'MC999999') {
+        throw 'Translation bridge retained a message update that is absent from the current snapshot.'
+    }
     & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
         -MessagesJson (Join-Path $temp 'messages.json') `
         -InsightsJson $publishedInsights `
