@@ -55,6 +55,22 @@ try {
     if ((Get-Content -LiteralPath $gzipStructuredInsights -Raw -Encoding UTF8) -notmatch 'messageUpdates') {
         throw 'gzip-base64 message_updates did not publish structured per-message updates.'
     }
+    $englishUpdatesOutput = Join-Path $temp 'agent-output-english-updates.json'
+    $englishUpdatesInsights = Join-Path $temp 'insights-english-updates.json'
+    $agentOutputWithEnglishUpdates = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $agentOutputWithEnglishUpdates.items[0].message_updates[0].japanese_title = 'English title'
+    $agentOutputWithEnglishUpdates.items[0].message_updates[0].japanese_summary = 'English summary'
+    $agentOutputWithEnglishUpdates | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $englishUpdatesOutput -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+        -AgentOutputPath $englishUpdatesOutput `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -OutputPath $englishUpdatesInsights
+    $englishFallbackUpdate = @((Get-Content -LiteralPath $englishUpdatesInsights -Raw -Encoding UTF8 | ConvertFrom-Json).messageUpdates | Where-Object id -eq 'MC900001')[0]
+    $snapshotFallbackMessage = @((Get-Content -LiteralPath (Join-Path $temp 'messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json).messages | Where-Object id -eq 'MC900001')[0]
+    if ($englishFallbackUpdate.japaneseTitle -ne $snapshotFallbackMessage.japaneseTitle -or
+        $englishFallbackUpdate.japaneseSummary -ne $snapshotFallbackMessage.japaneseSummary) {
+        throw 'Non-Japanese Agentic card fields did not fall back to same-snapshot deterministic Japanese text.'
+    }
     $translationBatchPath = Join-Path $temp 'translation-batch.json'
     $translationOutputPath = Join-Path $temp 'agent-output-translations.json'
     $translationInsightsPath = Join-Path $temp 'insights-translations.json'
@@ -316,6 +332,20 @@ try {
     }
     if (-not $safeOutputSection.Contains('New-M365DashboardAboutPage.ps1')) {
         throw 'The Agentic pipeline does not publish the automation explanation page.'
+    }
+    $translationWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-weekly-translations.md') -Raw -Encoding UTF8
+    $translationPreAgentSection = ($translationWorkflow -split 'safe-outputs:', 2)[0]
+    $translationSafeOutputSection = ($translationWorkflow -split 'safe-outputs:', 2)[1]
+    if (-not $translationPreAgentSection.Contains('workflows:') -or
+        -not $translationPreAgentSection.Contains('"Microsoft 365 Message Center weekly dashboard"') -or
+        -not $translationPreAgentSection.Contains("github.event.workflow_run.conclusion == 'success'") -or
+        $translationPreAgentSection.Contains('M365 Message Center Dashboard - Public Metadata')) {
+        throw 'Translations workflow does not wait for the successful core weekly dashboard workflow.'
+    }
+    if ($translationSafeOutputSection.Contains('message_updates:') -or
+        $translationSafeOutputSection.Contains('publish-m365-dashboard') -or
+        -not $translationSafeOutputSection.Contains('translation_updates:')) {
+        throw 'Translations workflow must publish only translation_updates.'
     }
 
     Write-Host 'M365 dashboard fixture validation passed.'

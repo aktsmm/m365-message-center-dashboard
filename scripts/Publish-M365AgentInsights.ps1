@@ -53,7 +53,8 @@ function Get-RequiredUpdateText {
     param(
         [Parameter(Mandatory)][object]$Update,
         [Parameter(Mandatory)][string]$Name,
-        [ValidateRange(1, 5000)][int]$MaxLength
+        [ValidateRange(1, 5000)][int]$MaxLength,
+        [string]$JapaneseFallback
     )
 
     if (-not ($Update.PSObject.Properties.Name -contains $Name)) {
@@ -70,7 +71,24 @@ function Get-RequiredUpdateText {
         $value -match '(?i)\b(access[_ -]?token|refresh[_ -]?token|client[_ -]?secret|api[_ -]?key|password)\s*(?:[:=]|\bis\b)\s*\S+') {
         throw "Credential-like content detected in message update field: $Name"
     }
-    if (-not (Test-ContainsJapanese $value)) { throw "Message update field must contain Japanese text: $Name" }
+    if (-not (Test-ContainsJapanese $value)) {
+        $fallback = $JapaneseFallback.Trim()
+        if ([string]::IsNullOrWhiteSpace($fallback)) {
+            throw "Message update field must contain Japanese text: $Name"
+        }
+        if ($fallback.Length -gt $MaxLength -or -not (Test-ContainsJapanese $fallback)) {
+            throw "Deterministic Japanese fallback is invalid for message update field: $Name"
+        }
+        if ($fallback -match '<\s*(script|iframe|object|embed|style|svg)\b' -or $fallback -match '(?i)javascript:|data:text/html') {
+            throw "Unsafe content detected in deterministic Japanese fallback: $Name"
+        }
+        if ($fallback -match '(?i)\b(bearer\s+)[A-Za-z0-9._~+/=-]{12,}' -or
+            $fallback -match '(?i)\b(authorization\s*:\s*(?:basic|bearer)\s+)\S+' -or
+            $fallback -match '(?i)\b(access[_ -]?token|refresh[_ -]?token|client[_ -]?secret|api[_ -]?key|password)\s*(?:[:=]|\bis\b)\s*\S+') {
+            throw "Credential-like content detected in deterministic Japanese fallback: $Name"
+        }
+        return $fallback
+    }
     return $value
 }
 
@@ -131,6 +149,10 @@ $allowedIds = @(
 )
 $allowedIdSet = @{}
 foreach ($id in $allowedIds) { $allowedIdSet[$id] = $true }
+$messagesById = @{}
+foreach ($message in @($messages.messages)) {
+    $messagesById[([string]$message.id).Trim().ToUpperInvariant()] = $message
+}
 $referencedIds = @(
     ([string]$item.referenced_ids -split '[,\s]+') |
         Where-Object { $_ } |
@@ -184,8 +206,11 @@ foreach ($update in $messageUpdates) {
     if ($seenUpdateIds.ContainsKey($id)) { throw "Message update is duplicated for MC ID: $id" }
     $seenUpdateIds[$id] = $true
 
-    $japaneseTitle = Get-RequiredUpdateText -Update $update -Name 'japanese_title' -MaxLength 200
-    $japaneseSummary = Get-RequiredUpdateText -Update $update -Name 'japanese_summary' -MaxLength 100
+    $snapshotMessage = $messagesById[$id]
+    $japaneseTitle = Get-RequiredUpdateText -Update $update -Name 'japanese_title' -MaxLength 200 `
+        -JapaneseFallback ([string]$snapshotMessage.japaneseTitle)
+    $japaneseSummary = Get-RequiredUpdateText -Update $update -Name 'japanese_summary' -MaxLength 100 `
+        -JapaneseFallback ([string]$snapshotMessage.japaneseSummary)
     $messageUrl = $null
     if ($update.PSObject.Properties.Name -contains 'message_url' -and -not [string]::IsNullOrWhiteSpace([string]$update.message_url)) {
         $messageUrl = ([string]$update.message_url).Trim()

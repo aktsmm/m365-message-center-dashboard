@@ -204,7 +204,9 @@ Call `publish-m365-dashboard` exactly once with:
   Each decoded object must have
   `id`, `japanese_title`, `japanese_summary`, `message_url`, and `learn_urls`.
   Write a Japanese title, preserve the original title only in the source data, and keep
-  `japanese_summary` at 100 Japanese characters or fewer. Set `message_url` to `null` unless
+  `japanese_summary` at 100 Japanese characters or fewer. The publisher rejects unsafe values
+  and uses the same-snapshot deterministic Japanese title and summary only if these fields are
+  not Japanese. Set `message_url` to `null` unless
   that exact MC ID's `allowedMessageUrls` contains the URL. Set `learn_urls` to an array
   containing only exact URLs in that same MC ID's `allowedLearnUrls`; otherwise use `[]`.
   Never construct, guess, or copy URLs between MC IDs.
