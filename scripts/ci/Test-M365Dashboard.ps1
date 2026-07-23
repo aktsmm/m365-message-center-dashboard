@@ -40,6 +40,7 @@ try {
     if ($html -notmatch '共同作業と管理者設定の変更') { throw 'Agentic summary is missing from dashboard HTML.' }
     if ($html -notmatch 'Microsoft 365 Change Radar') { throw 'Dashboard title is missing.' }
     if ($html -notmatch 'scoutTheme' -or $html -notmatch '--cp-accent') { throw 'Mandatory artifact theme is missing.' }
+    if ($html -notmatch 'https://github\.com/aktsmm/m365-message-center-dashboard') { throw 'Repository link is missing from dashboard HTML.' }
     if ($html -match '<script[^>]+src=' -or $html -match '<link[^>]+href=') { throw 'Dashboard contains external resources.' }
 
     $fallbackOutput = Join-Path $temp 'fallback'

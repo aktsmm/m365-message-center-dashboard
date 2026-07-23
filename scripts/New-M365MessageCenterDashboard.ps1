@@ -193,6 +193,8 @@ $html = @'
     .chip.due { color: var(--cp-warning); font-weight: 700; }
     .empty { padding: 48px; color: var(--cp-text-muted); text-align: center; }
     footer { padding: 56px 8px 0; color: var(--cp-text-muted); font-size: 0.82rem; }
+    .repo-link { color: var(--cp-link); font-weight: 700; text-decoration: none; }
+    .repo-link:hover { color: var(--cp-accent); text-decoration: underline; }
     @media (max-width: 820px) {
       .metrics, .services { grid-template-columns: repeat(2, 1fr); }
       .insight-grid { grid-template-columns: 1fr; }
@@ -258,7 +260,8 @@ $html = @'
     </section>
 
     <footer>
-      Message Center の本文・詳細・テナント識別子は公開していません。表示内容は自動収集されたメタデータであり、正式な判断は Microsoft 365 管理センターで確認してください。
+      <p>Message Center の本文・詳細・テナント識別子は公開していません。表示内容は自動収集されたメタデータであり、正式な判断は Microsoft 365 管理センターで確認してください。</p>
+      <p><a class="repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub: aktsmm/m365-message-center-dashboard</a></p>
     </footer>
   </main>
 
