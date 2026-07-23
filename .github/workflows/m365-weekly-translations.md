@@ -45,29 +45,21 @@ pre-agent-steps:
       if ($translationBatchIndex -and $translationBatchIndex -notmatch '^\d+$') {
         throw 'translation_batch_index must be a non-negative integer.'
       }
-      $exportArguments = @(
-        '-OutputDirectory'
-        "$env:RUNNER_TEMP/m365-agent-public"
-        '-IncludeContent'
-        '-AgentContextPath'
-        '.m365-agent-context.json'
-        '-AgentContextLimit'
-        '1000'
-        '-AgentContextBodyMaxChars'
-        '1000'
-        '-AgentTranslationBatchSize'
-        '2'
-        '-AgentTranslationBodyMaxChars'
-        '1000'
-        '-LookbackDays'
-        '180'
-        '-RunId'
-        '${{ github.run_id }}'
-      )
-      if ($translationBatchIndex) {
-        $exportArguments += @('-AgentTranslationBatchIndex', [int]$translationBatchIndex)
+      $exportParameters = @{
+        OutputDirectory                = "$env:RUNNER_TEMP/m365-agent-public"
+        IncludeContent                 = $true
+        AgentContextPath               = '.m365-agent-context.json'
+        AgentContextLimit              = 1000
+        AgentContextBodyMaxChars       = 1000
+        AgentTranslationBatchSize      = 2
+        AgentTranslationBodyMaxChars   = 1000
+        LookbackDays                   = 180
+        RunId                          = '${{ github.run_id }}'
       }
-      ./scripts/Export-M365MessageCenter.ps1 @exportArguments
+      if ($translationBatchIndex) {
+        $exportParameters.AgentTranslationBatchIndex = [int]$translationBatchIndex
+      }
+      ./scripts/Export-M365MessageCenter.ps1 @exportParameters
 
   - name: Upload public Message Center snapshot
     uses: actions/upload-artifact@v7

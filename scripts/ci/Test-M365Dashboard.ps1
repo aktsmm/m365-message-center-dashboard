@@ -386,7 +386,7 @@ try {
         -not $translationPreAgentSection.Contains('"Microsoft 365 Message Center weekly dashboard"') -or
         -not $translationPreAgentSection.Contains("github.event.workflow_run.conclusion == 'success'") -or
         -not $translationPreAgentSection.Contains('translation_batch_index') -or
-        -not $translationPreAgentSection.Contains('-AgentTranslationBatchIndex') -or
+        -not $translationPreAgentSection.Contains('AgentTranslationBatchIndex') -or
         $translationPreAgentSection.Contains('M365 Message Center Dashboard - Public Metadata')) {
         throw 'Translations workflow does not wait for the successful core weekly dashboard workflow.'
     }
