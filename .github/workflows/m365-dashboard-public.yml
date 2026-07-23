@@ -3,8 +3,8 @@ name: M365 Message Center Dashboard - Public Metadata
 on:
   workflow_dispatch:
   schedule:
-    # Monday 07:17 JST. GitHub schedules use UTC.
-    - cron: '17 22 * * 0'
+    # Monday and Thursday 07:17 JST. GitHub schedules use UTC.
+    - cron: '17 22 * * 0,3'
 
 concurrency:
   group: m365-message-center-pages

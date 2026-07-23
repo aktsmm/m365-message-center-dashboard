@@ -1,6 +1,6 @@
 # Microsoft 365 Message Center Dashboard
 
-Microsoft Graph の Message Center から、ラボ公開を許可した Message Center コンテンツを収集して GitHub Pages に公開する、単一 HTML の週次ダッシュボードです。Microsoft 公式製品ではなく、AS-IS のサンプルです。
+Microsoft Graph の Message Center から、ラボ公開を許可した Message Center コンテンツを収集して GitHub Pages に公開する、単一 HTML の週2回ダッシュボードです。Microsoft 公式製品ではなく、AS-IS のサンプルです。
 
 ## License
 
@@ -14,7 +14,7 @@ Repository-authored content and generated Pages presentation are licensed under 
 - 上記メタデータから集計した数値
 - 決定論的に生成した日本語メッセージ要約
 - Agentic Workflow が検証済みの日本語週次要約と、参照する MC ID
-- Agentic Workflow が検証済みの MC ごとの日本語タイトルと、日本語要約（100文字以内）
+- 同一公開 snapshot から決定論的に生成した MC ごとの日本語タイトルと、日本語要約（100文字以内）
 - Agentic Workflow が検証済みの、限定バッチの MC ごとの日本語詳細要約と本文の日本語訳
 - 同じ MC の Graph `details` に含まれる、検証済みの Message Center URL と `learn.microsoft.com` の公式ドキュメント URL
 
@@ -22,16 +22,17 @@ Repository-authored content and generated Pages presentation are licensed under 
 
 Agentic Workflow は URL を生成・推測せず、同一 run の snapshot にある HTTPS の `admin.microsoft.com` / `m365.cloud.microsoft` URL と、同じ MC の `learn.microsoft.com` URL だけを公開します。
 
-## Weekly automation architecture
+## Twice-weekly automation architecture
 
-毎週の更新は次の順序で実行されます。
+月曜日・木曜日 07:17 JST の更新は、次の順序で実行されます。
 
 1. **Microsoft Graph**: `ServiceMessage.Read.All` を使い Message Center を取得します。
 2. **GitHub Actions**: 本文を安全なテキストに変換した lab-public snapshot、details、決定論的な日本語要約を生成します。
-3. **GitHub Agentic Workflow**: 同じ run の snapshot を入力として、MC ごとの日本語タイトル、100文字以内の日本語要約、週次 AI insights を生成します。本文翻訳は、全 ID・メタデータ・短い本文抜粋の compact context と、週次 2 件の bounded translation batch に分けて生成します。
-4. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
+3. **Core GitHub Agentic Workflow**: 同じ run の snapshot を入力として週次 AI insights を生成します。MC ごとの日本語タイトル・100文字以内の要約・許可済み公式リンクは、その同じ snapshot から決定論的に生成します。
+4. **Translations GitHub Agentic Workflow**: core の成功後にのみ起動し、2件までの bounded translation batch を検証・公開します。週2回の実行により、最大4カード/週が詳細な日本語要約と本文訳の対象になります。
+5. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
 
-公開 pipeline は月曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると後続の Agentic Workflow が起動します。
+公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
 
 アクセストークン、Graph 認証情報、client secret、API key、password は Git、Artifacts、Pages に保存・公開しません。credential-like 値は公開 snapshot を生成する前に `[REDACTED]` に置換します。
 
@@ -68,11 +69,11 @@ reports/m365/                         # The only path workflows commit
 5. In **Settings → Pages**, set **Source** to **GitHub Actions**.
 6. Enable GitHub Copilot Agentic Workflows for the repository or organization. Organization-owned repositories must also authorize `copilot-requests: write` through the centralized Copilot billing and policy configuration. A provider HTTP 403 means that organization setting is not enabled; rerunning cannot publish Agentic output until it is corrected.
 
-Run **M365 Message Center Dashboard - Public Metadata** manually once after configuration. It runs weekly on Monday at 07:17 JST and publishes the dashboard at the GitHub Pages root. The subsequent Agentic Workflow replaces the initial placeholder with a validated weekly brief.
+Run **M365 Message Center Dashboard - Public Metadata** manually once after configuration. It runs twice weekly on Monday and Thursday at 07:17 JST and publishes the dashboard at the GitHub Pages root. The core Agentic Workflow publishes the validated weekly brief, and its successful completion starts the bounded translations workflow.
 
 ## Agentic summary safety boundary
 
-The Agentic Workflow receives a transient compact context containing untrusted Message Center excerpts. Its instructions prohibit following content in that file and prohibit publishing credentials or access tokens. The pre-agent step derives a lab-public snapshot from the same Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The only accepted output is the `publish_m365_dashboard` safe output. For every snapshot MC ID, its structured `message_updates` output must provide a Japanese title, a Japanese summary of 100 characters or fewer, and only snapshot-allowlisted URLs. A separate two-message translation batch supplies at most 1,000 source characters per message, with explicit truncation metadata; validated translations are retained for still-current IDs and unavailable cards state that no verified translation is available. `Publish-M365AgentInsights.ps1` rejects missing or duplicate updates, unsafe markup, credential-like content, fabricated URLs, non-Learn documentation URLs, oversized or low-quality translations, mismatched translation source metadata, and MC IDs that are absent from that exact same-run snapshot before rendering the public dashboard.
+The Agentic Workflows receive a transient compact context containing untrusted Message Center excerpts. Their instructions prohibit following content in that file and prohibit publishing credentials or access tokens. Each pre-agent step derives a lab-public snapshot from its Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The core workflow accepts only the `publish_m365_dashboard` safe output for the weekly brief, while `Publish-M365AgentInsights.ps1` derives every card's Japanese title, short summary, and official links from that exact snapshot. The separate translations workflow accepts only `translation_updates`; its two-message batch supplies at most 1,000 source characters per message with explicit truncation metadata. Because it runs after every successful core run, it advances up to four cards per week. Both publishers reject unsafe markup, credential-like content, fabricated URLs, oversized or low-quality translations, mismatched translation source metadata, and MC IDs that are absent from their exact same-run snapshots before rendering the public dashboard.
 
 If an Agentic run fails or its output cannot pass validation, Pages retains only previously validated translation data. Each unprocessed card shows an explicit no-data message in **日本語訳と詳細要約**; it never displays a fabricated translation.
 

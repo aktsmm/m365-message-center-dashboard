@@ -357,6 +357,10 @@ try {
         -not $publicWorkflow.Contains('New-M365DashboardAboutPage.ps1')) {
         throw 'The dedicated public dashboard pipeline does not enable lab-public Message Center content.'
     }
+    if (-not $publicWorkflow.Contains("cron: '17 22 * * 0,3'") -or
+        -not $publicWorkflow.Contains('Monday and Thursday 07:17 JST')) {
+        throw 'The public dashboard pipeline is not scheduled for Monday and Thursday at 07:17 JST.'
+    }
     if (-not $safeOutputSection.Contains('New-M365DashboardAboutPage.ps1')) {
         throw 'The Agentic pipeline does not publish the automation explanation page.'
     }
@@ -377,6 +381,14 @@ try {
     if (@($compactAgentContext.translationBatch).Count -ne [Math]::Min(2, @($messages.messages).Count) -or
         @($compactAgentContext.translationBatch.id | Sort-Object -Unique).Count -ne @($compactAgentContext.translationBatch).Count) {
         throw 'Translation batch does not contain the configured number of unique rotating Message Center records.'
+    }
+    $readme = Get-Content -LiteralPath (Join-Path $root 'README.md') -Raw -Encoding UTF8
+    $aboutGenerator = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365DashboardAboutPage.ps1') -Raw -Encoding UTF8
+    if ($readme -notmatch '月曜日・木曜日 07:17 JST' -or
+        $readme -notmatch '最大4カード/週' -or
+        $aboutGenerator -notmatch '月曜日・木曜日 07:17 JST' -or
+        $aboutGenerator -notmatch '最大4カード/週') {
+        throw 'Operator documentation does not describe the twice-weekly translation cadence.'
     }
 
     Write-Host 'M365 dashboard fixture validation passed.'
