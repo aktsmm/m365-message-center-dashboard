@@ -83,9 +83,26 @@ safe-outputs:
           with:
             fetch-depth: 0
 
-        - name: Validate insights and rebuild dashboard
+        - name: Sign in to Microsoft Entra ID with OIDC
+          uses: azure/login@a457da9ea143d694b1b9c7c869ebb04ebe844ef5 # v2.3.0
+          with:
+            client-id: ${{ secrets.AZURE_CLIENT_ID }}
+            tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+            allow-no-subscriptions: true
+
+        - name: Refresh public metadata, validate insights, and rebuild dashboard
           shell: pwsh
           run: |
+            $publicOutput = Join-Path $env:RUNNER_TEMP 'm365-public'
+            ./scripts/Export-M365MessageCenter.ps1 `
+              -OutputDirectory $publicOutput `
+              -LookbackDays 180 `
+              -RunId '${{ github.run_id }}'
+
+            New-Item -ItemType Directory -Path reports/m365/latest -Force | Out-Null
+            Copy-Item (Join-Path $publicOutput 'messages.json') reports/m365/latest/messages.json -Force
+            Copy-Item (Join-Path $publicOutput 'facts.json') reports/m365/latest/facts.json -Force
+
             ./scripts/Publish-M365AgentInsights.ps1 `
               -AgentOutputPath "$env:GH_AW_AGENT_OUTPUT" `
               -MessagesJson reports/m365/latest/messages.json `

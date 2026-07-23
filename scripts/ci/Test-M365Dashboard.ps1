@@ -70,6 +70,15 @@ try {
         throw 'Graph fallback leaked private body/details into public JSON.'
     }
 
+    $agentWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-weekly-insights.md') -Raw -Encoding UTF8
+    $safeOutputSection = ($agentWorkflow -split 'safe-outputs:', 2)[1]
+    if ($safeOutputSection -notmatch 'Refresh public metadata, validate insights, and rebuild dashboard') {
+        throw 'Agentic safe output does not refresh public metadata before validation.'
+    }
+    if ($safeOutputSection -notmatch 'Export-M365MessageCenter\.ps1') {
+        throw 'Agentic safe output does not export its validation metadata.'
+    }
+
     Write-Host 'M365 dashboard fixture validation passed.'
 } finally {
     Remove-Item -LiteralPath $temp -Recurse -Force -ErrorAction SilentlyContinue
