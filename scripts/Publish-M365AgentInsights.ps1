@@ -6,6 +6,8 @@
 param(
     [Parameter(Mandatory)][string]$AgentOutputPath,
     [Parameter(Mandatory)][string]$MessagesJson,
+    [string]$TranslationBatchJson,
+    [string]$PreviousInsightsPath,
     [Parameter(Mandatory)][string]$OutputPath
 )
 
@@ -51,7 +53,7 @@ function Get-RequiredUpdateText {
     param(
         [Parameter(Mandatory)][object]$Update,
         [Parameter(Mandatory)][string]$Name,
-        [ValidateRange(1, 1000)][int]$MaxLength
+        [ValidateRange(1, 5000)][int]$MaxLength
     )
 
     if (-not ($Update.PSObject.Properties.Name -contains $Name)) {
@@ -73,11 +75,14 @@ function Get-RequiredUpdateText {
 }
 
 function ConvertFrom-MessageUpdatesInput {
-    param([Parameter(Mandatory)][object]$InputValue)
+    param(
+        [Parameter(Mandatory)][object]$InputValue,
+        [Parameter(Mandatory)][string]$Name
+    )
 
     if ($InputValue -isnot [string]) { return @($InputValue) }
 
-    $serialized = Get-SafeText -Name 'message_updates' -MaxLength 200000
+    $serialized = Get-SafeText -Name $Name -MaxLength 200000
     if ($serialized.StartsWith('gzip-base64:', [StringComparison]::Ordinal)) {
         try {
             $compressedBytes = [Convert]::FromBase64String($serialized.Substring('gzip-base64:'.Length))
@@ -101,14 +106,14 @@ function ConvertFrom-MessageUpdatesInput {
                 $compressedStream.Dispose()
             }
         } catch {
-            throw "message_updates gzip-base64 payload could not be decoded: $($_.Exception.Message)"
+            throw "${Name} gzip-base64 payload could not be decoded: $($_.Exception.Message)"
         }
     }
 
     try {
         return @($serialized | ConvertFrom-Json)
     } catch {
-        throw "message_updates must be a valid JSON array: $($_.Exception.Message)"
+        throw "${Name} must be a valid JSON array: $($_.Exception.Message)"
     }
 }
 
@@ -160,7 +165,7 @@ if (-not ($item.PSObject.Properties.Name -contains 'message_updates')) {
     throw 'Missing insight field: message_updates'
 }
 $messageUpdatesInput = $item.message_updates
-$messageUpdates = @(ConvertFrom-MessageUpdatesInput -InputValue $messageUpdatesInput)
+$messageUpdates = @(ConvertFrom-MessageUpdatesInput -InputValue $messageUpdatesInput -Name 'message_updates')
 if ($messageUpdates.Count -ne $allowedIds.Count) {
     throw "Expected one message update for each MC ID ($($allowedIds.Count)), got $($messageUpdates.Count)."
 }
@@ -208,6 +213,61 @@ foreach ($id in $allowedIds) {
     if (-not $seenUpdateIds.ContainsKey($id)) { throw "Message update is missing for MC ID: $id" }
 }
 
+$validatedTranslations = @()
+if ($TranslationBatchJson) {
+    if (-not (Test-Path -LiteralPath $TranslationBatchJson)) { throw "Translation batch JSON not found: $TranslationBatchJson" }
+    if (-not ($item.PSObject.Properties.Name -contains 'translation_updates')) {
+        throw 'Missing insight field: translation_updates'
+    }
+    $translationBatch = Get-Content -LiteralPath $TranslationBatchJson -Raw -Encoding UTF8 | ConvertFrom-Json
+    $batchById = @{}
+    foreach ($batchMessage in @($translationBatch.messages)) {
+        $id = ([string]$batchMessage.id).Trim().ToUpperInvariant()
+        if (-not $allowedIdSet.ContainsKey($id)) { throw "Translation batch contains unknown MC ID: $id" }
+        if ($batchById.ContainsKey($id)) { throw "Translation batch contains duplicate MC ID: $id" }
+        $batchById[$id] = $batchMessage
+    }
+    $translationUpdates = @(ConvertFrom-MessageUpdatesInput -InputValue $item.translation_updates -Name 'translation_updates')
+    if ($translationUpdates.Count -ne $batchById.Count) {
+        throw "Expected one translation update for each batch MC ID ($($batchById.Count)), got $($translationUpdates.Count)."
+    }
+    $seenTranslationIds = @{}
+    foreach ($translation in $translationUpdates) {
+        if (-not ($translation.PSObject.Properties.Name -contains 'id')) { throw 'Translation update is missing field: id' }
+        $id = ([string]$translation.id).Trim().ToUpperInvariant()
+        if (-not $batchById.ContainsKey($id)) { throw "Translation update referenced an ID outside the current batch: $id" }
+        if ($seenTranslationIds.ContainsKey($id)) { throw "Translation update is duplicated for MC ID: $id" }
+        $seenTranslationIds[$id] = $true
+        $detailSummary = Get-RequiredUpdateText -Update $translation -Name 'japanese_detailed_summary' -MaxLength 1200
+        if ($detailSummary.Length -lt 80) { throw "Translation detailed summary is too short for MC ID: $id" }
+        $bodyTranslation = Get-RequiredUpdateText -Update $translation -Name 'japanese_body_translation' -MaxLength 5000
+        $batchMessage = $batchById[$id]
+        if ([int]$translation.source_character_count -ne [int]$batchMessage.sourceCharacterCount) {
+            throw "Translation source character count does not match the current batch for MC ID: $id"
+        }
+        if ([bool]$translation.source_truncated -ne [bool]$batchMessage.sourceTruncated) {
+            throw "Translation truncation flag does not match the current batch for MC ID: $id"
+        }
+        $validatedTranslations += [ordered]@{
+            id                     = $id
+            japaneseDetailedSummary = $detailSummary
+            japaneseBodyTranslation = $bodyTranslation
+            sourceCharacterCount    = [int]$batchMessage.sourceCharacterCount
+            sourceTruncated         = [bool]$batchMessage.sourceTruncated
+        }
+    }
+}
+
+$translationsById = @{}
+if ($PreviousInsightsPath -and (Test-Path -LiteralPath $PreviousInsightsPath)) {
+    $previousInsights = Get-Content -LiteralPath $PreviousInsightsPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    foreach ($translation in @($previousInsights.messageTranslations)) {
+        $id = ([string]$translation.id).Trim().ToUpperInvariant()
+        if ($allowedIdSet.ContainsKey($id)) { $translationsById[$id] = $translation }
+    }
+}
+foreach ($translation in $validatedTranslations) { $translationsById[$translation.id] = $translation }
+
 $insights = [ordered]@{
     generatedAt       = [DateTimeOffset]::UtcNow.ToString('o')
     source            = 'GitHub Agentic Workflows / Copilot'
@@ -219,6 +279,7 @@ $insights = [ordered]@{
     customerQuestions = Get-SafeText -Name 'customer_questions' -MaxLength 3000
     referencedIds     = $referencedIds
     messageUpdates    = $validatedUpdates
+    messageTranslations = @($translationsById.Values | Sort-Object id)
 }
 
 $parent = Split-Path -Parent $OutputPath

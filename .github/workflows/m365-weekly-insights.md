@@ -38,6 +38,8 @@ pre-agent-steps:
         -AgentContextPath ".m365-agent-context.json" `
         -AgentContextLimit 1000 `
         -AgentContextBodyMaxChars 1000 `
+        -AgentTranslationBatchSize 2 `
+        -AgentTranslationBodyMaxChars 1000 `
         -LookbackDays 180 `
         -RunId '${{ github.run_id }}'
 
@@ -91,6 +93,10 @@ safe-outputs:
           description: "gzip-base64 UTF-8 JSON array with exactly one localized update per supplied MC ID"
           required: true
           type: string
+        translation_updates:
+          description: "gzip-base64 UTF-8 JSON array for the bounded translationBatch only"
+          required: true
+          type: string
       steps:
         - name: Checkout repository
           uses: actions/checkout@v7
@@ -109,8 +115,10 @@ safe-outputs:
             $publicOutput = Join-Path $env:RUNNER_TEMP 'm365-agent-public'
             $messagesJson = Join-Path $publicOutput 'messages.json'
             $factsJson = Join-Path $publicOutput 'facts.json'
+            $translationBatchJson = Join-Path $publicOutput 'translation-batch.json'
             if (-not (Test-Path -LiteralPath $messagesJson)) { throw "Agent public metadata snapshot is missing: $messagesJson" }
             if (-not (Test-Path -LiteralPath $factsJson)) { throw "Agent public facts snapshot is missing: $factsJson" }
+            if (-not (Test-Path -LiteralPath $translationBatchJson)) { throw "Agent translation batch is missing: $translationBatchJson" }
 
             New-Item -ItemType Directory -Path reports/m365/latest -Force | Out-Null
             Copy-Item $messagesJson reports/m365/latest/messages.json -Force
@@ -119,6 +127,8 @@ safe-outputs:
             ./scripts/Publish-M365AgentInsights.ps1 `
               -AgentOutputPath "$env:GH_AW_AGENT_OUTPUT" `
               -MessagesJson $messagesJson `
+              -TranslationBatchJson $translationBatchJson `
+              -PreviousInsightsPath reports/m365/latest/insights.json `
               -OutputPath reports/m365/latest/insights.json
 
             ./scripts/New-M365MessageCenterDashboard.ps1 `
@@ -196,6 +206,14 @@ Call `publish-m365-dashboard` exactly once with:
   that exact MC ID's `allowedMessageUrls` contains the URL. Set `learn_urls` to an array
   containing only exact URLs in that same MC ID's `allowedLearnUrls`; otherwise use `[]`.
   Never construct, guess, or copy URLs between MC IDs.
+
+- `translation_updates` as a gzip-base64 encoded UTF-8 JSON array for every item in
+  `translationBatch` only. Each object must contain `id`, `japanese_detailed_summary`,
+  `japanese_body_translation`, `source_character_count`, and `source_truncated`.
+  Write a useful Japanese detailed summary (80-1200 characters) and translate only the supplied
+  `translationBatch.bodyText`; do not invent or complete text beyond that bounded source. Preserve
+  the exact `source_character_count` and `source_truncated` values from the batch item. Use the
+  same gzip-base64 encoding command as `message_updates`.
 
 `referenced_ids` must be one comma-separated string, for example `MC123456, MC234567`.
 Never send it as a JSON array.

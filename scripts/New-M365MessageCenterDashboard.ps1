@@ -287,6 +287,7 @@ $html = @'
     const DATA = __DATA__;
     const INSIGHTS = __INSIGHTS__;
     const MESSAGE_UPDATES = new Map((INSIGHTS?.messageUpdates || []).map(update => [update.id, update]));
+    const MESSAGE_TRANSLATIONS = new Map((INSIGHTS?.messageTranslations || []).map(translation => [translation.id, translation]));
     const state = { filter: "all", query: "" };
     const fmt = value => value ? new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "short", day: "numeric" }).format(new Date(value)) : "—";
     const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
@@ -354,6 +355,7 @@ $html = @'
       document.getElementById("result-count").textContent = `${visible.length} / ${DATA.messages.length} messages`;
       document.getElementById("messages").innerHTML = visible.length ? visible.map(message => {
         const update = MESSAGE_UPDATES.get(String(message.id).toUpperCase());
+        const translation = MESSAGE_TRANSLATIONS.get(String(message.id).toUpperCase());
         const high = ["high", "critical"].includes(String(message.severity).toLowerCase());
         const chips = [
           message.isMajorChange ? `<span class="chip major">Major change</span>` : "",
@@ -374,6 +376,15 @@ $html = @'
         const fullContent = Object.prototype.hasOwnProperty.call(message, "bodyText")
           ? `<details class="message-content"><summary>Message Center の全文と詳細</summary>${body}${details}</details>`
           : "";
+        const translationContent = translation
+          ? `<details class="message-content message-translation"><summary>日本語訳と詳細要約</summary>
+              <h4>詳細要約</h4><p class="message-body">${escapeHtml(translation.japaneseDetailedSummary).replace(/\r?\n/g, "<br>")}</p>
+              <h4>本文の日本語訳${translation.sourceTruncated ? "（先頭の抜粋）" : ""}</h4>
+              <p class="message-body">${escapeHtml(translation.japaneseBodyTranslation).replace(/\r?\n/g, "<br>")}</p>
+            </details>`
+          : `<details class="message-content message-translation"><summary>日本語訳と詳細要約</summary>
+              <p class="insight-pending">この更新の AI 翻訳は、週次の限定バッチで生成予定です。未検証の訳文は表示しません。</p>
+            </details>`;
         const messageUrl = safeOfficialUrl(update?.messageUrl);
         const learnLinks = (update?.learnUrls || [])
           .map(safeOfficialUrl)
@@ -393,6 +404,7 @@ $html = @'
           ${(update?.japaneseSummary || message.japaneseSummary) ? `<p class="message-summary">${escapeHtml(update?.japaneseSummary || message.japaneseSummary)}</p>` : ""}
           ${links ? `<div class="message-links">${links}</div>` : ""}
           ${fullContent}
+          ${translationContent}
         </article>`;
       }).join("") : `<div class="panel empty">条件に一致するメッセージはありません。</div>`;
     }

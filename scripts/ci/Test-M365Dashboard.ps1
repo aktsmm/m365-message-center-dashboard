@@ -55,6 +55,50 @@ try {
     if ((Get-Content -LiteralPath $gzipStructuredInsights -Raw -Encoding UTF8) -notmatch 'messageUpdates') {
         throw 'gzip-base64 message_updates did not publish structured per-message updates.'
     }
+    $translationBatchPath = Join-Path $temp 'translation-batch.json'
+    $translationOutputPath = Join-Path $temp 'agent-output-translations.json'
+    $translationInsightsPath = Join-Path $temp 'insights-translations.json'
+    $translationSource = @((Get-Content -LiteralPath (Join-Path $temp 'messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json).messages)[0]
+    $translationSourceLength = [Math]::Min(([string]$translationSource.bodyText).Length, 1000)
+    [ordered]@{
+        messages = @([ordered]@{
+            id = $translationSource.id
+            sourceCharacterCount = $translationSourceLength
+            sourceTruncated = ([string]$translationSource.bodyText).Length -gt $translationSourceLength
+        })
+    } | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $translationBatchPath -Encoding UTF8
+    $agentOutputWithTranslations = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $translationUpdates = @([ordered]@{
+        id = $translationSource.id
+        japanese_detailed_summary = '共同作業コントロールの変更内容、対象となる Teams と SharePoint の設定、展開前に確認すべき影響範囲を整理した詳細要約です。検証担当者、対象テナント、既存ポリシーとの整合性を確認してください。'
+        japanese_body_translation = '共同作業コントロールに関する更新です。対象設定を確認し、展開前に影響範囲を検証してください。'
+        source_character_count = $translationSourceLength
+        source_truncated = ([string]$translationSource.bodyText).Length -gt $translationSourceLength
+    })
+    $translationBytes = [System.Text.Encoding]::UTF8.GetBytes(($translationUpdates | ConvertTo-Json -Depth 8 -Compress))
+    $translationStream = [System.IO.MemoryStream]::new()
+    $translationGzip = [System.IO.Compression.GzipStream]::new($translationStream, [System.IO.Compression.CompressionLevel]::Optimal, $true)
+    $translationGzip.Write($translationBytes, 0, $translationBytes.Length)
+    $translationGzip.Dispose()
+    $agentOutputWithTranslations.items[0] | Add-Member -NotePropertyName translation_updates -NotePropertyValue ('gzip-base64:' + [Convert]::ToBase64String($translationStream.ToArray()))
+    $translationStream.Dispose()
+    $agentOutputWithTranslations | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $translationOutputPath -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+        -AgentOutputPath $translationOutputPath `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -TranslationBatchJson $translationBatchPath `
+        -OutputPath $translationInsightsPath
+    if ((Get-Content -LiteralPath $translationInsightsPath -Raw -Encoding UTF8) -notmatch 'messageTranslations|日本語訳') {
+        throw 'Validated translation batch did not publish Japanese detailed translation data.'
+    }
+    $translationDashboard = Join-Path $temp 'dashboard-translations.html'
+    & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -InsightsJson $translationInsightsPath `
+        -OutputPath $translationDashboard
+    if ((Get-Content -LiteralPath $translationDashboard -Raw -Encoding UTF8) -notmatch '日本語訳と詳細要約|共同作業コントロールの変更内容') {
+        throw 'Dashboard does not render validated Japanese translations and detailed summaries.'
+    }
     & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
         -MessagesJson (Join-Path $temp 'messages.json') `
         -InsightsJson $publishedInsights `
@@ -116,6 +160,11 @@ try {
             -not ($contextMessage.PSObject.Properties.Name -contains 'bodyExcerpt') -or
             ([string]$contextMessage.bodyExcerpt).Length -gt 1000) {
             throw 'Agent context exposes full content/details or exceeds the bounded body excerpt.'
+        }
+        if (@($compactAgentContext.translationBatch).Count -lt 1 -or
+            @($compactAgentContext.translationBatch).Count -gt 2 -or
+            @($compactAgentContext.translationBatch | Where-Object { $_.bodyText.Length -gt 1000 }).Count) {
+            throw 'Agent translation batch is not bounded to the configured size and body length.'
         }
     }
     if ((Get-Content -LiteralPath $agentContext -Raw -Encoding UTF8) -notmatch 'THIS_BODY_IS_LAB_PUBLIC') {
@@ -240,13 +289,17 @@ try {
         -not $preAgentSection.Contains('$env:RUNNER_TEMP/m365-agent-public') -or
         -not $preAgentSection.Contains('-IncludeContent') -or
         -not $preAgentSection.Contains('-AgentContextLimit 1000') -or
-        -not $preAgentSection.Contains('-AgentContextBodyMaxChars 1000')) {
+        -not $preAgentSection.Contains('-AgentContextBodyMaxChars 1000') -or
+        -not $preAgentSection.Contains('-AgentTranslationBatchSize 2') -or
+        -not $preAgentSection.Contains('-AgentTranslationBodyMaxChars 1000')) {
         throw 'Agentic pre-agent steps do not export and transfer the public metadata snapshot.'
     }
     if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
         -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
     -not $safeOutputSection.Contains('-MessagesJson $messagesJson') -or
     -not $safeOutputSection.Contains('message_updates') -or
+    -not $safeOutputSection.Contains('translation_updates') -or
+    -not $safeOutputSection.Contains('-TranslationBatchJson $translationBatchJson') -or
     -not $safeOutputSection.Contains('gzip-base64 encoded UTF-8 JSON array') -or
     -not $safeOutputSection.Contains('not a') -or
     -not $safeOutputSection.Contains('tool-level JSON array')) {
