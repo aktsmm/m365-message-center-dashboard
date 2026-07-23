@@ -336,6 +336,14 @@ try {
         (Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8) -notmatch '毎週の自動更新|GitHub Agentic Workflow') {
         throw 'Automation explanation page was not generated.'
     }
+    $aboutHtml = Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8
+    if ($aboutHtml -notmatch 'scoutTheme' -or
+        $aboutHtml -notmatch 'localStorage\.getItem\("scoutTheme"\)' -or
+        $aboutHtml -notmatch 'theme-toggle' -or
+        $aboutHtml -notmatch 'storedTheme.*"light"' -or
+        $aboutHtml -match 'prefers-color-scheme') {
+        throw 'About page does not share the light-first persistent accessible theme contract.'
+    }
     $renderer = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') -Raw -Encoding UTF8
     if (-not $renderer.Contains('Array.isArray(message.details)')) {
         throw 'Renderer does not defensively handle legacy single-object details.'

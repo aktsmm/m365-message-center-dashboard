@@ -117,7 +117,7 @@ $html = @'
       position: sticky; top: 12px; z-index: 10; display: flex; align-items: center;
       justify-content: space-between; gap: 16px; padding: 12px 16px;
       background: var(--cp-panel); border: 1px solid var(--cp-border); border-radius: 16px;
-      backdrop-filter: blur(20px); box-shadow: 0 1px 2px var(--cp-border);
+      backdrop-filter: blur(20px); box-shadow: var(--cp-shadow);
     }
     .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.02em; }
     .brand-mark {
@@ -153,7 +153,7 @@ $html = @'
     .insights {
       padding: clamp(24px, 5vw, 48px); margin-bottom: 18px; overflow: hidden;
       background: var(--cp-panel-strong); border: 1px solid var(--cp-border); border-radius: 16px;
-      box-shadow: 0 1px 2px var(--cp-border); backdrop-filter: blur(24px);
+      box-shadow: var(--cp-shadow); backdrop-filter: blur(24px);
     }
     .insight-headline { max-width: 900px; margin: 8px 0 14px; font-size: clamp(1.8rem, 4vw, 3.5rem); line-height: 1.08; letter-spacing: -0.055em; }
     .insight-summary { max-width: 900px; margin: 0; color: var(--cp-text-muted); font-size: 1.05rem; }
@@ -166,7 +166,7 @@ $html = @'
     .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 48px; }
     .metric, .panel, .message {
       background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px;
-      box-shadow: 0 1px 2px var(--cp-border);
+      box-shadow: var(--cp-shadow);
     }
     .metric { padding: 22px; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; }
     .metric-value { font-size: 2.7rem; font-weight: 750; letter-spacing: -0.055em; }
@@ -196,8 +196,8 @@ $html = @'
       border-color: var(--cp-border-strong);
     }
     .message-list { display: grid; gap: 10px; }
-    .message { padding: 20px; transition: transform 140ms ease, border-color 140ms ease; }
-    .message:hover { transform: translateY(-1px); border-color: var(--cp-border-strong); }
+    .message { padding: 20px; transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease; }
+    .message:hover { transform: translateY(-2px); border-color: var(--cp-border-strong); box-shadow: var(--cp-shadow); }
     .message-top { display: flex; justify-content: space-between; gap: 20px; }
     .message h3 { margin: 6px 0 10px; font-size: 1.12rem; letter-spacing: -0.02em; }
     .message-id { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.78rem; }
