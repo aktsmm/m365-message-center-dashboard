@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T10:50:56.8619044+00:00",
+  "generatedAt": "2026-07-23T10:58:08.5422846+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Microsoft Entra パスキー標準化・Copilot AI管理エージェントGA、複数の認証廃止予定に要対応",
   "executiveSummary": "今週(2026年7月第4週)は、Microsoft Entra の認証基盤刷新が最大のテーマです。2026年9月1日よりパスキーがデフォルト認証となり、SMS/音声認証はMicrosoft提供分が廃止されます(MC1426371)。条件付きアクセスのカスタムコントロールも廃止予定でExternal MFAへの移行が必要です(MC1422061)。また、SSPR が2026年9月7日より登録済み認証方法のみ許可するよう変更されます(MC1325414)。EntraカスタムブランディングのカスタムCSS位置プロパティは2026年10月から廃止開始(MC1435782)。Copilot側では、M365 Admin agentがGA(MC1436831)、Copilot ChatのWebコンテンツ設定が全体に拡張(MC1421919)、PowerPoint for the webにCopilotワンクリック機能が追加(MC1419795)。Office LTSC 2021は2026年10月13日にサポート終了(MC1278920)、Microsoft AutoUpdate (Mac) のCDNエンドポイント変更は2026年7月末が期限(MC1268926)と直近の対応も必要です。",
@@ -745,9 +745,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "【重要な変更】Microsoft Graph の会議作成API（Create onlineMeeting）において、パスコード要求のデフォルト動作が変更されます。2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されました。これにより、会議作成時にパスコード要否を明示的に指定しない場合、自動的にパスコードが必須となります。さらに2027年10月には、パスコード指定オプション自体が廃止され、全会議でパスコードが強制されます。Graph APIを使用して会議を作成するアプリケーションを持つ組織は、この変更を考慮してアプリケーションを見直し・更新する必要があります。特に、パスコードなしで会議を作成するシナリオが存在する場合は、明示的に isPasscodeRequired=false を設定するよう修正が必要です。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph APIを使用してオンライン会議を作成する際、管理者またはユーザーはパスコードを要求するかどうかを選択できました。値が指定されない場合、デフォルトの動作ではパスコードは不要でした。\nこのアップデート以降：セキュリティ強化のため、会議作成時にパスコードが必要かどうかを指定するオプションは引き続き利用できます。値が指定されない場合、デフォルトの動作では会議にパスコードが必要となります。\n2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting APIとパスコードを使用するアプリケーションを確認・更新し、新しいデフォルト動作に対応していることを確認してください。\n今後の展開\n2027年10月には、パスコードの必要性を指定するオプションを廃止します。この変更により、すべての会議でパスコードによるセキュリティが一貫して確保されます。この最終ステップにより、会議作成プロセスが簡素化され、追加のセキュリティ層が提供されます",
+      "id": "MC1278920",
+      "japaneseDetailedSummary": "Office LTSC 2021、Visio LTSC 2021、Microsoft Project LTSC 2021のサポートが2026年10月13日に終了します。終了後はセキュリティ更新・技術サポートが提供されなくなります。セキュリティ・コンプライアンスリスクを回避するため、早急に最新バージョンへのアップグレードが推奨されます。",
+      "japaneseBodyTranslation": "以前お知らせしたとおり、Office LTSC 2021のサポートは2026年10月13日に終了します。以降はセキュリティ修正・技術サポートなし。Visio LTSC 2021、Project LTSC 2021も同日終了。早急なアップグレードを推奨。\n[組織への影響:]\nサポート終了後はセキュリティ更新および修正の提供が停止し、技術支援も利用不可。継続使用はセキュリティ・コンプライアンスリスクおよびサービス信頼性への影響が生じる可能性があります",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -759,13 +759,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1282571",
-      "japaneseDetailedSummary": "ExcelのCopilotエントリーポイントが統合されます。複数の入口を1か所に集約し、右側チャットペインのExcel編集モードを主要インターフェースに。Windows・macOS・Web対応。Microsoft 365 Copilot（プレミアム）ライセンス必要。ワールドワイドは2026年4〜6月、GCC等は10月展開予定。",
-      "japaneseBodyTranslation": "[はじめに]\nExcelでのCopilotアクセス方法を更新。複数のエントリーポイントを1か所に集約し、右側チャットペインのExcel編集モードを主要インターフェースとして確立。発見しやすさの向上とMicrosoft 365他アプリとの統一を図ります。\n[実施時期:]\n• GA（ワールドワイド）：2026年4月下旬〜6月初旬。\n• GA（GCC、GCC High、DoD）：2026年10月初旬〜下旬。\n[組織への影響:]\n対象：CopilotオンのExcel（Windows、macOS、Web）ユーザー。\n要件：Microsoft 365 Copilot（プレミアム）ライセンス。\n内容",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1282568",
       "japaneseDetailedSummary": "Microsoft Entra パスキーのWindows対応が一般提供（GA）となります。WindowsデバイスからEntra保護リソースへのフィッシング耐性パスワードレスサインインが可能。Windows Helloコンテナのデバイスバインドパスキーを使用。2026年7月20日にタイムライン更新。ワールドワイドは2026年4月〜6月、GCC High/DoDは10月展開。",
       "japaneseBodyTranslation": "更新（2026年7月20日）：タイムラインを更新しました。\n[はじめに]\nMicrosoft Entra パスキーのWindows対応が一般提供（GA）となります。WindowsデバイスからEntra保護リソースへのパスワードレスサインインが可能。パブリックプレビューはMC1247893で案内済み。Windows Helloコンテナのデバイスバインドパスキーを使用し、顔・指紋・PINで認証。Entra未参加デバイスも対象。\n[実施時期:]\n• GA（ワールドワイド、GCC）：2026年4月下旬〜6月中旬。\n• GA（GCC High、DoD）：2026年10月初旬に開始し、2",
@@ -773,9 +766,44 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1278920",
-      "japaneseDetailedSummary": "Office LTSC 2021、Visio LTSC 2021、Microsoft Project LTSC 2021のサポートが2026年10月13日に終了します。終了後はセキュリティ更新・技術サポートが提供されなくなります。セキュリティ・コンプライアンスリスクを回避するため、早急に最新バージョンへのアップグレードが推奨されます。",
-      "japaneseBodyTranslation": "以前お知らせしたとおり、Office LTSC 2021のサポートは2026年10月13日に終了します。以降はセキュリティ修正・技術サポートなし。Visio LTSC 2021、Project LTSC 2021も同日終了。早急なアップグレードを推奨。\n[組織への影響:]\nサポート終了後はセキュリティ更新および修正の提供が停止し、技術支援も利用不可。継続使用はセキュリティ・コンプライアンスリスクおよびサービス信頼性への影響が生じる可能性があります",
+      "id": "MC1282571",
+      "japaneseDetailedSummary": "ExcelのCopilotエントリーポイントが統合されます。複数の入口を1か所に集約し、右側チャットペインのExcel編集モードを主要インターフェースに。Windows・macOS・Web対応。Microsoft 365 Copilot（プレミアム）ライセンス必要。ワールドワイドは2026年4〜6月、GCC等は10月展開予定。",
+      "japaneseBodyTranslation": "[はじめに]\nExcelでのCopilotアクセス方法を更新。複数のエントリーポイントを1か所に集約し、右側チャットペインのExcel編集モードを主要インターフェースとして確立。発見しやすさの向上とMicrosoft 365他アプリとの統一を図ります。\n[実施時期:]\n• GA（ワールドワイド）：2026年4月下旬〜6月初旬。\n• GA（GCC、GCC High、DoD）：2026年10月初旬〜下旬。\n[組織への影響:]\n対象：CopilotオンのExcel（Windows、macOS、Web）ユーザー。\n要件：Microsoft 365 Copilot（プレミアム）ライセンス。\n内容",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC985483",
+      "japaneseDetailedSummary": "【重要な変更】Microsoft Graph の会議作成API（Create onlineMeeting）において、パスコード要求のデフォルト動作が変更されます。2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されました。これにより、会議作成時にパスコード要否を明示的に指定しない場合、自動的にパスコードが必須となります。さらに2027年10月には、パスコード指定オプション自体が廃止され、全会議でパスコードが強制されます。Graph APIを使用して会議を作成するアプリケーションを持つ組織は、この変更を考慮してアプリケーションを見直し・更新する必要があります。特に、パスコードなしで会議を作成するシナリオが存在する場合は、明示的に isPasscodeRequired=false を設定するよう修正が必要です。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph APIを使用してオンライン会議を作成する際、管理者またはユーザーはパスコードを要求するかどうかを選択できました。値が指定されない場合、デフォルトの動作ではパスコードは不要でした。\nこのアップデート以降：セキュリティ強化のため、会議作成時にパスコードが必要かどうかを指定するオプションは引き続き利用できます。値が指定されない場合、デフォルトの動作では会議にパスコードが必要となります。\n2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting APIとパスコードを使用するアプリケーションを確認・更新し、新しいデフォルト動作に対応していることを確認してください。\n今後の展開\n2027年10月には、パスコードの必要性を指定するオプションを廃止します。この変更により、すべての会議でパスコードによるセキュリティが一貫して確保されます。この最終ステップにより、会議作成プロセスが簡素化され、追加のセキュリティ層が提供されます",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1290821",
+      "japaneseDetailedSummary": "Microsoft 365のeSignatureに「受信者グループ」機能が追加されます。1つの署名スロットに最大10名を割り当て可能で、最初に署名した人が要件を満たします。署名者不在による遅延を防ぎます。ロードマップID 560822。一般提供は2026年9月初旬開始、9月末完了予定（当初より延期）。WordでeSignatureリクエストを作成するユーザーが対象。",
+      "japaneseBodyTranslation": "2026年6月12日更新：タイムライン変更。\n[概要]\nMicrosoft 365のeSignatureに受信者グループを導入します。1つの受信者スロットに複数の担当者を割り当て可能で、最初に署名した人が要件を満たします。署名者不在による遅延を防ぎ、ワークフローの信頼性を向上します。既存テナントポリシーは変更されません。ロードマップID 560822。\n[展開時期]\n一般提供（全世界）：2026年9月初旬開始（旧：6月末）、9月末完了（旧：7月末）。\n[組織への影響]\n・Microsoft WordでeSignatureリクエストを作成するユーザー\n・Microsoft 365のeSignatureを利用するテナント\n・1スロットに最大10名割り当て可能",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1287372",
+      "japaneseDetailedSummary": "Microsoft Entra IDガバナンスに「アカウント探索」機能が追加されました。Entra ID外部のアプリアカウントを特定し、孤立アカウントの検出やEntraユーザーとの照合を行います。未管理アクセスの集中管理が実現します。ロードマップID 559476。一般提供（全世界・GCC）は2026年8月開始、8月末完了予定。対象はEntra IDガバナンスでアプリアクセスを管理する管理者です。",
+      "japaneseBodyTranslation": "[概要]\nMicrosoft Entra IDガバナンスに「アカウント探索」が追加されました。Entra ID外部のアプリケーションアカウントを特定する新機能です。ローカル・孤立アカウントを検出し、Entra IDユーザーとの照合を行います。アクセスの可視化、ガバナンスへのオンボーディング簡略化、未管理アクセスの集中管理が実現します。ロードマップID 559476。\n[展開時期]\n・パブリックプレビュー：2026年4月中旬開始、4月末完了。\n・一般提供（全世界・GCC）：2026年8月初旬開始、8月末完了予定。\n[組織への影響]\n・Entra IDガバナンスでアプリアクセスを管理する管理者\n・プロビジョニング設定済みテナント",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1297982",
+      "japaneseDetailedSummary": "Microsoft Purview秘密度ラベルの設定が更新され、Word・Excel・PowerPointにおけるコンテンツ分析を行うすべての接続エクスペリエンスをブロックできるようになります。対象プラットフォームも拡張されます。一般提供（全世界）は2026年6月中旬開始、7月末完了予定（当初より延期）。秘密度ラベルを使用している組織およびラベルが設定されたファイルを開くユーザーが対象です。",
+      "japaneseBodyTranslation": "2026年6月18日更新：タイムライン変更。\n[概要]\nMicrosoftは、接続エクスペリエンスがファイルコンテンツを分析できるかを制御する秘密度ラベル設定を更新します。Word・Excel・PowerPointにおけるコンテンツ分析を行うすべての接続エクスペリエンスへカバレッジが拡大され、対応プラットフォームも増えます。\n[展開時期]\n・パブリックプレビュー：2026年5月中旬開始、7月中旬完了（旧：6月中旬）。\n・一般提供（全世界）：2026年6月中旬開始（旧：6月初旬）、7月末完了（旧：6月末）。\n[組織への影響]\n・Word・Excel・PowerPointで秘密度ラベルを使用する組織\n・秘密度ラベルが設定されたファイルを開くユーザー",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1287370",
+      "japaneseDetailedSummary": "ExchangeオンラインとOutlookの共有予定表が、レガシーMAPIモデルからモダンRESTモデルへ自動アップグレードされます。同期の信頼性・パフォーマンスが向上します。ユーザー・管理者の操作は不要。GCC High/DoD環境は2026年8月開始、9月末完了予定（当初より延期）。Editor以上の権限を持つ共有予定表ユーザーが対象。",
+      "japaneseBodyTranslation": "2026年7月20日更新：タイムライン変更。\n[概要]\nOutlookおよびExchange Onlineの共有予定表を、レガシーMAPIからRESTモデルへ自動アップグレードします。代理アクセスや共有予定表の同期信頼性・パフォーマンスが向上します。ユーザー・管理者の操作は不要です。\n[展開時期]\n全世界：既に展開済み。上位リングへの拡大中。\nGCC High/DoD：2026年8月開始（旧：6月末）、9月末完了（旧：7月末）。\nテナントによりタイミングが異なる場合があります。\n[組織への影響]\n・Exchange OnlineのMicrosoft 365テナント\n・Editor以上の権限を持つ共有予定表ユーザー",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
