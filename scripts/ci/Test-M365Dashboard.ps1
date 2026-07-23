@@ -71,6 +71,19 @@ try {
         $englishFallbackUpdate.japaneseSummary -ne $snapshotFallbackMessage.japaneseSummary) {
         throw 'Non-Japanese Agentic card fields did not fall back to same-snapshot deterministic Japanese text.'
     }
+    $legacyInsightsPath = Join-Path $temp 'legacy-insights.json'
+    $legacyCompatibleInsights = Join-Path $temp 'insights-legacy-compatible.json'
+    [ordered]@{
+        messageUpdates = @()
+    } | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $legacyInsightsPath -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+        -AgentOutputPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -PreviousInsightsPath $legacyInsightsPath `
+        -OutputPath $legacyCompatibleInsights
+    if ((Get-Content -LiteralPath $legacyCompatibleInsights -Raw -Encoding UTF8) -notmatch '"messageTranslations":\s*\[\s*\]') {
+        throw 'Legacy insights without messageTranslations did not remain compatible with the core publisher.'
+    }
     $translationBatchPath = Join-Path $temp 'translation-batch.json'
     $translationOutputPath = Join-Path $temp 'agent-output-translations.json'
     $translationInsightsPath = Join-Path $temp 'insights-translations.json'
