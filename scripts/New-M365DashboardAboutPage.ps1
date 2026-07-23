@@ -39,17 +39,18 @@ $html = @'
     <h1>このダッシュボードの<br>更新のしくみ</h1>
     <p>これは明示的に承認されたテスト テナント専用の lab-public ダッシュボードです。Message Center の本文と selected details を公開しますが、credentials、tokens、credential-like values は公開前に除外または redaction されます。</p>
     <section class="panel">
-      <h2>毎週の自動更新</h2>
+      <h2>週2回の自動更新（月曜日・木曜日 07:17 JST）</h2>
       <ol class="flow">
         <li>GitHub Actions が Microsoft Graph の Message Center を取得します。</li>
         <li>公開用 snapshot を生成し、本文を安全なテキストとして、details を name/value として出力します。</li>
-        <li>GitHub Agentic Workflow が同じ run の snapshot を検証し、MC ごとの日本語タイトル・100文字以内の要約・週次インサイトを作成します。本文翻訳は週次の限定バッチで生成し、未検証の訳文は表示しません。</li>
-        <li>検証済みの snapshot、インサイト、公式リンクだけを GitHub Pages に公開します。</li>
+        <li>core GitHub Agentic Workflow が同じ run の snapshot を検証し、週次インサイトを作成します。MC ごとの日本語タイトル・100文字以内の要約・公式リンクは、その snapshot から決定論的に生成します。</li>
+        <li>core の成功後に translations GitHub Agentic Workflow が起動し、実行ごとに最大2件の詳細な日本語要約と本文訳を検証します。月曜日・木曜日の実行により、最大4カード/週が翻訳対象になります。未検証の訳文は表示しません。</li>
+        <li>検証済みの snapshot、インサイト、公式リンク、翻訳だけを GitHub Pages に公開します。</li>
       </ol>
     </section>
     <section class="panel">
       <h2>手動で更新するには</h2>
-      <p>GitHub Actions の <strong>M365 Message Center Dashboard - Public Metadata</strong> を main ブランチで手動実行します。成功すると後続の Agentic Workflow が同一 snapshot を検証し、Pages を更新します。</p>
+      <p>GitHub Actions の <strong>M365 Message Center Dashboard - Public Metadata</strong> を main ブランチで手動実行します。月曜日・木曜日 07:17 JST の定期実行と同じく、成功後に core Agentic Workflow、さらに成功後の translations Workflow が順に Pages を更新します。</p>
       <p>Agentic Workflow が provider HTTP 403 で失敗する場合は、組織の集中管理された Copilot billing/policy で <code>copilot-requests: write</code> を許可してください。設定前に再実行しても Agentic 出力は公開されません。</p>
     </section>
     <section class="panel">
