@@ -6,7 +6,8 @@
 param(
     [string]$Repository = 'aktsmm/m365-message-center-dashboard',
     [ValidateRange(1, 10)][int]$BatchSize = 4,
-    [ValidateRange(1, 5)][int]$BatchAttempts = 2
+    [ValidateRange(1, 5)][int]$BatchAttempts = 2,
+    [ValidateRange(0, 100)][int]$MaximumBatches = 0
 )
 
 $ErrorActionPreference = 'Stop'
@@ -57,19 +58,18 @@ function Wait-ForDispatchedRun {
     )
 
     for ($attempt = 0; $attempt -lt 30; $attempt++) {
-        $runs = (Invoke-Gh -Arguments @(
-            'run', 'list', '--repo', $Repository,
-            '--workflow', 'Microsoft 365 Message Center bounded translations',
-            '--event', 'workflow_dispatch', '--limit', '30',
-            '--json', 'databaseId,createdAt,actor'
-        ) -join [Environment]::NewLine | ConvertFrom-Json)
+        $runsJson = (Invoke-Gh -Arguments @(
+            'api', "repos/$Repository/actions/workflows/m365-weekly-translations.lock.yml/runs?event=workflow_dispatch&per_page=30",
+            '--jq', '.workflow_runs'
+        )) -join [Environment]::NewLine
+        $runs = $runsJson | ConvertFrom-Json
         $run = @(
             $runs |
                 Where-Object {
                     $_.actor.login -eq $ActorLogin -and
-                    [DateTimeOffset]::Parse([string]$_.createdAt) -ge $StartedAt.AddSeconds(-5)
+                    [DateTimeOffset]::Parse([string]$_.created_at) -ge $StartedAt.AddSeconds(-5)
                 } |
-                Sort-Object databaseId -Descending
+                Sort-Object id -Descending
         ) | Select-Object -First 1
         if ($run) { return $run }
         Start-Sleep -Seconds 4
@@ -87,18 +87,19 @@ function Invoke-VerifiedTranslationBatch {
         '--repo', $Repository, '--ref', 'main', '-f', "translation_ids=$($Ids -join ',')"
     ) | Out-Null
     $run = Wait-ForDispatchedRun -StartedAt $startedAt -ActorLogin $actorLogin
-    & gh run watch $run.databaseId --repo $Repository --exit-status
+    & gh run watch $run.id --repo $Repository --exit-status
     if ($LASTEXITCODE -ne 0) {
-        throw "Translation run $($run.databaseId) failed."
+        throw "Translation run $($run.id) failed."
     }
 
-    $runDetails = (Invoke-Gh -Arguments @(
-        'run', 'view', $run.databaseId, '--repo', $Repository, '--json', 'conclusion,jobs'
-    ) -join [Environment]::NewLine | ConvertFrom-Json)
+    $runDetailsJson = (Invoke-Gh -Arguments @(
+        'run', 'view', $run.id, '--repo', $Repository, '--json', 'conclusion,jobs'
+    )) -join [Environment]::NewLine
+    $runDetails = $runDetailsJson | ConvertFrom-Json
     $publisher = @($runDetails.jobs | Where-Object name -eq 'publish_m365_translations') | Select-Object -First 1
     $publisherConclusion = if ($publisher) { [string]$publisher.conclusion } else { 'missing' }
     if ($runDetails.conclusion -ne 'success' -or $publisherConclusion -ne 'success') {
-        throw "Translation run $($run.databaseId) did not reach a successful publisher job. Workflow conclusion: $($runDetails.conclusion); publisher conclusion: $publisherConclusion."
+        throw "Translation run $($run.id) did not reach a successful publisher job. Workflow conclusion: $($runDetails.conclusion); publisher conclusion: $publisherConclusion."
     }
 
     for ($attempt = 0; $attempt -lt 30; $attempt++) {
@@ -111,18 +112,19 @@ function Invoke-VerifiedTranslationBatch {
         )
         if (-not $unpersisted.Count) {
             return [pscustomobject]@{
-                RunId       = $run.databaseId
+                RunId       = $run.id
                 CurrentIds   = $state.CurrentIds
                 TranslatedIds = $state.TranslatedIds
             }
         }
         Start-Sleep -Seconds 5
     }
-    throw "Translation run $($run.databaseId) reported a successful publisher job but did not persist translations for: $($Ids -join ', ')."
+    throw "Translation run $($run.id) reported a successful publisher job but did not persist translations for: $($Ids -join ', ')."
 }
 
 $failedIds = @{}
 $failureReasons = @{}
+$completedBatches = 0
 while ($true) {
     $state = Get-CurrentTranslationState
     $pending = @($state.PendingIds | Where-Object { -not $failedIds.ContainsKey($_) })
@@ -142,7 +144,15 @@ while ($true) {
             Write-Warning "Batch attempt $attempt/$BatchAttempts failed for $($batch -join ', '): $batchReason"
         }
     }
-    if ($batchSucceeded) { continue }
+    if ($batchSucceeded) {
+        $completedBatches++
+        if ($MaximumBatches -and $completedBatches -ge $MaximumBatches) {
+            $limitedState = Get-CurrentTranslationState
+            Write-Host "Stopped after $completedBatches verified batch(es): $($limitedState.TranslatedIds.Count)/$($limitedState.CurrentIds.Count) current cards are translated."
+            return
+        }
+        continue
+    }
 
     foreach ($id in $batch) {
         $itemSucceeded = $false
