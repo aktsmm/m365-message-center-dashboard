@@ -14,9 +14,11 @@ if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclu
 permissions:
   contents: read
   id-token: write
-  copilot-requests: write
 
-engine: copilot
+engine:
+  id: copilot
+  env:
+    COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
 network: defaults
 max-ai-credits: 60
 concurrency: m365-message-center-pages
