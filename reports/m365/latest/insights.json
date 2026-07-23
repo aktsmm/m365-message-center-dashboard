@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T08:09:32.4464988+00:00",
+  "generatedAt": "2026-07-23T09:40:19.0509801+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Microsoft Entra パスキー標準化・Copilot AI管理エージェントGA、複数の認証廃止予定に要対応",
   "executiveSummary": "今週(2026年7月第4週)は、Microsoft Entra の認証基盤刷新が最大のテーマです。2026年9月1日よりパスキーがデフォルト認証となり、SMS/音声認証はMicrosoft提供分が廃止されます(MC1426371)。条件付きアクセスのカスタムコントロールも廃止予定でExternal MFAへの移行が必要です(MC1422061)。また、SSPR が2026年9月7日より登録済み認証方法のみ許可するよう変更されます(MC1325414)。EntraカスタムブランディングのカスタムCSS位置プロパティは2026年10月から廃止開始(MC1435782)。Copilot側では、M365 Admin agentがGA(MC1436831)、Copilot ChatのWebコンテンツ設定が全体に拡張(MC1421919)、PowerPoint for the webにCopilotワンクリック機能が追加(MC1419795)。Office LTSC 2021は2026年10月13日にサポート終了(MC1278920)、Microsoft AutoUpdate (Mac) のCDNエンドポイント変更は2026年7月末が期限(MC1268926)と直近の対応も必要です。",
@@ -619,9 +619,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "【重要な変更】Microsoft Graph の会議作成API（Create onlineMeeting）において、パスコード要求のデフォルト動作が変更されます。2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されました。これにより、会議作成時にパスコード要否を明示的に指定しない場合、自動的にパスコードが必須となります。さらに2027年10月には、パスコード指定オプション自体が廃止され、全会議でパスコードが強制されます。Graph APIを使用して会議を作成するアプリケーションを持つ組織は、この変更を考慮してアプリケーションを見直し・更新する必要があります。特に、パスコードなしで会議を作成するシナリオが存在する場合は、明示的に isPasscodeRequired=false を設定するよう修正が必要です。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph APIを使用してオンライン会議を作成する際、管理者またはユーザーはパスコードを要求するかどうかを選択できました。値が指定されない場合、デフォルトの動作ではパスコードは不要でした。\nこのアップデート以降：セキュリティ強化のため、会議作成時にパスコードが必要かどうかを指定するオプションは引き続き利用できます。値が指定されない場合、デフォルトの動作では会議にパスコードが必要となります。\n2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting APIとパスコードを使用するアプリケーションを確認・更新し、新しいデフォルト動作に対応していることを確認してください。\n今後の展開\n2027年10月には、パスコードの必要性を指定するオプションを廃止します。この変更により、すべての会議でパスコードによるセキュリティが一貫して確保されます。この最終ステップにより、会議作成プロセスが簡素化され、追加のセキュリティ層が提供されます",
+      "id": "MC1182696",
+      "japaneseDetailedSummary": "Microsoft Defender Application Guard for Officeは2024年4月に廃止済みで、Officeから完全に削除されます。Windows 11 バージョン 23H2 のサポート終了に合わせた変更です。削除は2フェーズで実施されます。フェーズ1はOfficeバージョン2602から始まり、Current Channelは2026年2月初旬、Monthly Enterprise Channelは2026年4月、Semi-Annual Enterprise Channelは2026年7月が対象です。フェーズ2はOfficeバージョン2612で完全削除となり、Current Channelは2026年12月初旬、Monthly Enterprise Channelは2027年2月、Semi-Annual Enterprise Channelは2027年7月です。従来Application Guardで開いていたファイルは「保護されたビュー」で開くようになり、引き続き脅威から保護されます。対象はApplication Guardを使用していたすべてのWin32ユーザーです。管理者はグループポリシーや構成の見直しが必要になる場合があります。",
+      "japaneseBodyTranslation": "Microsoft Defender Application Guard for Officeは2024年4月に廃止され、現在Officeから削除されています。この変更はWindows 11バージョン23H2のサポート終了に合わせたものであり、ユーザーのセキュリティエクスペリエンスの合理化を目的としています。以前Application Guardで開いていたドキュメントは、今後は保護されたビューで開かれ、引き続き脅威に対する強固な保護が維持されます。\n実施時期:\nフェーズ1：Officeバージョン2602から削除開始\n• Current Channel: 2026年2月初旬\n• Monthly Enterprise Channel: 2026年4月\n• Semi-Annual Enterprise Channel: 2026年7月\nフェーズ2：Officeバージョン2612で完全削除\n• Current Channel: 2026年12月初旬\n• Monthly Enterprise Channel: 2027年2月\n• Semi-Annual Enterprise Channel: 2027年7月\n組織への影響:\n対象者：以前Microsoft Defender Application Guard for Officeを使用していたすべてのWin32ユーザー。\n変更内容：\n• 以前Application Guardで開いていたファイルは、今後は保護されたビューで開かれます。\n• Application Gu",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -633,9 +633,37 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1182696",
-      "japaneseDetailedSummary": "Microsoft Defender Application Guard for Officeは2024年4月に廃止済みで、Officeから完全に削除されます。Windows 11 バージョン 23H2 のサポート終了に合わせた変更です。削除は2フェーズで実施されます。フェーズ1はOfficeバージョン2602から始まり、Current Channelは2026年2月初旬、Monthly Enterprise Channelは2026年4月、Semi-Annual Enterprise Channelは2026年7月が対象です。フェーズ2はOfficeバージョン2612で完全削除となり、Current Channelは2026年12月初旬、Monthly Enterprise Channelは2027年2月、Semi-Annual Enterprise Channelは2027年7月です。従来Application Guardで開いていたファイルは「保護されたビュー」で開くようになり、引き続き脅威から保護されます。対象はApplication Guardを使用していたすべてのWin32ユーザーです。管理者はグループポリシーや構成の見直しが必要になる場合があります。",
-      "japaneseBodyTranslation": "Microsoft Defender Application Guard for Officeは2024年4月に廃止され、現在Officeから削除されています。この変更はWindows 11バージョン23H2のサポート終了に合わせたものであり、ユーザーのセキュリティエクスペリエンスの合理化を目的としています。以前Application Guardで開いていたドキュメントは、今後は保護されたビューで開かれ、引き続き脅威に対する強固な保護が維持されます。\n実施時期:\nフェーズ1：Officeバージョン2602から削除開始\n• Current Channel: 2026年2月初旬\n• Monthly Enterprise Channel: 2026年4月\n• Semi-Annual Enterprise Channel: 2026年7月\nフェーズ2：Officeバージョン2612で完全削除\n• Current Channel: 2026年12月初旬\n• Monthly Enterprise Channel: 2027年2月\n• Semi-Annual Enterprise Channel: 2027年7月\n組織への影響:\n対象者：以前Microsoft Defender Application Guard for Officeを使用していたすべてのWin32ユーザー。\n変更内容：\n• 以前Application Guardで開いていたファイルは、今後は保護されたビューで開かれます。\n• Application Gu",
+      "id": "MC985483",
+      "japaneseDetailedSummary": "【重要な変更】Microsoft Graph の会議作成API（Create onlineMeeting）において、パスコード要求のデフォルト動作が変更されます。2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されました。これにより、会議作成時にパスコード要否を明示的に指定しない場合、自動的にパスコードが必須となります。さらに2027年10月には、パスコード指定オプション自体が廃止され、全会議でパスコードが強制されます。Graph APIを使用して会議を作成するアプリケーションを持つ組織は、この変更を考慮してアプリケーションを見直し・更新する必要があります。特に、パスコードなしで会議を作成するシナリオが存在する場合は、明示的に isPasscodeRequired=false を設定するよう修正が必要です。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph APIを使用してオンライン会議を作成する際、管理者またはユーザーはパスコードを要求するかどうかを選択できました。値が指定されない場合、デフォルトの動作ではパスコードは不要でした。\nこのアップデート以降：セキュリティ強化のため、会議作成時にパスコードが必要かどうかを指定するオプションは引き続き利用できます。値が指定されない場合、デフォルトの動作では会議にパスコードが必要となります。\n2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting APIとパスコードを使用するアプリケーションを確認・更新し、新しいデフォルト動作に対応していることを確認してください。\n今後の展開\n2027年10月には、パスコードの必要性を指定するオプションを廃止します。この変更により、すべての会議でパスコードによるセキュリティが一貫して確保されます。この最終ステップにより、会議作成プロセスが簡素化され、追加のセキュリティ層が提供されます",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1189665",
+      "japaneseDetailedSummary": "Microsoft 365管理センターの「組織メッセージ（Organizational Messages）」機能にメール配信チャネルが追加されます。これまでのWindowsタスクバー、Windows通知、Windows Spotlight、Teamsポップオーバーに加えて、メールでもユーザーへのメッセージ送信が可能になります。パブリックプレビューは2025年11月中旬から開始し2026年1月末に完了、一般提供は2026年5月中旬から開始し6月中旬に完了予定です。管理者はMicrosoft 365管理センターのOrganizational Messagesセクションからメール配信を設定できるようになります。",
+      "japaneseBodyTranslation": "更新日：2026年4月27日：タイムラインを更新しました。ご理解とご協力に感謝いたします。\n[はじめに]\n組織メッセージ（Organizational Messages）は近日中にメールを配信チャネルとして追加し、Windowsタスクバー、Windows通知、Windows Spotlight、Teamsポップオーバーなどの既存のサーフェスを超えて拡張されます。この拡張機能により、組織はなじみのある通信チャネルを通じてユーザーにリーチでき、エンゲージメントと導入を向上させることができます。\nこのメッセージはMicrosoft 365ロードマップID 503562に関連しています。\n[対応時期]\n• パブリックプレビュー（全世界）：2025年11月中旬に展開開始、2026年1月末までに完了予定。\n• 一般提供（全世界）：2026年5月中旬（以前は4月末）に展開開始、2026年6月中旬（以前は5月末）に完了予定。\n[組織への影響]\n影響を受ける対象：Microsoft 365の組織メッセージを管理している管理者。\n変更内容：\n• メールが組織メッセージの配信チャネルとして追加されます。\n• 管理者は（以下本文が切り捨てられています）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1187682",
+      "japaneseDetailedSummary": "Microsoft Edge for Businessにおいて、Microsoft 365 Copilot Chatによる要約とコンテキスト根拠付け機能がサポートされます。ユーザーはEdgeのサイドパネルから複数の開いているブラウザータブ、Microsoft 365ドキュメント（Word、Excel、PowerPointなど）、YouTubeビデオについてCopilotに質問できるようになります。複数タブとYouTube動画の機能は現在すでに利用可能で、Microsoft 365ドキュメントへの対応は2026年8月から展開開始予定です。対象はEntra IDでサインインし、Microsoft 365 Copilotにアクセスできるユーザーです。",
+      "japaneseBodyTranslation": "更新日：2026年6月16日：タイムラインを更新しました。ご理解とご協力に感謝いたします。\n[はじめに：]\nMicrosoft Edge for Businessは近日中にMicrosoft 365 Copilot Chatによる要約とコンテキスト根拠付けをサポートするようになります。この拡張機能により、ユーザーはEdgeのサイドパネルから複数の開いているブラウザータブ、Microsoft 365ドキュメント（Word、Excel、PowerPointなど）、YouTubeビデオについてCopilotに質問できるようになります。\nこのメッセージはMicrosoft 365ロードマップID 496364、499423、499424に関連しています。\n[対応時期：]\n• 一般提供（複数ブラウザータブおよびYouTube動画）：現在利用可能\n• 一般提供（Microsoft 365ドキュメント）：2026年8月に展開開始予定\n[組織への影響：]\n影響を受ける対象：Entra IDでMicrosoft Edge for Businessにサインインし、Microsoft 365 Copilotにアクセスできるユーザー。\n変更内容：\n• ユーザーは開いているブラウザータブ、Microsoft 365ドキュメント、YouTubeについてCopilotに質問できるようになります（以下本文が切り捨てられています）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1184647",
+      "japaneseDetailedSummary": "Viva ConnectionsおよびSharePointダッシュボードにおける「Assignments（課題）」と「Courses（コース）」のアダプティブカード拡張機能（ACE）およびWebパーツが廃止されます。対象は教育機関テナントで、既存コンポーネントは2026年6月30日にサポート終了となります。Viva Connectionsの体験を簡素化・モダン化する取り組みの一環として、プラットフォーム間の冗長性を削減することが目的です。影響を受ける組織は代替手段への移行計画を立てる必要があります。",
+      "japaneseBodyTranslation": "更新日：2026年1月5日：タイムラインを更新しました。ご理解とご協力に感謝いたします。\n[はじめに]\nViva Connectionsの体験を簡素化・モダン化するための継続的な取り組みの一環として、教育機関のお客様向けにViva ConnectionsおよびSharePointのAssignments（課題）とCourses（コース）のアダプティブカード拡張機能（ACE）を廃止します。ACEはSharePoint Framework（SPFx）を使用して構築されたモジュール型コンポーネントであり、開発者がViva Connectionsにリッチでインタラクティブなダッシュボードカードを作成できます。これらのカードはMicrosoft 365サービスまたはカスタムソースのデータとアクションを表示し、ユーザーがダッシュボードから直接コンテンツにアクセスできるようにします。同等のSharePointダッシュボードWebパーツも廃止されます。この変更はプラットフォーム間の冗長性を削減し、体験を合理化することを目的としています。\n[対応時期：]\n• 既存コンポーネントは2026年6月30日にサポート終了となります。\n[組織への影響：]\n• 影響を受ける対象：Viva ConnectionsおよびSharePointダッシュボードWebパーツのAssignmentsとCoursesを使用している教育機関テナント（以下本文が切り捨てられています）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1188230",
+      "japaneseDetailedSummary": "Microsoft Entra IDにおいて、パスキー（FIDO2）認証方式ポリシーの重複プロパティが廃止されます。具体的には、fido2AuthenticationMethodConfiguration APIスキーマから「isAttestationEnforced」と「keyRestrictions」プロパティが2027年10月から11月にかけて削除されます。新しいパスキープロファイルAPIでは、グループベースのきめ細かい設定をサポートします。廃止期間中は既存プロパティと新しい対応項目が同期されます。FIDO2認証設定を管理しているIT管理者やカスタム自動化・サードパーティ統合を使用している組織は対応が必要です。",
+      "japaneseBodyTranslation": "はじめに\n2027年10月から11月にかけて、既存のfido2AuthenticationMethodConfiguration APIスキーマから「isAttestationEnforced」および「keyRestrictions」プロパティを廃止します。この変更は、パスキープロファイルによるグループベースのきめ細かい設定のサポートを導入する最新のパスキーポリシーAPIスキーマの更新に合わせたものです。\n廃止期間中、isAttestationEnforcedおよびkeyRestrictionsは、デフォルトのパスキープロファイル内の対応する「attestationEnforcement」および「keyRestrictions」と同期されたままになります。\n対応時期\n廃止は2027年10月中旬に開始し、2027年11月上旬までに完了する予定です。\n組織への影響：\nこのメッセージは、組織がこの機能を使用している可能性があることを示すレポートに基づいて送信されています。\n影響を受ける対象：FIDO2認証設定を管理している管理者、およびこれらのプロパティを使用しているカスタム自動化またはサードパーティ統合。\n変更内容\n• isAttestationEnfo（以下本文が切り捨てられています）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
