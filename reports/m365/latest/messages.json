@@ -1,18 +1,18 @@
 {
   "meta": {
-    "runId": "29941980584",
-    "generatedAt": "2026-07-22T17:21:37.3524675+00:00",
+    "runId": "29972170207",
+    "generatedAt": "2026-07-23T01:46:43.5324908+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Metadata only. Message body, details, tenant identifiers, and credentials are excluded."
   },
   "summary": {
-    "total": 74,
+    "total": 75,
     "majorChanges": 20,
     "highSeverity": 0,
     "actionRequired": 7,
     "actionDueWithin30Days": 2,
-    "updatedLast7Days": 14
+    "updatedLast7Days": 15
   },
   "topServices": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "name": "Microsoft 365 suite",
-      "count": 29
+      "count": 30
     },
     {
       "name": "Microsoft Entra",
@@ -29,6 +29,25 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1436831",
+      "title": "Microsoft 365 Admin agent is now generally available for all admins",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-22T22:44:20.0000000+00:00",
+      "endDateTime": "2026-08-18T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-22T22:44:25.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ]
+    },
     {
       "id": "MC1435782",
       "title": "Microsoft Entra ID: Retirement of custom CSS positioning properties in custom branding",

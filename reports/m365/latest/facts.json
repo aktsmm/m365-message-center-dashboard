@@ -1,18 +1,18 @@
 {
   "meta": {
-    "runId": "29941980584",
-    "generatedAt": "2026-07-22T17:21:37.3524675+00:00",
+    "runId": "29972170207",
+    "generatedAt": "2026-07-23T01:46:43.5324908+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Metadata only. Message body, details, tenant identifiers, and credentials are excluded."
   },
   "summary": {
-    "total": 74,
+    "total": 75,
     "majorChanges": 20,
     "highSeverity": 0,
     "actionRequired": 7,
     "actionDueWithin30Days": 2,
-    "updatedLast7Days": 14
+    "updatedLast7Days": 15
   },
   "topServices": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "name": "Microsoft 365 suite",
-      "count": 29
+      "count": 30
     },
     {
       "name": "Microsoft Entra",
