@@ -88,8 +88,20 @@ try {
     if (@($publishedUpdates | Where-Object { $_.id -ne 'MC900001' -and $_.messageUrl }).Count) {
         throw 'A message update fabricated a direct Message Center URL.'
     }
+    $compactAgentContext = Get-Content -LiteralPath $agentContext -Raw -Encoding UTF8 | ConvertFrom-Json
+    if (@($compactAgentContext.messages).Count -ne $messages.messages.Count) {
+        throw 'Compact agent context does not include every current Message Center ID.'
+    }
+    foreach ($contextMessage in @($compactAgentContext.messages)) {
+        if ($contextMessage.PSObject.Properties.Name -contains 'bodyText' -or
+            $contextMessage.PSObject.Properties.Name -contains 'details' -or
+            -not ($contextMessage.PSObject.Properties.Name -contains 'bodyExcerpt') -or
+            ([string]$contextMessage.bodyExcerpt).Length -gt 1000) {
+            throw 'Agent context exposes full content/details or exceeds the bounded body excerpt.'
+        }
+    }
     if ((Get-Content -LiteralPath $agentContext -Raw -Encoding UTF8) -notmatch 'THIS_BODY_IS_LAB_PUBLIC') {
-        throw 'Transient agent context did not include the message body for summarization.'
+        throw 'Compact agent context did not include the bounded message excerpt for summarization.'
     }
     if ($html -notmatch '共同作業と管理者設定の変更') { throw 'Agentic summary is missing from dashboard HTML.' }
     if ($html -notmatch 'Microsoft 365 Change Radar') { throw 'Dashboard title is missing.' }
@@ -209,7 +221,8 @@ try {
         -not $preAgentSection.Contains('name: m365-agent-public-metadata') -or
         -not $preAgentSection.Contains('$env:RUNNER_TEMP/m365-agent-public') -or
         -not $preAgentSection.Contains('-IncludeContent') -or
-        -not $preAgentSection.Contains('-AgentContextLimit 1000')) {
+        -not $preAgentSection.Contains('-AgentContextLimit 1000') -or
+        -not $preAgentSection.Contains('-AgentContextBodyMaxChars 1000')) {
         throw 'Agentic pre-agent steps do not export and transfer the public metadata snapshot.'
     }
     if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
