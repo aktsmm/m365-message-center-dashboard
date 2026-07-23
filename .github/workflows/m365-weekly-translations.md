@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows:
-      - "M365 Message Center Dashboard - Public Metadata"
+      - "Microsoft 365 Message Center weekly dashboard"
     types:
       - completed
     branches:
@@ -172,4 +172,3 @@ Never send it as a JSON array.
 
 Every concrete claim must be grounded in the supplied context. The public result should be
 a concise Japanese analysis; the lab-public dashboard renders the source content separately.
-
