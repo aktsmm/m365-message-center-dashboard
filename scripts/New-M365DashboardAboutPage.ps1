@@ -50,6 +50,7 @@ $html = @'
     <section class="panel">
       <h2>手動で更新するには</h2>
       <p>GitHub Actions の <strong>M365 Message Center Dashboard - Public Metadata</strong> を main ブランチで手動実行します。成功すると後続の Agentic Workflow が同一 snapshot を検証し、Pages を更新します。</p>
+      <p>Agentic Workflow が provider HTTP 403 で失敗する場合は、組織の集中管理された Copilot billing/policy で <code>copilot-requests: write</code> を許可してください。設定前に再実行しても Agentic 出力は公開されません。</p>
     </section>
     <section class="panel">
       <h2>公開データとリンクの境界</h2>
