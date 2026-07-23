@@ -8,6 +8,7 @@ $root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $temp = Join-Path ([System.IO.Path]::GetTempPath()) "m365-dashboard-$([guid]::NewGuid().ToString('N'))"
 $agentContext = Join-Path $temp 'agent-context.json'
 $publishedInsights = Join-Path $temp 'insights.json'
+$aboutPage = Join-Path $temp 'about\index.html'
 
 try {
     & (Join-Path $root 'scripts\Export-M365MessageCenter.ps1') `
@@ -22,6 +23,8 @@ try {
         -AgentOutputPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') `
         -MessagesJson (Join-Path $temp 'messages.json') `
         -OutputPath $publishedInsights
+    & (Join-Path $root 'scripts\New-M365DashboardAboutPage.ps1') `
+        -OutputPath $aboutPage
     $stringStructuredOutput = Join-Path $temp 'agent-output-string-updates.json'
     $stringStructuredInsights = Join-Path $temp 'insights-string-updates.json'
     $agentOutputWithStringUpdates = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -44,6 +47,10 @@ try {
     $html = Get-Content -LiteralPath (Join-Path $temp 'index.html') -Raw -Encoding UTF8
 
     if ($messages.messages.Count -ne 3) { throw "Expected 3 messages, got $($messages.messages.Count)." }
+    $oneDetailMessage = @($messages.messages | Where-Object id -eq 'MC900002')[0]
+    if ($oneDetailMessage.details -isnot [System.Array] -or $oneDetailMessage.details.Count -ne 1) {
+        throw 'A single Message Center detail was not serialized as a JSON array.'
+    }
     if ($messagesRaw -notmatch 'THIS_BODY_IS_LAB_PUBLIC|"details"|MessageCenterUrl|japaneseSummary') {
         throw 'Lab-public body, details, or deterministic Japanese summary is missing from public JSON.'
     }
@@ -90,6 +97,15 @@ try {
     $repositoryLinks = [regex]::Matches($html, 'https://github\.com/aktsmm/m365-message-center-dashboard').Count
     if ($repositoryLinks -lt 2 -or $html -notmatch 'hero-repo-link|GitHub リポジトリを開く') {
         throw 'Dashboard is missing the accessible hero repository link or footer repository link.'
+    }
+    if ($html -notmatch 'href="about/"') { throw 'Dashboard footer is missing the visible automation explanation link.' }
+    if (-not (Test-Path -LiteralPath $aboutPage) -or
+        (Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8) -notmatch '毎週の自動更新|GitHub Agentic Workflow') {
+        throw 'Automation explanation page was not generated.'
+    }
+    $renderer = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') -Raw -Encoding UTF8
+    if (-not $renderer.Contains('Array.isArray(message.details)')) {
+        throw 'Renderer does not defensively handle legacy single-object details.'
     }
 
     $fallbackOutput = Join-Path $temp 'fallback'
@@ -204,8 +220,12 @@ try {
     }
     $publicWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-dashboard-public.yml') -Raw -Encoding UTF8
     if (-not $publicWorkflow.Contains('Export lab-public Message Center content') -or
-        -not $publicWorkflow.Contains('-IncludeContent')) {
+        -not $publicWorkflow.Contains('-IncludeContent') -or
+        -not $publicWorkflow.Contains('New-M365DashboardAboutPage.ps1')) {
         throw 'The dedicated public dashboard pipeline does not enable lab-public Message Center content.'
+    }
+    if (-not $safeOutputSection.Contains('New-M365DashboardAboutPage.ps1')) {
+        throw 'The Agentic pipeline does not publish the automation explanation page.'
     }
 
     Write-Host 'M365 dashboard fixture validation passed.'

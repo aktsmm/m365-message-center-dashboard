@@ -17,12 +17,26 @@ Microsoft Graph の Message Center から、ラボ公開を許可した Message 
 
 Agentic Workflow は URL を生成・推測せず、同一 run の snapshot にある HTTPS の `admin.microsoft.com` / `m365.cloud.microsoft` URL と、同じ MC の `learn.microsoft.com` URL だけを公開します。
 
+## Weekly automation architecture
+
+毎週の更新は次の順序で実行されます。
+
+1. **Microsoft Graph**: `ServiceMessage.Read.All` を使い Message Center を取得します。
+2. **GitHub Actions**: 本文を安全なテキストに変換した lab-public snapshot、details、決定論的な日本語要約を生成します。
+3. **GitHub Agentic Workflow**: 同じ run の snapshot を入力として、MC ごとの日本語タイトル、100文字以内の日本語要約、週次 AI insights を生成します。
+4. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
+
+公開 pipeline は月曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると後続の Agentic Workflow が起動します。
+
+アクセストークン、Graph 認証情報、client secret、API key、password は Git、Artifacts、Pages に保存・公開しません。credential-like 値は公開 snapshot を生成する前に `[REDACTED]` に置換します。
+
 ## Repository layout
 
 ```text
 scripts/
   Export-M365MessageCenter.ps1        # Graph lab-public export and transient AI context
   New-M365MessageCenterDashboard.ps1  # Standalone HTML renderer
+  New-M365DashboardAboutPage.ps1       # Static Pages automation explanation
   Publish-M365AgentInsights.ps1       # Validates Agentic Workflow safe output
   ci/Test-M365Dashboard.ps1           # Fixture validation
 tests/fixtures/                       # Synthetic Graph and Agentic Workflow data

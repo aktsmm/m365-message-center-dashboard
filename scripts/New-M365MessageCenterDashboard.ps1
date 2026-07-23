@@ -279,7 +279,7 @@ $html = @'
 
     <footer>
       <p>このラボでは、Message Center の本文と name/value 形式の詳細を公開しています。credential-like 値は出力前に赤字化されます。正式な判断は Microsoft 365 管理センターで確認してください。</p>
-      <p><a class="repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub: aktsmm/m365-message-center-dashboard</a></p>
+      <p><a class="repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub: aktsmm/m365-message-center-dashboard</a> · <a class="repo-link" href="about/">更新のしくみ</a></p>
     </footer>
   </main>
 
@@ -331,6 +331,7 @@ $html = @'
       : `<div class="empty">サービス情報はありません。</div>`;
 
     function matches(message) {
+      const details = Array.isArray(message.details) ? message.details : [];
       const haystack = [
         message.id,
         message.title,
@@ -339,7 +340,7 @@ $html = @'
         message.japaneseSummary,
         message.bodyText,
         ...(message.services || []),
-        ...(message.details || []).flatMap(detail => [detail.name, detail.value])
+        ...details.flatMap(detail => [detail.name, detail.value])
       ].join(" ").toLowerCase();
       if (state.query && !haystack.includes(state.query)) return false;
       if (state.filter === "major" && !message.isMajorChange) return false;
@@ -364,8 +365,9 @@ $html = @'
         const body = message.bodyText
           ? `<p class="message-body">${escapeHtml(message.bodyText).replace(/\r?\n/g, "<br>")}</p>`
           : `<p class="message-body">本文はありません。</p>`;
-        const details = (message.details || []).length
-          ? `<table class="message-details"><tbody>${message.details.map(detail =>
+        const detailRows = Array.isArray(message.details) ? message.details : [];
+        const details = detailRows.length
+          ? `<table class="message-details"><tbody>${detailRows.map(detail =>
               `<tr><th>${escapeHtml(detail.name)}</th><td>${escapeHtml(detail.value)}</td></tr>`
             ).join("")}</tbody></table>`
           : "";

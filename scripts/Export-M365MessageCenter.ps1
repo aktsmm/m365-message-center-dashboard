@@ -145,7 +145,7 @@ function Convert-ToPublicMessage {
         }
         $publicMessage.japaneseSummary = New-JapaneseSummary -Message $Message -Services $services
         $publicMessage.bodyText = Convert-ToReadableText $bodyContent
-        $publicMessage.details = Convert-ToPublicDetails -Message $Message
+        $publicMessage.details = @(Convert-ToPublicDetails -Message $Message)
     }
     return [pscustomobject]$publicMessage
 }
