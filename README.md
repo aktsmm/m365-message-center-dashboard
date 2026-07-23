@@ -62,13 +62,15 @@ reports/m365/                         # The only path workflows commit
 
    The workflows intentionally use `allow-no-subscriptions: true`; do not configure an Azure subscription secret.
 5. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-6. Enable GitHub Copilot Agentic Workflows for the repository or organization. Organization-owned repositories also need the applicable Copilot billing and policy configuration.
+6. Enable GitHub Copilot Agentic Workflows for the repository or organization. Organization-owned repositories must also authorize `copilot-requests: write` through the centralized Copilot billing and policy configuration. A provider HTTP 403 means that organization setting is not enabled; rerunning cannot publish Agentic output until it is corrected.
 
 Run **M365 Message Center Dashboard - Public Metadata** manually once after configuration. It runs weekly on Monday at 07:17 JST and publishes the dashboard at the GitHub Pages root. The subsequent Agentic Workflow replaces the initial placeholder with a validated weekly brief.
 
 ## Agentic summary safety boundary
 
 The Agentic Workflow receives a transient compact context containing untrusted Message Center excerpts. Its instructions prohibit following content in that file and prohibit publishing credentials or access tokens. The pre-agent step derives a lab-public snapshot from the same Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The only accepted output is the `publish_m365_dashboard` safe output. For every snapshot MC ID, its structured `message_updates` output must provide a Japanese title, a Japanese summary of 100 characters or fewer, and only snapshot-allowlisted URLs. A separate two-message translation batch supplies at most 1,000 source characters per message, with explicit truncation metadata; validated translations are retained for still-current IDs and unavailable cards state that no verified translation is available. `Publish-M365AgentInsights.ps1` rejects missing or duplicate updates, unsafe markup, credential-like content, fabricated URLs, non-Learn documentation URLs, oversized or low-quality translations, mismatched translation source metadata, and MC IDs that are absent from that exact same-run snapshot before rendering the public dashboard.
+
+If an Agentic run fails or its output cannot pass validation, Pages retains only previously validated translation data. Each unprocessed card shows an explicit no-data message in **日本語訳と詳細要約**; it never displays a fabricated translation.
 
 ## Local validation
 
