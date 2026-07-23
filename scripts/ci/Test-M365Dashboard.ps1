@@ -84,6 +84,22 @@ try {
     if ((Get-Content -LiteralPath $legacyCompatibleInsights -Raw -Encoding UTF8) -notmatch '"messageTranslations":\s*\[\s*\]') {
         throw 'Legacy insights without messageTranslations did not remain compatible with the core publisher.'
     }
+    $deterministicOutput = Join-Path $temp 'agent-output-deterministic-updates.json'
+    $deterministicInsights = Join-Path $temp 'insights-deterministic-updates.json'
+    $agentOutputWithoutUpdates = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $agentOutputWithoutUpdates.items[0].PSObject.Properties.Remove('message_updates')
+    $agentOutputWithoutUpdates | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $deterministicOutput -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+        -AgentOutputPath $deterministicOutput `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -UseDeterministicMessageUpdates `
+        -OutputPath $deterministicInsights
+    $deterministicUpdates = @((Get-Content -LiteralPath $deterministicInsights -Raw -Encoding UTF8 | ConvertFrom-Json).messageUpdates)
+    $deterministicMessageCount = @((Get-Content -LiteralPath (Join-Path $temp 'messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json).messages).Count
+    if ($deterministicUpdates.Count -ne $deterministicMessageCount -or
+        @($deterministicUpdates | Where-Object { $_.japaneseTitle -notmatch '[ぁ-んァ-ヶ一-龠々ー]' -or $_.japaneseSummary.Length -gt 100 }).Count) {
+        throw 'Core deterministic message updates do not cover every snapshot message with safe Japanese card text.'
+    }
     $translationBatchPath = Join-Path $temp 'translation-batch.json'
     $translationOutputPath = Join-Path $temp 'agent-output-translations.json'
     $translationInsightsPath = Join-Path $temp 'insights-translations.json'
@@ -324,17 +340,16 @@ try {
     if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
         -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
     -not $safeOutputSection.Contains('-MessagesJson $messagesJson') -or
-    -not $safeOutputSection.Contains('message_updates') -or
-    -not $safeOutputSection.Contains('gzip-base64 encoded UTF-8 JSON array') -or
-    -not $safeOutputSection.Contains('not a') -or
-    -not $safeOutputSection.Contains('tool-level JSON array')) {
+    -not $safeOutputSection.Contains('-UseDeterministicMessageUpdates')) {
         throw 'Agentic safe output does not validate against the transferred public metadata snapshot.'
     }
     if ($safeOutputSection -match 'Export-M365MessageCenter\.ps1|azure/login@') {
         throw 'Agentic safe output must not perform a second Graph pull before validation.'
     }
-    if ($safeOutputSection.Contains('translation_updates:') -or $safeOutputSection.Contains('-TranslationBatchJson')) {
-        throw 'Core weekly workflow must not publish translation-only safe output.'
+    if ($safeOutputSection.Contains('translation_updates:') -or
+        $safeOutputSection.Contains('-TranslationBatchJson') -or
+        $safeOutputSection.Contains('message_updates:')) {
+        throw 'Core weekly workflow must not publish Agentic card or translation-only safe output.'
     }
     $publicWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-dashboard-public.yml') -Raw -Encoding UTF8
     if (-not $publicWorkflow.Contains('Export lab-public Message Center content') -or
