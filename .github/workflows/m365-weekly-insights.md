@@ -152,5 +152,8 @@ Call `publish-m365-dashboard` exactly once with:
 - Newline-separated customer questions.
 - Every MC ID referenced by the summary in `referenced_ids`.
 
+`referenced_ids` must be one comma-separated string, for example `MC123456, MC234567`.
+Never send it as a JSON array.
+
 Every concrete claim must be grounded in the supplied context. The public result should be
 useful without reproducing Message Center body text.
