@@ -83,9 +83,15 @@ function ConvertFrom-MessageUpdatesInput {
     if ($InputValue -isnot [string]) { return @($InputValue) }
 
     $serialized = Get-SafeText -Name $Name -MaxLength 200000
-    if ($serialized.StartsWith('gzip-base64:', [StringComparison]::Ordinal)) {
+    if ($serialized.StartsWith('gzip-base64:', [StringComparison]::Ordinal) -or
+        ($Name -eq 'translation_updates' -and $serialized -match '^H4sI[A-Za-z0-9+/=]+$')) {
         try {
-            $compressedBytes = [Convert]::FromBase64String($serialized.Substring('gzip-base64:'.Length))
+            $base64 = if ($serialized.StartsWith('gzip-base64:', [StringComparison]::Ordinal)) {
+                $serialized.Substring('gzip-base64:'.Length)
+            } else {
+                $serialized
+            }
+            $compressedBytes = [Convert]::FromBase64String($base64)
             $compressedStream = [System.IO.MemoryStream]::new($compressedBytes)
             try {
                 $gzipStream = [System.IO.Compression.GzipStream]::new(
