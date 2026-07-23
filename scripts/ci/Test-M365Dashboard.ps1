@@ -338,6 +338,25 @@ try {
         throw 'Dashboard is missing the safe global Microsoft 365 Message Center entry point and access notice.'
     }
     if ($html -notmatch 'href="about/"') { throw 'Dashboard footer is missing the visible automation explanation link.' }
+    $demoUrls = @(
+        'https://aktsmm.github.io/azure-ops-pulse-demo/#/overview',
+        'https://aktsmm.github.io/m365-message-center-dashboard/',
+        'https://aktsmm.github.io/m365-copilot-update-digest/',
+        'https://aktsmm.github.io/daily-dev-byte/',
+        'https://aktsmm.github.io/vscode-copilot-digest/index.html'
+    )
+    foreach ($demoUrl in $demoUrls) {
+        if (-not $html.Contains($demoUrl)) {
+            throw "Dashboard is missing the demo navigation link: $demoUrl"
+        }
+    }
+    if ($html -notmatch 'aria-label="Demo navigation"' -or
+        $html -notmatch 'href="https://aktsmm\.github\.io/m365-message-center-dashboard/" aria-current="page"') {
+        throw 'Dashboard demo navigation is missing its accessible current-page state.'
+    }
+    if ($html -match '<a class="demo-link"[^>]*target=') {
+        throw 'Dashboard demo navigation must use same-tab links.'
+    }
     if (-not (Test-Path -LiteralPath $aboutPage) -or
         (Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8) -notmatch '毎週の自動更新|GitHub Agentic Workflow') {
         throw 'Automation explanation page was not generated.'
@@ -355,6 +374,18 @@ try {
         $aboutHtml -notmatch 'target="_blank" rel="noopener noreferrer"' -or
         $aboutHtml -notmatch 'サインインと対象テナントでの適切な権限が必要です') {
         throw 'About page is missing the safe global Microsoft 365 Message Center entry point and access notice.'
+    }
+    foreach ($demoUrl in $demoUrls) {
+        if (-not $aboutHtml.Contains($demoUrl)) {
+            throw "About page is missing the demo navigation link: $demoUrl"
+        }
+    }
+    if ($aboutHtml -notmatch 'aria-label="Demo navigation"' -or
+        $aboutHtml -notmatch 'href="https://aktsmm\.github\.io/m365-message-center-dashboard/" aria-current="page"') {
+        throw 'About page demo navigation is missing its accessible current-page state.'
+    }
+    if ($aboutHtml -match '<a class="demo-link"[^>]*target=') {
+        throw 'About page demo navigation must use same-tab links.'
     }
     $renderer = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') -Raw -Encoding UTF8
     if (-not $renderer.Contains('Array.isArray(message.details)')) {

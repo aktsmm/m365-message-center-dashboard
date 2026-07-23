@@ -115,7 +115,7 @@ $html = @'
     .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 64px; }
     .nav {
       position: sticky; top: 12px; z-index: 10; display: flex; align-items: center;
-      justify-content: space-between; gap: 16px; padding: 12px 16px;
+      flex-wrap: wrap; gap: 12px 16px; padding: 12px 16px;
       background: var(--cp-panel); border: 1px solid var(--cp-border); border-radius: 16px;
       backdrop-filter: blur(20px); box-shadow: var(--cp-shadow);
     }
@@ -125,7 +125,18 @@ $html = @'
       color: var(--cp-accent-fg);
       background: linear-gradient(135deg, var(--cp-link), var(--cp-accent), var(--cp-warning));
     }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .demo-links { display: flex; flex: 1 1 420px; flex-wrap: wrap; align-items: center; gap: 6px; }
+    .demo-link {
+      padding: 6px 9px; color: var(--cp-link); border: 1px solid transparent; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 700; text-decoration: none;
+    }
+    .demo-link:hover { color: var(--cp-accent); border-color: var(--cp-border-strong); background: var(--cp-surface); }
+    .demo-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
+    .demo-link[aria-current="page"] {
+      color: var(--cp-accent-fg); background: linear-gradient(110deg, var(--cp-link), var(--cp-accent));
+      border-color: var(--cp-border-strong);
+    }
+    .nav-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
     .theme-toggle {
       padding: 8px 12px; color: var(--cp-text); background: var(--cp-surface);
       border: 1px solid var(--cp-border-strong); border-radius: 999px; cursor: pointer; font-weight: 700;
@@ -228,6 +239,7 @@ $html = @'
       .insight-grid { grid-template-columns: 1fr; }
       .toolbar { grid-template-columns: 1fr; }
       .filters { justify-content: flex-start; }
+      .demo-links { order: 3; flex-basis: 100%; }
     }
     @media (max-width: 520px) {
       .shell { width: min(100% - 20px, 1180px); padding-top: 10px; }
@@ -245,8 +257,15 @@ $html = @'
 <body>
   <div class="aurora" aria-hidden="true"></div>
   <main class="shell">
-    <nav class="nav" aria-label="Dashboard navigation">
+    <nav class="nav" aria-label="Demo navigation">
       <div class="brand"><span class="brand-mark">M</span><span>Microsoft 365 Change Radar</span></div>
+      <div class="demo-links">
+        <a class="demo-link" href="https://aktsmm.github.io/azure-ops-pulse-demo/#/overview">Azure Ops Pulse</a>
+        <a class="demo-link" href="https://aktsmm.github.io/m365-message-center-dashboard/" aria-current="page">M365 Change Radar</a>
+        <a class="demo-link" href="https://aktsmm.github.io/m365-copilot-update-digest/">M365 Copilot Update Digest</a>
+        <a class="demo-link" href="https://aktsmm.github.io/daily-dev-byte/">Daily Dev Byte</a>
+        <a class="demo-link" href="https://aktsmm.github.io/vscode-copilot-digest/index.html">VS Code Copilot Digest</a>
+      </div>
       <div class="nav-actions">
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="表示テーマをダークに切り替えます" aria-pressed="false"></button>
         <div class="nav-meta"><div id="generated"></div><div class="source-status" id="source-status"></div></div>
