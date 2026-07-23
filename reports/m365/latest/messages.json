@@ -1,16 +1,16 @@
 {
   "meta": {
-    "runId": "29985333357",
-    "generatedAt": "2026-07-23T06:33:10.9273090+00:00",
+    "runId": "29987827611",
+    "generatedAt": "2026-07-23T07:19:20.1381100+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 75,
+    "total": 74,
     "majorChanges": 20,
     "highSeverity": 0,
-    "actionRequired": 7,
+    "actionRequired": 6,
     "actionDueWithin30Days": 2,
     "updatedLast7Days": 15
   },
@@ -25,7 +25,7 @@
     },
     {
       "name": "Microsoft Entra",
-      "count": 20
+      "count": 19
     }
   ],
   "messages": [
@@ -1719,34 +1719,6 @@
         {
           "name": "Summary",
           "value": "Microsoft 365 Copilot mobile app is updating to a new chat-first design with a modern interface and streamlined navigation, rolling out mid-May to late August 2026 on iOS and Android. The update is automatic, requires no admin action, and maintains existing workflows."
-        }
-      ]
-    },
-    {
-      "id": "MC1300584",
-      "title": "Microsoft Entra: App Instance Lock enabled by default for new applications",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-05-04T15:35:37.0000000+00:00",
-      "endDateTime": "2026-07-23T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-05-04T15:35:57.0000000+00:00",
-      "actionRequiredByDateTime": "2026-05-28T07:00:00.0000000+00:00",
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。対応期限は 2026年5月28日 です。",
-      "bodyText": "[Introduction]\nTo improve application security, Microsoft Entra ID will enable App Instance Lock by default for newly created applications. This change prevents sensitive application properties from being modified outside the application’s home tenant, reducing the risk of unauthorized changes that can lead to application compromise. Based on our data analysis, we do not expect this change to cause customer impact. App owners or administrators in the application home tenant can still disable App Instance Lock for specific applications if their scenario requires updates to protected properties in other tenants.\n[When this will happen]\nGeneral Availability (Worldwide): We will begin rolling out in early June 2026 and expect to complete by late June 2026.\n[How this affects your organization]\nWho is affected\n• Microsoft Entra administrators\n• Developers who manage Microsoft Entra applications\n• Organizations using automation or scripts to update application credentials or security settings after app creation\nWhat will happen?\n• App Instance Lock will be enabled by default for all newly created applications.\n• Sensitive service principal properties will be protected by default.\n• Attempts to modify these protected properties will be blocked unless App Instance Lock is explicitly disabled.\n• Blocked update attempts will return a 400 Bad Request error, and the update will not be applied.\n• Existing applications are not affected by this change.\nExample Microsoft Graph error returned when attempting to update passwordCredentials on a locked application:\n[What you can do to prepare]\n• Review automation, scripts, or provisioning workflows that modify service principal credentials or related settings.\n• Validate that existing workflows do not depend on App Instance Lock being disabled and update them to avoid modifying protected properties unless the lock is intentionally disabled.\n• Disable App Instance Lock for specific applications if post‑creation updates are required.\n• Test application provisioning and credential management flows prior to rollout in mid-May.\nLearn more: How to configure app instance property lock in your applications | Microsoft identity platform | Microsoft Entra | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. Admins can disable App Instance Lock per application when required.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra ID will enable App Instance Lock by default for new applications starting June 2026, protecting sensitive properties from unauthorized changes outside the home tenant. Existing apps are unaffected. Admins can disable the lock if needed. Review and update automation or scripts accordingly before rollout."
         }
       ]
     },
