@@ -8,6 +8,7 @@ param(
     [Parameter(Mandatory)][string]$MessagesJson,
     [string]$TranslationBatchJson,
     [string]$PreviousInsightsPath,
+    [switch]$UseDeterministicMessageUpdates,
     [Parameter(Mandatory)][string]$OutputPath
 )
 
@@ -189,59 +190,77 @@ foreach ($message in @($messages.messages)) {
     $learnUrlsById[$id] = @($learnUrls | Sort-Object -Unique)
 }
 
-if (-not ($item.PSObject.Properties.Name -contains 'message_updates')) {
-    throw 'Missing insight field: message_updates'
-}
-$messageUpdatesInput = $item.message_updates
-$messageUpdates = @(ConvertFrom-MessageUpdatesInput -InputValue $messageUpdatesInput -Name 'message_updates')
-if ($messageUpdates.Count -ne $allowedIds.Count) {
-    throw "Expected one message update for each MC ID ($($allowedIds.Count)), got $($messageUpdates.Count)."
-}
-$seenUpdateIds = @{}
 $validatedUpdates = @()
-foreach ($update in $messageUpdates) {
-    if (-not ($update.PSObject.Properties.Name -contains 'id')) { throw 'Message update is missing field: id' }
-    $id = ([string]$update.id).Trim().ToUpperInvariant()
-    if (-not $allowedIdSet.ContainsKey($id)) { throw "Message update referenced unknown MC ID: $id" }
-    if ($seenUpdateIds.ContainsKey($id)) { throw "Message update is duplicated for MC ID: $id" }
-    $seenUpdateIds[$id] = $true
-
-    $snapshotMessage = $messagesById[$id]
-    $japaneseTitle = Get-RequiredUpdateText -Update $update -Name 'japanese_title' -MaxLength 200 `
-        -JapaneseFallback ([string]$snapshotMessage.japaneseTitle)
-    $japaneseSummary = Get-RequiredUpdateText -Update $update -Name 'japanese_summary' -MaxLength 100 `
-        -JapaneseFallback ([string]$snapshotMessage.japaneseSummary)
-    $messageUrl = $null
-    if ($update.PSObject.Properties.Name -contains 'message_url' -and -not [string]::IsNullOrWhiteSpace([string]$update.message_url)) {
-        $messageUrl = ([string]$update.message_url).Trim()
-        if ($messageUrl -notin $messageUrlsById[$id]) {
-            throw "Message update URL is not an allowed snapshot URL for ${id}: $messageUrl"
+if ($UseDeterministicMessageUpdates) {
+    foreach ($id in $allowedIds) {
+        $snapshotMessage = $messagesById[$id]
+        $japaneseTitle = Get-RequiredUpdateText -Update ([pscustomobject]@{ japanese_title = $snapshotMessage.japaneseTitle }) `
+            -Name 'japanese_title' -MaxLength 200
+        $japaneseSummary = Get-RequiredUpdateText -Update ([pscustomobject]@{ japanese_summary = $snapshotMessage.japaneseSummary }) `
+            -Name 'japanese_summary' -MaxLength 100
+        $messageUrls = @($messageUrlsById[$id] | Sort-Object)
+        $validatedUpdates += [ordered]@{
+            id              = $id
+            japaneseTitle   = $japaneseTitle
+            japaneseSummary = $japaneseSummary
+            messageUrl      = if ($messageUrls.Count) { $messageUrls[0] } else { $null }
+            learnUrls       = @($learnUrlsById[$id] | Sort-Object)
         }
     }
-    $learnUrls = @()
-    if ($update.PSObject.Properties.Name -contains 'learn_urls' -and $null -ne $update.learn_urls) {
-        $learnUrls = @(
-            $update.learn_urls |
-                ForEach-Object { ([string]$_).Trim() } |
-                Where-Object { $_ } |
-                Sort-Object -Unique
-        )
-        foreach ($learnUrl in $learnUrls) {
-            if ($learnUrl -notin $learnUrlsById[$id]) {
-                throw "Learn URL is not an allowed snapshot URL for ${id}: $learnUrl"
+} else {
+    if (-not ($item.PSObject.Properties.Name -contains 'message_updates')) {
+        throw 'Missing insight field: message_updates'
+    }
+    $messageUpdatesInput = $item.message_updates
+    $messageUpdates = @(ConvertFrom-MessageUpdatesInput -InputValue $messageUpdatesInput -Name 'message_updates')
+    if ($messageUpdates.Count -ne $allowedIds.Count) {
+        throw "Expected one message update for each MC ID ($($allowedIds.Count)), got $($messageUpdates.Count)."
+    }
+    $seenUpdateIds = @{}
+    foreach ($update in $messageUpdates) {
+        if (-not ($update.PSObject.Properties.Name -contains 'id')) { throw 'Message update is missing field: id' }
+        $id = ([string]$update.id).Trim().ToUpperInvariant()
+        if (-not $allowedIdSet.ContainsKey($id)) { throw "Message update referenced unknown MC ID: $id" }
+        if ($seenUpdateIds.ContainsKey($id)) { throw "Message update is duplicated for MC ID: $id" }
+        $seenUpdateIds[$id] = $true
+
+        $snapshotMessage = $messagesById[$id]
+        $japaneseTitle = Get-RequiredUpdateText -Update $update -Name 'japanese_title' -MaxLength 200 `
+            -JapaneseFallback ([string]$snapshotMessage.japaneseTitle)
+        $japaneseSummary = Get-RequiredUpdateText -Update $update -Name 'japanese_summary' -MaxLength 100 `
+            -JapaneseFallback ([string]$snapshotMessage.japaneseSummary)
+        $messageUrl = $null
+        if ($update.PSObject.Properties.Name -contains 'message_url' -and -not [string]::IsNullOrWhiteSpace([string]$update.message_url)) {
+            $messageUrl = ([string]$update.message_url).Trim()
+            if ($messageUrl -notin $messageUrlsById[$id]) {
+                throw "Message update URL is not an allowed snapshot URL for ${id}: $messageUrl"
             }
         }
+        $learnUrls = @()
+        if ($update.PSObject.Properties.Name -contains 'learn_urls' -and $null -ne $update.learn_urls) {
+            $learnUrls = @(
+                $update.learn_urls |
+                    ForEach-Object { ([string]$_).Trim() } |
+                    Where-Object { $_ } |
+                    Sort-Object -Unique
+            )
+            foreach ($learnUrl in $learnUrls) {
+                if ($learnUrl -notin $learnUrlsById[$id]) {
+                    throw "Learn URL is not an allowed snapshot URL for ${id}: $learnUrl"
+                }
+            }
+        }
+        $validatedUpdates += [ordered]@{
+            id              = $id
+            japaneseTitle   = $japaneseTitle
+            japaneseSummary = $japaneseSummary
+            messageUrl      = $messageUrl
+            learnUrls       = $learnUrls
+        }
     }
-    $validatedUpdates += [ordered]@{
-        id              = $id
-        japaneseTitle   = $japaneseTitle
-        japaneseSummary = $japaneseSummary
-        messageUrl      = $messageUrl
-        learnUrls       = $learnUrls
+    foreach ($id in $allowedIds) {
+        if (-not $seenUpdateIds.ContainsKey($id)) { throw "Message update is missing for MC ID: $id" }
     }
-}
-foreach ($id in $allowedIds) {
-    if (-not $seenUpdateIds.ContainsKey($id)) { throw "Message update is missing for MC ID: $id" }
 }
 
 $validatedTranslations = @()
