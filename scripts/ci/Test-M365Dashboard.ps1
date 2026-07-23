@@ -51,8 +51,8 @@ try {
     if ($oneDetailMessage.details -isnot [System.Array] -or $oneDetailMessage.details.Count -ne 1) {
         throw 'A single Message Center detail was not serialized as a JSON array.'
     }
-    if ($messagesRaw -notmatch 'THIS_BODY_IS_LAB_PUBLIC|"details"|MessageCenterUrl|japaneseSummary') {
-        throw 'Lab-public body, details, or deterministic Japanese summary is missing from public JSON.'
+    if ($messagesRaw -notmatch 'THIS_BODY_IS_LAB_PUBLIC|"details"|MessageCenterUrl|japaneseTitle|japaneseSummary') {
+        throw 'Lab-public body, details, or deterministic Japanese title and summary are missing from public JSON.'
     }
     if ($messagesRaw -match 'abcdefghijklmnopqrstuvwxyz|lab-secret-value|LAB_SCRIPT_MUST_NOT_RENDER|<p>') {
         throw 'Credential-like values or unsafe source HTML leaked into public JSON.'
@@ -106,6 +106,9 @@ try {
     $renderer = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') -Raw -Encoding UTF8
     if (-not $renderer.Contains('Array.isArray(message.details)')) {
         throw 'Renderer does not defensively handle legacy single-object details.'
+    }
+    if (-not $renderer.Contains('update?.japaneseTitle || message.japaneseTitle')) {
+        throw 'Renderer does not use the deterministic Japanese title when Agentic updates are unavailable.'
     }
 
     $fallbackOutput = Join-Path $temp 'fallback'

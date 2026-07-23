@@ -387,7 +387,7 @@ $html = @'
         ].filter(Boolean).join("");
         return `<article class="message">
           <div class="message-top">
-            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(update?.japaneseTitle || "日本語タイトルを準備中")}</h3><div class="message-original">原題: ${escapeHtml(message.title)}</div><div class="chips">${chips}</div></div>
+            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(update?.japaneseTitle || message.japaneseTitle || "日本語タイトルを準備中")}</h3><div class="message-original">原題: ${escapeHtml(message.title)}</div><div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
           ${(update?.japaneseSummary || message.japaneseSummary) ? `<p class="message-summary">${escapeHtml(update?.japaneseSummary || message.japaneseSummary)}</p>` : ""}
