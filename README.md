@@ -34,7 +34,7 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 
 公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
 
-翻訳の catch-up は **M365 translation catch-up controller** を main ブランチで手動実行します。未翻訳の現行 MC ID を4件ずつ直列で処理し、バッチ失敗時は1件ずつ再試行して他の ID を続行します。各翻訳 run は同一 run の Graph snapshot を使うため、対象が消えた場合も未検証の訳文を公開しません。
+翻訳の catch-up は、write 権限を持つ GitHub CLI オペレーターが `./scripts/Invoke-M365TranslationCatchup.ps1` を実行します。未翻訳の現行 MC ID を4件ずつ直列で処理し、各 run の `publish_m365_translations` ジョブと main の永続データを確認してから次へ進みます。バッチ失敗時は1件ずつ再試行して他の ID を続行します。GitHub Actions の既定トークンで Agentic Workflow を dispatch すると actor 権限チェックで安全に skip されるため、controller workflow は使いません。各翻訳 run は同一 run の Graph snapshot を使うため、対象が消えた場合も未検証の訳文を公開しません。
 
 アクセストークン、Graph 認証情報、client secret、API key、password は Git、Artifacts、Pages に保存・公開しません。credential-like 値は公開 snapshot を生成する前に `[REDACTED]` に置換します。
 

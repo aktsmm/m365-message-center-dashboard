@@ -469,12 +469,12 @@ try {
         @($compactAgentContext.translationBatch.id | Sort-Object -Unique).Count -ne @($compactAgentContext.translationBatch).Count) {
         throw 'Translation batch does not contain the configured number of unique rotating Message Center records.'
     }
-    $catchupWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-translation-catchup.yml') -Raw -Encoding UTF8
-    if (-not $catchupWorkflow.Contains('m365-message-center-translation-catchup') -or
-        -not $catchupWorkflow.Contains('translation_ids') -or
-        -not $catchupWorkflow.Contains('gh run watch') -or
-        -not $catchupWorkflow.Contains('isolating IDs')) {
-        throw 'Translation catch-up controller does not serialize bounded dispatches with per-ID isolation.'
+    $catchupController = Get-Content -LiteralPath (Join-Path $root 'scripts\Invoke-M365TranslationCatchup.ps1') -Raw -Encoding UTF8
+    if (-not $catchupController.Contains('publish_m365_translations') -or
+        -not $catchupController.Contains('Translation run $($run.databaseId) reported a successful publisher job but did not persist') -or
+        -not $catchupController.Contains('Persisted isolated translation') -or
+        -not $catchupController.Contains('translation_ids')) {
+        throw 'Translation catch-up controller does not verify persisted publishes or isolate individual IDs.'
     }
     $readme = Get-Content -LiteralPath (Join-Path $root 'README.md') -Raw -Encoding UTF8
     $aboutGenerator = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365DashboardAboutPage.ps1') -Raw -Encoding UTF8
