@@ -43,7 +43,7 @@ $html = @'
       <ol class="flow">
         <li>GitHub Actions が Microsoft Graph の Message Center を取得します。</li>
         <li>公開用 snapshot を生成し、本文を安全なテキストとして、details を name/value として出力します。</li>
-        <li>GitHub Agentic Workflow が同じ run の snapshot を読み、MC ごとの日本語タイトル・100文字以内の要約・週次インサイトを作成します。</li>
+        <li>GitHub Agentic Workflow が同じ run の snapshot を検証し、MC ごとの日本語タイトル・100文字以内の要約・週次インサイトを作成します。本文翻訳は週次の限定バッチで生成し、未検証の訳文は表示しません。</li>
         <li>検証済みの snapshot、インサイト、公式リンクだけを GitHub Pages に公開します。</li>
       </ol>
     </section>

@@ -11,6 +11,7 @@ Microsoft Graph の Message Center から、ラボ公開を許可した Message 
 - 決定論的に生成した日本語メッセージ要約
 - Agentic Workflow が検証済みの日本語週次要約と、参照する MC ID
 - Agentic Workflow が検証済みの MC ごとの日本語タイトルと、日本語要約（100文字以内）
+- Agentic Workflow が検証済みの、限定バッチの MC ごとの日本語詳細要約と本文の日本語訳
 - 同じ MC の Graph `details` に含まれる、検証済みの Message Center URL と `learn.microsoft.com` の公式ドキュメント URL
 
 アクセストークン、Graph 認証情報、および credential-like 値は保存・公開しません。本文、タイトル、詳細の値は Export 時に redaction を通し、Bearer token、access token、client secret、API key、password の値を `[REDACTED]` に置換します。この構成を本番テナントへ転用しないでください。
@@ -23,7 +24,7 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 
 1. **Microsoft Graph**: `ServiceMessage.Read.All` を使い Message Center を取得します。
 2. **GitHub Actions**: 本文を安全なテキストに変換した lab-public snapshot、details、決定論的な日本語要約を生成します。
-3. **GitHub Agentic Workflow**: 同じ run の snapshot を入力として、MC ごとの日本語タイトル、100文字以内の日本語要約、週次 AI insights を生成します。
+3. **GitHub Agentic Workflow**: 同じ run の snapshot を入力として、MC ごとの日本語タイトル、100文字以内の日本語要約、週次 AI insights を生成します。本文翻訳は、全 ID・メタデータ・短い本文抜粋の compact context と、週次 2 件の bounded translation batch に分けて生成します。
 4. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
 
 公開 pipeline は月曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると後続の Agentic Workflow が起動します。
@@ -67,7 +68,7 @@ Run **M365 Message Center Dashboard - Public Metadata** manually once after conf
 
 ## Agentic summary safety boundary
 
-The Agentic Workflow receives a transient file containing untrusted Message Center body text. Its instructions prohibit following content in that file and prohibit publishing credentials or access tokens. The pre-agent step derives a lab-public snapshot from the same Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The only accepted output is the `publish_m365_dashboard` safe output. For every snapshot MC ID, its structured `message_updates` output must provide a Japanese title, a Japanese summary of 100 characters or fewer, and only snapshot-allowlisted URLs. `Publish-M365AgentInsights.ps1` rejects missing or duplicate updates, unsafe markup, credential-like content, fabricated URLs, non-Learn documentation URLs, overly long content, and MC IDs that are absent from that exact same-run snapshot before rendering the public dashboard.
+The Agentic Workflow receives a transient compact context containing untrusted Message Center excerpts. Its instructions prohibit following content in that file and prohibit publishing credentials or access tokens. The pre-agent step derives a lab-public snapshot from the same Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The only accepted output is the `publish_m365_dashboard` safe output. For every snapshot MC ID, its structured `message_updates` output must provide a Japanese title, a Japanese summary of 100 characters or fewer, and only snapshot-allowlisted URLs. A separate two-message translation batch supplies at most 1,000 source characters per message, with explicit truncation metadata; validated translations are retained for still-current IDs and unavailable cards state that no verified translation is available. `Publish-M365AgentInsights.ps1` rejects missing or duplicate updates, unsafe markup, credential-like content, fabricated URLs, non-Learn documentation URLs, oversized or low-quality translations, mismatched translation source metadata, and MC IDs that are absent from that exact same-run snapshot before rendering the public dashboard.
 
 ## Local validation
 
