@@ -70,10 +70,11 @@ reports/m365/                         # The only path workflows commit
    | --- | --- |
    | `AZURE_CLIENT_ID` | Client ID of the Entra application or managed identity |
    | `AZURE_TENANT_ID` | Directory (tenant) ID used only by the OIDC login |
+   | `COPILOT_GITHUB_TOKEN` | Fine-grained PAT used only by the GitHub Copilot Agentic Workflow engine |
 
    The workflows intentionally use `allow-no-subscriptions: true`; do not configure an Azure subscription secret.
 5. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-6. Enable GitHub Copilot Agentic Workflows for the repository or organization. Organization-owned repositories must also enable the **Allow use of Copilot CLI billed to the organization** policy; these workflows request `copilot-requests: write` and use the built-in GitHub Actions `GITHUB_TOKEN`, so a personal access token or `COPILOT_GITHUB_TOKEN` repository secret is not required. A provider HTTP 403 means that organization setting is not enabled; rerunning cannot publish Agentic output until it is corrected.
+6. Enable GitHub Copilot Agentic Workflows for the repository. This personal-account repository uses the fine-grained PAT supplied as `COPILOT_GITHUB_TOKEN` for the Agentic Workflow engine; do not substitute the built-in GitHub Actions `GITHUB_TOKEN` or organization-only `copilot-requests: write` billing flow. A provider HTTP 403 means that the token identity or Copilot access is not authorized; rerunning cannot publish Agentic output until it is corrected.
 
 Run **M365 Message Center Dashboard - Public Metadata** manually once after configuration. It runs twice weekly on Monday and Thursday at 07:17 JST and publishes the dashboard at the GitHub Pages root. The core Agentic Workflow publishes the validated weekly brief, and its successful completion starts the bounded translations workflow.
 

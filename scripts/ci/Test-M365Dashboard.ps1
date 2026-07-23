@@ -531,22 +531,22 @@ try {
     if ($readme -notmatch '月曜日・木曜日 07:17 JST' -or
         $readme -notmatch '最大8カード/週' -or
         $readme -notmatch '74/74' -or
-        $readme -notmatch 'GITHUB_TOKEN' -or
+        $readme -notmatch 'COPILOT_GITHUB_TOKEN' -or
         $readme -notmatch 'https://admin\.microsoft\.com/#/MessageCenter' -or
         $readme -notmatch 'サインインと対象テナントでの適切な権限が必要です' -or
         $readme -match 'controller-only' -or
         $aboutGenerator -notmatch '月曜日・木曜日 07:17 JST' -or
         $aboutGenerator -notmatch '最大8カード/週' -or
         $aboutGenerator -notmatch '74/74' -or
-        $aboutGenerator -notmatch 'GITHUB_TOKEN' -or
+        $aboutGenerator -notmatch 'COPILOT_GITHUB_TOKEN' -or
         $aboutGenerator -notmatch 'OS の色設定には追従しません') {
         throw 'Operator documentation does not describe the current automation, translation, authentication, and theme contracts.'
     }
-    if (-not $agentWorkflow.Contains('copilot-requests: write') -or
-        $agentWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
-        -not $translationWorkflow.Contains('copilot-requests: write') -or
-        $translationWorkflow.Contains('COPILOT_GITHUB_TOKEN')) {
-        throw 'Agentic Workflows must use organization-billed GITHUB_TOKEN authentication instead of a personal access token secret.'
+    if (-not $agentWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
+        $agentWorkflow.Contains('copilot-requests: write') -or
+        -not $translationWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
+        $translationWorkflow.Contains('copilot-requests: write')) {
+        throw 'Agentic Workflows must retain the fine-grained PAT engine authentication required by this personal-account repository.'
     }
 
     Write-Host 'M365 dashboard fixture validation passed.'
