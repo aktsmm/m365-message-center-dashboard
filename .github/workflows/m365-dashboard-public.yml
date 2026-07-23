@@ -32,11 +32,12 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           allow-no-subscriptions: true
 
-      - name: Export public Message Center metadata
+      - name: Export lab-public Message Center content
         shell: pwsh
         run: |
           ./scripts/Export-M365MessageCenter.ps1 `
             -OutputDirectory output/m365 `
+            -IncludeContent `
             -LookbackDays 180 `
             -RunId '${{ github.run_id }}'
           if (Test-Path reports/m365/latest/insights.json) {

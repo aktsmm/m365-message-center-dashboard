@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "type": "publish_m365_dashboard",
+      "headline": "リンク検証の fixture",
+      "executive_summary": "許可されない URL を拒否する synthetic fixture です。",
+      "this_week": "MC900001: 確認",
+      "this_month": "MC900001: 準備",
+      "watch": "MC900002: 監視",
+      "customer_questions": "確認事項はあるか",
+      "referenced_ids": "MC900001, MC900002",
+      "message_updates": [
+        {
+          "id": "MC900001",
+          "japanese_title": "共同作業コントロールの更新",
+          "japanese_summary": "許可されないリンクを検証するための更新です。",
+          "message_url": "https://example.com/MC900001",
+          "learn_urls": []
+        },
+        {
+          "id": "MC900002",
+          "japanese_title": "OneDrive の更新",
+          "japanese_summary": "検証用の更新情報です。",
+          "message_url": null,
+          "learn_urls": []
+        },
+        {
+          "id": "MC900003",
+          "japanese_title": "管理機能の変更",
+          "japanese_summary": "検証用の管理機能変更です。",
+          "message_url": null,
+          "learn_urls": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#admin/serviceAnnouncement/messages",
+  "value": [
+    {
+      "id": "MC1436831",
+      "title": "Current Message Center update sample",
+      "category": "PlanForChange",
+      "severity": "High",
+      "isMajorChange": true,
+      "startDateTime": "2026-07-23T00:00:00Z",
+      "endDateTime": "2026-09-30T00:00:00Z",
+      "lastModifiedDateTime": "2026-07-23T01:00:00Z",
+      "actionRequiredByDateTime": "2026-08-15T00:00:00Z",
+      "services": ["Microsoft Teams"],
+      "tags": ["Updated message"],
+      "body": { "contentType": "Html", "content": "<p>CURRENT_BODY_IS_LAB_PUBLIC</p>" },
+      "details": [
+        { "name": "MessageCenterUrl", "value": "https://admin.microsoft.com/AdminPortal/home#/MessageCenter/:/messages/MC1436831" },
+        { "name": "LearnDocumentation", "value": "https://learn.microsoft.com/microsoft-365/admin/manage/message-center" },
+        { "name": "ChangeOwner", "value": "Lab Operations" }
+      ]
+    }
+  ]
+}

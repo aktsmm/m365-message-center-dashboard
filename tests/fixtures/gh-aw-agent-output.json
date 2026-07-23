@@ -8,7 +8,30 @@
       "this_month": "MC900001: TeamsとSharePointのテスト計画を準備\n顧客向け説明文と展開手順を整理",
       "watch": "MC900002: OneDriveの更新情報を継続監視",
       "customer_questions": "対象サービスを現在利用しているか\n変更前検証を行う担当者と環境はあるか",
-      "referenced_ids": "MC900001, MC900002, MC900003"
+      "referenced_ids": "MC900001, MC900002, MC900003",
+      "message_updates": [
+        {
+          "id": "MC900001",
+          "japanese_title": "共同作業コントロールの更新",
+          "japanese_summary": "Teams と SharePoint の共同作業設定に関する主要な変更です。検証担当と影響範囲を確認してください。",
+          "message_url": "https://admin.microsoft.com/AdminPortal/home#/MessageCenter/:/messages/MC900001",
+          "learn_urls": ["https://learn.microsoft.com/microsoft-365/admin/manage/message-center"]
+        },
+        {
+          "id": "MC900002",
+          "japanese_title": "OneDrive エクスペリエンスの更新",
+          "japanese_summary": "OneDrive の利用者エクスペリエンスに関する更新です。展開情報を継続して確認してください。",
+          "message_url": null,
+          "learn_urls": []
+        },
+        {
+          "id": "MC900003",
+          "japanese_title": "セキュリティ管理機能の変更",
+          "japanese_summary": "Microsoft 365 管理機能に影響する重要な変更です。管理者向けの検証計画を準備してください。",
+          "message_url": null,
+          "learn_urls": []
+        }
+      ]
     }
   ]
 }

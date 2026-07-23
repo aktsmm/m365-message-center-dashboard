@@ -134,6 +134,12 @@ $html = @'
       background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .lede { max-width: 720px; margin: 0; color: var(--cp-text-muted); font-size: clamp(1.05rem, 2vw, 1.35rem); }
+    .hero-repo-link {
+      display: inline-flex; align-items: center; margin-top: 20px; padding: 10px 14px; border: 1px solid var(--cp-border-strong);
+      border-radius: 999px; color: var(--cp-link); background: var(--cp-surface); font-weight: 700; text-decoration: none;
+    }
+    .hero-repo-link:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
+    .hero-repo-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
     .insights {
       padding: clamp(24px, 5vw, 48px); margin-bottom: 18px; overflow: hidden;
       background: var(--cp-panel-strong); border: 1px solid var(--cp-border); border-radius: 16px;
@@ -186,6 +192,17 @@ $html = @'
     .message h3 { margin: 6px 0 10px; font-size: 1.12rem; letter-spacing: -0.02em; }
     .message-id { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.78rem; }
     .message-date { min-width: 105px; color: var(--cp-text-muted); font-size: 0.82rem; text-align: right; }
+    .message-original { margin-top: -4px; color: var(--cp-text-soft); font-size: 0.84rem; }
+    .message-summary { margin: 16px 0 0; color: var(--cp-text-muted); }
+    .message-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+    .message-link { color: var(--cp-link); font-size: 0.86rem; font-weight: 700; text-decoration: none; }
+    .message-link:hover { color: var(--cp-accent); text-decoration: underline; }
+    .message-content { margin-top: 16px; border-top: 1px solid var(--cp-border); padding-top: 12px; }
+    .message-content summary { cursor: pointer; font-weight: 700; }
+    .message-body { margin: 12px 0 0; color: var(--cp-text-muted); white-space: normal; }
+    .message-details { width: 100%; margin-top: 14px; border-collapse: collapse; font-size: 0.88rem; }
+    .message-details th, .message-details td { padding: 8px; border: 1px solid var(--cp-border); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    .message-details th { width: 30%; background: var(--cp-surface-soft); }
     .chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .chip { padding: 4px 9px; color: var(--cp-text-muted); background: var(--cp-surface-soft); border-radius: 999px; font-size: 0.75rem; }
     .chip.major { color: var(--cp-accent); background: var(--cp-accent-soft); font-weight: 700; }
@@ -225,7 +242,8 @@ $html = @'
     <header class="hero">
       <div class="eyebrow">Weekly intelligence</div>
       <h1>変化を、<br>先回りする。</h1>
-      <p class="lede">Microsoft 365 Message Center の本文をAgentic Workflowが読み解き、公開可能な要約とメタデータだけを届ける週次レーダー。</p>
+      <p class="lede">ラボ環境の Microsoft 365 Message Center 全文、詳細、決定論的な日本語要約と Agentic Workflow の週次インサイトを届けるレーダー。</p>
+      <a class="hero-repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub リポジトリを開く</a>
     </header>
 
     <section class="insights" aria-label="Agentic weekly insights">
@@ -260,7 +278,7 @@ $html = @'
     </section>
 
     <footer>
-      <p>Message Center の本文・詳細・テナント識別子は公開していません。表示内容は自動収集されたメタデータであり、正式な判断は Microsoft 365 管理センターで確認してください。</p>
+      <p>このラボでは、Message Center の本文と name/value 形式の詳細を公開しています。credential-like 値は出力前に赤字化されます。正式な判断は Microsoft 365 管理センターで確認してください。</p>
       <p><a class="repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub: aktsmm/m365-message-center-dashboard</a></p>
     </footer>
   </main>
@@ -268,9 +286,20 @@ $html = @'
   <script>
     const DATA = __DATA__;
     const INSIGHTS = __INSIGHTS__;
+    const MESSAGE_UPDATES = new Map((INSIGHTS?.messageUpdates || []).map(update => [update.id, update]));
     const state = { filter: "all", query: "" };
     const fmt = value => value ? new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "short", day: "numeric" }).format(new Date(value)) : "—";
     const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+    const safeOfficialUrl = value => {
+      try {
+        const url = new URL(value);
+        return url.protocol === "https:" && ["admin.microsoft.com", "m365.cloud.microsoft", "learn.microsoft.com"].includes(url.hostname)
+          ? url.href
+          : null;
+      } catch {
+        return null;
+      }
+    };
 
     document.getElementById("generated").textContent = `Updated ${fmt(DATA.meta.generatedAt)}`;
     document.getElementById("source-status").textContent =
@@ -302,7 +331,16 @@ $html = @'
       : `<div class="empty">サービス情報はありません。</div>`;
 
     function matches(message) {
-      const haystack = [message.id, message.title, message.category, message.severity, ...(message.services || [])].join(" ").toLowerCase();
+      const haystack = [
+        message.id,
+        message.title,
+        message.category,
+        message.severity,
+        message.japaneseSummary,
+        message.bodyText,
+        ...(message.services || []),
+        ...(message.details || []).flatMap(detail => [detail.name, detail.value])
+      ].join(" ").toLowerCase();
       if (state.query && !haystack.includes(state.query)) return false;
       if (state.filter === "major" && !message.isMajorChange) return false;
       if (state.filter === "due" && !message.actionRequiredByDateTime) return false;
@@ -314,6 +352,7 @@ $html = @'
       const visible = DATA.messages.filter(matches);
       document.getElementById("result-count").textContent = `${visible.length} / ${DATA.messages.length} messages`;
       document.getElementById("messages").innerHTML = visible.length ? visible.map(message => {
+        const update = MESSAGE_UPDATES.get(String(message.id).toUpperCase());
         const high = ["high", "critical"].includes(String(message.severity).toLowerCase());
         const chips = [
           message.isMajorChange ? `<span class="chip major">Major change</span>` : "",
@@ -322,11 +361,36 @@ $html = @'
           `<span class="chip">${escapeHtml(message.category || "Uncategorized")}</span>`,
           ...(message.services || []).map(service => `<span class="chip">${escapeHtml(service)}</span>`)
         ].filter(Boolean).join("");
+        const body = message.bodyText
+          ? `<p class="message-body">${escapeHtml(message.bodyText).replace(/\r?\n/g, "<br>")}</p>`
+          : `<p class="message-body">本文はありません。</p>`;
+        const details = (message.details || []).length
+          ? `<table class="message-details"><tbody>${message.details.map(detail =>
+              `<tr><th>${escapeHtml(detail.name)}</th><td>${escapeHtml(detail.value)}</td></tr>`
+            ).join("")}</tbody></table>`
+          : "";
+        const fullContent = Object.prototype.hasOwnProperty.call(message, "bodyText")
+          ? `<details class="message-content"><summary>Message Center の全文と詳細</summary>${body}${details}</details>`
+          : "";
+        const messageUrl = safeOfficialUrl(update?.messageUrl);
+        const learnLinks = (update?.learnUrls || [])
+          .map(safeOfficialUrl)
+          .filter(Boolean)
+          .map((url, index) => `<a class="message-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Microsoft Learn ${index + 1}</a>`);
+        const links = [
+          messageUrl
+            ? `<a class="message-link" href="${escapeHtml(messageUrl)}" target="_blank" rel="noopener noreferrer">Message Center を開く</a>`
+            : "",
+          ...learnLinks
+        ].filter(Boolean).join("");
         return `<article class="message">
           <div class="message-top">
-            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(message.title)}</h3><div class="chips">${chips}</div></div>
+            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(update?.japaneseTitle || "日本語タイトルを準備中")}</h3><div class="message-original">原題: ${escapeHtml(message.title)}</div><div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
+          ${(update?.japaneseSummary || message.japaneseSummary) ? `<p class="message-summary">${escapeHtml(update?.japaneseSummary || message.japaneseSummary)}</p>` : ""}
+          ${links ? `<div class="message-links">${links}</div>` : ""}
+          ${fullContent}
         </article>`;
       }).join("") : `<div class="panel empty">条件に一致するメッセージはありません。</div>`;
     }
