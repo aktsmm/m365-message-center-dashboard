@@ -87,7 +87,10 @@ try {
     if ($html -notmatch '共同作業と管理者設定の変更') { throw 'Agentic summary is missing from dashboard HTML.' }
     if ($html -notmatch 'Microsoft 365 Change Radar') { throw 'Dashboard title is missing.' }
     if ($html -notmatch 'scoutTheme' -or $html -notmatch '--cp-accent') { throw 'Mandatory artifact theme is missing.' }
-    if ($html -notmatch 'https://github\.com/aktsmm/m365-message-center-dashboard') { throw 'Repository link is missing from dashboard HTML.' }
+    $repositoryLinks = [regex]::Matches($html, 'https://github\.com/aktsmm/m365-message-center-dashboard').Count
+    if ($repositoryLinks -lt 2 -or $html -notmatch 'hero-repo-link|GitHub リポジトリを開く') {
+        throw 'Dashboard is missing the accessible hero repository link or footer repository link.'
+    }
 
     $fallbackOutput = Join-Path $temp 'fallback'
     $fallbackCalls = [System.Collections.Generic.List[string]]::new()

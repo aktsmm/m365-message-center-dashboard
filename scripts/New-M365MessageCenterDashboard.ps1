@@ -134,6 +134,12 @@ $html = @'
       background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .lede { max-width: 720px; margin: 0; color: var(--cp-text-muted); font-size: clamp(1.05rem, 2vw, 1.35rem); }
+    .hero-repo-link {
+      display: inline-flex; align-items: center; margin-top: 20px; padding: 10px 14px; border: 1px solid var(--cp-border-strong);
+      border-radius: 999px; color: var(--cp-link); background: var(--cp-surface); font-weight: 700; text-decoration: none;
+    }
+    .hero-repo-link:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
+    .hero-repo-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
     .insights {
       padding: clamp(24px, 5vw, 48px); margin-bottom: 18px; overflow: hidden;
       background: var(--cp-panel-strong); border: 1px solid var(--cp-border); border-radius: 16px;
@@ -237,6 +243,7 @@ $html = @'
       <div class="eyebrow">Weekly intelligence</div>
       <h1>変化を、<br>先回りする。</h1>
       <p class="lede">ラボ環境の Microsoft 365 Message Center 全文、詳細、決定論的な日本語要約と Agentic Workflow の週次インサイトを届けるレーダー。</p>
+      <a class="hero-repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub リポジトリを開く</a>
     </header>
 
     <section class="insights" aria-label="Agentic weekly insights">
