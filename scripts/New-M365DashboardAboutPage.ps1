@@ -69,11 +69,17 @@ $html = @'
     <section class="panel">
       <h2>手動で更新するには</h2>
       <p>GitHub Actions の <strong>M365 Message Center Dashboard - Public Metadata</strong> を main ブランチで手動実行します。月曜日・木曜日 07:17 JST の定期実行と同じく、成功後に core Agentic Workflow、さらに成功後の translations Workflow が順に Pages を更新します。</p>
-      <p>Agentic Workflow が provider HTTP 403 で失敗する場合は、組織の集中管理された Copilot billing/policy で <code>copilot-requests: write</code> を許可してください。設定前に再実行しても Agentic 出力は公開されません。</p>
+      <p>Agentic Workflow は組織課金が有効な組み込み <code>GITHUB_TOKEN</code> と <code>copilot-requests: write</code> を使います。個人アクセストークンや <code>COPILOT_GITHUB_TOKEN</code> のリポジトリ secret は不要です。provider HTTP 403 で失敗する場合は、組織の Copilot policy で <strong>Allow use of Copilot CLI billed to the organization</strong> を有効にしてください。設定前に再実行しても Agentic 出力は公開されません。</p>
+      <p>2026年7月23日時点の保存済み最新 snapshot では、現行 74 カードの 74/74 件に検証済みの詳細な日本語要約と本文訳があります。</p>
     </section>
     <section class="panel">
       <h2>公開データとリンクの境界</h2>
-      <p>MC カードの直接リンクは、その同じ MC の Graph details に存在する Message Center URL だけです。関連ドキュメントは、その MC の details に含まれる <code>learn.microsoft.com</code> URL だけを表示します。URL は生成・推測しません。</p>
+      <p>MC カードの直接リンクは、その同じ run の Graph snapshot にある同じ MC の HTTPS Message Center URL だけです。関連ドキュメントは、その MC の details に含まれる <code>learn.microsoft.com</code> URL だけを表示します。URL は生成・推測しません。</p>
+      <p>safe output は unsafe markup、credential-like 値、snapshot にない MC ID、許可されていない URL、翻訳元メタデータの不一致を拒否します。検証できない場合は、以前に検証済みの翻訳だけを保持し、未処理カードにはデータ未準備を表示します。</p>
+    </section>
+    <section class="panel">
+      <h2>表示テーマ</h2>
+      <p>ダッシュボードとこのページはライトテーマを既定とし、OS の色設定には追従しません。切り替えたライトまたはダークテーマはこのブラウザーに保存されます。再現可能なリンクには <code>?scoutTheme=light</code> または <code>?scoutTheme=dark</code> を付けると、その表示に固定されます。</p>
     </section>
     <p><a href="../">ダッシュボードへ戻る</a> · <a href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub リポジトリ</a></p>
   </main>
