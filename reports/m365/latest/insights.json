@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T13:29:08.1102861+00:00",
+  "generatedAt": "2026-07-23T13:38:14.7640608+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "【2026年7月第4週】M365管理者エージェントGA・Entraパスキーデフォルト化など重要変更が集中",
   "executiveSummary": "今週は Microsoft 365 管理者向けに複数の重要アップデートが発表されました。AIを活用した管理者エージェントが一般提供(GA)開始となり、管理業務の効率化が期待されます。一方、セキュリティ面では Entra ID のパスキーが2026年9月1日にデフォルト認証となり、SMS/音声認証が非推奨化されます。また Entra カスタム CSS 位置プロパティの廃止(2026年10月)、Conditional Access カスタムコントロールの廃止、SSPR でのCAPTCHA廃止など、認証・ID基盤の変更が相次いでいます。Copilot 関連では PowerPoint や Excel への新スキル追加、Web コンテンツ設定の拡張、ドメイン除外機能のGAなど生産性向上機能が充実しました。Office LTSC 2021 のサポート終了(2026年10月)や Edge の2週間リリースサイクル移行(Edge 152〜)も計画的な対応が必要です。",
@@ -558,20 +558,6 @@
   ],
   "messageTranslations": [
     {
-      "id": "MC1069563",
-      "japaneseDetailedSummary": "Microsoft 365管理センターにCopilot Chat従量課金制のメッセージ消費使用状況レポートが追加（プレビュー）。課金メッセージ数・日次推移・ユーザー別/ポリシー別/エージェント別の内訳を確認可能。最大30日間の履歴表示。2025年5月3日以前のデータは非表示。Roadmap ID 490738。",
-      "japaneseBodyTranslation": "2026年3月23日更新：タイムラインを更新しました。\nCopilot Chatの従量課金コスト管理のため、管理センターに新しいメッセージ消費使用状況レポートを導入します。課金ポリシーに紐づく課金メッセージ数、累積・日次タイムシリーズ、ユーザー別・課金ポリシー別・エージェント別・エージェントとユーザーのペア別のメッセージ数を確認できます。プレビューで展開。最大30日間の履歴、2025年5月3日以前のデータは利用不可。\nMicrosoft Copilotライセンス不要。Roadmap ID 490738。\n【展開】\nパブリックプレビュー：現在利用可能",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1143999",
-      "japaneseDetailedSummary": "Azure全リソース管理操作へのMFA適用がフェーズ2として2025年10月1日より段階展開。CLI・PowerShell・SDK・REST APIも対象。2026年7月まで延期可能。Gallatin（中国）顧客にはMFA推奨だがMicrosoft強制適用なし。テナントのMFA有効化状況を確認し早急に対応を。",
-      "japaneseBodyTranslation": "2025年9月5日更新：Gallatinのお客様はMFA実装を推奨しますが、Microsoft強制適用は現時点では行われません。\nAzure環境のセキュリティ強化のため、全リソース管理操作へのMFA適用を導入します。不正アクセスからの保護と業界ベストプラクティスへの準拠が目的です。\nフェーズ1完了に続くフェーズ2として、CLI・PowerShell・SDK・REST APIを含む全Azureクライアントが対象となります。\n【展開時期】\nフェーズ2は2025年10月1日より段階的に適用。必要に応じて2026年7月まで延期可能。",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1146821",
       "japaneseDetailedSummary": "Microsoft Edge for Businessユーザー向けに、Microsoft 365 Copilot Chatを活用した新機能「Rewrite（書き換え）」が近日提供予定です。この機能により、ユーザーはEdge上で編集可能なテキストをハイライトして右クリックメニューからRewriteを呼び出し、文章の下書きや言い換えをAIで行うことができます。タイムラインは2026年8月下旬から展開開始、2026年10月下旬に完了予定（ワールドワイド）に更新されました。Rewriteはデフォルトで有効化されますが、DLPポリシーによりCopilotのページコンテンツアクセスが制限されている場合、当該コンテンツでは機能しません。ロードマップID: 420335。管理者は自組織のDLPポリシーとCopilotの設定を確認し、必要に応じてユーザーへの展開計画を準備することが推奨されます。",
       "japaneseBodyTranslation": "2026年6月25日更新：タイムラインを更新しました。ご確認いただきありがとうございます。\n\n■ はじめに\nMicrosoft Edge for Businessは、Microsoft 365 Copilot Chatを活用した新機能「Rewrite（書き換え）」をまもなくサポートします。この機能により、ユーザーはEdge内で編集可能なテキストの下書きや言い換えを直接行うことができ、生産性と文章品質の向上に役立ちます。ユーザーは編集可能なテキストをハイライトし、右クリックでコンテキストメニューを開くことでRewriteにアクセスできます。\n\nこのメッセージはMicrosoft 365 ロードマップ ID 420335 に対応しています。\n\n■ 展開スケジュール\n一般提供（ワールドワイド）：2026年8月下旬から展開を開始し、2026年10月下旬に完了予定です。\n\n■ 組織への影響\n• RewriteはEdge for Businessユーザーに対してデフォルトで有効化されます。\n• ユーザーは編集可能なテキストをハイライトし、右クリックでコンテキストメニューを開くことでRewriteにアクセスできます。\n• データ損失防止（DLP）ポリシーによりMicrosoft 365 Copilotのページコンテンツへのアクセスが制限されている場合、そのコンテンツではRewriteが機能しません。",
@@ -1062,16 +1048,30 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1436831",
-      "japaneseDetailedSummary": "Microsoft 365管理者エージェントが全管理者向けに一般提供（GA）開始。管理センターとCopilot ChatでAI支援による自然言語管理が可能に。RBAC尊重・変更前の管理者承認必須。グローバル管理者・Teams管理者・SharePoint管理者等が対象。現在利用可能。",
-      "japaneseBodyTranslation": "【概要と目的】\nMicrosoftはMicrosoft 365管理者エージェントを全管理者向けに一般提供開始します。管理センターとCopilot Chatで自然言語によりサービスの検出・設定・トラブルシューティング・ガバナンス・管理が可能です。既存RBACを尊重し、変更前に管理者承認が必要です。\n【展開スケジュール】\n・一般提供（全世界）：現在利用可能\n【影響範囲】\n対象：Microsoft Entraの組み込み管理者ロールを持つ全ユーザー（グローバル管理者、AI管理者、Teams管理者、SharePoint管理者等）\n対象サービス：Microsoft 365管理センター、Microsoft 365 Copilot Chat、Microsoft Entra ID、M",
+      "id": "MC985483",
+      "japaneseDetailedSummary": "Microsoft Graph 会議作成 API のパスコードデフォルト設定変更。2025 年 2 月 24 日より isPasscodeRequired のデフォルトが false から true へ変更され、値未指定時はパスコード必須になります。2027 年 10 月にはパスコード要否の指定オプション自体が廃止され全会議でパスコード必須化。Create onlineMeeting API 使用アプリを要確認・更新。",
+      "japaneseBodyTranslation": "この変更前：Graph API で会議作成時、パスコード要否を選択可能。未指定時はパスコード不要。\nこの変更後：未指定時は既定でパスコード必須。\n2025 年 2 月 24 日より isPasscodeRequired のデフォルト値が false から true に変更。\n【アプリ更新】\nCreate onlineMeeting API を使用するアプリを確認・更新し、新デフォルト動作に対応してください。\n【今後の予定】\n2027 年 10 月にパスコード指定オプションが廃止。全会議でパスコード必須化。会議作成プロセスの簡素化とセキュリティ強化が目的。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph会議作成APIでパスコードのデフォルトがfalseからtrueに変更（2025年2月24日）。値未指定時は自動的にパスコード必須となります。APIを使用するアプリは対応が必要。2027年10月にはパスコード指定オプション自体が廃止され全会議でパスコード必須となります。",
-      "japaneseBodyTranslation": "この変更前は、Graph APIで会議作成時にパスコード不要がデフォルトでした。\n変更後：値未指定の場合、パスコードが必須となります。\n2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更。\nCreate onlineMeeting APIを使用するアプリを確認・更新してください。\n2027年10月にはパスコード指定オプションが廃止され、全会議でパスコードが必須となります。これにより会議作成が簡素化され追加のセキュリティ層が提供されます。pr",
+      "id": "MC1436831",
+      "japaneseDetailedSummary": "Microsoft 365 管理エージェントが全管理者向けに一般提供開始。Microsoft 365 管理センターと Copilot Chat を通じ、自然言語で M365 サービスの検出・構成・トラブルシューティング・管理が可能。既存のロールベースアクセス制御を維持し、変更前に管理者承認が必要。グローバル管理者・AI 管理者・Teams 管理者・SharePoint 管理者等が対象。全世界で現在利用可能。",
+      "japaneseBodyTranslation": "【内容と目的】\nMicrosoft 365 管理エージェントが全管理者向けに一般提供開始されます。Microsoft 365 管理センターおよび Copilot Chat で自然言語によるサービスの検出・構成・トラブルシューティング・ガバナンス・管理が可能です。既存ロールベースアクセス制御を維持し、変更前に管理者承認が必要です。\n【展開スケジュール】\n一般提供（全世界）：現在利用可能\n【影響を受けるユーザー】\n・Microsoft Entra 組み込み管理者ロールを持つ全ユーザー\n・グローバル管理者、AI 管理者、Teams 管理者、SharePoint 管理者等\n【対象サービス】\n・Microsoft 365 管理センター / Copilot Chat / Microsoft Entra ID / M（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1069563",
+      "japaneseDetailedSummary": "Microsoft 365 管理センターに Copilot Chat の従量課金コスト管理向けメッセージ消費量レポートがプレビュー追加。請求済みメッセージの総数・日次時系列・ユーザー別・ポリシー別・エージェント別の内訳を確認可能。プレビュー期間中は最大 30 日分の履歴表示。Copilot ライセンス不要（従量課金モデル）。ロードマップ ID: 490738。",
+      "japaneseBodyTranslation": "2026 年 3 月 23 日更新：タイムラインを更新しました。\nMicrosoft 365 Copilot Chat の従量課金コスト管理のため、Microsoft 365 管理センターに新しいメッセージ消費量使用状況レポートを導入します。課金済みメッセージの総数・累積および日次時系列・ユーザー別・課金ポリシー別・エージェント別の内訳が確認可能。プレビュー段階では最大 30 日分の履歴を表示。2025 年 5 月 3 日以前の使用情報は表示されません。\nMicrosoft Copilot ライセンス不要（従量課金モデル対象）。\nロードマップ ID 490738 に関連。\n【提供時期】\nパブリック プレビュー：利用可能（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1143999",
+      "japaneseDetailedSummary": "Azure リソース管理操作への多要素認証（MFA）強制適用がフェーズ 2 として 2025 年 10 月 1 日から段階的に開始。CLI・PowerShell・SDK・REST API を含む全 Azure クライアントが対象。テナントは 2026 年 7 月まで延期可能。Gallatin 顧客は MFA 実装を推奨されるが Microsoft による強制は現時点なし（2025 年 9 月 5 日更新）。",
+      "japaneseBodyTranslation": "2025 年 9 月 5 日更新：Gallatin 顧客は MFA 実装を推奨されるが、現時点で Microsoft による強制適用なし。\n【概要】\nAzure 全体のセキュリティ強化のため、全 Azure リソース管理操作に MFA 強制適用を導入。不正アクセスからの組織保護と業界ベストプラクティスへの準拠が目的。\nフェーズ 1 完了後のフェーズ 2 として、CLI・PowerShell・SDK・REST API を含む全 Azure クライアントを保護。\n【適用時期】\nフェーズ 2：2025 年 10 月 1 日から段階的展開。最大 2026 年 7 月まで延期可能。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
