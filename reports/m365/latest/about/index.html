@@ -3,25 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const forcedTheme = ["light", "dark"].includes(param) ? param : null;
+      const storedTheme = localStorage.getItem("scoutTheme");
+      const theme = forcedTheme || (["light", "dark"].includes(storedTheme) ? storedTheme : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
   <title>更新のしくみ | Microsoft 365 Change Radar</title>
   <style>
-    :root { color-scheme: light; --cp-bg: #f7f4ef; --cp-surface: #fff; --cp-border: #dedede; --cp-text: #242424; --cp-muted: #5c5c5c; --cp-link: #0078d4; --cp-accent: #b11f4b; }
-    @media (prefers-color-scheme: dark) { :root { color-scheme: dark; --cp-bg: #3d3b3a; --cp-surface: #292929; --cp-border: #474747; --cp-text: #dedede; --cp-muted: #b0b0b0; --cp-link: #4da6ff; --cp-accent: #fd8ea1; } }
+    :root { color-scheme: light; --cp-bg: #f4f7fb; --cp-bg-elevated: #eef4fb; --cp-surface: #fff; --cp-surface-soft: #f8fafc; --cp-border: #cbd5e1; --cp-border-strong: #64748b; --cp-text: #172033; --cp-text-muted: #475569; --cp-link: #005ea8; --cp-accent: #9f1239; --cp-accent-fg: #fff; --cp-shadow: 0 14px 36px rgba(15, 23, 42, 0.1); }
+    html[data-theme="dark"] { color-scheme: dark; --cp-bg: #101827; --cp-bg-elevated: #172033; --cp-surface: #1d2939; --cp-surface-soft: #263548; --cp-border: #41536a; --cp-border-strong: #718096; --cp-text: #f1f5f9; --cp-text-muted: #c1cddd; --cp-link: #7dd3fc; --cp-accent: #fda4af; --cp-accent-fg: #291018; --cp-shadow: 0 16px 40px rgba(0, 0, 0, 0.35); }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--cp-bg); color: var(--cp-text); font-family: "Segoe UI", Aptos, Calibri, sans-serif; line-height: 1.6; }
     main { width: min(880px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 80px; }
-    .eyebrow { color: var(--cp-muted); font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 16px; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; box-shadow: var(--cp-shadow); }
+    .brand { font-weight: 800; letter-spacing: -.02em; }
+    .theme-toggle { padding: 8px 12px; color: var(--cp-text); background: var(--cp-surface-soft); border: 1px solid var(--cp-border-strong); border-radius: 999px; cursor: pointer; font-weight: 700; }
+    .theme-toggle:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
+    .theme-toggle:focus-visible, a:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
+    .theme-toggle:disabled { cursor: not-allowed; opacity: .72; }
+    .eyebrow { color: var(--cp-text-muted); font-size: .82rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     h1 { margin: 12px 0 18px; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; letter-spacing: -.06em; }
     h2 { margin-top: 40px; letter-spacing: -.03em; }
-    p, li { color: var(--cp-muted); }
-    .panel { margin-top: 24px; padding: 24px; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; }
+    p, li { color: var(--cp-text-muted); }
+    .panel { margin-top: 24px; padding: 24px; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px; box-shadow: var(--cp-shadow); }
     .flow { padding-left: 24px; }
     a { color: var(--cp-link); font-weight: 700; }
-    a:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
   </style>
 </head>
 <body>
   <main>
+    <nav class="nav" aria-label="Dashboard navigation">
+      <div class="brand">Microsoft 365 Change Radar</div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false"></button>
+    </nav>
     <div class="eyebrow">Lab-public automation</div>
     <h1>このダッシュボードの<br>更新のしくみ</h1>
     <p>これは明示的に承認されたテスト テナント専用の lab-public ダッシュボードです。Message Center の本文と selected details を公開しますが、credentials、tokens、credential-like values は公開前に除外または redaction されます。</p>
@@ -46,5 +64,30 @@
     </section>
     <p><a href="../">ダッシュボードへ戻る</a> · <a href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub リポジトリ</a></p>
   </main>
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+    const urlTheme = new URLSearchParams(window.location.search).get("scoutTheme");
+    const forcedTheme = ["light", "dark"].includes(urlTheme) ? urlTheme : null;
+    function renderThemeToggle() {
+      const theme = document.documentElement.getAttribute("data-theme") || "light";
+      themeToggle.textContent = theme === "dark" ? "ライト表示" : "ダーク表示";
+      themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+      themeToggle.disabled = Boolean(forcedTheme);
+      themeToggle.setAttribute(
+        "aria-label",
+        forcedTheme
+          ? `表示テーマは URL の scoutTheme=${forcedTheme} で固定されています`
+          : `現在は${theme === "dark" ? "ダーク" : "ライト"}表示です。${theme === "dark" ? "ライト" : "ダーク"}表示に切り替えます`
+      );
+    }
+    renderThemeToggle();
+    themeToggle.addEventListener("click", () => {
+      if (forcedTheme) return;
+      const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      localStorage.setItem("scoutTheme", nextTheme);
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      renderThemeToggle();
+    });
+  </script>
 </body>
 </html>
