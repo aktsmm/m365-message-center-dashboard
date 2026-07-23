@@ -54,7 +54,7 @@ pre-agent-steps:
       if ($translationBatchIndex -and $translationIds) {
         throw 'translation_batch_index and translation_ids cannot be combined.'
       }
-      if (-not $translationIds -and Test-Path -LiteralPath 'reports/m365/latest/messages.json') {
+      if (-not $translationIds -and (Test-Path -LiteralPath 'reports/m365/latest/messages.json')) {
         $previousMessages = Get-Content -LiteralPath 'reports/m365/latest/messages.json' -Raw -Encoding UTF8 | ConvertFrom-Json
         $translatedIds = @{}
         if (Test-Path -LiteralPath 'reports/m365/latest/insights.json') {
