@@ -2,6 +2,10 @@
 
 Microsoft Graph の Message Center から、ラボ公開を許可した Message Center コンテンツを収集して GitHub Pages に公開する、単一 HTML の週次ダッシュボードです。Microsoft 公式製品ではなく、AS-IS のサンプルです。
 
+## License
+
+Repository-authored content and generated Pages presentation are licensed under [CC BY-NC-SA 4.0](LICENSE), with the additional permission for Microsoft Corporation and its affiliates stated in that file. Microsoft Message Center content retrieved through Microsoft Graph is third-party Microsoft content and is not licensed by aktsmm.
+
 ## Public data boundary
 
 このリポジトリは、明示的に承認された**テスト テナント専用**の lab-public 構成です。`reports/m365/`、GitHub Pages、および dashboard artifact には次を保存・公開します。
