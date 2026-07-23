@@ -212,7 +212,9 @@ try {
     if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
         -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
     -not $safeOutputSection.Contains('-MessagesJson $messagesJson') -or
-    -not $safeOutputSection.Contains('message_updates')) {
+    -not $safeOutputSection.Contains('message_updates') -or
+    -not $safeOutputSection.Contains('JSON-encoded string') -or
+    -not $safeOutputSection.Contains('not a tool-level JSON array')) {
         throw 'Agentic safe output does not validate against the transferred public metadata snapshot.'
     }
     if ($safeOutputSection -match 'Export-M365MessageCenter\.ps1|azure/login@') {
