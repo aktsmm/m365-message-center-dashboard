@@ -34,7 +34,10 @@
       "lastModifiedDateTime": "2026-07-21T03:00:00Z",
       "actionRequiredByDateTime": null,
       "services": ["OneDrive for Business"],
-      "tags": []
+      "tags": [],
+      "details": [
+        { "name": "LearnDocumentation", "value": "https://learn.microsoft.com/microsoft-365/admin/manage/message-center" }
+      ]
     },
     {
       "id": "MC900003",

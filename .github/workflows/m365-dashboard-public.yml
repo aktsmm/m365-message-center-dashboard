@@ -51,6 +51,8 @@ jobs:
               -MessagesJson output/m365/messages.json `
               -OutputPath output/m365/index.html
           }
+          ./scripts/New-M365DashboardAboutPage.ps1 `
+            -OutputPath output/m365/about/index.html
           ./scripts/ci/Test-M365Dashboard.ps1
 
       - name: Upload dashboard artifact

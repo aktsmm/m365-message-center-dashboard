@@ -124,6 +124,8 @@ safe-outputs:
               -MessagesJson reports/m365/latest/messages.json `
               -InsightsJson reports/m365/latest/insights.json `
               -OutputPath reports/m365/latest/index.html
+            ./scripts/New-M365DashboardAboutPage.ps1 `
+              -OutputPath reports/m365/latest/about/index.html
 
             $runDate = Get-Date -Format 'yyyy-MM-dd'
             $historyDir = Join-Path 'reports/m365/history' $runDate
