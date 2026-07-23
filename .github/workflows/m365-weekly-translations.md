@@ -10,6 +10,10 @@ on:
         description: "Optional comma-separated current MC IDs (maximum four) for the serialized catch-up controller."
         required: false
         type: string
+      translation_request_id:
+        description: "Opaque controller correlation ID for one serialized translation batch."
+        required: false
+        type: string
   workflow_run:
     workflows:
       - "Microsoft 365 Message Center weekly dashboard"
@@ -19,6 +23,7 @@ on:
       - main
 
 if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+run-name: "M365 bounded translations (${{ inputs.translation_request_id }})"
 
 permissions:
   contents: read
@@ -45,14 +50,19 @@ pre-agent-steps:
     env:
       TRANSLATION_BATCH_INDEX: ${{ inputs.translation_batch_index }}
       TRANSLATION_IDS: ${{ inputs.translation_ids }}
+      TRANSLATION_REQUEST_ID: ${{ inputs.translation_request_id }}
     run: |
       $translationBatchIndex = $env:TRANSLATION_BATCH_INDEX
       $translationIds = $env:TRANSLATION_IDS
+      $translationRequestId = $env:TRANSLATION_REQUEST_ID
       if ($translationBatchIndex -and $translationBatchIndex -notmatch '^\d+$') {
         throw 'translation_batch_index must be a non-negative integer.'
       }
       if ($translationBatchIndex -and $translationIds) {
         throw 'translation_batch_index and translation_ids cannot be combined.'
+      }
+      if ($translationRequestId -and $translationRequestId -notmatch '^[A-Za-z0-9-]{8,64}$') {
+        throw 'translation_request_id must be an opaque 8-64 character alphanumeric identifier.'
       }
       if (-not $translationIds -and (Test-Path -LiteralPath 'reports/m365/latest/messages.json')) {
         $previousMessages = Get-Content -LiteralPath 'reports/m365/latest/messages.json' -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -110,7 +120,7 @@ safe-outputs:
         id-token: write
       inputs:
         translation_updates:
-          description: "gzip-base64 UTF-8 JSON array for the bounded translationBatch only"
+          description: "base64-json UTF-8 JSON array for the bounded translationBatch only; gzip-base64 remains compatibility-only."
           required: true
           type: string
       steps:
@@ -207,7 +217,7 @@ affected services, and practical customer conversations.
 
 Call `publish-m365-translations` exactly once with:
 
-- `translation_updates` as a gzip-base64 encoded UTF-8 JSON array for every item in
+- `translation_updates` as a `base64-json:`-prefixed Base64 UTF-8 JSON array for every item in
   `translationBatch` only. Each object must contain `id`, `japanese_detailed_summary`,
   `japanese_body_translation`, `source_character_count`, and `source_truncated`.
   Write a useful Japanese detailed summary (80-1200 characters) and translate only the supplied
@@ -217,7 +227,7 @@ Call `publish-m365-translations` exactly once with:
   Before calling the safe output, read the generated JSON back and verify that every update ID,
   `source_character_count`, and `source_truncated` exactly matches its `translationBatch` item. Generate
   the payload with:
-  `python3 -c 'import base64,gzip; print("gzip-base64:"+base64.b64encode(gzip.compress(open("/tmp/gh-aw/agent/translation_updates.json","rb").read())).decode())'`.
+  `python3 -c 'import base64; print("base64-json:"+base64.b64encode(open("/tmp/gh-aw/agent/translation_updates.json","rb").read()).decode())'`.
 
 Every concrete claim must be grounded in the supplied context. The public result should be
 a concise Japanese analysis; the lab-public dashboard renders the source content separately.

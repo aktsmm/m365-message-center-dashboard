@@ -136,6 +136,19 @@ try {
     if ((Get-Content -LiteralPath $translationInsightsPath -Raw -Encoding UTF8) -notmatch 'messageTranslations|日本語訳') {
         throw 'Validated translation batch did not publish Japanese detailed translation data.'
     }
+    $base64TranslationOutput = Join-Path $temp 'agent-output-base64-translations.json'
+    $base64TranslationInsights = Join-Path $temp 'insights-base64-translations.json'
+    $agentOutputWithBase64Translations = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $agentOutputWithBase64Translations.items[0] | Add-Member -NotePropertyName translation_updates -NotePropertyValue ('base64-json:' + [Convert]::ToBase64String($translationBytes))
+    $agentOutputWithBase64Translations | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $base64TranslationOutput -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+        -AgentOutputPath $base64TranslationOutput `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -TranslationBatchJson $translationBatchPath `
+        -OutputPath $base64TranslationInsights
+    if ((Get-Content -LiteralPath $base64TranslationInsights -Raw -Encoding UTF8) -notmatch 'messageTranslations|日本語訳') {
+        throw 'base64-json translation updates did not publish validated Japanese detailed translation data.'
+    }
     $mismatchedTranslationOutput = Join-Path $temp 'agent-output-mismatched-translation.json'
     $agentOutputWithMismatchedTranslation = Get-Content -LiteralPath $translationOutputPath -Raw -Encoding UTF8 | ConvertFrom-Json
     $decodedTranslationPayload = [Convert]::FromBase64String(
@@ -455,6 +468,7 @@ try {
         -not $translationPreAgentSection.Contains("github.event.workflow_run.conclusion == 'success'") -or
         -not $translationPreAgentSection.Contains('translation_batch_index') -or
         -not $translationPreAgentSection.Contains('translation_ids') -or
+        -not $translationPreAgentSection.Contains('translation_request_id') -or
         -not $translationPreAgentSection.Contains('AgentTranslationIds') -or
         -not $translationPreAgentSection.Contains('AgentTranslationBatchIndex') -or
         $translationPreAgentSection.Contains('M365 Message Center Dashboard - Public Metadata')) {
@@ -462,7 +476,8 @@ try {
     }
     if ($translationSafeOutputSection.Contains('message_updates:') -or
         $translationSafeOutputSection.Contains('publish-m365-dashboard') -or
-        -not $translationSafeOutputSection.Contains('translation_updates:')) {
+        -not $translationSafeOutputSection.Contains('translation_updates:') -or
+        -not $translationSafeOutputSection.Contains('base64-json:')) {
         throw 'Translations workflow must publish only translation_updates.'
     }
     if (@($compactAgentContext.translationBatch).Count -ne [Math]::Min(4, @($messages.messages).Count) -or
@@ -471,9 +486,11 @@ try {
     }
     $catchupController = Get-Content -LiteralPath (Join-Path $root 'scripts\Invoke-M365TranslationCatchup.ps1') -Raw -Encoding UTF8
     if (-not $catchupController.Contains('publish_m365_translations') -or
-        -not $catchupController.Contains('Translation run $($run.databaseId) reported a successful publisher job but did not persist') -or
+        -not $catchupController.Contains('Translation run $($run.id) reported a successful publisher job but did not persist') -or
         -not $catchupController.Contains('Persisted isolated translation') -or
-        -not $catchupController.Contains('translation_ids')) {
+        -not $catchupController.Contains('translation_ids') -or
+        -not $catchupController.Contains('translation_request_id') -or
+        -not $catchupController.Contains('did not increase the main translation count')) {
         throw 'Translation catch-up controller does not verify persisted publishes or isolate individual IDs.'
     }
     $readme = Get-Content -LiteralPath (Join-Path $root 'README.md') -Raw -Encoding UTF8
