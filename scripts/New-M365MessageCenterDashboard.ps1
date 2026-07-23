@@ -36,61 +36,62 @@ $html = @'
       const storedTheme = localStorage.getItem("scoutTheme");
       const theme = forcedTheme || (["light", "dark"].includes(storedTheme) ? storedTheme : "light");
       document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.setAttribute("data-theme-source", forcedTheme ? "url" : storedTheme === theme ? "storage" : "default");
     })();
   </script>
   <title>Microsoft 365 Change Radar</title>
   <style>
     :root {
       color-scheme: light;
-      --cp-bg: #f7f4ef;
-      --cp-bg-elevated: #fcfbf8;
+      --cp-bg: #f8f4ed;
+      --cp-bg-elevated: #fdfaf5;
       --cp-surface: #ffffff;
-      --cp-surface-soft: #f5f5f5;
-      --cp-border: #dedede;
-      --cp-border-strong: #919191;
-      --cp-text: #242424;
-      --cp-text-muted: #5c5c5c;
-      --cp-text-soft: #6f6f6f;
-      --cp-accent: #b11f4b;
-      --cp-accent-hover: #9a1a41;
-      --cp-accent-soft: rgba(177, 31, 75, 0.08);
+      --cp-surface-soft: #f4ede4;
+      --cp-border: #e4d9cc;
+      --cp-border-strong: #a28c77;
+      --cp-text: #2d2822;
+      --cp-text-muted: #665d54;
+      --cp-text-soft: #7c7064;
+      --cp-accent: #a33e2c;
+      --cp-accent-hover: #873424;
+      --cp-accent-soft: rgba(163, 62, 44, 0.1);
       --cp-accent-fg: #ffffff;
-      --cp-success: #16a34a;
-      --cp-danger: #dc2626;
-      --cp-warning: #f59e0b;
-      --cp-link: #0078d4;
-      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
-      --cp-overlay: rgba(255, 255, 255, 0.8);
-      --cp-panel: rgba(255, 255, 255, 0.86);
-      --cp-panel-strong: rgba(255, 255, 255, 0.96);
-      --cp-sheen: rgba(255, 255, 255, 0.55);
-      --cp-highlight: rgba(177, 31, 75, 0.12);
+      --cp-success: #2f7b55;
+      --cp-danger: #b63f36;
+      --cp-warning: #a45a10;
+      --cp-link: #94412f;
+      --cp-shadow: 0 18px 48px rgba(45, 40, 34, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.82);
+      --cp-panel: rgba(255, 255, 255, 0.9);
+      --cp-panel-strong: rgba(255, 255, 255, 0.98);
+      --cp-sheen: rgba(255, 255, 255, 0.6);
+      --cp-highlight: rgba(163, 62, 44, 0.12);
     }
     html[data-theme="dark"] {
       color-scheme: dark;
-      --cp-bg: #3d3b3a;
-      --cp-bg-elevated: #343231;
-      --cp-surface: #292929;
-      --cp-surface-soft: #2e2e2e;
-      --cp-border: #474747;
-      --cp-border-strong: #5f5f5f;
-      --cp-text: #dedede;
-      --cp-text-muted: #919191;
-      --cp-text-soft: #b0b0b0;
-      --cp-accent: #fd8ea1;
-      --cp-accent-hover: #fb7b91;
-      --cp-accent-soft: rgba(253, 142, 161, 0.14);
-      --cp-accent-fg: #1a1a1a;
-      --cp-success: #4ade80;
-      --cp-danger: #f87171;
-      --cp-warning: #fbbf24;
-      --cp-link: #4da6ff;
-      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
-      --cp-overlay: rgba(41, 41, 41, 0.88);
-      --cp-panel: rgba(41, 41, 41, 0.72);
-      --cp-panel-strong: rgba(41, 41, 41, 0.96);
-      --cp-sheen: rgba(255, 255, 255, 0.04);
-      --cp-highlight: rgba(253, 142, 161, 0.12);
+      --cp-bg: #292521;
+      --cp-bg-elevated: #322d28;
+      --cp-surface: #39332d;
+      --cp-surface-soft: #433a32;
+      --cp-border: #5d5044;
+      --cp-border-strong: #86705c;
+      --cp-text: #f4eae0;
+      --cp-text-muted: #d2c1b2;
+      --cp-text-soft: #e2d2c4;
+      --cp-accent: #ffb09c;
+      --cp-accent-hover: #ffc5b5;
+      --cp-accent-soft: rgba(255, 176, 156, 0.16);
+      --cp-accent-fg: #332018;
+      --cp-success: #8bd3a7;
+      --cp-danger: #ff9d91;
+      --cp-warning: #f6be73;
+      --cp-link: #ffc0a8;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.4);
+      --cp-overlay: rgba(41, 37, 33, 0.9);
+      --cp-panel: rgba(57, 51, 45, 0.84);
+      --cp-panel-strong: rgba(57, 51, 45, 0.98);
+      --cp-sheen: rgba(255, 255, 255, 0.06);
+      --cp-highlight: rgba(255, 176, 156, 0.14);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -246,7 +247,7 @@ $html = @'
     <nav class="nav" aria-label="Dashboard navigation">
       <div class="brand"><span class="brand-mark">M</span><span>Microsoft 365 Change Radar</span></div>
       <div class="nav-actions">
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false"></button>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="表示テーマをダークに切り替えます" aria-pressed="false"></button>
         <div class="nav-meta"><div id="generated"></div><div class="source-status" id="source-status"></div></div>
       </div>
     </nav>

@@ -309,10 +309,23 @@ try {
     if ($html -notmatch 'Microsoft 365 Change Radar') { throw 'Dashboard title is missing.' }
     if ($html -notmatch 'scoutTheme' -or
         $html -notmatch 'localStorage\.getItem\("scoutTheme"\)' -or
+        $html -notmatch 'localStorage\.setItem\("scoutTheme", nextTheme\)' -or
         $html -notmatch 'theme-toggle' -or
-        $html -notmatch 'storedTheme.*"light"' -or
+        $html -notmatch 'aria-label="表示テーマをダークに切り替えます"' -or
+        $html -notmatch 'aria-pressed="false"' -or
+        $html -notmatch 'const theme = forcedTheme \|\| \(\["light", "dark"\]\.includes\(storedTheme\) \? storedTheme : "light"\)' -or
+        $html -notmatch 'color-scheme: light;' -or
         $html -match 'prefers-color-scheme') {
         throw 'Light-first persistent accessible theme control is missing or still follows the OS theme.'
+    }
+    $themeCss = [regex]::Match($html, '<style>(?<css>[\s\S]*?)</style>').Groups['css'].Value
+    $hardCodedComponentColors = [regex]::Matches(
+        $themeCss,
+        '(?m)^\s*(?!\-\-cp-)(?:background|color|border(?:-color)?|outline(?:-color)?|box-shadow)\s*:\s*[^;]*(?:#[0-9a-fA-F]{3,8}|rgba?\(|hsla?\()'
+    )
+    if ($hardCodedComponentColors.Count -or
+        $themeCss -match '#0078d4|#4da6ff') {
+        throw 'Dashboard components must use warm Clawpilot theme variables instead of hard-coded or generic blue colors.'
     }
     $repositoryLinks = [regex]::Matches($html, 'https://github\.com/aktsmm/m365-message-center-dashboard').Count
     if ($repositoryLinks -lt 2 -or $html -notmatch 'hero-repo-link|GitHub リポジトリを開く') {
