@@ -166,11 +166,9 @@ Call `publish-m365-translations` exactly once with:
   `japanese_body_translation`, `source_character_count`, and `source_truncated`.
   Write a useful Japanese detailed summary (80-1200 characters) and translate only the supplied
   `translationBatch.bodyText`; do not invent or complete text beyond that bounded source. Preserve
-  the exact `source_character_count` and `source_truncated` values from the batch item. Use the
-  same gzip-base64 encoding command as `message_updates`.
-
-`referenced_ids` must be one comma-separated string, for example `MC123456, MC234567`.
-Never send it as a JSON array.
+  the exact `source_character_count` and `source_truncated` values from the batch item. Generate
+  the payload with:
+  `python3 -c 'import base64,gzip; print("gzip-base64:"+base64.b64encode(gzip.compress(open("/tmp/gh-aw/agent/translation_updates.json","rb").read())).decode())'`.
 
 Every concrete claim must be grounded in the supplied context. The public result should be
 a concise Japanese analysis; the lab-public dashboard renders the source content separately.
