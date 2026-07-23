@@ -150,6 +150,7 @@ $html = @'
     }
     .hero-repo-link:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
     .hero-repo-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
+    .hero-access-note { margin: 10px 0 0; color: var(--cp-text-muted); font-size: 0.88rem; }
     .insights {
       padding: clamp(24px, 5vw, 48px); margin-bottom: 18px; overflow: hidden;
       background: var(--cp-panel-strong); border: 1px solid var(--cp-border); border-radius: 16px;
@@ -256,6 +257,8 @@ $html = @'
       <div class="eyebrow">Weekly intelligence</div>
       <h1>変化を、<br>先回りする。</h1>
       <p class="lede">ラボ環境の Microsoft 365 Message Center 全文、詳細、決定論的な日本語要約と Agentic Workflow の週次インサイトを届けるレーダー。</p>
+      <a class="hero-repo-link" href="https://admin.microsoft.com/#/MessageCenter" target="_blank" rel="noopener noreferrer">Microsoft 365 管理センターの Message Center を開く</a>
+      <p class="hero-access-note">利用にはサインインと対象テナントでの適切な権限が必要です。</p>
       <a class="hero-repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub リポジトリを開く</a>
     </header>
 

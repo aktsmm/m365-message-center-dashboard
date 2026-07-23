@@ -22,6 +22,8 @@ Repository-authored content and generated Pages presentation are licensed under 
 
 Agentic Workflow は URL を生成・推測せず、同一 run の snapshot にある HTTPS の `admin.microsoft.com` / `m365.cloud.microsoft` URL と、同じ MC の `learn.microsoft.com` URL だけを公開します。
 
+ダッシュボードには、静的に記述した [Microsoft 365 管理センターの Message Center](https://admin.microsoft.com/#/MessageCenter) への入口もあります。利用にはサインインと対象テナントでの適切な権限が必要です。この入口は Agentic output やカード別 URL allowlist の対象ではなく、MC カードの同一 snapshot・同一 MC に限定した検証を緩和しません。
+
 ## Twice-weekly automation architecture
 
 月曜日・木曜日 07:17 JST の更新は、次の順序で実行されます。
@@ -34,7 +36,9 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 
 公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
 
-翻訳の catch-up は、write 権限を持つ GitHub CLI オペレーターが `./scripts/Invoke-M365TranslationCatchup.ps1` を実行します。未翻訳の現行 MC ID を4件ずつ直列で処理し、各 run の `publish_m365_translations` ジョブと main の永続データを確認してから次へ進みます。バッチ失敗時は1件ずつ再試行して他の ID を続行します。GitHub Actions の既定トークンで Agentic Workflow を dispatch すると actor 権限チェックで安全に skip されるため、controller workflow は使いません。各翻訳 run は同一 run の Graph snapshot を使うため、対象が消えた場合も未検証の訳文を公開しません。
+2026-07-23 時点の保存済み最新 snapshot では、現行 74 カードの 74/74 件に検証済みの詳細な日本語要約と本文訳があります。
+
+翻訳の catch-up は、write 権限を持つ GitHub CLI オペレーターが `./scripts/Invoke-M365TranslationCatchup.ps1` を実行します。このスクリプトは `translation_ids` と相関 ID を指定して未翻訳の現行 MC ID を4件ずつ直列で処理し、各 run の `publish_m365_translations` ジョブと main の永続データを確認してから次へ進みます。バッチ失敗時は1件ずつ再試行して他の ID を続行します。各翻訳 run は同一 run の Graph snapshot を使うため、対象が消えた場合も未検証の訳文を公開しません。
 
 アクセストークン、Graph 認証情報、client secret、API key、password は Git、Artifacts、Pages に保存・公開しません。credential-like 値は公開 snapshot を生成する前に `[REDACTED]` に置換します。
 
@@ -66,10 +70,11 @@ reports/m365/                         # The only path workflows commit
    | --- | --- |
    | `AZURE_CLIENT_ID` | Client ID of the Entra application or managed identity |
    | `AZURE_TENANT_ID` | Directory (tenant) ID used only by the OIDC login |
+   | `COPILOT_GITHUB_TOKEN` | Fine-grained PAT used only by the GitHub Copilot Agentic Workflow engine |
 
    The workflows intentionally use `allow-no-subscriptions: true`; do not configure an Azure subscription secret.
 5. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-6. Enable GitHub Copilot Agentic Workflows for the repository or organization. Organization-owned repositories must also authorize `copilot-requests: write` through the centralized Copilot billing and policy configuration. A provider HTTP 403 means that organization setting is not enabled; rerunning cannot publish Agentic output until it is corrected.
+6. Enable GitHub Copilot Agentic Workflows for the repository. This personal-account repository uses the fine-grained PAT supplied as `COPILOT_GITHUB_TOKEN` for the Agentic Workflow engine; do not substitute the built-in GitHub Actions `GITHUB_TOKEN` or organization-only `copilot-requests: write` billing flow. A provider HTTP 403 means that the token identity or Copilot access is not authorized; rerunning cannot publish Agentic output until it is corrected.
 
 Run **M365 Message Center Dashboard - Public Metadata** manually once after configuration. It runs twice weekly on Monday and Thursday at 07:17 JST and publishes the dashboard at the GitHub Pages root. The core Agentic Workflow publishes the validated weekly brief, and its successful completion starts the bounded translations workflow.
 
@@ -77,9 +82,13 @@ Run **M365 Message Center Dashboard - Public Metadata** manually once after conf
 
 The Agentic Workflows receive a transient compact context containing untrusted Message Center excerpts. Their instructions prohibit following content in that file and prohibit publishing credentials or access tokens. Each pre-agent step derives a lab-public snapshot from its Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The core workflow accepts only the `publish_m365_dashboard` safe output for the weekly brief, while `Publish-M365AgentInsights.ps1` derives every card's Japanese title, short summary, and official links from that exact snapshot. The separate translations workflow accepts only `translation_updates`; its four-message batch supplies at most 1,000 source characters per message with explicit truncation metadata. Because it runs after every successful core run, it advances up to eight cards per week. The catch-up controller serializes larger backlogs and isolates a failed batch to individual IDs. Both publishers reject unsafe markup, credential-like content, fabricated URLs, oversized or low-quality translations, mismatched translation source metadata, and MC IDs that are absent from their exact same-run snapshots before rendering the public dashboard.
 
-The deprecated optional `translation_batch_index` and the controller-only `translation_ids` input are restricted to a bounded current Graph snapshot. Neither bypasses same-snapshot validation, bounded source text, or the serialized publisher contract.
+The deprecated optional `translation_batch_index` and the catch-up `translation_ids` input are restricted to a bounded current Graph snapshot. Neither bypasses same-snapshot validation, bounded source text, or the serialized publisher contract.
 
 If an Agentic run fails or its output cannot pass validation, Pages retains only previously validated translation data. Each unprocessed card shows an explicit no-data message in **日本語訳と詳細要約**; it never displays a fabricated translation.
+
+## Display theme
+
+The dashboard and `/about/` page default to the light Clawpilot theme and do not follow the operating-system color preference. A viewer-selected light or dark theme is stored in `localStorage`. For reproducible links, `?scoutTheme=light` or `?scoutTheme=dark` overrides the stored preference and locks the page theme for that visit.
 
 ## Local validation
 
