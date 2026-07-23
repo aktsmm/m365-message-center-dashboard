@@ -30,24 +30,34 @@ function Get-MainInsights {
     return ([System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($content)) | ConvertFrom-Json)
 }
 
+function Get-MainMessages {
+    $content = (Invoke-Gh -Arguments @(
+        'api', "repos/$Repository/contents/reports/m365/latest/messages.json?ref=main", '--jq', '.content'
+    )) -join ''
+    return ([System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($content)) | ConvertFrom-Json)
+}
+
 function Get-CurrentTranslationState {
     $insights = Get-MainInsights
+    $messages = Get-MainMessages
     $currentIds = @{}
-    foreach ($update in @($insights.messageUpdates)) {
-        $currentIds[([string]$update.id).Trim().ToUpperInvariant()] = $true
+    foreach ($message in @($messages.messages)) {
+        $currentIds[([string]$message.id).Trim().ToUpperInvariant()] = $true
     }
     $translatedIds = @{}
     foreach ($translation in @($insights.messageTranslations)) {
         $id = ([string]$translation.id).Trim().ToUpperInvariant()
-        if (-not [string]::IsNullOrWhiteSpace([string]$translation.japaneseDetailedSummary)) {
+        if ($currentIds.ContainsKey($id) -and
+            -not [string]::IsNullOrWhiteSpace([string]$translation.japaneseDetailedSummary)) {
             $translatedIds[$id] = $true
         }
     }
     return [pscustomobject]@{
         Insights      = $insights
-        CurrentIds    = $currentIds
-        TranslatedIds = $translatedIds
-        PendingIds    = @($currentIds.Keys | Where-Object { -not $translatedIds.ContainsKey($_) } | Sort-Object)
+        CurrentIds       = $currentIds
+        TranslatedIds    = $translatedIds
+        PendingIds       = @($currentIds.Keys | Where-Object { -not $translatedIds.ContainsKey($_) } | Sort-Object)
+        TranslationCount = $translatedIds.Count
     }
 }
 
@@ -61,7 +71,8 @@ function Get-RecentTranslationRuns {
 
 function Wait-ForDispatchedRun {
     param(
-        [Parameter(Mandatory)][hashtable]$ExistingRunIds
+        [Parameter(Mandatory)][hashtable]$ExistingRunIds,
+        [Parameter(Mandatory)][string]$RequestId
     )
 
     for ($attempt = 0; $attempt -lt 30; $attempt++) {
@@ -69,7 +80,8 @@ function Wait-ForDispatchedRun {
         $run = @(
             $runs |
                 Where-Object {
-                    -not $ExistingRunIds.ContainsKey([string]$_.id)
+                    -not $ExistingRunIds.ContainsKey([string]$_.id) -and
+                    [string]$_.display_title -like "*$RequestId*"
                 } |
                 Sort-Object id -Descending
         ) | Select-Object -First 1
@@ -82,15 +94,19 @@ function Wait-ForDispatchedRun {
 function Invoke-VerifiedTranslationBatch {
     param([Parameter(Mandatory)][string[]]$Ids)
 
+    $beforeState = Get-CurrentTranslationState
     $existingRunIds = @{}
     foreach ($existingRun in Get-RecentTranslationRuns) {
         $existingRunIds[[string]$existingRun.id] = $true
     }
+    $requestId = [guid]::NewGuid().ToString('N')
     Invoke-Gh -Arguments @(
         'workflow', 'run', 'Microsoft 365 Message Center bounded translations',
-        '--repo', $Repository, '--ref', 'main', '-f', "translation_ids=$($Ids -join ',')"
+        '--repo', $Repository, '--ref', 'main',
+        '-f', "translation_ids=$($Ids -join ',')",
+        '-f', "translation_request_id=$requestId"
     ) | Out-Null
-    $run = Wait-ForDispatchedRun -ExistingRunIds $existingRunIds
+    $run = Wait-ForDispatchedRun -ExistingRunIds $existingRunIds -RequestId $requestId
     & gh run watch $run.id --repo $Repository --exit-status | Out-Host
     if ($LASTEXITCODE -ne 0) {
         throw "Translation run $($run.id) failed."
@@ -108,17 +124,22 @@ function Invoke-VerifiedTranslationBatch {
 
     for ($attempt = 0; $attempt -lt 30; $attempt++) {
         $state = Get-CurrentTranslationState
-        $unpersisted = @(
-            $Ids | Where-Object {
-                $id = $_.Trim().ToUpperInvariant()
-                $state.CurrentIds.ContainsKey($id) -and -not $state.TranslatedIds.ContainsKey($id)
-            }
+        $currentRequestedIds = @(
+            $Ids | ForEach-Object { $_.Trim().ToUpperInvariant() } |
+                Where-Object { $state.CurrentIds.ContainsKey($_) }
         )
-        if (-not $unpersisted.Count) {
+        $unpersisted = @(
+            $currentRequestedIds | Where-Object { -not $state.TranslatedIds.ContainsKey($_) }
+        )
+        if (-not $unpersisted.Count -and $currentRequestedIds.Count) {
+            if ($state.TranslationCount -le $beforeState.TranslationCount) {
+                throw "Translation run $($run.id) persisted the requested IDs but did not increase the main translation count from $($beforeState.TranslationCount)."
+            }
             return [pscustomobject]@{
-                RunId       = $run.id
-                CurrentIds   = $state.CurrentIds
-                TranslatedIds = $state.TranslatedIds
+                RunId            = $run.id
+                CurrentIds       = $state.CurrentIds
+                TranslatedIds    = $state.TranslatedIds
+                TranslationCount = $state.TranslationCount
             }
         }
         Start-Sleep -Seconds 5

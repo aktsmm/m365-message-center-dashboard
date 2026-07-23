@@ -102,7 +102,16 @@ function ConvertFrom-MessageUpdatesInput {
     if ($InputValue -isnot [string]) { return @($InputValue) }
 
     $serialized = Get-SafeText -Name $Name -MaxLength 200000
-    if ($serialized.StartsWith('gzip-base64:', [StringComparison]::Ordinal) -or
+    if ($serialized.StartsWith('base64-json:', [StringComparison]::Ordinal)) {
+        try {
+            $base64 = $serialized.Substring('base64-json:'.Length)
+            $bytes = [Convert]::FromBase64String($base64)
+            $utf8 = [System.Text.UTF8Encoding]::new($false, $true)
+            $serialized = $utf8.GetString($bytes)
+        } catch {
+            throw "${Name} base64-json payload could not be decoded: $($_.Exception.Message)"
+        }
+    } elseif ($serialized.StartsWith('gzip-base64:', [StringComparison]::Ordinal) -or
         ($Name -eq 'translation_updates' -and $serialized -match '^H4sI[A-Za-z0-9+/=]+$')) {
         try {
             $base64 = if ($serialized.StartsWith('gzip-base64:', [StringComparison]::Ordinal)) {
