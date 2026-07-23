@@ -3,7 +3,11 @@ on:
   workflow_dispatch:
     inputs:
       translation_batch_index:
-        description: "Optional zero-based two-message batch index for an operator-run backfill. Run one index at a time."
+        description: "Deprecated optional zero-based four-message batch index."
+        required: false
+        type: string
+      translation_ids:
+        description: "Optional comma-separated current MC IDs (maximum four) for the serialized catch-up controller."
         required: false
         type: string
   workflow_run:
@@ -40,10 +44,34 @@ pre-agent-steps:
     shell: pwsh
     env:
       TRANSLATION_BATCH_INDEX: ${{ inputs.translation_batch_index }}
+      TRANSLATION_IDS: ${{ inputs.translation_ids }}
     run: |
       $translationBatchIndex = $env:TRANSLATION_BATCH_INDEX
+      $translationIds = $env:TRANSLATION_IDS
       if ($translationBatchIndex -and $translationBatchIndex -notmatch '^\d+$') {
         throw 'translation_batch_index must be a non-negative integer.'
+      }
+      if ($translationBatchIndex -and $translationIds) {
+        throw 'translation_batch_index and translation_ids cannot be combined.'
+      }
+      if (-not $translationIds -and Test-Path -LiteralPath 'reports/m365/latest/messages.json') {
+        $previousMessages = Get-Content -LiteralPath 'reports/m365/latest/messages.json' -Raw -Encoding UTF8 | ConvertFrom-Json
+        $translatedIds = @{}
+        if (Test-Path -LiteralPath 'reports/m365/latest/insights.json') {
+          $previousInsights = Get-Content -LiteralPath 'reports/m365/latest/insights.json' -Raw -Encoding UTF8 | ConvertFrom-Json
+          foreach ($translation in @($previousInsights.messageTranslations)) {
+            if (-not [string]::IsNullOrWhiteSpace([string]$translation.japaneseDetailedSummary)) {
+              $translatedIds[([string]$translation.id).Trim().ToUpperInvariant()] = $true
+            }
+          }
+        }
+        $translationIds = @(
+          $previousMessages.messages |
+            Sort-Object id |
+            Where-Object { -not $translatedIds.ContainsKey((([string]$_.id).Trim().ToUpperInvariant())) } |
+            Select-Object -First 4 |
+            ForEach-Object id
+        ) -join ','
       }
       $exportParameters = @{
         OutputDirectory                = "$env:RUNNER_TEMP/m365-agent-public"
@@ -51,12 +79,14 @@ pre-agent-steps:
         AgentContextPath               = '.m365-agent-context.json'
         AgentContextLimit              = 1000
         AgentContextBodyMaxChars       = 1000
-        AgentTranslationBatchSize      = 2
+        AgentTranslationBatchSize      = 4
         AgentTranslationBodyMaxChars   = 1000
         LookbackDays                   = 180
         RunId                          = '${{ github.run_id }}'
       }
-      if ($translationBatchIndex) {
+      if ($translationIds) {
+        $exportParameters.AgentTranslationIds = $translationIds
+      } elseif ($translationBatchIndex) {
         $exportParameters.AgentTranslationBatchIndex = [int]$translationBatchIndex
       }
       ./scripts/Export-M365MessageCenter.ps1 @exportParameters

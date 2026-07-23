@@ -32,8 +32,9 @@ $html = @'
   <script>
     (() => {
       const param = new URLSearchParams(window.location.search).get("scoutTheme");
-      const theme =
-        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const forcedTheme = ["light", "dark"].includes(param) ? param : null;
+      const storedTheme = localStorage.getItem("scoutTheme");
+      const theme = forcedTheme || (["light", "dark"].includes(storedTheme) ? storedTheme : "light");
       document.documentElement.setAttribute("data-theme", theme);
     })();
   </script>
@@ -123,6 +124,14 @@ $html = @'
       color: var(--cp-accent-fg);
       background: linear-gradient(135deg, var(--cp-link), var(--cp-accent), var(--cp-warning));
     }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .theme-toggle {
+      padding: 8px 12px; color: var(--cp-text); background: var(--cp-surface);
+      border: 1px solid var(--cp-border-strong); border-radius: 999px; cursor: pointer; font-weight: 700;
+    }
+    .theme-toggle:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
+    .theme-toggle:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
+    .theme-toggle:disabled { cursor: not-allowed; opacity: 0.72; }
     .nav-meta { color: var(--cp-text-muted); font-size: 0.84rem; text-align: right; }
     .source-status { font-weight: 700; color: var(--cp-text); }
     .hero { padding: 88px 8px 48px; max-width: 840px; }
@@ -236,7 +245,10 @@ $html = @'
   <main class="shell">
     <nav class="nav" aria-label="Dashboard navigation">
       <div class="brand"><span class="brand-mark">M</span><span>Microsoft 365 Change Radar</span></div>
-      <div class="nav-meta"><div id="generated"></div><div class="source-status" id="source-status"></div></div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false"></button>
+        <div class="nav-meta"><div id="generated"></div><div class="source-status" id="source-status"></div></div>
+      </div>
     </nav>
 
     <header class="hero">
@@ -289,6 +301,29 @@ $html = @'
     const MESSAGE_UPDATES = new Map((INSIGHTS?.messageUpdates || []).map(update => [update.id, update]));
     const MESSAGE_TRANSLATIONS = new Map((INSIGHTS?.messageTranslations || []).map(translation => [translation.id, translation]));
     const state = { filter: "all", query: "" };
+    const themeToggle = document.getElementById("theme-toggle");
+    const urlTheme = new URLSearchParams(window.location.search).get("scoutTheme");
+    const forcedTheme = ["light", "dark"].includes(urlTheme) ? urlTheme : null;
+    function renderThemeToggle() {
+      const theme = document.documentElement.getAttribute("data-theme") || "light";
+      themeToggle.textContent = theme === "dark" ? "ライト表示" : "ダーク表示";
+      themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+      themeToggle.disabled = Boolean(forcedTheme);
+      themeToggle.setAttribute(
+        "aria-label",
+        forcedTheme
+          ? `表示テーマは URL の scoutTheme=${forcedTheme} で固定されています`
+          : `現在は${theme === "dark" ? "ダーク" : "ライト"}表示です。${theme === "dark" ? "ライト" : "ダーク"}表示に切り替えます`
+      );
+    }
+    renderThemeToggle();
+    themeToggle.addEventListener("click", () => {
+      if (forcedTheme) return;
+      const nextTheme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      localStorage.setItem("scoutTheme", nextTheme);
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      renderThemeToggle();
+    });
     const fmt = value => value ? new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "short", day: "numeric" }).format(new Date(value)) : "—";
     const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
     const safeOfficialUrl = value => {

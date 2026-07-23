@@ -1,0 +1,121 @@
+name: M365 translation catch-up controller
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: m365-message-center-translation-catchup
+  cancel-in-progress: false
+
+jobs:
+  catch-up:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - name: Checkout current public state
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Dispatch bounded translation catch-up
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -uo pipefail
+
+          mapfile -t pending_ids < <(
+            jq -r '
+              (.messageTranslations // [] | map(select((.japaneseDetailedSummary // "") | length > 0) | .id) | unique) as $translated
+              | .messageUpdates[]
+              | select(.id as $id | ($translated | index($id) | not))
+              | .id
+            ' reports/m365/latest/insights.json | sort
+          )
+
+          if (( ${#pending_ids[@]} == 0 )); then
+            echo "No untranslated current Message Center IDs remain." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          declare -a failed_ids=()
+          declare -a failure_reasons=()
+
+          dispatch_and_wait() {
+            local ids="$1"
+            local started_at
+            local run_id=""
+            started_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            gh workflow run m365-weekly-translations.lock.yml --repo "$REPOSITORY" --ref main -f "translation_ids=$ids"
+
+            for _ in {1..24}; do
+              sleep 5
+              run_id="$(
+                gh run list --repo "$REPOSITORY" --workflow m365-weekly-translations.lock.yml \
+                  --event workflow_dispatch --limit 20 --json databaseId,createdAt \
+                  --jq "[.[] | select(.createdAt >= \"$started_at\")] | sort_by(.databaseId) | last | .databaseId // empty"
+              )"
+              [[ -n "$run_id" ]] && break
+            done
+
+            if [[ -z "$run_id" ]]; then
+              DISPATCH_REASON="No dispatched translation run was discovered."
+              return 1
+            fi
+
+            if gh run watch "$run_id" --repo "$REPOSITORY" --exit-status; then
+              return 0
+            fi
+
+            DISPATCH_REASON="$(
+              gh run view "$run_id" --repo "$REPOSITORY" --log-failed 2>&1 |
+                grep -E 'Exception:|Error:|Expected |Translation |Message update |Credential-like|Unsafe content|Missing ' |
+                tail -1 | sed 's/[[:cntrl:]]//g' | cut -c1-500
+            )"
+            DISPATCH_REASON="${DISPATCH_REASON:-Translation run $run_id failed; inspect the linked run log.}"
+            return 1
+          }
+
+          for (( offset=0; offset<${#pending_ids[@]}; offset+=4 )); do
+            batch=( "${pending_ids[@]:offset:4}" )
+            batch_ids="$(IFS=,; echo "${batch[*]}")"
+            echo "Attempting batch: $batch_ids" >> "$GITHUB_STEP_SUMMARY"
+
+            if dispatch_and_wait "$batch_ids"; then
+              continue
+            fi
+            sleep 20
+            if dispatch_and_wait "$batch_ids"; then
+              continue
+            fi
+
+            echo "Batch retry failed; isolating IDs. Reason: $DISPATCH_REASON" >> "$GITHUB_STEP_SUMMARY"
+            for id in "${batch[@]}"; do
+              if dispatch_and_wait "$id"; then
+                continue
+              fi
+              failed_ids+=("$id")
+              failure_reasons+=("$DISPATCH_REASON")
+              echo "| $id | $DISPATCH_REASON |" >> "$GITHUB_STEP_SUMMARY"
+            done
+          done
+
+          if (( ${#failed_ids[@]} > 0 )); then
+            {
+              echo ""
+              echo "## Translation IDs requiring intervention"
+              echo "| MC ID | Exact failed-run reason |"
+              echo "| --- | --- |"
+              for index in "${!failed_ids[@]}"; do
+                echo "| ${failed_ids[$index]} | ${failure_reasons[$index]} |"
+              done
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          echo "All ${#pending_ids[@]} untranslated current Message Center IDs were processed." >> "$GITHUB_STEP_SUMMARY"

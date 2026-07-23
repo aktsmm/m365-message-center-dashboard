@@ -19,9 +19,10 @@ param(
     [string]$AgentContextPath,
     [ValidateRange(1, 1000)][int]$AgentContextLimit = 1000,
     [ValidateRange(200, 2000)][int]$AgentContextBodyMaxChars = 1000,
-    [ValidateRange(1, 10)][int]$AgentTranslationBatchSize = 2,
+    [ValidateRange(1, 10)][int]$AgentTranslationBatchSize = 4,
     [ValidateRange(200, 2000)][int]$AgentTranslationBodyMaxChars = 1000,
     [Nullable[int]]$AgentTranslationBatchIndex,
+    [string]$AgentTranslationIds,
     [switch]$IncludeContent
 )
 
@@ -340,17 +341,49 @@ $facts | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath (Join-Path $OutputD
 
 if ($AgentContextPath) {
     $translationCandidates = @($messages | Sort-Object id)
-    $translationBatchCount = [Math]::Ceiling($translationCandidates.Count / [double]$AgentTranslationBatchSize)
-    $translationWeek = [Math]::Floor(($generatedAt - [DateTimeOffset]'2020-01-06T00:00:00Z').TotalDays / 7)
-    $translationBatchIndex = if ($null -ne $AgentTranslationBatchIndex) {
-        if ($AgentTranslationBatchIndex -lt 0 -or $AgentTranslationBatchIndex -ge $translationBatchCount) {
-            throw "Agent translation batch index is outside the current snapshot range: $AgentTranslationBatchIndex"
+    if ($AgentTranslationIds -and $null -ne $AgentTranslationBatchIndex) {
+        throw 'AgentTranslationIds and AgentTranslationBatchIndex cannot be used together.'
+    }
+
+    $translationBatchIndex = 0
+    if ($AgentTranslationIds) {
+        $requestedIds = @(
+            $AgentTranslationIds -split ',' |
+                ForEach-Object { $_.Trim().ToUpperInvariant() } |
+                Where-Object { $_ }
+        )
+        if ($requestedIds.Count -ne @($requestedIds | Sort-Object -Unique).Count) {
+            throw 'AgentTranslationIds contains duplicate MC IDs.'
         }
-        [int]$AgentTranslationBatchIndex
-    } elseif ($translationBatchCount) {
-        [int]($translationWeek % $translationBatchCount)
+        if ($requestedIds.Count -gt $AgentTranslationBatchSize) {
+            throw "AgentTranslationIds exceeds the configured batch size of $AgentTranslationBatchSize."
+        }
+        $messagesById = @{}
+        foreach ($message in $translationCandidates) {
+            $messagesById[([string]$message.id).Trim().ToUpperInvariant()] = $message
+        }
+        $translationCandidates = @(
+            foreach ($id in $requestedIds) {
+                if ($messagesById.ContainsKey($id)) {
+                    $messagesById[$id]
+                } else {
+                    Write-Warning "Requested translation MC ID is absent from this snapshot and will be skipped: $id"
+                }
+            }
+        )
     } else {
-        0
+        $translationBatchCount = [Math]::Ceiling($translationCandidates.Count / [double]$AgentTranslationBatchSize)
+        $translationWeek = [Math]::Floor(($generatedAt - [DateTimeOffset]'2020-01-06T00:00:00Z').TotalDays / 7)
+        $translationBatchIndex = if ($null -ne $AgentTranslationBatchIndex) {
+            if ($AgentTranslationBatchIndex -lt 0 -or $AgentTranslationBatchIndex -ge $translationBatchCount) {
+                throw "Agent translation batch index is outside the current snapshot range: $AgentTranslationBatchIndex"
+            }
+            [int]$AgentTranslationBatchIndex
+        } elseif ($translationBatchCount) {
+            [int]($translationWeek % $translationBatchCount)
+        } else {
+            0
+        }
     }
     $translationBatch = [System.Collections.Generic.List[object]]::new()
     $translationBatchSize = [Math]::Min($AgentTranslationBatchSize, $translationCandidates.Count)

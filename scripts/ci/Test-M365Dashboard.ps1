@@ -269,7 +269,7 @@ try {
             throw 'Agent context exposes full content/details or exceeds the bounded body excerpt.'
         }
         if (@($compactAgentContext.translationBatch).Count -lt 1 -or
-            @($compactAgentContext.translationBatch).Count -gt 2 -or
+            @($compactAgentContext.translationBatch).Count -gt 4 -or
             @($compactAgentContext.translationBatch | Where-Object { $_.bodyText.Length -gt 1000 }).Count) {
             throw 'Agent translation batch is not bounded to the configured size and body length.'
         }
@@ -286,15 +286,21 @@ try {
         -RunId 'backfill-fixture-run' `
         -ReferenceTime '2026-07-23T00:00:00Z' `
         -AgentContextPath $backfillContext `
-        -AgentTranslationBatchIndex 1 `
+        -AgentTranslationIds 'MC900002,MC900003' `
         -IncludeContent
     $backfillBatch = @((Get-Content -LiteralPath $backfillContext -Raw -Encoding UTF8 | ConvertFrom-Json).translationBatch)
     if ($backfillBatch.Count -ne 2 -or @($backfillBatch.id | Sort-Object -Unique).Count -ne 2) {
-        throw 'Explicit translation backfill batch is not a bounded unique two-message batch.'
+        throw 'Explicit translation backfill batch is not a bounded unique requested-message batch.'
     }
     if ($html -notmatch '共同作業と管理者設定の変更') { throw 'Agentic summary is missing from dashboard HTML.' }
     if ($html -notmatch 'Microsoft 365 Change Radar') { throw 'Dashboard title is missing.' }
-    if ($html -notmatch 'scoutTheme' -or $html -notmatch '--cp-accent') { throw 'Mandatory artifact theme is missing.' }
+    if ($html -notmatch 'scoutTheme' -or
+        $html -notmatch 'localStorage\.getItem\("scoutTheme"\)' -or
+        $html -notmatch 'theme-toggle' -or
+        $html -notmatch 'storedTheme.*"light"' -or
+        $html -match 'prefers-color-scheme') {
+        throw 'Light-first persistent accessible theme control is missing or still follows the OS theme.'
+    }
     $repositoryLinks = [regex]::Matches($html, 'https://github\.com/aktsmm/m365-message-center-dashboard').Count
     if ($repositoryLinks -lt 2 -or $html -notmatch 'hero-repo-link|GitHub リポジトリを開く') {
         throw 'Dashboard is missing the accessible hero repository link or footer repository link.'
@@ -448,6 +454,8 @@ try {
         -not $translationPreAgentSection.Contains('"Microsoft 365 Message Center weekly dashboard"') -or
         -not $translationPreAgentSection.Contains("github.event.workflow_run.conclusion == 'success'") -or
         -not $translationPreAgentSection.Contains('translation_batch_index') -or
+        -not $translationPreAgentSection.Contains('translation_ids') -or
+        -not $translationPreAgentSection.Contains('AgentTranslationIds') -or
         -not $translationPreAgentSection.Contains('AgentTranslationBatchIndex') -or
         $translationPreAgentSection.Contains('M365 Message Center Dashboard - Public Metadata')) {
         throw 'Translations workflow does not wait for the successful core weekly dashboard workflow.'
@@ -457,16 +465,23 @@ try {
         -not $translationSafeOutputSection.Contains('translation_updates:')) {
         throw 'Translations workflow must publish only translation_updates.'
     }
-    if (@($compactAgentContext.translationBatch).Count -ne [Math]::Min(2, @($messages.messages).Count) -or
+    if (@($compactAgentContext.translationBatch).Count -ne [Math]::Min(4, @($messages.messages).Count) -or
         @($compactAgentContext.translationBatch.id | Sort-Object -Unique).Count -ne @($compactAgentContext.translationBatch).Count) {
         throw 'Translation batch does not contain the configured number of unique rotating Message Center records.'
+    }
+    $catchupWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-translation-catchup.yml') -Raw -Encoding UTF8
+    if (-not $catchupWorkflow.Contains('m365-message-center-translation-catchup') -or
+        -not $catchupWorkflow.Contains('translation_ids') -or
+        -not $catchupWorkflow.Contains('gh run watch') -or
+        -not $catchupWorkflow.Contains('isolating IDs')) {
+        throw 'Translation catch-up controller does not serialize bounded dispatches with per-ID isolation.'
     }
     $readme = Get-Content -LiteralPath (Join-Path $root 'README.md') -Raw -Encoding UTF8
     $aboutGenerator = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365DashboardAboutPage.ps1') -Raw -Encoding UTF8
     if ($readme -notmatch '月曜日・木曜日 07:17 JST' -or
-        $readme -notmatch '最大4カード/週' -or
+        $readme -notmatch '最大8カード/週' -or
         $aboutGenerator -notmatch '月曜日・木曜日 07:17 JST' -or
-        $aboutGenerator -notmatch '最大4カード/週') {
+        $aboutGenerator -notmatch '最大8カード/週') {
         throw 'Operator documentation does not describe the twice-weekly translation cadence.'
     }
 

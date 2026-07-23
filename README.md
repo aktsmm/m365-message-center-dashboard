@@ -29,12 +29,12 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 1. **Microsoft Graph**: `ServiceMessage.Read.All` を使い Message Center を取得します。
 2. **GitHub Actions**: 本文を安全なテキストに変換した lab-public snapshot、details、決定論的な日本語要約を生成します。
 3. **Core GitHub Agentic Workflow**: 同じ run の snapshot を入力として週次 AI insights を生成します。MC ごとの日本語タイトル・100文字以内の要約・許可済み公式リンクは、その同じ snapshot から決定論的に生成します。
-4. **Translations GitHub Agentic Workflow**: core の成功後にのみ起動し、2件までの bounded translation batch を検証・公開します。週2回の実行により、最大4カード/週が詳細な日本語要約と本文訳の対象になります。
+4. **Translations GitHub Agentic Workflow**: core の成功後にのみ起動し、4件までの bounded translation batch を検証・公開します。週2回の実行により、最大8カード/週が詳細な日本語要約と本文訳の対象になります。
 5. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
 
 公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
 
-初回の翻訳 backfill では、**Microsoft 365 Message Center bounded translations** を `translation_batch_index`（0 始まり）付きで手動実行します。1 run は必ず2件だけを処理するため、前の run の成功・Pages 公開を確認してから次の index を実行してください。同時実行や index の飛ばしは行わず、catch-up 後は月曜日・木曜日の通常 cadence に戻します。
+翻訳の catch-up は **M365 translation catch-up controller** を main ブランチで手動実行します。未翻訳の現行 MC ID を4件ずつ直列で処理し、バッチ失敗時は1件ずつ再試行して他の ID を続行します。各翻訳 run は同一 run の Graph snapshot を使うため、対象が消えた場合も未検証の訳文を公開しません。
 
 アクセストークン、Graph 認証情報、client secret、API key、password は Git、Artifacts、Pages に保存・公開しません。credential-like 値は公開 snapshot を生成する前に `[REDACTED]` に置換します。
 
@@ -75,9 +75,9 @@ Run **M365 Message Center Dashboard - Public Metadata** manually once after conf
 
 ## Agentic summary safety boundary
 
-The Agentic Workflows receive a transient compact context containing untrusted Message Center excerpts. Their instructions prohibit following content in that file and prohibit publishing credentials or access tokens. Each pre-agent step derives a lab-public snapshot from its Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The core workflow accepts only the `publish_m365_dashboard` safe output for the weekly brief, while `Publish-M365AgentInsights.ps1` derives every card's Japanese title, short summary, and official links from that exact snapshot. The separate translations workflow accepts only `translation_updates`; its two-message batch supplies at most 1,000 source characters per message with explicit truncation metadata. Because it runs after every successful core run, it advances up to four cards per week. Both publishers reject unsafe markup, credential-like content, fabricated URLs, oversized or low-quality translations, mismatched translation source metadata, and MC IDs that are absent from their exact same-run snapshots before rendering the public dashboard.
+The Agentic Workflows receive a transient compact context containing untrusted Message Center excerpts. Their instructions prohibit following content in that file and prohibit publishing credentials or access tokens. Each pre-agent step derives a lab-public snapshot from its Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The core workflow accepts only the `publish_m365_dashboard` safe output for the weekly brief, while `Publish-M365AgentInsights.ps1` derives every card's Japanese title, short summary, and official links from that exact snapshot. The separate translations workflow accepts only `translation_updates`; its four-message batch supplies at most 1,000 source characters per message with explicit truncation metadata. Because it runs after every successful core run, it advances up to eight cards per week. The catch-up controller serializes larger backlogs and isolates a failed batch to individual IDs. Both publishers reject unsafe markup, credential-like content, fabricated URLs, oversized or low-quality translations, mismatched translation source metadata, and MC IDs that are absent from their exact same-run snapshots before rendering the public dashboard.
 
-The optional `translation_batch_index` is restricted to a valid batch in the current Graph snapshot. It does not bypass the same-snapshot validation, bounded source text, or serialized publisher contract.
+The deprecated optional `translation_batch_index` and the controller-only `translation_ids` input are restricted to a bounded current Graph snapshot. Neither bypasses same-snapshot validation, bounded source text, or the serialized publisher contract.
 
 If an Agentic run fails or its output cannot pass validation, Pages retains only previously validated translation data. Each unprocessed card shows an explicit no-data message in **日本語訳と詳細要約**; it never displays a fabricated translation.
 
