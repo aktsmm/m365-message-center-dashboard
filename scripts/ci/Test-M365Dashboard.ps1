@@ -318,17 +318,13 @@ try {
         -not $preAgentSection.Contains('$env:RUNNER_TEMP/m365-agent-public') -or
         -not $preAgentSection.Contains('-IncludeContent') -or
         -not $preAgentSection.Contains('-AgentContextLimit 1000') -or
-        -not $preAgentSection.Contains('-AgentContextBodyMaxChars 1000') -or
-        -not $preAgentSection.Contains('-AgentTranslationBatchSize 2') -or
-        -not $preAgentSection.Contains('-AgentTranslationBodyMaxChars 1000')) {
+        -not $preAgentSection.Contains('-AgentContextBodyMaxChars 1000')) {
         throw 'Agentic pre-agent steps do not export and transfer the public metadata snapshot.'
     }
     if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
         -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
     -not $safeOutputSection.Contains('-MessagesJson $messagesJson') -or
     -not $safeOutputSection.Contains('message_updates') -or
-    -not $safeOutputSection.Contains('translation_updates') -or
-    -not $safeOutputSection.Contains('-TranslationBatchJson $translationBatchJson') -or
     -not $safeOutputSection.Contains('gzip-base64 encoded UTF-8 JSON array') -or
     -not $safeOutputSection.Contains('not a') -or
     -not $safeOutputSection.Contains('tool-level JSON array')) {
@@ -336,6 +332,9 @@ try {
     }
     if ($safeOutputSection -match 'Export-M365MessageCenter\.ps1|azure/login@') {
         throw 'Agentic safe output must not perform a second Graph pull before validation.'
+    }
+    if ($safeOutputSection.Contains('translation_updates:') -or $safeOutputSection.Contains('-TranslationBatchJson')) {
+        throw 'Core weekly workflow must not publish translation-only safe output.'
     }
     $publicWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-dashboard-public.yml') -Raw -Encoding UTF8
     if (-not $publicWorkflow.Contains('Export lab-public Message Center content') -or
@@ -359,6 +358,10 @@ try {
         $translationSafeOutputSection.Contains('publish-m365-dashboard') -or
         -not $translationSafeOutputSection.Contains('translation_updates:')) {
         throw 'Translations workflow must publish only translation_updates.'
+    }
+    if (@($compactAgentContext.translationBatch).Count -ne [Math]::Min(2, @($messages.messages).Count) -or
+        @($compactAgentContext.translationBatch.id | Sort-Object -Unique).Count -ne @($compactAgentContext.translationBatch).Count) {
+        throw 'Translation batch does not contain the configured number of unique rotating Message Center records.'
     }
 
     Write-Host 'M365 dashboard fixture validation passed.'
