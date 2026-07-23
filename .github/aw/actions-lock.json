@@ -10,6 +10,16 @@
       "version": "v4",
       "sha": "d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e"
     },
+    "actions/download-artifact@v4": {
+      "repo": "actions/download-artifact",
+      "version": "v4",
+      "sha": "d3f86a106a0bac45b974a628896c90dbdf5c8093"
+    },
+    "actions/upload-artifact@v4": {
+      "repo": "actions/upload-artifact",
+      "version": "v4",
+      "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02"
+    },
     "actions/upload-pages-artifact@v3": {
       "repo": "actions/upload-pages-artifact",
       "version": "v3",

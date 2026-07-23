@@ -33,11 +33,19 @@ pre-agent-steps:
     shell: pwsh
     run: |
       ./scripts/Export-M365MessageCenter.ps1 `
-        -OutputDirectory "$env:RUNNER_TEMP/m365-public" `
+        -OutputDirectory "$env:RUNNER_TEMP/m365-agent-public" `
         -AgentContextPath ".m365-agent-context.json" `
         -AgentContextLimit 50 `
         -LookbackDays 180 `
         -RunId '${{ github.run_id }}'
+
+  - name: Upload public Message Center snapshot
+    uses: actions/upload-artifact@v7
+    with:
+      name: m365-agent-public-metadata
+      path: ${{ runner.temp }}/m365-agent-public
+      if-no-files-found: error
+      retention-days: 1
 
 safe-outputs:
   jobs:
@@ -83,29 +91,28 @@ safe-outputs:
           with:
             fetch-depth: 0
 
-        - name: Sign in to Microsoft Entra ID with OIDC
-          uses: azure/login@a457da9ea143d694b1b9c7c869ebb04ebe844ef5 # v2.3.0
+        - name: Download public Message Center snapshot
+          uses: actions/download-artifact@v8
           with:
-            client-id: ${{ secrets.AZURE_CLIENT_ID }}
-            tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-            allow-no-subscriptions: true
+            name: m365-agent-public-metadata
+            path: ${{ runner.temp }}/m365-agent-public
 
-        - name: Refresh public metadata, validate insights, and rebuild dashboard
+        - name: Validate insights from the agent snapshot and rebuild dashboard
           shell: pwsh
           run: |
-            $publicOutput = Join-Path $env:RUNNER_TEMP 'm365-public'
-            ./scripts/Export-M365MessageCenter.ps1 `
-              -OutputDirectory $publicOutput `
-              -LookbackDays 180 `
-              -RunId '${{ github.run_id }}'
+            $publicOutput = Join-Path $env:RUNNER_TEMP 'm365-agent-public'
+            $messagesJson = Join-Path $publicOutput 'messages.json'
+            $factsJson = Join-Path $publicOutput 'facts.json'
+            if (-not (Test-Path -LiteralPath $messagesJson)) { throw "Agent public metadata snapshot is missing: $messagesJson" }
+            if (-not (Test-Path -LiteralPath $factsJson)) { throw "Agent public facts snapshot is missing: $factsJson" }
 
             New-Item -ItemType Directory -Path reports/m365/latest -Force | Out-Null
-            Copy-Item (Join-Path $publicOutput 'messages.json') reports/m365/latest/messages.json -Force
-            Copy-Item (Join-Path $publicOutput 'facts.json') reports/m365/latest/facts.json -Force
+            Copy-Item $messagesJson reports/m365/latest/messages.json -Force
+            Copy-Item $factsJson reports/m365/latest/facts.json -Force
 
             ./scripts/Publish-M365AgentInsights.ps1 `
               -AgentOutputPath "$env:GH_AW_AGENT_OUTPUT" `
-              -MessagesJson reports/m365/latest/messages.json `
+              -MessagesJson $messagesJson `
               -OutputPath reports/m365/latest/insights.json
 
             ./scripts/New-M365MessageCenterDashboard.ps1 `

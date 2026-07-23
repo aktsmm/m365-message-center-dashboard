@@ -48,7 +48,7 @@ Run **M365 Message Center Dashboard - Public Metadata** manually once after conf
 
 ## Agentic summary safety boundary
 
-The Agentic Workflow receives a transient file containing untrusted Message Center body text. Its instructions prohibit following content in that file and prohibit publishing bodies, tenant configuration, URLs, or credentials. The only accepted output is the `publish_m365_dashboard` safe output. `Publish-M365AgentInsights.ps1` rejects missing fields, unsafe markup, overly long content, and MC IDs that were not in the exported metadata before rendering the public dashboard.
+The Agentic Workflow receives a transient file containing untrusted Message Center body text. Its instructions prohibit following content in that file and prohibit publishing bodies, tenant configuration, URLs, or credentials. The pre-agent step derives a public-metadata-only snapshot from the same Graph pull and transfers it as a one-day artifact; it never contains bodies, details, tenant identifiers, or credentials. The only accepted output is the `publish_m365_dashboard` safe output. `Publish-M365AgentInsights.ps1` rejects missing fields, unsafe markup, overly long content, and MC IDs that are absent from that exact public snapshot before rendering the public dashboard.
 
 ## Local validation
 

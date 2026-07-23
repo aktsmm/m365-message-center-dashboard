@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "type": "publish_m365_dashboard",
+      "headline": "現在の重要変更を確認してください。",
+      "executive_summary": "現在の Message Center スナップショットにある重要変更を優先して確認してください。",
+      "this_week": "MC1436831: 影響範囲と担当者を確認",
+      "this_month": "MC1436831: 検証計画を準備",
+      "watch": "MC1436831: 更新状況を継続監視",
+      "customer_questions": "対象サービスの利用状況と検証環境を確認できるか",
+      "referenced_ids": "MC1436831"
+    }
+  ]
+}

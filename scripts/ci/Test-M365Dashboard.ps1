@@ -70,13 +70,54 @@ try {
         throw 'Graph fallback leaked private body/details into public JSON.'
     }
 
-    $agentWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-weekly-insights.md') -Raw -Encoding UTF8
-    $safeOutputSection = ($agentWorkflow -split 'safe-outputs:', 2)[1]
-    if ($safeOutputSection -notmatch 'Refresh public metadata, validate insights, and rebuild dashboard') {
-        throw 'Agentic safe output does not refresh public metadata before validation.'
+    $currentSnapshot = Join-Path $temp 'current-graph-pull'
+    & (Join-Path $root 'scripts\Export-M365MessageCenter.ps1') `
+        -InputJsonPath (Join-Path $root 'tests\fixtures\m365-current-messages.json') `
+        -OutputDirectory $currentSnapshot `
+        -LookbackDays 365 `
+        -RunId 'current-fixture-run' `
+        -ReferenceTime '2026-07-23T00:00:00Z'
+    $currentSnapshotRaw = Get-Content -LiteralPath (Join-Path $currentSnapshot 'messages.json') -Raw -Encoding UTF8
+    if ($currentSnapshotRaw -match 'CURRENT_BODY|CURRENT_DETAIL|"body"|"details"') {
+        throw 'Current public metadata snapshot leaked private body/details.'
     }
-    if ($safeOutputSection -notmatch 'Export-M365MessageCenter\.ps1') {
-        throw 'Agentic safe output does not export its validation metadata.'
+    $staleValidationFailed = $false
+    try {
+        & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+            -AgentOutputPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output-current-id.json') `
+            -MessagesJson (Join-Path $temp 'messages.json') `
+            -OutputPath (Join-Path $temp 'stale-insights.json')
+    } catch {
+        if ($_.Exception.Message -notmatch 'Agent referenced unknown MC IDs: MC1436831') { throw }
+        $staleValidationFailed = $true
+    }
+    if (-not $staleValidationFailed) {
+        throw 'A stale metadata snapshot unexpectedly accepted a current agent reference.'
+    }
+    $currentInsights = Join-Path $temp 'current-insights.json'
+    & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+        -AgentOutputPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output-current-id.json') `
+        -MessagesJson (Join-Path $currentSnapshot 'messages.json') `
+        -OutputPath $currentInsights
+    if ((Get-Content -LiteralPath $currentInsights -Raw -Encoding UTF8) -notmatch 'MC1436831') {
+        throw 'A current public metadata snapshot did not validate the matching agent reference.'
+    }
+
+    $agentWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-weekly-insights.md') -Raw -Encoding UTF8
+    $preAgentSection = ($agentWorkflow -split 'safe-outputs:', 2)[0]
+    $safeOutputSection = ($agentWorkflow -split 'safe-outputs:', 2)[1]
+    if (-not $preAgentSection.Contains('uses: actions/upload-artifact@v7') -or
+        -not $preAgentSection.Contains('name: m365-agent-public-metadata') -or
+        -not $preAgentSection.Contains('$env:RUNNER_TEMP/m365-agent-public')) {
+        throw 'Agentic pre-agent steps do not export and transfer the public metadata snapshot.'
+    }
+    if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
+        -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
+        -not $safeOutputSection.Contains('-MessagesJson $messagesJson')) {
+        throw 'Agentic safe output does not validate against the transferred public metadata snapshot.'
+    }
+    if ($safeOutputSection -match 'Export-M365MessageCenter\.ps1|azure/login@') {
+        throw 'Agentic safe output must not perform a second Graph pull before validation.'
     }
 
     Write-Host 'M365 dashboard fixture validation passed.'
