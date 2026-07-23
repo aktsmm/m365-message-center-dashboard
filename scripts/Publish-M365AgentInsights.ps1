@@ -72,6 +72,46 @@ function Get-RequiredUpdateText {
     return $value
 }
 
+function ConvertFrom-MessageUpdatesInput {
+    param([Parameter(Mandatory)][object]$InputValue)
+
+    if ($InputValue -isnot [string]) { return @($InputValue) }
+
+    $serialized = Get-SafeText -Name 'message_updates' -MaxLength 200000
+    if ($serialized.StartsWith('gzip-base64:', [StringComparison]::Ordinal)) {
+        try {
+            $compressedBytes = [Convert]::FromBase64String($serialized.Substring('gzip-base64:'.Length))
+            $compressedStream = [System.IO.MemoryStream]::new($compressedBytes)
+            try {
+                $gzipStream = [System.IO.Compression.GzipStream]::new(
+                    $compressedStream,
+                    [System.IO.Compression.CompressionMode]::Decompress
+                )
+                try {
+                    $reader = [System.IO.StreamReader]::new($gzipStream, [System.Text.Encoding]::UTF8)
+                    try {
+                        $serialized = $reader.ReadToEnd()
+                    } finally {
+                        $reader.Dispose()
+                    }
+                } finally {
+                    $gzipStream.Dispose()
+                }
+            } finally {
+                $compressedStream.Dispose()
+            }
+        } catch {
+            throw "message_updates gzip-base64 payload could not be decoded: $($_.Exception.Message)"
+        }
+    }
+
+    try {
+        return @($serialized | ConvertFrom-Json)
+    } catch {
+        throw "message_updates must be a valid JSON array: $($_.Exception.Message)"
+    }
+}
+
 $messages = Get-Content -LiteralPath $MessagesJson -Raw -Encoding UTF8 | ConvertFrom-Json
 $allowedIds = @(
     $messages.messages |
@@ -120,15 +160,7 @@ if (-not ($item.PSObject.Properties.Name -contains 'message_updates')) {
     throw 'Missing insight field: message_updates'
 }
 $messageUpdatesInput = $item.message_updates
-if ($messageUpdatesInput -is [string]) {
-    try {
-        $messageUpdates = @((Get-SafeText -Name 'message_updates' -MaxLength 200000) | ConvertFrom-Json)
-    } catch {
-        throw "message_updates must be a valid JSON array: $($_.Exception.Message)"
-    }
-} else {
-    $messageUpdates = @($messageUpdatesInput)
-}
+$messageUpdates = @(ConvertFrom-MessageUpdatesInput -InputValue $messageUpdatesInput)
 if ($messageUpdates.Count -ne $allowedIds.Count) {
     throw "Expected one message update for each MC ID ($($allowedIds.Count)), got $($messageUpdates.Count)."
 }

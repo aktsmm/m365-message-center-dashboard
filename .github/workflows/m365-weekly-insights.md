@@ -88,7 +88,7 @@ safe-outputs:
           required: true
           type: string
         message_updates:
-          description: "JSON array with exactly one localized update per supplied MC ID"
+          description: "gzip-base64 UTF-8 JSON array with exactly one localized update per supplied MC ID"
           required: true
           type: string
       steps:
@@ -185,9 +185,11 @@ Call `publish-m365-dashboard` exactly once with:
 - Prioritized newline-separated actions for 今週確認, 今月準備, and 継続監視.
 - Newline-separated customer questions.
 - Every MC ID referenced by the summary in `referenced_ids`.
-- `message_updates` as a JSON-encoded string containing an array with exactly one object for every supplied MC ID.
-  This safe-output input has type `string`: pass the compact JSON text, not a tool-level JSON array.
-  For example, its value begins with `[{\"id\":\"MC123456\",...}]`. Each object must have
+- `message_updates` as a gzip-base64 encoded UTF-8 JSON array containing exactly one object for every supplied MC ID.
+  This safe-output input has type `string`: pass `gzip-base64:` followed by the Base64 value, not a
+  tool-level JSON array or raw JSON. Generate the value from the full JSON file with:
+  `python3 -c 'import base64,gzip; print("gzip-base64:"+base64.b64encode(gzip.compress(open("/tmp/gh-aw/agent/message_updates.json","rb").read())).decode())'`.
+  Each decoded object must have
   `id`, `japanese_title`, `japanese_summary`, `message_url`, and `learn_urls`.
   Write a Japanese title, preserve the original title only in the source data, and keep
   `japanese_summary` at 100 Japanese characters or fewer. Set `message_url` to `null` unless

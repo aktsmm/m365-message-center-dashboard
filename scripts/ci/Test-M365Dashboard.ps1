@@ -37,6 +37,24 @@ try {
     if ((Get-Content -LiteralPath $stringStructuredInsights -Raw -Encoding UTF8) -notmatch 'messageUpdates') {
         throw 'String-form message_updates did not publish structured per-message updates.'
     }
+    $gzipStructuredOutput = Join-Path $temp 'agent-output-gzip-updates.json'
+    $gzipStructuredInsights = Join-Path $temp 'insights-gzip-updates.json'
+    $agentOutputWithGzipUpdates = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $updateBytes = [System.Text.Encoding]::UTF8.GetBytes(($agentOutputWithGzipUpdates.items[0].message_updates | ConvertTo-Json -Depth 8 -Compress))
+    $updateStream = [System.IO.MemoryStream]::new()
+    $gzipStream = [System.IO.Compression.GzipStream]::new($updateStream, [System.IO.Compression.CompressionLevel]::Optimal, $true)
+    $gzipStream.Write($updateBytes, 0, $updateBytes.Length)
+    $gzipStream.Dispose()
+    $agentOutputWithGzipUpdates.items[0].message_updates = 'gzip-base64:' + [Convert]::ToBase64String($updateStream.ToArray())
+    $updateStream.Dispose()
+    $agentOutputWithGzipUpdates | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $gzipStructuredOutput -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+        -AgentOutputPath $gzipStructuredOutput `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -OutputPath $gzipStructuredInsights
+    if ((Get-Content -LiteralPath $gzipStructuredInsights -Raw -Encoding UTF8) -notmatch 'messageUpdates') {
+        throw 'gzip-base64 message_updates did not publish structured per-message updates.'
+    }
     & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
         -MessagesJson (Join-Path $temp 'messages.json') `
         -InsightsJson $publishedInsights `
@@ -229,8 +247,9 @@ try {
         -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
     -not $safeOutputSection.Contains('-MessagesJson $messagesJson') -or
     -not $safeOutputSection.Contains('message_updates') -or
-    -not $safeOutputSection.Contains('JSON-encoded string') -or
-    -not $safeOutputSection.Contains('not a tool-level JSON array')) {
+    -not $safeOutputSection.Contains('gzip-base64 encoded UTF-8 JSON array') -or
+    -not $safeOutputSection.Contains('not a') -or
+    -not $safeOutputSection.Contains('tool-level JSON array')) {
         throw 'Agentic safe output does not validate against the transferred public metadata snapshot.'
     }
     if ($safeOutputSection -match 'Export-M365MessageCenter\.ps1|azure/login@') {
