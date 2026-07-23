@@ -1,22 +1,23 @@
 # Microsoft 365 Message Center Dashboard
 
-Microsoft Graph の Message Center から、公開を許可したメタデータだけを収集して GitHub Pages に公開する、単一 HTML の週次ダッシュボードです。Microsoft 公式製品ではなく、AS-IS のサンプルです。
+Microsoft Graph の Message Center から、ラボ公開を許可した Message Center コンテンツを収集して GitHub Pages に公開する、単一 HTML の週次ダッシュボードです。Microsoft 公式製品ではなく、AS-IS のサンプルです。
 
 ## Public data boundary
 
-`reports/m365/` と GitHub Pages へ保存・公開するのは、次だけです。
+このリポジトリは、明示的に承認された**テスト テナント専用**の lab-public 構成です。`reports/m365/`、GitHub Pages、および dashboard artifact には次を保存・公開します。
 
-- Message Center ID、タイトル、カテゴリ、重要度、主要日付、サービス、タグ
+- Message Center ID、タイトル、カテゴリ、重要度、主要日付、サービス、タグ、本文の読みやすいテキスト、name/value 形式の詳細
 - 上記メタデータから集計した数値
-- Agentic Workflow が検証済みの週次要約と、参照する MC ID
+- 決定論的に生成した日本語メッセージ要約
+- Agentic Workflow が検証済みの日本語週次要約と、参照する MC ID
 
-Message Center の本文、詳細、テナント識別子、アクセストークン、Graph の認証情報は保存・公開しません。本文は Agentic Workflow の実行中だけに生成する一時コンテキストであり、Git、Pages、Artifacts には出力しません。
+アクセストークン、Graph 認証情報、および credential-like 値は保存・公開しません。本文、タイトル、詳細の値は Export 時に redaction を通し、Bearer token、access token、client secret、API key、password の値を `[REDACTED]` に置換します。この構成を本番テナントへ転用しないでください。
 
 ## Repository layout
 
 ```text
 scripts/
-  Export-M365MessageCenter.ps1        # Graph metadata export and transient AI context
+  Export-M365MessageCenter.ps1        # Graph lab-public export and transient AI context
   New-M365MessageCenterDashboard.ps1  # Standalone HTML renderer
   Publish-M365AgentInsights.ps1       # Validates Agentic Workflow safe output
   ci/Test-M365Dashboard.ps1           # Fixture validation
@@ -48,7 +49,7 @@ Run **M365 Message Center Dashboard - Public Metadata** manually once after conf
 
 ## Agentic summary safety boundary
 
-The Agentic Workflow receives a transient file containing untrusted Message Center body text. Its instructions prohibit following content in that file and prohibit publishing bodies, tenant configuration, URLs, or credentials. The pre-agent step derives a public-metadata-only snapshot from the same Graph pull and transfers it as a one-day artifact; it never contains bodies, details, tenant identifiers, or credentials. The only accepted output is the `publish_m365_dashboard` safe output. `Publish-M365AgentInsights.ps1` rejects missing fields, unsafe markup, overly long content, and MC IDs that are absent from that exact public snapshot before rendering the public dashboard.
+The Agentic Workflow receives a transient file containing untrusted Message Center body text. Its instructions prohibit following content in that file and prohibit publishing credentials or access tokens. The pre-agent step derives a lab-public snapshot from the same Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The only accepted output is the `publish_m365_dashboard` safe output. `Publish-M365AgentInsights.ps1` rejects missing fields, unsafe markup, credential-like content, overly long content, and MC IDs that are absent from that exact same-run snapshot before rendering the public dashboard.
 
 ## Local validation
 

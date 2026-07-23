@@ -186,6 +186,13 @@ $html = @'
     .message h3 { margin: 6px 0 10px; font-size: 1.12rem; letter-spacing: -0.02em; }
     .message-id { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.78rem; }
     .message-date { min-width: 105px; color: var(--cp-text-muted); font-size: 0.82rem; text-align: right; }
+    .message-summary { margin: 16px 0 0; color: var(--cp-text-muted); }
+    .message-content { margin-top: 16px; border-top: 1px solid var(--cp-border); padding-top: 12px; }
+    .message-content summary { cursor: pointer; font-weight: 700; }
+    .message-body { margin: 12px 0 0; color: var(--cp-text-muted); white-space: normal; }
+    .message-details { width: 100%; margin-top: 14px; border-collapse: collapse; font-size: 0.88rem; }
+    .message-details th, .message-details td { padding: 8px; border: 1px solid var(--cp-border); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    .message-details th { width: 30%; background: var(--cp-surface-soft); }
     .chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .chip { padding: 4px 9px; color: var(--cp-text-muted); background: var(--cp-surface-soft); border-radius: 999px; font-size: 0.75rem; }
     .chip.major { color: var(--cp-accent); background: var(--cp-accent-soft); font-weight: 700; }
@@ -225,7 +232,7 @@ $html = @'
     <header class="hero">
       <div class="eyebrow">Weekly intelligence</div>
       <h1>変化を、<br>先回りする。</h1>
-      <p class="lede">Microsoft 365 Message Center の本文をAgentic Workflowが読み解き、公開可能な要約とメタデータだけを届ける週次レーダー。</p>
+      <p class="lede">ラボ環境の Microsoft 365 Message Center 全文、詳細、決定論的な日本語要約と Agentic Workflow の週次インサイトを届けるレーダー。</p>
     </header>
 
     <section class="insights" aria-label="Agentic weekly insights">
@@ -260,7 +267,7 @@ $html = @'
     </section>
 
     <footer>
-      <p>Message Center の本文・詳細・テナント識別子は公開していません。表示内容は自動収集されたメタデータであり、正式な判断は Microsoft 365 管理センターで確認してください。</p>
+      <p>このラボでは、Message Center の本文と name/value 形式の詳細を公開しています。credential-like 値は出力前に赤字化されます。正式な判断は Microsoft 365 管理センターで確認してください。</p>
       <p><a class="repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub: aktsmm/m365-message-center-dashboard</a></p>
     </footer>
   </main>
@@ -302,7 +309,16 @@ $html = @'
       : `<div class="empty">サービス情報はありません。</div>`;
 
     function matches(message) {
-      const haystack = [message.id, message.title, message.category, message.severity, ...(message.services || [])].join(" ").toLowerCase();
+      const haystack = [
+        message.id,
+        message.title,
+        message.category,
+        message.severity,
+        message.japaneseSummary,
+        message.bodyText,
+        ...(message.services || []),
+        ...(message.details || []).flatMap(detail => [detail.name, detail.value])
+      ].join(" ").toLowerCase();
       if (state.query && !haystack.includes(state.query)) return false;
       if (state.filter === "major" && !message.isMajorChange) return false;
       if (state.filter === "due" && !message.actionRequiredByDateTime) return false;
@@ -322,11 +338,24 @@ $html = @'
           `<span class="chip">${escapeHtml(message.category || "Uncategorized")}</span>`,
           ...(message.services || []).map(service => `<span class="chip">${escapeHtml(service)}</span>`)
         ].filter(Boolean).join("");
+        const body = message.bodyText
+          ? `<p class="message-body">${escapeHtml(message.bodyText).replace(/\r?\n/g, "<br>")}</p>`
+          : `<p class="message-body">本文はありません。</p>`;
+        const details = (message.details || []).length
+          ? `<table class="message-details"><tbody>${message.details.map(detail =>
+              `<tr><th>${escapeHtml(detail.name)}</th><td>${escapeHtml(detail.value)}</td></tr>`
+            ).join("")}</tbody></table>`
+          : "";
+        const fullContent = Object.prototype.hasOwnProperty.call(message, "bodyText")
+          ? `<details class="message-content"><summary>Message Center の全文と詳細</summary>${body}${details}</details>`
+          : "";
         return `<article class="message">
           <div class="message-top">
             <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(message.title)}</h3><div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
+          ${message.japaneseSummary ? `<p class="message-summary">${escapeHtml(message.japaneseSummary)}</p>` : ""}
+          ${fullContent}
         </article>`;
       }).join("") : `<div class="panel empty">条件に一致するメッセージはありません。</div>`;
     }

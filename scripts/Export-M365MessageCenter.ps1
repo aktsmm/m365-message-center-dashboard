@@ -1,10 +1,11 @@
 <#
 .SYNOPSIS
-    Microsoft 365 Message Center の公開許可フィールドだけを JSON に出力する。
+    Microsoft 365 Message Center の公開許可フィールドを JSON に出力する。
 
 .DESCRIPTION
     Microsoft Graph の /admin/serviceAnnouncement/messages をページングし、本文、詳細、
-    テナント識別子を破棄してから messages.json と facts.json を生成する。
+    資格情報を除去してから messages.json と facts.json を生成する。
+    -IncludeContent はラボ公開用に本文テキストと name/value 形式の詳細を含める。
     -InputJsonPath を指定すると認証なしで fixture を処理できる。
 #>
 [CmdletBinding()]
@@ -16,7 +17,8 @@ param(
     [string]$RunId = $env:GITHUB_RUN_ID,
     [DateTimeOffset]$ReferenceTime = [DateTimeOffset]::UtcNow,
     [string]$AgentContextPath,
-    [ValidateRange(1, 100)][int]$AgentContextLimit = 50
+    [ValidateRange(1, 100)][int]$AgentContextLimit = 50,
+    [switch]$IncludeContent
 )
 
 $ErrorActionPreference = 'Stop'
@@ -28,23 +30,104 @@ function Convert-ToUtcIso {
     return ([DateTimeOffset]::Parse([string]$Value)).ToUniversalTime().ToString('o')
 }
 
-function Convert-ToPublicMessage {
+function Remove-CredentialLikeValues {
+    param([AllowEmptyString()][string]$Value)
+
+    $redacted = $Value -replace '(?i)\b(bearer\s+)[A-Za-z0-9._~+/=-]{12,}', '$1[REDACTED]'
+    $redacted = $redacted -replace '(?i)\b(authorization\s*:\s*(?:basic|bearer)\s+)\S+', '$1[REDACTED]'
+    return $redacted -replace '(?i)\b(access[_ -]?token|refresh[_ -]?token|client[_ -]?secret|api[_ -]?key|password)\s*(?:[:=]|\bis\b)\s*\S+', '$1: [REDACTED]'
+}
+
+function Convert-ToReadableText {
+    param([AllowEmptyString()][string]$Html)
+
+    $text = $Html -replace '(?is)<(script|style)[^>]*>.*?</\1\s*>', ' '
+    $text = $text -replace '(?i)<br\s*/?>', "`n"
+    $text = $text -replace '(?i)</(p|div|li|tr|h[1-6])\s*>', "`n"
+    $text = $text -replace '(?i)<li[^>]*>', '• '
+    $text = [System.Net.WebUtility]::HtmlDecode(($text -replace '<[^>]+>', ''))
+    $lines = @(
+        $text -split '\r?\n' |
+            ForEach-Object { ($_ -replace '\s+', ' ').Trim() } |
+            Where-Object { $_ }
+    )
+    return Remove-CredentialLikeValues ($lines -join [Environment]::NewLine)
+}
+
+function Convert-ToPublicDetails {
     param([Parameter(Mandatory)][object]$Message)
+
+    if (-not ($Message.PSObject.Properties.Name -contains 'details') -or -not $Message.details) {
+        return @()
+    }
+
+    return @(
+        $Message.details |
+            ForEach-Object {
+                [ordered]@{
+                    name  = Remove-CredentialLikeValues ([string]$_.name)
+                    value = Remove-CredentialLikeValues ([string]$_.value)
+                }
+            }
+    )
+}
+
+function New-JapaneseSummary {
+    param(
+        [Parameter(Mandatory)][object]$Message,
+        [Parameter(Mandatory)][string[]]$Services
+    )
+
+    $categoryLabels = @{
+        PlanForChange     = '変更予定'
+        PreventOrFixIssue = '問題の予防または修正'
+        StayInformed      = '情報提供'
+    }
+    $severityLabels = @{
+        Critical = '重大'
+        High     = '高'
+        Normal   = '通常'
+        Low      = '低'
+    }
+    $category = if ($categoryLabels.ContainsKey([string]$Message.category)) {
+        $categoryLabels[[string]$Message.category]
+    } else {
+        'Message Center の更新'
+    }
+    $severity = if ($severityLabels.ContainsKey([string]$Message.severity)) {
+        $severityLabels[[string]$Message.severity]
+    } else {
+        [string]$Message.severity
+    }
+    $serviceLabel = if ($Services.Count) { $Services -join '、' } else { '対象サービス未指定' }
+    $summary = "${category}: $serviceLabel。重要度は $severity です。"
+    if ($Message.isMajorChange) { $summary += '主要な変更として確認してください。' }
+    if ($Message.actionRequiredByDateTime) {
+        $summary += "対応期限は $(([DateTimeOffset]$Message.actionRequiredByDateTime).ToString('yyyy年M月d日')) です。"
+    }
+    return $summary
+}
+
+function Convert-ToPublicMessage {
+    param(
+        [Parameter(Mandatory)][object]$Message,
+        [switch]$IncludeContent
+    )
 
     $services = @()
     if ($Message.PSObject.Properties.Name -contains 'services' -and $Message.services) {
-        $services = @($Message.services | ForEach-Object { [string]$_ } | Sort-Object -Unique)
+        $services = @($Message.services | ForEach-Object { Remove-CredentialLikeValues ([string]$_) } | Sort-Object -Unique)
     }
     $tags = @()
     if ($Message.PSObject.Properties.Name -contains 'tags' -and $Message.tags) {
-        $tags = @($Message.tags | ForEach-Object { [string]$_ } | Sort-Object -Unique)
+        $tags = @($Message.tags | ForEach-Object { Remove-CredentialLikeValues ([string]$_) } | Sort-Object -Unique)
     }
 
-    return [pscustomobject][ordered]@{
-        id                       = [string]$Message.id
-        title                    = [string]$Message.title
-        category                 = [string]$Message.category
-        severity                 = [string]$Message.severity
+    $publicMessage = [ordered]@{
+        id                       = Remove-CredentialLikeValues ([string]$Message.id)
+        title                    = Remove-CredentialLikeValues ([string]$Message.title)
+        category                 = Remove-CredentialLikeValues ([string]$Message.category)
+        severity                 = Remove-CredentialLikeValues ([string]$Message.severity)
         isMajorChange            = [bool]$Message.isMajorChange
         startDateTime            = Convert-ToUtcIso $Message.startDateTime
         endDateTime              = Convert-ToUtcIso $Message.endDateTime
@@ -53,16 +136,27 @@ function Convert-ToPublicMessage {
         services                 = $services
         tags                     = $tags
     }
+    if ($IncludeContent) {
+        $bodyContent = if ($Message.PSObject.Properties.Name -contains 'body' -and $Message.body) {
+            [string]$Message.body.content
+        } else {
+            ''
+        }
+        $publicMessage.japaneseSummary = New-JapaneseSummary -Message $Message -Services $services
+        $publicMessage.bodyText = Convert-ToReadableText $bodyContent
+        $publicMessage.details = Convert-ToPublicDetails -Message $Message
+    }
+    return [pscustomobject]$publicMessage
 }
 
 function Get-GraphMessages {
     param(
         [Parameter(Mandatory)][string]$Token,
-        [switch]$IncludeBody
+        [switch]$IncludeContent
     )
 
     $select = 'id,title,category,severity,isMajorChange,startDateTime,endDateTime,lastModifiedDateTime,actionRequiredByDateTime,services,tags'
-    if ($IncludeBody) { $select += ',body' }
+    if ($IncludeContent) { $select += ',body,details' }
     $endpoint = 'https://graph.microsoft.com/v1.0/admin/serviceAnnouncement/messages'
     $nextLink = "${endpoint}?`$select=$select"
     $headers = @{
@@ -119,13 +213,13 @@ if ($InputJsonPath) {
         $AccessToken = ($tokenJson | ConvertFrom-Json).accessToken
     }
     if (-not $AccessToken) { throw 'Microsoft Graph access token is empty.' }
-    $rawMessages = @(Get-GraphMessages -Token $AccessToken -IncludeBody:([bool]$AgentContextPath))
+    $rawMessages = @(Get-GraphMessages -Token $AccessToken -IncludeContent:([bool]($AgentContextPath -or $IncludeContent)))
 }
 
 $cutoff = $generatedAt.AddDays(-$LookbackDays)
 $messages = @(
     $rawMessages |
-        ForEach-Object { Convert-ToPublicMessage -Message $_ } |
+        ForEach-Object { Convert-ToPublicMessage -Message $_ -IncludeContent:$IncludeContent } |
         Where-Object {
             $lastModified = if ($_.lastModifiedDateTime) { [DateTimeOffset]$_.lastModifiedDateTime } else { [DateTimeOffset]::MinValue }
             $end = if ($_.endDateTime) { [DateTimeOffset]$_.endDateTime } else { [DateTimeOffset]::MaxValue }
@@ -171,7 +265,11 @@ $meta = [ordered]@{
     generatedAt       = $generatedAt.ToString('o')
     source            = $source
     lookbackDays      = $LookbackDays
-    publicFieldPolicy = 'Metadata only. Message body, details, tenant identifiers, and credentials are excluded.'
+    publicFieldPolicy = if ($IncludeContent) {
+        'Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted.'
+    } else {
+        'Metadata only. Message body, details, tenant identifiers, and credentials are excluded.'
+    }
 }
 $document = [ordered]@{ meta = $meta; summary = $summary; topServices = $topServices; messages = $messages }
 $facts = [ordered]@{
@@ -197,12 +295,12 @@ if ($AgentContextPath) {
             Select-Object -First $AgentContextLimit |
             ForEach-Object {
                 $raw = $rawById[$_.id]
-                $bodyContent = ''
-                if ($raw -and $raw.PSObject.Properties.Name -contains 'body' -and $raw.body) {
-                    $bodyContent = [string]$raw.body.content
+                $bodyContent = if ($raw -and $raw.PSObject.Properties.Name -contains 'body' -and $raw.body) {
+                    [string]$raw.body.content
+                } else {
+                    ''
                 }
-                $bodyText = [System.Net.WebUtility]::HtmlDecode(($bodyContent -replace '<[^>]+>', ' '))
-                $bodyText = ($bodyText -replace '\s+', ' ').Trim()
+                $bodyText = Convert-ToReadableText $bodyContent
                 if ($bodyText.Length -gt 5000) { $bodyText = $bodyText.Substring(0, 5000) }
 
                 [ordered]@{

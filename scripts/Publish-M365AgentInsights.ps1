@@ -33,6 +33,11 @@ function Get-SafeText {
     if ($value -match '<\s*(script|iframe|object|embed|style|svg)\b' -or $value -match '(?i)javascript:|data:text/html') {
         throw "Unsafe content detected in insight field: $Name"
     }
+    if ($value -match '(?i)\b(bearer\s+)[A-Za-z0-9._~+/=-]{12,}' -or
+        $value -match '(?i)\b(authorization\s*:\s*(?:basic|bearer)\s+)\S+' -or
+        $value -match '(?i)\b(access[_ -]?token|refresh[_ -]?token|client[_ -]?secret|api[_ -]?key|password)\s*(?:[:=]|\bis\b)\s*\S+') {
+        throw "Credential-like content detected in insight field: $Name"
+    }
     return $value
 }
 
