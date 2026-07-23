@@ -34,6 +34,8 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 
 公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
 
+初回の翻訳 backfill では、**Microsoft 365 Message Center bounded translations** を `translation_batch_index`（0 始まり）付きで手動実行します。1 run は必ず2件だけを処理するため、前の run の成功・Pages 公開を確認してから次の index を実行してください。同時実行や index の飛ばしは行わず、catch-up 後は月曜日・木曜日の通常 cadence に戻します。
+
 アクセストークン、Graph 認証情報、client secret、API key、password は Git、Artifacts、Pages に保存・公開しません。credential-like 値は公開 snapshot を生成する前に `[REDACTED]` に置換します。
 
 ## Repository layout
@@ -74,6 +76,8 @@ Run **M365 Message Center Dashboard - Public Metadata** manually once after conf
 ## Agentic summary safety boundary
 
 The Agentic Workflows receive a transient compact context containing untrusted Message Center excerpts. Their instructions prohibit following content in that file and prohibit publishing credentials or access tokens. Each pre-agent step derives a lab-public snapshot from its Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The core workflow accepts only the `publish_m365_dashboard` safe output for the weekly brief, while `Publish-M365AgentInsights.ps1` derives every card's Japanese title, short summary, and official links from that exact snapshot. The separate translations workflow accepts only `translation_updates`; its two-message batch supplies at most 1,000 source characters per message with explicit truncation metadata. Because it runs after every successful core run, it advances up to four cards per week. Both publishers reject unsafe markup, credential-like content, fabricated URLs, oversized or low-quality translations, mismatched translation source metadata, and MC IDs that are absent from their exact same-run snapshots before rendering the public dashboard.
+
+The optional `translation_batch_index` is restricted to a valid batch in the current Graph snapshot. It does not bypass the same-snapshot validation, bounded source text, or serialized publisher contract.
 
 If an Agentic run fails or its output cannot pass validation, Pages retains only previously validated translation data. Each unprocessed card shows an explicit no-data message in **日本語訳と詳細要約**; it never displays a fabricated translation.
 

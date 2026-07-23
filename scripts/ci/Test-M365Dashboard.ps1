@@ -215,6 +215,21 @@ try {
     if ((Get-Content -LiteralPath $agentContext -Raw -Encoding UTF8) -notmatch 'THIS_BODY_IS_LAB_PUBLIC') {
         throw 'Compact agent context did not include the bounded message excerpt for summarization.'
     }
+    $backfillSnapshot = Join-Path $temp 'backfill-snapshot'
+    $backfillContext = Join-Path $temp 'backfill-context.json'
+    & (Join-Path $root 'scripts\Export-M365MessageCenter.ps1') `
+        -InputJsonPath (Join-Path $root 'tests\fixtures\m365-messages.json') `
+        -OutputDirectory $backfillSnapshot `
+        -LookbackDays 365 `
+        -RunId 'backfill-fixture-run' `
+        -ReferenceTime '2026-07-23T00:00:00Z' `
+        -AgentContextPath $backfillContext `
+        -AgentTranslationBatchIndex 1 `
+        -IncludeContent
+    $backfillBatch = @((Get-Content -LiteralPath $backfillContext -Raw -Encoding UTF8 | ConvertFrom-Json).translationBatch)
+    if ($backfillBatch.Count -ne 2 -or @($backfillBatch.id | Sort-Object -Unique).Count -ne 2) {
+        throw 'Explicit translation backfill batch is not a bounded unique two-message batch.'
+    }
     if ($html -notmatch '共同作業と管理者設定の変更') { throw 'Agentic summary is missing from dashboard HTML.' }
     if ($html -notmatch 'Microsoft 365 Change Radar') { throw 'Dashboard title is missing.' }
     if ($html -notmatch 'scoutTheme' -or $html -notmatch '--cp-accent') { throw 'Mandatory artifact theme is missing.' }
@@ -370,6 +385,8 @@ try {
     if (-not $translationPreAgentSection.Contains('workflows:') -or
         -not $translationPreAgentSection.Contains('"Microsoft 365 Message Center weekly dashboard"') -or
         -not $translationPreAgentSection.Contains("github.event.workflow_run.conclusion == 'success'") -or
+        -not $translationPreAgentSection.Contains('translation_batch_index') -or
+        -not $translationPreAgentSection.Contains('-AgentTranslationBatchIndex') -or
         $translationPreAgentSection.Contains('M365 Message Center Dashboard - Public Metadata')) {
         throw 'Translations workflow does not wait for the successful core weekly dashboard workflow.'
     }
