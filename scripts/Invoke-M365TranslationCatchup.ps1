@@ -51,22 +51,26 @@ function Get-CurrentTranslationState {
     }
 }
 
+function Get-RecentTranslationRuns {
+    $runsJson = (Invoke-Gh -Arguments @(
+        'api', "repos/$Repository/actions/workflows/m365-weekly-translations.lock.yml/runs?event=workflow_dispatch&per_page=30",
+        '--jq', '.workflow_runs'
+    )) -join [Environment]::NewLine
+    return @($runsJson | ConvertFrom-Json)
+}
+
 function Wait-ForDispatchedRun {
     param(
         [Parameter(Mandatory)][DateTimeOffset]$StartedAt,
-        [Parameter(Mandatory)][string]$ActorLogin
+        [Parameter(Mandatory)][hashtable]$ExistingRunIds
     )
 
     for ($attempt = 0; $attempt -lt 30; $attempt++) {
-        $runsJson = (Invoke-Gh -Arguments @(
-            'api', "repos/$Repository/actions/workflows/m365-weekly-translations.lock.yml/runs?event=workflow_dispatch&per_page=30",
-            '--jq', '.workflow_runs'
-        )) -join [Environment]::NewLine
-        $runs = $runsJson | ConvertFrom-Json
+        $runs = Get-RecentTranslationRuns
         $run = @(
             $runs |
                 Where-Object {
-                    $_.actor.login -eq $ActorLogin -and
+                    -not $ExistingRunIds.ContainsKey([string]$_.id) -and
                     [DateTimeOffset]::Parse([string]$_.created_at) -ge $StartedAt.AddSeconds(-5)
                 } |
                 Sort-Object id -Descending
@@ -80,13 +84,16 @@ function Wait-ForDispatchedRun {
 function Invoke-VerifiedTranslationBatch {
     param([Parameter(Mandatory)][string[]]$Ids)
 
-    $actorLogin = ((Invoke-Gh -Arguments @('api', 'user', '--jq', '.login')) -join '').Trim()
+    $existingRunIds = @{}
+    foreach ($existingRun in Get-RecentTranslationRuns) {
+        $existingRunIds[[string]$existingRun.id] = $true
+    }
     $startedAt = [DateTimeOffset]::UtcNow
     Invoke-Gh -Arguments @(
         'workflow', 'run', 'Microsoft 365 Message Center bounded translations',
         '--repo', $Repository, '--ref', 'main', '-f', "translation_ids=$($Ids -join ',')"
     ) | Out-Null
-    $run = Wait-ForDispatchedRun -StartedAt $startedAt -ActorLogin $actorLogin
+    $run = Wait-ForDispatchedRun -StartedAt $startedAt -ExistingRunIds $existingRunIds
     & gh run watch $run.id --repo $Repository --exit-status
     if ($LASTEXITCODE -ne 0) {
         throw "Translation run $($run.id) failed."
