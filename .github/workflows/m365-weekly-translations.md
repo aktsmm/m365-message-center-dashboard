@@ -182,7 +182,10 @@ Call `publish-m365-translations` exactly once with:
   `japanese_body_translation`, `source_character_count`, and `source_truncated`.
   Write a useful Japanese detailed summary (80-1200 characters) and translate only the supplied
   `translationBatch.bodyText`; do not invent or complete text beyond that bounded source. Preserve
-  the exact `source_character_count` and `source_truncated` values from the batch item. Generate
+  the exact `source_character_count` and `source_truncated` values from the batch item; copy the
+  numeric and boolean values directly from `translationBatch` rather than calculating them.
+  Before calling the safe output, read the generated JSON back and verify that every update ID,
+  `source_character_count`, and `source_truncated` exactly matches its `translationBatch` item. Generate
   the payload with:
   `python3 -c 'import base64,gzip; print("gzip-base64:"+base64.b64encode(gzip.compress(open("/tmp/gh-aw/agent/translation_updates.json","rb").read())).decode())'`.
 

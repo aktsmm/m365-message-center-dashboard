@@ -136,6 +136,44 @@ try {
     if ((Get-Content -LiteralPath $translationInsightsPath -Raw -Encoding UTF8) -notmatch 'messageTranslations|日本語訳') {
         throw 'Validated translation batch did not publish Japanese detailed translation data.'
     }
+    $mismatchedTranslationOutput = Join-Path $temp 'agent-output-mismatched-translation.json'
+    $agentOutputWithMismatchedTranslation = Get-Content -LiteralPath $translationOutputPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    $decodedTranslationPayload = [Convert]::FromBase64String(
+        $agentOutputWithMismatchedTranslation.items[0].translation_updates.Substring('gzip-base64:'.Length)
+    )
+    $decodedTranslationStream = [System.IO.MemoryStream]::new($decodedTranslationPayload)
+    $decodedTranslationGzip = [System.IO.Compression.GzipStream]::new(
+        $decodedTranslationStream,
+        [System.IO.Compression.CompressionMode]::Decompress
+    )
+    $decodedTranslationReader = [System.IO.StreamReader]::new($decodedTranslationGzip, [System.Text.Encoding]::UTF8)
+    $mismatchedTranslations = @($decodedTranslationReader.ReadToEnd() | ConvertFrom-Json)
+    $decodedTranslationReader.Dispose()
+    $decodedTranslationGzip.Dispose()
+    $decodedTranslationStream.Dispose()
+    $mismatchedTranslations[0].source_character_count++
+    $mismatchedBytes = [System.Text.Encoding]::UTF8.GetBytes(($mismatchedTranslations | ConvertTo-Json -Depth 8 -Compress))
+    $mismatchedStream = [System.IO.MemoryStream]::new()
+    $mismatchedGzip = [System.IO.Compression.GzipStream]::new($mismatchedStream, [System.IO.Compression.CompressionLevel]::Optimal, $true)
+    $mismatchedGzip.Write($mismatchedBytes, 0, $mismatchedBytes.Length)
+    $mismatchedGzip.Dispose()
+    $agentOutputWithMismatchedTranslation.items[0].translation_updates = 'gzip-base64:' + [Convert]::ToBase64String($mismatchedStream.ToArray())
+    $mismatchedStream.Dispose()
+    $agentOutputWithMismatchedTranslation | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $mismatchedTranslationOutput -Encoding UTF8
+    $translationMismatchFailed = $false
+    try {
+        & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+            -AgentOutputPath $mismatchedTranslationOutput `
+            -MessagesJson (Join-Path $temp 'messages.json') `
+            -TranslationBatchJson $translationBatchPath `
+            -OutputPath (Join-Path $temp 'insights-mismatched-translation.json')
+    } catch {
+        if ($_.Exception.Message -notmatch 'Translation source character count does not match') { throw }
+        $translationMismatchFailed = $true
+    }
+    if (-not $translationMismatchFailed) {
+        throw 'Translation with mismatched source character count unexpectedly passed validation.'
+    }
     $translationDashboard = Join-Path $temp 'dashboard-translations.html'
     & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
         -MessagesJson (Join-Path $temp 'messages.json') `
