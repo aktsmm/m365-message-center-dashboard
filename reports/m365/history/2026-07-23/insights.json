@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T12:03:56.1693183+00:00",
+  "generatedAt": "2026-07-23T12:12:39.6258015+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Microsoft Entra パスキー標準化・Copilot AI管理エージェントGA、複数の認証廃止予定に要対応",
   "executiveSummary": "今週(2026年7月第4週)は、Microsoft Entra の認証基盤刷新が最大のテーマです。2026年9月1日よりパスキーがデフォルト認証となり、SMS/音声認証はMicrosoft提供分が廃止されます(MC1426371)。条件付きアクセスのカスタムコントロールも廃止予定でExternal MFAへの移行が必要です(MC1422061)。また、SSPR が2026年9月7日より登録済み認証方法のみ許可するよう変更されます(MC1325414)。EntraカスタムブランディングのカスタムCSS位置プロパティは2026年10月から廃止開始(MC1435782)。Copilot側では、M365 Admin agentがGA(MC1436831)、Copilot ChatのWebコンテンツ設定が全体に拡張(MC1421919)、PowerPoint for the webにCopilotワンクリック機能が追加(MC1419795)。Office LTSC 2021は2026年10月13日にサポート終了(MC1278920)、Microsoft AutoUpdate (Mac) のCDNエンドポイント変更は2026年7月末が期限(MC1268926)と直近の対応も必要です。",
@@ -969,16 +969,16 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "【重要な変更】Microsoft Graph の会議作成API（Create onlineMeeting）において、パスコード要求のデフォルト動作が変更されます。2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されました。これにより、会議作成時にパスコード要否を明示的に指定しない場合、自動的にパスコードが必須となります。さらに2027年10月には、パスコード指定オプション自体が廃止され、全会議でパスコードが強制されます。Graph APIを使用して会議を作成するアプリケーションを持つ組織は、この変更を考慮してアプリケーションを見直し・更新する必要があります。特に、パスコードなしで会議を作成するシナリオが存在する場合は、明示的に isPasscodeRequired=false を設定するよう修正が必要です。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph APIを使用してオンライン会議を作成する際、管理者またはユーザーはパスコードを要求するかどうかを選択できました。値が指定されない場合、デフォルトの動作ではパスコードは不要でした。\nこのアップデート以降：セキュリティ強化のため、会議作成時にパスコードが必要かどうかを指定するオプションは引き続き利用できます。値が指定されない場合、デフォルトの動作では会議にパスコードが必要となります。\n2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting APIとパスコードを使用するアプリケーションを確認・更新し、新しいデフォルト動作に対応していることを確認してください。\n今後の展開\n2027年10月には、パスコードの必要性を指定するオプションを廃止します。この変更により、すべての会議でパスコードによるセキュリティが一貫して確保されます。この最終ステップにより、会議作成プロセスが簡素化され、追加のセキュリティ層が提供されます",
+      "id": "MC1418558",
+      "japaneseDetailedSummary": "Microsoft 365管理センターのタスクバーピン留め管理が変更されます。組み込みコントロールはMicrosoft 365 Copilotアプリのみに集約され、Files・Calendar・Peopleなどのコンパニオンアプリは対象外となります。コンパニオンアプリのピン留めにはMicrosoft Intuneポリシーを使用してください。2026年7月中旬〜末にかけて全世界で展開予定。タスクバー設定を使用する管理者は対応を確認してください。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nタスクバーピン留め管理をMicrosoft 365 Copilotアプリ専用に集約します。コンパニオンアプリ（Files、Calendar、People）はこのコントロール対象外となります。コンパニオンアプリのピン留めにはMicrosoft Intuneのタスクバーポリシーを使用してください。\n【展開スケジュール】\n・一般提供（全世界）：2026年7月中旬開始、7月末完了予定\n【組織への影響】\n・対象：Microsoft 365管理センターのタスクバーピン留めコントロールを使用する管理者\n・プラットフォーム：Windows、Microsoft 365 Copilot、管理センター、Microsoft Intune\n・変更内容：Microsoft 365 a（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
     {
-      "id": "MC1418558",
-      "japaneseDetailedSummary": "Microsoft 365管理センターのタスクバーピン留め管理が変更されます。組み込みコントロールはMicrosoft 365 Copilotアプリのみに集約され、Files・Calendar・Peopleなどのコンパニオンアプリは対象外となります。コンパニオンアプリのピン留めにはMicrosoft Intuneポリシーを使用してください。2026年7月中旬〜末にかけて全世界で展開予定。タスクバー設定を使用する管理者は対応を確認してください。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nタスクバーピン留め管理をMicrosoft 365 Copilotアプリ専用に集約します。コンパニオンアプリ（Files、Calendar、People）はこのコントロール対象外となります。コンパニオンアプリのピン留めにはMicrosoft Intuneのタスクバーポリシーを使用してください。\n【展開スケジュール】\n・一般提供（全世界）：2026年7月中旬開始、7月末完了予定\n【組織への影響】\n・対象：Microsoft 365管理センターのタスクバーピン留めコントロールを使用する管理者\n・プラットフォーム：Windows、Microsoft 365 Copilot、管理センター、Microsoft Intune\n・変更内容：Microsoft 365 a（以下省略）",
+      "id": "MC1419795",
+      "japaneseDetailedSummary": "PowerPoint for the webのリボンに2つの新しいCopilotスキルが追加されます。「プレゼンテーションのレビュー」（レビュータブ）と「スライドの視覚化」（デザインタブ）です。ユーザーはワークフロー内から直接Copilot支援にアクセス可能になります。2026年6月下旬から展開開始済み、7月初旬完了予定（全世界）。Copilot in PowerPoint for the webが利用可能なユーザーが対象です。",
+      "japaneseBodyTranslation": "2026年7月20日更新：コンテンツを更新しました。\n【変更内容と理由】\nPowerPoint for the webのリボンに新しいCopilotスキルを2つ導入します：「プレゼンテーションのレビュー」（レビュータブ）と「スライドの視覚化」（デザインタブ）。ユーザーはワークフロー内で直接Copilotにアクセスしやすくなり、プレゼン品質の向上や視覚的コンテンツの改善が図れます。\n【展開スケジュール】\n・一般提供（全世界）：2026年6月下旬開始済み、7月初旬完了予定\n【組織への影響】\n・対象：PowerPoint for the webでCopilotにアクセスできるユーザー、管理者\n・プラットフォーム：PowerPoint for the web\n・変更内容：新しい「プレゼン（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -997,9 +997,37 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1419795",
-      "japaneseDetailedSummary": "PowerPoint for the webのリボンに2つの新しいCopilotスキルが追加されます。「プレゼンテーションのレビュー」（レビュータブ）と「スライドの視覚化」（デザインタブ）です。ユーザーはワークフロー内から直接Copilot支援にアクセス可能になります。2026年6月下旬から展開開始済み、7月初旬完了予定（全世界）。Copilot in PowerPoint for the webが利用可能なユーザーが対象です。",
-      "japaneseBodyTranslation": "2026年7月20日更新：コンテンツを更新しました。\n【変更内容と理由】\nPowerPoint for the webのリボンに新しいCopilotスキルを2つ導入します：「プレゼンテーションのレビュー」（レビュータブ）と「スライドの視覚化」（デザインタブ）。ユーザーはワークフロー内で直接Copilotにアクセスしやすくなり、プレゼン品質の向上や視覚的コンテンツの改善が図れます。\n【展開スケジュール】\n・一般提供（全世界）：2026年6月下旬開始済み、7月初旬完了予定\n【組織への影響】\n・対象：PowerPoint for the webでCopilotにアクセスできるユーザー、管理者\n・プラットフォーム：PowerPoint for the web\n・変更内容：新しい「プレゼン（以下省略）",
+      "id": "MC985483",
+      "japaneseDetailedSummary": "【重要な変更】Microsoft Graph の会議作成API（Create onlineMeeting）において、パスコード要求のデフォルト動作が変更されます。2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されました。これにより、会議作成時にパスコード要否を明示的に指定しない場合、自動的にパスコードが必須となります。さらに2027年10月には、パスコード指定オプション自体が廃止され、全会議でパスコードが強制されます。Graph APIを使用して会議を作成するアプリケーションを持つ組織は、この変更を考慮してアプリケーションを見直し・更新する必要があります。特に、パスコードなしで会議を作成するシナリオが存在する場合は、明示的に isPasscodeRequired=false を設定するよう修正が必要です。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph APIを使用してオンライン会議を作成する際、管理者またはユーザーはパスコードを要求するかどうかを選択できました。値が指定されない場合、デフォルトの動作ではパスコードは不要でした。\nこのアップデート以降：セキュリティ強化のため、会議作成時にパスコードが必要かどうかを指定するオプションは引き続き利用できます。値が指定されない場合、デフォルトの動作では会議にパスコードが必要となります。\n2025年2月24日より、isPasscodeRequired プロパティのデフォルト値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting APIとパスコードを使用するアプリケーションを確認・更新し、新しいデフォルト動作に対応していることを確認してください。\n今後の展開\n2027年10月には、パスコードの必要性を指定するオプションを廃止します。この変更により、すべての会議でパスコードによるセキュリティが一貫して確保されます。この最終ステップにより、会議作成プロセスが簡素化され、追加のセキュリティ層が提供されます",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1422061",
+      "japaneseDetailedSummary": "Microsoft Entra IDの条件付きアクセスにおけるカスタムコントロールが廃止され、標準ベースの外部MFAへ移行が必要です。2026年9月から新規作成・変更不可、2027年5月に完全廃止。現在カスタムコントロールを使用中の組織は早急に移行計画を策定し、サードパーティMFAベンダーとの連携確認と外部MFAへのテスト移行を進める必要があります。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft Entra IDは条件付きアクセスのカスタムコントロールを廃止し、外部MFA（標準ベースのサードパーティMFA統合）に置き換えます。長期的なサポート性・セキュリティ・相互運用性が向上します。\n【展開スケジュール】\n・2026年9月：新規カスタムコントロールの作成および変更が不可に。\n・2027年5月：カスタムコントロール完全廃止。\n【影響】\n・条件付きアクセスでカスタムコントロールを使用中の組織および管理者が対象です。",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1423108",
+      "japaneseDetailedSummary": "iOS向けMicrosoft Authenticatorアプリにおけるデバイスバウンドパスキーのリストア体験が改善されます。新デバイスへの移行時の復元フローが明確化・ガイド付きになります。2026年8月一般提供予定。iCloudバックアップが有効なiOSユーザーが対象（Androidは後日対応）。iOS端末でパスキー認証を展開中の顧客に、デバイス移行時の手順改善とユーザートレーニング資料更新を提案することが有効です。",
+      "japaneseBodyTranslation": "【変更内容】\niOSのMicrosoft Authenticatorにおけるデバイスバウンドパスキーのリストア体験を改善。新デバイスへの移行時に明確でガイド付きの復元フローを提供し、クロスデバイスサインインの理解も向上します。強固なセキュリティを維持しつつデバイス移行の摩擦を軽減します。\n【展開】2026年8月（全世界）\n【影響】iCloudおよびiCloudキーチェーンバックアップが有効でパスキーを使用中のiOSユーザー。今回はiOSのみ（Android後日対応）。\n【プラットフォーム】iOS、Microsoft Authenticator、Microsoft Entra",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1423101",
+      "japaneseDetailedSummary": "Microsoft 365 CopilotおよびCopilot Chatの利用状況レポートが強化されます。より迅速なデータ更新、レポート整理の改善、Graph APIでの利用指標アクセス拡充が提供されます。2026年7月中旬から展開開始、7月末完了予定。Copilot展開中の顧客に対し、改善レポート機能と新Graph APIエンドポイントを活用したカスタムダッシュボード構築を提案できます。",
+      "japaneseBodyTranslation": "【変更内容】\nMicrosoft 365 CopilotおよびCopilot Chatの利用状況レポートを改善。よりタイムリーなデータ、レポート整理、Graph APIによる利用指標への拡充アクセスを提供します。\n【展開】\n2026年7月中旬開始、7月末完了予定（全世界）。\n【影響】\n・M365管理者\n・Copilot採用状況モニタリング担当者\n・Graph APIでCopilotデータを取得する組織\n【プラットフォーム】\n・Microsoft 365管理センター（他）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1422074",
+      "japaneseDetailedSummary": "Microsoft 365 CopilotにOpenAIがサブプロセッサとして追加され、GPT-5.6等の新モデルが利用可能になります。2026年7月9日時点でデフォルト無効。管理者はM365管理センターで設定可能。7月24日までに操作しない場合、対象顧客では自動有効化されます。Azure OpenAI運用モデルには非適用。セキュリティ・コンプライアンスはMicrosoft製品利用規約・DPAに基づき保護されます。顧客にはデータ保護要件の確認と必要に応じたオプトアウト設定を案内してください。",
+      "japaneseBodyTranslation": "2026年7月14日更新。\n【変更内容】\nOpenAIをサブプロセッサとして契約し、Microsoft 365 CopilotでGPT-5.6等のOpenAIモデルが利用可能になります。Microsoft製品利用規約・DPAに基づくエンタープライズグレードの保護が適用されます（Microsoft Learnで別途開示がある場合を除く）。Azure OpenAI運用モデルには非適用。\n2026年7月9日時点でデフォルト無効。管理者はM365管理センターでいつでも設定変更可能。7月24日までに操作しない場合、対象顧客では自動有効化されます。",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
