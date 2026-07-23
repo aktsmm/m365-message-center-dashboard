@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-23T03:19:09.3576025+00:00",
+  "generatedAt": "2026-07-23T03:56:19.4711932+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra認証強化・Copilot機能拡充・レガシーサポート終了が迫る：2026年7月第4週 M365変更管理ダッシュボード",
-  "executiveSummary": "今週は75件のMessage Centerアップデートが届いた。最重要は認証セキュリティ強化：9月1日にEntraのデフォルト認証がパスキーに移行しMS提供SMS/音声認証が廃止（MC1426371）、9月7日にSSPRが登録済み認証方法のみ許可（MC1325414）。Conditional AccessカスタムコントロールはExternal MFAへ2027年4月までに移行が必要（MC1422061）。一方、Copilot関連ではM365管理エージェントGA（MC1436831）、ドメイン除外機能GA（MC1411435）、組織プロンプト公開（MC1396361）など管理者向け機能が充実。インフラ面では、Office LTSC 2021が2026年10月13日でサポート終了（MC1278920）、Edgeが2週間リリースサイクルに移行（MC1387532）、eCDNデータ保持期間が180日に短縮（MC1403404）など計画変更が複数ある。",
-  "thisWeek": "Entra SSPRユーザーの登録済み認証方法を確認（9月7日期限）（MC1325414）\nEntraパスキー移行計画の策定開始（9月1日デフォルト変更）（MC1426371）\nM365管理エージェントGAの動作確認・管理者向け案内（MC1436831）\nCopilot Studioエージェント作成のTeams→Web移行確認（7月末期限）（MC1315217）\nMac向けMAU CDNエンドポイント変更の適用確認（MC1268926）",
-  "thisMonth": "Conditional AccessカスタムコントロールをExternal MFAへの移行計画作成（MC1422061）\nM365 CopilotアプリのCopilot自動インストール対象デバイスの確認と通知（MC1152323）\nOffice LTSC 2021の棚卸しと移行計画策定開始（MC1278920）\neCDN分析データ保持短縮（180日）の影響調査・レポート取得（MC1403404）\nM365管理センターMFA適用の未設定管理者アカウントの確認と対応（MC1215070）\nEntraゲストガバナンス機能のAzureサブスクリプション要件の確認（MC1225192）\nEdge 152からの2週間サイクル対応の更新管理ポリシー見直し（MC1387532）",
-  "watch": "Entra FIDO2テナントのパスキープロファイル移行進捗（MC1221452）\nOpenAIサブプロセッサ追加に伴うデータ処理契約・コンプライアンス確認（MC1422074）\nEntra federatedTokenValidationPolicyデフォルト変更の影響監視（MC1303719）\nM365変更管理モデル近代化の詳細仕様把握（MC1282306）\nApplication Guard for Office削除の影響確認（MC1182696）\nViva Connections Assignments/Courses ACE廃止の代替手段確認（MC1184647）",
-  "customerQuestions": "Entraパスキーをデフォルトにする前に、ユーザーへの事前通知と登録サポート体制は整っていますか？\nSSPRでモバイル電話やメールアドレスのみで認証していたユーザーは9月7日以降ログインできなくなります。該当ユーザーを特定していますか？\nConditional Accessでサードパーティ MFAを使っているカスタムコントロールは2027年4月までにExternal MFAへの移行が必要です。対応ベンダーの確認は済んでいますか？\nOffice LTSC 2021を利用している部署や端末をリストアップし、2026年10月の移行計画はありますか？\nM365 Copilotアプリが自動インストールされるデバイスについて、ユーザーへの事前周知は必要ですか？\nOpenAIがM365 Copilotのサブプロセッサとなることについて、データ保護の観点から承認手続きは完了していますか？",
+  "headline": "M365管理エージェントGA・Entra認証強化・Copilot機能拡張が今週の主要トピック",
+  "executiveSummary": "今週のMicrosoft 365メッセージセンターでは75件の更新が配信されました。主なトピックは1M365管理エージェントの一般提供開始(MC1436831)、2EntraIDカスタムCSS廃止など認証・セキュリティ強化(MC1435782, MC1426371, MC1221452, MC1325414)、3M365 CopilotへのOpenAIモデル追加(MC1422074、7/24期限)、4条件付きアクセスのCustom Controls廃止(MC1422061)、5Office LTSC 2021サポート終了(2026/10)です。Entra IDのパスキー推進とSMS/音声OTP廃止方針が明確化されており、認証基盤の移行計画を早急に策定することが求められます。",
+  "thisWeek": "MC1422074: OpenAIサブプロセッサ追加のオプトアウト期限(2026/7/24)を確認・判断する\nMC1436831: M365管理エージェントのGA内容を確認し、管理者への展開方針を検討する\nMC1179154: Authenticatorのroot/ジェイルブレイク検出変更(7/30期限)をデバイス管理ポリシーと照合する\nMC1300584: App Instance Lockのデフォルト有効化(7/23期限)が既存アプリに影響しないか確認する",
+  "thisMonth": "MC1435782: EntraカスタムブランディングのCSS配置プロパティ廃止(10月~)に向け、現行カスタマイズを棚卸しする\nMC1325414: SSPR登録済み認証方法の必須化(9/7)に備えユーザーの認証方法登録状況を確認・対応する\nMC1303719: federatedTokenValidationPolicyのデフォルト変更(8/11確認期限)を確認する\nMC1403404: eCDNの分析データ保存期間短縮(8/27)前に必要なデータをエクスポートする\nMC1152323: M365 Copilotアプリの自動インストールポリシーを確認し、展開範囲を決定する\nMC1409305: パートナー階層サポートロールへの新規割り当てブロック(9月)に向け代替ロールを確認する\nMC1278920: Office LTSC 2021サポート終了(2026/10/13)に向けた移行計画を策定する",
+  "watch": "MC1426371: MicrosoftがパスキーデフォルトMFA化・SMS/音声OTP廃止を発表。廃止時期を継続監視する\nMC1422061: 条件付きアクセスCustom Controls廃止(2027/7)への外部MFA移行計画を策定・進める\nMC1387532: Edge 152からの2週間リリースサイクル移行に備えテスト・展開プロセスを見直す\nMC1221452: EntraパスキープロファイルGA・FIDO2テナント移行の詳細要件を継続確認する\nMC1182696: Defender Application Guard for Office廃止後の代替保護機能への移行計画を立案する\nMC1215070: M365管理センターMFA強制適用のタイムラインを確認し未対応管理者アカウントを解消する",
+  "customerQuestions": "Q1: M365管理エージェントは既存のRBACポリシーをそのまま尊重しますか?変更承認なしに設定が自動変更されることはありますか?\nQ2: OpenAIモデルのサブプロセッサ追加(MC1422074)でデータはどこで処理されますか?オプトアウトした場合の機能制限は何ですか?\nQ3: SMSと音声OTPが廃止される場合、まだ認証アプリを使っていないユーザーへの移行はどう進めればよいですか?\nQ4: EntraカスタムブランディングのCSS廃止(MC1435782)後、現在使用しているカスタムレイアウトが崩れる可能性はありますか?\nQ5: SSPR認証方法必須化(MC1325414)で9/7以降に登録していないユーザーはパスワードリセットできなくなりますか?緊急時の対応はどうなりますか?\nQ6: 条件付きアクセスのCustom Controls(MC1422061)を現在利用している場合、2027年4月30日までにどのような移行作業が必要ですか?\nQ7: Office LTSC 2021のサポート終了(MC1278920)後もセキュリティ更新は提供されますか?永続ライセンスユーザーの選択肢は何がありますか?",
   "referencedIds": [
     "MC1069563",
     "MC1143999",
@@ -87,526 +87,526 @@
   "messageUpdates": [
     {
       "id": "MC1436831",
-      "japaneseTitle": "M365管理エージェントが全管理者向けに一般提供開始",
-      "japaneseSummary": "Microsoft 365管理エージェントがGA。管理センターとCopilot Chatで統合AIによる管理操作を支援。",
+      "japaneseTitle": "Microsoft 365 管理エージェントが全管理者向けに一般提供開始",
+      "japaneseSummary": "M365管理エージェントがGA。自然言語でM365サービスの検出・設定・トラブルシュートが可能。RBAC尊重、変更前に管理者承認が必要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1435782",
-      "japaneseTitle": "Entra IDカスタムブランディングのCSS位置指定プロパティ廃止",
-      "japaneseSummary": "SFI対応でカスタムブランディングのCSS位置指定プロパティを廃止。2026年12月まで移行が必要。",
+      "japaneseTitle": "Entra ID: カスタムブランディングのカスタムCSS配置プロパティが廃止予定（重大変更）",
+      "japaneseSummary": "フィッシング対策のためCSS配置プロパティを2026年10月より段階廃止。全CSSの廃止は将来予定。カスタムブランディング管理者は要対応。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1287370",
-      "japaneseTitle": "共有予定表のMAPIからRESTモデルへの自動アップグレード",
-      "japaneseSummary": "Exchange Onlineの共有予定表をレガシーMAPIから最新RESTモデルへ自動移行。タイムライン更新済み。",
+      "japaneseTitle": "共有カレンダーのMAPIからRESTモデルへの自動アップグレード（更新）",
+      "japaneseSummary": "Exchange OnlineでGCC High/DoD向けを2026年8月より開始。カレンダー同期の信頼性・パフォーマンスが向上。ユーザー・管理者の操作不要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1419795",
-      "japaneseTitle": "PowerPoint for web：Copilotリボンにワンクリックスキル追加",
-      "japaneseSummary": "「プレゼンレビュー」「スライドビジュアル化」のCopilotスキルがPowerPoint webリボンに追加。",
+      "japaneseTitle": "PowerPoint for web: ワンクリックCopilotスキル（更新）",
+      "japaneseSummary": "「レビュー」タブに「Review Presentation」、「デザイン」タブに「Visualize Slide」ボタン追加。Copilot利用ユーザーが対象。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1421919",
-      "japaneseTitle": "M365 Copilotのウェブコンテンツ設定が全体に拡大",
-      "japaneseSummary": "Copilotのウェブコンテンツ設定が複数のCopilot体験に展開し、設定場所も統合される。",
+      "japaneseTitle": "M365 Copilot Webコンテンツ設定の拡張と場所変更（更新）",
+      "japaneseSummary": "Web検索オン/オフ設定が全CopilotエクスペリエンスとWorkタブ以外にも拡張。設定がSettingsに移動。2026年7月末完了予定。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1434583",
-      "japaneseTitle": "Copilot Chatブロックユーザー向け組織ポリシーリンク設定",
-      "japaneseSummary": "Copilot Chatをブロックされたユーザーに組織ポリシーへのリンクを表示できる新機能が追加。",
+      "japaneseTitle": "M365 Copilot: ブロックユーザー向け組織ポリシーリンクの設定",
+      "japaneseSummary": "Copilot Chatがブロックされたユーザーに表示するカスタムポリシーリンクを管理者が設定可能になる。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1434581",
-      "japaneseTitle": "PowerPoint Copilot（Mac）でOneDriveカスタムスキル対応",
-      "japaneseSummary": "Mac版PowerPoint CopilotがOneDriveに保存したユーザー定義カスタムスキルを利用可能に。",
+      "japaneseTitle": "PowerPoint Copilot (Mac): OneDrive保存のカスタムスキル利用",
+      "japaneseSummary": "OneDriveに保存したユーザー定義カスタムスキルをPowerPoint Copilot (Mac)で利用可能。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1434580",
-      "japaneseTitle": "PowerPoint Copilot（Web）でOneDriveカスタムスキル対応",
-      "japaneseSummary": "Web版PowerPoint CopilotがOneDrive保存のカスタムスキルフォルダを利用可能に。",
+      "japaneseTitle": "PowerPoint Copilot (web): OneDrive保存のカスタムスキル利用",
+      "japaneseSummary": "OneDriveに保存したユーザー定義カスタムスキルをPowerPoint Copilot (web)で利用可能。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1400824",
-      "japaneseTitle": "Entra SSPRのCAPTCHA保護更新",
-      "japaneseSummary": "SSPRのボット保護をhCaptchaからMicrosoftのCAPTCHAに更新。タイムライン変更あり。",
+      "japaneseTitle": "Entra: セルフサービスパスワードリセットのCAPTCHA保護更新（更新）",
+      "japaneseSummary": "SSPRのCAPTCHA保護が更新。セキュリティ強化のため管理者は変更内容を確認することを推奨。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1411435",
-      "japaneseTitle": "M365 Copilotウェブグラウンディングのドメイン除外機能GA",
-      "japaneseSummary": "管理者が特定ドメインをCopilotウェブグラウンディングから除外できる機能が一般提供開始。",
+      "japaneseTitle": "M365 Copilot: Webグラウンディングのドメイン除外設定",
+      "japaneseSummary": "管理者がCopilotのWeb検索から特定ドメインを除外できる新機能。情報ガバナンス強化に活用可能。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1221452",
-      "japaneseTitle": "Entra IDパスキープロファイルGA・既存FIDO2テナント移行",
-      "japaneseSummary": "パスキープロファイルとsynced passkeysがGA。既存FIDO2テナントは移行作業が必要。",
+      "japaneseTitle": "Entra ID: パスキープロファイルGA・既存FIDO2テナント移行（重大変更・更新）",
+      "japaneseSummary": "パスキープロファイルがGAとなり、既存FIDO2テナントの移行が必要。フィッシング耐性認証の強化。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1282568",
-      "japaneseTitle": "Windows向けEntraパスキーGA",
-      "japaneseSummary": "Windows上でのMicrosoft EntraパスキーがGA。フィッシング耐性の強い認証がWindowsに対応。",
+      "japaneseTitle": "Windows向けMicrosoft Entraパスキー一般提供開始（更新）",
+      "japaneseSummary": "WindowsデバイスでEntraパスキーがGA。パスワードレス認証の展開を検討する好機。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1183010",
-      "japaneseTitle": "M365 Copilot：Read AloudでリアルタイムQ&A音声対話",
-      "japaneseSummary": "Read AloudにQ&A機能追加。音声でCopilotとリアルタイムで対話可能に（en-US先行）。",
+      "japaneseTitle": "M365 Copilot: Read AloudでのQ&A音声インタラクション（更新）",
+      "japaneseSummary": "Read Aloud機能にQ&A音声インタラクションが追加。文書読み上げ中にリアルタイムで質問応答が可能。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1430537",
-      "japaneseTitle": "ExcelのCopilotにブランドキットスキル追加",
-      "japaneseSummary": "Copilot in ExcelがBrand Centerの資産を使い組織ブランドをワークブックに自動適用するスキルを追加。",
+      "japaneseTitle": "Excel Copilot: ブランドキットスキル追加",
+      "japaneseSummary": "Excel CopilotにBrand Kitスキルが追加。組織のブランドカラーやフォントをExcel内で活用可能。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1426371",
-      "japaneseTitle": "Entra：パスキーをデフォルト化・MS提供SMS/音声認証廃止",
-      "japaneseSummary": "2026年9月1日よりパスキーがデフォルト認証に。MS提供SMS/音声認証は廃止、カスタム設定へ移行必要。",
+      "japaneseTitle": "Entra: パスキーデフォルト化・SMS/音声認証廃止（重大変更）",
+      "japaneseSummary": "MicrosoftはパスキーをデフォルトMFAとし、SMS・音声OTPを廃止予定。代替認証方法への移行計画が必要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1422074",
-      "japaneseTitle": "M365 CopilotでOpenAIモデルがサブプロセッサとして利用可能に",
-      "japaneseSummary": "OpenAIをサブプロセッサに登録。M365 CopilotでOpenAI運用モデルの利用が可能になる。",
+      "japaneseTitle": "M365 Copilot: OpenAIモデルのサブプロセッサ追加（要確認 7/24期限）",
+      "japaneseSummary": "OpenAIモデルがM365 Copilotのデータサブプロセッサになるよてい。2026/7/24までにオプトアウト可能。データ管理者は要確認。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1230892",
-      "japaneseTitle": "Copilot Chatの入力ボックスでエンティティ挿入の処理更新",
-      "japaneseSummary": "Copilot Chat入力ボックスでの+メニューからのエンティティ挿入動作を更新。",
+      "japaneseTitle": "M365 Copilot: チャット入力欄のエンティティ挿入処理更新（更新）",
+      "japaneseSummary": "Copilot Chat入力ボックスでのエンティティ（@メンション等）の挿入・処理方法が更新。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1423108",
-      "japaneseTitle": "iOS版AuthenticatorパスキーのリストアUI改善",
-      "japaneseSummary": "iOS版Microsoft Authenticatorのデバイスバウンドパスキーリストアフローが改善。",
+      "japaneseTitle": "Entra: iOS Authenticatorパスキーのリストアエクスペリエンス改善",
+      "japaneseSummary": "iOSのMicrosoft AuthenticatorアプリでパスキーリストアのUXが改善。ユーザーの復旧操作がスムーズになる。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1423101",
-      "japaneseTitle": "M365 Copilot使用状況レポートの更新と指標拡充",
-      "japaneseSummary": "Copilot使用状況レポートのUI刷新、リフレッシュ高速化、Graph API指標拡充。",
+      "japaneseTitle": "M365 Copilot利用状況レポートの更新・Graph APIメトリクス拡張",
+      "japaneseSummary": "管理センターのCopilot利用レポートUI刷新、更新頻度向上、Graph APIでの新メトリクス追加。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1319216",
-      "japaneseTitle": "Teams会議中にMeeting AIのオン/オフトグル追加",
-      "japaneseSummary": "会議主催者と発表者が会議中にMeeting AIを切り替えられるトグルがTeamsに追加。",
+      "japaneseTitle": "Teams: 会議中AIのオン/オフトグル（更新）",
+      "japaneseSummary": "会議中にMeeting AIを参加者がオン/オフ切替可能になる。プライバシー配慮の会議運営に有効。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1422061",
-      "japaneseTitle": "Entra ID：Conditional AccessカスタムコントロールをExternal MFAへ移行",
-      "japaneseSummary": "条件付きアクセスのカスタムコントロールは廃止。2027年4月30日までにExternal MFAへ移行必要。",
+      "japaneseTitle": "Entra ID: 条件付きアクセスのカスタムコントロール廃止・外部MFAへ移行（重大変更）",
+      "japaneseSummary": "条件付きアクセスのCustom Controlsが2027年7月に廃止。2027/4/30までに外部MFAソリューションへ移行が必要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1238432",
-      "japaneseTitle": "M365 CopilotアプリにブランドフッターのカスタマイズUI追加",
-      "japaneseSummary": "組織のブランドフッターをCopilot appに表示できる共同ブランディング機能が追加。",
+      "japaneseTitle": "M365 Copilotアプリ: ブランドフッターカスタマイズ（更新）",
+      "japaneseSummary": "管理者がM365 Copilotアプリのフッターにカスタムブランドテキストやリンクを設定可能。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1411574",
-      "japaneseTitle": "Entraシステム推奨認証が第一要素認証にも適用",
-      "japaneseSummary": "システム推奨認証メソッドが第一要素認証にも展開。パスキー・MFA強化に貢献。",
+      "japaneseTitle": "Entra: システム優先認証が一次認証にも適用（更新）",
+      "japaneseSummary": "System-preferred authenticationが初回認証にも適用範囲拡大。よりセキュアな認証方法が自動選択される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1419799",
-      "japaneseTitle": "M365 Backupの回復ウィンドウを設定可能に",
-      "japaneseSummary": "M365 Backupでバックアップ回復ウィンドウを3ヶ月〜2年の範囲でポリシーレベルに設定可能。",
+      "japaneseTitle": "M365 Backup: 回復ウィンドウの設定可能化",
+      "japaneseSummary": "M365 Backupの回復ウィンドウ期間を管理者が設定可能になる。バックアップポリシー見直しに活用。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1413298",
-      "japaneseTitle": "Copilot StudioのロードマップがM365ロードマップに統合",
-      "japaneseSummary": "2026年7月2日よりCopilot StudioのロードマップはM365ロードマップで一元公開。",
+      "japaneseTitle": "Copilot Studio・エージェントのロードマップ情報がM365 Roadmapへ移行",
+      "japaneseSummary": "Microsoft Copilot StudioとエージェントのロードマップがM365公式Roadmapサイトに統合される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1317195",
-      "japaneseTitle": "Copilot Notebooksにインフォグラフィック機能追加",
-      "japaneseSummary": "Copilot Notebooksでコンテンツからインフォグラフィックを生成できる新機能を追加。",
+      "japaneseTitle": "Copilot Notebooks: インフォグラフィック機能追加（更新）",
+      "japaneseSummary": "Copilot Notebooksにインフォグラフィック生成機能が追加。情報の視覚的なまとめが容易になる。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1418558",
-      "japaneseTitle": "M365 CopilotアプリのタスクバーPinning動作変更",
-      "japaneseSummary": "管理センターのタスクバー固定コントロールをM365 Copilotアプリ専用に簡素化。",
+      "japaneseTitle": "M365 CopilotとコンパニオンアプリのタスクバーPIN動作変更",
+      "japaneseSummary": "M365 CopilotおよびコンパニオンアプリのWindowsタスクバーへのPIN動作が変更される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1413301",
-      "japaneseTitle": "SharePoint Advanced Management：サイトのカスタムグループ作成",
-      "japaneseSummary": "カタログ管理で部門・チーム単位のサイトカスタムグループを作成できる機能を追加。",
+      "japaneseTitle": "カタログ管理: カスタムサイトグループ作成機能追加",
+      "japaneseSummary": "SharePointカタログ管理でカスタムサイトグループを作成・管理する機能が追加される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1384425",
-      "japaneseTitle": "Copilot NotebooksがCopilot Chat基本ユーザーにも提供",
-      "japaneseSummary": "Copilot Chat（Basic）ユーザーでもCopilot Notebooksを利用可能に。",
+      "japaneseTitle": "Copilot Notebooks: Basicユーザー向けに提供拡大（更新）",
+      "japaneseSummary": "Copilot NotebooksがM365 Copilot Chat Basicユーザーにも提供されるようになる。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1409102",
-      "japaneseTitle": "M365 CopilotリリースPreferenceにグループ対応追加",
-      "japaneseSummary": "Copilotリリース設定でEntra IDグループの割り当てが可能に。個人だけでなくグループ管理に対応。",
+      "japaneseTitle": "M365 Copilotリリース設定のグループサポート有効化",
+      "japaneseSummary": "M365 Copilotのリリース設定でグループ単位での管理が可能になり、段階的な展開をサポート。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1409305",
-      "japaneseTitle": "Entra：パートナーTier1/2サポートロールへの新規割り当てブロック",
-      "japaneseSummary": "Partner Tier1/2 Supportロールへの新規割り当てがブロックされる。既存割り当ては対象外。",
+      "japaneseTitle": "Entra: パートナー階層サポートロールへの新規割り当てブロック（重大変更）",
+      "japaneseSummary": "パートナーサポート向け階層ロールへの新規割り当てが2026年9月よりブロックされる。代替ロール検討が必要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1325414",
-      "japaneseTitle": "Entra SSPR：2026年9月7日より登録済み認証方法を必須化",
-      "japaneseSummary": "SSPRでディレクトリ属性のみの認証が不可に。9月7日までにユーザー登録確認が必要。",
+      "japaneseTitle": "Entra ID SSPR: 登録済み認証方法の要求（2026/9/7から）（重大変更・更新）",
+      "japaneseSummary": "2026/9/7よりSSPRは登録済み認証方法を必須化。未登録ユーザーはリセット不可となるため、事前展開が重要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1146821",
-      "japaneseTitle": "Edge for Business：Copilot ChatによるRewrite機能追加",
-      "japaneseSummary": "Edge for BusinessにM365 Copilot Chatを活用したRewrite機能が近日追加予定。",
+      "japaneseTitle": "Edge for Business: M365 Copilot Chatでの書き換え機能（更新）",
+      "japaneseSummary": "Edge for BusinessユーザーにM365 Copilot Chatの「書き換え」機能が提供予定。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1403404",
-      "japaneseTitle": "eCDN分析データ保持期間を360日から180日に短縮",
-      "japaneseSummary": "Microsoft eCDN分析データの保持期間が360日から180日に変更。2026年8月施行。",
+      "japaneseTitle": "eCDN分析データ保存期間を360日から180日に短縮（重大変更）",
+      "japaneseSummary": "Microsoft eCDNの分析データ保存期間が180日に短縮。8月27日以前に必要なデータのエクスポートを推奨。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1325422",
-      "japaneseTitle": "M365 CopilotアプリがチャットセントリックなUIに刷新",
-      "japaneseSummary": "M365 Copilotアプリがチャット中心のシンプルなUIに移行。世界展開中。",
+      "japaneseTitle": "M365 Copilotアプリ: チャット中心のシンプルUXへ移行（更新）",
+      "japaneseSummary": "M365 Copilotアプリがチャットを中心としたシンプルなデザインに刷新。ユーザー体験の統一化を推進。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1179154",
-      "japaneseTitle": "Microsoft Authenticator：脱獄・ルート検出機能の変更",
-      "japaneseSummary": "AuthenticatorアプリにEntra認証情報向けの脱獄・ルート検出が導入。コンプライアンス影響を確認。",
+      "japaneseTitle": "Microsoft Authenticator: ジェイルブレイク/root検出の変更（更新）",
+      "japaneseSummary": "Authenticatorアプリのデバイス安全性チェックが更新。7月30日までにデバイス管理ポリシー確認を推奨。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1297982",
-      "japaneseTitle": "秘密度ラベルでWord/Excel/PowerPointの全接続エクスペリエンスをブロック",
-      "japaneseSummary": "秘密度ラベル設定を使い、コンテンツ分析を行うすべての接続エクスペリエンスをブロック可能に。",
+      "japaneseTitle": "秘密度ラベルによるWord/Excel/PowerPointの接続エクスペリエンスブロック（更新）",
+      "japaneseSummary": "秘密度ラベルを使って、コンテンツ分析を行う接続エクスペリエンスを一括ブロックできるようになる。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1396361",
-      "japaneseTitle": "M365 Copilot：組織プロンプトをCopilot Chatに公開可能",
-      "japaneseSummary": "管理者がCopilot Chat向けに組織共通プロンプトを作成・公開できる機能が追加。",
+      "japaneseTitle": "M365 Copilot: 組織プロンプトをCopilot Chatに公開",
+      "japaneseSummary": "管理者が作成した組織プロンプトをCopilot Chatユーザー全体に公開・共有できる機能が追加。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1395007",
-      "japaneseTitle": "Entra：エージェント向けCA・ID Protectionの新サービスプラン",
-      "japaneseSummary": "エージェント向けCA・ID Protectionの新サービスプランがM365 E7等に追加。",
+      "japaneseTitle": "Entra: エージェント向け条件付きアクセス・ID保護の新サービスプラン",
+      "japaneseSummary": "AIエージェントに対応した条件付きアクセスとID保護の新サービスプランがEntraに追加される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1387532",
-      "japaneseTitle": "Microsoft Edgeが2週間リリースサイクルに移行（Edge 152〜）",
-      "japaneseSummary": "Edge 152（2026年8月27日〜）から2週間リリースサイクルに変更。Enterprise展開計画の見直しが必要。",
+      "japaneseTitle": "Microsoft Edge: Edge 152から2週間リリースサイクルへ移行（重大変更・更新）",
+      "japaneseSummary": "Edge 152よりリリースサイクルが4週間から2週間に短縮。IT管理者はテスト・展開サイクルの見直しが必要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1187682",
-      "japaneseTitle": "Edge for Business：M365 CopilotでWebページ要約・文脈グラウンディング",
-      "japaneseSummary": "Edge for BusinessでM365 Copilotによるページ要約・文脈グラウンディングが近日対応予定。",
+      "japaneseTitle": "Microsoft Edge: M365 Copilotの要約とコンテキストグラウンディング対応（更新）",
+      "japaneseSummary": "EdgeブラウザでM365 CopilotによるWebページの要約やコンテキスト参照機能が利用可能になる。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1152323",
-      "japaneseTitle": "M365 Copilotアプリが対象デバイスに自動インストール再開",
-      "japaneseSummary": "M365デスクトップアプリ対象デバイスへのCopilotアプリ自動インストールが2026年6月より再開。",
+      "japaneseTitle": "M365 Copilot Appsがデバイスに自動インストール（重大変更・更新）",
+      "japaneseSummary": "M365 Appsのデバイスに対しM365 Copilotアプリが自動インストールされる。管理者はポリシー設定を事前確認。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1290821",
-      "japaneseTitle": "Microsoft 365 eSignature：受信者グループ機能追加",
-      "japaneseSummary": "eSignatureで受信者グループを設定し、グループ内の1人が署名できる柔軟なフローが可能に。",
+      "japaneseTitle": "eSignature for M365: 受信者グループ機能（更新）",
+      "japaneseSummary": "eSignatureで受信者グループを設定しまとめて署名リクエストを送れる機能が追加される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1387526",
-      "japaneseTitle": "M365 Backup：フルワークロードバックアップ機能",
-      "japaneseSummary": "M365 Backupにワークロード全体を一括保護するフルワークロードバックアップ機能が追加。",
+      "japaneseTitle": "M365 Backup: SharePoint/OneDrive/Exchange フルワークロードバックアップ",
+      "japaneseSummary": "M365 BackupがSharePoint・OneDrive・Exchangeのフルワークロードバックアップをサポート。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1385586",
-      "japaneseTitle": "M365組織データ：カスタム属性の詳細アクセスポリシー管理",
-      "japaneseSummary": "組織データのカスタム属性に対してより細かいアクセスポリシー制御が可能に。",
+      "japaneseTitle": "M365: 組織データのカスタム属性に対する詳細アクセスポリシー制御",
+      "japaneseSummary": "組織データのカスタム属性に対して、詳細なアクセスポリシーコントロールが設定可能になる。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1158329",
-      "japaneseTitle": "M365 Copilot：メモリ機能とパーソナライゼーションの更新",
-      "japaneseSummary": "Copilot Memoryを更新し、パーソナライゼーションを強化。ユーザー体験を改善。",
+      "japaneseTitle": "M365 Copilot: メモリとパーソナライゼーション機能の更新（更新）",
+      "japaneseSummary": "Copilotがユーザーの設定や過去のやりとりを記憶してパーソナライズした応答を提供する機能が更新。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1358831",
-      "japaneseTitle": "クラシックOutlook for WindowsにCopilot設定を追加",
-      "japaneseSummary": "クラシックOutlook for Windowsのファイルメニューからコパイロット設定を管理可能に。",
+      "japaneseTitle": "クラシックOutlook for Windows: Copilot設定の追加",
+      "japaneseSummary": "クラシックOutlook for WindowsにCopilot関連設定が追加。管理者はポリシー確認を推奨。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1338811",
-      "japaneseTitle": "M365管理センター：サポートチケットへのメモ追加機能廃止",
-      "japaneseSummary": "管理センターのNeed Helpでサポートチケットへの直接メモ追加機能が廃止。メールや電話で対応継続。",
+      "japaneseTitle": "M365管理センター: サポートチケットの「メモ追加」オプション廃止（重大変更）",
+      "japaneseSummary": "サポートチケット内の「メモ追加」機能が廃止。代替手段としてサポートリクエスト本文の活用が必要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1326253",
-      "japaneseTitle": "WHfBとmacOS Platform SSO登録にCA適用",
-      "japaneseSummary": "Windows Hello for BusinessとmacOS Platform SSOの登録に条件付きアクセスポリシーが適用される。",
+      "japaneseTitle": "条件付きアクセスがWindows Hello for BusinessとmacOS Platform SSO登録に適用",
+      "japaneseSummary": "CA（条件付きアクセス）ポリシーがWindows Hello for BusinessとmacOS Platform SSO登録フローにも適用される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1174856",
-      "japaneseTitle": "M365 Copilot：Chatセッション永続性の強化",
-      "japaneseSummary": "Copilotチャットのセッション永続性を改善。通信障害時もチャット内容が保持されるよう強化。",
+      "japaneseTitle": "M365 Copilot: チャットのセッション持続性強化（更新）",
+      "japaneseSummary": "Copilot Chatのセッションが持続するよう改善。会話の継続性が高まり、作業効率が向上。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1315217",
-      "japaneseTitle": "Copilot Studio：TeamsのクラシックエージェントはWebへ移行",
-      "japaneseSummary": "TeamsのCopilot Studioクラシックエージェント作成機能廃止。Webアプリへ移行。2026年7月末。",
+      "japaneseTitle": "Copilot Studio: Teamsからwebへのクラシックエージェント作成移行（重大変更）",
+      "japaneseSummary": "TeamsでのクラシックエージェントはWeb版に移行完了。以降はWebエクスペリエンスのみで作成可能。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1311978",
-      "japaneseTitle": "クラシックOutlook for Windows：Copilotユーザー起動インサイト",
-      "japaneseSummary": "メール内テキスト選択後にCopilotを手動でインサイト取得できるUser Initiated Insightsを追加。",
+      "japaneseTitle": "クラシックOutlook for Windows: Copilotによるユーザー起動型インサイト",
+      "japaneseSummary": "クラシックOutlookでユーザーが手動でCopilotインサイトを起動できる機能が追加。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1148545",
-      "japaneseTitle": "M365管理センター：エージェント使用状況レポート（プレビュー）",
-      "japaneseSummary": "Copilot Chatのエージェント採用管理を支援する使用状況レポートが管理センターに追加（プレビュー）。",
+      "japaneseTitle": "M365管理センター 利用レポート: エージェント利用状況（プレビュー）（更新）",
+      "japaneseSummary": "管理センターの利用レポートにエージェント利用状況のプレビューが追加。Copilot活用状況の把握に活用可能。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1303719",
-      "japaneseTitle": "Entra：federatedTokenValidationPolicyのデフォルト設定変更",
-      "japaneseSummary": "フェデレーション認証のトークン検証ポリシーのデフォルト動作が変更。フェデレーション環境は要確認。",
+      "japaneseTitle": "Entra: federatedTokenValidationPolicyのデフォルト設定変更（8/11要確認）",
+      "japaneseSummary": "フェデレーテッドトークン検証ポリシーのデフォルトが変更。フェデレーション認証利用組織は2026/8/11までに確認を。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1266021",
-      "japaneseTitle": "M365 Copilotモバイルアプリがチャットファーストデザインに刷新",
-      "japaneseSummary": "Copilotモバイルアプリのデザインをチャット優先UIに更新。操作性を改善。",
+      "japaneseTitle": "M365 Copilotモバイルアプリ: チャット中心の新デザイン（更新）",
+      "japaneseSummary": "Copilotモバイルアプリがチャットファーストのデザインに刷新。ナビゲーションが簡素化される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1300584",
-      "japaneseTitle": "Entra：新規アプリにApp Instance Lockをデフォルト有効化",
-      "japaneseSummary": "新規作成アプリのApp Instance Lockがデフォルト有効に。センシティブなアプリプロパティを保護。",
+      "japaneseTitle": "Entra: 新規アプリでApp Instance Lockがデフォルト有効化",
+      "japaneseSummary": "新規登録アプリにApp Instance Lockがデフォルトで有効化。アプリ認証情報の不正変更を防止。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1189665",
-      "japaneseTitle": "M365管理センター：組織メッセージにメール配信チャネル追加",
-      "japaneseSummary": "Organizational Messagesにメール配信チャネルが追加。既存のバナー等に加えメールで周知可能に。",
+      "japaneseTitle": "M365管理センター: 組織メッセージのメール配信サポート（更新）",
+      "japaneseSummary": "管理者が組織メッセージをメール経由でも配信可能になる。Copilotアダプションメッセージの展開に活用。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1262570",
-      "japaneseTitle": "M365 Copilotライセンスリクエストのカスタムフロー更新",
-      "japaneseSummary": "Copilotライセンス申請のカスタムフロー体験を改善。組織の申請プロセスをより柔軟に設定可能。",
+      "japaneseTitle": "M365 Copilot: ライセンスリクエスト機能の更新（更新）",
+      "japaneseSummary": "ユーザーがCopilotライセンスを管理者にリクエストするフロー・UIが更新される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1287372",
-      "japaneseTitle": "Entra ID Governance：アカウントディスカバリー機能追加",
-      "japaneseSummary": "Entra ID外のアプリアカウントを特定するAccount Discovery機能がID Governanceに追加。",
+      "japaneseTitle": "Entra ID Governance: アカウントディスカバリー機能",
+      "japaneseSummary": "Entra ID Governanceにアカウントディスカバリー機能が追加。未管理アカウントや外部IDの把握が容易に。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1282306",
-      "japaneseTitle": "Microsoft 365の変更管理モデルの近代化",
-      "japaneseSummary": "M365の変更管理を刷新。IT部門が変更のペースをよりコントロールできる新しいアプローチを導入。",
+      "japaneseTitle": "M365向け変更管理の近代化",
+      "japaneseSummary": "M365の変更管理プロセスが刷新。管理者向けの変更通知・追跡・計画機能が強化される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1282571",
-      "japaneseTitle": "ExcelのCopilotエントリポイントを統合",
-      "japaneseSummary": "Excel内のCopilotアクセス方法を整理し、より明確で一貫したエントリポイントに統合。",
+      "japaneseTitle": "Excel: CopilotエントリポイントのUI変更",
+      "japaneseSummary": "ExcelのリボンやシートからCopilotを起動するエントリポイントのデザインが変更される。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1225192",
-      "japaneseTitle": "Entra ID Governance：ゲストガバナンス機能にAzureサブスクリプション必須化",
-      "japaneseSummary": "2026年1月30日よりゲストガバナンス機能にAzureサブスクリプションが必要。未設定テナントは要対応。",
+      "japaneseTitle": "Entra ID Governance: ゲストガバナンス機能にAzureサブスクリプション必須化（重大変更）",
+      "japaneseSummary": "Entra ID Governanceのゲストガバナンス機能の継続にAzureサブスクリプションが必要になる。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1278920",
-      "japaneseTitle": "Office LTSC 2021のサポートが2026年10月13日に終了",
-      "japaneseSummary": "Office LTSC 2021は2026年10月13日でサポート終了。以降セキュリティ更新なし。移行計画が必要。",
+      "japaneseTitle": "Office LTSC 2021等のサポートが2026/10/13に終了（重大変更）",
+      "japaneseSummary": "Office LTSC 2021および対象アプリのサポートが2026年10月13日に終了。移行計画の策定を推奨。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1268926",
-      "japaneseTitle": "Mac向けMicrosoft AutoUpdate（MAU）CDNエンドポイント変更",
-      "japaneseSummary": "macOS向けMAUのCDNエンドポイントが変更。MAU 4.x以降が対象。アクション期限は2026年5月。",
+      "japaneseTitle": "Mac向けMicrosoft AutoUpdate (MAU) CDNエンドポイント更新（重大変更）",
+      "japaneseSummary": "MacのMAUがCDNエンドポイントを変更。5/31期限で対応が必要だったが継続監視を推奨。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1069563",
-      "japaneseTitle": "M365管理センター：Copilot Chat従量課金コスト管理レポート（プレビュー）",
-      "japaneseSummary": "Copilot Chatのメッセージ消費コスト管理を支援する新しい使用状況レポートがプレビュー提供予定。",
+      "japaneseTitle": "M365管理センター: Copilot Chatの従量課金コスト管理レポート（プレビュー）",
+      "japaneseSummary": "管理センターでCopilot Chatの従量課金コストを管理・可視化できるレポートがプレビュー提供。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1254560",
-      "japaneseTitle": "Copilot PagesにAIコードプレビューの管理者コントロール追加",
-      "japaneseSummary": "Copilot PagesでAI生成コードプレビューを管理者がコントロールできる新設定が追加。",
+      "japaneseTitle": "M365 Copilot Pages: AIコードプレビューの管理者制御",
+      "japaneseSummary": "Copilot Pagesで生成されるAIコードプレビューを管理者がオン/オフできる新しい管理コントロール追加。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1215070",
-      "japaneseTitle": "M365管理センターへのMFA強制適用",
-      "japaneseSummary": "M365管理センターへのサインインにMFAが必須化。未設定の管理者は早急に対応が必要。",
+      "japaneseTitle": "M365管理センター: MFA強制適用（重大変更）",
+      "japaneseSummary": "M365管理センターへのアクセスにMFAが強制適用される。未対応テナントは事前にMFA設定を完了する必要あり。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1184647",
-      "japaneseTitle": "Viva ConnectionsのAssignments/CoursesカードACEを廃止",
-      "japaneseSummary": "Viva ConnectionsおよびSharePoint上のAssignments・Courses ACEが廃止される。代替手段を準備。",
+      "japaneseTitle": "Viva Connections/SharePoint: AssignmentsとCoursesアダプティブカードの廃止（更新）",
+      "japaneseSummary": "Viva ConnectionsとSharePointのAssignments/Courses ACEが廃止予定。代替UIへの移行を推奨。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1192661",
-      "japaneseTitle": "Edge Workspacesの新アーキテクチャへの移行",
-      "japaneseSummary": "Edge Workspacesが改善されたアーキテクチャに移行。信頼性とパフォーマンスが向上。",
+      "japaneseTitle": "Edge Workspaces: 改善アーキテクチャへの移行（重大変更）",
+      "japaneseSummary": "Edge Workspacesが新アーキテクチャに移行。ユーザーはWorkspaces再設定が必要な場合がある。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1191944",
-      "japaneseTitle": "Excel「画像からデータ挿入」機能が2026年7月より廃止",
-      "japaneseSummary": "Excel WindowsのSAECで「画像からデータ挿入」機能が2026年7月から廃止。",
+      "japaneseTitle": "Microsoft Excel: 「画像からデータ挿入」機能の廃止（2026年7月より）",
+      "japaneseSummary": "Excelの「画像からデータ挿入」機能が2026年7月より廃止。代替ワークフローへの移行が必要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1191924",
-      "japaneseTitle": "Entra ID：外部スクリプトインジェクションをブロックするCSP強化",
-      "japaneseSummary": "SFI対応でEntra IDサインイン体験のContent Security Policyを更新。外部スクリプト注入をブロック。",
+      "japaneseTitle": "Entra ID: 外部スクリプトインジェクションブロックによる認証エクスペリエンス保護",
+      "japaneseSummary": "Entra IDサインインページへの外部スクリプトインジェクションがブロックされるセキュリティ強化。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1188230",
-      "japaneseTitle": "Entra ID：FIDO2認証ポリシーの重複プロパティ廃止",
-      "japaneseSummary": "2027年10〜11月にfido2AuthenticationMethodConfigurationの重複プロパティを廃止。",
+      "japaneseTitle": "Entra ID: パスキー(FIDO2)認証方法ポリシーの重複プロパティ廃止（重大変更）",
+      "japaneseSummary": "FIDO2認証方法ポリシー内の重複プロパティが2027/10廃止予定。早期に新プロパティへの移行を推奨。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1182696",
-      "japaneseTitle": "Microsoft Defender：Application Guard for Officeが削除",
-      "japaneseSummary": "Application Guard for Officeが2024年4月に廃止済みで、Officeから削除中。代替はDefender。",
+      "japaneseTitle": "Microsoft Defender: Application Guard for Officeの廃止（重大変更）",
+      "japaneseSummary": "Defender Application Guard for Officeが廃止。代替として推奨される保護機能への移行計画が必要。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC1143999",
-      "japaneseTitle": "Azure Information Protection：MFA有効化のリマインダー",
-      "japaneseSummary": "AIPテナント向けMFA有効化の案内。Gallatinは強制なし。セキュリティ強化として対応を推奨。",
+      "japaneseTitle": "Azure Information Protection: AzureテナントへのMFA有効化（更新）",
+      "japaneseSummary": "AIPテナントにMFAの有効化が求められていた（2025/10/1期限）。未対応の場合は早急に対応を。",
       "messageUrl": null,
       "learnUrls": []
     },
     {
       "id": "MC985483",
-      "japaneseTitle": "Microsoft Graph：会議作成APIのデフォルトパスコード変更",
-      "japaneseSummary": "Graph APIの会議作成でデフォルトパスコード要件が変更。既存の実装の動作確認が必要。",
+      "japaneseTitle": "Microsoft Graph: 会議作成APIのデフォルトパスコード変更（重大変更）",
+      "japaneseSummary": "Graph API経由で作成する会議のデフォルトパスコードが変更される。既存アプリの動作確認が必要。",
       "messageUrl": null,
       "learnUrls": []
     }
