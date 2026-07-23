@@ -186,7 +186,11 @@ $html = @'
     .message h3 { margin: 6px 0 10px; font-size: 1.12rem; letter-spacing: -0.02em; }
     .message-id { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.78rem; }
     .message-date { min-width: 105px; color: var(--cp-text-muted); font-size: 0.82rem; text-align: right; }
+    .message-original { margin-top: -4px; color: var(--cp-text-soft); font-size: 0.84rem; }
     .message-summary { margin: 16px 0 0; color: var(--cp-text-muted); }
+    .message-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+    .message-link { color: var(--cp-link); font-size: 0.86rem; font-weight: 700; text-decoration: none; }
+    .message-link:hover { color: var(--cp-accent); text-decoration: underline; }
     .message-content { margin-top: 16px; border-top: 1px solid var(--cp-border); padding-top: 12px; }
     .message-content summary { cursor: pointer; font-weight: 700; }
     .message-body { margin: 12px 0 0; color: var(--cp-text-muted); white-space: normal; }
@@ -275,9 +279,20 @@ $html = @'
   <script>
     const DATA = __DATA__;
     const INSIGHTS = __INSIGHTS__;
+    const MESSAGE_UPDATES = new Map((INSIGHTS?.messageUpdates || []).map(update => [update.id, update]));
     const state = { filter: "all", query: "" };
     const fmt = value => value ? new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "short", day: "numeric" }).format(new Date(value)) : "—";
     const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+    const safeOfficialUrl = value => {
+      try {
+        const url = new URL(value);
+        return url.protocol === "https:" && ["admin.microsoft.com", "m365.cloud.microsoft", "learn.microsoft.com"].includes(url.hostname)
+          ? url.href
+          : null;
+      } catch {
+        return null;
+      }
+    };
 
     document.getElementById("generated").textContent = `Updated ${fmt(DATA.meta.generatedAt)}`;
     document.getElementById("source-status").textContent =
@@ -330,6 +345,7 @@ $html = @'
       const visible = DATA.messages.filter(matches);
       document.getElementById("result-count").textContent = `${visible.length} / ${DATA.messages.length} messages`;
       document.getElementById("messages").innerHTML = visible.length ? visible.map(message => {
+        const update = MESSAGE_UPDATES.get(String(message.id).toUpperCase());
         const high = ["high", "critical"].includes(String(message.severity).toLowerCase());
         const chips = [
           message.isMajorChange ? `<span class="chip major">Major change</span>` : "",
@@ -349,12 +365,24 @@ $html = @'
         const fullContent = Object.prototype.hasOwnProperty.call(message, "bodyText")
           ? `<details class="message-content"><summary>Message Center の全文と詳細</summary>${body}${details}</details>`
           : "";
+        const messageUrl = safeOfficialUrl(update?.messageUrl);
+        const learnLinks = (update?.learnUrls || [])
+          .map(safeOfficialUrl)
+          .filter(Boolean)
+          .map((url, index) => `<a class="message-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Microsoft Learn ${index + 1}</a>`);
+        const links = [
+          messageUrl
+            ? `<a class="message-link" href="${escapeHtml(messageUrl)}" target="_blank" rel="noopener noreferrer">Message Center を開く</a>`
+            : "",
+          ...learnLinks
+        ].filter(Boolean).join("");
         return `<article class="message">
           <div class="message-top">
-            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(message.title)}</h3><div class="chips">${chips}</div></div>
+            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(update?.japaneseTitle || "日本語タイトルを準備中")}</h3><div class="message-original">原題: ${escapeHtml(message.title)}</div><div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
-          ${message.japaneseSummary ? `<p class="message-summary">${escapeHtml(message.japaneseSummary)}</p>` : ""}
+          ${(update?.japaneseSummary || message.japaneseSummary) ? `<p class="message-summary">${escapeHtml(update?.japaneseSummary || message.japaneseSummary)}</p>` : ""}
+          ${links ? `<div class="message-links">${links}</div>` : ""}
           ${fullContent}
         </article>`;
       }).join("") : `<div class="panel empty">条件に一致するメッセージはありません。</div>`;

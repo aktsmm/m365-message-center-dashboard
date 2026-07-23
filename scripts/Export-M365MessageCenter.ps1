@@ -17,7 +17,7 @@ param(
     [string]$RunId = $env:GITHUB_RUN_ID,
     [DateTimeOffset]$ReferenceTime = [DateTimeOffset]::UtcNow,
     [string]$AgentContextPath,
-    [ValidateRange(1, 100)][int]$AgentContextLimit = 50,
+    [ValidateRange(1, 1000)][int]$AgentContextLimit = 1000,
     [switch]$IncludeContent
 )
 
@@ -105,6 +105,7 @@ function New-JapaneseSummary {
     if ($Message.actionRequiredByDateTime) {
         $summary += "対応期限は $(([DateTimeOffset]$Message.actionRequiredByDateTime).ToString('yyyy年M月d日')) です。"
     }
+    if ($summary.Length -gt 100) { return $summary.Substring(0, 100) }
     return $summary
 }
 
@@ -315,6 +316,7 @@ if ($AgentContextPath) {
                     actionRequiredByDateTime = $_.actionRequiredByDateTime
                     services                 = $_.services
                     bodyText                 = $bodyText
+                    details                  = if ($_.PSObject.Properties.Name -contains 'details') { $_.details } else { @() }
                 }
             }
     )

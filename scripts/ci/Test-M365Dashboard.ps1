@@ -22,6 +22,18 @@ try {
         -AgentOutputPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') `
         -MessagesJson (Join-Path $temp 'messages.json') `
         -OutputPath $publishedInsights
+    $stringStructuredOutput = Join-Path $temp 'agent-output-string-updates.json'
+    $stringStructuredInsights = Join-Path $temp 'insights-string-updates.json'
+    $agentOutputWithStringUpdates = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $agentOutputWithStringUpdates.items[0].message_updates = $agentOutputWithStringUpdates.items[0].message_updates | ConvertTo-Json -Depth 8 -Compress
+    $agentOutputWithStringUpdates | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $stringStructuredOutput -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+        -AgentOutputPath $stringStructuredOutput `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -OutputPath $stringStructuredInsights
+    if ((Get-Content -LiteralPath $stringStructuredInsights -Raw -Encoding UTF8) -notmatch 'messageUpdates') {
+        throw 'String-form message_updates did not publish structured per-message updates.'
+    }
     & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
         -MessagesJson (Join-Path $temp 'messages.json') `
         -InsightsJson $publishedInsights `
@@ -32,7 +44,7 @@ try {
     $html = Get-Content -LiteralPath (Join-Path $temp 'index.html') -Raw -Encoding UTF8
 
     if ($messages.messages.Count -ne 3) { throw "Expected 3 messages, got $($messages.messages.Count)." }
-    if ($messagesRaw -notmatch 'THIS_BODY_IS_LAB_PUBLIC|"details"|ExternalLink|japaneseSummary') {
+    if ($messagesRaw -notmatch 'THIS_BODY_IS_LAB_PUBLIC|"details"|MessageCenterUrl|japaneseSummary') {
         throw 'Lab-public body, details, or deterministic Japanese summary is missing from public JSON.'
     }
     if ($messagesRaw -match 'abcdefghijklmnopqrstuvwxyz|lab-secret-value|LAB_SCRIPT_MUST_NOT_RENDER|<p>') {
@@ -40,11 +52,34 @@ try {
     }
     if ($messagesRaw -notmatch '\[REDACTED\]') { throw 'Credential-like values were not redacted from public JSON.' }
     if ($messagesRaw -match '"expiryDateTime"') { throw 'Unsupported Graph expiryDateTime leaked into public JSON.' }
-    if ($html -notmatch 'THIS_BODY_IS_LAB_PUBLIC|ExternalLink|変更予定') {
+    if ($html -notmatch 'THIS_BODY_IS_LAB_PUBLIC|Message Center を開く|共同作業コントロールの更新|変更予定') {
         throw 'Lab-public full content or deterministic Japanese summary is missing from dashboard HTML.'
     }
-    if ($html -match 'abcdefghijklmnopqrstuvwxyz|lab-secret-value|LAB_SCRIPT_MUST_NOT_RENDER|<script[^>]+src=|<link[^>]+href=') {
+    if ($html -notmatch 'https://admin\.microsoft\.com/AdminPortal/home#|https://learn\.microsoft\.com/microsoft-365/admin/manage/message-center') {
+        throw 'Validated Message Center or Microsoft Learn links are missing from dashboard HTML.'
+    }
+    if ($html -match 'abcdefghijklmnopqrstuvwxyz|lab-secret-value|LAB_SCRIPT_MUST_NOT_RENDER|example\.com|<script[^>]+src=|<link[^>]+href=') {
         throw 'Credentials or external resources leaked into dashboard HTML.'
+    }
+    $published = Get-Content -LiteralPath $publishedInsights -Raw -Encoding UTF8 | ConvertFrom-Json
+    $publishedUpdates = @($published.messageUpdates)
+    if ($publishedUpdates.Count -ne $messages.messages.Count) {
+        throw 'Agentic per-message updates do not cover every Message Center record.'
+    }
+    foreach ($update in $publishedUpdates) {
+        if ([string]$update.japaneseTitle -notmatch '[ぁ-んァ-ヶ一-龠々ー]' -or
+            [string]$update.japaneseSummary -notmatch '[ぁ-んァ-ヶ一-龠々ー]' -or
+            ([string]$update.japaneseSummary).Length -gt 100) {
+            throw 'Agentic per-message title or summary is not valid Japanese output within 100 characters.'
+        }
+    }
+    $firstUpdate = @($publishedUpdates | Where-Object id -eq 'MC900001')[0]
+    if ($firstUpdate.messageUrl -ne 'https://admin.microsoft.com/AdminPortal/home#/MessageCenter/:/messages/MC900001' -or
+        @($firstUpdate.learnUrls) -notcontains 'https://learn.microsoft.com/microsoft-365/admin/manage/message-center') {
+        throw 'Allowed Message Center or Microsoft Learn URLs were not preserved.'
+    }
+    if (@($publishedUpdates | Where-Object { $_.id -ne 'MC900001' -and $_.messageUrl }).Count) {
+        throw 'A message update fabricated a direct Message Center URL.'
     }
     if ((Get-Content -LiteralPath $agentContext -Raw -Encoding UTF8) -notmatch 'THIS_BODY_IS_LAB_PUBLIC') {
         throw 'Transient agent context did not include the message body for summarization.'
@@ -78,7 +113,7 @@ try {
         throw 'Graph fallback request did not use the unselected Message Center endpoint.'
     }
     $fallbackMessages = Get-Content -LiteralPath (Join-Path $fallbackOutput 'messages.json') -Raw -Encoding UTF8
-    if ($fallbackMessages -notmatch 'THIS_BODY_IS_LAB_PUBLIC|"details"|ExternalLink') {
+    if ($fallbackMessages -notmatch 'THIS_BODY_IS_LAB_PUBLIC|"details"|MessageCenterUrl') {
         throw 'Graph fallback did not preserve lab-public body and details.'
     }
     if ($fallbackMessages -match 'abcdefghijklmnopqrstuvwxyz|lab-secret-value') {
@@ -131,6 +166,19 @@ try {
     if (-not $credentialValidationFailed) {
         throw 'Credential-like Agentic safe output unexpectedly passed validation.'
     }
+    $invalidLinkValidationFailed = $false
+    try {
+        & (Join-Path $root 'scripts\Publish-M365AgentInsights.ps1') `
+            -AgentOutputPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output-invalid-link.json') `
+            -MessagesJson (Join-Path $temp 'messages.json') `
+            -OutputPath (Join-Path $temp 'invalid-link-insights.json')
+    } catch {
+        if ($_.Exception.Message -notmatch 'Message update URL is not an allowed snapshot URL for MC900001') { throw }
+        $invalidLinkValidationFailed = $true
+    }
+    if (-not $invalidLinkValidationFailed) {
+        throw 'A fabricated Message Center URL unexpectedly passed validation.'
+    }
 
     $agentWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-weekly-insights.md') -Raw -Encoding UTF8
     $preAgentSection = ($agentWorkflow -split 'safe-outputs:', 2)[0]
@@ -138,12 +186,14 @@ try {
     if (-not $preAgentSection.Contains('uses: actions/upload-artifact@v7') -or
         -not $preAgentSection.Contains('name: m365-agent-public-metadata') -or
         -not $preAgentSection.Contains('$env:RUNNER_TEMP/m365-agent-public') -or
-        -not $preAgentSection.Contains('-IncludeContent')) {
+        -not $preAgentSection.Contains('-IncludeContent') -or
+        -not $preAgentSection.Contains('-AgentContextLimit 1000')) {
         throw 'Agentic pre-agent steps do not export and transfer the public metadata snapshot.'
     }
     if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
         -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
-        -not $safeOutputSection.Contains('-MessagesJson $messagesJson')) {
+    -not $safeOutputSection.Contains('-MessagesJson $messagesJson') -or
+    -not $safeOutputSection.Contains('message_updates')) {
         throw 'Agentic safe output does not validate against the transferred public metadata snapshot.'
     }
     if ($safeOutputSection -match 'Export-M365MessageCenter\.ps1|azure/login@') {

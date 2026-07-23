@@ -8,7 +8,16 @@
       "this_month": "MC1436831: 検証計画を準備",
       "watch": "MC1436831: 更新状況を継続監視",
       "customer_questions": "対象サービスの利用状況と検証環境を確認できるか",
-      "referenced_ids": "MC1436831"
+      "referenced_ids": "MC1436831",
+      "message_updates": [
+        {
+          "id": "MC1436831",
+          "japanese_title": "現在の Message Center 更新",
+          "japanese_summary": "現在の重要な変更です。影響範囲、担当者、検証計画を優先して確認してください。",
+          "message_url": "https://admin.microsoft.com/AdminPortal/home#/MessageCenter/:/messages/MC1436831",
+          "learn_urls": ["https://learn.microsoft.com/microsoft-365/admin/manage/message-center"]
+        }
+      ]
     }
   ]
 }

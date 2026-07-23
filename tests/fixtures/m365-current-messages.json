@@ -14,7 +14,11 @@
       "services": ["Microsoft Teams"],
       "tags": ["Updated message"],
       "body": { "contentType": "Html", "content": "<p>CURRENT_BODY_IS_LAB_PUBLIC</p>" },
-      "details": [{ "name": "ChangeOwner", "value": "Lab Operations" }]
+      "details": [
+        { "name": "MessageCenterUrl", "value": "https://admin.microsoft.com/AdminPortal/home#/MessageCenter/:/messages/MC1436831" },
+        { "name": "LearnDocumentation", "value": "https://learn.microsoft.com/microsoft-365/admin/manage/message-center" },
+        { "name": "ChangeOwner", "value": "Lab Operations" }
+      ]
     }
   ]
 }

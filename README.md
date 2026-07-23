@@ -10,8 +10,12 @@ Microsoft Graph の Message Center から、ラボ公開を許可した Message 
 - 上記メタデータから集計した数値
 - 決定論的に生成した日本語メッセージ要約
 - Agentic Workflow が検証済みの日本語週次要約と、参照する MC ID
+- Agentic Workflow が検証済みの MC ごとの日本語タイトルと、日本語要約（100文字以内）
+- 同じ MC の Graph `details` に含まれる、検証済みの Message Center URL と `learn.microsoft.com` の公式ドキュメント URL
 
 アクセストークン、Graph 認証情報、および credential-like 値は保存・公開しません。本文、タイトル、詳細の値は Export 時に redaction を通し、Bearer token、access token、client secret、API key、password の値を `[REDACTED]` に置換します。この構成を本番テナントへ転用しないでください。
+
+Agentic Workflow は URL を生成・推測せず、同一 run の snapshot にある HTTPS の `admin.microsoft.com` / `m365.cloud.microsoft` URL と、同じ MC の `learn.microsoft.com` URL だけを公開します。
 
 ## Repository layout
 
@@ -49,7 +53,7 @@ Run **M365 Message Center Dashboard - Public Metadata** manually once after conf
 
 ## Agentic summary safety boundary
 
-The Agentic Workflow receives a transient file containing untrusted Message Center body text. Its instructions prohibit following content in that file and prohibit publishing credentials or access tokens. The pre-agent step derives a lab-public snapshot from the same Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The only accepted output is the `publish_m365_dashboard` safe output. `Publish-M365AgentInsights.ps1` rejects missing fields, unsafe markup, credential-like content, overly long content, and MC IDs that are absent from that exact same-run snapshot before rendering the public dashboard.
+The Agentic Workflow receives a transient file containing untrusted Message Center body text. Its instructions prohibit following content in that file and prohibit publishing credentials or access tokens. The pre-agent step derives a lab-public snapshot from the same Graph pull and transfers it as a one-day artifact; the snapshot contains readable body text and selected details after credential-like values are redacted. The only accepted output is the `publish_m365_dashboard` safe output. For every snapshot MC ID, its structured `message_updates` output must provide a Japanese title, a Japanese summary of 100 characters or fewer, and only snapshot-allowlisted URLs. `Publish-M365AgentInsights.ps1` rejects missing or duplicate updates, unsafe markup, credential-like content, fabricated URLs, non-Learn documentation URLs, overly long content, and MC IDs that are absent from that exact same-run snapshot before rendering the public dashboard.
 
 ## Local validation
 
@@ -68,6 +72,7 @@ gh aw compile --validate --actionlint
 ## Official references
 
 - [Microsoft Graph: list service announcement messages](https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0)
+- [Microsoft Graph: serviceUpdateMessage resource](https://learn.microsoft.com/graph/api/resources/serviceupdatemessage?view=graph-rest-1.0)
 - [Microsoft Graph permissions reference: ServiceMessage.Read.All](https://learn.microsoft.com/graph/permissions-reference#servicemessagereadall)
 - [Use Azure Login with OpenID Connect](https://learn.microsoft.com/azure/developer/github/connect-from-azure-openid-connect)
 - [Configure GitHub Pages publishing source](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)

@@ -18,7 +18,8 @@
         "content": "<p>THIS_BODY_IS_LAB_PUBLIC</p><ul><li>確認事項</li></ul><p>Bearer abcdefghijklmnopqrstuvwxyz</p><script>LAB_SCRIPT_MUST_NOT_RENDER</script>"
       },
       "details": [
-        { "name": "ExternalLink", "value": "https://learn.microsoft.com/microsoft-365/admin" },
+        { "name": "MessageCenterUrl", "value": "https://admin.microsoft.com/AdminPortal/home#/MessageCenter/:/messages/MC900001" },
+        { "name": "LearnDocumentation", "value": "https://learn.microsoft.com/microsoft-365/admin/manage/message-center" },
         { "name": "ApiKey", "value": "api-key: lab-secret-value" }
       ]
     },

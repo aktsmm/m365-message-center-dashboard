@@ -36,7 +36,7 @@ pre-agent-steps:
         -OutputDirectory "$env:RUNNER_TEMP/m365-agent-public" `
         -IncludeContent `
         -AgentContextPath ".m365-agent-context.json" `
-        -AgentContextLimit 50 `
+        -AgentContextLimit 1000 `
         -LookbackDays 180 `
         -RunId '${{ github.run_id }}'
 
@@ -84,6 +84,10 @@ safe-outputs:
           type: string
         referenced_ids:
           description: "Comma-separated MC IDs referenced by the summary"
+          required: true
+          type: string
+        message_updates:
+          description: "JSON array with exactly one localized update per supplied MC ID"
           required: true
           type: string
       steps:
@@ -176,6 +180,14 @@ Call `publish-m365-dashboard` exactly once with:
 - Prioritized newline-separated actions for 今週確認, 今月準備, and 継続監視.
 - Newline-separated customer questions.
 - Every MC ID referenced by the summary in `referenced_ids`.
+- `message_updates` as a JSON array with exactly one object for every supplied MC ID. Each
+  object must have `id`, `japanese_title`, `japanese_summary`, `message_url`, and `learn_urls`.
+  Write a Japanese title, preserve the original title only in the source data, and keep
+  `japanese_summary` at 100 Japanese characters or fewer. Set `message_url` to `null` unless
+  the supplied `details` contains an HTTPS `admin.microsoft.com` or `m365.cloud.microsoft` URL
+  for that exact MC ID. Set `learn_urls` to an array containing only exact
+  `https://learn.microsoft.com/...` URLs found in that same MC ID's `details`; otherwise use `[]`.
+  Never construct, guess, or copy URLs between MC IDs.
 
 `referenced_ids` must be one comma-separated string, for example `MC123456, MC234567`.
 Never send it as a JSON array.
