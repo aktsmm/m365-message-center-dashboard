@@ -241,6 +241,25 @@ try {
     if ($bridgedTranslations.Count -ne $translationUpdates.Count) {
         throw 'Typed translation slots did not preserve every validated translation in the bounded batch.'
     }
+    $missingUpdatePreviousInsights = Join-Path $temp 'insights-with-missing-update.json'
+    $missingUpdateBridgeInsights = Join-Path $temp 'insights-missing-update-bridge.json'
+    $previousWithMissingUpdate = Get-Content -LiteralPath $publishedInsights -Raw -Encoding UTF8 | ConvertFrom-Json
+    $missingUpdateId = [string]$previousWithMissingUpdate.messageUpdates[0].id
+    $previousWithMissingUpdate.messageUpdates = @(
+        $previousWithMissingUpdate.messageUpdates | Where-Object { $_.id -ne $missingUpdateId }
+    )
+    $previousWithMissingUpdate | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $missingUpdatePreviousInsights -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentTranslations.ps1') `
+        -AgentOutputPath $translationOnlyOutput `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -TranslationBatchJson $translationBatchPath `
+        -PreviousInsightsPath $missingUpdatePreviousInsights `
+        -OutputPath $missingUpdateBridgeInsights
+    $missingUpdateBridge = Get-Content -LiteralPath $missingUpdateBridgeInsights -Raw -Encoding UTF8 | ConvertFrom-Json
+    if (@($missingUpdateBridge.messageUpdates).Count -ne $translationSources.Count -or
+        -not @($missingUpdateBridge.messageUpdates | Where-Object id -eq $missingUpdateId).Count) {
+        throw 'Translation bridge did not deterministically restore a card missing from prior insights.'
+    }
     $invalidStructuredTranslationOutput = Join-Path $temp 'agent-output-invalid-structured-translation.json'
     $invalidStructuredTranslationItem = [ordered]@{}
     foreach ($entry in $structuredTranslationItem.GetEnumerator()) {

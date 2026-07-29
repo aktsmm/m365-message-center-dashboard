@@ -132,22 +132,6 @@ $translationUpdatesJson = if ($structuredTranslationUpdates.Count) {
 }
 
 $previous = Get-Content -LiteralPath $PreviousInsightsPath -Raw -Encoding UTF8 | ConvertFrom-Json
-$messages = Get-Content -LiteralPath $MessagesJson -Raw -Encoding UTF8 | ConvertFrom-Json
-$currentMessageIds = @{}
-foreach ($message in @($messages.messages)) {
-    $currentMessageIds[([string]$message.id).Trim().ToUpperInvariant()] = $true
-}
-$updates = @(
-    $previous.messageUpdates |
-        Where-Object { $currentMessageIds.ContainsKey((([string]$_.id).Trim().ToUpperInvariant())) }
-)
-if (-not $updates.Count) { throw 'Previous insights do not contain validated message updates.' }
-$legacyUpdates = @($updates | ForEach-Object {
-    [ordered]@{
-        id = $_.id; japanese_title = $_.japaneseTitle; japanese_summary = $_.japaneseSummary
-        message_url = $_.messageUrl; learn_urls = @($_.learnUrls)
-    }
-})
 $bridge = [ordered]@{
     items = @([ordered]@{
         type = 'publish_m365_dashboard'
@@ -155,7 +139,6 @@ $bridge = [ordered]@{
         this_week = $previous.thisWeek; this_month = $previous.thisMonth; watch = $previous.watch
         customer_questions = $previous.customerQuestions
         referenced_ids = (@($previous.referencedIds) -join ',')
-        message_updates = ($legacyUpdates | ConvertTo-Json -Depth 8 -Compress)
         translation_updates = $translationUpdatesJson
     })
 }
@@ -164,7 +147,7 @@ try {
     $bridge | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $temp -Encoding UTF8
     & (Join-Path $PSScriptRoot 'Publish-M365AgentInsights.ps1') `
         -AgentOutputPath $temp -MessagesJson $MessagesJson -TranslationBatchJson $TranslationBatchJson `
-        -PreviousInsightsPath $PreviousInsightsPath -OutputPath $OutputPath
+        -PreviousInsightsPath $PreviousInsightsPath -UseDeterministicMessageUpdates -OutputPath $OutputPath
 } finally {
     Remove-Item -LiteralPath $temp -Force -ErrorAction SilentlyContinue
 }
