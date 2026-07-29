@@ -633,7 +633,11 @@ try {
     $publicWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-dashboard-public.yml') -Raw -Encoding UTF8
     if (-not $publicWorkflow.Contains('Export lab-public Message Center content') -or
         -not $publicWorkflow.Contains('-IncludeContent') -or
-        -not $publicWorkflow.Contains('New-M365DashboardAboutPage.ps1')) {
+        -not $publicWorkflow.Contains('New-M365DashboardAboutPage.ps1') -or
+        -not $publicWorkflow.Contains('uses: actions/upload-artifact@v7') -or
+        -not $publicWorkflow.Contains('uses: actions/upload-pages-artifact@v5') -or
+        -not $publicWorkflow.Contains('uses: actions/deploy-pages@v5') -or
+        -not $publicWorkflow.Contains('include-hidden-files: true')) {
         throw 'The dedicated public dashboard pipeline does not enable lab-public Message Center content.'
     }
     if (-not $publicWorkflow.Contains("cron: '17 22 * * 0,3'") -or
@@ -713,6 +717,30 @@ try {
         -not $translationWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
         $translationWorkflow.Contains('copilot-requests: write')) {
         throw 'Agentic Workflows must retain the fine-grained PAT engine authentication required by this personal-account repository.'
+    }
+    foreach ($workflow in @($agentWorkflow, $translationWorkflow)) {
+        if (-not $workflow.Contains('uses: actions/upload-pages-artifact@v5') -or
+            -not $workflow.Contains('uses: actions/deploy-pages@v5') -or
+            -not $workflow.Contains('include-hidden-files: true') -or
+            $workflow.Contains('uses: actions/upload-pages-artifact@v3') -or
+            $workflow.Contains('uses: actions/deploy-pages@v4')) {
+            throw 'Agentic Pages publication must use the Node 24-compatible Pages action versions.'
+        }
+    }
+    $actionsLock = Get-Content -LiteralPath (Join-Path $root '.github\aw\actions-lock.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $expectedActionPins = @{
+        'actions/upload-artifact@v7'       = '043fb46d1a93c77aae656e7c1c64a875d1fc6a0a'
+        'actions/upload-pages-artifact@v5' = 'fc324d3547104276b827a68afc52ff2a11cc49c9'
+        'actions/deploy-pages@v5'          = 'cd2ce8fcbc39b97be8ca5fce6e763baed58fa128'
+    }
+    foreach ($expectedAction in $expectedActionPins.GetEnumerator()) {
+        if ($actionsLock.entries.PSObject.Properties.Name -notcontains $expectedAction.Key -or
+            [string]$actionsLock.entries.($expectedAction.Key).sha -ne $expectedAction.Value) {
+            throw "Action lock is not current for $($expectedAction.Key)."
+        }
+    }
+    if ($actionsLock.entries.PSObject.Properties.Name -match 'actions/(upload-artifact@v4|upload-pages-artifact@v3|deploy-pages@v4)') {
+        throw 'Action lock retains a superseded Node 20 action major version.'
     }
 
     Write-Host 'M365 dashboard fixture validation passed.'

@@ -156,13 +156,14 @@ safe-outputs:
             '' | Set-Content (Join-Path $pagesDir '.nojekyll') -Encoding utf8
 
         - name: Upload Pages artifact
-          uses: actions/upload-pages-artifact@v3
+          uses: actions/upload-pages-artifact@v5
           with:
             path: _site/
+            include-hidden-files: true
 
         - name: Deploy Pages site
           id: deployment
-          uses: actions/deploy-pages@v4
+          uses: actions/deploy-pages@v5
 ---
 
 # Microsoft 365 Message Center weekly dashboard

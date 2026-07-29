@@ -56,7 +56,7 @@ jobs:
           ./scripts/ci/Test-M365Dashboard.ps1
 
       - name: Upload dashboard artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: m365-message-center-dashboard
           path: output/m365/
@@ -91,9 +91,10 @@ jobs:
           fi
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: _site/
+          include-hidden-files: true
 
   deploy-pages:
     needs: generate-dashboard
@@ -107,4 +108,4 @@ jobs:
     steps:
       - name: Deploy Pages site
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
