@@ -93,6 +93,50 @@ function Get-RequiredUpdateText {
     return $value
 }
 
+function Get-RequiredTranslationInteger {
+    param(
+        [Parameter(Mandatory)][object]$Update,
+        [Parameter(Mandatory)][string]$Name,
+        [ValidateRange(0, 2000)][int]$Maximum
+    )
+
+    if ($Update.PSObject.Properties.Name -notcontains $Name -or $null -eq $Update.$Name) {
+        throw "Translation update is missing field: $Name"
+    }
+    $value = $Update.$Name
+    $numericTypeNames = @(
+        'System.Byte', 'System.SByte', 'System.Int16', 'System.UInt16', 'System.Int32',
+        'System.UInt32', 'System.Int64', 'System.UInt64', 'System.Single', 'System.Double', 'System.Decimal'
+    )
+    if ($value.GetType().FullName -notin $numericTypeNames) {
+        throw "Translation update field must be a JSON number: $Name"
+    }
+    try {
+        $number = [decimal]$value
+    } catch {
+        throw "Translation update field must be a JSON number: $Name"
+    }
+    if ($number -lt 0 -or $number -gt $Maximum -or $number -ne [Math]::Truncate($number)) {
+        throw "Translation update field must be a whole number between 0 and ${Maximum}: $Name"
+    }
+    return [int]$number
+}
+
+function Get-RequiredTranslationBoolean {
+    param(
+        [Parameter(Mandatory)][object]$Update,
+        [Parameter(Mandatory)][string]$Name
+    )
+
+    if ($Update.PSObject.Properties.Name -notcontains $Name -or $null -eq $Update.$Name) {
+        throw "Translation update is missing field: $Name"
+    }
+    if ($Update.$Name -isnot [bool]) {
+        throw "Translation update field must be a JSON boolean: $Name"
+    }
+    return [bool]$Update.$Name
+}
+
 function ConvertFrom-MessageUpdatesInput {
     param(
         [Parameter(Mandatory)][object]$InputValue,
@@ -301,10 +345,12 @@ if ($TranslationBatchJson) {
         if ($detailSummary.Length -lt 80) { throw "Translation detailed summary is too short for MC ID: $id" }
         $bodyTranslation = Get-RequiredUpdateText -Update $translation -Name 'japanese_body_translation' -MaxLength 5000
         $batchMessage = $batchById[$id]
-        if ([int]$translation.source_character_count -ne [int]$batchMessage.sourceCharacterCount) {
+        $sourceCharacterCount = Get-RequiredTranslationInteger -Update $translation -Name 'source_character_count' -Maximum 2000
+        if ($sourceCharacterCount -ne [int]$batchMessage.sourceCharacterCount) {
             throw "Translation source character count does not match the current batch for MC ID: $id"
         }
-        if ([bool]$translation.source_truncated -ne [bool]$batchMessage.sourceTruncated) {
+        $sourceTruncated = Get-RequiredTranslationBoolean -Update $translation -Name 'source_truncated'
+        if ($sourceTruncated -ne [bool]$batchMessage.sourceTruncated) {
             throw "Translation truncation flag does not match the current batch for MC ID: $id"
         }
         $validatedTranslations += [ordered]@{

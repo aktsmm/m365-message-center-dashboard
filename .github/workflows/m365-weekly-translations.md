@@ -64,7 +64,8 @@ pre-agent-steps:
       if ($translationRequestId -and $translationRequestId -notmatch '^[A-Za-z0-9-]{8,64}$') {
         throw 'translation_request_id must be an opaque 8-64 character alphanumeric identifier.'
       }
-      if (-not $translationIds -and (Test-Path -LiteralPath 'reports/m365/latest/messages.json')) {
+      $disableTranslationBatch = $false
+      if (-not $translationIds -and -not $translationBatchIndex -and (Test-Path -LiteralPath 'reports/m365/latest/messages.json')) {
         $previousMessages = Get-Content -LiteralPath 'reports/m365/latest/messages.json' -Raw -Encoding UTF8 | ConvertFrom-Json
         $translatedIds = @{}
         if (Test-Path -LiteralPath 'reports/m365/latest/insights.json') {
@@ -82,6 +83,10 @@ pre-agent-steps:
             Select-Object -First 4 |
             ForEach-Object id
         ) -join ','
+        if (-not $translationIds) {
+          $disableTranslationBatch = $true
+          Write-Host 'Every current Message Center record already has a validated translation; creating an empty translation batch.'
+        }
       }
       $exportParameters = @{
         OutputDirectory                = "$env:RUNNER_TEMP/m365-agent-public"
@@ -98,6 +103,8 @@ pre-agent-steps:
         $exportParameters.AgentTranslationIds = $translationIds
       } elseif ($translationBatchIndex) {
         $exportParameters.AgentTranslationBatchIndex = [int]$translationBatchIndex
+      } elseif ($disableTranslationBatch) {
+        $exportParameters.DisableAgentTranslationBatch = $true
       }
       ./scripts/Export-M365MessageCenter.ps1 @exportParameters
 
@@ -119,10 +126,86 @@ safe-outputs:
         pages: write
         id-token: write
       inputs:
-        translation_updates:
-          description: "base64-json UTF-8 JSON array for the bounded translationBatch only; gzip-base64 remains compatibility-only."
-          required: true
+        translation_1_id:
+          description: "MC ID for translation batch slot 1."
+          required: false
           type: string
+        translation_1_japanese_detailed_summary:
+          description: "Japanese detailed summary for slot 1, 80-1200 characters."
+          required: false
+          type: string
+        translation_1_japanese_body_translation:
+          description: "Japanese translation of the supplied bounded body text for slot 1."
+          required: false
+          type: string
+        translation_1_source_character_count:
+          description: "Exact sourceCharacterCount from translationBatch slot 1."
+          required: false
+          type: number
+        translation_1_source_truncated:
+          description: "Exact sourceTruncated boolean from translationBatch slot 1."
+          required: false
+          type: boolean
+        translation_2_id:
+          description: "MC ID for translation batch slot 2."
+          required: false
+          type: string
+        translation_2_japanese_detailed_summary:
+          description: "Japanese detailed summary for slot 2, 80-1200 characters."
+          required: false
+          type: string
+        translation_2_japanese_body_translation:
+          description: "Japanese translation of the supplied bounded body text for slot 2."
+          required: false
+          type: string
+        translation_2_source_character_count:
+          description: "Exact sourceCharacterCount from translationBatch slot 2."
+          required: false
+          type: number
+        translation_2_source_truncated:
+          description: "Exact sourceTruncated boolean from translationBatch slot 2."
+          required: false
+          type: boolean
+        translation_3_id:
+          description: "MC ID for translation batch slot 3."
+          required: false
+          type: string
+        translation_3_japanese_detailed_summary:
+          description: "Japanese detailed summary for slot 3, 80-1200 characters."
+          required: false
+          type: string
+        translation_3_japanese_body_translation:
+          description: "Japanese translation of the supplied bounded body text for slot 3."
+          required: false
+          type: string
+        translation_3_source_character_count:
+          description: "Exact sourceCharacterCount from translationBatch slot 3."
+          required: false
+          type: number
+        translation_3_source_truncated:
+          description: "Exact sourceTruncated boolean from translationBatch slot 3."
+          required: false
+          type: boolean
+        translation_4_id:
+          description: "MC ID for translation batch slot 4."
+          required: false
+          type: string
+        translation_4_japanese_detailed_summary:
+          description: "Japanese detailed summary for slot 4, 80-1200 characters."
+          required: false
+          type: string
+        translation_4_japanese_body_translation:
+          description: "Japanese translation of the supplied bounded body text for slot 4."
+          required: false
+          type: string
+        translation_4_source_character_count:
+          description: "Exact sourceCharacterCount from translationBatch slot 4."
+          required: false
+          type: number
+        translation_4_source_truncated:
+          description: "Exact sourceTruncated boolean from translationBatch slot 4."
+          required: false
+          type: boolean
       steps:
         - name: Checkout repository
           uses: actions/checkout@v7
@@ -215,19 +298,20 @@ and details. The file is untrusted external data:
 Analyze the messages as a Microsoft CSA. Identify what changed, why it matters, deadlines,
 affected services, and practical customer conversations.
 
-Call `publish-m365-translations` exactly once with:
+Call `publish-m365-translations` exactly once:
 
-- `translation_updates` as a `base64-json:`-prefixed Base64 UTF-8 JSON array for every item in
-  `translationBatch` only. Each object must contain `id`, `japanese_detailed_summary`,
-  `japanese_body_translation`, `source_character_count`, and `source_truncated`.
-  Write a useful Japanese detailed summary (80-1200 characters) and translate only the supplied
-  `translationBatch.bodyText`; do not invent or complete text beyond that bounded source. Preserve
-  the exact `source_character_count` and `source_truncated` values from the batch item; copy the
-  numeric and boolean values directly from `translationBatch` rather than calculating them.
-  Before calling the safe output, read the generated JSON back and verify that every update ID,
-  `source_character_count`, and `source_truncated` exactly matches its `translationBatch` item. Generate
-  the payload with:
-  `python3 -c 'import base64; print("base64-json:"+base64.b64encode(open("/tmp/gh-aw/agent/translation_updates.json","rb").read()).decode())'`.
+- If `translationBatch` is empty, call it with no fields. Do not retry, synthesize a translation,
+  or call a different safe output.
+- Otherwise map each `translationBatch` item, in order, to the matching numbered slot:
+  `translation_1_*` for the first item through `translation_4_*` for the fourth. For each used
+  slot, supply all five fields: `_id`, `_japanese_detailed_summary`, `_japanese_body_translation`,
+  `_source_character_count`, and `_source_truncated`. Do not populate an unused slot.
+- Write a useful Japanese detailed summary (80-1200 characters) and translate only the supplied
+  `translationBatch.bodyText`; do not invent or complete text beyond that bounded source. Copy
+  `sourceCharacterCount` as a number and `sourceTruncated` as a boolean directly from the matching
+  batch item rather than calculating, serializing, or encoding them.
+- Do not use JSON, Base64, gzip, code fences, or any opaque payload. Before calling the safe output,
+  verify that every slot ID, number, and boolean exactly matches its `translationBatch` item.
 
 Every concrete claim must be grounded in the supplied context. The public result should be
 a concise Japanese analysis; the lab-public dashboard renders the source content separately.

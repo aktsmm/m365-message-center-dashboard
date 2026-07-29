@@ -81,7 +81,7 @@ $html = @'
       <h2>手動で更新するには</h2>
       <p>GitHub Actions の <strong>M365 Message Center Dashboard - Public Metadata</strong> を main ブランチで手動実行します。月曜日・木曜日 07:17 JST の定期実行と同じく、成功後に core Agentic Workflow、さらに成功後の translations Workflow が順に Pages を更新します。</p>
       <p>この個人所有リポジトリの Agentic Workflow engine は、fine-grained PAT を <code>COPILOT_GITHUB_TOKEN</code> のリポジトリ secret として使います。組み込み <code>GITHUB_TOKEN</code> や組織専用の <code>copilot-requests: write</code> 課金フローには切り替えません。provider HTTP 403 で失敗する場合は、token identity または Copilot access が認可されていることを確認してください。認可前に再実行しても Agentic 出力は公開されません。</p>
-      <p>2026年7月23日時点の保存済み最新 snapshot では、現行 74 カードの 74/74 件に検証済みの詳細な日本語要約と本文訳があります。</p>
+      <p>詳細な日本語要約と本文訳の進捗は、公開ダッシュボードの各カードにある「日本語訳と詳細要約」で確認できます。未検証の訳文は表示せず、公開済みの検証済み訳文だけを保持します。</p>
     </section>
     <section class="panel">
       <h2>公開データとリンクの境界</h2>

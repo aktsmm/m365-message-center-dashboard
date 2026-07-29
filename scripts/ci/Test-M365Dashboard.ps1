@@ -103,23 +103,32 @@ try {
     $translationBatchPath = Join-Path $temp 'translation-batch.json'
     $translationOutputPath = Join-Path $temp 'agent-output-translations.json'
     $translationInsightsPath = Join-Path $temp 'insights-translations.json'
-    $translationSource = @((Get-Content -LiteralPath (Join-Path $temp 'messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json).messages)[0]
-    $translationSourceLength = [Math]::Min(([string]$translationSource.bodyText).Length, 1000)
+    $translationSources = @((Get-Content -LiteralPath (Join-Path $temp 'messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json).messages | Select-Object -First 3)
+    $translationBatchMessages = @(
+        foreach ($translationSource in $translationSources) {
+            $translationSourceLength = [Math]::Min(([string]$translationSource.bodyText).Length, 1000)
+            [ordered]@{
+                id = $translationSource.id
+                sourceCharacterCount = $translationSourceLength
+                sourceTruncated = ([string]$translationSource.bodyText).Length -gt $translationSourceLength
+            }
+        }
+    )
     [ordered]@{
-        messages = @([ordered]@{
-            id = $translationSource.id
-            sourceCharacterCount = $translationSourceLength
-            sourceTruncated = ([string]$translationSource.bodyText).Length -gt $translationSourceLength
-        })
+        messages = $translationBatchMessages
     } | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $translationBatchPath -Encoding UTF8
     $agentOutputWithTranslations = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json
-    $translationUpdates = @([ordered]@{
-        id = $translationSource.id
-        japanese_detailed_summary = '共同作業コントロールの変更内容、対象となる Teams と SharePoint の設定、展開前に確認すべき影響範囲を整理した詳細要約です。検証担当者、対象テナント、既存ポリシーとの整合性を確認してください。'
-        japanese_body_translation = '共同作業コントロールに関する更新です。対象設定を確認し、展開前に影響範囲を検証してください。'
-        source_character_count = $translationSourceLength
-        source_truncated = ([string]$translationSource.bodyText).Length -gt $translationSourceLength
-    })
+    $translationUpdates = @(
+        foreach ($batchMessage in $translationBatchMessages) {
+            [ordered]@{
+                id = $batchMessage.id
+                japanese_detailed_summary = '共同作業コントロールの変更内容、対象となる Teams と SharePoint の設定、展開前に確認すべき影響範囲を整理した詳細要約です。検証担当者、対象テナント、既存ポリシーとの整合性を確認してください。'
+                japanese_body_translation = '共同作業コントロールに関する更新です。対象設定を確認し、展開前に影響範囲を検証してください。'
+                source_character_count = $batchMessage.sourceCharacterCount
+                source_truncated = $batchMessage.sourceTruncated
+            }
+        }
+    )
     $translationBytes = [System.Text.Encoding]::UTF8.GetBytes(($translationUpdates | ConvertTo-Json -Depth 8 -Compress))
     $translationStream = [System.IO.MemoryStream]::new()
     $translationGzip = [System.IO.Compression.GzipStream]::new($translationStream, [System.IO.Compression.CompressionLevel]::Optimal, $true)
@@ -198,11 +207,20 @@ try {
     $translationOnlyOutput = Join-Path $temp 'agent-output-translation-only.json'
     $stalePreviousInsights = Join-Path $temp 'insights-with-stale-update.json'
     $translationBridgeInsights = Join-Path $temp 'insights-translation-bridge.json'
+    $structuredTranslationItem = [ordered]@{
+        type = 'publish_m365_translations'
+    }
+    for ($index = 0; $index -lt $translationUpdates.Count; $index++) {
+        $slot = $index + 1
+        $translation = $translationUpdates[$index]
+        $structuredTranslationItem["translation_${slot}_id"] = $translation.id
+        $structuredTranslationItem["translation_${slot}_japanese_detailed_summary"] = $translation.japanese_detailed_summary
+        $structuredTranslationItem["translation_${slot}_japanese_body_translation"] = $translation.japanese_body_translation
+        $structuredTranslationItem["translation_${slot}_source_character_count"] = $translation.source_character_count
+        $structuredTranslationItem["translation_${slot}_source_truncated"] = $translation.source_truncated
+    }
     [ordered]@{
-        items = @([ordered]@{
-            type = 'publish_m365_translations'
-            translation_updates = $agentOutputWithTranslations.items[0].translation_updates
-        })
+        items = @($structuredTranslationItem)
     } | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $translationOnlyOutput -Encoding UTF8
     $previousWithStaleUpdate = Get-Content -LiteralPath $publishedInsights -Raw -Encoding UTF8 | ConvertFrom-Json
     $previousWithStaleUpdate.messageUpdates += [pscustomobject]@{
@@ -218,6 +236,74 @@ try {
         -OutputPath $translationBridgeInsights
     if ((Get-Content -LiteralPath $translationBridgeInsights -Raw -Encoding UTF8) -match 'MC999999') {
         throw 'Translation bridge retained a message update that is absent from the current snapshot.'
+    }
+    $bridgedTranslations = @((Get-Content -LiteralPath $translationBridgeInsights -Raw -Encoding UTF8 | ConvertFrom-Json).messageTranslations)
+    if ($bridgedTranslations.Count -ne $translationUpdates.Count) {
+        throw 'Typed translation slots did not preserve every validated translation in the bounded batch.'
+    }
+    $invalidStructuredTranslationOutput = Join-Path $temp 'agent-output-invalid-structured-translation.json'
+    $invalidStructuredTranslationItem = [ordered]@{}
+    foreach ($entry in $structuredTranslationItem.GetEnumerator()) {
+        $invalidStructuredTranslationItem[$entry.Key] = $entry.Value
+    }
+    $invalidStructuredTranslationItem.translation_1_source_character_count = [string]$invalidStructuredTranslationItem.translation_1_source_character_count
+    [ordered]@{
+        items = @($invalidStructuredTranslationItem)
+    } | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $invalidStructuredTranslationOutput -Encoding UTF8
+    $invalidStructuredTranslationFailed = $false
+    try {
+        & (Join-Path $root 'scripts\Publish-M365AgentTranslations.ps1') `
+            -AgentOutputPath $invalidStructuredTranslationOutput `
+            -MessagesJson (Join-Path $temp 'messages.json') `
+            -TranslationBatchJson $translationBatchPath `
+            -PreviousInsightsPath $stalePreviousInsights `
+            -OutputPath (Join-Path $temp 'insights-invalid-structured-translation.json')
+    } catch {
+        if ($_.Exception.Message -notmatch 'Translation slot 1 source_character_count must be a JSON number') { throw }
+        $invalidStructuredTranslationFailed = $true
+    }
+    if (-not $invalidStructuredTranslationFailed) {
+        throw 'A string-form structured translation source character count unexpectedly passed validation.'
+    }
+    $overflowStructuredTranslationOutput = Join-Path $temp 'agent-output-overflow-structured-translation.json'
+    $overflowStructuredTranslationItem = [ordered]@{}
+    foreach ($entry in $structuredTranslationItem.GetEnumerator()) {
+        $overflowStructuredTranslationItem[$entry.Key] = $entry.Value
+    }
+    $overflowStructuredTranslationItem.translation_4_id = 'MC999999'
+    [ordered]@{
+        items = @($overflowStructuredTranslationItem)
+    } | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $overflowStructuredTranslationOutput -Encoding UTF8
+    $overflowStructuredTranslationFailed = $false
+    try {
+        & (Join-Path $root 'scripts\Publish-M365AgentTranslations.ps1') `
+            -AgentOutputPath $overflowStructuredTranslationOutput `
+            -MessagesJson (Join-Path $temp 'messages.json') `
+            -TranslationBatchJson $translationBatchPath `
+            -PreviousInsightsPath $stalePreviousInsights `
+            -OutputPath (Join-Path $temp 'insights-overflow-structured-translation.json')
+    } catch {
+        if ($_.Exception.Message -notmatch 'Translation slot 4 is outside the current batch') { throw }
+        $overflowStructuredTranslationFailed = $true
+    }
+    if (-not $overflowStructuredTranslationFailed) {
+        throw 'An unused structured translation slot unexpectedly passed validation.'
+    }
+    $emptyTranslationBatchPath = Join-Path $temp 'translation-batch-empty.json'
+    $emptyTranslationOutput = Join-Path $temp 'agent-output-empty-translation.json'
+    $emptyTranslationInsights = Join-Path $temp 'insights-empty-translation.json'
+    [ordered]@{ messages = @() } | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $emptyTranslationBatchPath -Encoding UTF8
+    [ordered]@{
+        items = @([ordered]@{ type = 'publish_m365_translations' })
+    } | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $emptyTranslationOutput -Encoding UTF8
+    & (Join-Path $root 'scripts\Publish-M365AgentTranslations.ps1') `
+        -AgentOutputPath $emptyTranslationOutput `
+        -MessagesJson (Join-Path $temp 'messages.json') `
+        -TranslationBatchJson $emptyTranslationBatchPath `
+        -PreviousInsightsPath $translationBridgeInsights `
+        -OutputPath $emptyTranslationInsights
+    if (@((Get-Content -LiteralPath $emptyTranslationInsights -Raw -Encoding UTF8 | ConvertFrom-Json).messageTranslations).Count -ne $translationUpdates.Count) {
+        throw 'An empty translation batch did not preserve previously validated translations.'
     }
     & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
         -MessagesJson (Join-Path $temp 'messages.json') `
@@ -304,6 +390,20 @@ try {
     $backfillBatch = @((Get-Content -LiteralPath $backfillContext -Raw -Encoding UTF8 | ConvertFrom-Json).translationBatch)
     if ($backfillBatch.Count -ne 2 -or @($backfillBatch.id | Sort-Object -Unique).Count -ne 2) {
         throw 'Explicit translation backfill batch is not a bounded unique requested-message batch.'
+    }
+    $completedSnapshot = Join-Path $temp 'completed-snapshot'
+    $completedContext = Join-Path $temp 'completed-context.json'
+    & (Join-Path $root 'scripts\Export-M365MessageCenter.ps1') `
+        -InputJsonPath (Join-Path $root 'tests\fixtures\m365-messages.json') `
+        -OutputDirectory $completedSnapshot `
+        -LookbackDays 365 `
+        -RunId 'completed-fixture-run' `
+        -ReferenceTime '2026-07-23T00:00:00Z' `
+        -AgentContextPath $completedContext `
+        -DisableAgentTranslationBatch `
+        -IncludeContent
+    if (@((Get-Content -LiteralPath $completedContext -Raw -Encoding UTF8 | ConvertFrom-Json).translationBatch).Count -ne 0) {
+        throw 'The no-pending translation export did not create an empty translation batch.'
     }
     if ($html -notmatch '共同作業と管理者設定の変更') { throw 'Agentic summary is missing from dashboard HTML.' }
     if ($html -notmatch 'Microsoft 365 Change Radar') { throw 'Dashboard title is missing.' }
@@ -535,14 +635,19 @@ try {
         -not $translationPreAgentSection.Contains('translation_request_id') -or
         -not $translationPreAgentSection.Contains('AgentTranslationIds') -or
         -not $translationPreAgentSection.Contains('AgentTranslationBatchIndex') -or
+        -not $translationPreAgentSection.Contains('DisableAgentTranslationBatch') -or
         $translationPreAgentSection.Contains('M365 Message Center Dashboard - Public Metadata')) {
         throw 'Translations workflow does not wait for the successful core weekly dashboard workflow.'
     }
     if ($translationSafeOutputSection.Contains('message_updates:') -or
         $translationSafeOutputSection.Contains('publish-m365-dashboard') -or
-        -not $translationSafeOutputSection.Contains('translation_updates:') -or
-        -not $translationSafeOutputSection.Contains('base64-json:')) {
-        throw 'Translations workflow must publish only translation_updates.'
+        $translationSafeOutputSection.Contains('translation_updates:') -or
+        $translationSafeOutputSection.Contains('base64-json:') -or
+        $translationSafeOutputSection.Contains('gzip-base64:') -or
+        -not $translationSafeOutputSection.Contains('translation_1_id:') -or
+        -not $translationSafeOutputSection.Contains('translation_4_source_truncated:') -or
+        -not $translationSafeOutputSection.Contains('call it with no fields')) {
+        throw 'Translations workflow must use typed bounded translation slots without opaque payloads.'
     }
     if (@($compactAgentContext.translationBatch).Count -ne [Math]::Min(4, @($messages.messages).Count) -or
         @($compactAgentContext.translationBatch.id | Sort-Object -Unique).Count -ne @($compactAgentContext.translationBatch).Count) {
@@ -561,14 +666,16 @@ try {
     $aboutGenerator = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365DashboardAboutPage.ps1') -Raw -Encoding UTF8
     if ($readme -notmatch '月曜日・木曜日 07:17 JST' -or
         $readme -notmatch '最大8カード/週' -or
-        $readme -notmatch '74/74' -or
+        $readme -notmatch '各カードにある \*\*日本語訳と詳細要約\*\*' -or
+        $readme -match '74/74' -or
         $readme -notmatch 'COPILOT_GITHUB_TOKEN' -or
         $readme -notmatch 'https://admin\.microsoft\.com/#/MessageCenter' -or
         $readme -notmatch 'サインインと対象テナントでの適切な権限が必要です' -or
         $readme -match 'controller-only' -or
         $aboutGenerator -notmatch '月曜日・木曜日 07:17 JST' -or
         $aboutGenerator -notmatch '最大8カード/週' -or
-        $aboutGenerator -notmatch '74/74' -or
+        $aboutGenerator -notmatch '各カードにある「日本語訳と詳細要約」' -or
+        $aboutGenerator -match '74/74' -or
         $aboutGenerator -notmatch 'COPILOT_GITHUB_TOKEN' -or
         $aboutGenerator -notmatch 'OS の色設定には追従しません') {
         throw 'Operator documentation does not describe the current automation, translation, authentication, and theme contracts.'
