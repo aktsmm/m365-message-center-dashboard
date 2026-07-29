@@ -646,6 +646,15 @@ try {
     $translationWorkflow = Get-Content -LiteralPath (Join-Path $root '.github\workflows\m365-weekly-translations.md') -Raw -Encoding UTF8
     $translationPreAgentSection = ($translationWorkflow -split 'safe-outputs:', 2)[0]
     $translationSafeOutputSection = ($translationWorkflow -split 'safe-outputs:', 2)[1]
+    $azureLoginV3 = 'uses: azure/login@532459ea530d8321f2fb9bb10d1e0bcf23869a43 # v3.0.0'
+    if (-not $publicWorkflow.Contains($azureLoginV3) -or
+        -not $agentWorkflow.Contains($azureLoginV3) -or
+        -not $translationWorkflow.Contains($azureLoginV3) -or
+        $publicWorkflow.Contains('a457da9ea143d694b1b9c7c869ebb04ebe844ef5') -or
+        $agentWorkflow.Contains('a457da9ea143d694b1b9c7c869ebb04ebe844ef5') -or
+        $translationWorkflow.Contains('a457da9ea143d694b1b9c7c869ebb04ebe844ef5')) {
+        throw 'All workflow paths must pin Azure Login v3.0.0 for the Node 24 runtime.'
+    }
     if (-not $translationPreAgentSection.Contains('workflows:') -or
         -not $translationPreAgentSection.Contains('"Microsoft 365 Message Center weekly dashboard"') -or
         -not $translationPreAgentSection.Contains("github.event.workflow_run.conclusion == 'success'") -or
