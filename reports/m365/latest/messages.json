@@ -1,34 +1,244 @@
 {
   "meta": {
-    "runId": "30224802368",
-    "generatedAt": "2026-07-26T23:14:45.4411438+00:00",
+    "runId": "30420074628",
+    "generatedAt": "2026-07-29T03:39:01.3246509+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 77,
-    "majorChanges": 22,
+    "total": 81,
+    "majorChanges": 23,
     "highSeverity": 0,
     "actionRequired": 6,
     "actionDueWithin30Days": 1,
-    "updatedLast7Days": 16
+    "updatedLast7Days": 11
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 32
+      "count": 33
     },
     {
       "name": "Microsoft 365 Copilot Chat",
-      "count": 30
+      "count": 31
     },
     {
       "name": "Microsoft Entra",
-      "count": 20
+      "count": 21
     }
   ],
   "messages": [
+    {
+      "id": "MC1441782",
+      "title": "Upload or add a custom skill with Copilot in PowerPoint (Web)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-28T23:22:47.0000000+00:00",
+      "endDateTime": "2026-09-04T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-28T23:22:54.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nPowerPoint Copilot users can now upload custom skills directly from the Copilot experience and create new custom skills within PowerPoint. Custom skills are user-created instructions that extend and tailor Copilot behavior for specific tasks and workflows. Uploaded and added skills are saved to the user's personal OneDrive and are available for that user's personal use in PowerPoint Copilot. This enhancement streamlines skill creation and management by allowing users to customize Copilot directly within their workflow.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout begins in late July 2026 and is expected to complete by early August 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Users licensed for Microsoft 365 Copilot in PowerPoint.\n• Users who create or use personal custom skills.\n• Microsoft 365 administrators supporting Copilot deployments.\nPlatforms/Services:\n• PowerPoint\n• Microsoft 365 Copilot\n• OneDrive\n• Web\nWhat will happen:\n• Users can access a new Manage skills experience to view and manage their personal custom skills.\n• Users will be able to upload custom skills directly from the PowerPoint Copilot experience.\nScreenshot: Users can upload existing custom skill files from the Upload skill experience. Uploaded skills are stored in the user's personal OneDrive:\n• Users will be able to create custom skills directly within PowerPoint Copilot.\n• Uploaded and added skills will be stored in the user's personal OneDrive.\n• Custom skills are personal and available only to the user who creates or uploads them.\n• Created and uploaded skills will be available for use within PowerPoint Copilot.\n• The feature is available by default for eligible users when rollout reaches the tenant.\n[Action Required/Recommendations:]\nNo immediate administrator action is required.\nWe recommend that you:\n• Review any internal governance processes related to user-created Copilot skills.\n• Update internal documentation and training materials as appropriate.\n• Inform helpdesk and support teams about the new skill upload and creation experiences.\nLearn more: Use custom skills with Copilot in PowerPoint | Microsoft Support (will be updated before rollout)\n[Compliance considerations:]\nCompliance area\nExplanation\nStores new customer data\nCustom skills created or uploaded by users are stored in the user's personal OneDrive.\nChanges data processing or access\nUsers can create and upload custom skills that are used by PowerPoint Copilot during Copilot interactions.\nIntroduces AI/ML capabilities\nCustom skills extend how Microsoft 365 Copilot responds and interacts within PowerPoint.\nNew generative AI interaction\nUsers can create and upload custom skills to tailor their PowerPoint Copilot experience.\nAdmin or user controls\nUsers can create, upload, and manage their own personal custom skills.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "PowerPoint Copilot users can upload and create personal custom skills directly within PowerPoint (Web), stored in their OneDrive for tailored use. This feature, rolling out worldwide from late July to early August 2026, requires no admin action but may need internal process updates."
+        }
+      ]
+    },
+    {
+      "id": "MC1441781",
+      "title": "Add and upload your custom skills to OneDrive from within PowerPoint Copilot (Mac)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-28T23:21:40.0000000+00:00",
+      "endDateTime": "2026-09-04T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-28T23:21:46.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nPowerPoint Copilot users can now upload custom skills directly from the Copilot experience and create new custom skills within PowerPoint. Custom skills are user-created instructions that extend and tailor Copilot behavior for specific tasks and workflows. Uploaded and added skills are saved to the user's personal OneDrive and are available for that user's personal use in PowerPoint Copilot. This enhancement streamlines skill creation and management by allowing users to customize Copilot directly within their workflow.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout begins in late July 2026 and is expected to complete by early August 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Users licensed for Microsoft 365 Copilot in PowerPoint.\n• Users who create or use personal custom skills.\n• Microsoft 365 administrators supporting Copilot deployments.\nPlatforms/Services:\n• PowerPoint\n• Microsoft 365 Copilot\n• OneDrive\n• Mac\nWhat will happen:\n• Users can access a new Manage skills experience to view and manage their personal custom skills.\n• Users will be able to upload custom skills directly from the PowerPoint Copilot experience.\nScreenshot: Users can upload existing custom skill files from the Upload skill experience. Uploaded skills are stored in the user's personal OneDrive:\n• Users will be able to create custom skills directly within PowerPoint Copilot.\n• Uploaded and added skills will be stored in the user's personal OneDrive.\n• Custom skills are personal and available only to the user who creates or uploads them.\n• Created and uploaded skills will be available for use within PowerPoint Copilot.\n• The feature is available by default for eligible users when rollout reaches the tenant.\n[Action Required/Recommendations:]\nNo immediate administrator action is required.\nWe recommend that you:\n• Review any internal governance processes related to user-created Copilot skills.\n• Update internal documentation and training materials as appropriate.\n• Inform helpdesk and support teams about the new skill upload and creation experiences.\nLearn more: Use custom skills with Copilot in PowerPoint | Microsoft Support (will be updated before rollout)\n[Compliance considerations:]\nCompliance area\nExplanation\nStores new customer data\nCustom skills created or uploaded by users are stored in the user's personal OneDrive.\nChanges data processing or access\nUsers can create and upload custom skills that are used by PowerPoint Copilot during Copilot interactions.\nIntroduces AI/ML capabilities\nCustom skills extend how Microsoft 365 Copilot responds and interacts within PowerPoint.\nNew generative AI interaction\nUsers can create and upload custom skills to tailor their PowerPoint Copilot experience.\nAdmin or user controls\nUsers can create, upload, and manage their own personal custom skills.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "PowerPoint Copilot on Mac will let users create, upload, and manage personal custom skills directly within the app, saving them to their OneDrive for personal use. This feature rolls out worldwide from late July to early August 2026, requiring no immediate admin action."
+        }
+      ]
+    },
+    {
+      "id": "MC1440976",
+      "title": "Microsoft 365 Copilot: Retirement of role-to-skill mapping files in People Skills",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-07-27T23:01:11.0000000+00:00",
+      "endDateTime": "2026-09-22T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-27T23:01:26.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "bodyText": "[What and Why]\nBeginning on August 22, 2026, we will retire the optional role-to-skill mapping file used in the advanced setup experience for People Skills in Microsoft 365 Copilot.\nPreviously, administrators could upload a mapping file to associate custom skills with specific job roles or titles. People Skills now infers relevant custom skills directly and surfaces skills based on demonstrated user expertise and activity. As a result, role-to-skill mapping files no longer influence skills inferencing and are being retired. This change simplifies administration while continuing to support custom skills libraries.\n[Rollout Schedule]\n• General Availability (Worldwide): Beginning on August 22, 2026\n[Impact on Your Organization]\nWho is affected\n• Organizations using People Skills in Microsoft 365 Copilot with advanced setup\n• Administrators who previously uploaded or currently maintain role-to-skill mapping files\nPlatforms/Services\n• People Skills in Microsoft 365 Copilot\n• Microsoft 365 admin center\nWhat will happen\n• Previously uploaded role-to-skill mapping files are no longer used for skills inferencing.\n• The option to upload a role-to-skill mapping file during advanced setup will be removed.\n• Skills inferencing will continue to identify relevant custom skills.\n• Existing custom skills libraries will remain supported and continue to function normally.\n• No migration or reimport of existing custom skills libraries is required.\n• This change will be enabled automatically as part of the service update.\n[Action Required/Recommendations]\nNo action is required.\nWe recommend that administrators:\n• Review and update internal documentation that references creating, maintaining, or uploading role-to-skill mapping files.\n• Inform People Skills administrators of this retirement.\n• Remove operational processes that depend on maintaining role-to-skill mapping files.\nLearn more: Set up People Skills | Microsoft 365 Copilot | Microsoft 365 | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting August 22, 2026, Microsoft 365 Copilot will retire role-to-skill mapping files in People Skills. Skills inferencing will no longer use these files but will continue identifying custom skills automatically. No action or migration is needed; administrators should update documentation and inform relevant staff."
+        }
+      ]
+    },
+    {
+      "id": "MC1440972",
+      "title": "Microsoft Edge: Upgraded Copilot new tab page",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-27T22:59:03.0000000+00:00",
+      "endDateTime": "2026-10-15T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-27T22:59:19.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft Edge is introducing an upgraded Copilot new tab page that brings Microsoft 365 Copilot chat, web search, and work content into a single experience. Users can search the web, navigate to websites, interact with Microsoft 365 Copilot, and access relevant work content from a single experience.\nThe updated experience includes enhanced Copilot chat integration, compose capabilities, suggested actions, curated work content, and a refreshed design to help users complete tasks more efficiently.\nThis message is associated with Microsoft 365 Roadmap ID 566703.\n[Rollout schedule]\n• Public Preview: Beginning in mid-August 2026 and expected to complete by mid-September 2026\n• General Availability (Worldwide): Beginning in mid-September 2026 and expect to complete by mid-September 2026\n[Impact on your organization]\nWho is affected\n• Users in your organization who have the Copilot new tab page enabled in Microsoft Edge.\n• Users who do not have the Copilot new tab page enabled will continue to see the existing new tab page experience.\n• To access this experience, users must have a Microsoft 365 Copilot license (Starter or Premium).\nPlatforms and services\n• Microsoft Edge\n• Microsoft 365 Copilot\nWhat will happen\nThe Copilot new tab page is off by default.\nWhen enabled, users will see:\n• An updated search box for navigating to websites, searching the web, or sending a query to Microsoft 365 Copilot.\n• Enhanced Copilot chat and compose capabilities.\n• Suggested actions and work content to help users begin and complete tasks.\n• Work cards that may surface organizational content such as files and calendar events.\n• A refreshed design, app launcher, pinned quick links, and updated theme settings.\n• A Discover feed with curated news and content where supported.\nAdmins can enable the Copilot new tab page through the Microsoft Edge management service using the CopilotNewTabPageEnabled policy and assign the configuration to all users or selected Microsoft Entra groups.\nDepending on organizational policy settings, users may be able to disable the experience after it has been enabled.\nUsers who are not enabled will continue to see the existing Microsoft Edge new tab page.\n[Action required and recommendations]\nNo admin action is required before rollout because this experience is off by default.\nIf your organization plans to enable the experience, we recommend that you:\n• Review your current Microsoft Edge and Copilot new tab page configuration.\n• Determine which users or Microsoft Entra groups should receive the experience.\n• Verify that affected users have a Microsoft 365 Copilot license (Starter or Premium).\n• Evaluate the effect of surfacing organizational files and calendar events through work cards.\n• Review applicable AI governance and compliance requirements before enabling the experience.\n• Notify affected users about the updated new tab page.\n• Update relevant user guidance, training, and support documentation.\nLearn more\n• Configure the Copilot new tab page | Microsoft Edge | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes this change introduce or significantly modify AI, ML, or agent capabilities that interact with or provide access to customer data?Yes. The upgraded Copilot new tab page integrates Microsoft 365 Copilot chat and can surface organizational content, including files and calendar events, through work cards and suggested prompts.\nDoes this change provide end users with a new way to interact with generative AI?Yes. Users can send queries directly to Microsoft 365 Copilot from the new tab page search box and access integrated Copilot chat functionality within the Microsoft Edge new tab experience.\nDoes this change include an admin control?Yes. Administrators can enable the Copilot new tab page through the Microsoft Edge management service and assign the configuration to all users or selected Microsoft Entra groups.\nCan users enable or disable the feature themselves?Yes. Depending on organizational settings, users may be able to turn off the Copilot new tab page experience and switch between Work cards and Chat chips.\nCan the feature be controlled through Microsoft Entra ID group membership?Yes. Administrators can assign the Copilot new tab page configuration to one or more Microsoft Entra groups.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "566703"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft Edge’s upgraded Copilot new tab page integrates Microsoft 365 Copilot chat, web search, and work content into one experience with enhanced chat, compose features, work cards, and a refreshed design. It requires a Copilot license and can be enabled by admins via policy, rolling out from mid-August to mid-September 2026."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ]
+    },
+    {
+      "id": "MC1440968",
+      "title": "Microsoft Entra ID: Optimizations for passkey registration experience",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-27T22:53:27.0000000+00:00",
+      "endDateTime": "2026-09-28T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-27T22:53:36.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "[What and why]\nWe're rolling out optimizations to passkey registration across Microsoft Entra ID. These changes improve how passkey registration is handled through Registration Campaign, Authentication Strengths, and My Sign-Ins.\nThe updated registration logic will more consistently:\n• Guide users to register passkey types that comply with administrator configured passkey profile restrictions, reducing unsuccessful or non-compliant registration attempts.\n• Prioritize registration of a passkey that is local to the user's current device when permitted by policy.\nThese improvements are designed to increase successful passkey registrations, reduce registration friction, and help organizations strengthen adoption of phishing resistant authentication methods.\nThere are no user interface changes associated with this update.\n[Rollout schedule]\n• General Availability (Worldwide and GCC): Beginning in late August 2026 and expected to complete in late August 2026\n[Impact on your organization]\nWho is affected\n• Users who register passkeys through Registration Campaign, Authentication Strengths, or My Sign-Ins\n• Organizations using passkey profiles, including Synced-only, Device-bound-only, Attestation Enforced, and AAGUID-restricted configurations\n• Organizations using AAGUID-restricted passkey profiles will benefit from these registration optimizations. The greatest benefit is expected for Microsoft-supported passkey experiences. Other AAGUID-restricted providers continue to be supported and can be configured as before.\nPlatforms and services\n• Microsoft Entra ID Registration Campaign\n• Authentication Strengths\n• My Sign-Ins self-service passkey registration\n• Microsoft-supported passkey experiences for AAGUID-restricted profiles:• Entra passkey on Windows\n• Microsoft Authenticator passkey\n• iCloud Keychain passkey\n• Google Password Manager passkey\nWhat will happen\n• Users will continue to register passkeys through the same registration screens and entry points they use today.\n• Registration will more consistently align with administrator configured passkey profile requirements.\n• When permitted by policy, registration will prioritize a passkey native to the user's current device to improve the sign-in experience.\n[Action required and recommendations]\nNo action is required.\nOrganizations should continue driving passkey adoption through Registration Campaign and Authentication Strengths. These optimizations are intended to improve the likelihood of successful passkey registration while helping users remain compliant with organizational passkey policies.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra ID is optimizing passkey registration via Registration Campaign, Authentication Strengths, and My Sign-Ins to improve compliance with passkey policies and prioritize local device passkeys. These changes, rolling out in late August 2026, require no user interface changes or action from organizations."
+        }
+      ]
+    },
+    {
+      "id": "MC1436831",
+      "title": "Microsoft 365 Admin agent is now generally available for all admins",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-22T22:44:20.0000000+00:00",
+      "endDateTime": "2026-08-18T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-27T17:28:22.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nMicrosoft is making the Microsoft 365 Admin agent generally available for all Microsoft 365 administrators. The agent provides a unified AI-powered administrative experience across Microsoft 365 admin center and Microsoft 365 Copilot Chat, helping administrators discover, configure, troubleshoot, govern, and manage Microsoft 365 services through natural language conversations. This supports enterprise-ready AI by simplifying administration while respecting existing role-based access controls and requiring administrator approval before any changes are made.\n[Rollout Schedule:]\n• General Availability (Worldwide): Available now\n[Impact on Your Organization:]\nWho is affected:\n• All users assigned a Microsoft Entra built-in administrator role.\n• Global Administrators, AI Administrators, Teams Administrators, SharePoint Administrators, and other Microsoft 365 administrators.\nPlatforms/Services:\n• Microsoft 365 admin center\n• Microsoft 365 Copilot Chat\n• Microsoft Entra ID\n• Microsoft 365 Copilot\n• Agent management services\nWhat will happen:\n• The Microsoft 365 Admin agent will be pre-installed for users assigned a Microsoft Entra built-in administrator role.\n• Eligible administrators can use the Microsoft 365 Admin agent at no additional cost.\n• The same Microsoft 365 Admin agent experience will be available in both Microsoft 365 admin center and Microsoft 365 Copilot Chat.\n• Administrators can use natural language conversations to discover, configure, troubleshoot, and manage Microsoft 365 services, agents, and Copilot.\n• Administrators can perform tasks such as managing users, licenses, groups, agent governance, service health, and Message Center activities.\n• The agent respects existing Microsoft Entra role-based access controls (RBAC) and only exposes actions permitted by the administrator's assigned roles.\n• Administrators can move between Microsoft 365 Copilot Chat and Microsoft 365 admin center without losing conversational context.\nNote:\n• The Microsoft 365 Admin agent is pre-installed for users assigned a Microsoft Entra built-in administrator role.\n• Administrators can use the agent at no additional cost.\nImportant:\n• The administrator remains in control of all actions.\n• Any write or execute action proposed by the Microsoft 365 Admin agent requires explicit administrator confirmation before it is performed.\n• The Microsoft 365 Admin agent never makes changes to your tenant automatically.\n• Administrative actions performed through the agent are recorded in the underlying workload audit logs.\n• Organizations can block or restrict the agent through Microsoft 365 admin center > Agents > Registry.\n[Action Required/Recommendations:]\nNo action is required to enable this feature.\n• Review the documentation: Microsoft 365 Admin agent documentation.\n• Validate Microsoft Entra role assignments to ensure administrators have appropriate permissions for the workloads they manage.\n• Communicate this new capability to helpdesk and Microsoft 365 administration teams.\n• Review governance and deployment policies for AI agents within your organization.\n• If you want to restrict use of the Microsoft 365 Admin agent, navigate to Microsoft 365 admin center > Agents > Registry and block or scope deployment of the agent.\n• Review audit monitoring procedures and compliance processes for administrative actions performed through the agent.\n• Access the agent in Copilot Chat:\nMicrosoft 365 Admin agent.\n[Compliance Considerations:]\nConsideration\nExplanation\nIntroduces or significantly modifies AI/ML or agent capabilities that interact with customer data\nThe Microsoft 365 Admin agent provides a new AI-powered administrative interface that can access tenant information and perform actions according to the administrator's existing permissions.\nProvides end users a new way of interacting with generative AI\nAdministrators can manage Microsoft 365 workloads through natural language prompts in Microsoft 365 admin center and Microsoft 365 Copilot Chat.\nAlters how admins can monitor, report on, or demonstrate compliance activities\nAdministrators can use natural language prompts to review Message Center content, service health, Copilot usage, licensing, and organizational insights.\nIncludes an admin control\nOrganizations can block or scope deployment of the Microsoft 365 Admin agent through Microsoft 365 admin center > Agents > Registry.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "The Microsoft 365 Admin agent is now generally available for all Microsoft Entra built-in administrators, offering AI-powered natural language management across Microsoft 365 admin center and Copilot Chat. It respects role-based access controls, requires admin approval for changes, and can be restricted or monitored via admin center settings."
+        }
+      ]
+    },
+    {
+      "id": "MC1148545",
+      "title": "(Updated) Microsoft 365 admin center - Usage reports: Agent usage (preview)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-09-05T22:05:38.0000000+00:00",
+      "endDateTime": "2026-08-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-07-27T17:26:34.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated July 27, 2026: We have updated the content. Thank you for your patience.\nTo help you manage agent adoption for Microsoft 365 Copilot Chat, we are\nintroducing a new usage report in the Microsoft 365 admin center. The report provides\nvisibility into how users in your organization are actively using agents in\nMicrosoft 365 Copilot Chat and includes metrics such as:\n• Total number\nof active agent users and active agents\n• Usage\nbreakdown per user, per agent, and per user-agent pair\n• Segmentation\nby license state (licensed vs. unlicensed Microsoft 365 Copilot users)\n• Segmentation\nby agent creator type (i.e. agents built by your organization, Microsoft, or\nMicrosoft partners)\nThe new report is rolling out in preview and will be available under\nReporting > Usage > Microsoft 365 Copilot > Agent. During the preview\nstage, the report will display a maximum of 30 days of history. In addition,\nusage information from prior to August 19 2025 will not be\navailable in the report. This report only includes declarative agents. Usage data for SharePoint agents and Custom engine agents will be available in a future update.\nAs part of this change, the previous version of the agent usage report will no longer be available.\nThis message is associated with Microsoft 365 Roadmap ID 497999\n[When this will happen:]\nPublic Preview (Worldwide): Available now.\nGeneral Availability (Worldwide): We will begin rolling out end of July 2026 (previously early May) and expect to complete end of July 2026 (previously mid-May).\n[How this will affect your organization:]\nYou will see a new “Agent” report in the Usage section in M365 Admin center showing usage associated with your organizations use of agents in Microsoft 365 Copilot Chat at Tenant, user, agent and agent-user level.\nLearn more Microsoft 365 reports in the admin center –Agent usage\n[What you need to do to prepare:]\nThis rollout will happen automatically by the specified date with no\nadmin action required before the rollout. You may want to notify any admins\nthat manage agents in the Copilot Control system section of the\nMicrosoft 365 admin center. Learn more in Manage agents for Microsoft 365 Copilot in the Microsoft 365\nadmin center.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "497999"
+        },
+        {
+          "name": "Summary",
+          "value": "A new Microsoft 365 admin center usage report for Copilot Chat agents is in preview, showing active users, agents, usage details, and segmentation by license and creator type. It replaces the previous report, covers up to 30 days, and will roll out globally by end of July 2026 with no admin action needed."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ]
+    },
     {
       "id": "MC1438571",
       "title": "Default visibility of additional profile card properties in Microsoft 365 profile cards",
@@ -146,34 +356,6 @@
         {
           "name": "Summary",
           "value": "Microsoft Entra ID will retire support for custom CSS positioning properties in company branding starting October 2026 to enhance security and phishing resistance. Existing users must remove these properties by then, as no migration path exists. Branding elements remain visible but may revert to default placement."
-        }
-      ]
-    },
-    {
-      "id": "MC1436831",
-      "title": "Microsoft 365 Admin agent is now generally available for all admins",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-22T22:44:20.0000000+00:00",
-      "endDateTime": "2026-08-18T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-22T22:44:25.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nMicrosoft is making the Microsoft 365 Admin agent generally available for all Microsoft 365 administrators. The agent provides a unified AI-powered administrative experience across Microsoft 365 admin center and Microsoft 365 Copilot Chat, helping administrators discover, configure, troubleshoot, govern, and manage Microsoft 365 services through natural language conversations. This supports enterprise-ready AI by simplifying administration while respecting existing role-based access controls and requiring administrator approval before any changes are made.\n[Rollout Schedule:]\n• General Availability (Worldwide): Available now\n[Impact on Your Organization:]\nWho is affected:\n• All users assigned a Microsoft Entra built-in administrator role.\n• Global Administrators, AI Administrators, Teams Administrators, SharePoint Administrators, and other Microsoft 365 administrators.\nPlatforms/Services:\n• Microsoft 365 admin center\n• Microsoft 365 Copilot Chat\n• Microsoft Entra ID\n• Microsoft 365 Copilot\n• Agent management services\nWhat will happen:\n• The Microsoft 365 Admin agent will be pre-installed for users assigned a Microsoft Entra built-in administrator role.\n• Eligible administrators can use the Microsoft 365 Admin agent at no additional cost.\n• The same Microsoft 365 Admin agent experience will be available in both Microsoft 365 admin center and Microsoft 365 Copilot Chat.\n• Administrators can use natural language conversations to discover, configure, troubleshoot, and manage Microsoft 365 services, agents, and Copilot.\n• Administrators can perform tasks such as managing users, licenses, groups, agent governance, service health, and Message Center activities.\n• The agent respects existing Microsoft Entra role-based access controls (RBAC) and only exposes actions permitted by the administrator's assigned roles.\n• Administrators can move between Microsoft 365 Copilot Chat and Microsoft 365 admin center without losing conversational context.\nNote:\n• The Microsoft 365 Admin agent is pre-installed for users assigned a Microsoft Entra built-in administrator role.\n• Administrators can use the agent at no additional cost.\nImportant:\n• The administrator remains in control of all actions.\n• Any write or execute action proposed by the Microsoft 365 Admin agent requires explicit administrator confirmation before it is performed.\n• The Microsoft 365 Admin agent never makes changes to your tenant automatically.\n• Administrative actions performed through the agent are recorded in the underlying workload audit logs.\n• Organizations can block or restrict the agent through Microsoft 365 admin center > Agents > Registry.\n[Action Required/Recommendations:]\nNo action is required to enable this feature.\n• Review the documentation: Microsoft 365 Admin agent documentation.\n• Validate Microsoft Entra role assignments to ensure administrators have appropriate permissions for the workloads they manage.\n• Communicate this new capability to helpdesk and Microsoft 365 administration teams.\n• Review governance and deployment policies for AI agents within your organization.\n• If you want to restrict use of the Microsoft 365 Admin agent, navigate to Microsoft 365 admin center > Agents > Registry and block or scope deployment of the agent.\n• Review audit monitoring procedures and compliance processes for administrative actions performed through the agent.\n• Access the agent in Copilot Chat:\nMicrosoft 365 Admin agent.\n[Compliance Considerations:]\nConsideration\nExplanation\nIntroduces or significantly modifies AI/ML or agent capabilities that interact with customer data\nThe Microsoft 365 Admin agent provides a new AI-powered administrative interface that can access tenant information and perform actions according to the administrator's existing permissions.\nProvides end users a new way of interacting with generative AI\nAdministrators can manage Microsoft 365 workloads through natural language prompts in Microsoft 365 admin center and Microsoft 365 Copilot Chat.\nAlters how admins can monitor, report on, or demonstrate compliance activities\nAdministrators can use natural language prompts to review Message Center content, service health, Copilot usage, licensing, and organizational insights.\nIncludes an admin control\nOrganizations can block or scope deployment of the Microsoft 365 Admin agent through Microsoft 365 admin center > Agents > Registry.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "The Microsoft 365 Admin agent is now generally available for all Microsoft Entra built-in administrators, offering AI-powered natural language management across Microsoft 365 admin center and Copilot Chat. It respects role-based access controls, requires admin approval for changes, and can be restricted or monitored via admin center settings."
         }
       ]
     },
@@ -1163,7 +1345,7 @@
       "details": [
         {
           "name": "FeatureStatusJson",
-          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Desktop\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-07-26T23:13:29.4410048Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Mac\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-07-26T23:13:29.441005Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Web\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-07-26T23:13:29.4410051Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"All\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-07-26T23:13:29.4410051Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null}]}"
+          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Desktop\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-07-29T03:24:41.6254441Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Mac\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-07-29T03:24:41.6254443Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Web\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-07-29T03:24:41.6254443Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"All\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-07-29T03:24:41.6254444Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null}]}"
         },
         {
           "name": "Summary",
@@ -1724,42 +1906,6 @@
       ]
     },
     {
-      "id": "MC1148545",
-      "title": "(Updated) Microsoft 365 admin center - Usage reports: Agent usage (preview)",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-09-05T22:05:38.0000000+00:00",
-      "endDateTime": "2026-08-31T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-05-08T20:34:37.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated May 8, 2026: We have updated the timeline. Thank you for your patience.\nTo help you manage agent adoption for Microsoft 365 Copilot Chat, we are\nintroducing a new usage report in the Microsoft 365 admin center. The report provides\nvisibility into how users in your organization are actively using agents in\nMicrosoft 365 Copilot Chat and includes metrics such as:\n• Total number\nof active agent users and active agents\n• Usage\nbreakdown per user, per agent, and per user-agent pair\n• Segmentation\nby license state (licensed vs. unlicensed Microsoft 365 Copilot users)\n• Segmentation\nby agent creator type (i.e. agents built by your organization, Microsoft, or\nMicrosoft partners)\nThe new report is rolling out in preview and will be available under\nReporting > Usage > Microsoft 365 Copilot > Agent. During the preview\nstage, the report will display a maximum of 30 days of history. In addition,\nusage information from prior to August 19 2025 will not be\navailable in the report. This report only includes declarative agents. Usage data for SharePoint agents and Custom engine agents will be available in a future update.\nThis message is associated with Microsoft 365 Roadmap ID 497999\n[When this will happen:]\nPublic Preview (Worldwide): Available now.\nGeneral Availability (Worldwide): We will begin rolling out end of July 2026 (previously early May) and expect to complete end of July 2026 (previously mid-May).\n[How this will affect your organization:]\nYou will see a new “Agent” report in the Usage section in M365 Admin center showing usage associated with your organizations use of agents in Microsoft 365 Copilot Chat at Tenant, user, agent and agent-user level.\nLearn more Microsoft 365 reports in the admin center –Agent usage\n[What you need to do to prepare:]\nThis rollout will happen automatically by the specified date with no\nadmin action required before the rollout. You may want to notify any admins\nthat manage agents in the Copilot Control system section of the\nMicrosoft 365 admin center. Learn more in Manage agents for Microsoft 365 Copilot in the Microsoft 365\nadmin center.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "497999"
-        },
-        {
-          "name": "Summary",
-          "value": "A new preview usage report for Microsoft 365 Copilot Chat agents is available in the Microsoft 365 admin center, showing active users, agents, usage details, and segmentation by license and creator type. It covers the last 30 days and excludes data before August 19, 2025. General availability starts end of July 2026."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
-        }
-      ]
-    },
-    {
       "id": "MC1303719",
       "title": "Microsoft Entra: Upcoming changes to federatedTokenValidationPolicy default settings",
       "category": "planForChange",
@@ -1811,44 +1957,6 @@
         {
           "name": "Summary",
           "value": "Microsoft 365 Copilot mobile app is updating to a new chat-first design with a modern interface and streamlined navigation, rolling out mid-May to late August 2026 on iOS and Android. The update is automatic, requires no admin action, and maintains existing workflows."
-        }
-      ]
-    },
-    {
-      "id": "MC1189665",
-      "title": "(Updated) Microsoft 365 admin center: Organizational Messages to support email delivery",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-11-25T00:06:23.0000000+00:00",
-      "endDateTime": "2026-07-27T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-04-27T20:57:13.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat",
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat、Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat、Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated April 27, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction]\nOrganizational Messages will soon include email as a delivery channel, expanding beyond existing surfaces such as the Windows Taskbar, Windows Notifications, Windows Spotlight, and Teams popovers. This enhancement helps organizations reach users through familiar communication channels, improving engagement and adoption.\nThis message is associated with Microsoft 365 Roadmap ID 503562.\n[When this will happen]\n• Public Preview (Worldwide): Rollout began in mid-November 2025 and is expected to complete by late January 2026.\n• General Availability (Worldwide): Rollout begins in mid-May 2026 (previously late April) and is expected complete by mid-June 2026 (previously late May).\n[How this will affect your organization]\nWho is affected: Admins managing Organizational Messages in Microsoft 365.\nWhat will happen:\n• Email will be added as a delivery channel for Organizational Messages.\n• Admins can send premade, templatized messages via email in addition to existing surfaces like Windows Spotlight, Taskbar, Notification Center, and Teams popovers:\n• During Public Preview, new pre-built email templates will be available:\n• Two welcome messages: Welcome to Copilot and Welcome to Copilot Chat.\n• Six weekly Great M365 Copilot Journey emails highlighting features and best practices to drive onboarding and adoption.\n[What you need to do to prepare]\nNo action is required at this time.\n[Compliance considerations]\nNo compliance impacts identified. Review your organization’s policies as needed.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "503562"
-        },
-        {
-          "name": "Summary",
-          "value": "Organizational Messages in Microsoft 365 will add email as a delivery channel, alongside Windows and Teams surfaces. Public Preview runs mid-November 2025 to late January 2026; General Availability starts mid-May 2026. Admins can send premade email templates, including Copilot welcome and weekly journey messages. No action needed now."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
         }
       ]
     },
