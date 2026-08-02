@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T23:20:23.3515735+00:00",
+  "generatedAt": "2026-08-02T23:27:07.1310212+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証強化とCopilot機能拡充が加速──8月の重要変更を確認",
   "executiveSummary": "2026年8月第1週のMessage Centerでは、Microsoft Entra IDのセキュリティ強化(パスキー既定化・SMS/音声MFA廃止予告・カスタムCSSポジショニング廃止・条件付きアクセスカスタムコントロール廃止)と、Microsoft 365 Copilotの機能拡充(Copilot Chatへのプランナー統合・モバイルアプリ録音機能・PowerPointカスタムスキル・Admin AgentのGA)が主要トピックです。また、All Agentsの未処理リクエスト一括削除(8/20期限)など期限付きアクションが複数存在します。Office LTSC 2021のサポート終了(2026/10/13)も引き続き要対応です。",
@@ -1097,6 +1097,20 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1443510",
+      "japaneseDetailedSummary": "【概要】Microsoft 365の「All Agents」リクエスト管理において、長期間保留状態になっている古いリクエストの一括クリーンアップが実施されます。2026年8月20日以降、2026年6月1日以前に作成された未処理(保留中)のリクエストが永久削除されます。承認・却下済みのリクエストには影響ありません。\n\n【対象者】All Agentsのリクエスト管理を担当する管理者\n\n【対応期限】2026年8月20日までに、未処理の古いリクエストを確認・対応する必要があります。期限までに対応しなかった場合、リクエストは削除されます。\n\n【CSAとしてのアドバイス】管理者は今すぐAll Agentsのリクエスト一覧を確認し、2026年6月1日以前の保留中リクエストが存在する場合は承認または却下の判断を行ってください。削除後の復元はできないため、早急な対応が推奨されます。",
+      "japaneseBodyTranslation": "【概要と理由】\nAll Agentsのリクエスト管理において、長期間保留状態の古いリクエストの一括クリーンアップを実施します。このクリーンアップは、長期間保留状態のままになっていた古いリクエストを削除し、より現在的で管理しやすいリクエストキューの維持を目的としています。\n2026年8月20日以降、2026年6月1日以前に作成された保留中のリクエストは、クリーンアップ開始前にレビューおよび対応されない限り、永久に削除されます。\nすでに承認または却下されたリクエストは影響を受けません。\n\n【展開スケジュール】\n全世界: 2026年8月20日に開始し、2026年8月下旬に完了予定\n\n【組織への影響】\n影響を受けるユーザー:\nAll Agentsのリクエストのレビューおよび管理を担当する管理者\n対象プラットフォームおよびサービス:\nMicrosoft 365 / All Agents\n変更内容:\n2026年6月1日以前の保留中リクエストは、この一括クリーンアップで削除されます。\n既に承認または却下されたリクエストは変更されません。\n保留",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1443523",
+      "japaneseDetailedSummary": "【概要】Microsoft 365 Copilot ChatにPlannerの機能が統合されます。ユーザーは自然言語を使ってCopilot Chat内でPlannerのタスクやプランの作成・更新・検索ができるようになり、アプリを切り替えることなく業務を管理できます。ロードマップID: 516577。\n\n【展開予定】2026年9月上旬から全世界で一般提供開始予定。\n\n【対象者】Microsoft 365 Copilot ChatおよびMicrosoft Plannerのユーザー。デスクトップおよびWebプラットフォームで利用可能。\n\n【主な機能】自然言語でのタスク・プラン作成、Copilot Chat内でのタスク詳細表示(初版はテキストのみ、次版ではインタラクティブなタスクカード対応予定)、CopilotとPlanner間でのタスク横断管理。\n\n【CSAとしてのアドバイス】この機能により、ユーザーの業務効率が向上し、アプリ切り替えの手間が削減されます。Copilotライセンスを持つユーザーは追加設定なしで利用可能になる見込みです。",
+      "japaneseBodyTranslation": "【概要と理由】\nMicrosoft 365 Copilot ChatにPlannerの機能を導入します。ユーザーはCopilot Chat内で自然言語を使ってPlannerのタスクやプランの作成、更新、Q&Aができるようになり、アプリケーション間を切り替えることなく業務を管理できます。\nこのメッセージはMicrosoft 365ロードマップID 516577に関連しています。\n\n【展開スケジュール】\n一般提供(全世界): 2026年9月上旬開始予定\n\n【組織への影響】\n影響を受けるユーザー:\nMicrosoft 365 Copilot Chatのユーザー / Microsoft Plannerのユーザー\n対象プラットフォーム/サービス:\nデスクトップ、Web\n変更内容:\nユーザーは以下が可能になります:\n自然言語プロンプトを使ってPlannerのタスクおよびプランを作成する。\nCopilot Chat内でPlannerのタスクおよびプランの詳細を直接表示する(このバージョンはテキストのみ。次バージョンではインタラクティブなタスクカードが表示予定)。\nCopilotとPlanner間でアプリを切り替えることなくタスクおよびプランを管理・更新する。\n既存のPlannerの機能",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
