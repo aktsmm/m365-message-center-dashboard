@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T03:56:26.7815888+00:00",
+  "generatedAt": "2026-08-05T04:02:22.4488793+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "【2026年8月第1週】Entraセキュリティ強化・Copilot機能拡張・Office LTSC 2021サポート終了が迫る",
   "executiveSummary": "今週のMessage Centerは74件のメッセージを含み、Microsoft Entraのセキュリティ強化(SSPR・パスキー・フェデレーション認証)、Microsoft 365 Copilotの機能拡張(スケジュールプロンプト・音声メモ・PowerPointカスタムスキル)、Office LTSC 2021サポート終了(2026年10月13日)が主要トピックです。特に8月11日(MC1303719: federatedTokenValidationPolicy変更)と8月20日(MC1443510: All Agentsリクエストクリーンアップ)に即時対応が必要です。Microsoft Entra ID のSSPR認証方式変更(2026年11月)、Conditional Access カスタムコントロール廃止(2027年4月)、パスキーのデフォルト化(2026年9月)など、認証基盤の大規模刷新が進行中です。",
@@ -1112,6 +1112,13 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1447683",
+      "japaneseDetailedSummary": "Microsoft 365 CopilotのScheduled Prompts機能が、ポリシーフレームワークの変更により「Optional Connected Experiences」から「Microsoft 365 Connected Experiences」へ移行します。この変更はガバナンスおよびコンプライアンス要件との整合を目的としており、ユーザーがスケジュールされたプロンプトを作成・編集・使用する方法には影響しません。既存のスケジュール済みプロンプトも引き続き正常に動作します。\n\nロールアウトスケジュールはWorldwide向けに2026年8月中旬から開始し、2026年8月末までに完了予定です。\n\n影響を受けるのは、Scheduled PromptsにアクセスできるすべてのMicrosoft 365 Copilotユーザーと、Connected ExperiencesポリシーでCopilot機能の可用性を管理しているMicrosoft 365管理者です。管理者は、「Microsoft 365 Connected Experiences」ポリシーの設定がScheduled Promptsの可用性に影響することを確認する必要があります。Optional Connected Experiencesポリシーを無効にしていた場合でも、Connected Experiencesポリシーが有効であればScheduled Promptsは引き続き利用可能となる点に注意が必要です。",
+      "japaneseBodyTranslation": "[変更内容と理由]\nMicrosoft 365 CopilotのScheduled Promptsは、日次サマリー、定期レポート、リマインダーなど、繰り返し発生するCopilotリクエストをユーザーが自動化できる機能です。\nMicrosoft 365プラットフォームのガバナンスおよびコンプライアンス要件との整合を図るため、Scheduled PromptはOptional Connected ExperiencesポリシーフレームワークからMicrosoft 365 Connected Experiencesフレームワークへ移行します。\nこの変更は、ユーザーがScheduled Promptsを作成、編集、または使用する方法には影響しません。既存のスケジュール済みプロンプトは引き続き期待通りに実行されます。\n[ロールアウトスケジュール]\n• 一般提供(全世界):2026年8月中旬に開始し、2026年8月末までに完了予定\n[組織への影響]\n対象者\n• Scheduled PromptsにアクセスできるすべてのMicrosoft 365 Copilotユーザー\n• 機能の可用性を管理するためにConnected Experiencesポリシーを使用しているMicrosoft 365管理者\nプラットフォームおよびサービス\n• Microsoft 365 Copilot\n• Connected Experiences向けMicrosoft 365管理コントロール\n発生する変更\n• スケジュール済み(以下省略)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
