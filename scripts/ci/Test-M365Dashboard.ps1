@@ -417,6 +417,7 @@ try {
         $focusHtml -notmatch 'role="status" aria-live="polite" aria-atomic="true"|条件をすべてクリア|data-clear-filters' -or
         $focusHtml -notmatch 'priority-section|対応期限が記載|重要な変更|現在の絞り込み結果から表示' -or
         $focusHtml -notmatch 'SERVICE_FOCUSES|function getMessageFocusSlugs|function normalizeFocusUrlOnLoad|function writeFocusesToUrl|history\[mode\]\(null, "", url\)|window\.addEventListener\("popstate"' -or
+        $focusHtml -notmatch 'function captureServiceControlFocus|#service-filters input\[data-focus\]|#services button\[data-focus-toggle\]|function restoreServiceControlFocus|focus\(\{ preventScroll: true \}\)|render\(\{ restoreServiceFocus: true \}\)|restorePersistentFocus' -or
         $focusHtml -notmatch 'url\.searchParams\.delete\("focus"\)|url\.searchParams\.set\("focus", state\.focuses\.join\(","\)\)' -or
         $focusHtml -notmatch 'state\.focuses\.length && !getMessageFocusSlugs\(message\)\.some' -or
         $focusHtml -notmatch 'service: "Microsoft Entra"|service: "Microsoft 365 Copilot Chat"|service: "Microsoft 365 suite"' -or

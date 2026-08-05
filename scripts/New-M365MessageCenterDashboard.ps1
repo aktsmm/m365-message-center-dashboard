@@ -615,7 +615,24 @@ $html = @'
       }).join("") : `<div class="empty"><p>現在の表示条件では、「対応期限が記載」または「重要な変更」に該当する更新はありません。</p>${hasActiveConditions() ? `<button class="clear-filters" type="button" data-clear-filters>条件をすべてクリア</button>` : ""}</div>`;
     }
 
-    function render() {
+    function captureServiceControlFocus() {
+      const active = document.activeElement;
+      if (active?.matches("#service-filters input[data-focus]")) {
+        return `#service-filters input[data-focus="${active.dataset.focus}"]`;
+      }
+      if (active?.matches("#services button[data-focus-toggle]")) {
+        return `#services button[data-focus-toggle="${active.dataset.focusToggle}"]`;
+      }
+      return null;
+    }
+
+    function restoreServiceControlFocus(selector) {
+      const control = selector && document.querySelector(selector);
+      control?.focus({ preventScroll: true });
+    }
+
+    function render({ restoreServiceFocus = false } = {}) {
+      const serviceFocusSelector = restoreServiceFocus ? captureServiceControlFocus() : null;
       const visible = DATA.messages.filter(matches);
       const conditionText = describeConditions();
       document.getElementById("result-count").textContent = `${conditionText}。${visible.length} / ${DATA.messages.length} 件を表示しています。`;
@@ -676,6 +693,7 @@ $html = @'
           ${translationContent}
         </article>`;
       }).join("") : `<div class="panel empty"><p>${escapeHtml(conditionText)}に一致するメッセージはありません。</p><button class="clear-filters" type="button" data-clear-filters>条件をすべてクリア</button></div>`;
+      restoreServiceControlFocus(serviceFocusSelector);
     }
 
     function toggleFocus(slug) {
@@ -683,16 +701,17 @@ $html = @'
         ? state.focuses.filter(value => value !== slug)
         : normalizeFocuses([...state.focuses, slug].join(","));
       writeFocusesToUrl("pushState");
-      render();
+      render({ restoreServiceFocus: true });
     }
 
-    function clearFilters() {
+    function clearFilters({ restorePersistentFocus = false } = {}) {
       state.focuses = [];
       state.filter = "all";
       state.query = "";
       document.getElementById("search").value = "";
       writeFocusesToUrl("pushState");
       render();
+      if (restorePersistentFocus) document.getElementById("clear-filters").focus({ preventScroll: true });
     }
 
     document.getElementById("search").addEventListener("input", event => {
@@ -712,7 +731,8 @@ $html = @'
       if (button) toggleFocus(button.dataset.focusToggle);
     });
     document.addEventListener("click", event => {
-      if (event.target.closest("[data-clear-filters]") || event.target.closest("#clear-filters")) clearFilters();
+      const clearButton = event.target.closest("[data-clear-filters], #clear-filters");
+      if (clearButton) clearFilters({ restorePersistentFocus: clearButton.hasAttribute("data-clear-filters") });
     });
     window.addEventListener("popstate", () => {
       state.focuses = readFocusesFromUrl();
