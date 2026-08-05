@@ -146,10 +146,10 @@ $html = @'
     .theme-toggle:disabled { cursor: not-allowed; opacity: 0.72; }
     .nav-meta { color: var(--cp-text-muted); font-size: 0.84rem; text-align: right; }
     .source-status { font-weight: 700; color: var(--cp-text); }
-    .hero { padding: 88px 8px 48px; max-width: 840px; }
+    .hero { padding: 56px 8px 28px; max-width: 840px; }
     .eyebrow { color: var(--cp-text-muted); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
     h1 {
-      margin: 12px 0 18px; font-size: clamp(3rem, 8vw, 6.6rem); line-height: 0.94; letter-spacing: -0.075em;
+      margin: 12px 0 18px; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 0.98; letter-spacing: -0.065em;
       color: var(--cp-text);
       background: linear-gradient(105deg, var(--cp-link), var(--cp-accent), var(--cp-warning), var(--cp-success));
       background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -162,6 +162,17 @@ $html = @'
     .hero-repo-link:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
     .hero-repo-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
     .hero-access-note { margin: 10px 0 0; color: var(--cp-text-muted); font-size: 0.88rem; }
+    .context-panel, .filter-panel, .priority-section {
+      margin-bottom: 18px; padding: clamp(20px, 4vw, 32px); background: var(--cp-panel-strong);
+      border: 1px solid var(--cp-border); border-radius: 16px; box-shadow: var(--cp-shadow);
+    }
+    .context-panel { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, 1fr); gap: 24px; }
+    .context-panel h2, .filter-panel h2, .priority-section h2 { font-size: clamp(1.35rem, 3vw, 2rem); }
+    .context-panel p { margin: 10px 0 0; color: var(--cp-text-muted); }
+    .context-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0; }
+    .context-grid div { padding: 14px; background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 0.625rem; }
+    .context-grid dt { color: var(--cp-text-muted); font-size: 0.78rem; font-weight: 700; }
+    .context-grid dd { margin: 5px 0 0; font-size: 1rem; font-weight: 750; }
     .insights {
       padding: clamp(24px, 5vw, 48px); margin-bottom: 18px; overflow: hidden;
       background: var(--cp-panel-strong); border: 1px solid var(--cp-border); border-radius: 16px;
@@ -175,7 +186,7 @@ $html = @'
     .insight-column ul { margin: 0; padding-left: 18px; color: var(--cp-text-muted); }
     .insight-column li + li { margin-top: 8px; }
     .insight-pending { color: var(--cp-text-muted); }
-    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 48px; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px; }
     .metric, .panel, .message {
       background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px;
       box-shadow: var(--cp-shadow);
@@ -188,10 +199,27 @@ $html = @'
     h2 { margin: 0; font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -0.045em; }
     .section-note { color: var(--cp-text-muted); font-size: 0.9rem; }
     .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-    .service { padding: 16px; background: var(--cp-bg-elevated); border: 1px solid var(--cp-border); border-radius: 0.625rem; }
+    .service {
+      min-height: 112px; padding: 16px; color: var(--cp-text); background: var(--cp-bg-elevated);
+      border: 1px solid var(--cp-border); border-radius: 0.625rem; cursor: pointer; text-align: left;
+    }
+    .service:hover, .service[aria-pressed="true"] { border-color: var(--cp-accent); background: var(--cp-accent-soft); }
+    .service[aria-pressed="true"] strong::after { content: " ✓"; color: var(--cp-accent); }
     .service strong { display: block; font-size: 1.35rem; }
     .service span { color: var(--cp-text-muted); font-size: 0.82rem; }
-    .toolbar { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 12px; margin-bottom: 14px; }
+    .service:focus-visible, .filter:focus-visible, .clear-filters:focus-visible, .service-filter input:focus-visible + span {
+      outline: 3px solid var(--cp-accent); outline-offset: 3px;
+    }
+    .filter-panel-head, .priority-head { display: flex; align-items: end; justify-content: space-between; gap: 18px; }
+    .filter-panel-head p, .priority-head p, .filter-help, .priority-note { margin: 8px 0 0; color: var(--cp-text-muted); }
+    .service-filter-set { margin: 22px 0 0; padding: 0; border: 0; }
+    .service-filter-set legend { font-weight: 750; }
+    .service-filter-options { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .service-filter { display: inline-flex; min-height: 44px; align-items: center; gap: 9px; padding: 9px 12px; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 0.625rem; cursor: pointer; }
+    .service-filter.active { color: var(--cp-accent); border-color: var(--cp-accent); background: var(--cp-accent-soft); font-weight: 700; }
+    .service-filter input { inline-size: 1.05rem; block-size: 1.05rem; accent-color: var(--cp-accent); }
+    .service-filter-count { color: var(--cp-text-muted); font-size: 0.82rem; font-weight: 600; }
+    .toolbar { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 12px; margin-top: 20px; }
     .search {
       width: 100%; padding: 13px 16px; color: var(--cp-text); background: var(--cp-surface);
       border: 1px solid var(--cp-border); border-radius: 0.625rem; outline: none;
@@ -199,7 +227,7 @@ $html = @'
     .search:focus { border-color: var(--cp-accent); box-shadow: 0 0 0 3px var(--cp-accent-soft); }
     .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
     .filter {
-      padding: 10px 14px; color: var(--cp-text-muted); background: var(--cp-surface);
+      min-height: 44px; padding: 10px 14px; color: var(--cp-text-muted); background: var(--cp-surface);
       border: 1px solid var(--cp-border); border-radius: 999px; cursor: pointer;
     }
     .filter:hover, .filter.active {
@@ -207,6 +235,18 @@ $html = @'
       background: linear-gradient(110deg, var(--cp-link), var(--cp-accent), var(--cp-warning));
       border-color: var(--cp-border-strong);
     }
+    .clear-filters {
+      min-height: 44px; padding: 10px 14px; color: var(--cp-link); background: transparent;
+      border: 1px solid var(--cp-border-strong); border-radius: 999px; cursor: pointer; font-weight: 700;
+    }
+    .clear-filters:hover { color: var(--cp-accent); border-color: var(--cp-accent); background: var(--cp-surface); }
+    .priority-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+    .priority-card { display: flex; min-width: 0; flex-direction: column; gap: 10px; padding: 16px; background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 0.625rem; }
+    .priority-card h3 { margin: 0; font-size: 1rem; letter-spacing: -0.015em; }
+    .priority-card a { color: var(--cp-link); font-size: 0.88rem; font-weight: 700; text-decoration: none; }
+    .priority-card a:hover { color: var(--cp-accent); text-decoration: underline; }
+    .priority-card a:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
+    .priority-reasons { display: flex; flex-wrap: wrap; gap: 6px; }
     .message-list { display: grid; gap: 10px; }
     .message { padding: 20px; transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease; }
     .message:hover { transform: translateY(-2px); border-color: var(--cp-border-strong); box-shadow: var(--cp-shadow); }
@@ -230,16 +270,18 @@ $html = @'
     .chip.major { color: var(--cp-accent); background: var(--cp-accent-soft); font-weight: 700; }
     .chip.high { color: var(--cp-danger); font-weight: 700; }
     .chip.due { color: var(--cp-warning); font-weight: 700; }
-    .empty { padding: 48px; color: var(--cp-text-muted); text-align: center; }
+    .empty { padding: 32px; color: var(--cp-text-muted); text-align: center; }
+    .empty p { margin: 0 0 14px; }
     footer { padding: 56px 8px 0; color: var(--cp-text-muted); font-size: 0.82rem; }
     .repo-link { color: var(--cp-link); font-weight: 700; text-decoration: none; }
     .repo-link:hover { color: var(--cp-accent); text-decoration: underline; }
     @media (max-width: 820px) {
-      .metrics, .services { grid-template-columns: repeat(2, 1fr); }
+      .metrics, .services, .priority-list { grid-template-columns: repeat(2, 1fr); }
       .insight-grid { grid-template-columns: 1fr; }
       .toolbar { grid-template-columns: 1fr; }
       .filters { justify-content: flex-start; }
       .demo-links { order: 3; flex-basis: 100%; }
+      .context-panel { grid-template-columns: 1fr; }
     }
     @media (max-width: 520px) {
       .shell { width: min(100% - 20px, 1180px); padding-top: 10px; }
@@ -248,7 +290,8 @@ $html = @'
       .metrics { grid-template-columns: 1fr 1fr; }
       .metric { min-height: 120px; padding: 16px; }
       .metric-value { font-size: 2.1rem; }
-      .services { grid-template-columns: 1fr; }
+      .services, .priority-list, .context-grid { grid-template-columns: 1fr; }
+      .filter-panel-head, .priority-head { align-items: start; flex-direction: column; }
       .message-top { display: block; }
       .message-date { margin-top: 8px; text-align: left; }
     }
@@ -273,47 +316,89 @@ $html = @'
     </nav>
 
     <header class="hero">
-      <div class="eyebrow">Weekly intelligence</div>
-      <h1>変化を、<br>先回りする。</h1>
-      <p class="lede">ラボ環境の Microsoft 365 Message Center 全文、詳細、決定論的な日本語要約と Agentic Workflow の週次インサイトを届けるレーダー。</p>
+      <div class="eyebrow">Microsoft 365 Change Radar</div>
+      <h1>Microsoft 365 の変更を、<br>確認しやすく。</h1>
+      <p class="lede">公開済みの Message Center 更新を、サービス、変更の重要性、対応期限の記載で整理して確認できます。</p>
       <a class="hero-repo-link" href="https://admin.microsoft.com/#/MessageCenter" target="_blank" rel="noopener noreferrer">Microsoft 365 管理センターの Message Center を開く</a>
       <p class="hero-access-note">利用にはサインインと対象テナントでの適切な権限が必要です。</p>
       <a class="hero-repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub リポジトリを開く</a>
     </header>
 
-    <section class="insights" aria-label="Agentic weekly insights">
-      <div class="eyebrow">Copilot weekly brief</div>
+    <section class="context-panel" aria-labelledby="context-title">
+      <div>
+        <div class="eyebrow">公開データの範囲</div>
+        <h2 id="context-title">このページについて</h2>
+        <p>明示的に承認されたテスト テナントの lab-public スナップショットを表示しています。絞り込みは公開済みコンテンツを整理するためのもので、アクセス制御やデータ保護ではありません。</p>
+      </div>
+      <dl class="context-grid">
+        <div><dt>スナップショット更新</dt><dd id="context-generated">—</dd></div>
+        <div><dt>公開中の更新</dt><dd id="context-total">—</dd></div>
+        <div><dt>データソース</dt><dd id="context-source">—</dd></div>
+      </dl>
+    </section>
+
+    <section class="insights" aria-label="週次要約">
+      <div class="eyebrow">週次要約</div>
+      <p class="section-note">この要約は公開スナップショット全体を対象とし、サービスの絞り込みには連動しません。</p>
       <div id="insight-content"></div>
     </section>
 
-    <section class="metrics" aria-label="Summary metrics">
-      <article class="metric"><div class="metric-label">Tracked messages</div><div class="metric-value" id="metric-total">0</div></article>
-      <article class="metric metric-alert"><div class="metric-label">Major changes</div><div class="metric-value" id="metric-major">0</div></article>
-      <article class="metric"><div class="metric-label">Due within 30 days</div><div class="metric-value" id="metric-due">0</div></article>
-      <article class="metric"><div class="metric-label">Updated this week</div><div class="metric-value" id="metric-updated">0</div></article>
+    <section class="metrics" aria-label="公開スナップショットの集計">
+      <article class="metric"><div class="metric-label">公開中の更新</div><div class="metric-value" id="metric-total">0</div></article>
+      <article class="metric metric-alert"><div class="metric-label">重要な変更</div><div class="metric-value" id="metric-major">0</div></article>
+      <article class="metric"><div class="metric-label">30日以内に期限が記載</div><div class="metric-value" id="metric-due">0</div></article>
+      <article class="metric"><div class="metric-label">直近7日間の更新</div><div class="metric-value" id="metric-updated">0</div></article>
     </section>
 
-    <section>
-      <div class="section-head"><div><div class="eyebrow">Signal map</div><h2>影響サービス</h2></div><div class="section-note">上位8サービス</div></div>
+    <section aria-labelledby="services-title">
+      <div class="section-head"><div><div class="eyebrow">公開サービス値</div><h2 id="services-title">サービス別の更新</h2></div><div class="section-note">件数は重複するため、合計は公開中の更新件数と一致しない場合があります。</div></div>
       <div class="services" id="services"></div>
     </section>
 
-    <section>
-      <div class="section-head"><div><div class="eyebrow">Message stream</div><h2>変更一覧</h2></div><div class="section-note" id="result-count"></div></div>
+    <section class="filter-panel" aria-labelledby="filter-title">
+      <div class="filter-panel-head">
+        <div>
+          <div class="eyebrow">表示条件</div>
+          <h2 id="filter-title">注目するサービスで絞り込む</h2>
+          <p>Microsoft Graph Message Center の公開済み <code>services</code> 値に基づきます。複数のサービスに該当する更新は、選択したサービスのいずれかに一致すれば表示します。</p>
+        </div>
+        <button class="clear-filters" id="clear-filters" type="button">条件をすべてクリア</button>
+      </div>
+      <fieldset class="service-filter-set" aria-describedby="service-filter-help">
+        <legend>サービスを選択（複数選択可）</legend>
+        <div class="service-filter-options" id="service-filters"></div>
+      </fieldset>
+      <p class="filter-help" id="service-filter-help">サービスを選択しない場合は、すべての公開済み更新を表示します。</p>
       <div class="toolbar">
-        <input class="search" id="search" type="search" placeholder="タイトル、MC ID、サービスを検索" aria-label="Search messages">
-        <div class="filters" aria-label="Message filters">
-          <button class="filter active" data-filter="all">すべて</button>
-          <button class="filter" data-filter="major">Major</button>
-          <button class="filter" data-filter="due">期限あり</button>
-          <button class="filter" data-filter="high">High</button>
+        <input class="search" id="search" type="search" placeholder="タイトル、MC ID、サービスを検索" aria-label="タイトル、MC ID、サービスを検索">
+        <div class="filters" aria-label="更新の表示条件">
+          <button class="filter active" data-filter="all" type="button" aria-pressed="true">すべて</button>
+          <button class="filter" data-filter="major" type="button" aria-pressed="false">重要な変更</button>
+          <button class="filter" data-filter="due" type="button" aria-pressed="false">対応期限が記載</button>
+          <button class="filter" data-filter="high" type="button" aria-pressed="false">高重要度</button>
         </div>
       </div>
+    </section>
+
+    <section class="priority-section" aria-labelledby="priority-title">
+      <div class="priority-head">
+        <div>
+          <div class="eyebrow">まず確認する更新</div>
+          <h2 id="priority-title">確認の優先度</h2>
+          <p class="priority-note">表示基準は Message Center の「対応期限が記載」と「重要な変更」です。AI 週次要約の優先度ではありません。</p>
+        </div>
+        <div class="section-note" id="priority-scope"></div>
+      </div>
+      <div class="priority-list" id="priorities"></div>
+    </section>
+
+    <section aria-labelledby="messages-title">
+      <div class="section-head"><div><div class="eyebrow">Message Center 更新一覧</div><h2 id="messages-title">すべての公開済み更新</h2></div><div class="section-note" id="result-count" role="status" aria-live="polite" aria-atomic="true"></div></div>
       <div class="message-list" id="messages"></div>
     </section>
 
     <footer>
-      <p>このラボでは、Message Center の本文と name/value 形式の詳細を公開しています。credential-like 値は出力前に赤字化されます。正式な判断は Microsoft 365 管理センターで確認してください。</p>
+      <p>このラボでは、Message Center の本文と name/value 形式の詳細を公開しています。credential-like 値は出力前に redaction されます。正式な判断は Microsoft 365 管理センターで確認してください。</p>
       <p><a class="repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub: aktsmm/m365-message-center-dashboard</a> · <a class="repo-link" href="about/">更新のしくみ</a></p>
     </footer>
   </main>
@@ -323,7 +408,14 @@ $html = @'
     const INSIGHTS = __INSIGHTS__;
     const MESSAGE_UPDATES = new Map((INSIGHTS?.messageUpdates || []).map(update => [update.id, update]));
     const MESSAGE_TRANSLATIONS = new Map((INSIGHTS?.messageTranslations || []).map(translation => [translation.id, translation]));
-    const state = { filter: "all", query: "" };
+    const SERVICE_FOCUSES = [
+      { slug: "identity", service: "Microsoft Entra", label: "Microsoft Entra（ID・アクセス）" },
+      { slug: "copilot", service: "Microsoft 365 Copilot Chat", label: "Microsoft 365 Copilot Chat" },
+      { slug: "m365", service: "Microsoft 365 suite", label: "Microsoft 365 suite" }
+    ];
+    const FOCUS_BY_SERVICE = new Map(SERVICE_FOCUSES.map(focus => [focus.service, focus]));
+    const FOCUS_ORDER = new Map(SERVICE_FOCUSES.map((focus, index) => [focus.slug, index]));
+    const state = { filter: "all", query: "", focuses: [] };
     const themeToggle = document.getElementById("theme-toggle");
     const urlTheme = new URLSearchParams(window.location.search).get("scoutTheme");
     const forcedTheme = ["light", "dark"].includes(urlTheme) ? urlTheme : null;
@@ -349,6 +441,63 @@ $html = @'
     });
     const fmt = value => value ? new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "short", day: "numeric" }).format(new Date(value)) : "—";
     const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+    const messageServices = message => Array.isArray(message.services)
+      ? message.services.filter(service => typeof service === "string" && service.trim())
+      : [];
+    const getMessageFocusSlugs = message => {
+      const services = messageServices(message);
+      const known = services
+        .map(service => FOCUS_BY_SERVICE.get(service)?.slug)
+        .filter(Boolean);
+      const hasOther = !services.length || services.some(service => !FOCUS_BY_SERVICE.has(service));
+      return hasOther ? [...new Set([...known, "other"])] : [...new Set(known)];
+    };
+    const getAvailableFocuses = () => {
+      const counts = new Map();
+      DATA.messages.forEach(message => getMessageFocusSlugs(message).forEach(slug => {
+        counts.set(slug, (counts.get(slug) || 0) + 1);
+      }));
+      const known = SERVICE_FOCUSES.map(focus => ({ ...focus, count: counts.get(focus.slug) || 0 }));
+      return counts.get("other")
+        ? [...known, { slug: "other", label: "その他のサービス", count: counts.get("other") }]
+        : known;
+    };
+    const AVAILABLE_FOCUSES = getAvailableFocuses();
+    const FOCUS_BY_SLUG = new Map(AVAILABLE_FOCUSES.map(focus => [focus.slug, focus]));
+    const normalizeFocuses = values => [...new Set(
+      String(values || "")
+        .split(",")
+        .map(value => value.trim().toLowerCase())
+        .filter(slug => FOCUS_BY_SLUG.has(slug))
+    )].sort((left, right) => (FOCUS_ORDER.get(left) ?? SERVICE_FOCUSES.length) - (FOCUS_ORDER.get(right) ?? SERVICE_FOCUSES.length));
+    const focusValuesFromUrl = () => new URL(window.location.href).searchParams.getAll("focus").join(",");
+    const readFocusesFromUrl = () => normalizeFocuses(focusValuesFromUrl());
+    function writeFocusesToUrl(mode) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("focus");
+      if (state.focuses.length) url.searchParams.set("focus", state.focuses.join(","));
+      history[mode](null, "", url);
+    }
+    function normalizeFocusUrlOnLoad() {
+      const raw = focusValuesFromUrl();
+      state.focuses = normalizeFocuses(raw);
+      const canonical = state.focuses.join(",");
+      if (raw !== canonical) writeFocusesToUrl("replaceState");
+    }
+    const messageDomId = message => `message-${String(message.id ?? "").replace(/[^A-Za-z0-9_-]/g, character => `-${character.codePointAt(0).toString(16)}-`)}`;
+    const hasActiveConditions = () => state.focuses.length || state.filter !== "all" || state.query;
+    const filterLabel = () => ({
+      major: "重要な変更",
+      due: "対応期限が記載",
+      high: "高重要度"
+    })[state.filter];
+    const describeConditions = () => {
+      const conditions = [];
+      if (state.focuses.length) conditions.push(state.focuses.map(slug => FOCUS_BY_SLUG.get(slug).label).join("、"));
+      if (state.filter !== "all") conditions.push(filterLabel());
+      if (state.query) conditions.push(`検索「${state.query}」`);
+      return conditions.length ? conditions.join("、") : "すべての公開済み更新";
+    };
     const safeOfficialUrl = value => {
       try {
         const url = new URL(value);
@@ -360,9 +509,13 @@ $html = @'
       }
     };
 
-    document.getElementById("generated").textContent = `Updated ${fmt(DATA.meta.generatedAt)}`;
+    document.getElementById("generated").textContent = `更新 ${fmt(DATA.meta.generatedAt)}`;
     document.getElementById("source-status").textContent =
-      DATA.meta.source === "fixture" ? "Synthetic preview data" : "Live Microsoft Graph metadata";
+      DATA.meta.source === "fixture" ? "合成プレビュー データ" : "Microsoft Graph の公開スナップショット";
+    document.getElementById("context-generated").textContent = fmt(DATA.meta.generatedAt);
+    document.getElementById("context-total").textContent = `${DATA.summary.total} 件`;
+    document.getElementById("context-source").textContent =
+      DATA.meta.source === "fixture" ? "合成プレビュー" : "Microsoft Graph";
     document.getElementById("metric-total").textContent = DATA.summary.total;
     document.getElementById("metric-major").textContent = DATA.summary.majorChanges;
     document.getElementById("metric-due").textContent = DATA.summary.actionDueWithin30Days;
@@ -385,10 +538,6 @@ $html = @'
       : `<h2 class="insight-headline">週次要約を準備中です。</h2>
          <p class="insight-pending">初回のGitHub Agentic Workflow完了後、ここに重要変更・期限・推奨アクションが表示されます。</p>`;
 
-    document.getElementById("services").innerHTML = DATA.topServices.length
-      ? DATA.topServices.map(service => `<article class="service"><strong>${service.count}</strong><span>${escapeHtml(service.name)}</span></article>`).join("")
-      : `<div class="empty">サービス情報はありません。</div>`;
-
     function matches(message) {
       const details = Array.isArray(message.details) ? message.details : [];
       const haystack = [
@@ -401,25 +550,86 @@ $html = @'
         ...(message.services || []),
         ...details.flatMap(detail => [detail.name, detail.value])
       ].join(" ").toLowerCase();
-      if (state.query && !haystack.includes(state.query)) return false;
+      if (state.query && !haystack.includes(state.query.toLowerCase())) return false;
+      if (state.focuses.length && !getMessageFocusSlugs(message).some(slug => state.focuses.includes(slug))) return false;
       if (state.filter === "major" && !message.isMajorChange) return false;
       if (state.filter === "due" && !message.actionRequiredByDateTime) return false;
       if (state.filter === "high" && !["high", "critical"].includes(String(message.severity).toLowerCase())) return false;
       return true;
     }
 
+    function renderFocusControls() {
+      document.getElementById("service-filters").innerHTML = AVAILABLE_FOCUSES.map(focus => `
+        <label class="service-filter${state.focuses.includes(focus.slug) ? " active" : ""}">
+          <input type="checkbox" data-focus="${escapeHtml(focus.slug)}" ${state.focuses.includes(focus.slug) ? "checked" : ""}>
+          <span>${escapeHtml(focus.label)} <span class="service-filter-count">${focus.count} 件</span></span>
+        </label>
+      `).join("");
+      document.getElementById("services").innerHTML = AVAILABLE_FOCUSES.length
+        ? AVAILABLE_FOCUSES.map(focus => `<button class="service" type="button" data-focus-toggle="${escapeHtml(focus.slug)}" aria-pressed="${state.focuses.includes(focus.slug)}"><strong>${focus.count}</strong><span>${escapeHtml(focus.label)}</span></button>`).join("")
+        : `<div class="empty">サービス情報はありません。</div>`;
+      const otherFocus = FOCUS_BY_SLUG.get("other");
+      document.getElementById("service-filter-help").textContent = otherFocus
+        ? `サービスを選択しない場合は、すべての公開済み更新を表示します。${otherFocus.count} 件は「その他のサービス」として確認できます。`
+        : "サービスを選択しない場合は、すべての公開済み更新を表示します。";
+      document.querySelectorAll(".filter").forEach(button => {
+        const active = button.dataset.filter === state.filter;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+    }
+
+    function priorityComparison(left, right) {
+      const leftDue = Boolean(left.actionRequiredByDateTime);
+      const rightDue = Boolean(right.actionRequiredByDateTime);
+      if (leftDue !== rightDue) return leftDue ? -1 : 1;
+      if (leftDue) {
+        const deadlineDifference = Date.parse(left.actionRequiredByDateTime) - Date.parse(right.actionRequiredByDateTime);
+        if (deadlineDifference) return deadlineDifference;
+      }
+      if (Boolean(left.isMajorChange) !== Boolean(right.isMajorChange)) return left.isMajorChange ? -1 : 1;
+      const updatedDifference = Date.parse(right.lastModifiedDateTime || 0) - Date.parse(left.lastModifiedDateTime || 0);
+      return updatedDifference || String(left.id).localeCompare(String(right.id));
+    }
+
+    function renderPriorities(visible) {
+      const priorities = visible
+        .filter(message => message.actionRequiredByDateTime || message.isMajorChange)
+        .sort(priorityComparison)
+        .slice(0, 4);
+      document.getElementById("priority-scope").textContent = hasActiveConditions()
+        ? "現在の絞り込み結果から表示"
+        : "公開スナップショット全体から表示";
+      document.getElementById("priorities").innerHTML = priorities.length ? priorities.map(message => {
+        const update = MESSAGE_UPDATES.get(String(message.id).toUpperCase());
+        const reasons = [
+          message.actionRequiredByDateTime ? `<span class="chip due">対応期限が記載: ${fmt(message.actionRequiredByDateTime)}</span>` : "",
+          message.isMajorChange ? `<span class="chip major">重要な変更</span>` : ""
+        ].filter(Boolean).join("");
+        return `<article class="priority-card">
+          <div class="message-id">${escapeHtml(message.id)}</div>
+          <h3>${escapeHtml(update?.japaneseTitle || message.japaneseTitle || message.title)}</h3>
+          <div class="priority-reasons">${reasons}</div>
+          <a href="#${escapeHtml(messageDomId(message))}">一覧の Message Center 更新を確認</a>
+        </article>`;
+      }).join("") : `<div class="empty"><p>現在の表示条件では、「対応期限が記載」または「重要な変更」に該当する更新はありません。</p>${hasActiveConditions() ? `<button class="clear-filters" type="button" data-clear-filters>条件をすべてクリア</button>` : ""}</div>`;
+    }
+
     function render() {
       const visible = DATA.messages.filter(matches);
-      document.getElementById("result-count").textContent = `${visible.length} / ${DATA.messages.length} messages`;
+      const conditionText = describeConditions();
+      document.getElementById("result-count").textContent = `${conditionText}。${visible.length} / ${DATA.messages.length} 件を表示しています。`;
+      renderFocusControls();
+      renderPriorities(visible);
       document.getElementById("messages").innerHTML = visible.length ? visible.map(message => {
         const update = MESSAGE_UPDATES.get(String(message.id).toUpperCase());
         const translation = MESSAGE_TRANSLATIONS.get(String(message.id).toUpperCase());
         const high = ["high", "critical"].includes(String(message.severity).toLowerCase());
         const chips = [
-          message.isMajorChange ? `<span class="chip major">Major change</span>` : "",
+          message.isMajorChange ? `<span class="chip major">重要な変更</span>` : "",
           high ? `<span class="chip high">${escapeHtml(message.severity)}</span>` : "",
-          message.actionRequiredByDateTime ? `<span class="chip due">Action ${fmt(message.actionRequiredByDateTime)}</span>` : "",
-          `<span class="chip">${escapeHtml(message.category || "Uncategorized")}</span>`,
+          message.actionRequiredByDateTime ? `<span class="chip due">対応期限が記載: ${fmt(message.actionRequiredByDateTime)}</span>` : "",
+          `<span class="chip">${escapeHtml(message.category || "未分類")}</span>`,
           ...(message.services || []).map(service => `<span class="chip">${escapeHtml(service)}</span>`)
         ].filter(Boolean).join("");
         const body = message.bodyText
@@ -455,7 +665,7 @@ $html = @'
             : "",
           ...learnLinks
         ].filter(Boolean).join("");
-        return `<article class="message">
+        return `<article class="message" id="${escapeHtml(messageDomId(message))}">
           <div class="message-top">
             <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(update?.japaneseTitle || message.japaneseTitle || "日本語タイトルを準備中")}</h3><div class="message-original">原題: ${escapeHtml(message.title)}</div><div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
@@ -465,19 +675,50 @@ $html = @'
           ${fullContent}
           ${translationContent}
         </article>`;
-      }).join("") : `<div class="panel empty">条件に一致するメッセージはありません。</div>`;
+      }).join("") : `<div class="panel empty"><p>${escapeHtml(conditionText)}に一致するメッセージはありません。</p><button class="clear-filters" type="button" data-clear-filters>条件をすべてクリア</button></div>`;
+    }
+
+    function toggleFocus(slug) {
+      state.focuses = state.focuses.includes(slug)
+        ? state.focuses.filter(value => value !== slug)
+        : normalizeFocuses([...state.focuses, slug].join(","));
+      writeFocusesToUrl("pushState");
+      render();
+    }
+
+    function clearFilters() {
+      state.focuses = [];
+      state.filter = "all";
+      state.query = "";
+      document.getElementById("search").value = "";
+      writeFocusesToUrl("pushState");
+      render();
     }
 
     document.getElementById("search").addEventListener("input", event => {
-      state.query = event.target.value.trim().toLowerCase();
+      state.query = event.target.value.trim();
       render();
     });
     document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
-      document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
-      button.classList.add("active");
       state.filter = button.dataset.filter;
       render();
     }));
+    document.getElementById("service-filters").addEventListener("change", event => {
+      const checkbox = event.target.closest("input[data-focus]");
+      if (checkbox) toggleFocus(checkbox.dataset.focus);
+    });
+    document.getElementById("services").addEventListener("click", event => {
+      const button = event.target.closest("button[data-focus-toggle]");
+      if (button) toggleFocus(button.dataset.focusToggle);
+    });
+    document.addEventListener("click", event => {
+      if (event.target.closest("[data-clear-filters]") || event.target.closest("#clear-filters")) clearFilters();
+    });
+    window.addEventListener("popstate", () => {
+      state.focuses = readFocusesFromUrl();
+      render();
+    });
+    normalizeFocusUrlOnLoad();
     render();
   </script>
 </body>
