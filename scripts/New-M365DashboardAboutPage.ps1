@@ -80,6 +80,7 @@ $html = @'
     <section class="panel">
       <h2>認証と公開の境界</h2>
       <ol class="flow">
+        <li><strong>テスト テナントと取得方法:</strong> 表示する Message Center データは、個人検証用テスト テナントから取得しています。Microsoft Entra アプリケーションがアプリケーション専用アクセスで収集しており、特定の Microsoft 365 ユーザーのサインインを通じた取得ではありません。この静的ダッシュボードは本番テナントでの判断に用いるシステムではありません。</li>
         <li><strong>Microsoft Entra ID と Microsoft Graph:</strong> GitHub Actions は OIDC で Microsoft Entra ID に認証し、管理者が同意した Microsoft Graph の読み取り専用のアプリケーション権限で Message Center を取得します。パスワード、アクセストークン、認証情報は公開データに含めません。</li>
         <li><strong>GitHub Actions と GitHub Pages:</strong> 取得したデータは credential-like 値を除外または redaction し、検証した snapshot だけを静的ページとして公開します。このダッシュボードの閲覧に Microsoft Graph へのサインインは必要ありません。</li>
         <li><strong>GitHub Agentic Workflows:</strong> エージェントには同じ run の、範囲を限定して redaction 済みの snapshot だけを渡し、日本語の要約と翻訳を作成します。公開前に publisher が snapshot との一致や安全性を検証するため、エージェントの出力だけで公開されることはありません。</li>
