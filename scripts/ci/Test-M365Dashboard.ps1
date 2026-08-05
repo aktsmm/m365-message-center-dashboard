@@ -481,6 +481,16 @@ try {
         throw 'Automation explanation page was not generated.'
     }
     $aboutHtml = Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8
+    if ($aboutHtml -notmatch '認証と公開の境界' -or
+        $aboutHtml -notmatch 'Microsoft Entra ID' -or
+        $aboutHtml -notmatch 'OIDC' -or
+        $aboutHtml -notmatch 'Microsoft Graph の読み取り専用のアプリケーション権限' -or
+        $aboutHtml -notmatch 'GitHub Pages' -or
+        $aboutHtml -notmatch '同じ run の、範囲を限定して redaction 済みの snapshot' -or
+        $aboutHtml -notmatch 'snapshot との一致や安全性を検証' -or
+        $aboutHtml -match 'COPILOT_GITHUB_TOKEN') {
+        throw 'About page does not accurately document the public authentication and agent-validation boundary.'
+    }
     if ($aboutHtml -notmatch 'scoutTheme' -or
         $aboutHtml -notmatch 'localStorage\.getItem\("scoutTheme"\)' -or
         $aboutHtml -notmatch 'theme-toggle' -or
@@ -708,9 +718,14 @@ try {
         $aboutGenerator -notmatch '最大8カード/週' -or
         $aboutGenerator -notmatch '各カードにある「日本語訳と詳細要約」' -or
         $aboutGenerator -match '74/74' -or
-        $aboutGenerator -notmatch 'COPILOT_GITHUB_TOKEN' -or
+        $aboutGenerator -notmatch 'Microsoft Entra ID' -or
+        $aboutGenerator -notmatch 'OIDC' -or
+        $aboutGenerator -notmatch 'Microsoft Graph の読み取り専用のアプリケーション権限' -or
+        $aboutGenerator -notmatch 'GitHub Pages' -or
+        $aboutGenerator -notmatch '範囲を限定して redaction 済みの snapshot' -or
+        $aboutGenerator -match 'COPILOT_GITHUB_TOKEN' -or
         $aboutGenerator -notmatch 'OS の色設定には追従しません') {
-        throw 'Operator documentation does not describe the current automation, translation, authentication, and theme contracts.'
+        throw 'Public documentation does not describe the current automation, authentication, agent-validation, and theme contracts.'
     }
     if (-not $agentWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
         $agentWorkflow.Contains('copilot-requests: write') -or
