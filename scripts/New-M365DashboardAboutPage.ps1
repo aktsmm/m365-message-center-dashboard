@@ -78,9 +78,16 @@ $html = @'
       </ol>
     </section>
     <section class="panel">
+      <h2>認証と公開の境界</h2>
+      <ol class="flow">
+        <li><strong>Microsoft Entra ID と Microsoft Graph:</strong> GitHub Actions は OIDC で Microsoft Entra ID に認証し、管理者が同意した Microsoft Graph の読み取り専用のアプリケーション権限で Message Center を取得します。パスワード、アクセストークン、認証情報は公開データに含めません。</li>
+        <li><strong>GitHub Actions と GitHub Pages:</strong> 取得したデータは credential-like 値を除外または redaction し、検証した snapshot だけを静的ページとして公開します。このダッシュボードの閲覧に Microsoft Graph へのサインインは必要ありません。</li>
+        <li><strong>GitHub Agentic Workflows:</strong> エージェントには同じ run の、範囲を限定して redaction 済みの snapshot だけを渡し、日本語の要約と翻訳を作成します。公開前に publisher が snapshot との一致や安全性を検証するため、エージェントの出力だけで公開されることはありません。</li>
+      </ol>
+    </section>
+    <section class="panel">
       <h2>手動で更新するには</h2>
       <p>GitHub Actions の <strong>M365 Message Center Dashboard - Public Metadata</strong> を main ブランチで手動実行します。月曜日・木曜日 07:17 JST の定期実行と同じく、成功後に core Agentic Workflow、さらに成功後の translations Workflow が順に Pages を更新します。</p>
-      <p>この個人所有リポジトリの Agentic Workflow engine は、fine-grained PAT を <code>COPILOT_GITHUB_TOKEN</code> のリポジトリ secret として使います。組み込み <code>GITHUB_TOKEN</code> や組織専用の <code>copilot-requests: write</code> 課金フローには切り替えません。provider HTTP 403 で失敗する場合は、token identity または Copilot access が認可されていることを確認してください。認可前に再実行しても Agentic 出力は公開されません。</p>
       <p>詳細な日本語要約と本文訳の進捗は、公開ダッシュボードの各カードにある「日本語訳と詳細要約」で確認できます。未検証の訳文は表示せず、公開済みの検証済み訳文だけを保持します。</p>
     </section>
     <section class="panel">
