@@ -1,18 +1,18 @@
 {
   "meta": {
-    "runId": "31017160158",
-    "generatedAt": "2026-08-05T14:49:45.8425985+00:00",
+    "runId": "31055872919",
+    "generatedAt": "2026-08-05T23:18:27.3218178+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 74,
+    "total": 73,
     "majorChanges": 20,
     "highSeverity": 0,
     "actionRequired": 6,
     "actionDueWithin30Days": 2,
-    "updatedLast7Days": 10
+    "updatedLast7Days": 12
   },
   "topServices": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "name": "Microsoft 365 Copilot Chat",
-      "count": 28
+      "count": 27
     },
     {
       "name": "Microsoft Entra",
@@ -29,6 +29,62 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1441781",
+      "title": "(Updated) Add and upload your custom skills to OneDrive from within PowerPoint Copilot (Mac)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-28T23:21:40.0000000+00:00",
+      "endDateTime": "2026-09-21T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-08-05T22:14:13.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated August 5, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nPowerPoint Copilot users can now upload custom skills directly from the Copilot experience and create new custom skills within PowerPoint. Custom skills are user-created instructions that extend and tailor Copilot behavior for specific tasks and workflows. Uploaded and added skills are saved to the user's personal OneDrive and are available for that user's personal use in PowerPoint Copilot. This enhancement streamlines skill creation and management by allowing users to customize Copilot directly within their workflow.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout begins in late July 2026 and is expected to complete by mid-August 2026 (previously early August).\n[Impact on Your Organization:]\nWho is affected:\n• Users licensed for Microsoft 365 Copilot in PowerPoint.\n• Users who create or use personal custom skills.\n• Microsoft 365 administrators supporting Copilot deployments.\nPlatforms/Services:\n• PowerPoint\n• Microsoft 365 Copilot\n• OneDrive\n• Mac\nWhat will happen:\n• Users can access a new Manage skills experience to view and manage their personal custom skills.\n• Users will be able to upload custom skills directly from the PowerPoint Copilot experience.\nScreenshot: Users can upload existing custom skill files from the Upload skill experience. Uploaded skills are stored in the user's personal OneDrive:\n• Users will be able to create custom skills directly within PowerPoint Copilot.\n• Uploaded and added skills will be stored in the user's personal OneDrive.\n• Custom skills are personal and available only to the user who creates or uploads them.\n• Created and uploaded skills will be available for use within PowerPoint Copilot.\n• The feature is available by default for eligible users when rollout reaches the tenant.\n[Action Required/Recommendations:]\nNo immediate administrator action is required.\nWe recommend that you:\n• Review any internal governance processes related to user-created Copilot skills.\n• Update internal documentation and training materials as appropriate.\n• Inform helpdesk and support teams about the new skill upload and creation experiences.\nLearn more: Use custom skills with Copilot in PowerPoint | Microsoft Support (will be updated before rollout)\n[Compliance considerations:]\nCompliance area\nExplanation\nStores new customer data\nCustom skills created or uploaded by users are stored in the user's personal OneDrive.\nChanges data processing or access\nUsers can create and upload custom skills that are used by PowerPoint Copilot during Copilot interactions.\nIntroduces AI/ML capabilities\nCustom skills extend how Microsoft 365 Copilot responds and interacts within PowerPoint.\nNew generative AI interaction\nUsers can create and upload custom skills to tailor their PowerPoint Copilot experience.\nAdmin or user controls\nUsers can create, upload, and manage their own personal custom skills.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "PowerPoint Copilot on Mac now lets users create, upload, and manage personal custom skills directly within the app, storing them in their OneDrive. This feature, rolling out worldwide from late July to mid-August 2026, enhances customization without requiring admin action."
+        }
+      ]
+    },
+    {
+      "id": "MC1441782",
+      "title": "(Updated) Upload or add a custom skill with Copilot in PowerPoint (Web)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-28T23:22:47.0000000+00:00",
+      "endDateTime": "2026-09-21T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-08-05T22:10:52.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated August 5, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nPowerPoint Copilot users can now upload custom skills directly from the Copilot experience and create new custom skills within PowerPoint. Custom skills are user-created instructions that extend and tailor Copilot behavior for specific tasks and workflows. Uploaded and added skills are saved to the user's personal OneDrive and are available for that user's personal use in PowerPoint Copilot. This enhancement streamlines skill creation and management by allowing users to customize Copilot directly within their workflow.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout begins in late July 2026 and is expected to complete by mid-August 2026 (previously early August).\n[Impact on Your Organization:]\nWho is affected:\n• Users licensed for Microsoft 365 Copilot in PowerPoint.\n• Users who create or use personal custom skills.\n• Microsoft 365 administrators supporting Copilot deployments.\nPlatforms/Services:\n• PowerPoint\n• Microsoft 365 Copilot\n• OneDrive\n• Web\nWhat will happen:\n• Users can access a new Manage skills experience to view and manage their personal custom skills.\n• Users will be able to upload custom skills directly from the PowerPoint Copilot experience.\nScreenshot: Users can upload existing custom skill files from the Upload skill experience. Uploaded skills are stored in the user's personal OneDrive:\n• Users will be able to create custom skills directly within PowerPoint Copilot.\n• Uploaded and added skills will be stored in the user's personal OneDrive.\n• Custom skills are personal and available only to the user who creates or uploads them.\n• Created and uploaded skills will be available for use within PowerPoint Copilot.\n• The feature is available by default for eligible users when rollout reaches the tenant.\n[Action Required/Recommendations:]\nNo immediate administrator action is required.\nWe recommend that you:\n• Review any internal governance processes related to user-created Copilot skills.\n• Update internal documentation and training materials as appropriate.\n• Inform helpdesk and support teams about the new skill upload and creation experiences.\nLearn more: Use custom skills with Copilot in PowerPoint | Microsoft Support (will be updated before rollout)\n[Compliance considerations:]\nCompliance area\nExplanation\nStores new customer data\nCustom skills created or uploaded by users are stored in the user's personal OneDrive.\nChanges data processing or access\nUsers can create and upload custom skills that are used by PowerPoint Copilot during Copilot interactions.\nIntroduces AI/ML capabilities\nCustom skills extend how Microsoft 365 Copilot responds and interacts within PowerPoint.\nNew generative AI interaction\nUsers can create and upload custom skills to tailor their PowerPoint Copilot experience.\nAdmin or user controls\nUsers can create, upload, and manage their own personal custom skills.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "PowerPoint Copilot users can now upload and create personal custom skills directly within PowerPoint on the web, stored in their OneDrive. This feature, rolling out worldwide from late July to mid-August 2026, enhances customization without requiring admin action but recommends updating governance and support materials."
+        }
+      ]
+    },
     {
       "id": "MC1447683",
       "title": "Microsoft 365 Copilot: Scheduled Prompts moves to Microsoft 365 Connected Experiences",
@@ -337,60 +393,6 @@
       "details": []
     },
     {
-      "id": "MC1441782",
-      "title": "Upload or add a custom skill with Copilot in PowerPoint (Web)",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-28T23:22:47.0000000+00:00",
-      "endDateTime": "2026-09-04T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-28T23:22:54.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nPowerPoint Copilot users can now upload custom skills directly from the Copilot experience and create new custom skills within PowerPoint. Custom skills are user-created instructions that extend and tailor Copilot behavior for specific tasks and workflows. Uploaded and added skills are saved to the user's personal OneDrive and are available for that user's personal use in PowerPoint Copilot. This enhancement streamlines skill creation and management by allowing users to customize Copilot directly within their workflow.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout begins in late July 2026 and is expected to complete by early August 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Users licensed for Microsoft 365 Copilot in PowerPoint.\n• Users who create or use personal custom skills.\n• Microsoft 365 administrators supporting Copilot deployments.\nPlatforms/Services:\n• PowerPoint\n• Microsoft 365 Copilot\n• OneDrive\n• Web\nWhat will happen:\n• Users can access a new Manage skills experience to view and manage their personal custom skills.\n• Users will be able to upload custom skills directly from the PowerPoint Copilot experience.\nScreenshot: Users can upload existing custom skill files from the Upload skill experience. Uploaded skills are stored in the user's personal OneDrive:\n• Users will be able to create custom skills directly within PowerPoint Copilot.\n• Uploaded and added skills will be stored in the user's personal OneDrive.\n• Custom skills are personal and available only to the user who creates or uploads them.\n• Created and uploaded skills will be available for use within PowerPoint Copilot.\n• The feature is available by default for eligible users when rollout reaches the tenant.\n[Action Required/Recommendations:]\nNo immediate administrator action is required.\nWe recommend that you:\n• Review any internal governance processes related to user-created Copilot skills.\n• Update internal documentation and training materials as appropriate.\n• Inform helpdesk and support teams about the new skill upload and creation experiences.\nLearn more: Use custom skills with Copilot in PowerPoint | Microsoft Support (will be updated before rollout)\n[Compliance considerations:]\nCompliance area\nExplanation\nStores new customer data\nCustom skills created or uploaded by users are stored in the user's personal OneDrive.\nChanges data processing or access\nUsers can create and upload custom skills that are used by PowerPoint Copilot during Copilot interactions.\nIntroduces AI/ML capabilities\nCustom skills extend how Microsoft 365 Copilot responds and interacts within PowerPoint.\nNew generative AI interaction\nUsers can create and upload custom skills to tailor their PowerPoint Copilot experience.\nAdmin or user controls\nUsers can create, upload, and manage their own personal custom skills.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "PowerPoint Copilot users can upload and create personal custom skills directly within PowerPoint (Web), stored in their OneDrive for tailored use. This feature, rolling out worldwide from late July to early August 2026, requires no admin action but may need internal process updates."
-        }
-      ]
-    },
-    {
-      "id": "MC1441781",
-      "title": "Add and upload your custom skills to OneDrive from within PowerPoint Copilot (Mac)",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-28T23:21:40.0000000+00:00",
-      "endDateTime": "2026-09-04T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-28T23:21:46.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nPowerPoint Copilot users can now upload custom skills directly from the Copilot experience and create new custom skills within PowerPoint. Custom skills are user-created instructions that extend and tailor Copilot behavior for specific tasks and workflows. Uploaded and added skills are saved to the user's personal OneDrive and are available for that user's personal use in PowerPoint Copilot. This enhancement streamlines skill creation and management by allowing users to customize Copilot directly within their workflow.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout begins in late July 2026 and is expected to complete by early August 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Users licensed for Microsoft 365 Copilot in PowerPoint.\n• Users who create or use personal custom skills.\n• Microsoft 365 administrators supporting Copilot deployments.\nPlatforms/Services:\n• PowerPoint\n• Microsoft 365 Copilot\n• OneDrive\n• Mac\nWhat will happen:\n• Users can access a new Manage skills experience to view and manage their personal custom skills.\n• Users will be able to upload custom skills directly from the PowerPoint Copilot experience.\nScreenshot: Users can upload existing custom skill files from the Upload skill experience. Uploaded skills are stored in the user's personal OneDrive:\n• Users will be able to create custom skills directly within PowerPoint Copilot.\n• Uploaded and added skills will be stored in the user's personal OneDrive.\n• Custom skills are personal and available only to the user who creates or uploads them.\n• Created and uploaded skills will be available for use within PowerPoint Copilot.\n• The feature is available by default for eligible users when rollout reaches the tenant.\n[Action Required/Recommendations:]\nNo immediate administrator action is required.\nWe recommend that you:\n• Review any internal governance processes related to user-created Copilot skills.\n• Update internal documentation and training materials as appropriate.\n• Inform helpdesk and support teams about the new skill upload and creation experiences.\nLearn more: Use custom skills with Copilot in PowerPoint | Microsoft Support (will be updated before rollout)\n[Compliance considerations:]\nCompliance area\nExplanation\nStores new customer data\nCustom skills created or uploaded by users are stored in the user's personal OneDrive.\nChanges data processing or access\nUsers can create and upload custom skills that are used by PowerPoint Copilot during Copilot interactions.\nIntroduces AI/ML capabilities\nCustom skills extend how Microsoft 365 Copilot responds and interacts within PowerPoint.\nNew generative AI interaction\nUsers can create and upload custom skills to tailor their PowerPoint Copilot experience.\nAdmin or user controls\nUsers can create, upload, and manage their own personal custom skills.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "PowerPoint Copilot on Mac will let users create, upload, and manage personal custom skills directly within the app, saving them to their OneDrive for personal use. This feature rolls out worldwide from late July to early August 2026, requiring no immediate admin action."
-        }
-      ]
-    },
-    {
       "id": "MC1440976",
       "title": "Microsoft 365 Copilot: Retirement of role-to-skill mapping files in People Skills",
       "category": "planForChange",
@@ -627,34 +629,6 @@
         {
           "name": "Summary",
           "value": "Microsoft is auto-upgrading shared calendars in Outlook and Exchange Online from the legacy MAPI model to a modern REST model, improving sync reliability and performance. The seamless, server-side rollout begins August 2026 for GCC High/DoD tenants, requires no user action, preserves permissions, and excludes events older than one year."
-        }
-      ]
-    },
-    {
-      "id": "MC1419795",
-      "title": "(Updated) PowerPoint for the web: One‑click “Review Presentation” and “Visualize Slide” Copilot skills in the ribbon",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-07T22:31:17.0000000+00:00",
-      "endDateTime": "2026-08-07T22:31:17.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-20T23:02:51.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated July 20, 2026: We have updated the content. Thank you for your patience.\n[What and Why:]\nWe are introducing one-click Copilot entry points in PowerPoint for the web through two new ribbon skills: Review Presentation (Review tab) and Visualize Slide (Design tab). These capabilities make it easier for users to quickly access Copilot-powered assistance directly within their workflow—helping improve presentation quality, accelerate content refinement, and enhance visual storytelling. This update supports personal and team productivity by turning intent into results with minimal friction.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout began in late June 2026 and is expected to complete by early July 2026\n[Impact on Your Organization:]\nWho is affected:\n• Users with access to Copilot in PowerPoint for the web\n• Admins managing Microsoft 365 Apps and Copilot configurations\nPlatforms/Services: PowerPoint for the web\nWhat will happen:\n• Users will see:\n• A new “Review Presentation” button in the Review ribbon tab.\nScreenshot - New Review Presentation button\n• A new “Visualize Slide” button in the Design ribbon tab.\nScreenshot - New Visualize Slide button\n• These provides one-click activation to Copilot capabilities.\n• Visualize Slide requires image generation capability enabled by admin.\n• Feature is available when prerequisites are met; no additional setup required.\n[Action Required/Recommendations:]\n•\nNo action is required if your organization already uses Copilot and image generation is enabled.\nIf you want users to fully benefit from this feature:\n• Confirm Copilot licensing for intended users.\n• Enable image generation in Microsoft 365 Apps admin center.\n• Communicate the update to users.\n• Update internal documentation and training materials.\nLearn more: Edit with Copilot in PowerPoint | Microsoft Support\n[Compliance considerations:]\nCompliance AreaExplanation\nIntroduces AI/ML capabilities interacting with customer dataThese features are Copilot-powered and analyze slide content to provide feedback and generate visuals, which involves AI processing of customer presentation data.\nNew way for users to interact with generative AIUsers can directly trigger Copilot capabilities from the ribbon to review presentations and generate slide visuals with one click.\nAdmin control availableUse depends on Copilot licensing and enabling image generation via the Microsoft 365 Apps admin center, indicating partial administrative control.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "PowerPoint for the web introduces one-click Copilot buttons—“Review Presentation” and “Visualize Slide”—in the ribbon to enhance presentation quality and visual storytelling. Rolling out worldwide by early July 2026, these features require Copilot licensing and image generation enabled by admins, with no additional user setup needed."
         }
       ]
     },
