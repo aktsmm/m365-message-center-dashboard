@@ -1,7 +1,7 @@
 {
   "meta": {
-    "runId": "31055872919",
-    "generatedAt": "2026-08-05T23:18:27.3218178+00:00",
+    "runId": "31055916433",
+    "generatedAt": "2026-08-05T23:19:43.7005320+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
@@ -12,7 +12,7 @@
     "highSeverity": 0,
     "actionRequired": 6,
     "actionDueWithin30Days": 2,
-    "updatedLast7Days": 12
+    "updatedLast7Days": 13
   },
   "topServices": [
     {
@@ -29,6 +29,43 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1187682",
+      "title": "(Updated) Microsoft Edge: Microsoft 365 Copilot will support summarization and contextual grounding",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-11-18T16:21:30.0000000+00:00",
+      "endDateTime": "2026-09-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-08-05T23:17:09.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated August 5, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction:]\nMicrosoft Edge for Business will soon support summarization and contextual grounding with Microsoft 365 Copilot Chat. This enhancement enables users to ask Copilot questions about multiple open browser tabs, Microsoft 365 documents (such as Word, Excel, PowerPoint), and YouTube videos directly from the Edge side pane.\nThis message is associated with Microsoft 365 Roadmap ID 496364, 499423, and 499424.\n[When this will happen:]\n• General Availability (Multiple browser tabs and YouTube videos): Currently Available\n• General Availability (Microsoft 365 documents): Rollout is expected to begin by end of August 2026\n[How this affects your organization:]\nWho is affected: Users signed in to Microsoft Edge for Business with their Entra ID and who have access to Microsoft 365 Copilot.\nWhat will happen:\n• Users will be able to ask Copilot questions about open browser tabs, Microsoft 365 documents, and YouTube videos.\n• The feature will be off by default.\n• If Copilot is restricted from accessing page content via Data Loss Prevention (DLP) or the EdgeEntraCopilotPageContext policy, it will be suppressed to maintain DLP integrity.\n• Existing DLP and policy configurations will be respected.\n[What you can do to prepare:]\n• This rollout will happen automatically by the specified date; no admin action is required before rollout.\n• Ensure users who need this capability have access to Microsoft 365 Copilot.\n• Ensure your tenant is configured to support Microsoft 365 Copilot and that eligible users meet all licensing prerequisites, including Entra ID sign-in and applicable Microsoft 365 service plans.\n• Review your current DLP and Edge policy configurations to determine potential impact.\n• Notify users about this upcoming capability.\n• Update internal documentation if needed.\nLearn more:\n• Microsoft 365 Copilot Chat in Edge and Access to Page Content | Microsoft Edge | Microsoft Learn\n• Microsoft Edge - Policies | Microsoft Edge | Microsoft Learn\n[Compliance considerations:]\nQuestionAnswer\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Microsoft 365 Copilot introduces contextual grounding and summarization using generative AI across browser tabs, Microsoft 365 documents, and YouTube videos.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can now ask Copilot questions about open browser tabs and documents directly from the Edge sidepane, enabling real-time summarization and contextual responses.\nDoes the change modify Data Loss Prevention (DLP) policies or enforcement?Yes. If DLP or the EdgeEntraCopilotPageContext policy restricts access, Copilot will be suppressed from accessing page content to maintain DLP integrity.\nDoes the change include an admin control, and can it be controlled through Entra ID group membership?Yes. Admins can manage access to Copilot’s contextual grounding capabilities via DLP settings and Edge policy configurations, which can be scoped using Entra ID group membership.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "496364,499423,499424"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft Edge for Business now supports Microsoft 365 Copilot Chat for summarizing and contextual grounding across browser tabs, Microsoft 365 documents, and YouTube videos. The feature is off by default, respects DLP policies, requires Entra ID sign-in, and will roll out fully by August 2026."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ]
+    },
     {
       "id": "MC1441781",
       "title": "(Updated) Add and upload your custom skills to OneDrive from within PowerPoint Copilot (Mac)",
@@ -1499,43 +1536,6 @@
         {
           "name": "Summary",
           "value": "Starting August 27, 2026, Microsoft Edge Stable channel will shift to a 2-week release cycle for faster, smaller updates. Extended Stable remains on an 8-week cycle. No admin changes are needed; organizations should prepare for more frequent updates and consider pilot testing on Beta."
-        }
-      ]
-    },
-    {
-      "id": "MC1187682",
-      "title": "(Updated) Microsoft Edge: Microsoft 365 Copilot will support summarization and contextual grounding",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-11-18T16:21:30.0000000+00:00",
-      "endDateTime": "2026-09-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-06-16T17:31:05.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated June 16, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction:]\nMicrosoft Edge for Business will soon support summarization and contextual grounding with Microsoft 365 Copilot Chat. This enhancement enables users to ask Copilot questions about multiple open browser tabs, Microsoft 365 documents (such as Word, Excel, PowerPoint), and YouTube videos directly from the Edge side pane.\nThis message is associated with Microsoft 365 Roadmap ID 496364, 499423, and 499424.\n[When this will happen:]\n• General Availability (Multiple browser tabs and YouTube videos): Currently Available\n• General Availability (Microsoft 365 documents): Rollout is expected to begin August 2026\n[How this affects your organization:]\nWho is affected: Users signed in to Microsoft Edge for Business with their Entra ID and who have access to Microsoft 365 Copilot.\nWhat will happen:\n• Users will be able to ask Copilot questions about open browser tabs, Microsoft 365 documents, and YouTube videos.\n• The feature will be off by default.\n• If Copilot is restricted from accessing page content via Data Loss Prevention (DLP) or the EdgeEntraCopilotPageContext policy, it will be suppressed to maintain DLP integrity.\n• Existing DLP and policy configurations will be respected.\n[What you can do to prepare:]\n• This rollout will happen automatically by the specified date; no admin action is required before rollout.\n• Ensure users who need this capability have access to Microsoft 365 Copilot.\n• Ensure your tenant is configured to support Microsoft 365 Copilot and that eligible users meet all licensing prerequisites, including Entra ID sign-in and applicable Microsoft 365 service plans.\n• Review your current DLP and Edge policy configurations to determine potential impact.\n• Notify users about this upcoming capability.\n• Update internal documentation if needed.\nLearn more:\n• Microsoft 365 Copilot Chat in Edge and Access to Page Content | Microsoft Edge | Microsoft Learn\n• Microsoft Edge - Policies | Microsoft Edge | Microsoft Learn\n[Compliance considerations:]\nQuestionAnswer\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Microsoft 365 Copilot introduces contextual grounding and summarization using generative AI across browser tabs, Microsoft 365 documents, and YouTube videos.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can now ask Copilot questions about open browser tabs and documents directly from the Edge sidepane, enabling real-time summarization and contextual responses.\nDoes the change modify Data Loss Prevention (DLP) policies or enforcement?Yes. If DLP or the EdgeEntraCopilotPageContext policy restricts access, Copilot will be suppressed from accessing page content to maintain DLP integrity.\nDoes the change include an admin control, and can it be controlled through Entra ID group membership?Yes. Admins can manage access to Copilot’s contextual grounding capabilities via DLP settings and Edge policy configurations, which can be scoped using Entra ID group membership.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "496364,499423,499424"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft Edge for Business now supports Microsoft 365 Copilot Chat for summarizing and contextual grounding across multiple browser tabs, YouTube videos (available), and Microsoft 365 documents (rolling out August 2026). The feature is off by default, respects DLP and policy settings, and requires Entra ID sign-in and Copilot access."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
         }
       ]
     },
