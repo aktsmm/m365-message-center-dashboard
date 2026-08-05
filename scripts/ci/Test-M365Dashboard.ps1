@@ -355,6 +355,80 @@ try {
     if ($html -match 'abcdefghijklmnopqrstuvwxyz|lab-secret-value|LAB_SCRIPT_MUST_NOT_RENDER|example\.com|<script[^>]+src=|<link[^>]+href=') {
         throw 'Credentials or external resources leaked into dashboard HTML.'
     }
+    $focusMessagesPath = Join-Path $temp 'focus-messages.json'
+    $focusDashboard = Join-Path $temp 'focus-dashboard.html'
+    $focusDocument = Get-Content -LiteralPath (Join-Path $temp 'messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $focusDocument.messages += @(
+        [pscustomobject]@{
+            id = 'MC900004'; title = 'Identity update'; category = 'PlanForChange'; severity = 'Normal'
+            isMajorChange = $true; startDateTime = '2026-07-19T00:00:00Z'; endDateTime = '2026-09-01T00:00:00Z'
+            lastModifiedDateTime = '2026-07-23T00:00:00Z'; actionRequiredByDateTime = '2026-07-30T00:00:00Z'
+            services = @('Microsoft Entra'); tags = @(); japaneseTitle = 'ID とアクセスの更新'
+            japaneseSummary = 'Microsoft Entra の公開済みサービス値に基づく更新です。'; bodyText = 'Identity body'; details = @()
+        },
+        [pscustomobject]@{
+            id = 'MC900005'; title = 'Copilot and identity update'; category = 'StayInformed'; severity = 'Normal'
+            isMajorChange = $false; startDateTime = '2026-07-18T00:00:00Z'; endDateTime = '2026-09-01T00:00:00Z'
+            lastModifiedDateTime = '2026-07-22T00:00:00Z'; actionRequiredByDateTime = $null
+            services = @('Microsoft 365 Copilot Chat', 'Microsoft Entra'); tags = @(); japaneseTitle = 'Copilot と ID の更新'
+            japaneseSummary = '複数サービスに該当する公開済み更新です。'; bodyText = 'Copilot body'; details = @()
+        },
+        [pscustomobject]@{
+            id = 'MC900006'; title = '<img src=x onerror=alert(1)>'; category = 'StayInformed'; severity = 'Normal'
+            isMajorChange = $false; startDateTime = '2026-07-17T00:00:00Z'; endDateTime = '2026-09-01T00:00:00Z'
+            lastModifiedDateTime = '2026-07-21T00:00:00Z'; actionRequiredByDateTime = $null
+            services = $null; tags = @(); japaneseTitle = ('サービス未指定の更新。' * 12)
+            japaneseSummary = 'サービス値がない公開済み更新です。'; bodyText = 'No service body'; details = @()
+        }
+    )
+    $focusDocument.summary.total = $focusDocument.messages.Count
+    $focusDocument.summary.majorChanges = @($focusDocument.messages | Where-Object isMajorChange).Count
+    $focusDocument.summary.actionRequired = @($focusDocument.messages | Where-Object actionRequiredByDateTime).Count
+    $focusDocument | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $focusMessagesPath -Encoding UTF8
+    & (Join-Path $root 'scripts\New-M365MessageCenterDashboard.ps1') `
+        -MessagesJson $focusMessagesPath `
+        -InsightsJson $publishedInsights `
+        -OutputPath $focusDashboard
+    $focusHtml = Get-Content -LiteralPath $focusDashboard -Raw -Encoding UTF8
+    $focusMap = @{
+        identity = 'Microsoft Entra'
+        copilot  = 'Microsoft 365 Copilot Chat'
+        m365     = 'Microsoft 365 suite'
+    }
+    $focusRecords = @($focusDocument.messages | ForEach-Object {
+        $services = @($_.services)
+        $slugs = @($focusMap.GetEnumerator() | Where-Object { $services -contains $_.Value } | ForEach-Object Key)
+        if (-not $services.Count -or @($services | Where-Object { $_ -notin $focusMap.Values }).Count) { $slugs += 'other' }
+        [pscustomobject]@{ Id = $_.id; Slugs = @($slugs | Sort-Object -Unique); Major = [bool]$_.isMajorChange }
+    })
+    $identityAndCopilot = @($focusRecords | Where-Object { $_.Slugs -contains 'identity' -or $_.Slugs -contains 'copilot' })
+    $multiServiceFocus = @($focusRecords | Where-Object Id -eq 'MC900005')[0]
+    $identityAndCopilotIds = @($identityAndCopilot | Select-Object -ExpandProperty Id)
+    if ($null -eq $multiServiceFocus -or
+        $multiServiceFocus.Slugs -notcontains 'identity' -or
+        $multiServiceFocus.Slugs -notcontains 'copilot' -or
+        $identityAndCopilotIds -notcontains 'MC900004' -or
+        $identityAndCopilotIds -notcontains 'MC900005' -or
+        @($focusRecords | Where-Object { $_.Id -eq 'MC900006' -and $_.Slugs -contains 'other' }).Count -ne 1) {
+        throw 'Fixture focus metadata does not cover OR matching, multi-service records, and missing services.'
+    }
+    if ($focusHtml -notmatch 'Microsoft Entra（ID・アクセス）|Microsoft 365 Copilot Chat|Microsoft 365 suite|その他のサービス' -or
+        $focusHtml -notmatch '<fieldset class="service-filter-set"|<legend>サービスを選択（複数選択可）</legend>|type="checkbox" data-focus=' -or
+        $focusHtml -notmatch 'role="status" aria-live="polite" aria-atomic="true"|条件をすべてクリア|data-clear-filters' -or
+        $focusHtml -notmatch 'priority-section|対応期限が記載|重要な変更|現在の絞り込み結果から表示' -or
+        $focusHtml -notmatch 'SERVICE_FOCUSES|function getMessageFocusSlugs|function normalizeFocusUrlOnLoad|function writeFocusesToUrl|history\[mode\]\(null, "", url\)|window\.addEventListener\("popstate"' -or
+        $focusHtml -notmatch 'function captureServiceControlFocus|#service-filters input\[data-focus\]|#services button\[data-focus-toggle\]|function restoreServiceControlFocus|focus\(\{ preventScroll: true \}\)|render\(\{ restoreServiceFocus: true \}\)|restorePersistentFocus' -or
+        $focusHtml -notmatch 'url\.searchParams\.delete\("focus"\)|url\.searchParams\.set\("focus", state\.focuses\.join\(","\)\)' -or
+        $focusHtml -notmatch 'state\.focuses\.length && !getMessageFocusSlugs\(message\)\.some' -or
+        $focusHtml -notmatch 'service: "Microsoft Entra"|service: "Microsoft 365 Copilot Chat"|service: "Microsoft 365 suite"' -or
+        $focusHtml -notmatch '\.service:focus-visible, \.filter:focus-visible, \.clear-filters:focus-visible') {
+        throw 'Dashboard focus filtering, URL restoration, priority, or accessibility contracts are missing.'
+    }
+    if ($focusHtml -match '<img src=x onerror=alert\(1\)>' -or
+        $focusHtml -notmatch '\\u003cimg src=x onerror=alert\(1\)\\u003e' -or
+        $focusHtml -notmatch 'escapeHtml\(update\?\.japaneseTitle \|\| message\.japaneseTitle \|\| "日本語タイトルを準備中"\)') {
+        throw 'Focus fixture title was not safely escaped in the generated dashboard.'
+    }
     $published = Get-Content -LiteralPath $publishedInsights -Raw -Encoding UTF8 | ConvertFrom-Json
     $publishedUpdates = @($published.messageUpdates)
     if ($publishedUpdates.Count -ne $messages.messages.Count) {
