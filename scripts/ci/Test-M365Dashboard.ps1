@@ -556,13 +556,17 @@ try {
     }
     $aboutHtml = Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8
     if ($aboutHtml -notmatch '認証と公開の境界' -or
+        $aboutHtml -notmatch '個人検証用テスト テナント' -or
+        $aboutHtml -notmatch 'アプリケーション専用アクセス' -or
+        $aboutHtml -notmatch '特定の Microsoft 365 ユーザーのサインインを通じた取得ではありません' -or
+        $aboutHtml -notmatch '本番テナントでの判断に用いるシステムではありません' -or
         $aboutHtml -notmatch 'Microsoft Entra ID' -or
         $aboutHtml -notmatch 'OIDC' -or
         $aboutHtml -notmatch 'Microsoft Graph の読み取り専用のアプリケーション権限' -or
         $aboutHtml -notmatch 'GitHub Pages' -or
         $aboutHtml -notmatch '同じ run の、範囲を限定して redaction 済みの snapshot' -or
         $aboutHtml -notmatch 'snapshot との一致や安全性を検証' -or
-        $aboutHtml -match 'COPILOT_GITHUB_TOKEN') {
+        $aboutHtml -match 'AZURE_(CLIENT|TENANT)_ID|COPILOT_GITHUB_TOKEN|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}') {
         throw 'About page does not accurately document the public authentication and agent-validation boundary.'
     }
     if ($aboutHtml -notmatch 'scoutTheme' -or
@@ -792,12 +796,16 @@ try {
         $aboutGenerator -notmatch '最大8カード/週' -or
         $aboutGenerator -notmatch '各カードにある「日本語訳と詳細要約」' -or
         $aboutGenerator -match '74/74' -or
+        $aboutGenerator -notmatch '個人検証用テスト テナント' -or
+        $aboutGenerator -notmatch 'アプリケーション専用アクセス' -or
+        $aboutGenerator -notmatch '特定の Microsoft 365 ユーザーのサインインを通じた取得ではありません' -or
+        $aboutGenerator -notmatch '本番テナントでの判断に用いるシステムではありません' -or
         $aboutGenerator -notmatch 'Microsoft Entra ID' -or
         $aboutGenerator -notmatch 'OIDC' -or
         $aboutGenerator -notmatch 'Microsoft Graph の読み取り専用のアプリケーション権限' -or
         $aboutGenerator -notmatch 'GitHub Pages' -or
         $aboutGenerator -notmatch '範囲を限定して redaction 済みの snapshot' -or
-        $aboutGenerator -match 'COPILOT_GITHUB_TOKEN' -or
+        $aboutGenerator -match 'AZURE_(CLIENT|TENANT)_ID|COPILOT_GITHUB_TOKEN|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' -or
         $aboutGenerator -notmatch 'OS の色設定には追従しません') {
         throw 'Public documentation does not describe the current automation, authentication, agent-validation, and theme contracts.'
     }
