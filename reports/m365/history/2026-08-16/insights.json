@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-12T23:08:54.2034387+00:00",
+  "generatedAt": "2026-08-16T22:44:55.3312061+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "【2026年8月第2週】認証強化・Copilot機能拡張・Edge変更が集中 — 9月対応が必要な重要変更あり",
-  "executiveSummary": "今週のメッセージセンターは77件のメッセージを含み、Microsoft Entraのパスキー/MFA強化、Microsoft 365 Copilotの新機能群、EdgeのUnloadイベント廃止(9月5日対応要)が主要テーマ。特に9月1日よりパスキーがEntraのデフォルト認証となりSMS/音声認証がMicrosoft提供分は廃止されるほか、SSPR認証方法の必須化(11月9日)、Conditional AccessカスタムコントロールのExternal MFA移行(2027年4月)など認証基盤の大規模刷新が進む。Copilot分野ではモバイルアプリでの音声メモ録音、Outlookでのユーザー起動型インサイト、PlannerとのCopilot統合などが順次GAへ。管理者はエンド日程の近い変更を中心に優先対応が必要。",
-  "thisWeek": "MC1443510: All Agents の古い保留リクエストが8月20日に自動削除 — 保持したいリクエストをすぐに確認・承認すること\nMC1303719: federatedTokenValidationPolicy のデフォルト変更が8月11日適用済 — フェデレーション環境の認証ログを確認し問題ないか検証\nMC1449170: EdgeのUnloadイベントハンドラー廃止(9月5日対応期限) — 社内Webアプリのunloadイベント使用有無を開発チームと確認",
-  "thisMonth": "MC1426371: 2026年9月1日よりパスキーがEntraのデフォルト認証に — SMS/音声認証を現在使用しているユーザー・条件付きアクセスポリシーの棚卸しと移行計画\nMC1440976: People Skillsのロール-スキルマッピングファイルが8月22日廃止 — 代替の自動スキル推論機能への移行確認\nMC1438571: M365プロフィールカードの11プロパティがデフォルト表示に — 不要な情報が公開されないかEntra IDのデータを確認\nMC1387532: Edge 152(8月27日リリース)から2週間リリースサイクルに移行 — ポリシーテスト・更新管理の見直し\nMC1278920: Office LTSC 2021のサポート終了は2026年10月13日 — 残存デバイスの棚卸しとアップグレード計画を加速",
-  "watch": "MC1325414: SSPR認証方法の必須化(2026年11月9日)— ディレクトリ属性依存のSSPRユーザーに登録促進\nMC1422061: Conditional AccessカスタムコントロールのExternal MFA移行(2027年4月30日)— サードパーティMFAプロバイダーとの連携を計画\nMC1435782: EntraカスタムブランディングCSSポジショニングプロパティ廃止(2026年10月〜)— カスタムサインイン画面のデザイン見直し\nMC1450134: Windows Hello for Business/macOS PSSを単独MFA要素として認識(2026年10月〜)— 認証強度ポリシーへの影響評価\nMC1221452: パスキープロファイルのGA移行(既存FIDO2テナント)— 移行タイムラインとグループ設定の確認\nMC1215070: M365管理センターMFA強制適用 — 管理者アカウントのMFA登録状況を継続確認\nMC1192661: Edge Workspacesのアーキテクチャ移行 — OneDrive/SharePointからEdge Syncへ、共有機能は廃止予定\nMC1182696: Defender Application Guard for Officeの削除 — 保護付きビューへの移行確認\nMC1152323: M365 Copilotアプリのデバイスへの自動インストール — 展開ポリシーの確認",
-  "customerQuestions": "パスキーをデフォルトにする前に、既存の条件付きアクセスポリシーへの影響を確認する方法は?\nSSPR認証方法の必須化に向け、現在ディレクトリ属性に依存しているユーザーを特定するにはどうすればよいか?\nEdgeのUnloadイベント廃止が社内開発のWebアプリに影響するか確認・対応する手順は?\nCopilotのモバイル音声録音機能(Record)は会議の文字起こしと何が違うか?また録音データはどこに保存されるか?\nConditional AccessのCustom Controlsを使用しているが、External MFAへの移行に必要な準備と期間は?\nOffice LTSC 2021のサポート終了後、該当端末をMicrosoft 365 Appsに移行する際のライセンスはどう調達するか?\nAll Agentsの保留リクエスト自動削除(8月20日)で誤って削除されたリクエストを復元できるか?",
+  "headline": "パスキー既定化・SMS廃止・Office LTSC 2021サポート終了が迫る—認証・共有・Copilot全面強化週",
+  "executiveSummary": "2026年8月第3週のメッセージセンター主要トピックは以下の通りです。\n\n**認証・セキュリティ(最重要)**: Microsoft Entraは2026年9月1日よりパスキーを既定の認証方式に移行し、SMS/音声MFAは2027年2月1日に廃止されます(MC1426371)。Entra ID FreeテナントのSMSファーストファクター認証はすでに2026年8月11日に廃止済みです(MC1448374)。SSPR(セルフサービスパスワードリセット)は2026年11月9日より登録済み認証方法のみを使用するよう変更されます(MC1325414)。Conditional AccessのCustom Controlsは2027年4月30日に廃止され、External MFAへの移行が必要です(MC1422061)。\n\n**Office LTSC 2021サポート終了**: Office LTSC 2021(Visio/Project含む)のサポートが2026年10月13日に終了します。セキュリティリスク回避のため早急なアップグレードが必要です(MC1278920)。\n\n**ファイル共有の新世代UI**: Microsoft 365のファイル・フォルダ共有UIが第3世代に刷新されます。ヒーローリンクにより共有リンクが一元管理され、2026年8月下旬から10月下旬にロールアウト開始(MC1454378)。\n\n**Copilot機能拡張**: CopilotがPlanner操作に対応(9月GA、MC1443523)、モバイルアプリで音声録音・文字起こし機能追加(MC1437679)、Edge上でM365ドキュメントのグラウンディング対応(8月末〜、MC1187682)。Copilotアプリが自動インストール再開中(MC1152323)。\n\n**緊急対応**: All AgentsのPending Request一括削除が2026年8月20日に実施されます(MC1443510)。6月1日以前の未処理リクエストは永久削除されます。\n\n**Edge 2週間リリースサイクル**: Edge 152(8月27日 Stable)より2週間リリースサイクルに移行(MC1387532)。Edgeのunloadイベント既定無効化が2026年9月5日期限(MC1449170)。\n\n**Exchange Online TERRL変更**: 新規・試用・EDUテナント向けの外部受信者レート制限クォータ算出方法が9月中旬より変更(MC1454397)。",
+  "thisWeek": "【MC1443510】All Agents Pending Requestの確認・処理(期限:8月20日、6月1日以前の未処理リクエストが永久削除)\n【MC1449170】社内WebアプリのEdge unloadイベント使用状況を確認(期限:9月5日)\n【MC1448374】Entra ID Free利用テナントにおけるSMSファーストファクター認証廃止の影響確認(実施済み:8月11日)\n【MC1303719】federatedTokenValidationPolicyのデフォルト設定変更の影響確認(期限:8月11日)",
+  "thisMonth": "【MC1426371】パスキー既定化対応計画の策定(9月1日〜):ユーザー向けパスキー登録誘導・SMS/音声MFA利用者の棚卸し\n【MC1152323】Copilotアプリ自動インストール展開状況の確認と除外ポリシー検討\n【MC1454378】新世代ファイル共有UI(ヒーローリンク)のロールアウト通知準備・ユーザートレーニング計画\n【MC1387532】Edge 2週間リリースサイクル対応:企業ポリシーとテストサイクルの見直し\n【MC1454397】新規・試用・EDUテナントのExchange Online TERRL変更確認(9月中旬〜)\n【MC1278920】Office LTSC 2021利用端末の棚卸しとアップグレード計画策定(期限:10月13日)",
+  "watch": "【MC1325414】SSPR変更対応(11月9日期限):ユーザーの認証方法登録状況確認・未登録者への通知準備\n【MC1422061】Conditional Access Custom Controls廃止(2027年4月30日):External MFAへの移行計画\n【MC1443523】Copilot ChatでのPlanner操作GA(9月):利用ポリシーとトレーニングの準備\n【MC1437679】Copilotモバイル音声録音機能:録音データのコンプライアンス・プライバシーポリシー確認\n【MC1221452】Entra IDパスキープロファイル・FIDO2移行計画の確認\n【MC1435782】Entra IDカスタムブランディングCSS位置プロパティ廃止(2026年10月〜):カスタムブランディング設定の見直し\n【MC1192661】Edge Workspacesのアーキテクチャ移行:共有機能廃止への対応\n【MC1182696】Defender Application Guard for Officeの削除:Protected Viewへの移行確認",
+  "customerQuestions": "Q: パスキーへの移行を急ぐ必要はありますか?SMS/音声MFAはいつまで使えますか?\nQ: Office LTSC 2021のサポート終了後も使い続けることはできますか?どのリスクがありますか?\nQ: 新しいファイル共有UI(ヒーローリンク)で、既存の共有リンクはどうなりますか?\nQ: Copilotのモバイル音声録音機能で録音されたデータはどこに保存されますか?コンプライアンス上の問題はありますか?\nQ: Conditional AccessのCustom Controlsを使用している場合、External MFAへの移行で何が変わりますか?\nQ: Edge Workspacesの共有機能が廃止されると聞きましたが、代替手段はありますか?\nQ: All Agentsの未処理リクエストが削除される前に確認が必要ですが、どのテナントに影響しますか?",
   "referencedIds": [
     "MC1152323",
     "MC1182696",
@@ -16,23 +16,24 @@
     "MC1221452",
     "MC1278920",
     "MC1303719",
-    "MC1311978",
     "MC1325414",
-    "MC1358831",
+    "MC1338811",
     "MC1387532",
-    "MC1403404",
     "MC1409305",
     "MC1422061",
+    "MC1422074",
     "MC1426371",
+    "MC1435782",
     "MC1437679",
     "MC1438571",
-    "MC1440968",
     "MC1440976",
     "MC1443510",
     "MC1443523",
+    "MC1448374",
     "MC1449170",
     "MC1450133",
-    "MC1450134"
+    "MC1454378",
+    "MC1454397"
   ],
   "messageUpdates": [
     {
@@ -232,13 +233,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1317195",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1319216",
       "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
@@ -256,13 +250,6 @@
       "id": "MC1325422",
       "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1326253",
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -547,6 +534,13 @@
       "learnUrls": []
     },
     {
+      "id": "MC1448374",
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
       "id": "MC1449170",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。対応期限は 2026年9月5日 です。",
@@ -564,6 +558,20 @@
       "id": "MC1450134",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1454378",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1454397",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -773,13 +781,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1317195",
-      "japaneseDetailedSummary": "Microsoft Copilot Notebooksにインフォグラフィック機能が導入されます。ノートブック内容を根拠ある参照情報から生成された構造化ビジュアルサマリーに変換できます。一般提供（Worldwide）は2026年7月上旬開始・7月中旬完了予定（タイムラインは2026年7月7日に更新）。",
-      "japaneseBodyTranslation": "2026年7月7日更新：タイムラインを更新しました。\n【概要】Microsoft Copilot Notebooksにインフォグラフィック機能を導入します。ノートブック内容を根拠ある参照情報から生成された明確で構造化されたビジュアルサマリーに変換でき、チームの情報共有を加速します。\n【展開スケジュール】パブリックプレビュー：2026年5月下旬開始、6月中旬完了。一般提供（Worldwide）：2026年7月上旬（以前は6月下旬）開始、7月中旬完了。\n【影響】Microsoft 365テナントでCopilot Notebooksにアクセスできるユーザーが対象。Microsoft 365アプリ（Web）のCopilot Notebooksで利用可能。",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1319216",
       "japaneseDetailedSummary": "Microsoft Teamsの会議中に、ライセンス済み開催者・プレゼンターがMeeting AI（Copilot、ファシリテーター、会議要約含む）のオン/オフをリアルタイムで切り替えられる新トグルが導入されます。価値ある議論ではAIを活用し、センシティブな話題では無効化できます。テナントポリシーおよびコンプライアンス制御は引き続き適用。ロードマップID 558286。展開：ターゲットリリースは2026年8月中旬～下旬、一般提供（全世界）は2026年8月下旬開始予定。",
       "japaneseBodyTranslation": "2026年7月9日更新：タイムラインを更新しました。\n[概要と目的]\nMicrosoft Teamsは、ライセンス済み会議開催者およびプレゼンターがライブ会議中にMeeting AI（Copilot、ファシリテーター、会議の要約を含む）のオン/オフを切り替えられる新しいトグルを導入します。ライセンス済みの開催者・プレゼンターは価値ある議論の際にインサイトを収集し、センシティブな話題ではAIをオフにできます。既存のテナントポリシーおよびコンプライアンス制御が尊重されます。ロードマップID 558286に対応。\n[展開スケジュール]\n・ターゲットリリース：2026年8月中旬開始、8月下旬完了予定（以前は7月）。\n・一般提供（全世界）：2026年8月下旬開始予定（以前は7月中旬）。",
@@ -797,13 +798,6 @@
       "id": "MC1325422",
       "japaneseDetailedSummary": "Microsoft 365 Copilotアプリがチャット中心の新エクスペリエンスに刷新され、2026年6月22日より全世界への標準リリース展開が開始。ユーザーはアプリ右上の「New Copilot」トグルで切り替え可能ですが、2026年7月15日（標準リリース）にトグルが削除され新エクスペリエンスがデフォルトになります。遅延リリースは2026年8月22日から展開開始。管理者はユーザーへの周知と業務フローへの影響確認を推奨。",
       "japaneseBodyTranslation": "2026年6月22日更新：Microsoft 365 Copilotアプリの更新エクスペリエンスの全世界展開を開始しました。このエクスペリエンスは5月にFrontierユーザーへ先行展開済みです。全世界への展開は2026年6月22日より標準リリースで開始。ユーザーはアプリ右上の「New Copilot」トグルで現在と更新済みエクスペリエンスを切り替えられます。更新済みエクスペリエンスがデフォルトでオンになります。\nこのトグルにより：\n・ニーズに合わない場合はいつでも以前に戻す\n・戻す際にフィードバックを送信して改善に貢献\n・展開中の一時的なオプトアウト手段です。\n標準リリースでは7月15日にトグルが削除され、新エクスペリエンスのみに。8月22日より遅延リリースへの全世界展開が開始されます。\n[概要]\n以下を紹介します",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1326253",
-      "japaneseDetailedSummary": "「セキュリティ情報の登録」にスコープされた条件付きアクセス（CA）ポリシーが、Windows Hello for Business（WHfB）およびmacOSプラットフォームSSO（PSSO）の資格情報登録にも適用されるようになりました。これまでMFAは強制されていましたが、CA条件（認証強度・信頼された場所等）は評価されていませんでした。2026年7月6日より段階的展開が開始、7月13日に完了。CAポリシーを持たない組織への影響はありません。",
-      "japaneseBodyTranslation": "組織が「セキュリティ情報の登録」にスコープされた条件付きアクセスポリシーを持つ場合、ユーザーがWindows Hello for Business（WHfB）のセットアップやmacOSプラットフォームSSO資格情報の登録を行う際にもそれらのポリシーが適用されるようになります。\n現在、これらの登録フローはMFAを強制していますが、登録ターゲットのCAポリシーは評価されておらず、認証強度・信頼された場所などのCA条件が適用されていません。この変更によりそのギャップが解消されます。\nCAポリシーを持たない組織には影響はありません。\n展開時期\n・2026年7月6日：段階的な展開が開始。\n・2026年7月13日：全テナントへの展開が完了。\n組織への影響\nWHfBまたはmacOS PSSO資格情報を登録するユーザーは、登録完了前にCAポリシーの要件（例：FIDO2セキュリティキーの使用、プッシュ通知の承認など）を満たす必要があります。",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
