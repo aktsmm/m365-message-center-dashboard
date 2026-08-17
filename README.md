@@ -70,11 +70,10 @@ reports/m365/                         # The only path workflows commit
    | --- | --- |
    | `AZURE_CLIENT_ID` | Client ID of the Entra application or managed identity |
    | `AZURE_TENANT_ID` | Directory (tenant) ID used only by the OIDC login |
-   | `COPILOT_GITHUB_TOKEN` | Fine-grained PAT used only by the GitHub Copilot Agentic Workflow engine |
 
-   The workflows intentionally use `allow-no-subscriptions: true`; do not configure an Azure subscription secret.
+   The workflows intentionally use `allow-no-subscriptions: true`; do not configure an Azure subscription secret. No Copilot secret is required: see step 6.
 5. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-6. Enable GitHub Copilot Agentic Workflows for the repository. This personal-account repository uses the fine-grained PAT supplied as `COPILOT_GITHUB_TOKEN` for the Agentic Workflow engine; do not substitute the built-in GitHub Actions `GITHUB_TOKEN` or organization-only `copilot-requests: write` billing flow. A provider HTTP 403 means that the token identity or Copilot access is not authorized; rerunning cannot publish Agentic output until it is corrected.
+6. Enable GitHub Copilot Agentic Workflows for the repository. The Agentic Workflow engine authenticates with `permissions: copilot-requests: write` and the built-in GitHub Actions `GITHUB_TOKEN`, so no `COPILOT_GITHUB_TOKEN` PAT is needed. GitHub mints that token per run and revokes it when the job ends, so there is no expiry to rotate — an expiring PAT is what silently stopped a sibling repository's scheduled publisher for three nights. In this personally-owned repository the usage bills to the repository owner's Copilot seat, so that seat must stay active. A provider HTTP 401 or an empty model catalog means the identity or Copilot access is not authorized; rerunning cannot publish Agentic output until it is corrected. See [Using Copilot CLI in GitHub Actions](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/copilot-cli-in-github-actions) and the [gh-aw authentication reference](https://github.github.com/gh-aw/reference/auth/).
 
 Run **M365 Message Center Dashboard - Public Metadata** manually once after configuration. It runs twice weekly on Monday and Thursday at 07:17 JST and publishes the dashboard at the GitHub Pages root. The core Agentic Workflow publishes the validated weekly brief, and its successful completion starts the bounded translations workflow.
 
