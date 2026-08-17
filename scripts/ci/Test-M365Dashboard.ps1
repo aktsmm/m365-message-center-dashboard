@@ -788,7 +788,7 @@ try {
         $readme -notmatch '最大8カード/週' -or
         $readme -notmatch '各カードにある \*\*日本語訳と詳細要約\*\*' -or
         $readme -match '74/74' -or
-        $readme -notmatch 'COPILOT_GITHUB_TOKEN' -or
+        $readme -notmatch 'copilot-requests: write' -or
         $readme -notmatch 'https://admin\.microsoft\.com/#/MessageCenter' -or
         $readme -notmatch 'サインインと対象テナントでの適切な権限が必要です' -or
         $readme -match 'controller-only' -or
@@ -809,11 +809,11 @@ try {
         $aboutGenerator -notmatch 'OS の色設定には追従しません') {
         throw 'Public documentation does not describe the current automation, authentication, agent-validation, and theme contracts.'
     }
-    if (-not $agentWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
-        $agentWorkflow.Contains('copilot-requests: write') -or
-        -not $translationWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
-        $translationWorkflow.Contains('copilot-requests: write')) {
-        throw 'Agentic Workflows must retain the fine-grained PAT engine authentication required by this personal-account repository.'
+    if ($agentWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
+        -not $agentWorkflow.Contains('copilot-requests: write') -or
+        $translationWorkflow.Contains('COPILOT_GITHUB_TOKEN') -or
+        -not $translationWorkflow.Contains('copilot-requests: write')) {
+        throw 'Agentic Workflows must authenticate Copilot inference with copilot-requests: write and the built-in GITHUB_TOKEN, not an expiring PAT.'
     }
     foreach ($workflow in @($agentWorkflow, $translationWorkflow)) {
         if (-not $workflow.Contains('uses: actions/upload-pages-artifact@v5') -or
