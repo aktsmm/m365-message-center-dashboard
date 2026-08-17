@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T23:39:40.6242556+00:00",
+  "generatedAt": "2026-08-17T23:46:23.4491657+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "【2026年8月第3週】Copilot エージェント管理の拡張・認証強化・Edge エンドポイント変更など重要アップデート77件",
   "executiveSummary": "今週のメッセージセンターには77件の通知が含まれます。主なトピックは1Microsoft 365 管理センターからのマルチテナント対応エージェント管理のパブリックプレビュー開始、2Edge 上の Copilot Chat エンドポイント変更(9月24日までにネットワーク設定変更が必要)、38月20日期限の All Agents 古い保留リクエストの一括削除、4Entra ID SSPR への影響:2026年11月9日より未登録の認証方法が使用不可に、5SMS 第一要素認証の廃止(Entra ID Free テナント)、6Office LTSC 2021 サポート終了(2026年10月13日)、7Copilot Chat への Planner 機能統合(9月 GA 予定)などです。Entra 認証強化策が複数同時進行しており、特に認証ポリシーの見直しが急務となっています。",
@@ -1150,6 +1150,20 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1456781",
+      "japaneseDetailedSummary": "Microsoft 365 管理センターにおけるマルチテナント エージェント管理のパブリック プレビュー開始に関する通知です。パートナーおよびエンタープライズ管理者は、管理対象のすべてのテナントにわたってエージェントを一元的に表示・管理できるようになります。主な機能として、統合されたエージェント インベントリの確認、カスタム エージェントの追加、接続済みテナントへのエージェントのインストール、エージェントのブロックや可用性の変更、テナント固有の権限やリスク・アクティビティの確認などが含まれます。展開は2026年8月上旬から中旬にかけて行われています。アクション不要の情報提供メッセージです。",
+      "japaneseBodyTranslation": "【変更内容と理由】\n複数テナントにわたるエージェント管理をパブリック プレビューとして導入します。パートナーおよびエンタープライズ管理者は、Microsoft 365 管理センターから管理対象テナント全体のエージェントを表示・管理できます。\n詳細情報:Microsoft 365 管理センター(プレビュー)での複数テナントにわたるエージェントの管理\n【展開スケジュール】\nパブリック プレビュー(Worldwide):2026年8月上旬に展開を開始し、2026年8月中旬に完了予定。\n【組織への影響】\n管理者は Microsoft 365 管理センターで「すべてのテナント」>「エージェント」を選択することで、以下の操作が可能になります:\n・接続済みテナント全体の統合エージェント インベントリの表示\n・カスタム エージェントのインベントリへの追加\n・すべての対象テナントまたは選択したテナントへのエージェントのインストール\n・選択したテナント全体でのエージェントのブロックまたは可用性の変更\n・テナント固有の権限の確認、およびライセンスがある場合はエージェントのリスクとアクティビティの確認\n・テナント スイッチャーの使用",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1456610",
+      "japaneseDetailedSummary": "Microsoft 365 Copilot Chat(Microsoft Edge)のエンドポイント変更に関する通知です。Edge サイドバーの準拠 Copilot Chat 体験で使用されるエンドポイントが `outlook.office.com/hosted/semanticoverview/Users` から `cr.m365copilotapp.svc.cloud.microsoft` へ変更されます。この変更は現行のエンドポイントアーキテクチャおよび Microsoft Edge 許可リスト要件への整合を目的としています。ネットワークの許可リストやブロックリストを管理している組織は、2026年9月下旬の展開前に設定を更新する必要があります。対応期限は2026年9月24日です。影響を受けるのは、Microsoft Edge 経由で Copilot Chat を利用するユーザーおよびネットワーク管理者です。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft 365 Copilot Chat(Microsoft Edge)は、Edge サイドバーの準拠 Copilot Chat 体験で使用されるエンドポイントを更新しています。エンドポイントは outlook.office.com/hosted/semanticoverview/Users から cr.m365copilotapp.svc.cloud.microsoft へ変更されます。\nこの変更により、Edge の Copilot Chat が現行のエンドポイントアーキテクチャおよび文書化された Microsoft Edge 許可リスト要件に準拠します。ネットワーク許可リストまたはブロックリストを管理している組織は、Edge での Microsoft 365 Copilot Chat への継続的なアクセスを確保するために設定を更新する必要がある場合があります。\n【展開スケジュール】\n・一般提供(Worldwide、GCC、GCC High、DoD):2026年9月下旬に開始し、2026年9月下旬に完了予定\n【組織への影響】\n影響を受けるユーザー\n・Microsoft Edge で Copilot Chat へのアクセスを管理するためにネットワーク許可リストまたはブロックリストを使用している組織\n・Microsoft Edge サイドバーから Copilot Chat にアクセスする Microsoft 365 Copilot Chat ユーザー",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
