@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T22:49:14.7546106+00:00",
+  "generatedAt": "2026-08-19T22:55:49.4741937+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "【緊急】エージェント申請クリーンアップ(8/20期限)・Entra認証ポリシー変更が今週の主要トピック",
   "executiveSummary": "2026年8月第3週のMessage Centerでは、セキュリティ強化と認証近代化が中心テーマです。本日8月20日を期限とするエージェント申請の一括クリーンアップ(MC1443510)が即時対応を要します。Microsoft Entraでは、フェデレーション認証ポリシーのデフォルト変更(MC1303719)が8月末にロールアウト完了予定で、フェデレーション環境の管理者は事前確認が必要です。Copilot関連では、Microsoft EdgeのCopilotエンドポイント変更(MC1456610、9/24期限)、EdgeのCopilot新タブページ刷新(MC1440972)、マルチテナントエージェント管理のパブリックプレビュー(MC1456781)が発表されました。認証強化面では、Windows Hello for BusinessとmacOS Platform SSOが単独MFA要素として認定(MC1450134)、SSPR認証方法の登録必須化(MC1325414、11/6期限)が予告されています。また、M365の次世代ファイル共有エクスペリエンス(MC1454378)、Peopleコネクタによる秘書情報インポート(MC1457229)など、生産性向上機能も多数追加されました。",
@@ -1097,6 +1097,13 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1457229",
+      "japaneseDetailedSummary": "MC1457229は、Microsoft 365 Peopleコネクターが外部HRシステム(SAP SuccessFactors、Workday、カスタムコネクター)からエグゼクティブアシスタント情報を取り込む機能をサポートしたことを伝えます。取り込まれたアシスタントデータは、プロフィールカード、Org Explorer、Outlook、Microsoft 365 Copilotなど複数のMicrosoft 365機能で活用でき、ユーザーが適切な担当者を特定しやすくなります。一般提供(ワールドワイド)はすでに開始されています。影響を受けるのはPeopleコネクターや組織プロフィールデータを管理するMicrosoft 365管理者、およびアシスタント情報が取り込まれるユーザーです。管理者はソースシステムを正式な記録として維持しながら、データをMicrosoft 365に統合できます。",
+      "japaneseBodyTranslation": "[概要と理由]\nMicrosoft 365 Peopleコネクターは、外部のHRおよび人事システムからエグゼクティブアシスタント情報をMicrosoft 365に取り込む機能をサポートするようになりました。組織は、SAP SuccessFactors、Workday、カスタムPeopleコネクターなどのサポート対象コネクターを使用して、ソースシステムを正式な記録システムとして維持しながら、エグゼクティブアシスタントデータをMicrosoft 365に取り込むことができます。\nアシスタントデータが取り込まれると、プロフィールカード、組織ビュー、Org Explorer、Microsoft 365 Copilotなど、Microsoft 365のさまざまな機能で利用可能になり、ユーザーが適切な担当者を特定して連絡しやすくなります。\n\n[展開スケジュール]\n• 一般提供(ワールドワイド):現在利用可能\n\n[組織への影響]\n影響を受けるユーザー\n• Peopleコネクターまたは組織のプロフィールデータを管理するMicrosoft 365管理者\n• アシスタント情報がMicrosoft 365に取り込まれるユーザー\n対象プラットフォームおよびサービス\n• Microsoft 365プロフィールカード\n• Org Explorer\n• Outlook on the",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
