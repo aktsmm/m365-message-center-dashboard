@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T22:45:30.1906061+00:00",
+  "generatedAt": "2026-08-23T22:52:42.7932190+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "2026年8月第4週:Entra認証強化・EdgeセキュリティAPI廃止・Copilot統合アプリ更新が集中",
   "executiveSummary": "今週のMessage Centerは83件のメッセージを含み、セキュリティ強化・廃止予定・Copilot機能拡張の3つの軸で動きが活発です。\n\n【最重要】Microsoft Entraでは、9月1日からパスキーがデフォルト認証となり、SMS/音声認証がMicrosoft提供からカスタマー設定型へ移行します(MC1426371)。SSPRも11月9日から登録済み認証方法のみ許可に変更(MC1325414)。Conditional AccessのCustom Controlsは2027年4月廃止でExternal MFAへの移行が必要です(MC1422061)。\n\n【Edge廃止対応】Windows Information Protection (WIP)とMicrosoft Defender Application Guard (MDAG)がEdgeから9月末に廃止(MC1459132、対応期限9/24)。unloadイベントのデフォルト動作変更も9月5日に迫っています(MC1449170)。EdgeのCopilotエンドポイントも9月24日までに更新が必要(MC1456610)。\n\nCopilot面では、M365 Copilotアプリが個人・職場アカウント統合のシンプルな体験に移行し、URLが copilot.cloud.microsoft に変更(MC1454108)。モバイルアプリへの音声メモ録音機能追加(MC1437679)、Teams会議中のAI On/Offトグル展開(MC1319216)など機能強化も続いています。\n\nOffice LTSC 2021のサポートは10月13日終了予定(MC1278920)。M365管理センターのUsageレポートが新ドメインへ移行し、ネットワーク設定の更新が必要(MC1459136)。",
@@ -1212,6 +1212,34 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1454108",
+      "japaneseDetailedSummary": "Microsoft 365 CopilotアプリがシンプルなCopilotブランドに統一されます。個人アカウントと職場アカウントを1つのアプリ体験に統合し、アカウント区別のための視覚的インジケーターが追加されます。アプリ名・アイコンが刷新され、WebアプリURLもCopilotに近いものに変更されます。セキュリティ・コンプライアンス・プライバシー・エンタープライズ制御は変更ありません。2026年8月中旬より世界展開開始(モバイル・Webアプリ)、2026年9月初旬より標準展開予定。管理者は新URLへのリダイレクトに備えた準備が必要です。",
+      "japaneseBodyTranslation": "2026年8月21日更新:URLリダイレクトのタイミングを更新しました。\n【内容と理由】\nCopilotエクスペリエンス簡素化の取り組みの一環として、今後数週間で追加アップデートを展開します。他のMicrosoft 365アプリと同様に、Copilotはパーソナルアカウントとワークアカウントにまたがるシングルアプリ体験へ移行します。このアップデートの一部として、ユーザーはログイン中のアカウントを区別するための明確な視覚的インジケーターを確認できるようになり、アプリはよりシンプルな名前とアイコンを採用し、WebアプリのURLはCopilotに一致するよう変更されます。セキュリティ、コンプライアンス、プライバシー、エンタープライズ制御は変更されません。\n【展開スケジュール】\n・2026年8月中旬より、モバイルおよびWebアプリの世界展開を開始。WindowsおよびMacアプリのオプトインによる早期アクセスも開始。copilot.cloud.microsoftのURLもFrontierでテスト可能になります。\n・2026年9月初旬より、標準展開開始。",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1459132",
+      "japaneseDetailedSummary": "Microsoft EdgeにおけるWindows Information Protection(WIP)およびMicrosoft Defender Application Guard(MDAG)のサポートが2026年9月下旬に廃止されます。Windows 11 24H2では既に利用不可。代替として、WIPはMicrosoft Purview情報保護・DLP・エンドポイントDLP・Intuneアプリ保護ポリシーの利用を推奨。MDAGにはMicrosoft Edgeの組み込みセキュリティ機能や他の分離ソリューションを推奨。Windows 10でWIPまたはMDAGを有効にしている組織は対応が必要です。",
+      "japaneseBodyTranslation": "【内容と理由】\nMicrosoft EdgeにおけるWindows Information Protection(WIP)およびMicrosoft Defender Application Guard(MDAG)のサポートを廃止します。\nこれらの機能はすでにWindowsで非推奨となっており、Windows 11バージョン24H2では利用できなくなっています。\nMicrosoftは以下の代替手段を推奨します:\n・WIPシナリオ:Microsoft Purview情報保護、Microsoft Purview データ損失防止(DLP)、エンドポイントDLP、Intuneアプリ保護ポリシーを使用してください。\n・MDAGシナリオ:Microsoft Edgeで利用可能な組み込みのセキュリティ機能と、環境に適したその他のサポートされる分離ソリューションを使用してください。\n【展開スケジュール】\n・世界:2026年9月下旬に開始し、2026年9月下旬に完了予定\n【組織への影響】\n対象者:Windows 10デバイスでMicrosoft Edge向けにWIPまたはMDAGを設定している組織。\nこれらの機能はデフォルトでオフになっており、管理者が有効化する必要があります。一度も有効にしたことがない組織は影響を受けません。",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1458474",
+      "japaneseDetailedSummary": "Microsoft Entra IDのカスタムCSSブランディングにおいて、レイアウト・位置指定プロパティのサポートが2026年10月下旬に廃止されます。対象はカスタムCSSのレイアウト・位置指定プロパティを使用している組織のみ。2026年7月21日時点でカスタムCSSを使用していない組織は影響を受けません。フィッシング攻撃対策強化(SFI)のため、よりセキュアなサインイン体験を実現するための変更です。影響のある組織は2026年10月下旬までにCSSの見直しが必要です。",
+      "japaneseBodyTranslation": "【内容と理由】\nカスタムCSSのレイアウト・位置指定プロパティを使用している組織のみ対応が必要です。2026年7月21日時点でカスタムCSSを使用していない組織は影響を受けず、今後も利用開始はできません。Microsoft Entra External IDテナントはこの変更の影響を受けません。\nAzureサブスクリプションに関連付けられているため、この通知を受け取っています。\nMC1435782で以前通知したとおり、Microsoftはブランド化されたサインインエクスペリエンスのセキュリティ強化のため、Microsoft Entra IDのカンパニーブランディングを更新しています。MicrosoftのSecure Future Initiative(SFI)をサポートし、フィッシング攻撃に対する保護を強化するため、Microsoft Entra IDは2026年10月下旬より、カンパニーブランディングで使用されるカスタムCSSのレイアウト・位置指定プロパティのサポートを廃止します。\nこの変更により、ブランドカスタマイズを継続してサポートしながら、よりセキュアで信頼性が高く一貫したサインインエクスペリエンスを実現します。",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1458480",
+      "japaneseDetailedSummary": "Microsoft Edgeの管理者向けに、セキュリティ更新アラートの重要度しきい値設定機能が追加されました(ロードマップID: 558435)。管理者は指定した重要度以上のセキュリティ修正(ゼロデイ修正を含む)が含まれるEdge更新時にアラートを受け取れるようになります。デフォルトは既存の全更新通知が維持され、管理者が任意でしきい値を設定可能です。2026年8月初旬より展開開始・8月中旬完了予定。管理者操作は不要。",
+      "japaneseBodyTranslation": "【内容と理由】\n管理者は重要度のしきい値を設定し、新しいEdge更新にそのしきい値を満たすまたは超えるセキュリティ修正(ゼロデイ修正を含む)が含まれる場合にアラートを受け取ることができるようになりました。これにより、組織は注意が必要な更新を迅速に特定しつつ、定期的なリリースの不要な通知を回避できます。\nこのメッセージはMicrosoft 365ロードマップID 558435と関連しています。\n【展開スケジュール】\n一般提供(世界):2026年8月初旬に展開開始、8月中旬に完了予定。\n【組織への影響】\n管理者の代わりにアクションは行われません。デフォルトでは、すべての新しいEdge更新を管理者に通知する既存のエクスペリエンスが維持されます。管理者は新しい更新通知を受け取るタイミングを指定できるようになりました。\n【必要なアクション・推奨事項】\nこのロールアウトは指定された日付までに自動的に行われ、ロールアウト前に管理者のアクションは不要です。",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
