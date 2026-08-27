@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T03:27:19.4585339+00:00",
+  "generatedAt": "2026-08-27T03:34:03.8464926+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "【2026年8月第4週】Entra認証刷新・Edge機能廃止・M365共有エクスペリエンス大幅更新",
   "executiveSummary": "今週は Microsoft Entra の認証基盤変更が複数重なり、期限付きアクション案件が集中しています。パスキーがデフォルト認証となり(9月1日)、SMS/音声認証はMicrosoftプロバイダー提供終了に向けて移行が必要です。Microsoft EdgeではWIP・MDAGサポート廃止(9月24日期限)、unloadイベントのデフォルト無効化(9月5日期限)、商用CopilotエンドポイントのURL変更(9月24日期限)への対応が急務です。また Microsoft Entra のセルフサービスドメインが myaccount.cloud.microsoft に統合(11月下旬)されるため、ファイアウォール・プロキシルールの更新計画が必要です。M365の新世代ファイル共有(ヒーローリンク)は9月中旬から展開開始。Office LTSC 2021のサポートは10月13日終了予定で、移行計画の最終確認が求められます。",
@@ -1199,6 +1199,34 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1459136",
+      "japaneseDetailedSummary": "Microsoftのドメイン統合イニシアチブの一環として、Microsoft 365管理センターの利用状況レポートが新しいドメインへの解決を開始します。現行ドメインと新ドメインは少なくとも30日間並行して動作するため、移行期間中もレポートは引き続き利用可能です。現行ドメインから新ドメインへのリダイレクトは早くとも2026年9月17日以降に実施予定で、別途メッセージセンターで告知されます。ネットワーク設定(プロキシ、ファイアウォール等)に新ドメインを追加することが必須となります。レポートの機能・データ・権限に変更はありません。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoftのドメイン統合イニシアチブの一環として、Microsoft 365管理センターの利用状況レポートが新しいドメインへの解決を開始します。本投稿から最低30日間は現行ドメインと新ドメインが並行して有効であるため、ネットワーク設定を更新する間も利用状況レポートは現行ドメインで引き続き読み込まれます。\n現行ドメインから新ドメインへのリダイレクトは現時点では予定されていません。リダイレクトは検証と承認を経て、早くとも2026年9月17日以降に実施される予定であり、実施前に別途メッセージセンターの投稿でタイミングをお知らせします。リダイレクト後、一定期間を経て現行ドメインは廃止される予定であり、そのタイミングについても別途お知らせします。そのため、新ドメインをネットワーク設定に追加することは任意ではなく必須です。利用状況レポートのエクスペリエンス、データ、権限に変更はありません。これはドメイン変更のみです。\n\n【ロールアウトスケジュール】\n・Worldwide:W",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1461528",
+      "japaneseDetailedSummary": "2026年8月25日、Microsoft 365 RoadmapはAI at Work Roadmapに名称変更されました。AI at Work RoadmapはMicrosoft 365、Copilot、エージェント、AI関連エクスペリエンスの今後のイノベーションを一元的に確認できるポータルです。2026年9月からはDynamics 365、Power Platform、Dataverseのロードマップ情報も掲載開始予定です。管理者・IT担当者・変更管理チームは既存のブックマークやリンクを更新することが推奨されます。",
+      "japaneseBodyTranslation": "【変更内容と理由】\n2026年8月25日、Microsoft 365 RoadmapはAI at Work Roadmapに名称変更されます。\nAI at Work Roadmapは、Microsoft 365、Copilot、エージェント、および関連するAI搭載エクスペリエンスの今後のイノベーションを発見するための一元的な場所を提供します。2026年9月から、Dynamics 365、Power Platform、DataverseのロードマップInformationもAI at Work Roadmapへの掲載が開始され、Microsoftのビジネスアプリケーション、生産性、AIポートフォリオ全体のイノベーションをより簡単に追跡できるようになります。\nロードマップは、今後の機能と変更を可視化することで、計画および準備活動を引き続きサポートします。\n\n【ロールアウトスケジュール】\n・2026年8月25日:Microsoft 365 RoadmapがAI at Work Roadmapに名称変更\n・2026年9月:新たなDynamics 365、Power Platform、DataverseのCapabilityがAI at Work Roadmapへの掲載を開始\n\n【組織への影響】\n影響を受けるユーザー:\n・Microsoft 365管理者\n・IT専門家\n・変更管理チーム\n・テクノロ",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1459133",
+      "japaneseDetailedSummary": "Microsoft Entra IDにおいて、B2Bユーザー(内部ゲストユーザーおよび外部ユーザーを含む)がパスキーの登録とサインインを行えるようになります。B2Bユーザーはリソーステナントのパスキーを使って、そのテナントの多要素認証(MFA)要件を満たすことができます。これまでホームテナントのMFAがリソーステナントに信頼されていない場合、B2BユーザーはリソーステナントのパスキーでMFAを充足できませんでしたが、今回の更新でその制限が解消されます。パスキーはフィッシング耐性の高い認証手段として機能します。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft Entra IDは、B2Bユーザー(内部ゲストユーザーおよび外部ユーザーを含む)に対してパスキーの登録とサインインをサポートするようになります。対象のB2Bユーザーは、リソーステナントによって発行されたパスキーを登録・使用し、そのテナントの多要素認証(MFA)要件を充足できるようになります。\nパスキーはすでにホームテナントのメンバーユーザーに対してサポートされています。これまでB2Bユーザーは、リソーステナントがMFAを要求しており、かつホームテナントのMFAを信頼していない場合、リソーステナントのパスキーを使用できませんでした。今回の更新によりこのギャップが解消され、ゲストおよび外部ユーザーがフィッシング耐性の高い方法でリソーステナントのMFA要件を充足できるようになります。\nB2Bユーザーは、リソーステナントのMy Security Infoページ、証明プロンプト中、またはパスキー登録キャンペーンを通じてリソーステナントのパスキーを登録できます。登録後、パスキーはサインイン時にリソーステナントのMFA要件を充足するために使用できます。\nMicrosoft AuthenticatorアプリのパスキーはInternalゲストユーザーに対してサポートされますが、",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1454386",
+      "japaneseDetailedSummary": "Microsoft 365 Copilotモバイルアプリ(iOS・Android)におけるCopilot Chatへのアクセス制限が緩和されます。これまでCopilot Chatのモバイルアクセスを制限していた2つのレガシー制御—IntuneポリシーのBingChatEnterprise.IsAllowedとプライバシー設定の「コンテンツを分析」—が、モバイルアプリに対して機能しなくなります。すでにCopilot Chatへのアクセスが許可されているユーザーに対し、モバイル・Web・デスクトップ間で一貫したエクスペリエンスを提供することが目的です。ロールアウトは2026年8月中旬から9月末にかけてWorldwide・GCC・GCC High・DoDで順次実施されます。管理者はこれらのポリシーへの依存を見直す必要があります。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft 365 CopilotモバイルアプリにおけるCopilot Chatへのアクセスを簡素化します(iOSおよびAndroid対象)。今回の更新により、モバイルアプリでのCopilot Chatアクセスを制限していた2つのレガシーモバイル専用コントロールが機能しなくなります。対象は、Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシーコントロール「コンテンツを分析」です。\nこの変更により、すでにCopilot Chatへのアクセスが許可されているユーザーに対して、モバイル・Web・デスクトップ間で一貫したCopilot Chatエクスペリエンスを提供できるようになります。\n\n【ロールアウトスケジュール】\n一般提供(Worldwide、GCC、GCC High、DoD):2026年8月中旬にロールアウト開始、2026年9月末までに完了予定。\n\n【組織への影響】\n以下のコントロールは、Microsoft 365 CopilotモバイルアプリでのCopilot Chatアクセス制限として機能しなくなります:\n・Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」\n・プライバシーコントロール「コンテンツを分析」\nこれにより、影響を受けたユーザーはCopilot Chaへのアクセスを再び利用できるようになります",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
