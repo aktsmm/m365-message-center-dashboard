@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T00:44:26.2183412+00:00",
+  "generatedAt": "2026-08-31T00:50:21.3848859+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Copilot URLリダイレクト・管理アプリ廃止・Entra認証強化が迫る ― 9月前に必須対応あり",
   "executiveSummary": "2026年8月末時点のM365メッセージセンターでは、3つの大きな流れが浮かび上がります。1CopilotのURL基盤移行(m365.cloud.microsoft → copilot.cloud.microsoft)が9月初旬から開始され、ネットワーク/セキュリティ制御の事前確認が急務です(MC1462915, MC1454108)。2TeamsなどのAdminアプリが10月に廃止となり、代替としてMicrosoft Admin CenterやTeams Admin Centerへの移行が必要です(MC1462922)。3Microsoft Entraにおける認証強化が続いており、PasskeyのデフォルトCA化(9月1日)、SMS第1要素廃止、SSPRの登録済み認証方式必須化(11月)、Conditional AccessのCustom Controls廃止など複数の変更が重なっています(MC1426371, MC1448374, MC1325414, MC1422061)。Office LTSC 2021のサポート終了(10月13日)、Edge WIP/MDAG廃止(MC1459132)、EntraカスタムブランディングのカスタムCSS廃止(MC1458474, MC1435782)も今季対応が必要です。Copilot関連では、Edge上でのタブ要約・M365ドキュメント参照機能(MC1187682)、モバイルアプリの音声メモ記録機能(MC1437679)、新しいファイル共有エクスペリエンス(MC1454378)などの展開が進んでいます。",
@@ -1210,6 +1210,34 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1462914",
+      "japaneseDetailedSummary": "Microsoft Agent 365 に新しいレポート機能が追加されます。AIアドミンおよびグローバルアドミンが、テナントのAgent 365 Registryに登録されたエージェントを過去30日間にアクティブに使用したユーザーの一覧をCSV形式でエクスポートできるようになります。Microsoft 365 管理センター > エージェント > すべてのエージェント > エクスポートから利用可能です。2026年8月下旬に一般提供開始予定で、エージェントのライセンス管理や計画に活用できます。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft Agent 365 に新しいレポート機能を導入します。これにより、AIアドミンおよびグローバルアドミンは、テナントのAgent 365 Registryに登録されたエージェントを過去30日間にアクティブに使用したユーザーのインベントリをエクスポートできます。\nこのレポートはエージェントの使用状況を可視化し、組織がエージェントのライセンス審査や計画活動を支援します。\n【展開スケジュール】\n• 一般提供(全世界):2026年8月下旬に展開開始、2026年8月下旬に完了予定。\n【組織への影響】\n影響を受けるユーザー\n• AIアドミン\n• グローバルアドミン\n対象プラットフォームおよびサービス\n• Microsoft 365 管理センター\n• Microsoft Agent 365\n変更内容\n新しいアクティブユーザーエクスポートオプションが以下の場所で利用可能になります:\nMicrosoft 365 管理センター > エージェント > すべてのエージェント > エクスポート\n承認された管理者は、過去30日間にAgent 365 Registryのエージェントを使用したユーザーを含むCSVレポートを生成できます。",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1462915",
+      "japaneseDetailedSummary": "2026年9月初旬より、Microsoft は m365.cloud.microsoft から copilot.cloud.microsoft へのリダイレクトを開始します。copilot.cloud.microsoft へのアクセスが利用可能な組織が対象で、アクセスをブロックしている組織は10月にリダイレクトされます。Copilotへのアクセス断を防ぐため、ネットワークおよびセキュリティ設定を事前に確認し、copilot.cloud.microsoft への接続を許可してください。対応が間に合わない場合はMicrosoftアカウント担当者に相談してください。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nMC1454108 でお伝えしたとおり、2026年9月初旬より、Microsoft は copilot.cloud.microsoft へのアクセスが利用可能な組織において、ユーザーを m365.cloud.microsoft から copilot.cloud.microsoft にリダイレクトします。copilot.cloud.microsoft への接続をブロックしている組織は10月にリダイレクトされます。Copilotアクセスの中断を避けるため、組織のネットワークおよびセキュリティ設定を確認し、ユーザーが copilot.cloud.microsoft に接続できることを確認してください。\n【展開スケジュール】\n• 2026年9月初旬:copilot.cloud.microsoft へのアクセスが利用可能な組織のユーザーを m365.cloud.microsoft からリダイレクト。\n• 2026年10月初旬:9月にリダイレクトされなかった残りのユーザーをリダイレクト。リダイレクト前に必要な設定が完了できない場合は、Microsoftアカウント担当者にご連絡ください。\n【組織への影響】",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1462460",
+      "japaneseDetailedSummary": "Microsoft Entraのセルフサービス ID 管理エクスペリエンスで使用されるドメインが更新されます。myaccount.microsoft.com、myapps.microsoft.com、myaccess.microsoft.com、mystaff.microsoft.com の各ドメインが myaccount.cloud.microsoft に統合されます。2026年11月下旬より世界展開が始まり、同月中に完了予定です。ネットワーク管理者はファイアウォールやプロキシの設定を新しいドメインに対応させる必要があります。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft Entraのアイデンティティおよびアクセス管理セルフサービスエクスペリエンスで使用するドメインを更新します。この変更により、myaccount.microsoft.com は myaccount.cloud.microsoft に移行します。現在個別のドメインでホストされているエクスペリエンスも myaccount.cloud.microsoft ドメインに統合されます。\n対象エクスペリエンス:\n• myaccount.microsoft.com\n• myapps.microsoft.com\n• myaccess.microsoft.com\n• mystaff.microsoft.com\nこの変更により、アイデンティティおよびアクセス管理セルフサービスエクスペリエンスのアクセスポイントが統一され、サービスインフラの継続的な改善が支援されます。\n【展開スケジュール】\n• 一般提供(全世界):2026年11月下旬に展開開始、2026年11月下旬に完了予定\n【組織への影響】\n影響を受けるユーザー\n• Microsoft Entraセルフサービスのアイデンティティおよびアクセス管理エクスペリエンスにアクセスするユーザー\n• ネットワーク、プロキシ、ファイアウォールを管理する管理者",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1462922",
+      "japaneseDetailedSummary": "Teams、Outlook、Microsoft365.com 向けのAdminアプリが2026年10月に廃止されます。このアプリは小規模ビジネス向けの管理ツールでしたが、2026年8月よりTeamsへの新規プリインストールが停止され、10月以降は完全に利用不可となります。管理者は引き続きMicrosoft Admin CenterおよびTeams Admin Centerを使用してください。重要な変更です(isMajorChange: true)。",
+      "japaneseBodyTranslation": "【変更内容と理由】\nAdminアプリは、Teams、Outlook、Microsoft365.com で直接管理タスクを実行できる小規模ビジネス向けアプリケーションです。2026年10月より、Adminアプリはサポートおよび提供が終了します。\n【展開スケジュール】\n2026年8月中旬より展開を開始し、2026年10月中旬までに完了予定です。\n【組織への影響】\n• 影響を受けるユーザー:Teams、Outlook、またはMicrosoft365.com でAdminアプリを使用している管理者\n• 2026年8月より、新規の小規模ビジネス管理者向けにTeamsでAdminアプリがプリインストールまたはプリピン留めされなくなります。インストール済みの場合は引き続きアクセス可能です。\n• 2026年10月より、Teams、Outlook、Microsoft365.com でAdminアプリのサポートおよび提供が完全に終了します。\n【必要なアクション / 推奨事項】\n• 管理者はMicrosoft Admin CenterおよびTeams Admin Centerを引き続き使用してTeams環境を管理できます。",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
