@@ -1,31 +1,31 @@
 {
   "meta": {
-    "runId": "33345487966",
-    "generatedAt": "2026-08-31T00:45:47.7079026+00:00",
+    "runId": "33483150857",
+    "generatedAt": "2026-09-01T07:40:24.4196437+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 85,
+    "total": 76,
     "majorChanges": 21,
     "highSeverity": 0,
     "actionRequired": 10,
     "actionDueWithin30Days": 3,
-    "updatedLast7Days": 10
+    "updatedLast7Days": 9
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 36
-    },
-    {
-      "name": "Microsoft 365 Copilot Chat",
-      "count": 28
+      "count": 33
     },
     {
       "name": "Microsoft Entra",
-      "count": 25
+      "count": 24
+    },
+    {
+      "name": "Microsoft 365 Copilot Chat",
+      "count": 23
     }
   ],
   "messages": [
@@ -1277,42 +1277,6 @@
       ]
     },
     {
-      "id": "MC1148545",
-      "title": "(Updated) Microsoft 365 admin center - Usage reports: Agent usage (preview)",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-09-05T22:05:38.0000000+00:00",
-      "endDateTime": "2026-08-31T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-27T17:26:34.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated July 27, 2026: We have updated the content. Thank you for your patience.\nTo help you manage agent adoption for Microsoft 365 Copilot Chat, we are\nintroducing a new usage report in the Microsoft 365 admin center. The report provides\nvisibility into how users in your organization are actively using agents in\nMicrosoft 365 Copilot Chat and includes metrics such as:\n• Total number\nof active agent users and active agents\n• Usage\nbreakdown per user, per agent, and per user-agent pair\n• Segmentation\nby license state (licensed vs. unlicensed Microsoft 365 Copilot users)\n• Segmentation\nby agent creator type (i.e. agents built by your organization, Microsoft, or\nMicrosoft partners)\nThe new report is rolling out in preview and will be available under\nReporting > Usage > Microsoft 365 Copilot > Agent. During the preview\nstage, the report will display a maximum of 30 days of history. In addition,\nusage information from prior to August 19 2025 will not be\navailable in the report. This report only includes declarative agents. Usage data for SharePoint agents and Custom engine agents will be available in a future update.\nAs part of this change, the previous version of the agent usage report will no longer be available.\nThis message is associated with Microsoft 365 Roadmap ID 497999\n[When this will happen:]\nPublic Preview (Worldwide): Available now.\nGeneral Availability (Worldwide): We will begin rolling out end of July 2026 (previously early May) and expect to complete end of July 2026 (previously mid-May).\n[How this will affect your organization:]\nYou will see a new “Agent” report in the Usage section in M365 Admin center showing usage associated with your organizations use of agents in Microsoft 365 Copilot Chat at Tenant, user, agent and agent-user level.\nLearn more Microsoft 365 reports in the admin center –Agent usage\n[What you need to do to prepare:]\nThis rollout will happen automatically by the specified date with no\nadmin action required before the rollout. You may want to notify any admins\nthat manage agents in the Copilot Control system section of the\nMicrosoft 365 admin center. Learn more in Manage agents for Microsoft 365 Copilot in the Microsoft 365\nadmin center.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "497999"
-        },
-        {
-          "name": "Summary",
-          "value": "A new Microsoft 365 admin center usage report for Copilot Chat agents is in preview, showing active users, agents, usage details, and segmentation by license and creator type. It replaces the previous report, covers up to 30 days, and will roll out globally by end of July 2026 with no admin action needed."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
-        }
-      ]
-    },
-    {
       "id": "MC1437679",
       "title": "Microsoft 365 Copilot: Capture voice notes in the Microsoft 365 Copilot mobile app",
       "category": "planForChange",
@@ -1405,34 +1369,6 @@
       ]
     },
     {
-      "id": "MC1421919",
-      "title": "(Updated) Web content setting in Microsoft 365 Copilot expands across Copilot experiences and moves to Settings",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-09T21:36:38.0000000+00:00",
-      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-20T22:44:41.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated July 20, 2026: We have updated the content. Thank you for your patience.\n[What and Why]\nTo provide a more consistent and user-controlled experience across Microsoft 365 Copilot, we're expanding the existing Web content preference to additional Copilot experiences and moving the preference within Settings. Previously, the ability to enable or disable web search was only available to Microsoft 365 Copilot users in the Work tab. With this update, users of both Microsoft 365 Copilot and Microsoft 365 Copilot Chat can control web content grounding across their available Work and Web experiences through a persistent preference that follows them across supported Copilot clients. This supports our Enterprise-ready AI vision by providing a consistent, policy-respecting experience while giving users more control over how Copilot generates responses.\n[Rollout Schedule]\n• General Availability (Worldwide): Rollout will start in mid-July 2026 and is expected to complete by late July 2026.\n[Impact on Your Organization]\nWho is affected\n• Microsoft 365 Copilot Chat users\n• Microsoft 365 Copilot users\n• Organizations that allow web search in Microsoft 365 Copilot\n• Organizations using Copilot across Work and Web experiences\nPlatforms/Services\n• Microsoft 365 Copilot (web, desktop, mobile)\n• Microsoft 365 Copilot Chat (web, desktop, mobile)\nWhat will happen\n• The existing Web content setting will move to Settings > Personalization > Advanced Settings.\n• Users will be able to enable or disable web search from a centralized settings experience.\n• This capability is expanding to both Microsoft 365 Copilot and Copilot Chat users across the Work and Web experiences.\n• The user's preference will be stored as a persistent setting and applied across supported Copilot clients and devices.\n• The preference will continue to be honored wherever the setting is supported.\n• Existing administrator web search policies remain in effect.\n• If an administrator disables web search through policy:\n• The Web content setting will not be available to users.\n• Web content grounding will remain disabled.\n• The feature is available by default only where web search is already permitted by tenant policy.\n• No changes are required to existing administrative controls.\nScreenshot - Personalization settings screen with web search setting highlighted\n[Action Required / Recommendations]\nNo action is required.\nWe recommend administrators:\n• Review existing Copilot web search policies and confirm they align with organizational requirements.\n• Notify help desk and support teams that the Web content setting has moved.\n• Update any internal documentation or training materials that reference the previous setting location.\n• Communicate the expanded availability of the setting to users if your organization provides Copilot adoption guidance.\nLearn more: Data, privacy, and security for web search in Microsoft 365 Copilot and Microsoft 365 Copilot Chat | Microsoft Learn\n[Compliance Considerations]\nConsiderationExplanation\nDoes the change store new customer data?The user's Web content preference is stored as a persistent user setting so it can be consistently applied across supported Copilot clients and experiences.\nDoes the change alter how existing customer data is processed, stored, or accessed?User preference storage changes from an experience-specific setting to a persistent cross-client preference. This does not change how Microsoft 365 documents, emails, chats, or files are processed.\nDoes the change provide end users any new way of interacting with generative AI?Users can now manage web search grounding across both Work and Web experiences, and the capability expands from M365 Copilot Work experiences to M365 Copilot and Copilot Chat across Work and Web.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Existing administrative controls governing web search continue to be enforced. Organizations can continue to manage access through existing policy controls.\nDoes the change allow a user to enable and disable the feature themselves?Users can turn Web content on or off through Settings when web search is permitted by organizational policy.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Copilot's Web content setting moves to Settings for consistent control across Copilot and Copilot Chat in Work and Web experiences. Rolling out mid-July 2026, it offers persistent user preferences, respects admin policies, requires no action, and expands user control where web search is allowed."
-        }
-      ]
-    },
-    {
       "id": "MC1434583",
       "title": "Microsoft 365 Copilot: Configure organization policy link for blocked Copilot Chat users",
       "category": "stayInformed",
@@ -1485,42 +1421,6 @@
         {
           "name": "Summary",
           "value": "Microsoft Entra is replacing legacy CAPTCHA in self-service password reset with backend throttling and behavior-based abuse detection to enhance security and accessibility. The rollout starts early August 2026, requires no user or admin action, and maintains current password reset functionality without introducing new controls."
-        }
-      ]
-    },
-    {
-      "id": "MC1411435",
-      "title": "Microsoft 365 Copilot: Domain exclusion for web grounding",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-01T15:24:20.0000000+00:00",
-      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-20T22:01:44.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and why]\nMicrosoft is introducing Domain Exclusion for Microsoft 365 Copilot, now generally available. This feature enables administrators to exclude specific domains from web grounding so that Copilot responses align with organizational policies and trusted sources. This capability gives admins greater control over how external web content is used in Copilot experiences.\nThis message is associated with Microsoft 365 Roadmap ID 503144.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning mid-July 2026 and expected to complete late July 2026\n• PowerShell script available: July 16, 2026\n[Impact on your organization]\nWho is affected\n• Microsoft 365 administrators managing Copilot configuration\nPlatforms and services\n• Microsoft 365 Copilot\n• Copilot Chat\n• Web grounding scenarios\nWhat will happen\n• Admins can define up to 1,000 domains to exclude from Copilot web grounding.\n• Excluded domains will not be used in Copilot responses that rely on web grounding.\n• The feature is not enabled by default and requires admin action.\n• There is no change to the user experience unless configured by admins.\n[Action required and recommendations]\nNo action is required for this feature to become available in your tenant.\nLearn more: Learn documentation and PowerShell script will be available upon GA at: https://aka.ms/copilot/DomainExclusion\n[Compliance considerations]\nQuestionAnswer\nDoes the change introduce or significantly modify AI or machine learning capabilities that interact with or provide access to customer data?Yes. Admins can configure domain exclusion to exclude up to 1,000 domains from Copilot web grounding\nDoes the change include an admin control and, can it be controlled through Entra ID group membership?Yes. Administrators can configure domain exclusions using a PowerShell script.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "503144"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Copilot now offers Domain Exclusion, allowing admins to exclude up to 1,000 domains from web grounding to ensure responses align with organizational policies. Available worldwide from mid-July 2026, this feature requires admin configuration and affects Copilot web grounding scenarios."
-        },
-        {
-          "name": "Platforms",
-          "value": "Desktop, Web"
         }
       ]
     },
@@ -1579,43 +1479,6 @@
         {
           "name": "Summary",
           "value": "Microsoft Entra passkeys on Windows will be generally available from late April 2026, enabling phishing-resistant, passwordless sign-in on Windows devices without explicit opt-in. This supports corporate, personal, and shared devices, with admin controls via Authentication Methods policies and Conditional Access. No action is needed unless blocking is desired."
-        }
-      ]
-    },
-    {
-      "id": "MC1183010",
-      "title": "(Updated) Microsoft 365 Copilot: Q&A in Read Aloud enables real-time voice interactions",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-11-05T00:20:45.0000000+00:00",
-      "endDateTime": "2026-08-31T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-20T16:06:27.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated July 20, 2026: We have updated the timeline. This feature will be enabled for en-US only initially. Thank you for your patience.\n[Introduction:]\nRead Aloud is evolving from a passive listening tool into an interactive experience. By integrating Copilot Q&A, users can now ask questions and refine their understanding of document content in real time—without interrupting their workflow. This enhancement supports accessibility, improves comprehension, and helps users stay focused while gaining insights faster.\nA Microsoft 365 Copilot license is required to use this feature.\nThis message is associated with Microsoft 365 Roadmap ID 523205.\n[When this will happen:]\nGeneral Availability (Worldwide): Rollout will begin in early February 2026 (previously early January) and is expected to complete by end of July 2026 (previously early July).\n[How this affects your organization:]\n• Who is affected: All users of Read Aloud in Microsoft 365. Users with a Microsoft 365 Copilot subscription will receive the enhanced experience.\n• What will happen:Users with Copilot will see a new interactive voice-driven Read Aloud experience.\n• The entry point remains the same as classic Read Aloud.\n• Users without Copilot will continue to use the classic Read Aloud functionality.\n• No changes to admin policies or configurations are required.\n• The feature is enabled by default for eligible users.\n[What you can do to prepare:]\n• No admin action is required.\n• Notify your users about the upcoming change.\n• Update internal documentation if you reference Read Aloud functionality.\n• If you manage helpdesk communications, consider sharing a short blurb about the new experience.\n[Compliance considerations:]\nCompliance QuestionAnswer\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. The integration of Copilot Q&A introduces AI-driven voice interactions that access document content to provide contextual answers.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can now interact with generative AI via voice during Read Aloud sessions to ask questions and receive real-time insights.\nDoes the change allow a user to enable and disable the feature themselves?Yes. Users with Copilot can choose whether to engage with the interactive experience or continue using classic Read Aloud.\n``",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "523205"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Copilot's Read Aloud now supports real-time voice Q&A for en-US users starting February 2026, enhancing accessibility and comprehension. This interactive feature requires a Copilot license, is enabled by default, and allows users to toggle between classic and new experiences without admin changes."
-        },
-        {
-          "name": "Platforms",
-          "value": "Desktop"
         }
       ]
     },
@@ -1942,76 +1805,11 @@
       "details": [
         {
           "name": "FeatureStatusJson",
-          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Desktop\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-08-31T00:38:11.9018401Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Mac\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-08-31T00:38:11.9018403Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Web\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-08-31T00:38:11.9018404Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"All\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-08-31T00:38:11.9018405Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null}]}"
+          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Desktop\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-09-01T07:40:29.3377902Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Mac\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-09-01T07:40:29.3377903Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"Web\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-09-01T07:40:29.3377904Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1325422\",\"Platform\":\"All\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-09-01T07:40:29.3377905Z\",\"LatestRing\":\"DeferredRelease\",\"TenantRolloutRing\":null}]}"
         },
         {
           "name": "Summary",
           "value": "Microsoft 365 Copilot app is updated with a simplified, chat-centered experience featuring streamlined navigation, a new Tasks tab, and a consolidated Work IQ toggle. The update rolls out worldwide starting June 22, 2026, with an opt-out toggle until July 15, after which the new experience becomes default."
-        }
-      ]
-    },
-    {
-      "id": "MC1297982",
-      "title": "(Updated) Use sensitivity labels to block all connected experiences that analyze content in Word, Excel, and PowerPoint",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-05-01T22:48:57.0000000+00:00",
-      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-06-18T23:43:40.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated June 18, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction]\nMicrosoft is updating an existing sensitivity label setting that controls whether certain connected experiences can analyze file content. This change extends support of this label setting to additional platforms and extends coverage of the label setting to include all connected experiences that analyze content in Word, Excel, and PowerPoint, rather than a subset of these experiences.\n[When this will happen]\n• Public Preview: We will begin rolling out in mid-May 2026 and expect to complete by mid-July 2026 (previously mid-June).\n• General Availability (Worldwide): We will begin rolling out in mid-June 2026 (previously early June) and expect to complete by late July 2026 (previously late June).\n[How this affects your organization]\nWho is affected\n• Organizations using Microsoft Purview sensitivity labels in Word, Excel, and PowerPoint\n• Users opening files that have a sensitivity label configured with “Prevent some connected experiences that analyze content”\nWhat will happen\n• Files with this label setting will not be sent to any Microsoft connected experiences for content analysis.\n• Previously, this label setting blocked only a subset of connected experiences; enforcement is now expanded in Word, Excel, and PowerPoint.\n• This change applies automatically to existing labels configured with this setting.\n• There is no change to label configuration, and the behavior is enforced by default once the feature rolls out.\n[What you can do to prepare]\nNo action is required if your organization already uses sensitivity labels.\nOptional recommended steps:\n• Review sensitivity labels that use the “Prevent some connected experiences that analyze content” setting to confirm they align with your organization’s data handling expectations.\n• Inform compliance and helpdesk teams that labeled files may no longer interact with connected experiences that analyze content in Word, Excel, and PowerPoint.\n• Update internal documentation if you describe how sensitivity labels affect Office app functionality.\n[Compliance considerations]\nQuestionAnswer\nDoes the change alter how existing customer data is processed, stored, or accessed?Yes. Files with applicable sensitivity labels are now fully blocked from being sent to Microsoft connected experiences for analysis, expanding enforcement beyond a subset of experiences.\nDoes the change modify Information Protection labels or their enforcement?Yes. Existing sensitivity label settings now enforce broader blocking behavior across all connected experiences that analyze content.\nDoes the change introduce or modify AI/ML capabilities that interact with customer data?Yes. The change restricts how labeled content can be analyzed by Microsoft connected experiences, including AI‑powered analysis.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft is expanding sensitivity label settings to block all connected experiences that analyze content in Word, Excel, and PowerPoint. This update, rolling out from mid-2026, automatically enforces broader content analysis blocking without configuration changes, affecting organizations using these labels and enhancing data protection."
-        }
-      ]
-    },
-    {
-      "id": "MC1396361",
-      "title": "Microsoft 365 Copilot: Publish organization prompts to Copilot Chat",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-06-18T23:09:43.0000000+00:00",
-      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-06-18T23:09:57.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and Why]\nOrganizations can now centrally create and publish curated prompts for Microsoft 365 Copilot Chat. Rather than relying on each employee to discover effective ways of working with Copilot, administrators can shape the experience by publishing prompts that reflect organizational priorities, terminology, and approved workflows. This capability is designed to shorten the path from Copilot deployment to realized business value by guiding users toward high-impact scenarios, reducing reliance on external training, and delivering a more consistent Copilot experience across teams and geographies.\nThis message is associated with Microsoft 365 Roadmap ID 486695.\n[Rollout Schedule]\nGeneral Availability (Worldwide): We will begin rolling out in early July 2026 and expect to complete by late July 2026.\n[Impact on Your Organization]\nWho is affected\n• Microsoft 365 tenants with access to Microsoft 365 Copilot experiences\n• Administrators managing Copilot experiences\n• Users interacting with Copilot Chat\nPlatforms/Services\n• Microsoft 365 Copilot\n• Copilot Chat (web and integrated experiences)\nWhat will happen\n• Admins can create, publish, manage, and pin organization-specific prompts from the Microsoft 365 admin center, controlling what users see in Copilot.\n• Published prompts will appear directly within Copilot Chat, where users encounter them when starting a session.\n• Admins must create and publish at least one prompt before curated prompts will appear in Copilot Chat for users; until then, users will not see curated prompts.\n• Prompts reflect organizational priorities, terminology, and approved workflows.\n• Users will have a clearer, more relevant starting point when interacting with Copilot, improving both first-run and ongoing experiences.\n• Built-in analytics will show which prompts are being used and how users engage with them, helping admins optimize their prompt library over time.\n• The feature is available by default when it reaches your tenant.\n• There is no change to existing Microsoft 365 Copilot licensing requirements.\n• Existing Microsoft 365 Copilot governance, compliance, and security policies continue to apply.\nNew admin experience - view 1:\nNew admin experience - view 2:\nNew admin experience - view 3:\nNew user experience - view 4:\nNew user experience - view 5:\nNew user experience - view 6:\n[Action Required/Recommendations]\nNo action is required. No additional security or compliance review is needed before using this feature.\nTo prepare and maximize value:\n• Review potential business scenarios where curated prompts could improve productivity.\n• Begin drafting and publishing an initial prompt library—at least one prompt must be published for curated prompts to appear to users.\n• Plan internal communications to introduce curated prompts to users.\n• After rollout, publish and pin high-value prompts from the Microsoft 365 admin center.\n• Monitor usage analytics to refine and improve prompt effectiveness over time.\nLearn more: Organizational prompts overview | Microsoft 365 Copilot | Microsoft 365 | Microsoft Learn\n[Compliance Considerations]\nQuestionAnswer\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users are presented with curated, organization-specific prompts directly within the Copilot Chat experience.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "486695"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Copilot now lets admins create and publish organization-specific prompts in Copilot Chat, guiding users with curated, relevant starting points. This feature, rolling out July 2026, enhances productivity, reflects organizational priorities, includes usage analytics, requires no license changes, and is enabled by default."
-        },
-        {
-          "name": "Platforms",
-          "value": "Desktop, Web"
         }
       ]
     },
@@ -2141,78 +1939,6 @@
         {
           "name": "Platforms",
           "value": "Web"
-        }
-      ]
-    },
-    {
-      "id": "MC1385586",
-      "title": "Microsoft 365: Organizational Data – Granular access policy controls for custom attributes",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-06-09T22:19:34.0000000+00:00",
-      "endDateTime": "2026-09-01T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-06-09T22:19:40.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nWe’re introducing enhanced access policy controls for Organizational Data custom attributes in Microsoft 365. This update provides administrators with more granular control over how and when new organizational attributes are shared. Admins can limit release to a few selected users using the new Staging policy and can better manage access to non-public data shared with Workforce Insights delegates. This change supports stronger data governance while enabling controlled sharing of new attributes.\nThis message is associated with Roadmap ID 564805.\n[Rollout Schedule:]\n• Public Preview (Worldwide): We will begin rolling out in mid-June 2026 and expect to complete by mid-July 2026.\n• General Availability (Worldwide): We will begin rolling out in mid-July 2026 and expect to complete by early August 2026.\n[Impact on Your Organization:]\nWho is affected: Microsoft 365 administrators managing access policies in Organizational Data for Microsoft 365.\nPlatforms/Services:\n• Microsoft 365\n• Organizational Data in Microsoft 365\n• Workforce Insights\nWhat will happen:\n• New granular access controls for custom organizational attributes.\n• Admins can:• Release new attributes to selected users or groups instead of the entire organization or all managers.\n• Control whether leaders can share non-public data with Workforce Insights delegates.\n• Existing policies are unchanged.\n• New attributes default to not shared until explicitly configured.\n• No user impact unless enabled by admin.\n[Action Required / Recommendations:]\nNo action is required to maintain current behavior.\nAdmins may optionally:\n• Customize the Staging policy for upcoming custom non-public attributes.\n• Update Organizational Data access policies to take advantage of the new granular controls.\n• Communicate internally with data owners or analytics teams about the new policy options.\n[Compliance Considerations:]\nAdmin control via policy is impacted due to the introduction of new access controls for Organizational Data custom attributes. No other compliance considerations were identified.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "564805"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 will introduce granular access controls for Organizational Data custom attributes, allowing admins to limit attribute sharing to selected users and control non-public data access with Workforce Insights delegates. Rollout starts mid-June 2026, with no user impact unless enabled by admins. No action is required."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
-        }
-      ]
-    },
-    {
-      "id": "MC1158329",
-      "title": "(Updated) Microsoft 365 Copilot: Updates to memory and personalization",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-09-23T23:06:08.0000000+00:00",
-      "endDateTime": "2026-08-31T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-06-08T23:05:44.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated June 8, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction:]\nWe’re updating Memory in Microsoft 365 Copilot to improve personalization and enhance the user experience. With this update, Copilot will personalize responses using chat history, helping users receive more relevant and contextual replies. We’re also introducing refreshed user controls in Copilot settings to make it easier to view and manage Saved Memory. This will be available to all Copilot Chat users.\nControl over personalization using chat history is also available, with details for users via the settings screen.\n[When this will happen:]\n• Public Preview (Frontier): Begins rolling out mid-November 2025.\n• General Availability: Begins early January 2026 (previously early November 2025) and is expected to completed in July 2026 (previously May).\n[How this affects your organization:]\nAll users of Microsoft 365 Copilot in tenants where Memory is enabled.\nWhat will happen:\n• Copilot will use chat history to personalize responses, making interactions more tailored and helpful:\n• Users will see a redesigned Memory settings page that improves visibility and control over what Copilot remembers.\n• Existing admin and user-level Memory settings are respected. If Memory is toggled off, it will remain off.\n• No changes to admin controls or policy enforcement.\n[What you can do to prepare:]\n• Review the updated Memory settings experience with your users once available.\n• No admin action is required unless you wish to update internal documentation or training materials.\nLearn more:\n• Enhanced personalization control overview | Microsoft Graph | Microsoft Learn\n• enhancedPersonalizationSetting resource type | Microsoft Graph | Microsoft Learn\n[Compliance considerations:]\nDoes the change alter how existing customer data is processed, stored, or accessed (e.g. documents, emails, chats, etc.)?Yes. Copilot will now use chat history to personalize responses, which changes how existing customer data is processed to generate contextual replies.\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. This update enhances Copilot’s personalization model by incorporating chat history, allowing it to generate more tailored responses.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users will receive more personalized and contextual responses from Copilot based on their prior chat interactions.\nDoes the change allow a user to enable and disable the feature themselves?Yes. Users can manage what Copilot remembers through the updated Memory settings page in Copilot settings.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "503955"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Copilot updates Memory to personalize responses using chat history, with refreshed user controls for managing Saved Memory. Public preview starts mid-November 2025; general availability begins January 2026. Users can control personalization settings, and existing admin policies remain unchanged. No admin action required."
-        },
-        {
-          "name": "Platforms",
-          "value": "Android, Desktop, iOS, Mac, Web"
         }
       ]
     },
@@ -2528,34 +2254,6 @@
         {
           "name": "Summary",
           "value": "Microsoft Defender Application Guard for Office, retired in April 2024, will be removed from Office by December 2027. Files will open in Protected View instead. Admins should enable Microsoft Defender for Endpoint ASR rules and Windows Defender Application Control to maintain security. No admin action is required for removal."
-        }
-      ]
-    },
-    {
-      "id": "MC1143999",
-      "title": "(Updated) Azure Information Protection: Enable multifactor authentication for your Azure tenant by October 1, 2025",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-08-29T00:35:43.0000000+00:00",
-      "endDateTime": "2026-08-31T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2025-09-05T18:55:17.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated September 5, 2025: Gallatin customers are advised to still implement multifactor authentication for user accounts to improve security, but there will not be Microsoft enforcement at this time.\nIntroduction\nTo strengthen security across Azure environments, Microsoft is introducing enforcement of multifactor authentication (MFA) for all Azure resource management actions. This change helps protect your organization from unauthorized access and aligns with industry best practices for identity protection.\nThis effort is part of Microsoft’s commitment to enhance security for all customers and follows Azure’s Phase 1 rollout completed last year. Phase 2 enforcement ensures that all Azure clients - including CLI, PowerShell, SDKs, and REST APIs - are protected against unauthorized access.\nWhen this will happen\nPhase 2 enforcement will begin rolling out on October 1, 2025, and will be applied gradually across tenants. Customers may postpone enforcement until July 2026 if additional time is needed to become compliant.\nHow this will affect your organization\nUsers will be required to set up MFA before performing Azure resource management actions (via Azure CLI, PowerShell, Mobile App, Identity SDK, IaC tools, or REST APIs).\nEnforcement applies to all Azure tenants in the public cloud and all users. This includes automation and scripts using user identities (instead of application IDs). The Phase 2 Azure Portal experience will show when enforcement is active on a tenant.\nIf your organization cannot meet the enforcement deadline, you can postpone your tenant’s enforcement date.\nWhat you need to do to prepare\n• Verify MFA Readiness: Ensure all users performing Azure resource management actions are enrolled in MFA.\n• Apply Azure Policy: To understand the potential impact, apply a built-in Azure Policy definition in audit or enforcement mode to assess impact.\n• Upgrade Azure CLI or PowerShell Versions: For the best compatibility experience, users in your tenant should use Azure CLI version 2.76 or later and Azure PowerShell version 14.3 or later.\n• Postpone If Needed: Global administrators can self-serve postponement in the Azure Portal before enforcement begins.\nThis change will happen automatically. No admin action is required unless you need to delay enforcement.\nLearn more:\n• How it works: Microsoft Entra multifactor authentication | Microsoft Learn\n• How to verify that users are set up for mandatory MFA | Microsoft Learn\n• Planning for mandatory multifactor authentication for Azure and other admin portals | Microsoft Learn\n• Tutorial: Self-enforce MFA through Azure Policy - Azure Policy | Microsoft Learn\nCompliance Considerations\nNo compliance considerations identified, review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft will enforce multifactor authentication (MFA) for all Azure resource management actions starting October 1, 2025, with a postponement option until July 2026. Users must enable MFA, update Azure CLI/PowerShell, and can apply Azure Policy to assess impact. Gallatin customers are advised to implement MFA without enforcement."
         }
       ]
     },
