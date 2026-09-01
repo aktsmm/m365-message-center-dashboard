@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T07:48:37.3185006+00:00",
+  "generatedAt": "2026-09-01T07:53:58.7076433+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Edge/Entra関連の期限迫る変更が複数、Admin app廃止やOffice LTSC 2021サポート終了にも要注意",
   "executiveSummary": "今週のMessage Center更新では、Microsoft Edgeの複数の廃止・移行案件が短期の対応期限を伴っています。特にMC1449170(Edgeのdefault unloadイベントサポート終了)は2026年9月5日、MC1459132(WIP/MDAG廃止)とMC1456610(Copilotエンドポイント更新)は9月24日が期限です。またEntra ID関連ではMC1458474(company brandingのカスタムCSS廃止、10/26期限)、MC1325414(SSPR登録必須化、11/9開始)など、認証・ブランディング設定の見直しが必要な案件が続きます。重大変更(isMajorChange)としては、MC1462922(Teams/Outlook/M365.comのAdmin app廃止、10月開始)、MC1278920(Office LTSC 2021サポート終了、2026年10月13日)、MC1426371(Entraパスキーデフォルト化とSMS/音声認証廃止)、MC1221452(パスキープロファイルGA)などが含まれ、中長期の移行計画策定が必要です。Copilot関連ではMicrosoft 365 Roadmap名称変更(MC1461528)やCopilotアプリのシンプル化(MC1454108、MC1325422)など、ユーザー体験変更が継続しています。",
