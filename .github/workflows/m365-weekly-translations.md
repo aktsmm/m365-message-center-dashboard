@@ -23,7 +23,7 @@ on:
       - main
 
 if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
-run-name: "M365 bounded translations (${{ inputs.translation_request_id }})"
+run-name: "M365 bounded translations (${{ inputs.translation_request_id || github.event.workflow_run.id || github.run_id }})"
 
 permissions:
   contents: read
@@ -34,6 +34,7 @@ engine:
   id: copilot
 network: defaults
 max-ai-credits: 60
+max-daily-ai-credits: -1
 concurrency: m365-message-center-pages
 
 pre-agent-steps:
@@ -50,6 +51,7 @@ pre-agent-steps:
       TRANSLATION_BATCH_INDEX: ${{ inputs.translation_batch_index }}
       TRANSLATION_IDS: ${{ inputs.translation_ids }}
       TRANSLATION_REQUEST_ID: ${{ inputs.translation_request_id }}
+      EXPR_GITHUB_RUN_ID: ${{ github.run_id }}
     run: |
       $translationBatchIndex = $env:TRANSLATION_BATCH_INDEX
       $translationIds = $env:TRANSLATION_IDS
@@ -96,7 +98,7 @@ pre-agent-steps:
         AgentTranslationBatchSize      = 4
         AgentTranslationBodyMaxChars   = 1000
         LookbackDays                   = 180
-        RunId                          = '${{ github.run_id }}'
+        RunId                          = $env:EXPR_GITHUB_RUN_ID
       }
       if ($translationIds) {
         $exportParameters.AgentTranslationIds = $translationIds
@@ -116,6 +118,14 @@ pre-agent-steps:
       retention-days: 1
 
 safe-outputs:
+  report-failure-as-issue: false
+  report-failed-jobs: false
+  missing-tool:
+    create-issue: false
+  missing-data:
+    create-issue: false
+  report-incomplete:
+    create-issue: false
   jobs:
     publish-m365-translations:
       description: "Publish a validated bounded Japanese translation batch. Never include credentials or access tokens."

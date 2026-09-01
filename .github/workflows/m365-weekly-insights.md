@@ -20,6 +20,7 @@ engine:
   id: copilot
 network: defaults
 max-ai-credits: 60
+max-daily-ai-credits: -1
 concurrency: m365-message-center-pages
 
 pre-agent-steps:
@@ -32,6 +33,8 @@ pre-agent-steps:
 
   - name: Build transient Message Center context
     shell: pwsh
+    env:
+      EXPR_GITHUB_RUN_ID: ${{ github.run_id }}
     run: |
       ./scripts/Export-M365MessageCenter.ps1 `
         -OutputDirectory "$env:RUNNER_TEMP/m365-agent-public" `
@@ -40,7 +43,7 @@ pre-agent-steps:
         -AgentContextLimit 1000 `
         -AgentContextBodyMaxChars 1000 `
         -LookbackDays 180 `
-        -RunId '${{ github.run_id }}'
+        -RunId $env:EXPR_GITHUB_RUN_ID
 
   - name: Upload public Message Center snapshot
     uses: actions/upload-artifact@v7
@@ -51,6 +54,14 @@ pre-agent-steps:
       retention-days: 1
 
 safe-outputs:
+  report-failure-as-issue: false
+  report-failed-jobs: false
+  missing-tool:
+    create-issue: false
+  missing-data:
+    create-issue: false
+  report-incomplete:
+    create-issue: false
   jobs:
     publish-m365-dashboard:
       description: "Publish a validated Japanese weekly summary to the lab-public M365 dashboard. Never include credentials or access tokens."
