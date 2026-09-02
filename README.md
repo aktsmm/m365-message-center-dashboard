@@ -2,6 +2,9 @@
 
 Microsoft Graph の Message Center から、ラボ公開を許可した Message Center コンテンツを収集して GitHub Pages に公開する、単一 HTML の週2回ダッシュボードです。Microsoft 公式製品ではなく、AS-IS のサンプルです。
 
+> [!IMPORTANT]
+> 顧客環境での検証を始める前に、[顧客環境向け導入・セットアップ Jump Start](docs/SETUP.md) で必要なライセンス、管理者ロール、Microsoft Graph 権限、GitHub OIDC、Copilot 課金、および公開データ境界を確認してください。
+
 ## License
 
 Repository-authored content and generated Pages presentation are licensed under [CC BY-NC-SA 4.0](LICENSE), with the additional permission for Microsoft Corporation and its affiliates stated in that file. Microsoft Message Center content retrieved through Microsoft Graph is third-party Microsoft content and is not licensed by aktsmm.
@@ -59,23 +62,11 @@ tests/fixtures/                       # Synthetic Graph and Agentic Workflow dat
 reports/m365/                         # The only path workflows commit
 ```
 
-## Entra ID and GitHub Actions setup
+## 導入・セットアップ
 
-1. Create or select a Microsoft Entra application registration.
-2. Add Microsoft Graph **Application** permission `ServiceMessage.Read.All`, then grant tenant admin consent.
-3. Create a federated credential for this repository's GitHub Actions workflow. No Azure subscription is required.
-4. In **Settings → Secrets and variables → Actions**, configure the required repository secrets:
+顧客向けの推奨構成は、組織所有の GitHub リポジトリ、検証用 Microsoft 365 テナント、および GitHub OIDC で接続する単一テナントの Microsoft Entra アプリです。Microsoft Graph の **Application** permission `ServiceMessage.Read.All` とテナント全体の管理者同意、`AZURE_CLIENT_ID` / `AZURE_TENANT_ID`、GitHub Pages、GitHub Actions、および `copilot-requests: write` を使える Copilot 課金ポリシーが必要です。Azure サブスクリプション、client secret、Copilot 用 PAT はこの構成では使用しません。
 
-   | Secret | Purpose |
-   | --- | --- |
-   | `AZURE_CLIENT_ID` | Client ID of the Entra application or managed identity |
-   | `AZURE_TENANT_ID` | Directory (tenant) ID used only by the OIDC login |
-
-   The workflows intentionally use `allow-no-subscriptions: true`; do not configure an Azure subscription secret. No Copilot secret is required: see step 6.
-5. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-6. Enable GitHub Copilot Agentic Workflows for the repository. The Agentic Workflow engine authenticates with `permissions: copilot-requests: write` and the built-in GitHub Actions `GITHUB_TOKEN`, so no `COPILOT_GITHUB_TOKEN` PAT is needed. GitHub mints that token per run and revokes it when the job ends, so there is no expiry to rotate — an expiring PAT is what silently stopped a sibling repository's scheduled publisher for three nights. In this personally-owned repository the usage bills to the repository owner's Copilot seat, so that seat must stay active. A provider HTTP 401 or an empty model catalog means the identity or Copilot access is not authorized; rerunning cannot publish Agentic output until it is corrected. See [Using Copilot CLI in GitHub Actions](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/copilot-cli-in-github-actions) and the [gh-aw authentication reference](https://github.github.com/gh-aw/reference/auth/).
-
-Run **M365 Message Center Dashboard - Public Metadata** manually once after configuration. It runs twice weekly on Monday and Thursday at 07:17 JST and publishes the dashboard at the GitHub Pages root. The core Agentic Workflow publishes the validated weekly brief, and its successful completion starts the bounded translations workflow.
+担当者、ライセンス・費用、2026年7月以降の immutable OIDC subject、フォーク後の初期化、初回実行、受け入れ基準、およびトラブルシューティングは、[顧客環境向け導入・セットアップ Jump Start](docs/SETUP.md) を参照してください。
 
 ## Agentic summary safety boundary
 
