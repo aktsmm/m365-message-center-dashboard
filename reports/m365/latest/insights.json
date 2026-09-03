@@ -1,27 +1,26 @@
 {
-  "generatedAt": "2026-09-01T07:53:58.7076433+00:00",
+  "generatedAt": "2026-09-03T00:23:35.7413143+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Edge/Entra関連の期限迫る変更が複数、Admin app廃止やOffice LTSC 2021サポート終了にも要注意",
-  "executiveSummary": "今週のMessage Center更新では、Microsoft Edgeの複数の廃止・移行案件が短期の対応期限を伴っています。特にMC1449170(Edgeのdefault unloadイベントサポート終了)は2026年9月5日、MC1459132(WIP/MDAG廃止)とMC1456610(Copilotエンドポイント更新)は9月24日が期限です。またEntra ID関連ではMC1458474(company brandingのカスタムCSS廃止、10/26期限)、MC1325414(SSPR登録必須化、11/9開始)など、認証・ブランディング設定の見直しが必要な案件が続きます。重大変更(isMajorChange)としては、MC1462922(Teams/Outlook/M365.comのAdmin app廃止、10月開始)、MC1278920(Office LTSC 2021サポート終了、2026年10月13日)、MC1426371(Entraパスキーデフォルト化とSMS/音声認証廃止)、MC1221452(パスキープロファイルGA)などが含まれ、中長期の移行計画策定が必要です。Copilot関連ではMicrosoft 365 Roadmap名称変更(MC1461528)やCopilotアプリのシンプル化(MC1454108、MC1325422)など、ユーザー体験変更が継続しています。",
-  "thisWeek": "MC1449170: Edge default unloadイベント廃止(9/5期限)への影響有無を確認し、依存Webアプリを洗い出す\nMC1459132: Windows Information Protection/Defender Application Guard廃止(9/24期限)の代替方式移行状況を確認\nMC1456610: Microsoft Edge向けCopilotエンドポイント更新(9/24期限)に伴うネットワーク許可設定を確認\nMC1462915: copilot.cloud.microsoftへの接続許可設定(URLリダイレクト前)をファイアウォール/プロキシで確認\nMC1443510: All Agentsの保留リクエスト一括クリーンアップ(8/20期限、既に経過)の実施状況を確認",
-  "thisMonth": "MC1458474: company branding カスタムCSS位置指定プロパティ廃止(10/26)に向けたブランディング再構築\nMC1462922: Teams/Outlook/M365.comのAdmin app廃止(10月開始~12月完了)に備え、小規模組織向け代替管理手段を検討\nMC1278920: Office LTSC 2021含む旧バージョンのサポート終了(10/13)に向けたアップグレード計画\nMC1459136: 使用状況レポートの新ドメイン移行に伴うレポート参照先URLの更新\nMC1454378: ファイル/フォルダ共有の次世代体験への移行に伴うユーザー教育資料の準備",
-  "watch": "MC1325414: Entra ID SSPRの認証方法登録必須化(11/9開始)の対象ユーザー範囲拡大\nMC1426371: Entraパスキーデフォルト化とSMS/音声認証廃止の全社展開スケジュール\nMC1422061: Conditional AccessのCustom Controls廃止(2027/4/30期限)への移行方式検討\nMC1188230: パスキー(FIDO2)認証方法ポリシーの重複プロパティ廃止(2027/10/14期限)\nMC1461528: Microsoft 365 RoadmapのAI at Work Roadmapへの改称による情報収集導線の変化",
-  "customerQuestions": "Edgeのdefault unloadイベント廃止(MC1449170)により影響を受ける自社Webアプリケーションを特定していますか?\nWIP/MDAG廃止(MC1459132)後の代替データ保護方式(Purview等)への移行計画はありますか?\nAdmin app廃止(MC1462922)を利用している小規模組織部門はありますか?代替の管理手順を周知済みですか?\nOffice LTSC 2021のサポート終了(MC1278920)に向けたクライアントのアップグレード予算・スケジュールは確保されていますか?\ncompany brandingでカスタムCSSを使用している場合、10/26の廃止に向けた代替スタイル設定の検証は完了していますか?\nEntra IDのSSPR認証方法未登録ユーザーが11月の必須化前にどの程度残っていますか?",
+  "headline": "今週の重要トピック:管理者/Copilotアプリの統合とEntra認証(パスキー既定化・SSPR)の期限が集中",
+  "executiveSummary": "今回のMessage Center更新(全78件)は、1Microsoft 365 Copilotアプリ/エンドポイントの統合(MC1454108, MC1454386, MC1456610)、2Entra IDの認証方式変更(パスキー既定化 MC1426371、SSPR要件強化 MC1325414、Custom Controls退役 MC1422061)、3各種管理機能の退役・移行(Admin app退役 MC1462922、Edge WIP/MDAG退役 MC1459132、admin center利用状況レポートのドメイン移行 MC1459136)が中心です。特に2026年9月5日〜11月6日にかけて複数の対応期限が集中しており、優先順位付けが必要です。Office LTSC 2021のサポート終了(2026年10月13日、MC1278920)も継続案件として要フォロー。",
+  "thisWeek": "MC1449170: Edge既定unloadイベント動作変更、期限2026/9/5。unloadハンドラー利用有無を確認\nMC1459132: Edge WIP/MDAG退役、期限2026/9/24。代替(Purview DLP/Intune)への移行計画を確認\nMC1456610: Edge内Copilot ChatエンドポイントURL変更、期限2026/9/24。ネットワーク許可リスト更新\nMC1443510: All Agents保留リクエストの一括削除(2026/6/1以前分)、期限2026/8/20は既に経過の可能性あり、影響有無を至急確認",
+  "thisMonth": "MC1458474: Entra企業ブランディングのカスタムCSS退役、期限2026/10/26。カスタムCSS利用テナントは移行準備\nMC1325414: Entra SSPRで登録済み認証方法が必須化、期限2026/11/6。未登録ユーザーの洗い出しと再登録案内\nMC1426371: Entraでパスキーが既定認証に、SMS/音声はMicrosoft Security Store経由の外部プロバイダーへ移行(2026/9/1開始)。認証方式のロードマップ確認\nMC1278920: Office/Visio/Project LTSC 2021サポート終了(2026/10/13)。アップグレード計画の確認",
+  "watch": "MC1462922: Teams/Outlook/Microsoft365.comのAdmin app退役(2026年10月完了予定)、小規模組織の管理者への影響\nMC1422061: Entra Conditional AccessのCustom Controls退役、External MFAへの移行(期限2027/4/30、長期対応)\nMC1215070: admin center MFA強制の段階的強化(2026/2/9開始)\nMC1459136: admin center利用状況レポートのドメイン移行、リンク・自動化スクリプトへの影響確認\nMC1454378: ファイル/フォルダー共有の次世代機能、影響範囲を継続監視",
+  "customerQuestions": "Edgeでunloadイベントハンドラーやカスタムスキン(WIP/MDAG)を業務利用しているシステムはありますか?\nEntra IDでカスタムCSSブランディングやSMS/音声によるSSPR・MFAを利用中ですか?パスキー移行の準備状況は?\nOffice LTSC 2021やVisio/Project LTSC 2021を使用している端末は把握できていますか?移行計画はありますか?\nTeams/Outlook/Microsoft365.comでAdmin appを使って管理業務を行っている小規模組織の担当者はいますか?\nAll Agentsの保留リクエストで2026年6月1日より前に作成されたものが残っていないか確認済みですか?",
   "referencedIds": [
-    "MC1188230",
+    "MC1215070",
     "MC1278920",
     "MC1325414",
     "MC1422061",
     "MC1426371",
     "MC1443510",
     "MC1449170",
-    "MC1454378",
+    "MC1454108",
+    "MC1454386",
     "MC1456610",
     "MC1458474",
     "MC1459132",
     "MC1459136",
-    "MC1461528",
-    "MC1462915",
     "MC1462922"
   ],
   "messageUpdates": [
@@ -34,6 +33,13 @@
     },
     {
       "id": "MC1146821",
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1158329",
       "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
       "messageUrl": null,
@@ -547,6 +553,13 @@
       "id": "MC1462922",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1466299",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
