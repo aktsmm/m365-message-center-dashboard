@@ -1,18 +1,21 @@
 {
-  "generatedAt": "2026-09-07T00:07:45.1070067+00:00",
+  "generatedAt": "2026-09-10T00:21:54.1246118+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra認証移行とEdge/Copilotの期限対応が今月の焦点",
-  "executiveSummary": "今回のMessage Centerでは、Microsoft Entra IDのパスワードレス/パスキー移行(MC1426371, MC1221452, MC1325414)とEdgeのセキュリティ機能廃止(MC1459132, MC1449170)が重なり、管理者の対応期限が集中しています。特にEdgeのWIP/MDAG廃止(MC1459132)は2026/9/24が期限で、代替のApp Control for Business等への移行計画が急務です。SSPR登録必須化(MC1325414、2026/11/9開始)は全ユーザーのMFA/SSPR登録状況の棚卸しが必要です。Copilot関連ではエンドポイント変更(MC1456610、9/24期限)や管理画面の刷新(MC1462922管理アプリ廃止、MC1462914 Agent 365利用状況エクスポート)が進行中で、Copilot利用状況の可視化ツールが強化されています。Entra companyブランディングのカスタムCSS廃止(MC1458474、10/26期限)もUI変更を伴うため早期の告知準備が必要です。長期的にはOffice LTSC 2021サポート終了(2026/10/13)、Custom Controls in Conditional Accessの外部MFA移行(2027/4/30)など大型移行が控えており、計画的な移行ロードマップの策定を推奨します。",
-  "thisWeek": "MC1459132: Edge WIP/MDAG廃止(期限9/24)への代替(App Control for Business等)移行状況を確認\nMC1456610: Copilot Chat商用エンドポイント変更(期限9/24)がEdgeのネットワーク許可リストに反映されているか確認\nMC1449170: Edgeのunloadイベント既定サポート廃止(期限9/5)による自社Webアプリへの影響有無を確認\nMC1462922: Teams/Outlook/M365.comの管理アプリ廃止に伴う代替管理動線の周知準備\nMC1443510: All Agentsの古い保留リクエスト一斉クリーンアップ(実施済み想定、8/20)の影響有無を確認",
-  "thisMonth": "MC1458474: Entra company branding カスタムCSSレイアウト/位置指定プロパティ廃止(期限10/26)に向けたブランディングUI移行\nMC1325414: Entra ID SSPRの認証方法登録必須化(2026/11/9開始)に備え、全ユーザーの登録状況を棚卸し\nMC1426371: パスキー既定化とMicrosoft提供SMS/音声認証の廃止に向けた代替認証方式の展開計画\nMC1462914: Microsoft Agent 365のアクティブユーザーエクスポート機能を用いたエージェント利用状況レポート運用の検討\nMC1278920: Office LTSC 2021ほかのサポート終了(2026/10/13)に伴うアップグレード計画の最終確認",
-  "watch": "MC1422061: Conditional AccessのCustom Controls廃止と外部MFAへの移行(期限2027/4/30、影響大のため早期着手推奨)\nMC1188230: パスキー(FIDO2)認証方法ポリシーの重複プロパティ廃止(期限2027/10/14)\nMC1454378: Microsoft 365の次世代ファイル/フォルダー共有モデルへの移行動向\nMC1461528: Microsoft 365 RoadmapがAI at Work Roadmapへ改称、情報収集チャネルの変更に注意\nMC1454108/MC1454386: Copilotアクセス導線の簡素化に伴うユーザー教育資料の見直し",
-  "customerQuestions": "貴社でMicrosoft Edgeを利用したWIP(Windows Information Protection)やMDAG(Defender Application Guard)による保護を運用していますか?廃止後の代替策(Purview/App Control等)は検討済みですか?\n全ユーザーのSSPR/MFA認証方法の登録は完了していますか?2026年11月の必須化に向けた周知は進んでいますか?\nTeams/Outlook/Microsoft365.com上の管理アプリを使った管理作業を行っている担当者はいますか?廃止後の代替動線を把握していますか?\nMicrosoft 365 Copilotの利用状況やライセンス消費を可視化する新しいレポート機能を活用する予定はありますか?\nOffice LTSC 2021など既存クライアントのサポート終了(2026/10/13)に向けたアップグレード計画は策定済みですか?",
+  "headline": "今週のM365メッセージセンター: Entra認証の大転換とEdge/Copilot関連の廃止が本格化",
+  "executiveSummary": "今回のスナップショットでは80件の投稿を確認しました。最大のテーマはMicrosoft Entra IDにおけるパスキー既定化とSMS/音声MFAの段階的廃止(MC1426371, MC1215070, MC1422061, MC1325414)で、認証基盤の見直しが必須です。あわせてMicrosoft Edgeでは条件付きアクセス関連機能(WIP/MDAG: MC1459132、MV2拡張機能: MC1467356、unloadイベント: MC1449170)の廃止が進行し、ブラウザ管理者は影響評価が必要です。Copilot関連ではエンドポイント変更(MC1462915、MC1456610は撤回されMC1462915に統合)、送信者アドレス変更(MC1469962)、モバイル/デスクトップUIの簡素化(MC1454108, MC1454386)が続き、ユーザー向け周知が求められます。さらにOffice LTSC 2021のサポート終了(2026年10月13日、MC1278920)やAdminアプリ廃止(MC1462922)など、計画的な移行対応が必要な項目が複数あります。",
+  "thisWeek": "MC1459132: Windows Information Protection (WIP) と Microsoft Defender Application Guard (MDAG) のEdgeサポート終了、代替のPurview/Intune構成への移行状況を確認\nMC1449170: unloadイベント既定動作変更(2026/9/5対応期限)、社内Webアプリの影響有無を確認\nMC1456610: 本メッセージは撤回されMC1462915(copilot.cloud.microsoft許可)に統合、許可リスト設定の見直し先をMC1462915に切替\nMC1443510: All Agentsの保留リクエスト一斉削除(2026/8/20開始)、対象リクエストが承認済みか確認\nMC1422074: Microsoft 365 CopilotでOpenAIモデルがサブプロセッサ追加(対応期限2026/7/24)、DPA/データ処理方針の確認",
+  "thisMonth": "MC1426371: Entraでパスキーが既定認証となり、SMS/音声MFAは2027/2/1に無効化。移行計画とユーザー周知を準備\nMC1325414: Entra SSPRが登録済み認証方法必須化(2026/11/9開始)、未登録ユーザーの棚卸しを実施\nMC1467356: Edge MV2拡張機能の企業向け廃止(2027年初頭予定)、MV3移行が必要な拡張機能の棚卸し\nMC1462922: Teams/Outlook/Microsoft365.comのAdminアプリ廃止(2026年10月完了予定)、代替の管理方法を周知\nMC1458474: Entra会社ブランディングのカスタムCSS配置プロパティ廃止(対応期限2026/10/26)、カスタムCSS利用有無を確認\nMC1278920: Office/Visio/Project LTSC 2021のサポート終了(2026/10/13)、アップグレード計画を策定",
+  "watch": "MC1422061: Entra条件付きアクセスのカスタムコントロール廃止とExternal MFAへの移行(長期スケジュール、対応期限2027/4/30)\nMC1215070: M365管理センターMFA強制の適用状況(2026/2/9開始済み)を継続監視\nMC1454378: M365ファイル/フォルダー共有の次世代化(hero link導入)、展開状況とユーザー影響を継続確認\nMC1387526: M365 Backupのフルワークロードバックアップ機能拡張、既存バックアップポリシーとの整合性を確認\nMC1440976: People Skillsのロール-スキルマッピングファイル廃止(2026/8/22開始)、カスタムスキル運用への影響を確認",
+  "customerQuestions": "Entraのパスキー既定化とSMS/音声MFA廃止に向けて、現在のMFA登録状況の棚卸しは完了していますか?\nEdgeでWIP/MDAGを利用している場合、Purview Information ProtectionやIntuneアプリ保護ポリシーへの移行計画はありますか?\nMV2ベースの社内カスタムEdge拡張機能を利用していますか?MV3への移行スケジュールは確立していますか?\nOffice/Visio/Project LTSC 2021を使用している端末は把握できていますか?2026年10月13日までのアップグレード計画はありますか?\nCopilot Chatのエンドポイント変更(MC1462915)に伴い、ネットワーク許可リストの更新は完了していますか?",
   "referencedIds": [
-    "MC1188230",
+    "MC1215070",
     "MC1278920",
     "MC1325414",
+    "MC1387526",
     "MC1422061",
+    "MC1422074",
     "MC1426371",
+    "MC1440976",
     "MC1443510",
     "MC1449170",
     "MC1454108",
@@ -21,9 +24,10 @@
     "MC1456610",
     "MC1458474",
     "MC1459132",
-    "MC1461528",
-    "MC1462914",
-    "MC1462922"
+    "MC1462915",
+    "MC1462922",
+    "MC1467356",
+    "MC1469962"
   ],
   "messageUpdates": [
     {
@@ -230,13 +234,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1395007",
-      "japaneseTitle": "Microsoft 365 suite、Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite、Microsoft Entra。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1400824",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
@@ -261,13 +258,6 @@
       "id": "MC1411574",
       "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1419799",
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -482,13 +472,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1457229",
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1458474",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2026年10月26日 です。",
@@ -576,6 +559,27 @@
       "id": "MC1467356",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1469329",
+      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1469555",
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1469962",
+      "japaneseTitle": "Microsoft 365 Copilot Chat、Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat、Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -792,13 +796,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1395007",
-      "japaneseDetailedSummary": "MicrosoftはMicrosoft Agent 365およびMicrosoft 365 E7に、エージェント向けConditional AccessとID ProtectionのEntraサービスプランを追加。エージェントシナリオへのID保護・条件付きアクセス適用が可能に。新プラン：「Entra Conditional Access for Agents」「Entra ID Protection for Agents」。一般提供：2026年7月初旬〜8月初旬。対象：Microsoft Agent 365またはMicrosoft 365 E7管理者。",
-      "japaneseBodyTranslation": "【概要と目的】\nMicrosoft Agent 365およびMicrosoft 365 E7に、エージェント向けConditional AccessとID ProtectionのEntraサービスプランを追加。組織はエージェントシナリオへMicrosoft Entraの機能でID保護・条件付きアクセスを適用でき、ライセンス管理も簡素化されます。\n新サービスプラン：\n• Entra Conditional Access for Agents（ENTRA_CONDITIONAL_ACCESS_FOR_AGENTS）\n• Entra ID Protection for Agents（ENTRA_ID_PROTECTION_FOR_AGENTS）\n【展開スケジュール】\n• 一般提供（全世界）：2026年7月初旬開始、8月初旬完了予定。\n【影響】\n対象：Microsoft Agent 365またはMicrosoft 365 E7の組織・管理者（テキスト省略あり）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1400824",
       "japaneseDetailedSummary": "Microsoft EntraのSSPRのCAPTCHA保護を更新します。従来のCAPTCHAを廃止し、バックエンドスロットリングと動作ベースの不正利用検出に移行。管理者による構成変更不要。ロールアウトは2026年8月初旬～下旬（世界）。SSPRを利用する全Entraテナントが対象。セキュリティ・アクセシビリティ・信頼性が向上します。",
       "japaneseBodyTranslation": "2026年7月20日更新：タイムラインを更新しました。\n【変更内容と理由】\nEntra SSPRのボット対策をCAPTCHAからバックエンドスロットリングおよび動作ベース検出に切り替えます。ユーザーへの摩擦を軽減しつつ自動攻撃への保護を強化します。構成変更不要。\n【ロールアウトスケジュール】\n一般提供（全世界）：2026年8月初旬開始（旧：7月下旬）、8月下旬完了（旧：8月中旬）。\n【組織への影響】\n対象：SSPR使用中の全Entraテナント\nプラットフォーム：Microsoft Entra SSPR（Webフロー）\n変更内容：従来のCAPTCHAチャレンジが削除されます（本文は途中で切れています）",
@@ -823,13 +820,6 @@
       "id": "MC1411574",
       "japaneseDetailedSummary": "Microsoft Entra IDのシステム優先認証が第1要素認証にも適用拡大。設定が「Microsoftマネージド」状態の組織では、第1・第2要素両方でシステムが最もセキュアな認証方法を自動選択。「有効」「無効」状態の組織には影響なし。2026年6月末〜7月末にロールアウト。管理者は変更影響の事前確認を推奨。",
       "japaneseBodyTranslation": "2026年7月9日更新: リマインダーとして投稿を更新しました。\n【概要】\nシステム優先認証がMicrosoft Entra IDで第1要素・第2要素の両方に適用されるようになりました（Microsoftマネージド状態の場合）。ユーザー登録済み認証情報を評価し、最もセキュアな方法でサインインを促します。\n【ロールアウト】\n• 全世界: 2026年6月末〜7月末\n【影響範囲】\n対象: システム優先認証がMicrosoftマネージド状態の組織。「有効」「無効」状態では第1要素サインインの動作は変わりません",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1419799",
-      "japaneseDetailedSummary": "Microsoft 365 Backupにバックアップ回復ウィンドウの設定可能機能が追加されます。従来は1年固定でしたが、管理者がポリシーレベルで3ヶ月〜2年の範囲で設定できるようになります。コンプライアンス要件やコスト・事業継続戦略に合わせた柔軟なデータ保護が可能です。ロードマップID 481834。2026年7月下旬にパブリックプレビューおよびGA開始、8月初旬完了予定（全世界）。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft 365 Backupにバックアップ回復ウィンドウの設定可能機能を導入します。管理者はポリシーレベルで回復ウィンドウを3ヶ月〜2年の範囲で定義できます（従来は1年固定）。コンプライアンス要件・コスト・事業継続戦略に応じたデータ保護設定が可能となり、バックアップライフサイクル管理の制御性が向上します。ロードマップID 481834に関連。\n【展開スケジュール】\n・パブリックプレビュー/一般提供（全世界）：2026年7月下旬開始、8月初旬完了予定\n【組織への影響】\n・対象：Microsoft 365 Backupポリシーを管理する管理者\n・プラットフォーム：Microsoft 365管理センター（Web）、Microsoft 365 Backup\n・変更内容：管理者は設定（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1044,13 +1034,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1457229",
-      "japaneseDetailedSummary": "MC1457229は、Microsoft 365 Peopleコネクターが外部HRシステム(SAP SuccessFactors、Workday、カスタムコネクター)からエグゼクティブアシスタント情報を取り込む機能をサポートしたことを伝えます。取り込まれたアシスタントデータは、プロフィールカード、Org Explorer、Outlook、Microsoft 365 Copilotなど複数のMicrosoft 365機能で活用でき、ユーザーが適切な担当者を特定しやすくなります。一般提供(ワールドワイド)はすでに開始されています。影響を受けるのはPeopleコネクターや組織プロフィールデータを管理するMicrosoft 365管理者、およびアシスタント情報が取り込まれるユーザーです。管理者はソースシステムを正式な記録として維持しながら、データをMicrosoft 365に統合できます。",
-      "japaneseBodyTranslation": "[概要と理由]\nMicrosoft 365 Peopleコネクターは、外部のHRおよび人事システムからエグゼクティブアシスタント情報をMicrosoft 365に取り込む機能をサポートするようになりました。組織は、SAP SuccessFactors、Workday、カスタムPeopleコネクターなどのサポート対象コネクターを使用して、ソースシステムを正式な記録システムとして維持しながら、エグゼクティブアシスタントデータをMicrosoft 365に取り込むことができます。\nアシスタントデータが取り込まれると、プロフィールカード、組織ビュー、Org Explorer、Microsoft 365 Copilotなど、Microsoft 365のさまざまな機能で利用可能になり、ユーザーが適切な担当者を特定して連絡しやすくなります。\n\n[展開スケジュール]\n• 一般提供(ワールドワイド):現在利用可能\n\n[組織への影響]\n影響を受けるユーザー\n• Peopleコネクターまたは組織のプロフィールデータを管理するMicrosoft 365管理者\n• アシスタント情報がMicrosoft 365に取り込まれるユーザー\n対象プラットフォームおよびサービス\n• Microsoft 365プロフィールカード\n• Org Explorer\n• Outlook on the",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1458474",
       "japaneseDetailedSummary": "Microsoft Entra IDのカスタムCSSブランディングにおいて、レイアウト・位置指定プロパティのサポートが2026年10月下旬に廃止されます。対象はカスタムCSSのレイアウト・位置指定プロパティを使用している組織のみ。2026年7月21日時点でカスタムCSSを使用していない組織は影響を受けません。フィッシング攻撃対策強化(SFI)のため、よりセキュアなサインイン体験を実現するための変更です。影響のある組織は2026年10月下旬までにCSSの見直しが必要です。",
       "japaneseBodyTranslation": "【内容と理由】\nカスタムCSSのレイアウト・位置指定プロパティを使用している組織のみ対応が必要です。2026年7月21日時点でカスタムCSSを使用していない組織は影響を受けず、今後も利用開始はできません。Microsoft Entra External IDテナントはこの変更の影響を受けません。\nAzureサブスクリプションに関連付けられているため、この通知を受け取っています。\nMC1435782で以前通知したとおり、Microsoftはブランド化されたサインインエクスペリエンスのセキュリティ強化のため、Microsoft Entra IDのカンパニーブランディングを更新しています。MicrosoftのSecure Future Initiative(SFI)をサポートし、フィッシング攻撃に対する保護を強化するため、Microsoft Entra IDは2026年10月下旬より、カンパニーブランディングで使用されるカスタムCSSのレイアウト・位置指定プロパティのサポートを廃止します。\nこの変更により、ブランドカスタマイズを継続してサポートしながら、よりセキュアで信頼性が高く一貫したサインインエクスペリエンスを実現します。",
@@ -1128,13 +1111,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
-      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1466760",
       "japaneseDetailedSummary": "Microsoft Copilotのチャットにおいて、既存の「Pages」への参照方法が変更されます。2026年8月下旬から展開が始まり、9月上旬までに完了予定です。今後はライブラリタブから既存のPagesにアクセスするほか、プロンプトボックスの「/」メニューからも既存Pagesを参照できるようになり、チャット内での検索・参照が効率化されます。一方、「PagesでEdit」メニューは新規Pages作成に特化する形に変更され、既存のワークフローとの整合性が高まります。既存のPagesやコンテンツ、共有設定自体には影響がなく、ユーザーは引き続き「/」メニューから既存Pagesをチャットに追加できます。管理者への追加対応は不要ですが、エンドユーザー向けに操作フローの変更点(特にPages作成と参照の導線が分離される点)を事前に周知しておくと、問い合わせ削減に有効です。",
       "japaneseBodyTranslation": "[内容と理由:]\n2026年9月から、ユーザーは「ライブラリ」タブで既存のPagesにアクセスできるようになります。また、Copilotのプロンプトボックスで「/」メニューを使用して既存のPagesを参照することもでき、チャット内でPagesを見つけて参照するための効率的な方法が提供されます。\nこの更新の一環として、Copilotの「Pagesで編集」メニューは、チャット体験と並行して新規Pagesの作成に重点を置くようになります。これにより、最も一般的なユーザーのワークフローに合わせて体験が調整され、Copilotにおけるページの作成と参照方法が簡素化されます。\n[展開スケジュール:\n一般提供(世界規模): 2026年8月下旬に展開を開始し、2026年9月上旬までに完了する見込みです。\n[組織への影響:]\nユーザーは引き続き、プロンプトボックスの「/」メニューから既存のPagesを選択することで、Copilotチャット内でそれらを参照できます。\n• 既存のPagesは「/」メニューを通じてチャットに追加できます。\n• 「Pagesで編集」メニューは、Copilotの会話から新規Pagesを作成することに専念するようになります。\n• 既存のPages、コンテンツ、共有(以下、原文が途切れているため続きは含まれません)",
@@ -1145,6 +1121,13 @@
       "id": "MC1467356",
       "japaneseDetailedSummary": "Microsoft EdgeにおいてManifest V2(MV2)拡張機能のサポートが段階的に廃止されます。企業向けの廃止完了は2027年初頭を予定しており、世界規模・GCC・GCC High・DoD環境では2027年1月初旬から展開を開始し、2027年4月下旬までに完了予定です。目的はMV3への完全移行によるパフォーマンスとセキュリティの向上で、MV3はより厳格な権限管理を強制し、リモートホストされたコードの実行をブロックすることで攻撃対象領域を縮小します。影響を受けるのは、MV2拡張機能をインストールしているすべてのテナント・ユーザー、および管理ポリシーを通じてMV2拡張機能を展開・許可リスト登録している企業管理者です。Edge Add-onsストアでMV3対応の代替拡張機能が用意されているため、移行が推奨されます。管理者は自組織で利用中のMV2拡張機能の棚卸しを行い、2027年の廃止完了前にMV3版への切り替えやポリシー見直しを計画する必要があります。",
       "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft EdgeはManifest V2(MV2)ブラウザー拡張機能のサポートを廃止し、完全にManifest V3(MV3)へ移行します。企業向けの廃止が完了すると、MV2はMicrosoft Edgeで実行されなくなります。企業向けの廃止は現在2027年初頭に予定されています。\nこの変更は、パフォーマンスとセキュリティの向上という顧客価値をもたらします。MV3はより厳格な権限を強制し、リモートホストされたコードをブロックし、レガシーMV2拡張機能に関連する攻撃対象領域を縮小します。\n顧客への影響を最小限に抑えるため、Edge Add-onsストアではより優れたMV3の代替拡張機能が用意されています。\n[展開スケジュール:]\n世界規模、GCC、GCC High、DoD: 2027年1月初旬に展開を開始し、2027年4月下旬までに完了する見込みです。\n[組織への影響:]\n影響を受ける対象\n• Manifest V2拡張機能をインストールしているMicrosoft Edgeのすべてのテナントおよびユーザー(コンシューマーおよび企業)。\n• Microsoft Edgeのポリシーを通じてMV2拡張機能を展開または許可リストに登録している企業管理者(例(以下、原文が途切れているため続きは含まれません)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC985483",
+      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
+      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
