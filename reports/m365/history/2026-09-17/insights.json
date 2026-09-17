@@ -1,23 +1,27 @@
 {
-  "generatedAt": "2026-09-14T00:26:15.0934734+00:00",
+  "generatedAt": "2026-09-17T00:39:20.8755185+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "今週の重点:Edge WIP/MDAG廃止対応とCopilotリダイレクト設定の確認、Graph権限のセキュリティ修正に注意",
-  "executiveSummary": "今回のMessage Centerでは、Microsoft Edgeにおけるセキュリティ関連機能の廃止(WIP/MDAG、MV2拡張機能)と、Entra IDの認証強化(パスキー既定化、SSPR登録必須化)が目立つ。加えてMicrosoft Graphの権限修正(User.ReadBasic.All)はアプリ開発者に影響するセキュリティ修正であり早期把握が必要。Office LTSC 2021やAdmin appなど複数の廃止/サポート終了が10月に集中しており、計画的な移行準備が求められる。Copilotのm365.cloud.microsoftからcopilot.cloud.microsoftへのリダイレクトも段階展開中で、ネットワーク制御の見直しが必要な組織がある。",
-  "thisWeek": "MC1459132: Edge WIP/MDAG廃止(対応期限2026-09-24)。WIPやMDAGを利用中の場合、Purview Information Protection/DLPやIntuneアプリ保護ポリシーへの移行計画を今週中に開始する\nMC1470871: Microsoft Graph User.ReadBasic.All権限の仕様修正。アプリ開発チームに展開し、app role assignmentsやライセンス情報取得に依存したコードがないか棚卸しする\nMC1462915: copilot.cloud.microsoftへの通信をブロックしているネットワーク/セキュリティ制御がないか確認し、10月のリダイレクト適用前に許可設定を完了する",
-  "thisMonth": "MC1462922: Teams/Outlook/Microsoft365.comのAdmin app廃止(10月完了予定)。同アプリに依存する小規模組織の管理者向け代替手順の周知\nMC1278920: Office/Visio/Project LTSC 2021のサポート終了(2026-10-13)。未移行の端末・ライセンスの洗い出しとアップグレード計画の策定\nMC1458474: Entra ID会社ブランディングのカスタムCSSレイアウト/位置指定プロパティ廃止(対応期限2026-10-26)。カスタムCSSを利用しているサインイン画面の代替スタイル移行を準備",
-  "watch": "MC1325414: Entra ID SSPRが登録済み認証方法を必須化(2026-11-09開始、対応期限2026-11-06)。電話番号やメール等の未登録属性に依存しているユーザーへの認証方法登録を促進\nMC1467356: Microsoft Edge Manifest V2拡張機能の廃止(2027年初頭予定)。組織で利用中のMV2拡張機能の棚卸しとMV3版への移行計画を継続的に追跡\nMC1454378: Microsoft 365ファイル/フォルダー共有の新しいhero link体験への移行。共有ポリシーやガバナンスへの影響を継続監視\nMC1459136: Microsoft 365管理センター使用状況レポートのドメイン移行。ネットワーク許可リスト更新のタイミングを注視",
-  "customerQuestions": "貴社ではWindows Information ProtectionやMicrosoft Defender Application Guardを現在利用していますか。利用している場合、Purview DLPやIntuneアプリ保護ポリシーへの移行時期はいつ頃を想定していますか\nMicrosoft Graphで User.ReadBasic.All 権限を使用して license details や app role assignments を取得しているアプリケーションはありますか\ncopilot.cloud.microsoft への通信を現在ブロックまたは制限するネットワークポリシーがありますか\nOffice LTSC 2021、Visio LTSC 2021、Project LTSC 2021を利用している端末は社内にどの程度残っていますか。2026年10月13日までに移行完了する見込みですか\nEntra IDのSSPRで、登録済み認証方法(電話番号やメール明示登録)を持たないユーザーはどの程度いますか。11月の必須化までに登録キャンペーンを実施する予定はありますか",
+  "headline": "今週の重点: Edge WIPMDAG廃止(9/24)とOffice LTSC 2021サポート終了(10/13)への対応準備",
+  "executiveSummary": "今週のMessage Centerでは、Microsoft Entraのパスキー既定化とSMS/音声認証の段階的廃止(2027年2月完全終了)、Microsoft Edgeの複数の廃止(WIP/MDAG、MV2拡張機能)、Office LTSC 2021等のサポート終了(10/13)、Microsoft Graphの権限スコープ是正(User.ReadBasic.All)など、セキュリティ強化とレガシー機能整理を目的とした変更が多数公開されました。特にMC1459132(Edge WIP/MDAG廃止)は対応期限が9/24と直近に迫っており、影響有無の即時確認が必要です。また、Entra関連ではConditional AccessのカスタムコントロールやSSPR認証方法の要件強化など、認証基盤の見直しを求める告知が継続しています。全体として、AI活用拡大に向けたセキュリティ基盤強化(パスキー、SFI関連施策)と、レガシー技術(IEモード、Office LTSC、WIP/MDAG、MV2拡張機能)の計画的な廃止が今期のテーマです。",
+  "thisWeek": "MC1459132: Microsoft Edge WIP/MDAG廃止(対応期限2026-09-24) - 自社でWIPまたはMDAGを利用中か即時棚卸しし、Purview/Intuneアプリ保護ポリシー等の代替策への移行計画を確認する\nMC1470871: Graph User.ReadBasic.Allの挙動是正 - 自社アプリがこの権限でapp role assignmentsやライセンス情報を取得していないか棚卸しし、影響有無を確認する(2026-10-30までに完全適用)\nMC1443510: All Agentsの滞留申請の一括削除(対応期限は2026-08-20で既に経過) - 承認/却下対応漏れがなかったか事後確認し、今後同様の滞留が起きないよう運用ルールを見直す",
+  "thisMonth": "MC1472429/MC1278920: Office LTSC 2021、Visio/Project LTSC 2021等のサポートが2026-10-13に終了 - 対象端末の棚卸しとMicrosoft 365 Apps等への移行計画を確定する\nMC1458474: Entra ID会社ブランディングのカスタムCSSレイアウト/位置指定プロパティ廃止(対応期限2026-10-26) - カスタムCSSを利用しているサインイン画面がある場合は代替設定への移行を実施する\nMC1462922: Teams/Outlook/Microsoft365.comのAdminアプリが2026年10月中旬までに廃止完了予定 - 小規模組織向け管理者が同アプリに依存していないか確認し、admin centerでの代替操作手順を周知する\nMC1459136: Microsoft 365 admin centerの使用状況レポートが新ドメインへ移行中 - ネットワーク許可リスト(プロキシ/FW)を新ドメインに対応させ、リダイレクト開始の告知に備える",
+  "watch": "MC1426371: パスキー既定化とSMS/音声MFAの段階的廃止(2027-02-01に完全終了) - 認証方式の移行状況を四半期ごとに追跡し、対象ユーザーへの周知を継続する\nMC1467356: Edge Manifest V2(MV2)拡張機能の廃止(2027年早期に企業向け廃止完了予定) - 業務利用中の拡張機能でMV2依存のものがないか棚卸しし、MV3版への切替を計画する\nMC1325414: Entra ID SSPRが登録済み認証方法を必須化(2026-11-09、対応期限2026-11-06) - 未登録の連絡先情報のみに依存しているユーザーがいないか確認し、認証方法の登録を促進する\nMC1422061: Conditional AccessのカスタムコントロールがExternal MFAへ移行(2027-04-30完全終了、2026年9月から新規作成不可) - 現行カスタムコントロールの利用状況を棚卸しし、External MFAへの移行計画を立てる\nMC1454378: 次世代ファイル/フォルダー共有(hero link)のロールアウトが2026年12月まで継続 - 共有リンク運用ポリシーへの影響を評価し、ユーザー教育を計画する\nMC1188230: FIDO2認証方法ポリシーの重複プロパティ廃止(2027年10月開始、対応期限2027-10-14) - 長期的な監視対象として記録し、API連携がある場合は早めに新プロパティへの移行を検討する",
+  "customerQuestions": "自社でWindows Information ProtectionまたはMicrosoft Defender Application Guardを利用しているシステムはありますか?9/24までに代替策への移行は可能ですか?\nOffice LTSC 2021やVisio/Project LTSC 2021を使用している端末は何台ありますか?10/13のサポート終了までに移行計画はありますか?\n自社アプリがMicrosoft GraphのUser.ReadBasic.All権限でユーザーのアプリロール割り当てやライセンス情報を取得していませんか?\nMicrosoft Entra IDのカスタムCSSブランディングを使用していますか?使用している場合、10/26までの移行準備状況はいかがですか?\nSSPRで携帯電話番号や代替メールなど未登録の連絡先情報のみに依存しているユーザーはいませんか?11/9の変更に向けて認証方法の登録は進んでいますか?\nConditional Accessでカスタムコントロールを使用していますか?External MFAへの移行スケジュールは策定されていますか?",
   "referencedIds": [
+    "MC1188230",
     "MC1278920",
     "MC1325414",
+    "MC1422061",
+    "MC1426371",
+    "MC1443510",
     "MC1454378",
     "MC1458474",
     "MC1459132",
     "MC1459136",
-    "MC1462915",
     "MC1462922",
     "MC1467356",
-    "MC1470871"
+    "MC1470871",
+    "MC1472429"
   ],
   "messageUpdates": [
     {
@@ -280,27 +284,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1430537",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1434580",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1434581",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1434583",
       "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
@@ -388,13 +371,6 @@
       "id": "MC1447683",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1448374",
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -584,6 +560,34 @@
       "id": "MC1470885",
       "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1472028",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1472429",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。対応期限は 2026年10月13日 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1473148",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1473151",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -856,27 +860,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1430537",
-      "japaneseDetailedSummary": "【変更内容】Excel用Copilotに「ブランドキット」スキルが追加されます。Microsoft 365ブランドセンターの承認済みアセット（色・フォント・ロゴ）を使ってテーブルやグラフを自動フォーマットし、手動スタイリング不要でブランド準拠のレポートを作成できます。【ロールアウト】ターゲットリリース：2026年7月中旬〜末。一般提供：2026年7月中旬〜8月中旬。【影響】Excel Copilotユーザーおよびブランドセンター設定済み組織が対象です。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nExcel用Copilotに、組織の承認済みブランディングをワークブックに直接適用する新しいブランドキットスキルが追加されます。Microsoft 365ブランドセンターのアセットを使い、承認済みの色・フォント・ロゴでテーブルやグラフを自動フォーマットします。手動スタイリング不要で組織基準に沿った一貫したレポートが作成できます。\n【ロールアウトスケジュール】\n• ターゲットリリース（全世界）：2026年7月中旬開始、7月末完了予定。\n• 一般提供（全世界）：2026年7月中旬開始、8月中旬完了予定。\n【組織への影響】\n• Excel Copilotアクセス権を持つユーザー。\n• Microsoft 365ブランドセンターでブランドアセットを設定済みの組織。\nプラットフォーム：\n• Microsoft Excel\n• Microso（以下省略）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1434580",
-      "japaneseDetailedSummary": "【変更内容】PowerPoint Copilot（Web版）でOneDriveに保存したユーザー定義カスタムスキルが利用可能になります。SKILL.mdファイルを含むスキルフォルダーをOneDriveにアップロードすると、CopilotスキルメニューにCustomスキルが表示されます。Copilotペインから個別スキルの有効・無効も管理できます。【ロールアウト】一般提供（全世界）：2026年7月下旬開始・完了予定。【影響】Web版PowerPoint Copilotライセンスユーザーおよびカスタムスキル利用者が対象です。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nWeb版PowerPoint Copilotは、OneDriveに保存された個人用カスタムスキルのサポートを導入します。SKILL.mdファイルを含むスキルフォルダーをOneDriveの指定場所にアップロードすると、Web版PowerPointのCopilotスキルメニューに自動表示されます。新しいスキル管理エクスペリエンスにより、Copilotペインから個別スキルを有効・無効にできます。特定のワークフローやプレゼンニーズに合わせてCopilotをカスタマイズしながら、利用可能なスキルを制御できます。\n【ロールアウトスケジュール】\n• 一般提供（全世界）：2026年7月下旬開始・完了予定。\n【組織への影響】\n• Web版PowerPoint Copilotライセンスユーザー。\n• 個人用カスタムスキルを作成・使用するユーザー。\n• Copilot展開をサポートするMicrosoft 365管理者（以下省略）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1434581",
-      "japaneseDetailedSummary": "【変更内容】PowerPoint Copilot（Mac版）でOneDriveに保存したユーザー定義カスタムスキルが利用可能になります。必須のSKILL.mdファイルを含むスキルフォルダーをOneDriveにアップロードすると、CopilotスキルメニューにCustomスキルが表示されます。Copilotペインの新しいスキル管理機能で個別管理も可能です。【ロールアウト】一般提供（全世界）：2026年7月下旬。【影響】Mac版PowerPoint Copilotライセンスユーザーおよびカスタムスキル利用者が対象。Web版（MC1434580）と同時期展開。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nMac版PowerPoint Copilotは、OneDriveに保存された個人用カスタムスキルのサポートを導入します。必須のSKILL.mdファイルを含むスキルフォルダーをOneDriveにアップロードすると、PowerPointのCopilotスキルメニューに対象スキルが自動表示されます。Copilotペインの新しいスキル管理エクスペリエンスから個別スキルを管理できます。\nCopilotインタラクション中に利用可能なスキルを制御しながら、特定のプレゼンワークフローに合わせてCopilotをカスタマイズできます。\n【ロールアウトスケジュール】\n• 一般提供（全世界）：2026年7月下旬開始・完了予定。\n【組織への影響】\n• Mac版PowerPoint Copilotライセンスユーザー。\n• 個人用カスタムスキルを作成・使用するユーザー。\n• Copilot展開をサポートするMicrosoft 365管理者（以下省略）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1434583",
       "japaneseDetailedSummary": "Microsoft 365 Copilotアプリにおいて、Copilot Chatへのアクセスをポリシーでブロックされているユーザーに対して、組織のポリシーリンクを提示できる新機能が導入されます。制限されたユーザーがChatにアクセスしようとした際、管理者が設定した社内ポリシーや案内ページへのリンクを表示することで、ユーザーの混乱を軽減し、適切な次のステップへ誘導できます。対象は統合アプリポリシーでCopilot Chatアクセスを管理している組織の管理者です。2026年7月より展開開始、8月完了予定。管理者はMicrosoft 365管理センターで設定が必要です。",
       "japaneseBodyTranslation": "[概要と目的]\nMicrosoft 365 Copilotアプリ内でCopilot Chatへのアクセスをブロックされているユーザーに対して、組織が会社ポリシーや内部ガイダンスへのリンクを提供できる新機能を導入します。制限されたユーザーがChatにアクセスしようとした際、ポリシーリンクを通じて組織固有の情報へ誘導できます。これにより、組織はより明確なガイダンスを提供し、ユーザーの混乱を軽減し、適切な次のステップへユーザーを誘導できます。\n[展開スケジュール]\n一般提供（全世界）：2026年7月より開始、2026年8月完了予定\n[組織への影響]\n影響を受けるユーザー\n• Microsoft 365 Copilotアプリを使用している組織\n• 統合アプリポリシーを使用してCopilotアクセスを管理している管理者\n• 管理者ポリシーによりCopilot Chatをブロックされているユーザー\nプラットフォーム/サービス\n• Microsoft 365 Copilotアプリ\n変更内容\n• ポリシーで制限されているユーザーは、引き続きMicrosoft 365 CopilotアプリナビゲーションでChatのエントリポイントを確認できます。\n• 制限された",
@@ -964,13 +947,6 @@
       "id": "MC1447683",
       "japaneseDetailedSummary": "Microsoft 365 CopilotのScheduled Prompts機能が、ポリシーフレームワークの変更により「Optional Connected Experiences」から「Microsoft 365 Connected Experiences」へ移行します。この変更はガバナンスおよびコンプライアンス要件との整合を目的としており、ユーザーがスケジュールされたプロンプトを作成・編集・使用する方法には影響しません。既存のスケジュール済みプロンプトも引き続き正常に動作します。\n\nロールアウトスケジュールはWorldwide向けに2026年8月中旬から開始し、2026年8月末までに完了予定です。\n\n影響を受けるのは、Scheduled PromptsにアクセスできるすべてのMicrosoft 365 Copilotユーザーと、Connected ExperiencesポリシーでCopilot機能の可用性を管理しているMicrosoft 365管理者です。管理者は、「Microsoft 365 Connected Experiences」ポリシーの設定がScheduled Promptsの可用性に影響することを確認する必要があります。Optional Connected Experiencesポリシーを無効にしていた場合でも、Connected Experiencesポリシーが有効であればScheduled Promptsは引き続き利用可能となる点に注意が必要です。",
       "japaneseBodyTranslation": "[変更内容と理由]\nMicrosoft 365 CopilotのScheduled Promptsは、日次サマリー、定期レポート、リマインダーなど、繰り返し発生するCopilotリクエストをユーザーが自動化できる機能です。\nMicrosoft 365プラットフォームのガバナンスおよびコンプライアンス要件との整合を図るため、Scheduled PromptはOptional Connected ExperiencesポリシーフレームワークからMicrosoft 365 Connected Experiencesフレームワークへ移行します。\nこの変更は、ユーザーがScheduled Promptsを作成、編集、または使用する方法には影響しません。既存のスケジュール済みプロンプトは引き続き期待通りに実行されます。\n[ロールアウトスケジュール]\n• 一般提供(全世界):2026年8月中旬に開始し、2026年8月末までに完了予定\n[組織への影響]\n対象者\n• Scheduled PromptsにアクセスできるすべてのMicrosoft 365 Copilotユーザー\n• 機能の可用性を管理するためにConnected Experiencesポリシーを使用しているMicrosoft 365管理者\nプラットフォームおよびサービス\n• Microsoft 365 Copilot\n• Connected Experiences向けMicrosoft 365管理コントロール\n発生する変更\n• スケジュール済み(以下省略)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1448374",
-      "japaneseDetailedSummary": "Microsoft Entra ID FreeテナントにおけるSMS第一要素サインインが2026年8月11日に廃止されました。SMSのみ(ユーザー名・パスワード不要)でサインインする方式が対象で、不正利用増加への対策です。MFAの追加要素としてのSMSは引き続き利用可能。影響を受けるユーザーはAuthenticatorアプリやパスキー等の安全な認証方法へ移行が必要。管理者はEntra ID認証方法ポリシーを確認し、ユーザーへ周知・移行支援を行うことが推奨されます。タイムラインは2026年8月10日に更新済み。",
-      "japaneseBodyTranslation": "2026年8月10日更新:タイムラインを更新しました。ご不便をおかけして申し訳ございません。\n【内容と理由】\nMicrosoftは、不正行為の増加を理由に、2026年8月11日をもってMicrosoft Entra ID FreeテナントにおけるSMS第一要素サインインを廃止します。\nSMS第一要素サインインとは、登録された電話番号とSMSで送信されるOTPのみでサインインする方式で、ユーザー名・パスワードは不要です。この方式はフィッシング耐性のある認証方法と比べてアカウント侵害のリスクが高いため廃止されます。\nこの変更はSMS第一要素サインインのみに適用されます。MFAの追加要素としてのSMSは影響を受けません。ユーザーはプライマリサインイン完了後、引き続きSMS確認コードを追加要素として受け取ることができます。\n【ロールアウトスケジュール】\n2026年8月11日より、SMS第一要素サインインは利用不可となります",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1143,9 +1119,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
-      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "id": "MC1470425",
+      "japaneseDetailedSummary": "Microsoft Copilot のコスト管理機能が2026年9月上旬から強化されます。新しくリリースされるUBB Copilotサービスやエージェントに対して、支出ポリシーが既定で自動適用される「Auto-apply new services」設定が有効化されるため、既存のポリシー対象外としたいサービスがある場合は管理者が事前に設定を見直し、無効化する必要があります。また、ユーザーの利用上限しきい値に関するメール通知機能も追加され、消費状況の可視化と柔軟な支出制御が可能になります。CSAとしては、顧客に対しガバナンスポリシーの棚卸しと、新サービス自動継承の可否判断を促す会話が重要です。",
+      "japaneseBodyTranslation": "[内容と理由:]\nコスト管理とCopilotクレジットのガバナンスに関するいくつかの機能強化を展開します。ポリシー管理の簡素化、消費状況の可視性向上、より柔軟な支出制御の提供が目的です。\n[展開スケジュール:]\nこれらの更新は2026年9月上旬から展開が始まります。\n[組織への影響:]\n新サービスの自動適用\n• 新しくリリースされたUBB Copilotサービスおよびエージェントに対して、支出ポリシーが自動的に適用されるようになりました。「新しいサービスを自動適用する」設定はすべてのポリシーで既定で有効になっており、新しいサービスが利用可能になった際にもガバナンスが維持されるようにします。\n• 重要: 「新しいサービスを自動適用する」設定はすべての支出ポリシーで既定で有効です。新しいサービスやエージェントが利用可能になると、自動的にポリシーの適用対象として継承されます。\n• 管理者の対応: 既存のポリシーを確認し、将来のサービスを自動継承させたくない場合は設定を無効化してください。\nユーザー利用上限しきい値のメールアラート\n• 管理者は...(以降、原文が途中で切れているため続きは不明)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1157,16 +1133,16 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1470425",
-      "japaneseDetailedSummary": "Microsoft Copilot のコスト管理機能が2026年9月上旬から強化されます。新しくリリースされるUBB Copilotサービスやエージェントに対して、支出ポリシーが既定で自動適用される「Auto-apply new services」設定が有効化されるため、既存のポリシー対象外としたいサービスがある場合は管理者が事前に設定を見直し、無効化する必要があります。また、ユーザーの利用上限しきい値に関するメール通知機能も追加され、消費状況の可視化と柔軟な支出制御が可能になります。CSAとしては、顧客に対しガバナンスポリシーの棚卸しと、新サービス自動継承の可否判断を促す会話が重要です。",
-      "japaneseBodyTranslation": "[内容と理由:]\nコスト管理とCopilotクレジットのガバナンスに関するいくつかの機能強化を展開します。ポリシー管理の簡素化、消費状況の可視性向上、より柔軟な支出制御の提供が目的です。\n[展開スケジュール:]\nこれらの更新は2026年9月上旬から展開が始まります。\n[組織への影響:]\n新サービスの自動適用\n• 新しくリリースされたUBB Copilotサービスおよびエージェントに対して、支出ポリシーが自動的に適用されるようになりました。「新しいサービスを自動適用する」設定はすべてのポリシーで既定で有効になっており、新しいサービスが利用可能になった際にもガバナンスが維持されるようにします。\n• 重要: 「新しいサービスを自動適用する」設定はすべての支出ポリシーで既定で有効です。新しいサービスやエージェントが利用可能になると、自動的にポリシーの適用対象として継承されます。\n• 管理者の対応: 既存のポリシーを確認し、将来のサービスを自動継承させたくない場合は設定を無効化してください。\nユーザー利用上限しきい値のメールアラート\n• 管理者は...(以降、原文が途中で切れているため続きは不明)",
+      "id": "MC1470885",
+      "japaneseDetailedSummary": "Microsoft は Word、Excel、PowerPoint の Copilot ボタンに新しいプロンプト入力欄を直接追加し、コンテンツを選択した際にコンテキストに応じたプロンプト体験を提供することで、Copilot をより利用しやすくします。ユーザーはワークフローを離れることなく Microsoft 365 Copilot を活用でき、コンテンツ作成、編集、タスク完了が迅速化されます。これは個人およびチームの生産性向上を支援する変更です。展開はWindowsデスクトップ、macOS、Web版のWord、Excel、PowerPointを対象に2026年9月から開始し、2026年12月末までに完了予定です。プラットフォームによって展開時期が異なる場合があります。対象はMicrosoft 365 Copilotの利用資格があるユーザーで、CSAとしては新しいUI変更に関するエンドユーザー向けの事前告知や教育コンテンツの準備を顧客に促すことが有効です。",
+      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft は、Copilot ボタンに新しいプロンプト入力を直接追加し、ユーザーがコンテンツを選択した際にコンテキストに応じたプロンプト体験を提供することで、Word、Excel、PowerPoint 内で Copilot をより利用しやすくします。この更新により、ユーザーはワークフローを離れることなく Microsoft 365 Copilot を活用できるようになり、より迅速なコンテンツ作成、編集、タスク完了が可能になります。この変更は、Copilot のアシスタンスをドキュメント体験に直接組み込むことで、個人およびチームの生産性をサポートします。\n[展開スケジュール:]\n• 一般提供(全世界): 2026年9月に展開を開始し、2026年12月末までに完了予定です。\n• Windowsデスクトップ、macOS、Web版のWord、Excel、PowerPointで利用可能です。\n• プラットフォームによって展開時期が異なる場合があります。\n[組織への影響:]\n影響を受ける対象:\n• Windowsデスクトップ、macOS、またはWeb版のWord、Excel、PowerPointを使用するMicrosoft 365 Copilot利用資格のあるMicrosoft 365ユーザー。\nプラットフォーム/サービス:\n• Microsoft 365 Copi...(以降、原文が途中で切れているため続きは不明)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
     {
-      "id": "MC1470885",
-      "japaneseDetailedSummary": "Microsoft は Word、Excel、PowerPoint の Copilot ボタンに新しいプロンプト入力欄を直接追加し、コンテンツを選択した際にコンテキストに応じたプロンプト体験を提供することで、Copilot をより利用しやすくします。ユーザーはワークフローを離れることなく Microsoft 365 Copilot を活用でき、コンテンツ作成、編集、タスク完了が迅速化されます。これは個人およびチームの生産性向上を支援する変更です。展開はWindowsデスクトップ、macOS、Web版のWord、Excel、PowerPointを対象に2026年9月から開始し、2026年12月末までに完了予定です。プラットフォームによって展開時期が異なる場合があります。対象はMicrosoft 365 Copilotの利用資格があるユーザーで、CSAとしては新しいUI変更に関するエンドユーザー向けの事前告知や教育コンテンツの準備を顧客に促すことが有効です。",
-      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft は、Copilot ボタンに新しいプロンプト入力を直接追加し、ユーザーがコンテンツを選択した際にコンテキストに応じたプロンプト体験を提供することで、Word、Excel、PowerPoint 内で Copilot をより利用しやすくします。この更新により、ユーザーはワークフローを離れることなく Microsoft 365 Copilot を活用できるようになり、より迅速なコンテンツ作成、編集、タスク完了が可能になります。この変更は、Copilot のアシスタンスをドキュメント体験に直接組み込むことで、個人およびチームの生産性をサポートします。\n[展開スケジュール:]\n• 一般提供(全世界): 2026年9月に展開を開始し、2026年12月末までに完了予定です。\n• Windowsデスクトップ、macOS、Web版のWord、Excel、PowerPointで利用可能です。\n• プラットフォームによって展開時期が異なる場合があります。\n[組織への影響:]\n影響を受ける対象:\n• Windowsデスクトップ、macOS、またはWeb版のWord、Excel、PowerPointを使用するMicrosoft 365 Copilot利用資格のあるMicrosoft 365ユーザー。\nプラットフォーム/サービス:\n• Microsoft 365 Copi...(以降、原文が途中で切れているため続きは不明)",
+      "id": "MC985483",
+      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
+      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
