@@ -1,27 +1,32 @@
 {
-  "generatedAt": "2026-09-17T00:44:36.7034902+00:00",
+  "generatedAt": "2026-09-21T00:23:02.7399552+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "今週の重点: Edge WIPMDAG廃止(9/24)とOffice LTSC 2021サポート終了(10/13)への対応準備",
-  "executiveSummary": "今週のMessage Centerでは、Microsoft Entraのパスキー既定化とSMS/音声認証の段階的廃止(2027年2月完全終了)、Microsoft Edgeの複数の廃止(WIP/MDAG、MV2拡張機能)、Office LTSC 2021等のサポート終了(10/13)、Microsoft Graphの権限スコープ是正(User.ReadBasic.All)など、セキュリティ強化とレガシー機能整理を目的とした変更が多数公開されました。特にMC1459132(Edge WIP/MDAG廃止)は対応期限が9/24と直近に迫っており、影響有無の即時確認が必要です。また、Entra関連ではConditional AccessのカスタムコントロールやSSPR認証方法の要件強化など、認証基盤の見直しを求める告知が継続しています。全体として、AI活用拡大に向けたセキュリティ基盤強化(パスキー、SFI関連施策)と、レガシー技術(IEモード、Office LTSC、WIP/MDAG、MV2拡張機能)の計画的な廃止が今期のテーマです。",
-  "thisWeek": "MC1459132: Microsoft Edge WIP/MDAG廃止(対応期限2026-09-24) - 自社でWIPまたはMDAGを利用中か即時棚卸しし、Purview/Intuneアプリ保護ポリシー等の代替策への移行計画を確認する\nMC1470871: Graph User.ReadBasic.Allの挙動是正 - 自社アプリがこの権限でapp role assignmentsやライセンス情報を取得していないか棚卸しし、影響有無を確認する(2026-10-30までに完全適用)\nMC1443510: All Agentsの滞留申請の一括削除(対応期限は2026-08-20で既に経過) - 承認/却下対応漏れがなかったか事後確認し、今後同様の滞留が起きないよう運用ルールを見直す",
-  "thisMonth": "MC1472429/MC1278920: Office LTSC 2021、Visio/Project LTSC 2021等のサポートが2026-10-13に終了 - 対象端末の棚卸しとMicrosoft 365 Apps等への移行計画を確定する\nMC1458474: Entra ID会社ブランディングのカスタムCSSレイアウト/位置指定プロパティ廃止(対応期限2026-10-26) - カスタムCSSを利用しているサインイン画面がある場合は代替設定への移行を実施する\nMC1462922: Teams/Outlook/Microsoft365.comのAdminアプリが2026年10月中旬までに廃止完了予定 - 小規模組織向け管理者が同アプリに依存していないか確認し、admin centerでの代替操作手順を周知する\nMC1459136: Microsoft 365 admin centerの使用状況レポートが新ドメインへ移行中 - ネットワーク許可リスト(プロキシ/FW)を新ドメインに対応させ、リダイレクト開始の告知に備える",
-  "watch": "MC1426371: パスキー既定化とSMS/音声MFAの段階的廃止(2027-02-01に完全終了) - 認証方式の移行状況を四半期ごとに追跡し、対象ユーザーへの周知を継続する\nMC1467356: Edge Manifest V2(MV2)拡張機能の廃止(2027年早期に企業向け廃止完了予定) - 業務利用中の拡張機能でMV2依存のものがないか棚卸しし、MV3版への切替を計画する\nMC1325414: Entra ID SSPRが登録済み認証方法を必須化(2026-11-09、対応期限2026-11-06) - 未登録の連絡先情報のみに依存しているユーザーがいないか確認し、認証方法の登録を促進する\nMC1422061: Conditional AccessのカスタムコントロールがExternal MFAへ移行(2027-04-30完全終了、2026年9月から新規作成不可) - 現行カスタムコントロールの利用状況を棚卸しし、External MFAへの移行計画を立てる\nMC1454378: 次世代ファイル/フォルダー共有(hero link)のロールアウトが2026年12月まで継続 - 共有リンク運用ポリシーへの影響を評価し、ユーザー教育を計画する\nMC1188230: FIDO2認証方法ポリシーの重複プロパティ廃止(2027年10月開始、対応期限2027-10-14) - 長期的な監視対象として記録し、API連携がある場合は早めに新プロパティへの移行を検討する",
-  "customerQuestions": "自社でWindows Information ProtectionまたはMicrosoft Defender Application Guardを利用しているシステムはありますか?9/24までに代替策への移行は可能ですか?\nOffice LTSC 2021やVisio/Project LTSC 2021を使用している端末は何台ありますか?10/13のサポート終了までに移行計画はありますか?\n自社アプリがMicrosoft GraphのUser.ReadBasic.All権限でユーザーのアプリロール割り当てやライセンス情報を取得していませんか?\nMicrosoft Entra IDのカスタムCSSブランディングを使用していますか?使用している場合、10/26までの移行準備状況はいかがですか?\nSSPRで携帯電話番号や代替メールなど未登録の連絡先情報のみに依存しているユーザーはいませんか?11/9の変更に向けて認証方法の登録は進んでいますか?\nConditional Accessでカスタムコントロールを使用していますか?External MFAへの移行スケジュールは策定されていますか?",
+  "headline": "今週の重要トピック: Entra ID認証基盤の大規模刷新とOffice/Edgeの計画的廃止ラッシュ",
+  "executiveSummary": "今週のMessage Centerは、Microsoft Entra IDにおけるパスキー移行・SMS/音声認証廃止・条件付きアクセスのカスタムコントロール廃止など「フィッシング耐性認証への強制移行」を軸としたセキュリティ強化施策が多数を占めました(MC1426371, MC1474104, MC1422061, MC1325414)。あわせてOffice LTSC 2021のサポート終了(10/13)、M365コンパニオンアプリ廃止(12/16)、Edge関連の複数機能廃止(MV2拡張機能、WIP/MDAG、既定unloadイベント)など、計画的な廃止(Deprecation)通知が集中しています。Copilot関連は機能追加・UI簡素化が中心で緊急対応は不要ですが、Copilot Chat課金・利用状況レポートのドメイン移行(MC1459136, MC1462460)は事前告知が必要です。",
+  "thisWeek": "MC1459132: Edge WIP/MDAG廃止(9/24開始)。当該機能を有効化している端末の有無を確認し、Purview Information Protection/DLPやIntuneアプリ保護への移行計画を確認する\nMC1472429: Office LTSC 2021等のサポート終了(10/13)。対象バージョンの利用状況を棚卸しし、アップグレード計画の進捗を確認する\nMC1449170: Edgeの既定unloadイベント廃止(9/5開始)。影響を受ける社内Webアプリがないか開発/運用部門に確認する\nMC1443510: All Agentsの保留リクエスト一括削除(8/20開始済み)。2026/6/1以前の保留リクエストが残っていないか至急確認する\nMC1454108: Copilotアプリのアクセス簡素化アップデートの適用状況を確認し、ユーザー向け周知が必要か判断する",
+  "thisMonth": "MC1474111: M365コンパニオンアプリ(Calendar/People/Files)廃止(12/16)。対象アプリの利用有無を棚卸しし、代替アプリへの移行と端末からのアンインストール計画を12月中旬までに策定する\nMC1467356: EdgeのManifest V2拡張機能廃止(早期2027年開始、企業向けロールアウトは2027年初頭〜4月)。許可リストにあるMV2拡張機能を洗い出し、MV3版への切替を計画する\nMC1458474 / MC1435782: Entra ID会社ブランディングのカスタムCSS廃止(10月下旬開始)。カスタムCSSを使用しているサインイン画面がある場合は代替手段へ移行する\nMC1462922: Teams/Outlook/Microsoft365.comのAdminアプリ廃止(10月完了予定)。小規模組織管理者が利用している場合は管理センターへの移行を案内する\nMC1325414: Entra ID SSPRが登録済み認証方法を要求(11/9開始、登録キャンペーンは10/5開始)。SSPR対象ユーザーの認証方法登録状況を確認し、未登録ユーザーへの周知を準備する\nMC1462460: myaccount.microsoft.com等がmyaccount.cloud.microsoftへ統合(11月下旬)。ファイアウォール/プロキシの許可リストとドキュメントの更新を準備する\nMC1459136: 管理センターの利用状況レポートが新ドメインへ移行。監視/自動化ツールの参照先URLを確認・更新する",
+  "watch": "MC1426371 / MC1474104: SMS/音声によるMFAが2027/2/1に完全廃止。パスキー移行の進捗を継続的にトラッキングし、レガシー認証方式に依存するユーザーへの案内を継続する\nMC1422061: 条件付きアクセスのカスタムコントロールが2027/5に完全廃止(新規作成/変更は既に不可)。External MFAへの移行計画がある組織は進捗を監視する\nMC1470871: Microsoft Graph User.ReadBasic.Allのスコープ是正。ロール割り当てやライセンス情報取得に依存するアプリがないか継続確認する\nMC1454378: 新しいファイル/フォルダ共有体験(Hero Link)のロールアウト状況を監視し、ユーザー教育資料を準備する\nMC1454397: TERRL(外部宛先レート制限)の変更。新規/試用/教育テナントでの送信エラー増加がないか監視する",
+  "customerQuestions": "Office LTSC 2021やVisio/Project LTSC 2021を利用している端末は社内にどれくらいありますか?アップグレード計画は策定済みですか?\nM365コンパニオンアプリ(Calendar/People/Files)を配布・利用しているユーザーはいますか?12月の廃止に向けたアンインストール計画はありますか?\nSMSや音声によるMFAに依存しているユーザーはまだ残っていますか?パスキーへの移行はどこまで進んでいますか?\nMicrosoft Entra IDの条件付きアクセスでカスタムコントロールを使用していますか?External MFAへの移行検討状況はいかがですか?\nEdgeで会社ブランディングのカスタムCSSやManifest V2拡張機能を使用していますか?",
   "referencedIds": [
-    "MC1188230",
-    "MC1278920",
     "MC1325414",
     "MC1422061",
     "MC1426371",
+    "MC1435782",
     "MC1443510",
+    "MC1449170",
+    "MC1454108",
     "MC1454378",
+    "MC1454397",
     "MC1458474",
     "MC1459132",
     "MC1459136",
+    "MC1462460",
     "MC1462922",
     "MC1467356",
     "MC1470871",
-    "MC1472429"
+    "MC1472429",
+    "MC1474104",
+    "MC1474111"
   ],
   "messageUpdates": [
     {
@@ -592,6 +597,27 @@
       "learnUrls": []
     },
     {
+      "id": "MC1474104",
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2027年2月1日 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1474111",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1474455",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
       "id": "MC985483",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
@@ -1140,9 +1166,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
-      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "id": "MC1472028",
+      "japaneseDetailedSummary": "Outlookの対象となる会議および定例会議シリーズに「主催者の変更(Change organizer)」機能が導入されます。ユーザーは組織内の別の人物に主催者権限の移譲を依頼でき、依頼された相手が承諾した時点で所有権が移転します。異動、休職、退職などによる役割変更時に会議の継続性を維持する目的があります。展開はフェーズ制で、フェーズ1はオンライン会議以外の対象会議で、Worldwideは2026年9月下旬から10月下旬、GCCは10月上旬から10月下旬、GCC Highは11月上旬から11月下旬、DoDは11月上旬から11月下旬に順次展開されます。フェーズ2ではTeams会議など オンライン会議に対応し、移譲時に新しい主催者名義の新しいTeams会議リンクが生成されます。フェーズ3ではチャット、会議オプション、文字起こし、録画、議題、メモ、出席レポートなどTeams会議の関連成果物の移譲にも対応予定です。フェーズ2・3の詳細な時期は今後案内されます。管理者は組織内の主催者変更に伴うポリシーやオフボーディング手順を見直しておくとよいでしょう。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoftは、対象となるOutlook会議および定例会議シリーズに「主催者の変更」機能を導入します。ユーザーは組織内の別の人物に主催者になることを依頼でき、選択された相手が承諾するまで所有権は変更されません。これは、役割変更、休暇取得、オフボーディングの際に会議の継続性を維持することで、個人およびチームの生産性を支援します。\n[展開スケジュール]\nフェーズ1はオンライン会議以外の対象会議に対応します:\n・Worldwide: 2026年9月下旬から10月下旬\n・GCC: 2026年10月上旬から10月下旬\n・GCC High: 2026年11月上旬から11月下旬\n・DoD: 2026年11月上旬から11月下旬\nフェーズ2ではオンライン会議が追加されます。Teams会議の場合、移譲により新しい主催者が所有する新しいTeams会議リンクが生成されます。フェーズ3では、チャット、会議オプション、文字起こし、録画、議題、メモ、出席レポートを含む対象のTeams会議成果物の移譲サポートが追加されます。フェーズ2およびフェーズ3の時期は今後...(原文はここで切り詰められています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1154,9 +1180,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1472028",
-      "japaneseDetailedSummary": "Outlookの対象となる会議および定例会議シリーズに「主催者の変更(Change organizer)」機能が導入されます。ユーザーは組織内の別の人物に主催者権限の移譲を依頼でき、依頼された相手が承諾した時点で所有権が移転します。異動、休職、退職などによる役割変更時に会議の継続性を維持する目的があります。展開はフェーズ制で、フェーズ1はオンライン会議以外の対象会議で、Worldwideは2026年9月下旬から10月下旬、GCCは10月上旬から10月下旬、GCC Highは11月上旬から11月下旬、DoDは11月上旬から11月下旬に順次展開されます。フェーズ2ではTeams会議など オンライン会議に対応し、移譲時に新しい主催者名義の新しいTeams会議リンクが生成されます。フェーズ3ではチャット、会議オプション、文字起こし、録画、議題、メモ、出席レポートなどTeams会議の関連成果物の移譲にも対応予定です。フェーズ2・3の詳細な時期は今後案内されます。管理者は組織内の主催者変更に伴うポリシーやオフボーディング手順を見直しておくとよいでしょう。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoftは、対象となるOutlook会議および定例会議シリーズに「主催者の変更」機能を導入します。ユーザーは組織内の別の人物に主催者になることを依頼でき、選択された相手が承諾するまで所有権は変更されません。これは、役割変更、休暇取得、オフボーディングの際に会議の継続性を維持することで、個人およびチームの生産性を支援します。\n[展開スケジュール]\nフェーズ1はオンライン会議以外の対象会議に対応します:\n・Worldwide: 2026年9月下旬から10月下旬\n・GCC: 2026年10月上旬から10月下旬\n・GCC High: 2026年11月上旬から11月下旬\n・DoD: 2026年11月上旬から11月下旬\nフェーズ2ではオンライン会議が追加されます。Teams会議の場合、移譲により新しい主催者が所有する新しいTeams会議リンクが生成されます。フェーズ3では、チャット、会議オプション、文字起こし、録画、議題、メモ、出席レポートを含む対象のTeams会議成果物の移譲サポートが追加されます。フェーズ2およびフェーズ3の時期は今後...(原文はここで切り詰められています)",
+      "id": "MC1473148",
+      "japaneseDetailedSummary": "Microsoftは、レポートの精度向上と分析エクスペリエンスの効率化を目的に、Microsoft 365の複数の使用状況レポートを更新します。対象はMicrosoft BrowserとVisioの使用状況レポートで、指標(メトリック)の計算方法が改善されます。これにより管理者はより正確でワークロード固有の分析情報にアクセスできるようになります。展開はMicrosoft BrowserとVisio両方の使用状況レポート更新とも2026年9月21日に予定されています。影響を受けるのはMicrosoft 365テナント管理者、Microsoft BrowserおよびVisioを利用している組織、そしてMicrosoft Graph Reports APIのブラウザ使用状況指標を利用している組織です。対象となるプラットフォーム・サービスはMicrosoft 365管理センター、Microsoft Browserレポート、Microsoft Edge、Microsoft Graph Reports API (ベータ版)、Microsoft Visioです。具体的な変更点として、Microsoft Browserレポートには Microsoft 365 Copilotアプリ、OneNote、Outlookなどの追加アプリケーションが含まれるようになり、Microsoft Browserのアクティブユーザー数の算出方法も見直されます。管理者は、更新後にレポートの数値が変動する可能性があることを踏まえ、既存のダッシュボードやアラート設定への影響を事前に確認しておくことが望まれます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoftは、レポートの正確性向上と分析エクスペリエンスの効率化のため、複数のMicrosoft 365使用状況レポートを更新します。Microsoft BrowserおよびVisioの使用状況レポートは、指標の計算方法が改善されます。これらの変更により、管理者はより正確でワークロード固有の分析情報にアクセスできるようになります。\n[展開スケジュール]\n・Microsoft Browser使用状況レポートの更新: 2026年9月21日\n・Visio使用状況レポートの更新: 2026年9月21日\n[組織への影響]\n影響を受ける対象:\n・Microsoft 365テナント管理者\n・Microsoft BrowserおよびVisioを使用している組織\n・Microsoft Graph Reports APIのブラウザ使用状況指標を利用している組織\nプラットフォーム/サービス:\n・Microsoft 365管理センター\n・Microsoft Browserレポート\n・Microsoft Edge\n・Microsoft Graph Reports API (ベータ版)\n・Microsoft Visio\n発生する変更:\n・Microsoft Browserレポートに、Microsoft 365 Copilotアプリ、OneNote、Outlookなどの追加アプリケーションが含まれるようになります。\n・Microsoft Browserのアクティブユーザー数の算出方法が...(原文はここで切り詰められています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1168,9 +1194,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1473148",
-      "japaneseDetailedSummary": "Microsoftは、レポートの精度向上と分析エクスペリエンスの効率化を目的に、Microsoft 365の複数の使用状況レポートを更新します。対象はMicrosoft BrowserとVisioの使用状況レポートで、指標(メトリック)の計算方法が改善されます。これにより管理者はより正確でワークロード固有の分析情報にアクセスできるようになります。展開はMicrosoft BrowserとVisio両方の使用状況レポート更新とも2026年9月21日に予定されています。影響を受けるのはMicrosoft 365テナント管理者、Microsoft BrowserおよびVisioを利用している組織、そしてMicrosoft Graph Reports APIのブラウザ使用状況指標を利用している組織です。対象となるプラットフォーム・サービスはMicrosoft 365管理センター、Microsoft Browserレポート、Microsoft Edge、Microsoft Graph Reports API (ベータ版)、Microsoft Visioです。具体的な変更点として、Microsoft Browserレポートには Microsoft 365 Copilotアプリ、OneNote、Outlookなどの追加アプリケーションが含まれるようになり、Microsoft Browserのアクティブユーザー数の算出方法も見直されます。管理者は、更新後にレポートの数値が変動する可能性があることを踏まえ、既存のダッシュボードやアラート設定への影響を事前に確認しておくことが望まれます。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoftは、レポートの正確性向上と分析エクスペリエンスの効率化のため、複数のMicrosoft 365使用状況レポートを更新します。Microsoft BrowserおよびVisioの使用状況レポートは、指標の計算方法が改善されます。これらの変更により、管理者はより正確でワークロード固有の分析情報にアクセスできるようになります。\n[展開スケジュール]\n・Microsoft Browser使用状況レポートの更新: 2026年9月21日\n・Visio使用状況レポートの更新: 2026年9月21日\n[組織への影響]\n影響を受ける対象:\n・Microsoft 365テナント管理者\n・Microsoft BrowserおよびVisioを使用している組織\n・Microsoft Graph Reports APIのブラウザ使用状況指標を利用している組織\nプラットフォーム/サービス:\n・Microsoft 365管理センター\n・Microsoft Browserレポート\n・Microsoft Edge\n・Microsoft Graph Reports API (ベータ版)\n・Microsoft Visio\n発生する変更:\n・Microsoft Browserレポートに、Microsoft 365 Copilotアプリ、OneNote、Outlookなどの追加アプリケーションが含まれるようになります。\n・Microsoft Browserのアクティブユーザー数の算出方法が...(原文はここで切り詰められています)",
+      "id": "MC985483",
+      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
+      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
