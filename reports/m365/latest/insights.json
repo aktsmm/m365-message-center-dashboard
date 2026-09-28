@@ -1,13 +1,14 @@
 {
-  "generatedAt": "2026-09-24T00:40:51.6797268+00:00",
+  "generatedAt": "2026-09-28T00:53:31.7374307+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra ID認証強化とOffice/Edge非推奨の波、今週はWIP/MDAG廃止とLTSC 2021サポート終了に要注意",
-  "executiveSummary": "今回のMessage Center更新(86件)は、Entra IDの認証セキュリティ強化(パスワードレス化・SMS一次認証廃止・SSPR認証方法必須化)と、Edge/Office/Teamsにおける旧機能・旧アプリの計画的廃止が中心です。特にMC1459132(Edge WIP/MDAG廃止)はアクション期限が本日2026-09-24であり、MC1472429/MC1278920(Office/Visio/Project LTSC 2021サポート終了)は2026-10-13が期限のため、直近2週間の対応が急務です。Entra関連ではMC1474104(SMS一次認証廃止の続報)、MC1325414(SSPR登録済み認証方法の必須化、2026-11-09開始)、MC1422061(条件付きアクセスのカスタムコントロール廃止、2027-04-30期限)、MC1458474(会社ブランディングのカスタムCSS廃止、2026-10-26期限)など認証・サインイン体験に影響する変更が集中しています。加えてCopilot関連ではTeamsチャットリストからのCopilotエントリポイント削除(MC1477999)、Companionアプリ廃止(MC1474111)、Admin app廃止(MC1462922)、OpenAIモデルのサブプロセッサ追加(MC1422074)など、ユーザー体験とデータ処理体制双方の変更が続きます。Microsoft Graph側ではUser.ReadBasic.Allの権限修正(MC1470871、セキュリティ脆弱性対応)がアプリ開発者に影響する可能性があります。",
-  "thisWeek": "MC1459132: Edge WIP/MDAG廃止のアクション期限が本日のため、対象組織はPurview/Intuneアプリ保護ポリシーへの移行状況を即時確認\nMC1472429/MC1278920: Office/Visio/Project LTSC 2021サポート終了(2026-10-13)まで残り約3週間、対象端末の棚卸しとアップグレード計画の最終確認\nMC1449170: Edgeのunload event既定廃止(期限2026-09-05は経過済みのため影響有無を再確認)\nMC1443510: All Agentsの保留リクエスト一括削除(期限2026-08-20は経過済み、未対応リクエストの有無を点検)",
-  "thisMonth": "MC1458474: Entra ID会社ブランディングのカスタムCSS廃止(2026-10-26期限)、カスタムCSS利用有無の棚卸しと代替対応\nMC1325414: Entra ID SSPRが登録済み認証方法を必須化(2026-11-09開始、期限2026-11-06)、未登録ユーザーへの事前案内\nMC1474104: Entra ID SMS一次認証廃止の続報(期限2027-02-01)、代替のパスキー/認証アプリ移行計画の策定\nMC1477999: Teams ChatリストからのCopilot削除(2026年10月開始)、エンドユーザー向け事前告知の準備\nMC1474111: Microsoft 365 Companionアプリ廃止(2026-12-16終了)、対象端末からの削除計画",
-  "watch": "MC1422061: 条件付きアクセスのカスタムコントロール廃止と外部MFA移行(2027-04-30期限)の進捗\nMC1422074: M365 CopilotへのOpenAIモデル(GPT-5.6)サブプロセッサ追加によるデータ処理・コンプライアンス影響\nMC1470871: Microsoft Graph User.ReadBasic.All権限修正によるカスタムアプリへの影響\nMC1454378: Microsoft 365新世代ファイル/フォルダ共有(hero link)のロールアウト状況\nMC1467356: Edge Manifest V2拡張機能の廃止(2027年初頭予定)に向けたMV3移行状況",
-  "customerQuestions": "Edge WIP/MDAGおよびIE modeを現在利用していますか?代替のPurview/Intune構成やEdge移行計画は策定済みですか?\nOffice/Visio/Project LTSC 2021を利用中の端末数と、2026-10-13までのアップグレード計画は明確になっていますか?\nEntra IDでSMS一次認証やSSPRの連絡先情報認証に依存しているユーザーはどの程度いますか?パスキーへの移行状況は?\n条件付きアクセスでカスタムコントロールを利用している場合、外部MFAへの移行スケジュールは検討済みですか?\nTeams/Outlook/Microsoft365.comでAdmin appやCompanionアプリを利用している小規模組織はありますか?代替手段の周知は済んでいますか?",
+  "headline": "認証刷新(パスキー既定化)とOffice LTSC 2021終了が今週の最重要トピック、Copilot導線変更にも注意",
+  "executiveSummary": "今回のMessage Center更新(89件)の中心は、Microsoft Entra IDの認証基盤刷新とライフサイクル終了の集中です。パスキー(FIDO2)が既定認証となり、SMS/音声認証やCAのCustom Controlsが段階的に廃止されるため、MFA・条件付きアクセスの設計見直しが必須です。あわせてOffice/Visio/Project LTSC 2021が2026年10月13日にサポート終了となり、移行猶予は残りわずかです。Copilotでは、TeamsチャットリストからのCopilot導線廃止(2026年10月〜)、OpenAIモデルのサブプロセッサ追加(GPT-5.6提供開始)、Copilotメール送信元アドレス変更など、ユーザー体験とガバナンスの両面で変更が続いています。Microsoft Edgeでは WIP/MDAG・Manifest V2・unloadイベントなど複数のセキュリティ関連機能が廃止対象です。管理者は認証移行とLTSC移行の優先度を最上位に置き、Copilot関連の変更はユーザー向け案内の準備を進めることを推奨します。",
+  "thisWeek": "MC1459132: Microsoft Edge の WIP/MDAG 廃止(期限 2026-09-24、既に経過)。代替(Purview DLP/Intune App Protection)への移行状況を至急確認。\nMC1449170: Edge既定のunloadイベント廃止(期限 2026-09-05、既に経過)。自社/委託先アプリでunloadハンドラー依存がないか確認。\nMC1422074: OpenAIモデル(GPT-5.6)がCopilotのサブプロセッサとして追加済み。DPA/コンプライアンス部門へのサブプロセッサ変更通知要否を確認。\nMC1477999: TeamsチャットリストからのCopilot導線が2026年10月に廃止。ヘルプデスク/ユーザー向けFAQを準備。\nMC1469962: Copilotメールの送信元アドレス変更。メールフィルタ/許可リストの更新要否を確認。",
+  "thisMonth": "MC1472429 / MC1278920: Office/Visio/Project LTSC 2021 が2026年10月13日にサポート終了。未移行端末の棚卸しと更新計画を確定。\nMC1458474: Entra ID カスタムCSSレイアウト/位置指定プロパティ廃止(期限 2026-10-26)。カスタムブランディング利用テナントは影響確認。\nMC1462922: Teams/Outlook/Microsoft365.comのAdmin appが2026年10月に廃止完了予定。小規模組織の代替運用手順を周知。\nMC1467356: Edge Manifest V2 拡張機能が2027年初頭にエンタープライズ廃止予定。MV3への移行対象拡張機能の棚卸しを開始。\nMC1443510: 承認待ちAgentリクエストの一括クリーンアップ(2026-08-20開始、進行中の可能性)。放置中の申請がないか確認。",
+  "watch": "MC1474104: SMSファーストファクターサインイン廃止のフォローアップ(期限 2027-02-01)。パスキー移行ロードマップに組み込み。\nMC1422061: Conditional AccessのCustom Controls廃止、External MFAへの移行(期限 2027-04-30)。サードパーティMFA連携の移行計画を策定。\nMC1325414: Entra ID SSPRが登録済み認証方法必須化(期限 2026-11-06)。未登録ユーザーへの事前案内。\nMC1188230: パスキー(FIDO2)ポリシーの重複プロパティ廃止(期限 2027-10-14、長期)。API利用アプリの棚卸しを計画的に実施。\nMC1474111: Microsoft 365 Companionアプリ(Calendar/People/Files)が2026年12月16日にEOL。端末からの削除計画を準備。\nMC1454378: 次世代のファイル/フォルダー共有(hero link)導入継続。共有ポリシーへの影響を注視。",
+  "customerQuestions": "現在の条件付きアクセスポリシーはCustom Controlsに依存していますか?External MFAへの移行計画はありますか?\nSMS/音声を第一要素認証として使用しているユーザーはいますか?パスキー登録率はどの程度ですか?\nOffice/Visio/Project LTSC 2021を使用している端末は残っていますか?10月13日までの移行スケジュールは?\nTeamsのチャットリスト経由でCopilotを利用しているユーザーへの周知は済んでいますか?\nEntra ID company branding でカスタムCSSを使用していますか?10月26日の廃止に備えていますか?\n承認待ちのAgentリクエストで6月1日以前に作成されたものが放置されていませんか?",
   "referencedIds": [
+    "MC1188230",
     "MC1278920",
     "MC1325414",
     "MC1422061",
@@ -19,7 +20,7 @@
     "MC1459132",
     "MC1462922",
     "MC1467356",
-    "MC1470871",
+    "MC1469962",
     "MC1472429",
     "MC1474104",
     "MC1474111",
@@ -223,13 +224,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1387532",
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1400824",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
@@ -240,13 +234,6 @@
       "id": "MC1409102",
       "japaneseTitle": "Microsoft 365 Copilot Chat、Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat、Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1409305",
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -622,6 +609,41 @@
       "learnUrls": []
     },
     {
+      "id": "MC1478465",
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1478946",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1478957",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1478969",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1478975",
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
       "id": "MC985483",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
@@ -827,13 +849,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1387532",
-      "japaneseDetailedSummary": "Microsoft EdgeはEdge 152（2026年8月27日Stable）よりリリースサイクルを4週間から2週間に短縮。セキュリティ更新の迅速化と更新サイズ縮小が目的。組織はより小さく頻繁な変更で予測可能な検証サイクルを実現できます。Extended Stableのタイミングは変更なし。一般提供：2026年8月下旬。Stable/Beta/Devチャネル利用組織はテスト・検証プロセスの調整が必要な場合があります。",
-      "japaneseBodyTranslation": "2026年6月16日更新：画像の埋め込みを修正しました。\n【概要と目的】\nEdge 152（8月27日Stable）より、Edgeは2週間リリースサイクルに移行。セキュリティ更新とプラットフォーム改善の迅速な提供が可能となり、更新サイズと複雑さが軽減されます。Extended Stableのタイミングは変更ありません。\n【展開スケジュール】\n• 一般提供（全世界）：2026年8月下旬開始・完了予定。\n• 新サイクル初回：Edge 152（2026年8月27日）\n【組織への影響】\n対象：Microsoft Edge Stableチャネル使用組織\nプラットフォーム：Edge（Windows・macOS・Linux・モバイル）\n変更内容：Stableチャネル（テキスト省略あり）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1400824",
       "japaneseDetailedSummary": "Microsoft EntraのSSPRのCAPTCHA保護を更新します。従来のCAPTCHAを廃止し、バックエンドスロットリングと動作ベースの不正利用検出に移行。管理者による構成変更不要。ロールアウトは2026年8月初旬～下旬（世界）。SSPRを利用する全Entraテナントが対象。セキュリティ・アクセシビリティ・信頼性が向上します。",
       "japaneseBodyTranslation": "2026年7月20日更新：タイムラインを更新しました。\n【変更内容と理由】\nEntra SSPRのボット対策をCAPTCHAからバックエンドスロットリングおよび動作ベース検出に切り替えます。ユーザーへの摩擦を軽減しつつ自動攻撃への保護を強化します。構成変更不要。\n【ロールアウトスケジュール】\n一般提供（全世界）：2026年8月初旬開始（旧：7月下旬）、8月下旬完了（旧：8月中旬）。\n【組織への影響】\n対象：SSPR使用中の全Entraテナント\nプラットフォーム：Microsoft Entra SSPR（Webフロー）\n変更内容：従来のCAPTCHAチャレンジが削除されます（本文は途中で切れています）",
@@ -844,13 +859,6 @@
       "id": "MC1409102",
       "japaneseDetailedSummary": "Microsoft 365 CopilotのリリースプリファレンスにEntra IDグループサポートが追加。管理者はグループ単位でStandard/Deferredリリース対象を割り当て可能になります。段階的展開や変更管理が容易に。ロールアウトは2026年6月下旬～7月下旬。M365管理センターで設定可能。",
       "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft 365 CopilotリリースプリファレンスにEntra IDグループサポートを追加。管理者はグループをStandard/Deferredリリース対象に割り当て可能になり、段階的ロールアウトや変更管理が容易になります。\n【ロールアウトスケジュール】\n一般提供（全世界）：2026年6月下旬～7月下旬にロールアウト中\n【組織への影響】\n対象：Copilotリリース設定を管理するM365管理者、Standard/Deferredオプション使用組織\nプラットフォーム：M365管理センター（Web）、Microsoft 365 Copilot\n変更内容：管理者はEntra IDグループをStandard/Deferredリリースに割り当て可能（本文は途中で切れています）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1409305",
-      "japaneseDetailedSummary": "Microsoft EntraでPartner Tier1/Tier2 Supportロールへの新規割り当てがブロックされます。廃止プロセスの一環で、最小権限ロールの利用を推奨。ロールアウト：2026年8月3日開始～8月24日完了。CSP/GDAP含むEntraロール管理者が対象。未使用組織への運用影響なし。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nEntraロールライフサイクル管理の一環として、Partner Tier1/Tier2 Supportロールへの新規割り当てをブロックします。これらのロールは廃止され、最小権限ロールの利用が推奨されます。\n【ロールアウトスケジュール】\n全世界：2026年8月3日開始、8月24日完了予定\n【組織への影響】\n対象：EntraロールをCSP・GDAP含め管理する管理者\nプラットフォーム：ポータル・API・自動化ワークフロー全体のEntra ID\n変更内容：\n・Partner Tier1/Tier2 Supportへの新規割り当てがブロック。\n・これらのロールを使用していない組織への影響なし。\n・割り当て試行時にエラーが返されます（本文は途中で切れています）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1198,9 +1206,16 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
-      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "id": "MC1477184",
+      "japaneseDetailedSummary": "Microsoft 365 管理センターの Agent Registry(エージェントレジストリ)が改善され、同一エージェントが複数のスコープやバージョンで公開されている場合に重複表示されていた問題が解消されます。今後は1つのエージェントにつき1レコードへ統合され、エージェント詳細のフライアウトから全バージョンの履歴を確認できるようになります。ガバナンス操作は引き続きエージェント全体に適用されます。対象は全体管理者、グローバル閲覧者、AI管理者、Agent Registry利用組織です。世界規模での展開は2026年9月中旬に開始し、9月下旬までに完了予定です。管理者は事前の作業は不要ですが、エージェント一覧の表示が変わる点を運用チームへ周知しておくと良いでしょう。特に複数バージョンを公開している組織では、統合後のインベントリ確認を推奨します。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 管理センターの Agent Registry(エージェントレジストリ)エクスペリエンスを改善し、同じエージェントの重複エントリを1つのレコードに統合します。これまでは、同じエージェントが異なるスコープで公開された場合や、複数の公開バージョンが存在する場合に、複数回表示されることがありました。\nこの更新により、エージェントガバナンスが簡素化され、展開済みエージェントの明確なインベントリが提供され、管理者が単一の場所からエージェントのライフサイクルとバージョン履歴を管理しやすくなります。エージェントの全バージョンはエージェント詳細のフライアウトからアクセス可能になり、ガバナンス操作は引き続きエージェント全体に適用されます。\n[展開スケジュール]\n• 世界規模: 2026年9月中旬に開始し、9月下旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• 全体管理者\n• グローバル閲覧者\n• AI管理者\n• Agent Registryを利用している組織\nプラットフォームおよびサービス\n• Microsoft 365 管理センター\n• Agent Registry\n発生する内容\n• 各エージェン(以降切り詰め)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1477186",
+      "japaneseDetailedSummary": "Agent 365 CLI のセットアップ体験が簡素化されます。対象テナントに対し、Microsoft管理のAgent 365 CLIエンタープライズアプリケーションが提供されるため、管理者はこれまで必要だったテナント所有のクライアントアプリケーションを自前で作成・維持する必要がなくなります。展開とライフサイクル管理が効率化される一方、条件付きアクセスポリシーやセキュリティの既定値群といった既存のセキュリティ制御は引き続き適用されます。この機能は世界規模で既に一般提供が開始されています。対象はAgent 365 CLIを展開・管理する管理者や開発者、および新規にAgent 365エージェントをオンボーディングする組織です。関連するプラットフォームはMicrosoft Entra IDとAgent 365 CLIです。既に利用可能なため、対象組織は新規セットアップ時の手順が簡略化されたことを確認し、既存の運用手順書を更新することを推奨します。",
+      "japaneseBodyTranslation": "[内容と理由]\n対象テナント向けに、Microsoft管理のAgent 365 CLIエンタープライズアプリケーションを導入することで、Agent 365のセットアップ体験を簡素化しました。この変更により、管理者がAgent 365 CLIをセットアップする際にテナント所有のクライアントアプリケーションを作成・維持する必要がなくなります。この更新により、条件付きアクセスポリシーやセキュリティの既定値群などの既存のセキュリティ制御を尊重しつつ、展開とライフサイクル管理が効率化されます。\n[展開スケジュール]\n• 一般提供(世界規模): この機能は現在利用可能です。\n[組織への影響]\n影響を受ける対象\n• Agent 365 CLIを展開・管理する管理者および開発者\n• Agent 365 CLIを使用して新しいAgent 365エージェントをオンボーディングする組織\nプラットフォームおよびサービス\n• Microsoft Entra ID\n• Agent 365 CLI\n発生する内容\n• Microsoft管理のAgent 365 CLIエンタープライズアプリケーションが対象テナントに提供されます。\n• 新規のAgent 365 CLIセットアップでは、管理者が作成する必要が(以降切り詰め)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1219,16 +1234,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1477184",
-      "japaneseDetailedSummary": "Microsoft 365 管理センターの Agent Registry(エージェントレジストリ)が改善され、同一エージェントが複数のスコープやバージョンで公開されている場合に重複表示されていた問題が解消されます。今後は1つのエージェントにつき1レコードへ統合され、エージェント詳細のフライアウトから全バージョンの履歴を確認できるようになります。ガバナンス操作は引き続きエージェント全体に適用されます。対象は全体管理者、グローバル閲覧者、AI管理者、Agent Registry利用組織です。世界規模での展開は2026年9月中旬に開始し、9月下旬までに完了予定です。管理者は事前の作業は不要ですが、エージェント一覧の表示が変わる点を運用チームへ周知しておくと良いでしょう。特に複数バージョンを公開している組織では、統合後のインベントリ確認を推奨します。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 管理センターの Agent Registry(エージェントレジストリ)エクスペリエンスを改善し、同じエージェントの重複エントリを1つのレコードに統合します。これまでは、同じエージェントが異なるスコープで公開された場合や、複数の公開バージョンが存在する場合に、複数回表示されることがありました。\nこの更新により、エージェントガバナンスが簡素化され、展開済みエージェントの明確なインベントリが提供され、管理者が単一の場所からエージェントのライフサイクルとバージョン履歴を管理しやすくなります。エージェントの全バージョンはエージェント詳細のフライアウトからアクセス可能になり、ガバナンス操作は引き続きエージェント全体に適用されます。\n[展開スケジュール]\n• 世界規模: 2026年9月中旬に開始し、9月下旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• 全体管理者\n• グローバル閲覧者\n• AI管理者\n• Agent Registryを利用している組織\nプラットフォームおよびサービス\n• Microsoft 365 管理センター\n• Agent Registry\n発生する内容\n• 各エージェン(以降切り詰め)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1477186",
-      "japaneseDetailedSummary": "Agent 365 CLI のセットアップ体験が簡素化されます。対象テナントに対し、Microsoft管理のAgent 365 CLIエンタープライズアプリケーションが提供されるため、管理者はこれまで必要だったテナント所有のクライアントアプリケーションを自前で作成・維持する必要がなくなります。展開とライフサイクル管理が効率化される一方、条件付きアクセスポリシーやセキュリティの既定値群といった既存のセキュリティ制御は引き続き適用されます。この機能は世界規模で既に一般提供が開始されています。対象はAgent 365 CLIを展開・管理する管理者や開発者、および新規にAgent 365エージェントをオンボーディングする組織です。関連するプラットフォームはMicrosoft Entra IDとAgent 365 CLIです。既に利用可能なため、対象組織は新規セットアップ時の手順が簡略化されたことを確認し、既存の運用手順書を更新することを推奨します。",
-      "japaneseBodyTranslation": "[内容と理由]\n対象テナント向けに、Microsoft管理のAgent 365 CLIエンタープライズアプリケーションを導入することで、Agent 365のセットアップ体験を簡素化しました。この変更により、管理者がAgent 365 CLIをセットアップする際にテナント所有のクライアントアプリケーションを作成・維持する必要がなくなります。この更新により、条件付きアクセスポリシーやセキュリティの既定値群などの既存のセキュリティ制御を尊重しつつ、展開とライフサイクル管理が効率化されます。\n[展開スケジュール]\n• 一般提供(世界規模): この機能は現在利用可能です。\n[組織への影響]\n影響を受ける対象\n• Agent 365 CLIを展開・管理する管理者および開発者\n• Agent 365 CLIを使用して新しいAgent 365エージェントをオンボーディングする組織\nプラットフォームおよびサービス\n• Microsoft Entra ID\n• Agent 365 CLI\n発生する内容\n• Microsoft管理のAgent 365 CLIエンタープライズアプリケーションが対象テナントに提供されます。\n• 新規のAgent 365 CLIセットアップでは、管理者が作成する必要が(以降切り詰め)",
+      "id": "MC985483",
+      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
+      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
