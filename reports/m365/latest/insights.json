@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T00:53:31.7374307+00:00",
+  "generatedAt": "2026-09-28T00:58:28.1470733+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "認証刷新(パスキー既定化)とOffice LTSC 2021終了が今週の最重要トピック、Copilot導線変更にも注意",
   "executiveSummary": "今回のMessage Center更新(89件)の中心は、Microsoft Entra IDの認証基盤刷新とライフサイクル終了の集中です。パスキー(FIDO2)が既定認証となり、SMS/音声認証やCAのCustom Controlsが段階的に廃止されるため、MFA・条件付きアクセスの設計見直しが必須です。あわせてOffice/Visio/Project LTSC 2021が2026年10月13日にサポート終了となり、移行猶予は残りわずかです。Copilotでは、TeamsチャットリストからのCopilot導線廃止(2026年10月〜)、OpenAIモデルのサブプロセッサ追加(GPT-5.6提供開始)、Copilotメール送信元アドレス変更など、ユーザー体験とガバナンスの両面で変更が続いています。Microsoft Edgeでは WIP/MDAG・Manifest V2・unloadイベントなど複数のセキュリティ関連機能が廃止対象です。管理者は認証移行とLTSC移行の優先度を最上位に置き、Copilot関連の変更はユーザー向け案内の準備を進めることを推奨します。",
@@ -1237,6 +1237,34 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1478969",
+      "japaneseDetailedSummary": "Microsoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)統合サポートが、Edgeバージョン153以降で廃止されます。レガシーなサードパーティコンポーネントに依存しており、Androidプラットフォームの要件変化に伴い互換性・保守上の課題が継続的に生じているための対応です。廃止開始は2026年9月中旬を予定しています。影響を受けるのは、Microsoft Edge for AndroidでCitrix mVPN統合を利用して社内リソースにアクセスしている組織およびユーザー、ならびにこれを管理する管理者です。Citrix mVPNを利用していない組織はこのメッセージを無視して問題ありません。該当組織は、代替のVPNアクセス手段への移行を9月中旬までに検討する必要があります。",
+      "japaneseBodyTranslation": "組織でMicrosoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)統合サポートを使用していない場合、このメッセージは無視して問題ありません。\n[内容と理由]\nMicrosoftは、Edgeバージョン153以降、Microsoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)統合サポートを廃止します。Edge for AndroidにおけるCitrix mVPN統合は、Androidプラットフォームの要件が進化し続ける中で、継続的な互換性および保守上の課題をもたらすレガシーなサードパーティコンポーネントに依存しています。\nMicrosoft Edgeユーザーに安全で信頼性が高く、サポート可能な環境を確保するため、MicrosoftはEdge for AndroidにおけるCitrix mVPN統合サポートを廃止します。\n[展開スケジュール]\n・廃止は2026年9月中旬に開始します。\n[組織への影響]\n影響を受けるユーザー:\n・現在Microsoft Edge for AndroidでCitrix Mobile VPN(mVPN)統合を使用している組織。\n・Citrix mVPNを利用して社内リソースにアクセスしているユーザー。\n・管理を担当する管理者(以下、本文はソース側で途中で切り詰められています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1478946",
+      "japaneseDetailedSummary": "Cloud Updateにおいて、月次エンタープライズチャネル(Monthly Enterprise Channel)を利用するデバイス向けにロールバックオプションが拡張されます。管理者は、2バージョン前のリリースまでデバイスをロールバックでき、そのリリース向けの最新セキュリティ更新プログラムを適用したまま、更新再開の準備が整うまでロールバック状態を維持できます。これにより、セキュリティを確保しつつ互換性や運用上の問題を調査・解決する時間的余裕が生まれます。世界規模での一般提供は2026年9月に開始し、同月末までの完了を予定しています。Microsoft 365 Apps管理センターから一元管理できる点も運用上の利点です。IT管理者にとっては、更新プログラム適用後の不具合対応に柔軟性が増す重要な変更です。",
+      "japaneseBodyTranslation": "[内容と背景]\nCloud Updateは、月次エンタープライズチャネル(Monthly Enterprise Channel)のデバイスに対するロールバックオプションを拡張します。管理者は、デバイスを2バージョン前のリリースにロールバックできるようになり、そのリリース向けの最新のセキュリティ更新プログラムを適用した状態を維持できます。また、更新の再開準備が整うまで、後続のリリースにわたってロールバック状態のままデバイスを維持できます。これにより、セキュリティ対応とMicrosoft 365 Apps管理センターを通じた一元管理を維持しながら、互換性や運用上の問題を調査・解決するための追加の時間が確保されます。\n[展開スケジュール]\n一般提供(世界規模):2026年9月に展開を開始し、2026年9月下旬までに完了する見込みです。\n[組織への影響]\nこの機能は、Cloud Updateで管理されている月次エンタープライズチャネルのデバイスに対して、管理者に追加の復旧オプションを提供します。更新プログラムによって互換性や運用上の問題が発生した場合、管理者は影響を受けたデバイスを2バージョン前のリリース(以下、本文はソース側で途中で切り詰められています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1478957",
+      "japaneseDetailedSummary": "Microsoft 365プロフィールカードの組織パネルに、点線関係(ドットラインマネージャー)の表示機能が追加されます。これはデータが存在する場合に、直属の上司に加えて、プロジェクト・事業部門・地域・機能をまたぐ報告関係(ピープルリードやケイパビリティマネージャーなど、組織により呼称が異なる)を表示するUI更新です。世界規模での一般提供は2026年10月上旬に開始し、同月下旬までの完了を予定しています。対象は、ドットラインマネージャー関係のデータを提供している組織のユーザーです。組織構造が複雑な企業の従業員にとって、レポートラインの可視化が向上する点が実務的なメリットです。",
+      "japaneseBodyTranslation": "[内容と背景]\nMicrosoft 365プロフィールカードの組織パネルに、追加的なユーザーインターフェース更新を導入します。データが利用可能な場合、直属の上司に加えて、その人物の点線関係(ドットライン)のマネージャー関係を表示できるようになります。この更新は、報告関係がプロジェクト、事業部門、地域、または機能をまたぐ企業において、従業員が組織構造をより良く理解する助けとなります。\n[展開スケジュール]\n・一般提供(世界規模):展開は2026年10月上旬に開始し、2026年10月下旬までに完了する見込みです。\n[組織への影響]\n影響を受けるユーザー:\n・ドットラインマネージャー関係のデータを提供している組織のユーザー。\n対象プラットフォームおよびサービス:\n・Microsoft 365プロフィールカード\n発生する内容:\n・ユーザーは組織パネルにおいて、ドットラインマネージャーを表す追加のマネージャー関係を目にする場合があります。組織によっては、この関係に対して「ピープルリード」や「ケイパビリティマネージャー」など異なるラベルを使用することがあります。\n・ユーザーはドット(以下、本文はソース側で途中で切り詰められています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1478465",
+      "japaneseDetailedSummary": "Microsoft Security Copilotのエージェントが、Defender、Entra、Intune、Purviewといった主要セキュリティ製品のワークフローに組み込まれます。Ignite 2025でMicrosoftは、自律的かつ予防的な防御を実現する新しいエージェントを多数発表しました。本日より、Microsoft 365 E5/E7ライセンスを持つ組織は、追加購入なしでSecurity Copilotの機能とエージェントを利用できるようになります。テナントには、ライセンス1,000ユーザーあたり月400 Security Compute Units(SCU)が付与され、月あたり最大10,000 SCUまで利用可能です。E5/E7を契約している組織のセキュリティ担当者は、追加コストなくAIを活用したセキュリティ対応能力を強化できる点が実務上の大きなメリットです。",
+      "japaneseBodyTranslation": "[内容と背景]\nMicrosoft Security Copilotのエージェントは、Microsoft Defender、Microsoft Entra、Microsoft Intune、Microsoft Purviewを利用するセキュリティチームの業務フローに組み込まれています。Ignite 2025において、Microsoftはこれらの製品全体にまたがる新しいエージェントを多数発表し、ワークフロー全体でエージェント型の防御を実現し、自律的かつ予防的な保護を可能にしました。\n[展開スケジュール]\nチームが導入しやすいように、本日より、お客様の組織は既存のMicrosoft 365 E5/E7の権利の一部として、Security Copilotの機能とエージェントにアクセスできるようになります。\n[組織への影響]\n影響を受けるユーザー:\n・Microsoft 365 E5またはE7を契約している組織\n対象プラットフォーム/サービス:\n・Defender\n・Entra\n・Intune\n・Purview\n・Security Copilotポータル\n発生する内容:\n・Security Copilotは、Microsoft 365 E5/E7に自動的に含まれるようになります(別途購入は不要)。\n・テナントは、ライセンス1,000ユーザーあたり月400 Security Compute Units(SCU)を受け取り、月あたり最大10,000 SCUまで利用可能です。\n・コアエージェンティ(以下、本文はソース側で途中で切り詰められています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
