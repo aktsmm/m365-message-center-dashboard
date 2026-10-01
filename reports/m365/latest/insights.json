@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T01:23:32.4239633+00:00",
+  "generatedAt": "2026-10-01T01:27:54.9973588+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証UIのCSP強化・SSPR登録必須化・Office LTSC 2021サポート終了が目前、Copilot/Agent 365関連の更新も継続",
   "executiveSummary": "今週のMessage Center(84件)で期限が近い重要項目は3つです。(1) Entra IDのサインインページで外部スクリプトを遮断するCSP強化(MC1481309)。10月中旬に開始し、10月下旬に完了予定で、アクション期限は2026-10-19です。ブラウザ拡張機能や監視・カスタマイズツールが影響を受ける可能性があります。(2) Office LTSC 2021ほかのサポートが2026-10-13に終了します(MC1472429, MC1278920)。(3) Entraのカスタムブランディングで、カスタムCSSのレイアウト・位置指定プロパティが廃止されます(MC1458474。アクション期限は2026-10-26)。そのほか、SSPRで登録済み認証方法が必須になり(MC1325414。期限は2026-11-06、題名上の開始日は2026-11-09)、SMS一次認証の廃止(MC1474104。期限は2027-02-01)、条件付きアクセスのカスタムコントロール廃止(MC1422061。期限は2027-04-30)もあります。Copilot/Agentでは、Edge版Copilot UIの刷新が10月中旬に開始されます(MC1484007)。Agent 365のA2A対応(MC1478975)とサードパーティエージェントの可観測性拡張(MC1480873)、Agent Registryの重複統合(MC1477184。完了は10月中旬に延期)も予定されています。",
@@ -1177,6 +1177,34 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1480873",
+      "japaneseDetailedSummary": "Frontier の提供に伴い、Microsoft Agent 365 が Amazon Bedrock Classic / AgentCore、Google Vertex AI、Anthropic Claude Managed Agents (プレビュー) のアクティビティを Microsoft エージェントと同じ可観測性体験に統合します。管理者は各エージェントの Activity タブで実行、セッション、ツール呼び出し、例外を確認できます。Targeted Release は 2026 年 9 月下旬、GA は 10 月下旬開始で Ignite 2026 までに完了予定です。対象は Agent 365 と Connected platforms の管理者などです。抜粋は途中までのため詳細は原文を確認してください。マルチクラウドのエージェント監視・運用の議論に有用です。",
+      "japaneseBodyTranslation": "[内容と理由:]\n今回の Frontier の提供により、Microsoft Agent 365 は Amazon Bedrock Classic および AgentCore、Google Vertex AI、Anthropic Claude Managed Agents (プレビュー) のアクティビティを、Microsoft エージェントと同じ可観測性エクスペリエンスに取り込みます。\n管理者は、各エージェントの [アクティビティ] タブで実行、セッション、ツール呼び出し、例外を確認できます。その結果、環境ごとに別々の監視を行うことなく、サポートされるプラットフォーム全体でエージェントの利用状況を把握し、問題を調査する一貫した方法が得られます。\n[ロールアウトスケジュール:]\nTargeted Release (全世界): 2026 年 9 月下旬に開始し、2026 年 9 月下旬までに完了予定です。\n一般提供 (全世界): 2026 年 10 月下旬に開始し、Ignite 2026 までに完了予定です。\n[組織への影響:]\n影響を受ける対象\n• Microsoft Agent 365 および Connected platforms を使用する管理者\n• Amazon Bedrock Classic、Amazon Bedrock AgentCore、Google ...からエージェントを同期している組織",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1484007",
+      "japaneseDetailedSummary": "Microsoft Edge の Copilot を簡素化する更新が今後数週間で展開されます。Edge 内のすべての Copilot エントリーポイントで新アイコンを採用し、サイドペインは簡素化された UX になり、Copilot Voice や Vision などの機能強化も含まれます。セキュリティ、コンプライアンス、プライバシー、企業向け制御は変わりません。GA (全世界) は 2026 年 10 月中旬に開始・完了予定です。Edge で Copilot を有効にしているすべてのユーザーが対象で、既存ポリシーは引き続き利用可能、管理者の事前対応は不要ですが、現在の構成を確認して影響を判断することが推奨されます。ユーザー向け周知の会話に役立ちます。",
+      "japaneseBodyTranslation": "[内容と理由:]\nCopilot エクスペリエンスをシンプルにする継続的な取り組みの一環として、今後数週間で Microsoft Edge の Copilot の更新のロールアウトを開始します。この更新では、Edge 内のすべての Copilot エントリーポイントで新しいアイコンを採用し、Copilot サイドペインは簡素化された UX になります。また、Copilot Voice や Vision などの機能強化も含まれます。セキュリティ、コンプライアンス、プライバシー、エンタープライズ制御は変更されません。\n[ロールアウトスケジュール:]\n一般提供 (全世界): 2026 年 10 月中旬に開始し、2026 年 10 月中旬までに完了予定です。\n[組織への影響:]\nEdge で Copilot をオンにしているすべてのユーザーに、これらの更新が表示されます。既存のポリシーは引き続き管理者が利用できます。\n[必要なアクション/推奨事項:]\nこのロールアウトは指定された日付までに自動的に行われ、ロールアウト前に管理者の操作は必要ありません。組織への影響を判断するため、現在の構成を確認してください...",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1481309",
+      "japaneseDetailedSummary": "Secure Future Initiative の一環として、Microsoft Entra ID のサインイン体験に Content Security Policy (CSP) 保護を追加し、認証中は信頼された Microsoft ホストのスクリプトのみ実行を許可して、XSS など外部からのコード注入をブロックします。以前の告知 MC1191924 のリマインダーです。GA は 2026 年 10 月中旬に開始し、10 月下旬に完了予定。login.microsoftonline.com を使うユーザーが対象で、ブラウザー拡張機能、監視ツール、カスタマイズツールなどを使う組織は影響を受ける可能性があります。展開前の事前確認が重要で、詳細は抜粋が途切れているため原文を確認してください。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft の Secure Future Initiative の一環として、Microsoft Entra ID のサインイン体験のセキュリティを強化するため、Content Security Policy (CSP) による保護を追加します。この変更により、認証中は信頼された Microsoft ホストのスクリプトのみの実行を許可し、承認されていないコードや外部から注入されたコードをブロックすることで、クロスサイトスクリプティング (XSS) などの脅威からユーザーを保護します。\nこの投稿は、今後のこのセキュリティ変更と、ロールアウト前に組織が必要とする可能性のある対応を伝えた以前の告知 (MC1191924) のリマインダーです。\n[ロールアウトスケジュール]\n• 一般提供 (全世界): 2026 年 10 月中旬に開始し、2026 年 10 月下旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• login.microsoftonline.com でホストされる Microsoft Entra ID のサインインページで認証するユーザーのいる組織\n• ブラウザー拡張機能、監視ツール、カスタマイズツール、またはその他のソリューションを使用している組織...",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1478975",
+      "japaneseDetailedSummary": "Microsoft Agent 365 の Agent2Agent (A2A) プロトコル対応エージェントを、Microsoft 365 Agents Toolkit で構築した宣言型エージェントの「接続エージェント」として利用できるようになります。従来の OpenAPI や MCP サーバーに加え、自然言語での連携や複雑なワークフローが可能になり、管理者は Microsoft 365 管理センターで一元的に管理・ガバナンスできます。世界全体で GA が 2026 年 8 月下旬に開始され、9 月下旬に完了予定です。提示された抜粋は途中で切れているため、詳細な影響や必要な対応は原文をご確認ください。エージェント開発・管理方針に関する顧客との会話の材料になります。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft は、Agent2Agent (A2A) プロトコルを実装した Microsoft Agent 365 エージェントを、Microsoft 365 Agents Toolkit で構築された宣言型エージェントの接続エージェントとして使用できるようにするサポートを導入します。\nこの機能強化により、宣言型エージェントが接続できる外部エージェントサービスの種類が拡大します。既存の OpenAPI および Model Context Protocol (MCP) サーバーのサポートに加え、宣言型エージェントは Agent2Agent 対応エージェントに接続でき、自然言語でのやり取りやより複雑なワークフローが可能になります。\nこの機能は、開発者が宣言型エージェントを構築する際の柔軟性を高めるとともに、管理者に Microsoft 365 管理センターを通じた一元的な管理とガバナンスを提供します。\n[ロールアウトスケジュール]\n• 一般提供 (全世界): 2026 年 8 月下旬に開始され、2026 年 9 月下旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• Microsoft 365 管理者 (Microsoft の エージェントを管理する担当者)...",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
