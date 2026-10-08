@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T02:01:54.6388388+00:00",
+  "generatedAt": "2026-10-08T02:07:00.8434415+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Targeted Release廃止・Office LTSC 2021サポート終了・Entra認証方式変更が今週〜来月の最優先事項",
   "executiveSummary": "今週のMessage Center(82件)では、期限が近い計画変更が目立ちます。MC1472429/MC1278920: Office LTSC 2021等のサポートが2026年10月13日に終了。MC1490899: Targeted Releaseが2027年1月に廃止され、2026年11月から管理者によるTargeted release登録の追加・削除・変更ができなくなり、Frontier/Standard/Deferredへの整理が必要(対応期限2026-10-31)。MC1481309は期限2026-10-19、MC1458474は2026-10-26、MC1325414(SSPRは登録済み認証方式が必須)は2026-11-06が対応期限。Entra関連ではパスキー既定化とSMS廃止(MC1426371)、SMS第一要素サインイン廃止のフォローアップ(MC1474104、期限2027-02-01)、Conditional Accessカスタムコントロール廃止(MC1422061、期限2027-04-30)があり、認証方式の棚卸しが必要です。Edgeでは、従来のサインイン実装の廃止(MC1490911、2026年11月初旬)、MV2拡張機能の廃止(MC1467356)が影響します。ファイル共有の新体験(MC1454378)はスケジュールが更新され、2026年10月初旬〜11月末に展開予定です。",
@@ -1156,6 +1156,27 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1490899",
+      "japaneseDetailedSummary": "Microsoft 365のTargeted releaseは2027年1月に廃止され、Frontier、Standard release、Deferred releaseの3つのリリースオプションに移行します。2026年11月以降、管理者はTargeted release登録へのユーザー追加・削除・変更ができなくなります。現在Targeted releaseに登録されているユーザーを確認し、Microsoft 365管理センターで組織に適したリリース設定を選ぶ準備が必要です。Deferredは主要更新をStandard開始の約30日後に受け取る設定です。顧客とは、検証用ユーザーの再配置と各オプションの選定基準を協議するとよいでしょう(提供本文は途中で切れています)。",
+      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft 365が3つのリリースオプション(Frontier、Standard release、Deferred release)へ移行するため、Microsoft 365サービスのTargeted releaseは2027年1月に廃止されます。\nこの変更に備え、現在Targeted releaseに登録されているユーザーを確認し、組織のニーズに最も適したリリース設定を構成してください。\nMicrosoft 365管理センターで希望するリリース設定を選択します:\n• プレビューアクセス• Frontier:一般提供前に、対象のAI機能および非AI機能をプレビューするオプトインです。\n• 一般提供アクセス• Standard release:一般提供時に更新を受け取ります。\n• Deferred release:対象の主要更新をStandard release開始の約30日後に受け取り、検証や準備のための追加時間を確保できます。\n2026年11月以降、管理者はTargeted release登録へのユーザーの追加、削除、変更ができなくなります。関連する管理エクスペリエンスの変更に関する追加情報は(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1489931",
+      "japaneseDetailedSummary": "Microsoft 365 Backupに、バックアップポリシーや復元操作を製品内で監視できるアクティビティログが追加されます。構成変更、復元の進行状況、失敗、運用状態を管理者が把握でき、対象はSharePoint Online、OneDrive、Exchange Onlineです。全世界でGAのロールアウトは2026年10月中旬に開始し、同月中旬に完了予定です。影響を受けるのはMicrosoft 365 Backupの管理者です。ログにはサービス、アクティビティ種別、状態、影響、ポリシーや復元タスクの詳細などのメタデータが含まれます(提供された本文は途中で切れています)。顧客には、運用監査や障害調査での活用方法を案内できます。",
+      "japaneseBodyTranslation": "[内容と理由]\n管理者がMicrosoft 365 Backup内で直接バックアップポリシーと復元アクティビティを監視できるよう、アクティビティログを導入します。アクティビティログにより、Microsoft 365 Backupの画面を離れることなく、構成変更、復元の進行状況、失敗、運用状態の可視性が向上します。\n[ロールアウトスケジュール]\n• 一般提供(全世界):ロールアウトは2026年10月中旬に開始し、2026年10月中旬に完了する予定です。\n[組織への影響]\n影響を受けるユーザー\n• Microsoft 365 Backupを管理する管理者\nプラットフォームとサービス\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\n今後の動作\n• SharePoint Online、OneDrive、Exchange Onlineを含むサポート対象ワークロード全体のMicrosoft 365 Backupアクション用にアクティビティログが利用可能になります。\n• アクティビティログのエントリには、サービス、アクティビティの種類、状態、影響、ポリシーまたは復元タスクの詳細、タイムスタンプなどのメタデータが含まれます。(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1490911",
+      "japaneseDetailedSummary": "Windows版Microsoft Edgeは、バージョン157以降で従来のdirect-WAMサインイン実装を廃止し、OneAuth認証ライブラリへの統合を完了します。認証フローの標準化、サポート性の向上、二重の認証コードパスの排除、診断・回復機能の改善が目的です。Windows WAM自体は廃止されず、OneAuthは引き続きWAMを使用します。GA(全世界、GCC)は2026年11月上旬に開始し同月上旬に完了予定です。影響対象はWindowsでEdgeを使う組織、OneAuthへ未移行のプロファイル、--disable-features=msOneAuthWAMでOneAuth WAMを無効化している組織です(提供本文は途中で切れています)。",
+      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft Edgeは、Windows上の従来のdirect-WAMサインイン実装を、Microsoft Edgeバージョン157から廃止し、OneAuth認証ライブラリへの統合を完了します。\nこの変更により、Microsoft 365クライアントアプリ全体で認証フローが標準化され、プラットフォームのサポート性が簡素化され、二重スタックの認証コードパスが排除され、診断および回復の仕組みが改善されます。Windows Web Account Manager(WAM)自体は廃止されません。OneAuthは引き続きWindows WAMを使用します。\n[ロールアウトスケジュール:]\n一般提供(全世界、GCC):ロールアウトは2026年11月上旬に開始し、2026年11月上旬に完了する予定です。\n[組織への影響:]\n影響を受けるユーザー:\n• WindowsでMicrosoft Edgeを使用している組織\n• まだOneAuthに自動移行されていないEdgeプロファイルを持つユーザー\n• --disable-features=msOneAuthWAMを使用してOneAuth WAMを明示的に無効化した組織\nプラットフォーム/サービス:\n• Microsoft Edge(原文はここで途切れています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
