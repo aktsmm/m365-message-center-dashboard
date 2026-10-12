@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T01:24:32.2171262+00:00",
+  "generatedAt": "2026-10-12T01:28:07.8800870+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証強化・Targeted Release廃止・Office LTSC 2021サポート終了が今週〜今月の最重要トピック",
   "executiveSummary": "今回のMessage Center 81件では、(1) Office LTSC 2021のサポートが2026年10月13日に終了(MC1472429)、(2) Targeted Releaseが2027年1月に廃止され、11月から管理者による登録変更ができなくなる(MC1490899、対応期限10/31)、(3) Entra IDのサインイン保護(CSP強化、MC1481309)・カスタムCSS廃止(MC1458474)・SSPR登録済み認証方法必須化(MC1325414)・SMS第一要素サインイン廃止継続(MC1474104)などID・認証のセキュリティ強化が集中しています。またEdgeではレガシーWAMサインイン廃止(MC1490911)が11月初旬に予定されています。パスキー関連(MC1450133、MC1459133、MC1437671)はタイムライン更新があり、導入計画の見直し機会です。一方、MC1477999(TeamsのチャットリストからのCopilot削除)は実施見送りとなったため対応不要です。",
@@ -1154,6 +1154,13 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1492959",
+      "japaneseDetailedSummary": "Microsoft 365 全体に関わる Audio Overview の機能強化です。長いノートブックではトピック別のエピソードに分けて音声を聞き分けやすくなります。OneDrive に保存する際は Microsoft Purview 秘匿性ラベルに対応し、ソースに付与されたラベルのうち最も制限の厳しいものが保存ファイルに継承されます。ただしノートブック内の Audio Overview にはまだラベルは適用されません。さらに OneNote ページなど、より多くのコンテンツ種別を基に音声概要を生成できるようになります。提供された本文は途中で切れており、展開時期や詳細な対象は記載がないため、顧客には情報保護ポリシーとの整合性を中心に説明するのが有効です。",
+      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft は、長いコンテンツをより簡単にナビゲートでき、企業の情報保護をサポートし、より多くの種類のコンテンツから音声概要を作成できるようにする、Audio Overview の新機能を展開しています。\nエピソード\nより長くコンテンツ量の多いノートブックでは、Audio Overview がトピックごとのエピソードに沿って議論を整理できます。これにより、ユーザーは音声内を移動しやすくなり、コンテンツの異なる部分に集中できます。\nOneDrive に保存する際の秘匿性ラベル\nAudio Overview は、OneDrive に保存する際に Microsoft Purview 秘匿性ラベルをサポートするようになりました。ソースコンテンツに秘匿性ラベルが付いている場合、保存された Audio Overview はソースの中で最も制限の厳しいラベルを継承します。秘匿性ラベルは OneDrive 内の保存ファイルに適用されます。ノートブック内の Audio Overview には、まだ秘匿性ラベルは付与されません。\nサポートされるコンテンツ種別の拡大\nAudio Overview は、ノートブックに追加された次のような追加の種類のコンテンツを理解し、それに基づいて議論できるようになりました:\n• OneNote ページ\n• Lo(原文はここで途切れています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
