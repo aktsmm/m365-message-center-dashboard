@@ -1,23 +1,23 @@
 {
   "meta": {
-    "runId": "37715944433",
-    "generatedAt": "2026-10-08T02:03:58.2319701+00:00",
+    "runId": "38191522326",
+    "generatedAt": "2026-10-12T01:20:53.5015490+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 82,
-    "majorChanges": 25,
+    "total": 81,
+    "majorChanges": 23,
     "highSeverity": 0,
     "actionRequired": 11,
     "actionDueWithin30Days": 5,
-    "updatedLast7Days": 8
+    "updatedLast7Days": 11
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 43
+      "count": 42
     },
     {
       "name": "Microsoft Entra",
@@ -29,6 +29,176 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1492959",
+      "title": "Audio Overview Updates",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-09T20:43:49.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-09T20:43:58.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nMicrosoft is rolling out new capabilities in Audio Overview to make it easier to navigate longer content, support enterprise information protection, and create audio overviews from more types of content.\nEpisodes\nFor longer and more content-rich notebooks, Audio Overview can organize the discussion into topic-based episodes. This makes it easier for users to navigate the audio and focus on different parts of the content.\nSensitivity labels when saving to OneDrive\nAudio Overviews now support Microsoft Purview sensitivity labels when saved to OneDrive. If the source content includes sensitivity labels, the saved Audio Overview inherits the most restrictive label from its sources. Sensitivity labels apply to the saved file in OneDrive. Audio Overviews within the notebook are not yet sensitivity labeled.\nMore supported content types\nAudio Overview can now understand and ground its discussion in additional types of content added to a notebook, including:\n• OneNote pages\n• Loop pages\n• Plain text (.txt) files\n• Emails\n• Teams meetings\n• Teams chats\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in late October 2026 and expect to complete by late November 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Users who create and consume Audio Overviews.\n• Organizations that use Audio Overview with Microsoft 365 content stored or saved in OneDrive.\nPlatforms/Services:\n• Microsoft 365 Copilot\n• Audio Overview\n• OneDrive\n• Microsoft Purview sensitivity labels\nWhat will happen:\n• Users can navigate longer Audio Overviews through topic-based episodes.\n• Users can create Audio Overviews grounded in additional content types, including OneNote pages, Loop pages, .txt files, emails, Teams meetings, and Teams chats.\n• Audio Overviews saved to OneDrive from labeled source content will inherit the most restrictive sensitivity label from the sources.\n• This release does not introduce sensitivity labeling for Audio Overviews while they remain within the notebook.\n[Action Required/Recommendations:]\nNo admin action is required to prepare for this update. These Audio Overview improvements will roll out automatically to eligible users.\nFor sensitivity labels, when an Audio Overview is saved to OneDrive from labeled source content, the saved file will automatically inherit the most restrictive sensitivity label from its sources. No additional configuration is required as part of this feature rollout.\n[Compliance considerations:]\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Audio Overview uses AI capabilities to generate audio grounded in Microsoft 365 content, including additional supported content types.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and navigate Audio Overviews from more supported Microsoft 365 content sources.\nDoes the change modify, interrupt, or disable Purview capabilities such as Information Protection labels?Yes. Audio Overviews saved to OneDrive from labeled source content inherit the most restrictive sensitivity label from the sources.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft is enhancing Audio Overview with topic-based episodes for easier navigation, support for sensitivity labels when saving to OneDrive, and expanded content types including OneNote, Loop pages, emails, and Teams chats. The update rolls out worldwide from late October to November 2026 with no admin action needed."
+        }
+      ]
+    },
+    {
+      "id": "MC1437671",
+      "title": "(Updated) Microsoft Entra: Authenticated password change in My Sign-Ins",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-23T22:39:23.0000000+00:00",
+      "endDateTime": "2026-12-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-09T16:43:01.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 9, 2026: We have updated the content. Thank you for your patience.\n[What and Why]\nWe're introducing a new Microsoft Entra capability that Allow password change after secure sign-in directly from My Sign-Ins using an existing strong credential, such as a passkey, FIDO2 security key, or Windows Hello for Business. Users can complete this action even if they don't know their current password and without using self-service password reset (SSPR) or contacting the helpdesk.\nMany organizations are adopting allowed password changes after secure sign-ins but still maintain passwords for legacy applications and services. This update helps reduce password-related support requests and removes a common barrier to adoption. The feature is disabled by default and requires administrator enablement before users can access it.\n[Rollout Schedule]\n• General Availability (Worldwide and GCC): Beginning end of October 2026 (previously mid-October) and expected to complete by end of November 2026 (previously late October)\n[Impact on Your Organization]\nWho is affected\n• Microsoft Entra administrators who manage password change settings\n• Users who have a registered allowed password change after secure sign-in method (passkey, FIDO2 security key, or Windows Hello for Business) and also maintain a password\n• Organizations that choose to enable the feature\nPlatforms/Services\n• Microsoft Entra\n• My Sign-Ins (mysignins.microsoft.com)\nWhat will happen\n• Because this feature is off by default, there is no change to your users' experience unless you turn it on.\n• After the feature is enabled, eligible users will see a new Change password option in My Sign-Ins.\n• Users can authenticate set a new password without knowing their existing password.\n• Users are not required to enroll in or use SSPR to complete this action.\n• Administrators can choose to enable or disable the capability through Microsoft Entra management interfaces available at release.\n• Authentication continues to require a strong password change method, such as a passkey, FIDO2 security key, or Windows Hello for Business.\n• The setting is tenant-wide: you can turn it on for your entire tenant or leave it off for everyone. There is no per-user or per-group scoping.\n[Action Required/Recommendations]\nNo action is required.\nIf your organization plans to support allowed password changes after secure sign-in:\n• Review your password management and allowed password changes after secure sign-in strategy.\n• Evaluate whether enabling this capability aligns with your organization's security and support requirements.\n• Communicate the new self-service capability to helpdesk and support teams.\n• Update internal user guidance and documentation as needed.\n• If your organization chooses to offer allowed password changes after secure sign-in, enable the feature through the Microsoft Entra admin experience or supported APIs when it becomes available in October 2026.\nLearn more\n• Microsoft Learn documentation will be available when the feature releases in October.\n[Compliance Considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. The feature is disabled by default and requires explicit administrator enablement.\nDoes the change modify how users can access or correct their personal data?Yes. Users gain a new self-service method to update their password using an existing allowed password change after secure sign-in.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra will enable users to change passwords after secure sign-in using strong credentials (passkey, FIDO2, Windows Hello) without knowing the current password or using SSPR. This feature, disabled by default, requires admin activation and will roll out globally from October to November 2026."
+        }
+      ]
+    },
+    {
+      "id": "MC1477999",
+      "title": "(Updated) Microsoft Teams: Removing Copilot from the chat list",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-09-23T21:46:58.0000000+00:00",
+      "endDateTime": "2026-10-12T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-09T04:19:20.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated October 8, 2026: After additional consideration we have decided not to proceed with this change. You can safely disregard this message. We apologize for any inconvenience this may have caused.\n[What and why]\nTo provide a more consistent and streamlined Microsoft 365 Copilot experience in Microsoft Teams, we are simplifying how users access Copilot in Teams.\nToday, users can access Copilot either from the Teams chat list or from the Copilot app in the Teams app bar. Beginning in October 2026, we will remove the Copilot entry point from the Teams chat list and direct users to access Copilot through the Copilot app. The Copilot app provides access to the full set of Copilot capabilities, while the chat list entry point provides a more limited experience.\nThis change creates a single, consistent access point for Copilot in Teams, helping users discover and return to Copilot more easily while reducing interface clutter. To help users transition, a coachmark will direct users from the chat list entry point to the Copilot app before the chat list entry point is removed.\n[Rollout schedule]\n• Copilot chat list entry point removal (Worldwide, GCC): Cancelled\n[Impact on your organization]\nWho is affected\n• Organizations whose users access Microsoft 365 Copilot in Microsoft Teams\n• Users of Microsoft Teams desktop and web applications who currently access Copilot from the Teams chat list.\n• Mobile users are not affected.\nPlatforms and services\n• Microsoft Teams desktop\n• Microsoft Teams web\nWhat will happen\n• The Copilot entry point in the Teams chat list will be removed.\n• Prior to the mid-October removal, users who access Copilot from the chat list will see a coachmark directing them to the Copilot app.\n• The Copilot app in the Teams app bar will remain available and unchanged.\n• If the Copilot app has been unpinned from the Teams app bar, users will be directed to the app overflow menu where they can locate the Copilot app.\n• Existing Copilot conversations, notifications, supported deep links, and session continuity will continue to work.\n• No user conversations, prompts, chat history, or Copilot data will be removed.\n• Mobile experiences are unchanged.\n• This change is enabled by Microsoft and does not require tenant configuration.\nBefore:\nAfter:\n[Action required and recommendations]\nNo action is required.\nWe recommend that administrators:\n• Inform users that Copilot in Teams will be accessed through the Copilot app in the Teams app bar going forward.\n• Update internal training materials, screenshots, adoption content, and support documentation that reference the Copilot chat list entry point.\n• Notify help desk and support teams before rollout.\n• Review Teams app setup policies and consider pinning the Copilot app for users if it is not already pinned.\n• Monitor user feedback after rollout and direct users to the Copilot app if they are looking for the retired chat list entry point.\nLearn more\n• Pin Microsoft Copilot Chat in the Microsoft 365 apps | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified, review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Updated October 8, 2026: After additional consideration we have decided not to proceed with this change. You can safely disregard this message. We apologize for any inconvenience this may have caused."
+        }
+      ]
+    },
+    {
+      "id": "MC1462915",
+      "title": "(Updated) Allow connections to copilot.cloud.microsoft before the Copilot URL redirect",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-08-27T22:04:16.0000000+00:00",
+      "endDateTime": "2026-12-14T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-08T18:57:24.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "Updated message"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated October 8, 2026: We have updated the content. thank you for your patience.\n[What and why:]\nAs communicated in MC1454108, beginning in early September, 2026, Microsoft will start redirecting users from m365.cloud.microsoft to copilot.cloud.microsoft in organizations where access to copilot.cloud.microsoft is available. Organizations who may have blocked connection to copilot.cloud.microsoft will be redirected in October.\nBackend services and Copilot in Edge will require connection to *.cloud.microsoft. To avoid disruption to Copilot access across the web app, desktop app, and Edge experience, review your organization's network and security controls to confirm that users can connect to *.cloud.microsoft.\n[Rollout schedule:]\n• In early September, 2026, Microsoft will redirect users from m365.cloud.microsoft to copilot.cloud.microsoft in organizations where access to copilot.cloud.microsoft is available.\n• In early November, 2026 Microsoft will redirect the remaining users who had not been redirected in early September. If your organization cannot complete the required configuration before the redirect, contact your Microsoft account representative to discuss available options.\n[Impact on your organization:]\nWhen the Copilot web app transitions from m365.cloud.microsoft to copilot.cloud.microsoft, users will be automatically redirected. If device, network, proxy, firewall, security gateway, or similar controls block URLs within *.cloud.microsoft, affected users may be unable to use Copilot in the web app, desktop app, and Microsoft Edge experience. Review these controls and allow the required domain before the redirect begins.\nThe redirect remains within the *.cloud.microsoft domain and retains its security, compliance, and enterprise allow-listing properties. Organizations that follow the recommendednetwork configurations for Microsoft 365 Copilot do not need additional network changes.\n[Action required / Recommendations:]\n• You can validate connectivity to the *.cloud.microsoft domain by using the Microsoft 365 Connectivity Test tool. Use the connectivity tool to validate connectivity to *.cloud.microsoft and confirm that your network and security controls allow access before the redirect applies to your organization. If you find out your organization blocks connection to *.cloud.microsoft, contact your Microsoft account representative before September 10, 2026 to discuss available options.\n• Confirm that copilot.cloud.microsoft is not blocked in your environment. Review legacy filtering rules, URL category restrictions, proxy policies, firewall rules, tenant restrictions, Conditional Access policies, and app control policies, and update them if needed.\n• Add *.cloud.microsoft to your organization’s allow lists. If you have questions about tenant-specific network configurations and allow list requirements, you can contact your Microsoft support team for guidance based on your specific environment. Note: Microsoft does not support allowing partial or only selected Microsoft 365 application URLs within the *.cloud.microsoft domain. Allow the entire *.cloud.microsoft domain to maintain service reliability and avoid disruptions.\n• Confirm that your environment aligns with the recommended network requirements for Microsoft 365 Copilot.\n• Coordinate with teams that manage network security, proxy services, firewalls, secure web gateways, SSE/SASE platforms, or third-party filtering solutions to ensure traffic to *.cloud.microsoft is permitted.\n• If preventing personal Microsoft account sign-ins is the reason your organization blocks copilot.cloud.microsoft, consider using TenantRestrictions as the targeted control. This control allows your organization to restrict authentication with personal Microsoft accounts on managed networks or devices, while still permitting access to the Copilot service URL.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting September 2026, Microsoft will redirect users from m365.cloud.microsoft to copilot.cloud.microsoft. Organizations must allow connections to *.cloud.microsoft in network and security controls to avoid Copilot access disruptions. Validate connectivity, update allow lists, and coordinate with security teams before the redirect."
+        }
+      ]
+    },
+    {
+      "id": "MC1459133",
+      "title": "(Updated) Microsoft Entra ID: Passkey support for B2B users",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-08-21T22:38:08.0000000+00:00",
+      "endDateTime": "2027-03-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-08T16:15:41.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 8, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft Entra ID will support passkey registration and sign-in for B2B users, including internal guest users and external users. Eligible B2B users will be able to register and use passkeys issued by the resource tenant to satisfy that tenant's multifactor authentication (MFA) requirements.\nPasskeys are already supported for member users in their home tenant. Until now, B2B users could not use a resource tenant passkey when that tenant required MFA and did not trust the home tenant's MFA. This update closes that gap and gives guest and external users a phishing-resistant way to satisfy MFA requirements in the resource tenant.\nB2B users can register a resource tenant passkey from the resource tenant's My Security Info page, during a proof-up prompt, or through a passkey registration campaign. Once registered, the passkey can satisfy the resource tenant's MFA requirements during sign-in.\nMicrosoft Authenticator app passkeys will be supported for internal guest users but not for external users.\nImportant: This rollout intersects with the previously announced retirement of SMS and voice authentication. As described in Message Center posts MC1426371 and MC1434201, any user enabled for SMS or voice in the Authentication methods policy or legacy MFA policies will be automatically enabled for all passkey types. This will include eligible B2B users when B2B passkey support becomes available.\n[Rollout schedule]\nGeneral Availability (GCC, Worldwide): Beginning in late October 2026, with a phased rollout as outlined below:\n• Internal guest users: Beginning in late October 2026 (previously early October) and is expected to complete by late November 2026 (previously late October)\n• External users (excluding Microsoft Authenticator app passkeys): Rollout timing will be communicated in a future Message center post update.\n[Impact on your organization]\nWho is affected\n• Microsoft Entra administrators managing Authentication methods policies\n• Organizations that use Microsoft Entra B2B collaboration\n• Internal guest users and external users who are in scope for passkey authentication\n• Internal guest users and external users who are enabled for SMS or voice in the Authentication methods policy or legacy MFA policies\nPlatforms and services\n• Microsoft Entra ID\n• My Security Info\n• Authentication methods policy\n• Conditional Access\nWhat will happen\n• The feature will be enabled by default.\n• B2B users who are already in scope for passkeys in your Authentication methods policy will automatically be able to register and sign in with resource tenant passkeys.\n• Eligible B2B users may receive prompts to register a passkey during sign-in through proof-up experiences or passkey registration campaigns, if those experiences are configured in your tenant.\n• Users can also register a passkey from the resource tenant's My Security Info page.\n• If your organization has excluded B2B users from passkeys in the Authentication methods policy, and those users are not separately subject to automatic passkey enablement through the SMS and voice retirement changes, they will not be prompted and will not be able to register or sign in with a resource tenant passkey.\n• Under the SMS and voice retirement changes described in MC1426371 and MC1434201, B2B users who are enabled for SMS or voice in the Authentication methods policy or legacy MFA policies will be automatically enabled for all passkey types. Excluding these users from the passkey policy alone will not prevent this automatic enablement if they remain enabled for SMS or voice.\n• This change gives guest and external users a phishing-resistant sign-in option and helps organizations extend strong authentication requirements to their B2B population.\n[Action required and recommendations]\nNo action is required.\nWe recommend that administrators review current passkey and MFA configurations before rollout:\n• Review your Authentication methods policy. Confirm which users are in scope for passkeys, including guest and external users. B2B users who are in scope will be enabled automatically. Exclude them from the policy if that is not the intended behavior.\n• Review Message Center posts MC1426371 and MC1434201 for details about the SMS and voice retirement changes.\n• Review SMS and voice assignments in both the Authentication methods policy and legacy MFA policies. If you do not want specific B2B users to be automatically enabled for all passkey types, move those users off SMS and voice in all applicable policies. Excluding them only from the passkey policy is not sufficient while they remain enabled for SMS or voice.\n• Review your passkey registration campaign. Confirm that the campaign's user scope includes the intended users.\n• Review your Conditional Access policies. Confirm that MFA and authentication strength requirements will apply as intended for B2B users when resource tenant passkeys become available.\n• Confirm user scoping across authentication-related policies. Make sure the groups and user types targeted by each policy align with your organization's requirements for guest and external users.\nConsider notifying your help desk and identity support teams that eligible B2B users may begin receiving passkey registration prompts after rollout.\n[Compliance considerations]\nQuestionAnswer\nDoes the change store new customer data?Passkey credential registration data may be stored as part of Microsoft Entra authentication management.\nDoes the change alter how existing customer data is processed, stored, or accessed?The change introduces an additional authentication method for B2B users accessing resource tenant resources.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra ID will support passkey registration and sign-in for B2B users, enabling phishing-resistant MFA in resource tenants starting late October 2026. Internal guest users get Microsoft Authenticator app passkeys; external users do not. The feature is enabled by default, intersecting with SMS/voice retirement policies. No action required, but administrators should review policies."
+        }
+      ]
+    },
+    {
+      "id": "MC1450133",
+      "title": "Microsoft Entra: Users can register a passkey or passwordless sign-in as their first multifactor authentication method",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-08-07T21:55:44.0000000+00:00",
+      "endDateTime": "2027-03-29T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-08T16:10:44.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 8, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nUsers will soon be able to register a passkey as their first multifactor authentication method. Previously, people had to set up an alternate MFA method like SMS or Voice before they could add a passkey (FIDO2), Windows Hello for Business, macOS Platform SSO. That extra step pushed users toward weaker methods and slowed the move to phishing-resistant sign-in. Now password-only users can go straight to a passkey, making it easier to adopt strong authentication from day one. As part of this work, we will also be enabling Authenticator App passwordless sign-in to be a user's first registered MFA method.\n[Rollout schedule]\nThis feature will roll out in phases:\nPhase 1: Support for synced passkeys, Microsoft Entra passkeys on Windows, and FIDO2 security keys.\nGeneral Availability (Worldwide, GCC): We will begin rolling out in late October 2026 (previously early October) and expect to complete by late November 2026 (previously mid-November).\nPhase 2: Support for Windows Hello for Business, macOS Platform SSO, Authenticator App passkey, and Authenticator App passwordless sign-in.\nGeneral Availability (Worldwide, GCC): We will begin rolling out in early January 2026 and expect to complete by late February 2027.\n[Impact on your organization]\nWho is affected\n• Users who have not yet registered a multifactor authentication method\n• Identity and security administrators responsible for authentication onboarding and registration policies\nPlatforms and services\n• Microsoft Entra ID\n• Passkeys (FIDO2)\n• Windows Hello for Business\n• macOS Platform SSO\n• Microsoft Authenticator passwordless sign-in\nWhat will happen\n• Password-only users will be able to register passkeys or passwordless sign-in as their first MFA method.\n• Users will no longer need to register a method such as SMS or voice before registering a passkey (FIDO2), Windows Hello for Business, macOS Platform SSO, or Authenticator passwordless sign-in.\n• Organizations may see reduced registration friction and increased adoption of phishing-resistant authentication methods.\n[Action required and recommendations]\nNo action is required for this change.\nWe recommend that administrators:\n• Review Conditional Access policies related to security information registration.\n• Consider requiring MFA to register security information if additional verification is required by your organization.\n• Review onboarding and registration guidance so users know to set up a passkey as their preferred first method.\nLearn more\n• (To be updated closer to rollout) Register a synced passkey (FIDO2) | Authentication | Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. Administrators can control which authentication methods users are allowed to register through existing Microsoft Entra authentication method policies and Conditional Access policies.\nDoes the change affect access or authentication controls?Yes. The update changes how users register multifactor authentication methods by allowing eligible users to register supported passkeys or passwordless authentication methods as their first MFA method.\nCan administrators govern the feature through existing Microsoft Entra controls?Yes. Administrators retain control over the feature through Microsoft Entra authentication method policies and Conditional Access configurations.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra will allow users to register passkeys or passwordless sign-in as their first multifactor authentication method, removing the need to set up SMS or voice first. This phased rollout begins late October 2026, aiming to ease adoption of phishing-resistant authentication without requiring user action."
+        }
+      ]
+    },
     {
       "id": "MC1490911",
       "title": "Microsoft Edge: Retiring legacy sign-in implementation on Windows",
@@ -118,64 +288,6 @@
         {
           "name": "Platforms",
           "value": "Android, Desktop, iOS, Mac, Web"
-        }
-      ]
-    },
-    {
-      "id": "MC1437671",
-      "title": "(Updated) Microsoft Entra: Authenticated password change in My Sign-Ins",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-23T22:39:23.0000000+00:00",
-      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-07T22:09:11.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated October 7, 2026: We have updated the timeline and content. Thank you for your patience.\n[What and Why]\nWe're introducing a new Microsoft Entra capability that allows authenticated password changes directly from My Sign-Ins using an existing strong credential, such as a passkey, FIDO2 security key, or Windows Hello for Business. Users can complete this action even if they don't know their current password and without using self-service password reset (SSPR) or contacting the helpdesk.\nMany organizations are adopting authenticated password change but still maintain passwords for legacy applications and services. This update helps reduce password-related support requests and removes a common barrier to adoption. The feature is disabled by default and requires administrator enablement before users can access it.\n[Rollout Schedule]\n• General Availability (Worldwide and GCC): Beginning in mid-October 2026 and expected to complete by late October 2026\n[Impact on Your Organization]\nWho is affected\n• Microsoft Entra administrators who manage password change settings\n• Users who have a registered authenticated password change method (passkey, FIDO2 security key, or Windows Hello for Business) and also maintain a password\n• Organizations that choose to enable the feature\nPlatforms/Services\n• Microsoft Entra\n• My Sign-Ins (mysignins.microsoft.com)\nWhat will happen\n• Because this feature is off by default, there is no change to your users' experience unless you turn it on.\n• After the feature is enabled, eligible users will see a new Change password option in My Sign-Ins.\n• Users can authenticate set a new password without knowing their existing password.\n• Users are not required to enroll in or use SSPR to complete this action.\n• Administrators can choose to enable or disable the capability through Microsoft Entra management interfaces available at release.\n• Authentication continues to require a strong password change method, such as a passkey, FIDO2 security key, or Windows Hello for Business.\n• The setting is tenant-wide: you can turn it on for your entire tenant or leave it off for everyone. There is no per-user or per-group scoping.\n[Action Required/Recommendations]\nNo action is required.\nIf your organization plans to support authenticated password change:\n• Review your password management and authenticated password change strategy.\n• Evaluate whether enabling this capability aligns with your organization's security and support requirements.\n• Communicate the new self-service capability to helpdesk and support teams.\n• Update internal user guidance and documentation as needed.\n• If your organization chooses to offer authenticated password changes, enable the feature through the Microsoft Entra admin experience or supported APIs when it becomes available in October 2026.\nLearn more\n• Microsoft Learn documentation will be available when the feature releases in October.\n[Compliance Considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. The feature is disabled by default and requires explicit administrator enablement.\nDoes the change modify how users can access or correct their personal data?Yes. Users gain a new self-service method to update their password using an existing authenticated password change.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra will enable authenticated password changes in My Sign-Ins starting mid-October 2026. Users with strong credentials (passkey, FIDO2 key, Windows Hello) can reset passwords without knowing the current one or using SSPR. The feature is off by default and requires admin activation tenant-wide."
-        }
-      ]
-    },
-    {
-      "id": "MC1438571",
-      "title": "(Updated) Default visibility of additional profile card properties in Microsoft 365 profile cards",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": true,
-      "startDateTime": "2026-07-24T21:56:36.0000000+00:00",
-      "endDateTime": "2026-10-09T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-07T17:51:09.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
-      "bodyText": "Updated October 7, 2026: We have decided not to move forward with this change at this time. We apologize for any inconvenience.\n[What and Why:]\nTo help people discover and understand organizational information more easily, Microsoft is changing the default visibility of 11 existing profile card properties in Microsoft 365 profile cards. Today, these properties can be populated from Microsoft Entra ID and other supported external data sources such as People Graph Connectors and Microsoft 365 Organizational Data, but they are disabled by default and require administrators to manually enable them. You can find more on the existing profile card property management here.\nWith this update, these properties will be displayed by default when populated with data. This helps organizations surface relevant employee information more consistently while reducing administrative effort for commonly used profile attributes. Organizations retain administrative controls to manage visibility according to their business, privacy, and compliance requirements.\nThe following properties are included in this update:\n• Division\n• Role\n• Employee number\n• Employee type\n• Cost center\n• User principal name (UPN)\n• Alias\n• Fax\n• Street address\n• State\n• Postal code\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We have decided not to move forward with this change at this time.\n[Impact to your organization:]\nWho is affected\n• Global Administrators and People Administrators responsible for profile card management.\n• Organizations with users whose profile data includes one or more of the affected properties.\nPlatforms/Services\n• Microsoft 365 Profile Cards\n• Microsoft Entra ID\n• Microsoft 365 Organizational Data\n• Microsoft Entra People Graph Connectors\n• Microsoft Graph profile card management APIs\n• Microsoft 365 admin center\nWhat will happen\n• The 11 listed properties will automatically appear on profile cards when the corresponding attributes contain data.\n• The change is enabled by default.\n• Attributes sourced from Microsoft Entra ID, Microsoft 365 Organizational Data, and Microsoft Entra People Graph Connectors follow the same visibility behavior.\n• No changes are made to underlying attribute values or source systems.\n• No changes are required from end users.\n• Tenants that have never configured profile card settings will automatically receive the new default visibility behavior.\n• Only properties with populated values will appear on profile cards.\n[Action Required/Recommendations:]\nIf your organization does not want specific properties displayed on profile cards, action is recommended before October 31, 2026.\nReview current profile card configuration\nUse Microsoft Graph to review existing profile card property settings:\nHTTP\nGET https://graph.microsoft.com/v1.0/admin/people/profileCardProperties\nHide properties before rollout\nTo prevent a property from being displayed, configure the property as hidden using Microsoft Graph.\nExample: Hide Employee Number\nHTTP\nPOST\nhttps://graph.microsoft.com/v1.0/admin/people/profileCardProperties\nContent-Type: application/json\n{\n\"directoryPropertyName\": \"EmployeeId\",\n\"isVisible\": false\n}\nFor each property, you can use the property mappings below:\nProfile card label directoryPropertyName\nDivisionDivision\nRoleRole\nEmployee numberEmployeeId\nEmployee typeEmployeeType\nCost centerCostCenter\nUser principal name (UPN)UserPrincipalName\nAliasAlias\nFaxFax\nStreet addressStreetAddress\nStateStateOrProvince\nPostal codePostalCode\nImportant: Each property requires a separate Microsoft Graph API call. Bulk enable or bulk disable operations are not currently supported. You can find more on using Microsoft Graph APIs for showing and hiding profile card attributes here. Recommended Administrator Actions\n• Verify your current profile card configuration using Microsoft Graph and review which of the affected properties contain data in your tenant.\n• Use Microsoft Graph Profile Card APIs to hide any properties that should remain unavailable to users before rollout begins on October 31, 2026.\n• Communicate the upcoming change to help desk and support teams.\nAfter rollout, administrators can continue managing profile card visibility through Microsoft 365 admin center > People settings > Profile cards. Changes made can take up to 24 hours to be reflected on profile cards across Microsoft 365 experiences.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft planned to make 11 profile card properties visible by default in Microsoft 365 but decided not to proceed with this change as of October 7, 2026. Administrators can manage visibility using Microsoft Graph APIs, with no automatic rollout occurring at this time."
         }
       ]
     },
@@ -568,34 +680,6 @@
       ]
     },
     {
-      "id": "MC1477999",
-      "title": "Microsoft Teams: Removing Copilot from the chat list",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": true,
-      "startDateTime": "2026-09-23T21:46:58.0000000+00:00",
-      "endDateTime": "2026-11-19T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-23T21:47:40.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "Retirement",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。主要な変更として確認してください。",
-      "bodyText": "[What and why]\nTo provide a more consistent and streamlined Microsoft 365 Copilot experience in Microsoft Teams, we are simplifying how users access Copilot in Teams.\nToday, users can access Copilot either from the Teams chat list or from the Copilot app in the Teams app bar. Beginning in October 2026, we will remove the Copilot entry point from the Teams chat list and direct users to access Copilot through the Copilot app. The Copilot app provides access to the full set of Copilot capabilities, while the chat list entry point provides a more limited experience.\nThis change creates a single, consistent access point for Copilot in Teams, helping users discover and return to Copilot more easily while reducing interface clutter. To help users transition, a coachmark will direct users from the chat list entry point to the Copilot app before the chat list entry point is removed.\n[Rollout schedule]\n• Copilot chat list entry point removal (Worldwide, GCC): Beginning mid-October 2026 and expected to complete by late-October 2026\n[Impact on your organization]\nWho is affected\n• Organizations whose users access Microsoft 365 Copilot in Microsoft Teams\n• Users of Microsoft Teams desktop and web applications who currently access Copilot from the Teams chat list.\n• Mobile users are not affected.\nPlatforms and services\n• Microsoft Teams desktop\n• Microsoft Teams web\nWhat will happen\n• The Copilot entry point in the Teams chat list will be removed.\n• Prior to the mid-October removal, users who access Copilot from the chat list will see a coachmark directing them to the Copilot app.\n• The Copilot app in the Teams app bar will remain available and unchanged.\n• If the Copilot app has been unpinned from the Teams app bar, users will be directed to the app overflow menu where they can locate the Copilot app.\n• Existing Copilot conversations, notifications, supported deep links, and session continuity will continue to work.\n• No user conversations, prompts, chat history, or Copilot data will be removed.\n• Mobile experiences are unchanged.\n• This change is enabled by Microsoft and does not require tenant configuration.\nBefore:\nAfter:\n[Action required and recommendations]\nNo action is required.\nWe recommend that administrators:\n• Inform users that Copilot in Teams will be accessed through the Copilot app in the Teams app bar going forward.\n• Update internal training materials, screenshots, adoption content, and support documentation that reference the Copilot chat list entry point.\n• Notify help desk and support teams before rollout.\n• Review Teams app setup policies and consider pinning the Copilot app for users if it is not already pinned.\n• Monitor user feedback after rollout and direct users to the Copilot app if they are looking for the retired chat list entry point.\nLearn more\n• Pin Microsoft Copilot Chat in the Microsoft 365 apps | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified, review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Starting October 2026, Microsoft Teams will remove the Copilot chat list entry point, directing users to access Copilot solely through the Copilot app in the Teams app bar for a streamlined experience. Mobile users are unaffected, and no data will be lost. No action is required."
-        }
-      ]
-    },
-    {
       "id": "MC1477996",
       "title": "Retirement of Viva Insights (personal insights) and Viva Learning usage reports",
       "category": "planForChange",
@@ -656,33 +740,6 @@
         {
           "name": "Platforms",
           "value": "Desktop"
-        }
-      ]
-    },
-    {
-      "id": "MC1462915",
-      "title": "(Updated) Allow connections to copilot.cloud.microsoft before the Copilot URL redirect",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-27T22:04:16.0000000+00:00",
-      "endDateTime": "2026-12-14T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-21T16:38:34.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "Updated message"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated September 21, 2026: We have updated the content. thank you for your patience.\n[What and why:]\nAs communicated in MC1454108, beginning in early September, 2026, Microsoft will start redirecting users from m365.cloud.microsoft to copilot.cloud.microsoft in organizations where access to copilot.cloud.microsoft is available. Organizations who may have blocked connection to copilot.cloud.microsoft will be redirected in October.\nBackend services and Copilot in Edge will require connection to *.cloud.microsoft. To avoid disruption to Copilot access across the web app, desktop app, and Edge experience, review your organization's network and security controls to confirm that users can connect to *.cloud.microsoft.\n[Rollout schedule:]\n• In early September, 2026, Microsoft will redirect users from m365.cloud.microsoft to copilot.cloud.microsoft in organizations where access to copilot.cloud.microsoft is available.\n• In early October, 2026 Microsoft will redirect the remaining users who had not been redirected in early September. If your organization cannot complete the required configuration before the redirect, contact your Microsoft account representative to discuss available options.\n[Impact on your organization:]\nWhen the Copilot web app transitions from\nm365.cloud.microsoft to copilot.cloud.microsoft, users will be automatically\nredirected. If device, network, proxy, firewall, security gateway, or similar\ncontrols block URLs within *.cloud.microsoft, affected users may be unable to use Copilot in the web app, desktop app, and Microsoft Edge experience. Review these controls and allow the required domain\nbefore the redirect begins.\nThe redirect remains within the *.cloud.microsoft domain and\nretains its security, compliance, and enterprise allow-listing properties.\nOrganizations that follow the recommendednetwork configurations for Microsoft 365 Copilot do not need additional\nnetwork changes.\n[Action required / Recommendations:]\n• You can validate connectivity to the *.cloud.microsoft domain by using the Microsoft 365 Connectivity Test tool. Use the connectivity tool to validate connectivity to *.cloud.microsoft and confirm that your network and security controls allow access before the redirect applies to your organization. If you find out your organization blocks connection to *.cloud.microsoft, contact your Microsoft account representative before September 10, 2026 to discuss available options.\n• Confirm\nthat copilot.cloud.microsoft is not blocked in your environment. Review legacy\nfiltering rules, URL category restrictions, proxy policies, firewall rules,\ntenant restrictions, Conditional Access policies, and app control policies, and\nupdate them if needed.\n• Add\n*.cloud.microsoft to your organization’s allow lists. If you have questions\nabout tenant-specific network configurations and allow list requirements, you\ncan contact your Microsoft support team for guidance based on your specific\nenvironment. Note: Microsoft does not support allowing partial or only selected\nMicrosoft 365 application URLs within the *.cloud.microsoft domain. Allow the\nentire *.cloud.microsoft domain to maintain service reliability and avoid\ndisruptions.\n• Confirm\nthat your environment aligns with the recommended network requirements for Microsoft 365 Copilot.\n• Coordinate\nwith teams that manage network security, proxy services, firewalls, secure\nweb gateways, SSE/SASE platforms, or third-party filtering solutions to\nensure traffic to *.cloud.microsoft is permitted.\n• If preventing personal Microsoft account\nsign-ins is the reason your organization blocks copilot.cloud.microsoft,\nconsider using TenantRestrictions as the targeted control. This control allows your organization\nto restrict authentication with personal Microsoft accounts on managed networks\nor devices, while still permitting access to the Copilot service URL.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Starting September 2026, Microsoft will redirect users from m365.cloud.microsoft to copilot.cloud.microsoft. Organizations must ensure network and security controls allow connections to *.cloud.microsoft to avoid Copilot access disruptions across web, desktop, and Edge apps. Validate connectivity and update allow lists before October."
         }
       ]
     },
@@ -1019,64 +1076,6 @@
       ]
     },
     {
-      "id": "MC1459133",
-      "title": "(Updated) Microsoft Entra ID: Passkey support for B2B users",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-21T22:38:08.0000000+00:00",
-      "endDateTime": "2027-03-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-14T18:48:07.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated September 14, 2026: We have updated the content. Thank you for your patience.\n[What and why]\nMicrosoft Entra ID will support passkey registration and sign-in for B2B users, including internal guest users and external users. Eligible B2B users will be able to register and use passkeys issued by the resource tenant to satisfy that tenant's multifactor authentication (MFA) requirements.\nPasskeys are already supported for member users in their home tenant. Until now, B2B users could not use a resource tenant passkey when that tenant required MFA and did not trust the home tenant's MFA. This update closes that gap and gives guest and external users a phishing-resistant way to satisfy MFA requirements in the resource tenant.\nB2B users can register a resource tenant passkey from the resource tenant's My Security Info page, during a proof-up prompt, or through a passkey registration campaign. Once registered, the passkey can satisfy the resource tenant's MFA requirements during sign-in.\nMicrosoft Authenticator app passkeys will be supported for internal guest users but not for external users.\nImportant: This rollout intersects with the previously announced retirement of SMS and voice authentication. As described in Message Center posts MC1426371 and MC1434201, any user enabled for SMS or voice in the Authentication methods policy or legacy MFA policies will be automatically enabled for all passkey types. This will include eligible B2B users when B2B passkey support becomes available.\n[Rollout schedule]\nGeneral Availability (GCC, Worldwide): Beginning in early October 2026 and expected to complete by late February 2027\n• Internal guest users: Beginning in early October 2026 and is expected to complete by late October 2026\n• External users (excluding Microsoft Authenticator app passkeys): Rollout timing will be communicated in a future Message center post update.\n[Impact on your organization]\nWho is affected\n• Microsoft Entra administrators managing Authentication methods policies\n• Organizations that use Microsoft Entra B2B collaboration\n• Internal guest users and external users who are in scope for passkey authentication\n• Internal guest users and external users who are enabled for SMS or voice in the Authentication methods policy or legacy MFA policies\nPlatforms and services\n• Microsoft Entra ID\n• My Security Info\n• Authentication methods policy\n• Conditional Access\nWhat will happen\n• The feature will be enabled by default.\n• B2B users who are already in scope for passkeys in your Authentication methods policy will automatically be able to register and sign in with resource tenant passkeys.\n• Eligible B2B users may receive prompts to register a passkey during sign-in through proof-up experiences or passkey registration campaigns, if those experiences are configured in your tenant.\n• Users can also register a passkey from the resource tenant's My Security Info page.\n• If your organization has excluded B2B users from passkeys in the Authentication methods policy, and those users are not separately subject to automatic passkey enablement through the SMS and voice retirement changes, they will not be prompted and will not be able to register or sign in with a resource tenant passkey.\n• Under the SMS and voice retirement changes described in MC1426371 and MC1434201, B2B users who are enabled for SMS or voice in the Authentication methods policy or legacy MFA policies will be automatically enabled for all passkey types. Excluding these users from the passkey policy alone will not prevent this automatic enablement if they remain enabled for SMS or voice.\n• This change gives guest and external users a phishing-resistant sign-in option and helps organizations extend strong authentication requirements to their B2B population.\n[Action required and recommendations]\nNo action is required.\nWe recommend that administrators review current passkey and MFA configurations before rollout:\n• Review your Authentication methods policy. Confirm which users are in scope for passkeys, including guest and external users. B2B users who are in scope will be enabled automatically. Exclude them from the policy if that is not the intended behavior.\n• Review Message Center posts MC1426371 and MC1434201 for details about the SMS and voice retirement changes.\n• Review SMS and voice assignments in both the Authentication methods policy and legacy MFA policies. If you do not want specific B2B users to be automatically enabled for all passkey types, move those users off SMS and voice in all applicable policies. Excluding them only from the passkey policy is not sufficient while they remain enabled for SMS or voice.\n• Review your passkey registration campaign. Confirm that the campaign's user scope includes the intended users.\n• Review your Conditional Access policies. Confirm that MFA and authentication strength requirements will apply as intended for B2B users when resource tenant passkeys become available.\n• Confirm user scoping across authentication-related policies. Make sure the groups and user types targeted by each policy align with your organization's requirements for guest and external users.\nConsider notifying your help desk and identity support teams that eligible B2B users may begin receiving passkey registration prompts after rollout.\n[Compliance considerations]\nQuestionAnswer\nDoes the change store new customer data?Passkey credential registration data may be stored as part of Microsoft Entra authentication management.\nDoes the change alter how existing customer data is processed, stored, or accessed?The change introduces an additional authentication method for B2B users accessing resource tenant resources.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra ID will support passkey registration and sign-in for B2B users, enabling phishing-resistant MFA using resource tenant passkeys. Rollout begins October 2026, with automatic enablement for eligible users. Administrators should review authentication policies and configurations; no immediate action is required."
-        }
-      ]
-    },
-    {
-      "id": "MC1450133",
-      "title": "Microsoft Entra: Users can register a passkey or passwordless sign-in as their first multifactor authentication method",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-07T21:55:44.0000000+00:00",
-      "endDateTime": "2027-03-29T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-14T18:38:32.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated September 14, 2026: We have updated the content. Thank you for your patience.\n[What and why]\nUsers will soon be able to register a passkey as their first multifactor authentication method. Previously, people had to set up an alternate MFA method like SMS or Voice before they could add a passkey (FIDO2), Windows Hello for Business, macOS Platform SSO. That extra step pushed users toward weaker methods and slowed the move to phishing-resistant sign-in. Now password-only users can go straight to a passkey, making it easier to adopt strong authentication from day one. As part of this work, we will also be enabling Authenticator App passwordless sign-in to be a user's first registered MFA method.\n[Rollout schedule]\nThis feature will roll out in phases:\nPhase 1: Support for synced passkeys, Microsoft Entra passkeys on Windows, and FIDO2 security keys.\nGeneral Availability (Worldwide, GCC): We will begin rolling out in early October 2026 (previously mid-October) and expect to complete by mid-November 2026.\nPhase 2: Support for Windows Hello for Business, macOS Platform SSO, Authenticator App passkey, and Authenticator App passwordless sign-in.\nGeneral Availability (Worldwide, GCC): We will begin rolling out in early January 2026 and expect to complete by late February 2027.\n[Impact on your organization]\nWho is affected\n• Users who have not yet registered a multifactor authentication method\n• Identity and security administrators responsible for authentication onboarding and registration policies\nPlatforms and services\n• Microsoft Entra ID\n• Passkeys (FIDO2)\n• Windows Hello for Business\n• macOS Platform SSO\n• Microsoft Authenticator passwordless sign-in\nWhat will happen\n• Password-only users will be able to register passkeys or passwordless sign-in as their first MFA method.\n• Users will no longer need to register a method such as SMS or voice before registering a passkey (FIDO2), Windows Hello for Business, macOS Platform SSO, or Authenticator passwordless sign-in.\n• Organizations may see reduced registration friction and increased adoption of phishing-resistant authentication methods.\n[Action required and recommendations]\nNo action is required for this change.\nWe recommend that administrators:\n• Review Conditional Access policies related to security information registration.\n• Consider requiring MFA to register security information if additional verification is required by your organization.\n• Review onboarding and registration guidance so users know to set up a passkey as their preferred first method.\nLearn more\n• (To be updated closer to rollout) Register a synced passkey (FIDO2) | Authentication | Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. Administrators can control which authentication methods users are allowed to register through existing Microsoft Entra authentication method policies and Conditional Access policies.\nDoes the change affect access or authentication controls?Yes. The update changes how users register multifactor authentication methods by allowing eligible users to register supported passkeys or passwordless authentication methods as their first MFA method.\nCan administrators govern the feature through existing Microsoft Entra controls?Yes. Administrators retain control over the feature through Microsoft Entra authentication method policies and Conditional Access configurations.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Users can now register passkeys or passwordless sign-in as their first multifactor authentication method in Microsoft Entra, eliminating the need to set up weaker methods first. This change, rolling out in phases from October 2026 to February 2027, aims to increase adoption of phishing-resistant sign-in."
-        }
-      ]
-    },
-    {
       "id": "MC1470885",
       "title": "M365 Copilot: Tell Copilot what you need directly from the Copilot button in Word, Excel, and PowerPoint",
       "category": "planForChange",
@@ -1359,34 +1358,6 @@
         {
           "name": "Summary",
           "value": "Starting late August 2026, users can access existing Pages via the \"/\" menu in Copilot chat, while the \"Edit in Pages\" menu will focus on creating new Pages. This update streamlines referencing Pages without affecting existing content or permissions. No action is required."
-        }
-      ]
-    },
-    {
-      "id": "MC1466299",
-      "title": "Microsoft Planner: New Planner usage report in the Microsoft 365 admin center",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-02T23:13:30.0000000+00:00",
-      "endDateTime": "2026-10-11T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-02T23:13:47.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and why]\nWe're introducing a new Planner usage report in the Microsoft 365 admin center. This report provides administrators with visibility into how Planner is being used across their organization, including tenant-level active user metrics and user-level activity details.\nThe new report helps administrators better understand Planner adoption and engagement, support reporting needs, and identify usage trends across both Planner basic and premium plans.\n[Rollout schedule]\n• General Availability (Worldwide, GCC, GCC High, DoD): Beginning in early September 2026 and expected to complete in early September 2026\n[Impact on your organization]\nWho is affected\n• Administrators with permissions to view Microsoft 365 usage reports\nPlatforms and services\n• Microsoft Planner\n• Microsoft 365 admin center\n• Microsoft 365 usage reports\nWhat will happen\nBefore this rollout, Planner usage data was not available in Microsoft 365 admin center usage reports.\nAfter rollout, eligible administrators can access a new report at:\nMicrosoft 365 admin center > Reports > Usage > Planner\nThe report includes:\n• Total unique users: The number of distinct users active in Planner during the selected reporting period, including a daily active users trend chart.\n• Usage details: A user-level table showing username, active days, and last activity date.\nAdministrators can view data for the previous 7, 28, 90, or 180 days and export report data to CSV.\nA user is considered active when they perform at least one intentional action in Planner, such as creating or editing a task or opening the Planner application. Background refresh activity is not included in usage calculations.\nUsage metrics include activity across both Planner basic plans and Planner premium plans.\nThe user-level table displays all users who were active in Planner during the previous 180 days. Changing the reporting period updates the active-days calculation but does not change which users appear in the report.\nNote: This report covers Planner Usage only for basic and premium plans. Planner Agent is included in the Microsoft Copilot Agents report.\nThis feature is enabled by default and does not require configuration.\n[Action required and recommendations]\nNo action is required.\nWe recommend that administrators:\n• Review which administrator roles have access to usage reports because the user-level report contains identifiable user information.\n• Notify users if organizational policies require disclosure of usage reporting.\n• Update internal reporting documentation or processes that reference Planner adoption or usage metrics.\nLearn more: Microsoft Planner usage report | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes this change alter how administrators monitor, report on, or demonstrate compliance activities?Yes. The rollout introduces a new Planner usage report in the Microsoft 365 admin center, providing administrators with new reporting and monitoring capabilities for Planner adoption and activity.\nDoes this change expose identifiable user information to administrators?Yes. The usage details report includes user-level information such as usernames, active days, and last activity dates for users who have been active in Planner.\nDoes this change affect access to reporting data that may require administrative review of permissions?Yes. Administrators should review which roles have access to Microsoft 365 usage reports because the report includes identifiable user activity information.\nDoes this change affect organizational privacy or disclosure considerations?Yes. Organizations may need to notify users or update internal policies if their governance or privacy requirements include disclosure of usage monitoring and reporting practices.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "A new Planner usage report in the Microsoft 365 admin center, launching September 2026, provides admins with tenant-level and user-level Planner activity data, including active users and usage trends for basic and premium plans. It includes identifiable user info, requires no action, and supports compliance and reporting needs."
         }
       ]
     },
