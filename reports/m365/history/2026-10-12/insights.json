@@ -1,33 +1,31 @@
 {
-  "generatedAt": "2026-10-08T02:07:00.8434415+00:00",
+  "generatedAt": "2026-10-12T01:24:32.2171262+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Targeted Release廃止・Office LTSC 2021サポート終了・Entra認証方式変更が今週〜来月の最優先事項",
-  "executiveSummary": "今週のMessage Center(82件)では、期限が近い計画変更が目立ちます。MC1472429/MC1278920: Office LTSC 2021等のサポートが2026年10月13日に終了。MC1490899: Targeted Releaseが2027年1月に廃止され、2026年11月から管理者によるTargeted release登録の追加・削除・変更ができなくなり、Frontier/Standard/Deferredへの整理が必要(対応期限2026-10-31)。MC1481309は期限2026-10-19、MC1458474は2026-10-26、MC1325414(SSPRは登録済み認証方式が必須)は2026-11-06が対応期限。Entra関連ではパスキー既定化とSMS廃止(MC1426371)、SMS第一要素サインイン廃止のフォローアップ(MC1474104、期限2027-02-01)、Conditional Accessカスタムコントロール廃止(MC1422061、期限2027-04-30)があり、認証方式の棚卸しが必要です。Edgeでは、従来のサインイン実装の廃止(MC1490911、2026年11月初旬)、MV2拡張機能の廃止(MC1467356)が影響します。ファイル共有の新体験(MC1454378)はスケジュールが更新され、2026年10月初旬〜11月末に展開予定です。",
-  "thisWeek": "MC1472429 / MC1278920: Office LTSC 2021等の2026年10月13日サポート終了に向け、利用中の端末とアプリを洗い出し、移行計画を確認する\nMC1481309: 期限2026-10-19の外部要因によるEntraの認証体験保護の変更について、影響を受ける構成を確認する\nMC1490899: Targeted Release登録ユーザーを確認し、2026-10-31までにFrontier/Standard/Deferredのどれにするか決める\nMC1458474: 会社のブランディングでカスタムCSSを使っているか確認する(期限2026-10-26)。同系統のMC1435782も合わせて確認する\nMC1325414: SSPRの対象ユーザーが認証方式を登録済みか確認する(期限2026-11-06)",
-  "thisMonth": "MC1490911: Edge 157での従来サインイン実装廃止(2026年11月初旬)に備え、OneAuth WAMを無効化している構成(--disable-features=msOneAuthWAM)がないか確認する\nMC1426371 / MC1474104: パスキー既定化とSMS廃止に備え、認証方式の利用状況と登録キャンペーンを計画する\nMC1454378: 新しい共有リンク体験(2026年10月初旬〜11月末)についてヘルプデスク向けの案内と社内周知を準備する\nMC1467356: MV2拡張機能の利用状況を棚卸しし、代替を検討する\nMC1459132: WIPおよびDefender関連の廃止(期限2026-09-24)の対応状況を確認する",
-  "watch": "MC1422061: Conditional Accessカスタムコントロールの廃止(期限2027-04-30)と移行先の検討\nMC1188230: パスキー(FIDO2)関連プロパティの廃止(2027-10-14)\nMC1474104: SMS第一要素サインイン廃止(期限2027-02-01)\nMC1477999 / MC1474111 / MC1462922: Teams Copilotのチャット一覧からの削除、Companionアプリ廃止、Adminアプリ廃止の展開状況\nMC1480873 / MC1478975: Agent 365の機能拡張とエージェント管理",
-  "customerQuestions": "Office LTSC 2021を使っている端末・部署はどこで、2026年10月13日以降の移行先は決まっていますか?\nTargeted Releaseに登録しているユーザーは誰で、2027年1月以降はFrontier・Standard・Deferredのどれにしますか?\nSSPR、SMS、パスキーなどの認証方式の登録状況はどうなっていて、パスキー既定化に向けた展開計画はありますか?\n会社のブランディングでカスタムCSSや、Conditional Accessのカスタムコントロールを使っていますか?\nEdgeで従来サインイン実装やMV2拡張機能に依存していますか?OneAuth WAMを無効化している端末はありますか?\n新しい共有リンク体験の展開に向けて、ユーザー向けの案内やDLP・共有ポリシーの確認は進んでいますか?",
+  "headline": "Entra認証強化・Targeted Release廃止・Office LTSC 2021サポート終了が今週〜今月の最重要トピック",
+  "executiveSummary": "今回のMessage Center 81件では、(1) Office LTSC 2021のサポートが2026年10月13日に終了(MC1472429)、(2) Targeted Releaseが2027年1月に廃止され、11月から管理者による登録変更ができなくなる(MC1490899、対応期限10/31)、(3) Entra IDのサインイン保護(CSP強化、MC1481309)・カスタムCSS廃止(MC1458474)・SSPR登録済み認証方法必須化(MC1325414)・SMS第一要素サインイン廃止継続(MC1474104)などID・認証のセキュリティ強化が集中しています。またEdgeではレガシーWAMサインイン廃止(MC1490911)が11月初旬に予定されています。パスキー関連(MC1450133、MC1459133、MC1437671)はタイムライン更新があり、導入計画の見直し機会です。一方、MC1477999(TeamsのチャットリストからのCopilot削除)は実施見送りとなったため対応不要です。",
+  "thisWeek": "MC1472429: Office LTSC 2021(Visio/Project等含む)の利用端末を棚卸しし、10月13日のサポート終了に向けた移行方針を確認する。\nMC1490899: Targeted Release登録ユーザーを確認し、Frontier/標準/Deferredのどれにするか決定する(対応期限10月31日)。\nMC1481309: login.microsoftonline.comのサインインページで外部スクリプト等に依存するカスタムコンポーネントや拡張がないか確認する(10月中旬〜下旬に展開)。\nMC1458474: 2026年7月21日時点でカスタムCSSを使用しているテナントは、レイアウト/配置プロパティの利用有無を確認する(10月下旬に廃止開始、対応期限10月26日)。\nMC1477999: 見送り決定のため、以前の周知内容を取り下げる。",
+  "thisMonth": "MC1325414: SSPRが登録済み認証方法のみを要求するようになるため、利用者の登録状況を確認し登録キャンペーンを計画する(対応期限11月6日)。\nMC1490911: Edge 157以降のレガシーWAMサインイン廃止(11月初旬)に備え、--disable-features=msOneAuthWAMでOneAuthを無効化している環境を洗い出す。\nMC1462915: *.cloud.microsoftへの接続がネットワーク/セキュリティ制御で許可されているか確認する(11月初旬にリダイレクト対象が拡大)。\nMC1474104: SMS第一要素サインインの利用状況を確認し、パスキー等のフィッシング耐性のある方式への移行計画を立てる。\nMC1454378: 新しい共有エクスペリエンス(ヒーローリンク)が10月初旬〜11月末に展開されるため、ヘルプデスクや社内向け周知を準備する。\nMC1450133, MC1459133, MC1437671: パスキー関連機能のタイムライン更新を踏まえ、導入ロードマップを調整する。",
+  "watch": "MC1480873: Agent 365のサードパーティエージェント可観測性(Public Preview 10月下旬、GA 11月下旬)の進捗。\nMC1492959: Audio Overviewの秘密度ラベル対応(OneDrive保存時)と対応コンテンツ拡大。\nMC1489931: Microsoft 365 Backupのアクティビティログ(10月中旬展開)。\nMC1422061, MC1188230: 長期の廃止スケジュール(Conditional Accessのカスタムコントロール、FIDO2プロパティ)の動向。",
+  "customerQuestions": "Office LTSC 2021を利用している端末・アプリ(Visio/Project含む)はどれくらいあり、Microsoft 365 Appsへの移行計画はありますか?(MC1472429)\nTargeted Releaseに登録中のユーザーはどなたで、今後はFrontier・標準・Deferredのどれが適切ですか?(MC1490899)\nEntraのサインインページやカスタムブランディングで、外部スクリプトやカスタムCSSのレイアウト/配置プロパティに依存していませんか?(MC1481309, MC1458474)\nSSPR利用者のうち、認証方法を明示的に登録していない割合はどの程度ですか?(MC1325414)\nSMSサインインやパスワード中心の運用から、パスキーへ移行する計画とパイロット対象はありますか?(MC1474104, MC1450133)\nEdgeでmsone OneAuth WAMを無効化するポリシーを使っていますか?また*.cloud.microsoftへの接続は許可されていますか?(MC1490911, MC1462915)",
   "referencedIds": [
     "MC1188230",
-    "MC1278920",
     "MC1325414",
     "MC1422061",
-    "MC1426371",
-    "MC1435782",
+    "MC1437671",
+    "MC1450133",
     "MC1454378",
     "MC1458474",
-    "MC1459132",
-    "MC1462922",
-    "MC1467356",
+    "MC1459133",
+    "MC1462915",
     "MC1472429",
     "MC1474104",
-    "MC1474111",
     "MC1477999",
-    "MC1478975",
     "MC1480873",
     "MC1481309",
+    "MC1489931",
     "MC1490899",
-    "MC1490911"
+    "MC1490911",
+    "MC1492959"
   ],
   "messageUpdates": [
     {
@@ -227,13 +225,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1438571",
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1440968",
       "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
@@ -381,13 +372,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1466299",
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1466760",
       "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
@@ -508,8 +492,8 @@
     },
     {
       "id": "MC1477999",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。主要な変更として確認してください。",
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -594,6 +578,13 @@
       "id": "MC1490911",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1492959",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -803,13 +794,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1438571",
-      "japaneseDetailedSummary": "Microsoftは、Microsoft 365プロフィールカードにおける11件のプロパティのデフォルト表示設定を変更します。現在これらのプロパティ(Division、Roleなど)はMicrosoft Entra IDやPeople Graph Connectors等から取得できますが、デフォルトでは無効であり管理者が手動で有効化する必要があります。この変更により、データが存在する場合にこれらのプロパティがデフォルトで表示されるようになります。組織は引き続き管理コントロールでビジネス・プライバシー・コンプライアンスの要件に応じて表示を管理できます。Major Changeのため、管理者は事前にプライバシーポリシーや社内の情報公開ポリシーを確認し、必要に応じて非表示設定の対応を検討してください。",
-      "japaneseBodyTranslation": "【概要と目的】\n組織情報をより簡単に発見・理解できるよう支援するため、MicrosoftはMicrosoft 365プロフィールカードにおける11件の既存プロパティのデフォルト表示設定を変更します。現在、これらのプロパティはMicrosoft Entra IDやPeople Graph Connectors、Microsoft 365 Organizational Dataなどのサポートされた外部データソースから取り込むことができますが、デフォルトでは無効になっており、管理者が手動で有効化する必要があります。既存のプロフィールカードプロパティ管理については、こちらで詳しくご確認いただけます。\nこのアップデートにより、データが存在する場合にこれらのプロパティがデフォルトで表示されるようになります。これにより、組織は従業員情報をより一貫して表示でき、よく使用されるプロフィール属性に関する管理負担を軽減できます。組織はビジネス、プライバシー、コンプライアンスの要件に応じて表示を管理するための管理コントロールを引き続き保持します。\n今回のアップデートに含まれるプロパティ:\nDivision(部門)\nRole(役職)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1440968",
       "japaneseDetailedSummary": "Microsoft Entra IDにおけるパスキー登録エクスペリエンスの最適化が展開されます。登録キャンペーン、認証強度、「マイ サインイン」を通じたパスキー登録処理が改善され、管理者が設定したパスキープロファイル制限に準拠したパスキータイプへの誘導がより一貫して行われます。また、ポリシーで許可されている場合、ユーザーの現在のデバイスにローカルなパスキーの登録が優先されます。UIの変更はありません。2026年8月下旬に全世界およびGCCで一般提供開始予定です。フィッシング耐性のある認証方法の採用促進を目指す組織にとって有益な更新です。",
       "japaneseBodyTranslation": "[概要]\nMicrosoft Entra ID全体でパスキー登録の最適化を展開しています。これらの変更により、登録キャンペーン、認証強度、およびマイ サインインを通じたパスキー登録の処理方法が改善されます。\n更新された登録ロジックにより、より一貫して以下が実現されます:\n• 管理者が設定したパスキープロファイルの制限に準拠したパスキータイプへのユーザー誘導が改善され、登録失敗や非準拠の登録試行が減少します。\n• ポリシーで許可されている場合、ユーザーの現在のデバイスにローカルなパスキーの登録が優先されます。\nこれらの改善は、パスキー登録の成功率向上、登録時の摩擦軽減、およびフィッシング耐性のある認証方法の採用強化を目的としています。\nこの更新に関連するユーザーインターフェースの変更はありません。\n[展開スケジュール]\n• 一般提供(全世界およびGCC):2026年8月下旬開始、2026年8月下旬完了予定\n[組織への影響]\n影響を受けるユーザー",
@@ -953,13 +937,6 @@
       "id": "MC1462922",
       "japaneseDetailedSummary": "Teams、Outlook、Microsoft365.com 向けのAdminアプリが2026年10月に廃止されます。このアプリは小規模ビジネス向けの管理ツールでしたが、2026年8月よりTeamsへの新規プリインストールが停止され、10月以降は完全に利用不可となります。管理者は引き続きMicrosoft Admin CenterおよびTeams Admin Centerを使用してください。重要な変更です(isMajorChange: true)。",
       "japaneseBodyTranslation": "【変更内容と理由】\nAdminアプリは、Teams、Outlook、Microsoft365.com で直接管理タスクを実行できる小規模ビジネス向けアプリケーションです。2026年10月より、Adminアプリはサポートおよび提供が終了します。\n【展開スケジュール】\n2026年8月中旬より展開を開始し、2026年10月中旬までに完了予定です。\n【組織への影響】\n• 影響を受けるユーザー:Teams、Outlook、またはMicrosoft365.com でAdminアプリを使用している管理者\n• 2026年8月より、新規の小規模ビジネス管理者向けにTeamsでAdminアプリがプリインストールまたはプリピン留めされなくなります。インストール済みの場合は引き続きアクセス可能です。\n• 2026年10月より、Teams、Outlook、Microsoft365.com でAdminアプリのサポートおよび提供が完全に終了します。\n【必要なアクション / 推奨事項】\n• 管理者はMicrosoft Admin CenterおよびTeams Admin Centerを引き続き使用してTeams環境を管理できます。",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1466299",
-      "japaneseDetailedSummary": "Microsoft 365管理センターに新しいPlannerの使用状況レポートが追加されます。これにより管理者は、組織内でのPlannerの利用状況(テナントレベルのアクティブユーザー数やユーザーレベルの活動詳細)を可視化でき、Planner Basic・Premium両プランの利用傾向を把握しやすくなります。従来、管理センターの使用状況レポートにはPlannerのデータが含まれていませんでしたが、展開後は対象の権限を持つ管理者がこの情報を確認できるようになります。一般提供は2026年9月上旬に開始し、同月上旬に完了予定で、対象はWorldwide、GCC、GCC High、DoDの各環境です。対象は使用状況レポートの閲覧権限を持つ管理者で、事前の設定作業は不要と見られます。",
-      "japaneseBodyTranslation": "[概要と理由]\nMicrosoft 365管理センターに新しいPlannerの使用状況レポートを導入します。このレポートにより、管理者は組織全体でPlannerがどのように利用されているかを可視化でき、テナントレベルのアクティブユーザー指標やユーザーレベルの活動詳細を確認できます。\nこの新しいレポートにより、管理者はPlannerの導入状況やエンゲージメントをより深く理解し、レポートニーズに対応し、Planner Basic・Premium両プランにおける利用傾向を把握できるようになります。\n[展開スケジュール]\n・一般提供(Worldwide、GCC、GCC High、DoD):2026年9月上旬に開始し、2026年9月上旬に完了予定\n[組織への影響]\n対象者\n・Microsoft 365使用状況レポートの閲覧権限を持つ管理者\n対象のプラットフォームとサービス\n・Microsoft Planner\n・Microsoft 365管理センター\n・Microsoft 365使用状況レポート\n発生する内容\nこの展開前は、Planner使用状況データはMicrosoft 365管理センターの使用状況レポートで利用できませんでした。\n展開後、対象の管理者は",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1153,9 +1130,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
-      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "id": "MC1489931",
+      "japaneseDetailedSummary": "Microsoft 365 Backupに、バックアップポリシーや復元操作を製品内で監視できるアクティビティログが追加されます。構成変更、復元の進行状況、失敗、運用状態を管理者が把握でき、対象はSharePoint Online、OneDrive、Exchange Onlineです。全世界でGAのロールアウトは2026年10月中旬に開始し、同月中旬に完了予定です。影響を受けるのはMicrosoft 365 Backupの管理者です。ログにはサービス、アクティビティ種別、状態、影響、ポリシーや復元タスクの詳細などのメタデータが含まれます(提供された本文は途中で切れています)。顧客には、運用監査や障害調査での活用方法を案内できます。",
+      "japaneseBodyTranslation": "[内容と理由]\n管理者がMicrosoft 365 Backup内で直接バックアップポリシーと復元アクティビティを監視できるよう、アクティビティログを導入します。アクティビティログにより、Microsoft 365 Backupの画面を離れることなく、構成変更、復元の進行状況、失敗、運用状態の可視性が向上します。\n[ロールアウトスケジュール]\n• 一般提供(全世界):ロールアウトは2026年10月中旬に開始し、2026年10月中旬に完了する予定です。\n[組織への影響]\n影響を受けるユーザー\n• Microsoft 365 Backupを管理する管理者\nプラットフォームとサービス\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\n今後の動作\n• SharePoint Online、OneDrive、Exchange Onlineを含むサポート対象ワークロード全体のMicrosoft 365 Backupアクション用にアクティビティログが利用可能になります。\n• アクティビティログのエントリには、サービス、アクティビティの種類、状態、影響、ポリシーまたは復元タスクの詳細、タイムスタンプなどのメタデータが含まれます。(原文はここで途切れています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1167,16 +1144,16 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1489931",
-      "japaneseDetailedSummary": "Microsoft 365 Backupに、バックアップポリシーや復元操作を製品内で監視できるアクティビティログが追加されます。構成変更、復元の進行状況、失敗、運用状態を管理者が把握でき、対象はSharePoint Online、OneDrive、Exchange Onlineです。全世界でGAのロールアウトは2026年10月中旬に開始し、同月中旬に完了予定です。影響を受けるのはMicrosoft 365 Backupの管理者です。ログにはサービス、アクティビティ種別、状態、影響、ポリシーや復元タスクの詳細などのメタデータが含まれます(提供された本文は途中で切れています)。顧客には、運用監査や障害調査での活用方法を案内できます。",
-      "japaneseBodyTranslation": "[内容と理由]\n管理者がMicrosoft 365 Backup内で直接バックアップポリシーと復元アクティビティを監視できるよう、アクティビティログを導入します。アクティビティログにより、Microsoft 365 Backupの画面を離れることなく、構成変更、復元の進行状況、失敗、運用状態の可視性が向上します。\n[ロールアウトスケジュール]\n• 一般提供(全世界):ロールアウトは2026年10月中旬に開始し、2026年10月中旬に完了する予定です。\n[組織への影響]\n影響を受けるユーザー\n• Microsoft 365 Backupを管理する管理者\nプラットフォームとサービス\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\n今後の動作\n• SharePoint Online、OneDrive、Exchange Onlineを含むサポート対象ワークロード全体のMicrosoft 365 Backupアクション用にアクティビティログが利用可能になります。\n• アクティビティログのエントリには、サービス、アクティビティの種類、状態、影響、ポリシーまたは復元タスクの詳細、タイムスタンプなどのメタデータが含まれます。(原文はここで途切れています)",
+      "id": "MC1490911",
+      "japaneseDetailedSummary": "Windows版Microsoft Edgeは、バージョン157以降で従来のdirect-WAMサインイン実装を廃止し、OneAuth認証ライブラリへの統合を完了します。認証フローの標準化、サポート性の向上、二重の認証コードパスの排除、診断・回復機能の改善が目的です。Windows WAM自体は廃止されず、OneAuthは引き続きWAMを使用します。GA(全世界、GCC)は2026年11月上旬に開始し同月上旬に完了予定です。影響対象はWindowsでEdgeを使う組織、OneAuthへ未移行のプロファイル、--disable-features=msOneAuthWAMでOneAuth WAMを無効化している組織です(提供本文は途中で切れています)。",
+      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft Edgeは、Windows上の従来のdirect-WAMサインイン実装を、Microsoft Edgeバージョン157から廃止し、OneAuth認証ライブラリへの統合を完了します。\nこの変更により、Microsoft 365クライアントアプリ全体で認証フローが標準化され、プラットフォームのサポート性が簡素化され、二重スタックの認証コードパスが排除され、診断および回復の仕組みが改善されます。Windows Web Account Manager(WAM)自体は廃止されません。OneAuthは引き続きWindows WAMを使用します。\n[ロールアウトスケジュール:]\n一般提供(全世界、GCC):ロールアウトは2026年11月上旬に開始し、2026年11月上旬に完了する予定です。\n[組織への影響:]\n影響を受けるユーザー:\n• WindowsでMicrosoft Edgeを使用している組織\n• まだOneAuthに自動移行されていないEdgeプロファイルを持つユーザー\n• --disable-features=msOneAuthWAMを使用してOneAuth WAMを明示的に無効化した組織\nプラットフォーム/サービス:\n• Microsoft Edge(原文はここで途切れています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
     {
-      "id": "MC1490911",
-      "japaneseDetailedSummary": "Windows版Microsoft Edgeは、バージョン157以降で従来のdirect-WAMサインイン実装を廃止し、OneAuth認証ライブラリへの統合を完了します。認証フローの標準化、サポート性の向上、二重の認証コードパスの排除、診断・回復機能の改善が目的です。Windows WAM自体は廃止されず、OneAuthは引き続きWAMを使用します。GA(全世界、GCC)は2026年11月上旬に開始し同月上旬に完了予定です。影響対象はWindowsでEdgeを使う組織、OneAuthへ未移行のプロファイル、--disable-features=msOneAuthWAMでOneAuth WAMを無効化している組織です(提供本文は途中で切れています)。",
-      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft Edgeは、Windows上の従来のdirect-WAMサインイン実装を、Microsoft Edgeバージョン157から廃止し、OneAuth認証ライブラリへの統合を完了します。\nこの変更により、Microsoft 365クライアントアプリ全体で認証フローが標準化され、プラットフォームのサポート性が簡素化され、二重スタックの認証コードパスが排除され、診断および回復の仕組みが改善されます。Windows Web Account Manager(WAM)自体は廃止されません。OneAuthは引き続きWindows WAMを使用します。\n[ロールアウトスケジュール:]\n一般提供(全世界、GCC):ロールアウトは2026年11月上旬に開始し、2026年11月上旬に完了する予定です。\n[組織への影響:]\n影響を受けるユーザー:\n• WindowsでMicrosoft Edgeを使用している組織\n• まだOneAuthに自動移行されていないEdgeプロファイルを持つユーザー\n• --disable-features=msOneAuthWAMを使用してOneAuth WAMを明示的に無効化した組織\nプラットフォーム/サービス:\n• Microsoft Edge(原文はここで途切れています)",
+      "id": "MC985483",
+      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
+      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
