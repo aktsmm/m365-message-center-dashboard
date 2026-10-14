@@ -1,3 +1,6 @@
 /.m365-agent-context.json
 /_site/
 /output/
+/.cache/
+/.playwright-mcp/
+**/__pycache__/

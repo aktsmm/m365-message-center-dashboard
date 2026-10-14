@@ -6,20 +6,88 @@
 param(
     [string]$MessagesJson = (Join-Path $PSScriptRoot '..\output\m365\messages.json'),
     [string]$InsightsJson,
+    [string]$RelatedDocumentsJson = (Join-Path $PSScriptRoot '..\reports\m365\related-documents.json'),
     [string]$OutputPath = (Join-Path $PSScriptRoot '..\output\m365\index.html')
 )
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
+function Compress-PublicJson {
+    param([string]$Json)
+    $document = [Text.Json.JsonDocument]::Parse($Json)
+    try {
+        $options = [Text.Json.JsonSerializerOptions]::new()
+        $options.Encoder = [Text.Encodings.Web.JavaScriptEncoder]::UnsafeRelaxedJsonEscaping
+        return [Text.Json.JsonSerializer]::Serialize($document.RootElement, $options)
+    } finally {
+        $document.Dispose()
+    }
+}
+
 if (-not (Test-Path -LiteralPath $MessagesJson)) { throw "Messages JSON not found: $MessagesJson" }
-$data = Get-Content -LiteralPath $MessagesJson -Raw -Encoding UTF8 | ConvertFrom-Json
-$safeJson = $data | ConvertTo-Json -Depth 12 -Compress
+$safeJson = Get-Content -LiteralPath $MessagesJson -Raw -Encoding UTF8
+$data = $safeJson | ConvertFrom-Json
+$safeJson = Compress-PublicJson $safeJson
 $safeJson = $safeJson.Replace('&', '\u0026').Replace('<', '\u003c').Replace('>', '\u003e')
 $safeInsightsJson = 'null'
+$relatedDocuments = @{}
+if ($PSBoundParameters.ContainsKey('RelatedDocumentsJson') -and $RelatedDocumentsJson -and
+    -not (Test-Path -LiteralPath $RelatedDocumentsJson)) {
+    throw "Related documents JSON not found: $RelatedDocumentsJson"
+}
+if ($RelatedDocumentsJson -and (Test-Path -LiteralPath $RelatedDocumentsJson)) {
+    $catalog = Get-Content -LiteralPath $RelatedDocumentsJson -Raw -Encoding UTF8 | ConvertFrom-Json -AsHashtable
+    if ($catalog.schemaVersion -ne 1) { throw 'Unsupported related-document schema.' }
+    foreach ($message in $data.messages) {
+        $entry = $catalog.messages[$message.id]
+        if (-not $entry) { continue }
+        $values = @([string]$message.id, [string]$message.title,
+            $(if ($message.PSObject.Properties.Name -contains 'bodyText') { [string]$message.bodyText } else { '' }),
+            (@($message.services) -join "`n"), (@($message.tags) -join "`n"),
+            $(if ($message.PSObject.Properties.Name -contains 'officialDocumentUrls') { @($message.officialDocumentUrls) -join "`n" } else { '' }))
+        $hash = [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData(
+            [Text.Encoding]::UTF8.GetBytes(($values -join [char]31)))).ToLowerInvariant()
+        if ($hash -notin $entry.sourceHashes) {
+            Write-Warning "Related documents require re-verification for changed message $($message.id)."
+            continue
+        }
+        if ($entry.status -notin @('verified', 'not_researched', 'no_verified_document', 'fetch_failed')) {
+            throw "Invalid document state for $($message.id)"
+        }
+        if (@($entry.documents).Count -gt 3) { throw 'Related documents exceed three articles.' }
+        foreach ($document in $entry.documents) {
+            foreach ($value in @($document.title, $document.rationale, $document.url)) {
+                if ($value -match '(?i)\b(bearer\s+)[A-Za-z0-9._~+/=-]{12,}' -or
+                    $value -match '(?i)\b(access[_ -]?token|refresh[_ -]?token|client[_ -]?secret|api[_ -]?key|password)\s*[:=]\s*\S+' -or
+                    $value -match '<\s*(script|iframe|object|embed|style|svg)\b|(?i)javascript:|data:text/html') {
+                    throw "Unsafe related document for $($message.id)"
+                }
+            }
+            $uri = $null
+            if (-not [Uri]::TryCreate($document.url, [UriKind]::Absolute, [ref]$uri) -or
+                $uri.Scheme -ne 'https' -or $uri.Host -ne 'learn.microsoft.com' -or $uri.UserInfo -or
+                $uri.AbsolutePath -notmatch '^/(ja-jp|en-us)/[^/]+/.+' -or
+                [string]::IsNullOrWhiteSpace($document.title) -or
+                [string]::IsNullOrWhiteSpace($document.rationale) -or
+                $document.bodySha256 -notmatch '^[a-f0-9]{64}$' -or
+                $document.locale -notin @('ja-jp', 'en-us') -or
+                $uri.AbsolutePath -notmatch "^/$($document.locale)/") {
+                throw "Invalid verified document for $($message.id)"
+            }
+            $null = [DateTimeOffset]::Parse($document.checkedAt)
+        }
+        if ($entry.status -eq 'verified' -and -not @($entry.documents).Count) {
+            throw "Verified document state is empty for $($message.id)"
+        }
+        $relatedDocuments[$message.id] = $entry
+    }
+}
+$safeDocumentsJson = ConvertTo-Json -InputObject $relatedDocuments -Depth 12 -Compress
+$safeDocumentsJson = $safeDocumentsJson.Replace('&', '\u0026').Replace('<', '\u003c').Replace('>', '\u003e')
 if ($InsightsJson -and (Test-Path -LiteralPath $InsightsJson)) {
-    $insights = Get-Content -LiteralPath $InsightsJson -Raw -Encoding UTF8 | ConvertFrom-Json
-    $safeInsightsJson = $insights | ConvertTo-Json -Depth 8 -Compress
+    $safeInsightsJson = Get-Content -LiteralPath $InsightsJson -Raw -Encoding UTF8
+    $safeInsightsJson = Compress-PublicJson $safeInsightsJson
     $safeInsightsJson = $safeInsightsJson.Replace('&', '\u0026').Replace('<', '\u003c').Replace('>', '\u003e')
 }
 
@@ -259,6 +327,11 @@ $html = @'
     .message-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
     .message-link { color: var(--cp-link); font-size: 0.86rem; font-weight: 700; text-decoration: none; }
     .message-link:hover { color: var(--cp-accent); text-decoration: underline; }
+    .related-documents { margin-top: 12px; }
+    .related-documents ul { margin: 8px 0; padding-left: 24px; }
+    .document-link { color: var(--cp-link); text-underline-offset: 3px; }
+    .document-link:hover { color: var(--cp-accent); }
+    .document-link:focus-visible, .message-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
     .message-content { margin-top: 16px; border-top: 1px solid var(--cp-border); padding-top: 12px; }
     .message-content summary { cursor: pointer; font-weight: 700; }
     .message-body { margin: 12px 0 0; color: var(--cp-text-muted); white-space: normal; }
@@ -406,6 +479,7 @@ $html = @'
   <script>
     const DATA = __DATA__;
     const INSIGHTS = __INSIGHTS__;
+    const RELATED_DOCUMENTS = __DOCUMENTS__;
     const MESSAGE_UPDATES = new Map((INSIGHTS?.messageUpdates || []).map(update => [update.id, update]));
     const MESSAGE_TRANSLATIONS = new Map((INSIGHTS?.messageTranslations || []).map(translation => [translation.id, translation]));
     const SERVICE_FOCUSES = [
@@ -509,6 +583,41 @@ $html = @'
       }
     };
 
+    function originalMessageUrl(message) {
+      const id = String(message.id);
+      if (!/^MC\d+$/.test(id)) return null;
+      const update = MESSAGE_UPDATES.get(id.toUpperCase());
+      const candidates = [update?.messageUrl, ...(Array.isArray(message.details) ? message.details.map(detail => detail.value) : [])];
+      for (const candidate of candidates) {
+        const safe = safeOfficialUrl(candidate);
+        if (!safe) continue;
+        const url = new URL(safe);
+        if (["admin.microsoft.com", "m365.cloud.microsoft"].includes(url.hostname)
+          && /message.?center/i.test(safe) && safe.split(/[/?#:&=]/).includes(id)) return safe;
+      }
+      return `https://admin.microsoft.com/AdminPortal/home#/MessageCenter/:/messages/${encodeURIComponent(id)}`;
+    }
+    function messageLinks(message) {
+      const original = originalMessageUrl(message);
+      const entry = RELATED_DOCUMENTS[message.id];
+      const status = {
+        not_researched: "未調査",
+        no_verified_document: "対応する公式資料を確認できていません",
+        fetch_failed: "公式資料の取得に失敗しました"
+      };
+      const documents = (entry?.documents || []).slice(0, 3);
+      return `<div class="message-links">
+        ${original ? `<a class="message-link original-link" href="${escapeHtml(original)}" target="_blank" rel="noopener noreferrer">メッセージ原文 ↗</a>` : ""}
+        <a class="message-link detail-link" href="#${escapeHtml(messageDomId(message))}" data-open-detail="${escapeHtml(message.id)}">サイト内詳細</a>
+      </div>
+      <div class="related-documents"><strong>関連ドキュメント</strong>
+        ${documents.length ? `<ul>${documents.map(document =>
+          `<li><a class="document-link" href="${escapeHtml(document.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(document.title)}</a> <span class="section-note">(${document.locale === "ja-jp" ? "日本語" : "英語"})</span></li>`).join("")}</ul>` : ""}
+        ${entry?.status !== "verified" ? `<p class="section-note">${escapeHtml(status[entry?.status] || status.not_researched)}</p>` : ""}
+        ${entry?.checkedAt ? `<small class="section-note">確認 ${fmt(entry.checkedAt)}</small>` : ""}
+      </div>`;
+    }
+
     document.getElementById("generated").textContent = `更新 ${fmt(DATA.meta.generatedAt)}`;
     document.getElementById("source-status").textContent =
       DATA.meta.source === "fixture" ? "合成プレビュー データ" : "Microsoft Graph の公開スナップショット";
@@ -611,6 +720,7 @@ $html = @'
           <h3>${escapeHtml(update?.japaneseTitle || message.japaneseTitle || message.title)}</h3>
           <div class="priority-reasons">${reasons}</div>
           <a href="#${escapeHtml(messageDomId(message))}">一覧の Message Center 更新を確認</a>
+          ${messageLinks(message)}
         </article>`;
       }).join("") : `<div class="empty"><p>現在の表示条件では、「対応期限が記載」または「重要な変更」に該当する更新はありません。</p>${hasActiveConditions() ? `<button class="clear-filters" type="button" data-clear-filters>条件をすべてクリア</button>` : ""}</div>`;
     }
@@ -671,24 +781,13 @@ $html = @'
           : `<details class="message-content message-translation"><summary>日本語訳と詳細要約</summary>
               <p class="insight-pending">この更新の AI 翻訳は、週次の限定バッチで生成予定です。未検証の訳文は表示しません。</p>
             </details>`;
-        const messageUrl = safeOfficialUrl(update?.messageUrl);
-        const learnLinks = (update?.learnUrls || [])
-          .map(safeOfficialUrl)
-          .filter(Boolean)
-          .map((url, index) => `<a class="message-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Microsoft Learn ${index + 1}</a>`);
-        const links = [
-          messageUrl
-            ? `<a class="message-link" href="${escapeHtml(messageUrl)}" target="_blank" rel="noopener noreferrer">Message Center を開く</a>`
-            : "",
-          ...learnLinks
-        ].filter(Boolean).join("");
         return `<article class="message" id="${escapeHtml(messageDomId(message))}">
           <div class="message-top">
             <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(update?.japaneseTitle || message.japaneseTitle || "日本語タイトルを準備中")}</h3><div class="message-original">原題: ${escapeHtml(message.title)}</div><div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
           ${(update?.japaneseSummary || message.japaneseSummary) ? `<p class="message-summary">${escapeHtml(update?.japaneseSummary || message.japaneseSummary)}</p>` : ""}
-          ${links ? `<div class="message-links">${links}</div>` : ""}
+          ${messageLinks(message)}
           ${fullContent}
           ${translationContent}
         </article>`;
@@ -731,6 +830,22 @@ $html = @'
       if (button) toggleFocus(button.dataset.focusToggle);
     });
     document.addEventListener("click", event => {
+      const detailLink = event.target.closest("[data-open-detail]");
+      if (detailLink) {
+        const message = DATA.messages.find(item => item.id === detailLink.dataset.openDetail);
+        const article = message && document.getElementById(messageDomId(message));
+        const detail = article?.querySelector(".message-content");
+        if (detail) {
+          event.preventDefault();
+          detail.open = true;
+          const url = new URL(window.location.href);
+          url.hash = article.id;
+          history.pushState(null, "", url);
+          article.style.scrollMarginTop = `${document.querySelector(".nav").getBoundingClientRect().height + 24}px`;
+          article.scrollIntoView({ block: "start" });
+          detail.querySelector("summary")?.focus({ preventScroll: true });
+        }
+      }
       const clearButton = event.target.closest("[data-clear-filters], #clear-filters");
       if (clearButton) clearFilters({ restorePersistentFocus: clearButton.hasAttribute("data-clear-filters") });
     });
@@ -747,6 +862,7 @@ $html = @'
 
 $html = $html.Replace('__DATA__', $safeJson)
 $html = $html.Replace('__INSIGHTS__', $safeInsightsJson)
+$html = $html.Replace('__DOCUMENTS__', $safeDocumentsJson)
 $parent = Split-Path -Parent $OutputPath
 if ($parent) { New-Item -ItemType Directory -Path $parent -Force | Out-Null }
 $html | Set-Content -LiteralPath $OutputPath -Encoding utf8

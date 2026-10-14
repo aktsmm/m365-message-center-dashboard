@@ -20,12 +20,35 @@ Repository-authored content and generated Pages presentation are licensed under 
 - 同一公開 snapshot から決定論的に生成した MC ごとの日本語タイトルと、日本語要約（100文字以内）
 - Agentic Workflow が検証済みの、限定バッチの MC ごとの日本語詳細要約と本文の日本語訳
 - 同じ MC の Graph `details` に含まれる、検証済みの Message Center URL と `learn.microsoft.com` の公式ドキュメント URL
+- 承認済み snapshot に対応する Microsoft Learn の公開記事タイトル・URL・確認日時・採用根拠（通知データとは別の `related-documents.json`）
 
 アクセストークン、Graph 認証情報、および credential-like 値は保存・公開しません。本文、タイトル、詳細の値は Export 時に redaction を通し、Bearer token、access token、client secret、API key、password の値を `[REDACTED]` に置換します。この構成を本番テナントへ転用しないでください。
 
 Agentic Workflow は URL を生成・推測せず、同一 run の snapshot にある HTTPS の `admin.microsoft.com` / `m365.cloud.microsoft` URL と、同じ MC の `learn.microsoft.com` URL だけを公開します。
 
 ダッシュボードには、静的に記述した [Microsoft 365 管理センターの Message Center](https://admin.microsoft.com/#/MessageCenter) への入口もあります。利用にはサインインと対象テナントでの適切な権限が必要です。この入口は Agentic output やカード別 URL allowlist の対象ではなく、MC カードの同一 snapshot・同一 MC に限定した検証を緩和しません。
+
+一覧・検索結果・優先通知の **メッセージ原文** は、同じ MC の既存管理センター URL を優先します。URL が保存されていない通知には、公開済み MC ID のみを使い、既存の管理センター詳細ルートへの静的リンクを表示します。認証、MFA、対象テナントの権限は維持します。**サイト内詳細** は該当カードの本文を開きます。関連ドキュメントは記事タイトル付きで最大3件、外部リンクは別タブで開きます。
+
+## Official document enrichment
+
+`scripts/Update-M365RelatedDocuments.py` は **Graph を呼びません**。`reports/m365/latest` と全履歴の承認済み `messages.json`、JSON がない旧 HTML の埋め込み `DATA` を監査し、通知の ID・日付・本文・分類を書き換えず、別の `reports/m365/related-documents.json` に結果を記録します。`Update-M365DashboardSnapshots.ps1` で旧 HTML を含む全期間を再描画できます。歴史データを新たな Pages endpoint に公開することはありません。本文・details の明示 Learn URL を優先し、以後の export では本文 HTML の Learn リンクも `officialDocumentUrls` として保持します（userinfo や任意のクエリは保存せず、公開 Docs の `view` / `preserve-view` だけを許可します）。
+
+検索は管理された `scripts/document-queries.json` の公開製品名・機能名だけを [公開 Microsoft Learn MCP](https://learn.microsoft.com/ja-jp/training/support/mcp) へ送ります。公式 Python MCP SDK を用い、GitHub Copilot MCP のサインインや Graph/OIDC 認証から切り離しています。テナント名・ユーザー情報・メッセージ本文は MCP に送りません。検索結果だけを自動採用せず、`document-reviews.json` で製品・機能・プラットフォームを照合した記事を採用します。設定の参考資料を通知の展開時期の証拠として扱いません。日本語 URL は GET の locale と MCP 取得した記事本文を確認し、日本語本文が提供されない場合だけ確認済み英語記事を残します。Q&A や無関係な製品トップを件数埋めに使いません。
+
+状態は `verified`（関連資料あり）、`no_verified_document`（調査したが対応資料未確認）、`fetch_failed`（取得失敗）、`not_researched`（未調査）です。各記事に出典、記事本文 SHA-256、確認日時、採用根拠を保存し、通知の内容 fingerprint が一致したカードだけに表示します。未調査を「資料なし」と解釈しません。新しい機能で検索 query/review が未登録なら明示リンクだけを検証し、残りは未調査のレビュー待ちとして記録します。
+
+```powershell
+python -m pip install -r scripts\requirements-documents.txt
+python scripts\Update-M365RelatedDocuments.py --audit
+python scripts\Update-M365RelatedDocuments.py --search-only
+# 候補を製品・機能・プラットフォームと照合して document-reviews.json に登録
+python scripts\Update-M365RelatedDocuments.py
+```
+
+1通知ごとの atomic checkpoint と除外済み `.cache` を使って途中再開できます。逐次実行、1秒間隔、429/一時的 HTTP 障害の最大4回バックオフで制御します。`--ids MC123,MC456` は承認済み対象だけを再実行します。`--refresh` は公開記事キャッシュをクリアして再確認します。30日経過した通知は再処理対象になります。取得失敗は次回再試行し、他の通知の進捗を失いません。
+
+**M365 official documents and snapshot-only Pages** は PR でオフライン検証、main で補完・全履歴の再描画・Pages 公開を行います。既存収集 pipeline の成功後にも動作します。公開済みデータのみの更新はこの workflow を手動実行し、Graph を再取得する既存 metadata workflow を実行する必要はありません。単一 HTML に資料データを埋め込むため、別 JSON のブラウザキャッシュとの不整合はありません。反映確認では `?verify=<commit SHA>` 付きの新規アクセスと通常 URL の再読込を併用します。
 
 ## Twice-weekly automation architecture
 
@@ -86,6 +109,7 @@ PowerShell 7 or later is required. The fixture test is offline and does not use 
 
 ```powershell
 ./scripts/ci/Test-M365Dashboard.ps1
+python -m unittest discover -s tests -p test_documents.py
 ```
 
 To update the compiled Agentic Workflow after changing its Markdown source:
