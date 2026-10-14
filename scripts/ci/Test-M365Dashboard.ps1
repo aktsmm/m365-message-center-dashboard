@@ -569,6 +569,15 @@ try {
         throw 'Automation explanation page was not generated.'
     }
     $aboutHtml = Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8
+    if ($aboutHtml -notmatch '関連ドキュメントの自動補完' -or
+        $aboutHtml -notmatch '全件の資料選定まで完全自動ではありません' -or
+        $aboutHtml -notmatch '資料が存在しない' -or
+        $aboutHtml -notmatch '公開 Microsoft Learn MCP' -or
+        $aboutHtml -notmatch '通知本文・テナント名・ユーザー情報は送りません' -or
+        $aboutHtml -notmatch 'related-documents\.json' -or
+        $aboutHtml -match '関連ドキュメントは、その MC の details に含まれる') {
+        throw 'About page does not describe the independent Learn enrichment, review queue, and document states.'
+    }
     if ($aboutHtml -notmatch '認証と公開の境界' -or
         $aboutHtml -notmatch '個人検証用テスト テナント' -or
         $aboutHtml -notmatch 'アプリケーション専用アクセス' -or

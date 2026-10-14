@@ -211,7 +211,9 @@ Repository 名が `<OWNER>.github.io` の場合だけ、account root に公開�
 
    1. `M365 Message Center Dashboard - Public Metadata`
    2. `Microsoft 365 Message Center weekly dashboard`
-   3. `M365 bounded translations`
+   3. `Microsoft 365 Message Center bounded translations`
+
+   この3-workflow chain の各成功後に、独立した `M365 official documents and snapshot-only Pages` が動作します。承認済みの保存データだけを使い、Graph を再取得せずに関連資料を補完・再公開します。
 
 5. 最初の workflow で次を確認します。
    - OIDC による Microsoft Entra sign-in が成功
@@ -220,6 +222,15 @@ Repository 名が `<OWNER>.github.io` の場合だけ、account root に公開�
    - Pages artifact と deployment が成功
 6. 2つの Agentic Workflows で Copilot model access と safe output の検証が成功することを確認します。
 7. Pages を開き、顧客の検証用テナントに属する Message Center ID、タイトル、本文、要約、翻訳だけが表示されることをレビューします。
+8. 関連資料 workflow の `validate` / `enrich` / `deploy` が成功したこと、一覧・検索結果から原文・サイト内詳細・タイトル付き資料へ移動できることを確認します。「更新のしくみ」ページで自動処理とレビュー待ちの条件を確認します。
+
+### 関連資料補完の接続と自動化範囲
+
+補完は [公開 Microsoft Learn MCP](https://learn.microsoft.com/ja-jp/training/support/mcp) に公式 Python MCP SDK で接続します。この接続に認証は不要で、Graph の OIDC / アプリケーション権限や Copilot 推論の認証とは別です。MCP 用に tenant 情報、Graph token、Copilot PAT を追加しません。検索語には登録済みの公開製品名・機能名だけを使い、通知本文・テナント名・ユーザー情報を送りません。
+
+**処理実行は自動ですが、全件の資料選定まで完全自動ではありません。** 本文・details の明示 Learn リンクと、同じ通知IDに登録済みの資料は自動検証します。新しい通知IDで検索語・レビューが未登録の場合、明示リンク以外は「未調査」として残ります。担当者が `scripts/document-queries.json` に公開製品名・機能名を登録して検索し、製品・機能・プラットフォームを照合した記事と採用理由を `scripts/document-reviews.json` に登録します。詳しい再実行手順は [README の公式資料補完](../README.md#official-document-enrichment) を参照してください。
+
+「対応資料未確認」は調査しても採用可能な記事を確認できなかった状態であり、資料が存在しないとの断定ではありません。「取得失敗」「未調査」とも区別します。明示リンクや検証済み候補がない通知を、類似機能・Q&A・無関係な製品トップで埋めないでください。
 
 ## 8. 受け入れ基準
 
@@ -230,6 +241,8 @@ Repository 名が `<OWNER>.github.io` の場合だけ、account root に公開�
 - [ ] GitHub secrets は `AZURE_CLIENT_ID` と `AZURE_TENANT_ID` だけ
 - [ ] client secret、Azure subscription secret、Copilot PAT を保存していない
 - [ ] 3つの workflow が `main` で順番に成功
+- [ ] 独立した関連資料 workflow の検証・補完・Pages 公開が成功
+- [ ] 新しい通知IDのレビュー担当を決め、未調査・対応資料未確認・取得失敗を区別している
 - [ ] `reports/m365/` と Pages に credential-like 値がない
 - [ ] 継承した upstream snapshot を顧客 Pages の現在データとして公開していない
 - [ ] Pages の公開範囲と内容を顧客レビュー担当者が承認
@@ -248,12 +261,16 @@ Repository 名が `<OWNER>.github.io` の場合だけ、account root に公開�
 | Pages deployment が待機または失敗 | Source が GitHub Actions でない、Pages policy、environment approval | Pages source、Organization policy、`github-pages` environment を確認します。 |
 | Fork で定期実行されない | Scheduled workflow が disabled | Actions タブで workflow を enable します。Public repository は活動が60日ない場合も schedule が自動停止することがあります。 |
 | Core は成功したが翻訳が増えない | Bounded batch が完了済み、safe output validation failure、または対象 MC が snapshot から消失 | Translation workflow の job summary と artifact を確認します。未検証の翻訳を手動で `reports/m365/` に追加しないでください。 |
+| 関連資料が「未調査」 | 新しい通知IDの検索語未登録、または通知内容の変更で既存証拠が不一致 | 公開製品名・機能名だけの query を登録し、対応記事の採用レビューを行います。 |
+| 関連資料が「対応資料未確認」 | 調査済みだが機能・プラットフォームに合う記事を確認できていない | 資料の不存在とは扱わず、必要に応じて検索語・候補を見直します。 |
+| 関連資料が「取得失敗」 | 公開 Learn MCP / 記事の一時障害、429、本文・言語の検証失敗 | エラー記録を確認し、checkpoint と cache を使って再開します。Graph を取り直したり認証を回避したりしません。 |
 
 ## 10. 運用と撤去
 
 ### 定期運用
 
 - 月曜日・木曜日 07:17 JST の3-workflow chain を監視します。
+- 各更新成功後に起動する関連資料 workflow と、`related-documents.json` の調査状態・エラー・確認日時を監視します。未登録の通知IDには検索語・採用レビューを追加します。
 - Actions minutes、artifact storage、Copilot AI credits、Organization budget を月次確認します。
 - `reports/m365/history/` と Git 履歴の増加量を確認し、承認済みの保持方針を適用します。
 - Entra の app owner、Graph permission、federated credential、GitHub Organization policy を定期レビューします。

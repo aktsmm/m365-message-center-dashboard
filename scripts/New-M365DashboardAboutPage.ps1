@@ -78,6 +78,23 @@ $html = @'
       </ol>
     </section>
     <section class="panel">
+      <h2>関連ドキュメントの自動補完</h2>
+      <p>収集・core・translations の各 workflow 成功後に、独立した <strong>M365 official documents and snapshot-only Pages</strong> が自動実行されます。保存済みの承認済み snapshot を調べ、本文・details の明示 Learn リンクや、同じ通知IDに登録済みの対応資料を検証し、記事タイトル付きで最大3件を表示します。この補完処理は Microsoft Graph を再取得しません。</p>
+      <p><a href="https://learn.microsoft.com/ja-jp/training/support/mcp" target="_blank" rel="noopener noreferrer">公開 Microsoft Learn MCP</a> を公式 Python MCP SDK から利用します。認証不要の公開ドキュメント取得であり、GitHub Copilot MCP のサインインや通知取得の OIDC 認証とは独立しています。MCP に送る検索語は登録済みの公開製品名・機能名だけで、通知本文・テナント名・ユーザー情報は送りません。</p>
+      <p><strong>全件の資料選定まで完全自動ではありません。</strong> 新しい通知IDで検索語・採用レビューが未登録なら、明示リンク以外はレビュー待ちの「未調査」として残します。運用担当者が対象機能・プラットフォームに合う候補を確認して登録します。名前が似ているだけの別機能の資料を自動流用しません。</p>
+      <p>日本語記事の本文を確認して優先し、未提供の場合だけ確認済み英語記事を残します。出典・確認日時・採用根拠を保存し、通知の内容 fingerprint が一致する場合だけ表示します。1通知ごとのチェックポイント、キャッシュ、レート制限時のバックオフで途中再開できます。</p>
+    </section>
+    <section class="panel">
+      <h2>関連資料が表示されない場合</h2>
+      <p><strong>表示なしは「資料が存在しない」という意味ではありません。</strong></p>
+      <ul>
+        <li><strong>対応資料未確認:</strong> 調査したものの、対象製品・機能・プラットフォームに合う記事を確認・採用できていません。</li>
+        <li><strong>未調査:</strong> 新しい通知の検索語が未登録など、レビュー待ちの状態です。</li>
+        <li><strong>取得失敗:</strong> 記事の取得・検証に失敗しています。資料の有無とは区別し、次回再試行します。</li>
+      </ul>
+      <p>無関係な製品トップや Q&amp;A で件数を埋めません。日本語訳の生成待ちと、関連資料の調査状態も別々に管理します。</p>
+    </section>
+    <section class="panel">
       <h2>認証と公開の境界</h2>
       <ol class="flow">
         <li><strong>テスト テナントと取得方法:</strong> 表示する Message Center データは、個人検証用テスト テナントから取得しています。Microsoft Entra アプリケーションがアプリケーション専用アクセスで収集しており、特定の Microsoft 365 ユーザーのサインインを通じた取得ではありません。この静的ダッシュボードは本番テナントでの判断に用いるシステムではありません。</li>
@@ -90,10 +107,12 @@ $html = @'
       <h2>手動で更新するには</h2>
       <p>GitHub Actions の <strong>M365 Message Center Dashboard - Public Metadata</strong> を main ブランチで手動実行します。月曜日・木曜日 07:17 JST の定期実行と同じく、成功後に core Agentic Workflow、さらに成功後の translations Workflow が順に Pages を更新します。</p>
       <p>詳細な日本語要約と本文訳の進捗は、公開ダッシュボードの各カードにある「日本語訳と詳細要約」で確認できます。未検証の訳文は表示せず、公開済みの検証済み訳文だけを保持します。</p>
+      <p>保存済みデータの関連資料や説明ページだけを更新する場合は、<strong>M365 official documents and snapshot-only Pages</strong> を main で実行します。通知の新規取得は行わず、未承認の実テナント・本番データを追加取得する必要もありません。</p>
     </section>
     <section class="panel">
       <h2>公開データとリンクの境界</h2>
-      <p>MC カードの直接リンクは、その同じ run の Graph snapshot にある同じ MC の HTTPS Message Center URL だけです。関連ドキュメントは、その MC の details に含まれる <code>learn.microsoft.com</code> URL だけを表示します。URL は生成・推測しません。</p>
+      <p>「メッセージ原文」は、同じ MC の既存 HTTPS 管理センター URL を優先します。保存されていない場合は、公開済み MC ID と既存の管理センター詳細ルートによる静的リンクを表示します。「サイト内詳細」は該当カードの本文を開きます。認証・MFA・対象テナントの権限は維持します。</p>
+      <p>関連ドキュメントは、その MC の明示 Learn リンク、または公開 Learn MCP で確認して採用した公式記事です。通知データとは別の <code>related-documents.json</code> に記事の証拠と調査状態を保存します。Agentic output の同一 snapshot・同一 MC に限定した URL allowlist は変更していません。</p>
       <p><a href="https://admin.microsoft.com/#/MessageCenter" target="_blank" rel="noopener noreferrer">Microsoft 365 管理センターの Message Center を開く</a>には、サインインと対象テナントでの適切な権限が必要です。この静的な公式入口は、MC カードの同一 snapshot・同一 MC に限定した URL 検証を緩和しません。</p>
       <p>safe output は unsafe markup、credential-like 値、snapshot にない MC ID、許可されていない URL、翻訳元メタデータの不一致を拒否します。検証できない場合は、以前に検証済みの翻訳だけを保持し、未処理カードにはデータ未準備を表示します。</p>
     </section>
