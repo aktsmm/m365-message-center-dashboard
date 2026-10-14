@@ -25,6 +25,20 @@ try {
         -OutputPath $publishedInsights
     & (Join-Path $root 'scripts\New-M365DashboardAboutPage.ps1') `
         -OutputPath $aboutPage
+    $documentFixture = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\m365-messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $documentFixture.value[0].body.content = '<a href="https://learn.microsoft.com/ja-jp/microsoftteams/copilot-teams-transcription?view=o365-worldwide">Official</a><a href="https://learn.microsoft.com/ja-jp/copilot/edge?tenant=private-fixture">Private query</a>'
+    $documentFixturePath = Join-Path $temp 'document-urls-fixture.json'
+    $documentFixture | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $documentFixturePath -Encoding UTF8
+    $documentExport = Join-Path $temp 'document-export'
+    & (Join-Path $root 'scripts\Export-M365MessageCenter.ps1') `
+        -InputJsonPath $documentFixturePath -OutputDirectory $documentExport `
+        -ReferenceTime '2026-07-23T00:00:00Z' -IncludeContent
+    $exportedFixture = Get-Content -LiteralPath (Join-Path $documentExport 'messages.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $explicitFixtureUrls = @($exportedFixture.messages | Where-Object id -eq 'MC900001' | ForEach-Object officialDocumentUrls)
+    if ($explicitFixtureUrls.Count -ne 1 -or
+        $explicitFixtureUrls[0] -ne 'https://learn.microsoft.com/ja-jp/microsoftteams/copilot-teams-transcription?view=o365-worldwide') {
+        throw 'Export must preserve explicit public Learn version URLs, but not private queries.'
+    }
     $stringStructuredOutput = Join-Path $temp 'agent-output-string-updates.json'
     $stringStructuredInsights = Join-Path $temp 'insights-string-updates.json'
     $agentOutputWithStringUpdates = Get-Content -LiteralPath (Join-Path $root 'tests\fixtures\gh-aw-agent-output.json') -Raw -Encoding UTF8 | ConvertFrom-Json

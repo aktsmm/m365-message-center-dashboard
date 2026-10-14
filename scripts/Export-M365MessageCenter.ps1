@@ -198,6 +198,18 @@ function Convert-ToPublicMessage {
         $publicMessage.japaneseSummary = New-JapaneseSummary -Message $Message -Services $services
         $publicMessage.bodyText = Convert-ToReadableText $bodyContent
         $publicMessage.details = @(Convert-ToPublicDetails -Message $Message)
+        $officialDocumentUrls = [System.Collections.Generic.List[string]]::new()
+        foreach ($match in [regex]::Matches($bodyContent, '(?i)href\s*=\s*["''](?<url>https://learn\.microsoft\.com/[^"'']+)["'']')) {
+            $uri = $null
+            $value = [Net.WebUtility]::HtmlDecode($match.Groups['url'].Value)
+            if ([Uri]::TryCreate($value, [UriKind]::Absolute, [ref]$uri) -and
+                $uri.Scheme -eq 'https' -and $uri.Host -eq 'learn.microsoft.com' -and
+                -not $uri.UserInfo -and
+                ($uri.Query -eq '' -or $uri.Query -match '^\?(view=[A-Za-z0-9._-]+)(?:&preserve-view=true)?$')) {
+                $officialDocumentUrls.Add($uri.GetLeftPart([UriPartial]::Query))
+            }
+        }
+        $publicMessage.officialDocumentUrls = @($officialDocumentUrls | Sort-Object -Unique)
     }
     return [pscustomobject]$publicMessage
 }
