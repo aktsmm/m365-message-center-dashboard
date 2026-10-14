@@ -57,6 +57,7 @@ $html = @'
       <div class="brand">Microsoft 365 Change Radar</div>
       <div class="demo-links">
         <a class="demo-link" href="https://aktsmm.github.io/azure-ops-pulse-demo/#/overview">Azure Ops Pulse</a>
+        <a class="demo-link" href="https://aktsmm.github.io/azure-update-digest/">Azure Update Digest</a>
         <a class="demo-link" href="https://aktsmm.github.io/m365-message-center-dashboard/" aria-current="page">M365 Change Radar</a>
         <a class="demo-link" href="https://aktsmm.github.io/m365-copilot-update-digest/">M365 Copilot Update Digest</a>
         <a class="demo-link" href="https://aktsmm.github.io/daily-dev-byte/">Daily Dev Byte</a>
