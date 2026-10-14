@@ -67,6 +67,7 @@ jobs:
         shell: pwsh
         run: |
           ./scripts/Update-M365DashboardSnapshots.ps1
+          ./scripts/New-M365DashboardAboutPage.ps1 -OutputPath reports/m365/latest/about/index.html
           New-Item -ItemType Directory -Path _site -Force | Out-Null
           Copy-Item reports/m365/latest/* _site -Recurse -Force
           Copy-Item reports/m365/related-documents.json _site -Force

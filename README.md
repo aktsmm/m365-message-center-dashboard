@@ -36,7 +36,31 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 
 検索は管理された `scripts/document-queries.json` の公開製品名・機能名だけを [公開 Microsoft Learn MCP](https://learn.microsoft.com/ja-jp/training/support/mcp) へ送ります。公式 Python MCP SDK を用い、GitHub Copilot MCP のサインインや Graph/OIDC 認証から切り離しています。テナント名・ユーザー情報・メッセージ本文は MCP に送りません。検索結果だけを自動採用せず、`document-reviews.json` で製品・機能・プラットフォームを照合した記事を採用します。設定の参考資料を通知の展開時期の証拠として扱いません。日本語 URL は GET の locale と MCP 取得した記事本文を確認し、日本語本文が提供されない場合だけ確認済み英語記事を残します。Q&A や無関係な製品トップを件数埋めに使いません。
 
-状態は `verified`（関連資料あり）、`no_verified_document`（調査したが対応資料未確認）、`fetch_failed`（取得失敗）、`not_researched`（未調査）です。各記事に出典、記事本文 SHA-256、確認日時、採用根拠を保存し、通知の内容 fingerprint が一致したカードだけに表示します。未調査を「資料なし」と解釈しません。新しい機能で検索 query/review が未登録なら明示リンクだけを検証し、残りは未調査のレビュー待ちとして記録します。
+### 今後、自動で行われることとレビューが必要なこと
+
+承認済みデータの更新後に補完処理が自動実行されます。ただし、**全件の資料選定まで完全自動ではありません**。
+
+| 通知の状態 | 自動処理 | 運用担当者の作業 |
+| --- | --- | --- |
+| 本文・details に明示 Learn リンクがある | 記事本文・言語・到達性を確認し、最大3件を追加 | 取得失敗や不適切なリンクがあれば確認 |
+| 同じ通知IDに検索語・採用レビューが登録済み | 登録された資料を検証し、内容 fingerprint を照合して追加 | 通知の対象機能・プラットフォームが変わった場合は採用レビューを見直す |
+| 新しい通知IDで検索語・レビューが未登録 | 明示リンクだけを処理し、それ以外はレビュー待ちにする | 公開製品名・機能名の検索語を登録し、候補を確認して採用レビューを登録 |
+| 取得失敗、再確認期限到来 | 途中再開・キャッシュ・バックオフを使って再処理 | 継続する障害や未確認資料を確認 |
+
+検索語は `scripts/document-queries.json`、採用資料と理由は `scripts/document-reviews.json` で通知IDごとに管理します。別の新しい通知IDへ、以前の資料を名前の類似だけで自動流用しません。
+
+### 関連資料の状態の読み方
+
+**「表示なし」や「対応資料未確認」は、関連資料が存在しないという意味ではありません。**
+
+| 保存状態 | 意味 |
+| --- | --- |
+| `verified` | 対応する公式記事を確認・採用済み |
+| `no_verified_document` | 調査済みだが、対象製品・機能・プラットフォームに合う資料を確認・採用できていない |
+| `fetch_failed` | 記事取得・検証に失敗。資料の有無とは区別する |
+| `not_researched` | 検索語未登録などで未調査。レビュー待ちとして扱う |
+
+各記事に出典、記事本文 SHA-256、確認日時、採用根拠を保存し、通知の内容 fingerprint が一致したカードだけに表示します。通知の内容が変わって一致しない場合も古い資料をそのまま表示せず、再検証が必要な状態として扱います。
 
 ```powershell
 python -m pip install -r scripts\requirements-documents.txt
@@ -50,6 +74,8 @@ python scripts\Update-M365RelatedDocuments.py
 
 **M365 official documents and snapshot-only Pages** は PR でオフライン検証、main で補完・全履歴の再描画・Pages 公開を行います。既存収集 pipeline の成功後にも動作します。公開済みデータのみの更新はこの workflow を手動実行し、Graph を再取得する既存 metadata workflow を実行する必要はありません。単一 HTML に資料データを埋め込むため、別 JSON のブラウザキャッシュとの不整合はありません。反映確認では `?verify=<commit SHA>` 付きの新規アクセスと通常 URL の再読込を併用します。
 
+通常運用では、収集・core・translations の各 workflow 成功を契機にこの独立 workflow が起動します。関連する scripts / tests / workflow 設定の main への push と手動実行も起動条件です。独立した時刻指定の定期実行ではなく、週2回の既存更新に連動します。新しい未登録の通知は、上記のレビュー待ち条件を引き継ぎます。
+
 ## Twice-weekly automation architecture
 
 月曜日・木曜日 07:17 JST の更新は、次の順序で実行されます。
@@ -61,6 +87,8 @@ python scripts\Update-M365RelatedDocuments.py
 5. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
 
 公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
+
+これらの成功後に **Official documents workflow** が独立して動作し、保存済みの承認済み snapshot だけを使って関連資料を補完・再描画・再公開します。この処理は Graph を再取得せず、公開 Learn MCP の認証不要の接続を使います。通常の通知取得・要約・翻訳と、公式資料の補完は別の処理です。
 
 詳細な日本語要約と本文訳の進捗は、公開ダッシュボードの各カードにある **日本語訳と詳細要約** で確認できます。未検証の訳文は表示せず、公開済みの検証済み訳文だけを保持します。
 
@@ -75,6 +103,11 @@ scripts/
   Export-M365MessageCenter.ps1        # Graph lab-public export and transient AI context
   New-M365MessageCenterDashboard.ps1  # Standalone HTML renderer
   New-M365DashboardAboutPage.ps1       # Static Pages automation explanation
+  Update-M365RelatedDocuments.py      # Public Learn MCP enrichment; never calls Graph
+  Update-M365DashboardSnapshots.ps1   # Rebuild approved JSON and legacy HTML snapshots
+  document-queries.json              # Public product/feature-only queries by MC ID
+  document-reviews.json              # Reviewed article URLs and selection rationale
+  requirements-documents.txt         # Official Python MCP client dependencies
   Publish-M365AgentInsights.ps1       # Validates Agentic Workflow safe output
   ci/Test-M365Dashboard.ps1           # Fixture validation
 tests/fixtures/                       # Synthetic Graph and Agentic Workflow data
@@ -82,7 +115,11 @@ tests/fixtures/                       # Synthetic Graph and Agentic Workflow dat
   m365-dashboard-public.yml           # Collect, publish, and deploy the root Pages site
   m365-weekly-insights.md             # Agentic Workflow source
   m365-weekly-insights.lock.yml       # Generated workflow; do not edit
-reports/m365/                         # The only path workflows commit
+  m365-related-documents.yml          # Independent enrichment, validation, and Pages deployment
+reports/m365/
+  related-documents.json              # Article evidence, source bindings, states, and audit counts
+  latest/                            # Current approved public snapshot
+  history/                           # Archived approved snapshots; not new Pages endpoints
 ```
 
 ## 導入・セットアップ
@@ -108,6 +145,7 @@ The dashboard and `/about/` page default to the light Clawpilot theme and do not
 PowerShell 7 or later is required. The fixture test is offline and does not use credentials:
 
 ```powershell
+python -m pip install -r scripts\requirements-documents.txt
 ./scripts/ci/Test-M365Dashboard.ps1
 python -m unittest discover -s tests -p test_documents.py
 ```
