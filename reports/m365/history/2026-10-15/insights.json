@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T00:37:16.7304510+00:00",
+  "generatedAt": "2026-10-15T00:42:23.2842083+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "11月4日開始のEntra Agent ID既定変更と、Targeted Release廃止・パスキー/MFA関連の準備が今週〜今月の焦点",
   "executiveSummary": "今週のMessage Center(84件)では、Entra、Copilot/Agent 365、Edge、Microsoft 365管理の変更が目立ちます。最優先は、11月4日開始のEntra Agent ID関連の既定動作変更です。MC1506733では、ロールを持たない既定ユーザーがエージェントブループリントを作成できるようになります。無効にするには管理者が「Users can create agent blueprints」をオフにする必要があります。MC1506728では、AgentIdentity.CreateAsManagerがブループリントプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。いずれも展開は2026年11月上旬から下旬の予定です。次に、MC1490899ではTargeted Releaseが2027年1月に廃止され、Frontier/Standard/Deferredへ移行します。アクション期限は2026年10月31日で、11月には管理者がユーザーの追加・削除・変更をできなくなります。認証面では、MC1481309のEntraサインインCSP強化が10月中旬〜下旬に展開されます(アクション期限2026年10月19日)。MC1474104はSMS第一要素サインインの廃止を継続し、期限は2027年2月1日です。MC1450134ではWHfBとmacOS PSSOが単独のMFA要素として認識される予定で、タイムラインが更新されました。Copilot関連では、MC1462915がcopilot.cloud.microsoft/*.cloud.microsoftへの接続許可確認を求めています。MC1472429のOffice LTSC 2021等のサポートは2026年10月13日に終了しました。",
@@ -1171,6 +1171,34 @@
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1506733",
+      "japaneseDetailedSummary": "Microsoft Entraで、エージェント ブループリントを作成できるユーザーの既定が変わります。11月4日以降、「Users can create agent blueprints」を管理者が無効化しない限り、Entraの組み込み/カスタムロールを持たない既定ユーザーも新しいエージェント ブループリントを作成可能になります。望まない場合は、ロールアウト開始前にテナント設定で無効化して備えられます。ロールアウトは2026年11月上旬〜下旬です。ガバナンス方針に応じて設定を確認し、ユーザーによるエージェント作成の可否を顧客と合意することが重要です。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entraは、エージェント ブループリントを作成できるユーザーの既定を変更します。11月4日以降、管理者が「Users can create agent blueprints」をオフにしない限り、既定のユーザーが新しいエージェント ブループリントを作成できるようになります。つまり、組み込みまたはカスタムのEntraロールを持たないユーザーも、組織内で新しいエージェント ブループリントを作成できます。現在からロールアウト開始までの間に、テナント設定を行って準備できます。組織のユーザーに新しいエージェント ブループリントとそのIDを作成させたくない場合は、以下の手順に従ってください。\n[ロールアウトスケジュール]\n• ワールドワイド: 2026年11月上旬に開始し、2026年11月下旬までに完了する予定\n[組織への影響]\n影響を受ける対象\n• Microsoft Entraを使用する組織\n• Microsoft Entraの組み込みまたはカスタムロールを持たない既定ユーザー\nプラットフォームとサービス\n• Microsoft Entra\n今後の動作\n• 管理者がオフにしない限り、既定ユーザーがエージェント ブループリントを作成できるようになります(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1506727",
+      "japaneseDetailedSummary": "Microsoft製またはMicrosoftプラットフォーム上で構築されたサポート対象エージェントについて、オブザーバビリティデータ(利用状況・アクティビティ指標)の閲覧にAgent 365ライセンスが不要になります。Microsoft 365管理センターで管理者がエージェントの利用状況を把握しやすくなります。ただしオブザーバビリティ指標に限定され、その他のAgent 365機能や、サードパーティ基盤のエージェントの指標のライセンス要件は変わりません。ワールドワイドGAは2026年11月下旬です。ライセンス計画やエージェント可視化の運用について顧客と議論できます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft製、またはMicrosoftプラットフォーム上で構築されたサポート対象エージェントのオブザーバビリティデータについて、Agent 365ライセンス要件を撤廃します。この変更により、Microsoft 365管理センターでの利用状況とアクティビティの分析情報へのアクセスが拡大し、管理者がエージェントの使われ方を監視しやすくなります。\nこの変更はオブザーバビリティ指標に限定されます。その他のAgent 365機能、およびサードパーティ プラットフォーム上で構築されたエージェントのアクティビティ指標に対するライセンス要件は撤廃されません。\n[ロールアウトスケジュール]\n• 一般提供(ワールドワイド): 2026年11月下旬に開始し、2026年11月下旬までに完了する予定\n[組織への影響]\n影響を受ける対象\n• Microsoft製またはMicrosoftプラットフォーム上で構築されたサポート対象エージェントを使用する組織\nプラットフォームとサービス\n• Microsoft 365管理センター\n• Agent 365オブザーバビリティ\n今後の動作\n• Microsoft製またはMicrosoftプラット(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1506728",
+      "japaneseDetailedSummary": "Microsoft Entra Agent IDで、エージェントによる自身のID作成の制限が強化されます。従来はエージェント作成時にAgentIdentity.CreateAsManagerが管理者承認なしで自動付与されていましたが、11月4日以降、エージェントのブループリントプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。アプリ専用認証で自分のエージェントIDを作成するエージェントは、Microsoft Graphアプリケーション権限を明示的に付与するか、別のサポート対象の認可モデルへ移行する必要があります。ロールアウトは2026年11月上旬〜下旬です。該当エージェントの棚卸しが必要です。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entra Agent IDは、エージェントが自身のIDを自律的に作成することに対する制限を強化します。現在、すべてのエージェントには作成時に管理者の承認なしでAgentIdentity.CreateAsManagerが付与されています。11月4日以降、Microsoft Entraはエージェント ブループリント プリンシパルにAgentIdentity.CreateAsManagerを自動的に付与しなくなり、IDの作成には管理者の同意が必要になります。\nアプリ専用認証を使用して自身のエージェントIDを作成するエージェントは、強制適用がテナントに及ぶ前に、Microsoft GraphアプリケーションのアクセS許可AgentIdentity.CreateAsManagerを明示的に付与されるか、別のサポートされる認可モデルに移行する必要があります。\n[ロールアウトスケジュール]\n• 一般提供(ワールドワイド): 2026年11月上旬に開始し、2026年11月下旬までに完了する予定\n[組織への影響]\n影響を受ける対象\n• Microsoft Entraを使用する組織\n• 組織にこれに依存するエージェントがない場合、対応は不要です(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1505610",
+      "japaneseDetailedSummary": "Brand Centerのセットアップ時に、Public CDNを有効化しなくても設定を完了できるようになります。従来はセットアップ時にPublic CDNが有効化されていましたが、今後は既定で未選択となり、管理者が明示的に選択・確認した場合のみ有効化されます。組織フォントなどPublic CDNに依存する機能は、有効化するまで利用できません。ワールドワイドGAは2026年10月中旬に開始し、10月下旬に完了予定です。ガバナンス機能のみ使いたい顧客に有益で、フォント機能の要否を確認する会話が必要です。",
+      "japaneseBodyTranslation": "[内容と理由:]\n管理者がPublic CDNを有効にせずにBrand Centerをセットアップできるよう、セットアップ体験を更新します。\n現在は、Public CDNを必要としないブランドガバナンス機能のみを使いたい場合でも、Brand Centerのセットアップの一環としてPublic CDNが有効化されます。今回の更新により、組織フォントなどPublic CDNに依存する機能が必要になるまでPublic CDNを保留したまま、Brand Centerの利用を開始できます。\n[ロールアウトスケジュール:]\n一般提供(ワールドワイド): 2026年10月中旬に展開を開始し、2026年10月下旬までに完了する予定です。\n[組織への影響:]\n管理者がMicrosoft 365管理センターでBrand Centerをセットアップする際:\n• Public CDNは既定で選択解除されます。\n• Public CDNなしでBrand Centerのセットアップを完了できます。\n• Public CDNは、管理者が明示的にオプションを選択し変更を確認した場合にのみ有効になります。\n• フォント関連の機能は、Publi(原文はここで途切れています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
