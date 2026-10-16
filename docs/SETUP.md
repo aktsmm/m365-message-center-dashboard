@@ -237,9 +237,9 @@ Repository 名が `<OWNER>.github.io` の場合だけ、account root に公開�
 
 `M365 dashboard content quality and repair` を有効にすると、毎日12:27 JSTに承認済みの保存データだけを検査します。必要な場合だけ、週次要約の修復、または最大4件の翻訳を既存の Copilot workflow に依頼します。1検査1依頼・同一レーン24時間間隔で、core後に続く翻訳も同じ間隔に含めます。初期の未照合バックログを一度に全件生成するものではありません。主パイプラインに加えて発生するAI利用、既存の1 run当たり60 AI credits上限、予算・監視担当を確認してください。
 
-修復を有効化する段階の `actions: write` は、同じ repository の main の指定済み workflow を依頼するためです。現在は承認待ちのため `actions: read` に限定しています。Graph権限・追加secret・クラウド認証は使いません。手動の計画確認は `Invoke-M365DashboardRepair.ps1 -Repository owner/repo`（既定dry-run）、検査と状態保存は運用workflowの `-Apply` を使います。`reports/m365/repair-state.json` の依頼状態と、実際の workflow 結果・原文版照合を区別して確認します。
+修復workflowの `actions: write` は、同じ repository の main の指定済み workflow を依頼するためです。要約・翻訳の2本だけが公式の `on.bots` で `github-actions[bot]` を許可し、main限定の条件と人間の既定role検証を維持します。Graph権限・追加secret・PATは使いません。手動の計画確認は `Invoke-M365DashboardRepair.ps1 -Repository owner/repo`（既定dry-run）、検査と状態保存は運用workflowの `-Apply` を使います。`reports/m365/repair-state.json` の依頼状態と、実際の workflow 結果・原文版照合を区別して確認します。
 
-現行のbot起動はAgentic Workflowのrole検証で停止したため、所有者が `on.bots` の2本・main限定の許可を承認するまで、Actions内の再依頼は `authorization_required` で止めます。運用workflowは `-TrustedAutomationApproved` を指定しません。`roles: all`、人のPAT、別イベントへの切替で回避しないでください。`success` runでもagent／publisherがskipなら未修復です。
+運用workflowだけが `-TrustedAutomationApproved` を明示します。未設定のActions呼び出しは `authorization_required` で止めます。`roles: all`、人のPAT、別イベントへの切替で回避しないでください。`success` runでもagent／publisherがskipなら未修復です。直前のbot依頼でagentが開始されなかった場合に限り、手動の `retry_skipped_run_id` でAPI確認付きの再試行を行えます。開始済み処理の24時間cooldownを解除する入力ではありません。
 
 処理中に原文が更新された場合、古いartifactで新しいデータを上書きせず、公開を止めて現行データでの再試行を待ちます。過去の訳文に原文hashがない場合は未照合と表示し、検証済みと偽装しません。日付・サービス・検索・並び順は画面の共有URLで再現できます。
 

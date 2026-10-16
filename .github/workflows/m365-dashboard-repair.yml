@@ -2,12 +2,17 @@ name: M365 dashboard content quality and repair
 
 on:
   workflow_dispatch:
+    inputs:
+      retry_skipped_run_id:
+        description: "Optional completed bot run whose agent never started; verified before retry."
+        required: false
+        type: string
   schedule:
     - cron: '27 3 * * *'
 
 permissions:
   contents: write
-  actions: read
+  actions: write
 
 concurrency:
   group: m365-message-center-pages
@@ -25,8 +30,14 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
+          RETRY_SKIPPED_RUN_ID: ${{ inputs.retry_skipped_run_id }}
         run: |
-          ./scripts/Invoke-M365DashboardRepair.ps1 -Repository $env:GITHUB_REPOSITORY -Apply
+          $parameters = @{ Repository = $env:GITHUB_REPOSITORY; Apply = $true; TrustedAutomationApproved = $true }
+          if ($env:RETRY_SKIPPED_RUN_ID) {
+            if ($env:RETRY_SKIPPED_RUN_ID -notmatch '^\d+$') { throw 'Invalid skipped run ID.' }
+            $parameters.RetrySkippedRunId = [long]$env:RETRY_SKIPPED_RUN_ID
+          }
+          ./scripts/Invoke-M365DashboardRepair.ps1 @parameters
           $state = Get-Content reports/m365/repair-state.json -Raw
           @('## Content quality and bounded repair', '', '```json', $state, '```') |
             Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY

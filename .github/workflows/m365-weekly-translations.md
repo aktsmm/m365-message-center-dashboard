@@ -1,5 +1,7 @@
 ---
 on:
+  bots:
+    - "github-actions[bot]"
   workflow_dispatch:
     inputs:
       translation_batch_index:
@@ -22,7 +24,7 @@ on:
     branches:
       - main
 
-if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success')
 run-name: "M365 bounded translations (${{ inputs.translation_request_id || github.event.workflow_run.id || github.run_id }})"
 
 permissions:

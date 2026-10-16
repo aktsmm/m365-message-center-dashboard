@@ -1,5 +1,7 @@
 ---
 on:
+  bots:
+    - "github-actions[bot]"
   workflow_dispatch:
   workflow_run:
     workflows:
@@ -9,7 +11,7 @@ on:
     branches:
       - main
 
-if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success')
 
 permissions:
   contents: read

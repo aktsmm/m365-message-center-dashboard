@@ -119,7 +119,9 @@ python scripts\Update-M365RelatedDocuments.py --check
 
 **M365 dashboard content quality and repair** は毎日 **12:27 JST** と手動実行で、承認済みの保存データだけを検査します。週次要約の不整合・未照合・旧版を先に修復し、その後に欠落／旧版の翻訳を処理します。1回の検査で依頼する workflow は最大1件、同じ修復レーンは24時間の cooldown を設けます。core の成功後に通常の4件までの翻訳が続くため、その分も同じ cooldown に含め、成功イベントによる無限ループや大量のAI実行を避けます。全てが現行版なら追加のエージェント実行はしません。
 
-> **現在の停止条件:** 実機確認では、GitHub Actions botの手動起動要求がAgentic Workflowの既定のrole検証で拒否され、run全体がsuccessでもagent／publisherはskipになりました。これは修復成功ではありません。公式の `on.bots` による2本・main限定のbot許可は所有者の承認待ちです。人のPAT、`roles: all`、別のイベント経路では回避しません。当面は毎日の検査と状態保存だけを行い、Actions内のbotによる再依頼は `authorization_required` として停止します。Actions権限もreadだけにしています。`-TrustedAutomationApproved` とdispatch用write権限は許可設定の確認後にだけ使い、現行の運用workflowは有効にしません。
+bot起動は、要約・翻訳の2本だけに公式の `on.bots: ["github-actions[bot]"]` を設定し、どちらも main に限定しています。人間の既定role検証は維持し、repoメンバー権限・Graph権限・PATを追加しません。修復workflowだけが同じrepoの固定workflowを依頼するActions write権限と `-TrustedAutomationApproved` を使います。scopeが未設定のActions呼び出しは引き続き `authorization_required` で停止します。
+
+run全体がsuccessでもagent／publisherがskipなら未修復です。既に起動要求したがagentが一度も開始されなかったrunだけは、手動入力 `retry_skipped_run_id` で再試行できます。対象repo・main・同じworkflow・同じbot・直前の依頼時刻との対応と、agent/publisherのskipをAPIで確認し、実際に開始した処理のcooldownは解除しません。通常の日次処理ではこの入力を使いません。
 
 修復は既存の Copilot エンジンと既存の1 run当たり60 AI credits上限を使います。モデルは従来どおり Copilot 側の既定で、別のAIサービスは追加しません。主パイプラインとは別に、必要な場合だけ1回最大4件の翻訳が進みます。欠落や版未照合のバックログを一度にすべて生成する仕組みではありません。
 
