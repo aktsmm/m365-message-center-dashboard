@@ -723,10 +723,11 @@ try {
     if (-not $preAgentSection.Contains('uses: actions/upload-artifact@v7') -or
         -not $preAgentSection.Contains('name: m365-agent-public-metadata') -or
         -not $preAgentSection.Contains('$env:RUNNER_TEMP/m365-agent-public') -or
-        -not $preAgentSection.Contains('-IncludeContent') -or
+        -not $preAgentSection.Contains('New-M365AgentContext.ps1') -or
+        -not $preAgentSection.Contains('-Mode Core') -or
         -not $preAgentSection.Contains('-AgentContextLimit 1000') -or
         -not $preAgentSection.Contains('-AgentContextBodyMaxChars 1000')) {
-        throw 'Agentic pre-agent steps do not export and transfer the public metadata snapshot.'
+        throw 'Agentic pre-agent steps do not bound and transfer the approved saved snapshot.'
     }
     if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
         -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
@@ -764,12 +765,12 @@ try {
     $translationSafeOutputSection = ($translationWorkflow -split 'safe-outputs:', 2)[1]
     $azureLoginV3 = 'uses: azure/login@532459ea530d8321f2fb9bb10d1e0bcf23869a43 # v3.0.0'
     if (-not $publicWorkflow.Contains($azureLoginV3) -or
-        -not $agentWorkflow.Contains($azureLoginV3) -or
-        -not $translationWorkflow.Contains($azureLoginV3) -or
+        $agentWorkflow.Contains('azure/login@') -or
+        $translationWorkflow.Contains('azure/login@') -or
         $publicWorkflow.Contains('a457da9ea143d694b1b9c7c869ebb04ebe844ef5') -or
         $agentWorkflow.Contains('a457da9ea143d694b1b9c7c869ebb04ebe844ef5') -or
         $translationWorkflow.Contains('a457da9ea143d694b1b9c7c869ebb04ebe844ef5')) {
-        throw 'All workflow paths must pin Azure Login v3.0.0 for the Node 24 runtime.'
+        throw 'Only the metadata collector may sign in to Graph; agents must reuse the approved snapshot.'
     }
     if (-not $translationPreAgentSection.Contains('workflows:') -or
         -not $translationPreAgentSection.Contains('"Microsoft 365 Message Center weekly dashboard"') -or
@@ -779,7 +780,8 @@ try {
         -not $translationPreAgentSection.Contains('translation_request_id') -or
         -not $translationPreAgentSection.Contains('AgentTranslationIds') -or
         -not $translationPreAgentSection.Contains('AgentTranslationBatchIndex') -or
-        -not $translationPreAgentSection.Contains('DisableAgentTranslationBatch') -or
+        -not $translationPreAgentSection.Contains('New-M365AgentContext.ps1') -or
+        $translationPreAgentSection -notmatch "Mode\s*=\s*'Translations'" -or
         $translationPreAgentSection.Contains('M365 Message Center Dashboard - Public Metadata')) {
         throw 'Translations workflow does not wait for the successful core weekly dashboard workflow.'
     }

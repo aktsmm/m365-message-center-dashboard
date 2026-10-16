@@ -5,13 +5,14 @@
 [CmdletBinding()]
 param(
     [string]$Repository = 'aktsmm/m365-message-center-dashboard',
-    [ValidateRange(1, 10)][int]$BatchSize = 4,
+    [ValidateRange(1, 4)][int]$BatchSize = 4,
     [ValidateRange(1, 5)][int]$BatchAttempts = 2,
     [ValidateRange(0, 100)][int]$MaximumBatches = 0
 )
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
+. (Join-Path $PSScriptRoot 'M365DashboardContent.ps1')
 
 function Invoke-Gh {
     param([Parameter(Mandatory)][string[]]$Arguments)
@@ -41,14 +42,17 @@ function Get-CurrentTranslationState {
     $insights = Get-MainInsights
     $messages = Get-MainMessages
     $currentIds = @{}
+    $messagesById = @{}
     foreach ($message in @($messages.messages)) {
         $currentIds[([string]$message.id).Trim().ToUpperInvariant()] = $true
+        $messagesById[([string]$message.id).Trim().ToUpperInvariant()] = $message
     }
     $translatedIds = @{}
     foreach ($translation in @($insights.messageTranslations)) {
         $id = ([string]$translation.id).Trim().ToUpperInvariant()
         if ($currentIds.ContainsKey($id) -and
-            -not [string]::IsNullOrWhiteSpace([string]$translation.japaneseDetailedSummary)) {
+            -not [string]::IsNullOrWhiteSpace([string]$translation.japaneseDetailedSummary) -and
+            (Test-M365TranslationSource -Translation $translation -Message $messagesById[$id])) {
             $translatedIds[$id] = $true
         }
     }

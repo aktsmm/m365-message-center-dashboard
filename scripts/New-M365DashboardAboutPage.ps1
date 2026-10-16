@@ -73,8 +73,8 @@ $html = @'
       <ol class="flow">
         <li>GitHub Actions が Microsoft Graph の Message Center を取得します。</li>
         <li>公開用 snapshot を生成し、本文を安全なテキストとして、details を name/value として出力します。</li>
-        <li>core GitHub Agentic Workflow が同じ run の snapshot を検証し、週次インサイトを作成します。MC ごとの日本語タイトル・100文字以内の要約・公式リンクは、その snapshot から決定論的に生成します。</li>
-        <li>core の成功後に translations GitHub Agentic Workflow が起動し、実行ごとに最大4件の詳細な日本語要約と本文訳を検証します。月曜日・木曜日の実行により、最大8カード/週が翻訳対象になります。未検証の訳文は表示しません。</li>
+        <li>core GitHub Agentic Workflow が保存済みの承認済み snapshot をその run の artifact として受け取り、週次インサイトを作成します。MC ごとの日本語タイトル・100文字以内の要約・公式リンクは、その snapshot から決定論的に生成します。Graph を再取得しません。</li>
+        <li>core の成功後に translations GitHub Agentic Workflow が起動し、実行ごとに最大4件の詳細な日本語要約と本文訳を検証します。主パイプラインの月曜日・木曜日の実行により、最大8カード/週が翻訳対象になります。欠落・原文版未照合・原文変更も再生成の対象です。</li>
         <li>検証済みの snapshot、インサイト、公式リンク、翻訳だけを GitHub Pages に公開します。</li>
       </ol>
     </section>
@@ -103,8 +103,20 @@ $html = @'
         <li><strong>テスト テナントと取得方法:</strong> 表示する Message Center データは、個人検証用テスト テナントから取得しています。Microsoft Entra アプリケーションがアプリケーション専用アクセスで収集しており、特定の Microsoft 365 ユーザーのサインインを通じた取得ではありません。この静的ダッシュボードは本番テナントでの判断に用いるシステムではありません。</li>
         <li><strong>Microsoft Entra ID と Microsoft Graph:</strong> GitHub Actions は OIDC で Microsoft Entra ID に認証し、管理者が同意した Microsoft Graph の読み取り専用のアプリケーション権限で Message Center を取得します。パスワード、アクセストークン、認証情報は公開データに含めません。</li>
         <li><strong>GitHub Actions と GitHub Pages:</strong> 取得したデータは credential-like 値を除外または redaction し、検証した snapshot だけを静的ページとして公開します。このダッシュボードの閲覧に Microsoft Graph へのサインインは必要ありません。</li>
-        <li><strong>GitHub Agentic Workflows:</strong> エージェントには同じ run の、範囲を限定して redaction 済みの snapshot だけを渡し、日本語の要約と翻訳を作成します。公開前に publisher が snapshot との一致や安全性を検証するため、エージェントの出力だけで公開されることはありません。</li>
+        <li><strong>GitHub Agentic Workflows:</strong> エージェントには同じ run の、範囲を限定して redaction 済みの snapshot だけを渡し、日本語の要約と翻訳を作成します。この artifact は承認済みの保存データから作り、Graph を重複取得しません。公開前に publisher が snapshot との一致や安全性を検証し、処理中に変わった新しい原文を古い artifact で上書きしません。</li>
       </ol>
+    </section>
+    <section class="panel">
+      <h2>要約の根拠と原文の版</h2>
+      <p>要約は「何が変わるか・誰に影響するか・いつ・何をするか・抜粋では不明な点」で整理します。本文に書かれた MC ID も元 snapshot と照合し、存在しない参照、埋め草、同じ行の反復を拒否します。MC ID は該当通知へのリンクとして使えます。</p>
+      <p>新しく検証した要約・翻訳には原文の内容ハッシュを保存します。元の版を証明できない保存済み訳文に、後から「現行版」の印は付けません。保存版は注意付きで参照でき、現在の原文から抽出した変更・影響・時期・対応を併記します。週次要約に不整合がある場合は、その文章を出さず、原文に基づく確認候補を表示します。</p>
+      <p>検索には保存済み日本語訳と資料名も含め、日付・サービス・並び順・検索条件をURLで共有できます。期限経過と今後30日以内の期限を分け、期限経過を対応完了とはみなしません。</p>
+    </section>
+    <section class="panel">
+      <h2>毎日の検査と、上限付きの自動修復</h2>
+      <p><strong>M365 dashboard content quality and repair</strong> が毎日12:27 JSTと手動実行で保存済みデータを検査します。週次要約の不整合・旧版を先に、次に翻訳の欠落・版未照合を、既存のエージェント workflow へ依頼します。1回の検査につき依頼は最大1件、同じレーンには24時間の間隔を設けます。</p>
+      <p>core成功後に続く通常の4件までの翻訳も同じ間隔に含め、無限ループや大量のAI実行はしません。全てが現行版なら追加実行は不要です。既存の Copilot エンジンと1 run当たり60 AI creditsの上限を使用し、別のAIサービスやGraph取得を追加しません。</p>
+      <p>原文版未照合のバックログは一度に全件を生成せず、1回最大4件ずつ進めます。依頼・失敗・観測状態は <code>repair-state.json</code> に保存し、「依頼済み」を「修復完了」とは扱いません。取得・要約・翻訳・資料の状態は画面で別々に確認できます。</p>
     </section>
     <section class="panel">
       <h2>手動で更新するには</h2>
