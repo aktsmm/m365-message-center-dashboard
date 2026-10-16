@@ -119,6 +119,8 @@ python scripts\Update-M365RelatedDocuments.py --check
 
 **M365 dashboard content quality and repair** は毎日 **12:27 JST** と手動実行で、承認済みの保存データだけを検査します。週次要約の不整合・未照合・旧版を先に修復し、その後に欠落／旧版の翻訳を処理します。1回の検査で依頼する workflow は最大1件、同じ修復レーンは24時間の cooldown を設けます。core の成功後に通常の4件までの翻訳が続くため、その分も同じ cooldown に含め、成功イベントによる無限ループや大量のAI実行を避けます。全てが現行版なら追加のエージェント実行はしません。
 
+> **現在の停止条件:** 実機確認では、GitHub Actions botの手動起動要求がAgentic Workflowの既定のrole検証で拒否され、run全体がsuccessでもagent／publisherはskipになりました。これは修復成功ではありません。公式の `on.bots` による2本・main限定のbot許可は所有者の承認待ちです。人のPAT、`roles: all`、別のイベント経路では回避しません。当面は毎日の検査と状態保存だけを行い、Actions内のbotによる再依頼は `authorization_required` として停止します。Actions権限もreadだけにしています。`-TrustedAutomationApproved` とdispatch用write権限は許可設定の確認後にだけ使い、現行の運用workflowは有効にしません。
+
 修復は既存の Copilot エンジンと既存の1 run当たり60 AI credits上限を使います。モデルは従来どおり Copilot 側の既定で、別のAIサービスは追加しません。主パイプラインとは別に、必要な場合だけ1回最大4件の翻訳が進みます。欠落や版未照合のバックログを一度にすべて生成する仕組みではありません。
 
 修復計画は `scripts/Invoke-M365DashboardRepair.ps1` の既定では read-only / dry-run です。`-Apply -Repository owner/repo` を指定した運用 workflow だけが、対象 repository の main に限定して既存 workflow を依頼します。実行中の同じレーンへの二重依頼を避け、`reports/m365/repair-state.json` に観測状態・依頼・失敗を保存します。「依頼済み」を「修復完了」と扱いません。Graph の取得、権限追加、認証回避は行いません。
