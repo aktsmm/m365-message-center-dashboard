@@ -440,7 +440,7 @@ try {
     }
     if ($focusHtml -match '<img src=x onerror=alert\(1\)>' -or
         $focusHtml -notmatch '\\u003cimg src=x onerror=alert\(1\)\\u003e' -or
-        $focusHtml -notmatch 'escapeHtml\(update\?\.japaneseTitle \|\| message\.japaneseTitle \|\| "日本語タイトルを準備中"\)') {
+        $focusHtml -notmatch 'escapeHtml\(displayMessageTitle\(message\)\)') {
         throw 'Focus fixture title was not safely escaped in the generated dashboard.'
     }
     $published = Get-Content -LiteralPath $publishedInsights -Raw -Encoding UTF8 | ConvertFrom-Json
@@ -571,12 +571,12 @@ try {
     }
     $aboutHtml = Get-Content -LiteralPath $aboutPage -Raw -Encoding UTF8
     if ($aboutHtml -notmatch '関連ドキュメントの自動補完' -or
-        $aboutHtml -notmatch '全件の資料選定まで完全自動ではありません' -or
+        $aboutHtml -notmatch '新しい通知も検索・判定・記事検証・採用まで自動処理します' -or
         $aboutHtml -notmatch '資料が存在しない' -or
         $aboutHtml -notmatch '公開 Microsoft Learn MCP' -or
         $aboutHtml -notmatch '通知本文・テナント名・ユーザー情報は送りません' -or
         $aboutHtml -notmatch 'related-documents\.json' -or
-        $aboutHtml -match '関連ドキュメントは、その MC の details に含まれる') {
+        $aboutHtml -match '関連ドキュメントは、その MC の details に含まれる|全件の資料選定まで完全自動ではありません') {
         throw 'About page does not describe the independent Learn enrichment, review queue, and document states.'
     }
     if ($aboutHtml -notmatch '認証と公開の境界' -or

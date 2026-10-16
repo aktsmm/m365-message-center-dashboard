@@ -34,20 +34,24 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 
 `scripts/Update-M365RelatedDocuments.py` は **Graph を呼びません**。`reports/m365/latest` と全履歴の承認済み `messages.json`、JSON がない旧 HTML の埋め込み `DATA` を監査し、通知の ID・日付・本文・分類を書き換えず、別の `reports/m365/related-documents.json` に結果を記録します。`Update-M365DashboardSnapshots.ps1` で旧 HTML を含む全期間を再描画できます。歴史データを新たな Pages endpoint に公開することはありません。本文・details の明示 Learn URL を優先し、以後の export では本文 HTML の Learn リンクも `officialDocumentUrls` として保持します（userinfo や任意のクエリは保存せず、公開 Docs の `view` / `preserve-view` だけを許可します）。
 
-検索は管理された `scripts/document-queries.json` の公開製品名・機能名だけを [公開 Microsoft Learn MCP](https://learn.microsoft.com/ja-jp/training/support/mcp) へ送ります。公式 Python MCP SDK を用い、GitHub Copilot MCP のサインインや Graph/OIDC 認証から切り離しています。テナント名・ユーザー情報・メッセージ本文は MCP に送りません。検索結果だけを自動採用せず、`document-reviews.json` で製品・機能・プラットフォームを照合した記事を採用します。設定の参考資料を通知の展開時期の証拠として扱いません。日本語 URL は GET の locale と MCP 取得した記事本文を確認し、日本語本文が提供されない場合だけ確認済み英語記事を残します。Q&A や無関係な製品トップを件数埋めに使いません。
+検索は、通知タイトルに含まれる単語を `scripts/m365_document_matching.py` の**公開製品・機能語彙だけに限定して再構成**し、[公開 Microsoft Learn MCP](https://learn.microsoft.com/ja-jp/training/support/mcp) へ送ります。未知の固有名、メールアドレス、URL、数値識別子、通知ID、本文は検索へ渡しません。公式 Python MCP SDK を用い、GitHub Copilot MCP のサインインや Graph/OIDC 認証から切り離しています。通知本文・テナント名・ユーザー情報は MCP に送りません。
 
-### 今後、自動で行われることとレビューが必要なこと
+本文の明示 Learn リンクを優先し、不足分は検索結果から候補を自動抽出します。候補の英語本文を取得し、同じ節・短い文脈内での製品・機能語の一致率（70%以上）、プラットフォーム、記事見出しをローカルで照合します。Entra workforce と External ID customer、別製品、プラットフォーム違い、巨大なリリースノートの別々の節にしか語がない資料は採用しません。自動候補の採用根拠・一致語・公式記事の抜粋・本文ハッシュを保存します。これは決定論的な関連性判定であり、通知の展開段階・提供日が現行資料と同一であることを保証するものではありません。展開時期は通知の記載を正本とします。
 
-承認済みデータの更新後に補完処理が自動実行されます。ただし、**全件の資料選定まで完全自動ではありません**。
+日本語 URL は GET の locale と MCP 取得した記事本文を確認し、日本語本文が提供されない場合だけ確認済み英語記事を残します。Q&A や無関係な製品トップを件数埋めに使いません。`document-queries.json` / `document-reviews.json` は任意の候補ヒントとして残しますが、新しい通知の検索・採用に登録は不要です。
+
+### 自動処理の範囲と任意の運用
+
+承認済みデータの更新後に、**未登録の新しい通知も検索・関連性判定・記事検証・採用まで自動処理**します。候補を十分な根拠で採用できない場合は「対応資料未確認」として記録し、後日自動再調査します。全通知に必ず資料が付くと保証する仕組みではありません。
 
 | 通知の状態 | 自動処理 | 運用担当者の作業 |
 | --- | --- | --- |
 | 本文・details に明示 Learn リンクがある | 記事本文・言語・到達性を確認し、最大3件を追加 | 取得失敗や不適切なリンクがあれば確認 |
-| 同じ通知IDに検索語・採用レビューが登録済み | 登録された資料を検証し、内容 fingerprint を照合して追加 | 通知の対象機能・プラットフォームが変わった場合は採用レビューを見直す |
-| 新しい通知IDで検索語・レビューが未登録 | 明示リンクだけを処理し、それ以外はレビュー待ちにする | 公開製品名・機能名の検索語を登録し、候補を確認して採用レビューを登録 |
+| 同じ通知IDに任意の検索語・候補ヒントが登録済み | ヒントも候補に加え、現行本文との関連性・内容 fingerprint を検証 | 必要な場合だけヒントを調整 |
+| 新しい通知IDで検索語・候補ヒントが未登録 | 公開語彙から検索語を生成し、Learn MCP検索・判定・検証・採用まで実行 | 通常は不要 |
 | 取得失敗、再確認期限到来 | 途中再開・キャッシュ・バックオフを使って再処理 | 継続する障害や未確認資料を確認 |
 
-検索語は `scripts/document-queries.json`、採用資料と理由は `scripts/document-reviews.json` で通知IDごとに管理します。別の新しい通知IDへ、以前の資料を名前の類似だけで自動流用しません。
+通知の内容 fingerprint が変わると自動で再調査します。履歴の異なる版は個別に判定・保存し、最新の根拠を過去の別内容へ一括適用しません。同一の公開検索語・記事の取得キャッシュは再利用しますが、関連性は通知ごと・版ごとに判定します。
 
 ### 関連資料の状態の読み方
 
@@ -58,7 +62,7 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 | `verified` | 対応する公式記事を確認・採用済み |
 | `no_verified_document` | 調査済みだが、対象製品・機能・プラットフォームに合う資料を確認・採用できていない |
 | `fetch_failed` | 記事取得・検証に失敗。資料の有無とは区別する |
-| `not_researched` | 検索語未登録などで未調査。レビュー待ちとして扱う |
+| `not_researched` | 新着・変更通知、または実行時間上限で次の自動処理を待っている状態。手動登録待ちではない |
 
 各記事に出典、記事本文 SHA-256、確認日時、採用根拠を保存し、通知の内容 fingerprint が一致したカードだけに表示します。通知の内容が変わって一致しない場合も古い資料をそのまま表示せず、再検証が必要な状態として扱います。
 
@@ -66,15 +70,24 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 python -m pip install -r scripts\requirements-documents.txt
 python scripts\Update-M365RelatedDocuments.py --audit
 python scripts\Update-M365RelatedDocuments.py --search-only
-# 候補を製品・機能・プラットフォームと照合して document-reviews.json に登録
 python scripts\Update-M365RelatedDocuments.py
+# 処理後の全期間・全版のカバーと記事証拠を、ネットワークなしで検証
+python scripts\Update-M365RelatedDocuments.py --check
 ```
 
-1通知ごとの atomic checkpoint と除外済み `.cache` を使って途中再開できます。逐次実行、1秒間隔、429/一時的 HTTP 障害の最大4回バックオフで制御します。`--ids MC123,MC456` は承認済み対象だけを再実行します。`--refresh` は公開記事キャッシュをクリアして再確認します。30日経過した通知は再処理対象になります。取得失敗は次回再試行し、他の通知の進捗を失いません。
+1通知・1版ごとの atomic checkpoint と除外済み `.cache` を使って途中再開できます。新着・変更・失敗を優先し、Actions では1回100版・900秒、1版180秒を上限に次回へ継続します。逐次実行、1秒間隔、429/一時的 HTTP 障害の最大4回バックオフで制御し、公開サービスの失敗が2回連続した場合は保存して次回へ回します。資料未確認は3日、確認済みは30日を目安に再調査し、取得失敗は6時間後以降の次回に再試行します。検索・候補本文のキャッシュ期限も再調査に合わせます。失敗時も cache と checkpoint artifact を保存します。`--ids MC123,MC456` は承認済み対象だけの再実行、`--refresh` はキャッシュをクリアした再確認です。`--search-only` は候補表示だけで公開カタログの判定を変更しません。
 
 **M365 official documents and snapshot-only Pages** は PR でオフライン検証、main で補完・全履歴の再描画・Pages 公開を行います。既存収集 pipeline の成功後にも動作します。公開済みデータのみの更新はこの workflow を手動実行し、Graph を再取得する既存 metadata workflow を実行する必要はありません。単一 HTML に資料データを埋め込むため、別 JSON のブラウザキャッシュとの不整合はありません。反映確認では `?verify=<commit SHA>` 付きの新規アクセスと通常 URL の再読込を併用します。
 
-通常運用では、収集・core・translations の各 workflow 成功を契機にこの独立 workflow が起動します。関連する scripts / tests / workflow 設定の main への push と手動実行も起動条件です。独立した時刻指定の定期実行ではなく、週2回の既存更新に連動します。新しい未登録の通知は、上記のレビュー待ち条件を引き継ぎます。
+通常運用では、収集・core・translations の各 workflow 成功に加え、**毎日11:37・23:37 JST**にも Graph 取得とは独立して動作します。関連する scripts / tests / workflow 設定の main への push と手動実行も起動条件です。新しい snapshot と過去の資料カタログが一致しないことを、補完前のテストでエラーにしません。入力の安全性は先に、全版のカバー・証拠の検証は補完後に行います。収集・要約・翻訳の各 Pages artifact にもカタログを同梱し、途中の公開で消さないようにしています。
+
+画面の「公式資料の自動調査」には現在の通知の状態別件数を表示し、状態別に絞り込めます。Actions summary と `related-documents.json` の audit には全期間と現在分の件数、未処理の残り、実行ごとの処理数、完全／部分の状態を記録します。
+
+カードの見出しは機能を特定できるタイトルを優先します。日本語タイトルが「情報提供に関するお知らせ」のような汎用ラベルしかない場合は、通知の具体的な原題を見出しに使い、同じラベルが並んで変更内容を識別できなくなることを避けます。通知の保存データや翻訳の検証契約は変更しません。
+
+### 他のダイジェストから取り入れた運用パターン
+
+[Azure Update Digest の収集・再開処理](https://github.com/aktsmm/azure-update-digest/blob/main/src/lib/collect.ts) の実行予算・保存済み状態からの未処理再抽出と、[M365 Copilot Update Digest の資料補完](https://github.com/aktsmm/m365-copilot-update-digest/blob/main/scripts/lib/documentation-backfill.mjs) の fingerprint・証拠検証・状態別集計を、この lab-public の境界に合わせて採用しています。外部の公開更新を追加収集する機能や、通知本文を外部サービスへ送る仕組みは移植していません。
 
 ## Twice-weekly automation architecture
 
@@ -105,8 +118,9 @@ scripts/
   New-M365DashboardAboutPage.ps1       # Static Pages automation explanation
   Update-M365RelatedDocuments.py      # Public Learn MCP enrichment; never calls Graph
   Update-M365DashboardSnapshots.ps1   # Rebuild approved JSON and legacy HTML snapshots
-  document-queries.json              # Public product/feature-only queries by MC ID
-  document-reviews.json              # Reviewed article URLs and selection rationale
+  m365_document_matching.py          # Public query vocabulary and local article relevance gate
+  document-queries.json              # Optional safe query hints; not an unseen-ID gate
+  document-reviews.json              # Optional reviewed candidates; revalidated automatically
   requirements-documents.txt         # Official Python MCP client dependencies
   Publish-M365AgentInsights.ps1       # Validates Agentic Workflow safe output
   ci/Test-M365Dashboard.ps1           # Fixture validation

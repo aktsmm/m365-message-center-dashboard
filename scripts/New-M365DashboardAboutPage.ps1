@@ -80,9 +80,10 @@ $html = @'
     </section>
     <section class="panel">
       <h2>関連ドキュメントの自動補完</h2>
-      <p>収集・core・translations の各 workflow 成功後に、独立した <strong>M365 official documents and snapshot-only Pages</strong> が自動実行されます。保存済みの承認済み snapshot を調べ、本文・details の明示 Learn リンクや、同じ通知IDに登録済みの対応資料を検証し、記事タイトル付きで最大3件を表示します。この補完処理は Microsoft Graph を再取得しません。</p>
-      <p><a href="https://learn.microsoft.com/ja-jp/training/support/mcp" target="_blank" rel="noopener noreferrer">公開 Microsoft Learn MCP</a> を公式 Python MCP SDK から利用します。認証不要の公開ドキュメント取得であり、GitHub Copilot MCP のサインインや通知取得の OIDC 認証とは独立しています。MCP に送る検索語は登録済みの公開製品名・機能名だけで、通知本文・テナント名・ユーザー情報は送りません。</p>
-      <p><strong>全件の資料選定まで完全自動ではありません。</strong> 新しい通知IDで検索語・採用レビューが未登録なら、明示リンク以外はレビュー待ちの「未調査」として残します。運用担当者が対象機能・プラットフォームに合う候補を確認して登録します。名前が似ているだけの別機能の資料を自動流用しません。</p>
+      <p>収集・core・translations の各 workflow 成功後に、独立した <strong>M365 official documents and snapshot-only Pages</strong> が自動実行されます。保存済みの承認済み snapshot を調べ、本文・details の明示 Learn リンクを優先し、不足分は公式記事を自動検索・検証して、タイトル付きで最大3件を表示します。この補完処理は Microsoft Graph を再取得しません。</p>
+      <p><a href="https://learn.microsoft.com/ja-jp/training/support/mcp" target="_blank" rel="noopener noreferrer">公開 Microsoft Learn MCP</a> を公式 Python MCP SDK から利用します。認証不要の公開ドキュメント取得であり、GitHub Copilot MCP のサインインや通知取得の OIDC 認証とは独立しています。検索語は公開製品・機能語彙だけから自動構成し、通知本文・テナント名・ユーザー情報は送りません。</p>
+      <p><strong>新しい通知も検索・判定・記事検証・採用まで自動処理します。</strong> 通知IDごとの手動登録は不要です。明示リンクを優先し、不足分は公開 Learn MCP から候補を探します。取得した公式記事の同じ節で製品・機能語・プラットフォームを照合し、名前が似ているだけの別機能や無関係な製品トップは採用しません。通知の展開日・提供段階は通知自体の記載を正本とします。</p>
+      <p>更新成功後に加え、毎日11:37・23:37 JSTにも保存済みデータだけを再調査します。対応資料未確認は3日後、確認済み資料は30日後を目安に再確認し、取得失敗は次回再試行します。1回100版・900秒の上限に達したら、次回に続きから処理します。</p>
       <p>日本語記事の本文を確認して優先し、未提供の場合だけ確認済み英語記事を残します。出典・確認日時・採用根拠を保存し、通知の内容 fingerprint が一致する場合だけ表示します。1通知ごとのチェックポイント、キャッシュ、レート制限時のバックオフで途中再開できます。</p>
     </section>
     <section class="panel">
@@ -90,10 +91,11 @@ $html = @'
       <p><strong>表示なしは「資料が存在しない」という意味ではありません。</strong></p>
       <ul>
         <li><strong>対応資料未確認:</strong> 調査したものの、対象製品・機能・プラットフォームに合う記事を確認・採用できていません。</li>
-        <li><strong>未調査:</strong> 新しい通知の検索語が未登録など、レビュー待ちの状態です。</li>
+        <li><strong>未調査:</strong> 新着・変更通知、または実行上限による自動調査待ちです。手動登録待ちではなく、次回の補完で優先処理します。</li>
         <li><strong>取得失敗:</strong> 記事の取得・検証に失敗しています。資料の有無とは区別し、次回再試行します。</li>
       </ul>
       <p>無関係な製品トップや Q&amp;A で件数を埋めません。日本語訳の生成待ちと、関連資料の調査状態も別々に管理します。</p>
+      <p>一覧には現在の通知の状態別件数と絞り込みを表示します。履歴の内容が異なる版は別々に判定し、古い通知へ最新の資料を無条件に適用しません。Actions summary と保存カタログで、全期間の件数・未処理の残り・完全／部分の状態を確認できます。</p>
     </section>
     <section class="panel">
       <h2>認証と公開の境界</h2>

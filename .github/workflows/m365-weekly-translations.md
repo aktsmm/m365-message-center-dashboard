@@ -281,6 +281,9 @@ safe-outputs:
             $pagesDir = '_site'
             New-Item -ItemType Directory -Path $pagesDir -Force | Out-Null
             Copy-Item reports/m365/latest/* $pagesDir -Recurse -Force
+            if (Test-Path reports/m365/related-documents.json) {
+              Copy-Item reports/m365/related-documents.json $pagesDir -Force
+            }
             '' | Set-Content (Join-Path $pagesDir '.nojekyll') -Encoding utf8
 
         - name: Upload Pages artifact

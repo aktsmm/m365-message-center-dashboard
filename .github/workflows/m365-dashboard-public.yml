@@ -75,6 +75,9 @@ jobs:
           Copy-Item output/m365/* $historyDir -Recurse -Force
           Copy-Item output/m365/* $latestDir -Recurse -Force
           Copy-Item output/m365/* $pagesDir -Recurse -Force
+          if (Test-Path reports/m365/related-documents.json) {
+            Copy-Item reports/m365/related-documents.json $pagesDir -Force
+          }
           '' | Set-Content (Join-Path $pagesDir '.nojekyll') -Encoding utf8
 
       - name: Commit public dashboard snapshot
