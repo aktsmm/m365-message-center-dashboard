@@ -275,6 +275,9 @@ class DocumentsTests(unittest.TestCase):
                        "-OutputPath", str(path / "index.html")]
             subprocess.run(command, check=True, capture_output=True)
             html = (path / "index.html").read_text(encoding="utf-8-sig")
+            subprocess.run(command, check=True, capture_output=True)
+            self.assertEqual(html, (path / "index.html").read_text(encoding="utf-8-sig"),
+                             "Rendering unchanged approved inputs must be byte-stable across processes")
             self.assertIn("Verified article", html)
             self.assertIn("メッセージ原文", html)
             self.assertIn("data-open-detail", html)

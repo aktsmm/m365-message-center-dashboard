@@ -33,7 +33,7 @@ $data = $safeJson | ConvertFrom-Json
 $safeJson = Compress-PublicJson $safeJson
 $safeJson = $safeJson.Replace('&', '\u0026').Replace('<', '\u003c').Replace('>', '\u003e')
 $safeInsightsJson = 'null'
-$relatedDocuments = @{}
+$relatedDocuments = [ordered]@{}
 if ($PSBoundParameters.ContainsKey('RelatedDocumentsJson') -and $RelatedDocumentsJson -and
     -not (Test-Path -LiteralPath $RelatedDocumentsJson)) {
     throw "Related documents JSON not found: $RelatedDocumentsJson"
@@ -85,7 +85,7 @@ if ($RelatedDocumentsJson -and (Test-Path -LiteralPath $RelatedDocumentsJson)) {
         if ($entry.status -eq 'verified' -and -not @($entry.documents).Count) {
             throw "Verified document state is empty for $($message.id)"
         }
-        $relatedDocuments[$message.id] = @{
+        $relatedDocuments[$message.id] = [ordered]@{
             status = $entry.status
             documents = $entry.documents
             checkedAt = $entry.checkedAt
@@ -100,7 +100,7 @@ if ($InsightsJson -and (Test-Path -LiteralPath $InsightsJson)) {
     $safeInsightsJson = Compress-PublicJson $safeInsightsJson
     $safeInsightsJson = $safeInsightsJson.Replace('&', '\u0026').Replace('<', '\u003c').Replace('>', '\u003e')
 }
-$contentState = @{ messages = @{}; summary = @{ status = 'missing'; reason = '週次要約は未生成です。' } }
+$contentState = [ordered]@{ messages = [ordered]@{}; summary = [ordered]@{ status = 'missing'; reason = '週次要約は未生成です。' } }
 $insightsObject = if ($safeInsightsJson -ne 'null') { $safeInsightsJson | ConvertFrom-Json } else { $null }
 $translations = @{}
 if ($insightsObject -and $insightsObject.PSObject.Properties.Name -contains 'messageTranslations') {
@@ -111,14 +111,14 @@ foreach ($message in $data.messages) {
     $status = if (-not $translation) { 'missing' } elseif ($translation.PSObject.Properties.Name -notcontains 'sourceHash') {
         'unverified'
     } elseif (Test-M365TranslationSource -Translation $translation -Message $message) { 'current' } else { 'stale' }
-    $contentState.messages[$message.id] = @{ sourceHash = Get-M365MessageSourceHash -Message $message; translation = $status }
+    $contentState.messages[$message.id] = [ordered]@{ sourceHash = Get-M365MessageSourceHash -Message $message; translation = $status }
 }
 if ($insightsObject) {
     $validation = Get-M365SummaryValidation -Insights $insightsObject -Messages @($data.messages)
     $status = if (-not $validation.valid) { 'invalid' } elseif (
         $insightsObject.PSObject.Properties.Name -notcontains 'summarySourceHash') { 'unverified' } elseif (
         $insightsObject.summarySourceHash -eq (Get-M365SnapshotSourceHash -Document $data)) { 'current' } else { 'stale' }
-    $contentState.summary = @{ status = $status; reason = $validation.reason }
+    $contentState.summary = [ordered]@{ status = $status; reason = $validation.reason }
 }
 $safeContentState = ($contentState | ConvertTo-Json -Depth 8 -Compress).Replace('&', '\u0026').Replace('<', '\u003c').Replace('>', '\u003e')
 
