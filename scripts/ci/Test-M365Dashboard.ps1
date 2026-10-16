@@ -730,6 +730,7 @@ try {
         throw 'Agentic pre-agent steps do not bound and transfer the approved saved snapshot.'
     }
     if (-not $safeOutputSection.Contains('uses: actions/download-artifact@v8') -or
+        -not $safeOutputSection.Contains('ref: main') -or
         -not $safeOutputSection.Contains('name: m365-agent-public-metadata') -or
     -not $safeOutputSection.Contains('-MessagesJson $messagesJson') -or
     -not $safeOutputSection.Contains('-UseDeterministicMessageUpdates')) {
@@ -784,6 +785,9 @@ try {
         $translationPreAgentSection -notmatch "Mode\s*=\s*'Translations'" -or
         $translationPreAgentSection.Contains('M365 Message Center Dashboard - Public Metadata')) {
         throw 'Translations workflow does not wait for the successful core weekly dashboard workflow.'
+    }
+    if (-not $translationSafeOutputSection.Contains('ref: main')) {
+        throw 'Translation publication must start from current main, not the stale dispatch commit.'
     }
     if ($translationSafeOutputSection.Contains('message_updates:') -or
         $translationSafeOutputSection.Contains('publish-m365-dashboard') -or

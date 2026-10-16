@@ -281,6 +281,7 @@ Repository 名が `<OWNER>.github.io` の場合だけ、account root に公開�
 | 関連資料が「取得失敗」 | 公開 Learn MCP / 記事の一時障害、429、本文・言語の検証失敗 | エラー記録を確認し、checkpoint と cache を使って再開します。Graph を取り直したり認証を回避したりしません。 |
 | 週次要約が検証待ち、訳文が原文版未照合 | 不明な本文参照、旧版、または原文hashのない保存版 | 古い内容を現行と表示せず、原文抜粋を確認します。毎日の品質検査で週次要約を先に、翻訳は4件ずつ修復します。 |
 | 修復がcooldown／already_running | 直近に同じレーンを依頼済み、または処理中 | `repair-state.json` と対象のActions runを確認し、二重依頼をしません。依頼済みを完了とみなさないでください。 |
+| agent/detection成功後、publisherのpushだけがnon-fast-forwardで失敗 | dispatch後にmainが進んだ旧checkout | 最新main checkoutと原文hashの不変を確認します。既存artifactはPublication recoveryで全検証後に再公開でき、モデルを再実行せずに生成日時・run IDを保持します。force pushや原文の巻き戻しは行いません。 |
 
 ## 10. 運用と撤去
 

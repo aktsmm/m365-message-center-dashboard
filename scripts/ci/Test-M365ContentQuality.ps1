@@ -106,6 +106,13 @@ try {
     $published = Get-Content -LiteralPath $publishedPath -Raw | ConvertFrom-Json
     Assert-Quality ($published.thisWeek.Contains("`n") -and -not $published.thisWeek.Contains('\n')) 'Publisher normalizes literal newlines'
     Assert-Quality ($published.summarySourceHash -ceq (Get-M365SnapshotSourceHash -Document $document)) 'Summary bound to snapshot'
+    $recoveryPublish = @{} + $publish
+    $recoveryPublish.OutputPath = Join-Path $owned 'recovered-insights.json'
+    & (Join-Path $scripts 'Publish-M365AgentInsights.ps1') @recoveryPublish `
+        -SourceGeneratedAt '2026-10-14T00:00:00Z' -SourceAgentRunId '123'
+    $recovered = Get-Content -LiteralPath $recoveryPublish.OutputPath -Raw | ConvertFrom-Json
+    Assert-Quality (([DateTimeOffset]$recovered.summaryGeneratedAt) -eq [DateTimeOffset]'2026-10-14T00:00:00Z') 'Recovery preserves original model completion time'
+    Assert-Quality ($recovered.sourceAgentRunId -eq '123') 'Recovery records the original source run'
     foreach ($translation in $published.messageTranslations) {
         $m = @($messages | Where-Object id -eq $translation.id)[0]
         Assert-Quality ((Test-M365TranslationSource $translation $m) -and $translation.validatedAt -and $translation.sourceCharacterCount -eq 1000 -and $translation.sourceTruncated) 'Publisher derives translation hash and counters'
