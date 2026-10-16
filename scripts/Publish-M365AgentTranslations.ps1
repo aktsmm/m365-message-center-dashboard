@@ -13,6 +13,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
+. (Join-Path $PSScriptRoot 'M365DashboardContent.ps1')
 
 foreach ($path in @($AgentOutputPath, $MessagesJson, $TranslationBatchJson, $PreviousInsightsPath)) {
     if (-not (Test-Path -LiteralPath $path)) { throw "Required input not found: $path" }
@@ -132,6 +133,11 @@ $translationUpdatesJson = if ($structuredTranslationUpdates.Count) {
 }
 
 $previous = Get-Content -LiteralPath $PreviousInsightsPath -Raw -Encoding UTF8 | ConvertFrom-Json
+$snapshot = Get-Content -LiteralPath $MessagesJson -Raw -Encoding UTF8 | ConvertFrom-Json
+$validation = Get-M365SummaryValidation -Insights $previous -Messages @($snapshot.messages)
+if (-not $validation.valid) {
+    throw "Invalid inherited weekly summary; run core summary repair first: $($validation.reason)"
+}
 $bridge = [ordered]@{
     items = @([ordered]@{
         type = 'publish_m365_dashboard'
@@ -142,12 +148,12 @@ $bridge = [ordered]@{
         translation_updates = $translationUpdatesJson
     })
 }
-$temp = Join-Path ([System.IO.Path]::GetTempPath()) "m365-agent-bridge-$([guid]::NewGuid().ToString('N')).json"
+$temp = Join-Path (Get-Location) ".m365-agent-bridge-$([guid]::NewGuid().ToString('N')).json"
 try {
     $bridge | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath $temp -Encoding UTF8
     & (Join-Path $PSScriptRoot 'Publish-M365AgentInsights.ps1') `
         -AgentOutputPath $temp -MessagesJson $MessagesJson -TranslationBatchJson $TranslationBatchJson `
-        -PreviousInsightsPath $PreviousInsightsPath -UseDeterministicMessageUpdates -OutputPath $OutputPath
+        -PreviousInsightsPath $PreviousInsightsPath -UseDeterministicMessageUpdates -PreserveSummaryMetadata -OutputPath $OutputPath
 } finally {
     Remove-Item -LiteralPath $temp -Force -ErrorAction SilentlyContinue
 }

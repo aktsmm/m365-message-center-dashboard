@@ -1,0 +1,44 @@
+name: M365 dashboard content quality and repair
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '27 3 * * *'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: m365-message-center-pages
+  cancel-in-progress: false
+
+jobs:
+  inspect-and-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - name: Inspect the approved snapshot and request at most one repair
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ./scripts/Invoke-M365DashboardRepair.ps1 -Repository $env:GITHUB_REPOSITORY -Apply
+          $state = Get-Content reports/m365/repair-state.json -Raw
+          @('## Content quality and bounded repair', '', '```json', $state, '```') |
+            Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY
+      - name: Persist only the public repair checkpoint
+        if: always()
+        shell: bash
+        run: |
+          if [ ! -f reports/m365/repair-state.json ]; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/m365/repair-state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Record bounded M365 content repair status [skip ci]"
+            git push
+          fi

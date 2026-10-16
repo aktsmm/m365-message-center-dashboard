@@ -9,11 +9,13 @@ param(
     [string]$TranslationBatchJson,
     [string]$PreviousInsightsPath,
     [switch]$UseDeterministicMessageUpdates,
+    [switch]$PreserveSummaryMetadata,
     [Parameter(Mandatory)][string]$OutputPath
 )
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
+. (Join-Path $PSScriptRoot 'M365DashboardContent.ps1')
 
 if (-not (Test-Path -LiteralPath $AgentOutputPath)) { throw "Agent output not found: $AgentOutputPath" }
 if (-not (Test-Path -LiteralPath $MessagesJson)) { throw "Messages JSON not found: $MessagesJson" }
@@ -30,6 +32,7 @@ function Get-SafeText {
     )
     if (-not ($item.PSObject.Properties.Name -contains $Name)) { throw "Missing insight field: $Name" }
     $value = [string]$item.$Name
+    if ($Name -notin @('message_updates', 'translation_updates')) { $value = ConvertTo-M365ContentText $value }
     $value = ($value -replace '[\u0000-\u0008\u000B\u000C\u000E-\u001F]', '').Trim()
     if ([string]::IsNullOrWhiteSpace($value)) { throw "Insight field is empty: $Name" }
     if ($value.Length -gt $MaxLength) { throw "Insight field exceeds $MaxLength characters: $Name" }
@@ -61,7 +64,7 @@ function Get-RequiredUpdateText {
     if (-not ($Update.PSObject.Properties.Name -contains $Name)) {
         throw "Message update is missing field: $Name"
     }
-    $value = ([string]$Update.$Name).Trim()
+    $value = (ConvertTo-M365ContentText ([string]$Update.$Name)).Trim()
     if ([string]::IsNullOrWhiteSpace($value)) { throw "Message update field is empty: $Name" }
     if ($value.Length -gt $MaxLength) { throw "Message update field exceeds $MaxLength characters: $Name" }
     if ($value -match '<\s*(script|iframe|object|embed|style|svg)\b' -or $value -match '(?i)javascript:|data:text/html') {
@@ -323,11 +326,23 @@ if ($TranslationBatchJson) {
         throw 'Missing insight field: translation_updates'
     }
     $translationBatch = Get-Content -LiteralPath $TranslationBatchJson -Raw -Encoding UTF8 | ConvertFrom-Json
+    if (@($translationBatch.messages).Count -gt 4) { throw 'Translation batch exceeds the four-message limit.' }
     $batchById = @{}
     foreach ($batchMessage in @($translationBatch.messages)) {
         $id = ([string]$batchMessage.id).Trim().ToUpperInvariant()
         if (-not $allowedIdSet.ContainsKey($id)) { throw "Translation batch contains unknown MC ID: $id" }
         if ($batchById.ContainsKey($id)) { throw "Translation batch contains duplicate MC ID: $id" }
+        $sourceHash = Get-M365MessageSourceHash -Message $messagesById[$id]
+        if ($batchMessage.PSObject.Properties.Name -contains 'sourceHash' -and $batchMessage.sourceHash -cne $sourceHash) {
+            throw "Translation batch source hash does not match the approved snapshot: $id"
+        }
+        $sourceLength = ([string](Get-M365ContentProperty $messagesById[$id] 'bodyText')).Length
+        $batchCount = Get-RequiredTranslationInteger -Update $batchMessage -Name 'sourceCharacterCount' -Maximum 2000
+        $batchTruncated = Get-RequiredTranslationBoolean -Update $batchMessage -Name 'sourceTruncated'
+        if ($batchCount -gt $sourceLength -or ($sourceLength -gt 0 -and $batchCount -eq 0) -or
+            $batchTruncated -ne ($sourceLength -gt $batchCount)) {
+            throw "Translation batch counters do not match the approved snapshot: $id"
+        }
         $batchById[$id] = $batchMessage
     }
     $translationUpdates = @(ConvertFrom-MessageUpdatesInput -InputValue $item.translation_updates -Name 'translation_updates')
@@ -359,6 +374,8 @@ if ($TranslationBatchJson) {
             japaneseBodyTranslation = $bodyTranslation
             sourceCharacterCount    = [int]$batchMessage.sourceCharacterCount
             sourceTruncated         = [bool]$batchMessage.sourceTruncated
+            sourceHash              = Get-M365MessageSourceHash -Message $messagesById[$id]
+            validatedAt             = [DateTimeOffset]::UtcNow.ToString('o')
         }
     }
 }
@@ -387,6 +404,20 @@ $insights = [ordered]@{
     referencedIds     = $referencedIds
     messageUpdates    = $validatedUpdates
     messageTranslations = @($translationsById.Values | Sort-Object id)
+}
+
+$validation = Get-M365SummaryValidation -Insights $insights -Messages @($messages.messages)
+if (-not $validation.valid) { throw "Invalid weekly summary: $($validation.reason); $($validation.unknownIds -join ', ')" }
+if ($PreserveSummaryMetadata) {
+    if (-not $PreviousInsightsPath -or -not (Test-Path -LiteralPath $PreviousInsightsPath)) {
+        throw 'PreserveSummaryMetadata requires previous insights.'
+    }
+    foreach ($name in @('summaryGeneratedAt', 'summarySourceHash')) {
+        if ($previousInsights.PSObject.Properties.Name -contains $name) { $insights[$name] = $previousInsights.$name }
+    }
+} else {
+    $insights.summarySourceHash = Get-M365SnapshotSourceHash -Document $messages
+    $insights.summaryGeneratedAt = $insights.generatedAt
 }
 
 $parent = Split-Path -Parent $OutputPath
