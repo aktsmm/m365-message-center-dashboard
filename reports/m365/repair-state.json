@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "observedAt": "2026-10-16T02:42:47.9870939+00:00",
+  "observedAt": "2026-10-16T03:07:01.2430653+00:00",
   "snapshotGeneratedAt": "2026-10-15T00:39:16.9516112+00:00",
   "summary": {
-    "reason": "Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Placeholder citation in watch; Unknown inline or declared MC IDs",
-    "status": "invalid"
+    "status": "current",
+    "reason": ""
   },
   "translations": {
+    "pending": 80,
     "total": 84,
-    "pending": 84,
-    "current": 0
+    "current": 4
   },
   "attempts": {
     "translations": {
@@ -25,9 +25,9 @@
     }
   },
   "action": {
-    "workflow": "m365-weekly-insights.lock.yml",
-    "retrySkippedRunId": 38837847709,
-    "status": "dispatched",
-    "lane": "core"
+    "nextAttemptAt": "2026-10-17T02:42:47.9870939+00:00",
+    "workflow": "m365-weekly-translations.lock.yml",
+    "status": "cooldown",
+    "lane": "translations"
   }
 }
