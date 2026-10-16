@@ -123,6 +123,8 @@ bot起動は、要約・翻訳の2本だけに公式の `on.bots: ["github-actio
 
 run全体がsuccessでもagent／publisherがskipなら未修復です。既に起動要求したがagentが一度も開始されなかったrunだけは、手動入力 `retry_skipped_run_id` で再試行できます。対象repo・main・同じworkflow・同じbot・直前の依頼時刻との対応と、agent/publisherのskipをAPIで確認し、実際に開始した処理のcooldownは解除しません。通常の日次処理ではこの入力を使いません。
 
+agentとdetectionが成功し、公開のGit transportだけが失敗した場合は **M365 validated summary publication recovery** で既存artifactを再検証できます。同じrepo/mainの該当core run、成功したagent/detection、失敗したpublisher、現在も一致する原文hashを確認し、既存publisherの全検証をもう一度通します。新しいモデルは実行せず、元agentの完了日時とrun IDを保存します。正常な回復後は通常の限定翻訳が続きます。どのpublisherも最新mainから始め、dispatch時点の古いコミットで直近の状態保存コミットを上書きしません。
+
 修復は既存の Copilot エンジンと既存の1 run当たり60 AI credits上限を使います。モデルは従来どおり Copilot 側の既定で、別のAIサービスは追加しません。主パイプラインとは別に、必要な場合だけ1回最大4件の翻訳が進みます。欠落や版未照合のバックログを一度にすべて生成する仕組みではありません。
 
 修復計画は `scripts/Invoke-M365DashboardRepair.ps1` の既定では read-only / dry-run です。`-Apply -Repository owner/repo` を指定した運用 workflow だけが、対象 repository の main に限定して既存 workflow を依頼します。実行中の同じレーンへの二重依頼を避け、`reports/m365/repair-state.json` に観測状態・依頼・失敗を保存します。「依頼済み」を「修復完了」と扱いません。Graph の取得、権限追加、認証回避は行いません。

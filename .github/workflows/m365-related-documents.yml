@@ -11,11 +11,13 @@ on:
       - 'scripts/**'
       - 'tests/**'
       - '.github/workflows/m365-related-documents.yml'
+      - '.github/workflows/m365-publication-recovery.yml'
   pull_request:
     paths:
       - 'scripts/**'
       - 'tests/**'
       - '.github/workflows/m365-related-documents.yml'
+      - '.github/workflows/m365-publication-recovery.yml'
   workflow_run:
     workflows:
       - M365 Message Center Dashboard - Public Metadata

@@ -19,6 +19,7 @@ on:
   workflow_run:
     workflows:
       - "Microsoft 365 Message Center weekly dashboard"
+      - "M365 validated summary publication recovery"
     types:
       - completed
     branches:
@@ -186,6 +187,7 @@ safe-outputs:
         - name: Checkout repository
           uses: actions/checkout@v7
           with:
+            ref: main
             fetch-depth: 0
 
         - name: Download public Message Center snapshot

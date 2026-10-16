@@ -1,0 +1,116 @@
+name: M365 validated summary publication recovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: "Same-repository main core run with successful agent/detection and failed publication."
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: m365-message-center-pages
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Verify the original agent and detection really succeeded
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+        run: |
+          if ($env:SOURCE_RUN_ID -notmatch '^\d+$') { throw 'Invalid source run ID.' }
+          $run = gh api "repos/$env:GITHUB_REPOSITORY/actions/runs/$env:SOURCE_RUN_ID" | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw 'Source run lookup failed.' }
+          if ($run.repository.full_name -ne $env:GITHUB_REPOSITORY -or $run.head_branch -ne 'main' -or
+              $run.path -ne '.github/workflows/m365-weekly-insights.lock.yml' -or
+              $run.actor.login -ne 'github-actions[bot]' -or
+              $run.status -ne 'completed' -or $run.conclusion -ne 'failure') {
+            throw 'Not a scoped failed core publication.'
+          }
+          $jobs = (gh run view $env:SOURCE_RUN_ID --repo $env:GITHUB_REPOSITORY --json jobs | ConvertFrom-Json).jobs
+          if ($LASTEXITCODE -ne 0) { throw 'Source job lookup failed.' }
+          foreach ($name in @('agent', 'detection')) {
+            $job = @($jobs | Where-Object name -eq $name)
+            if ($job.Count -ne 1 -or $job[0].conclusion -ne 'success') { throw "Unverified source job: $name" }
+          }
+          $publisher = @($jobs | Where-Object name -eq 'publish_m365_dashboard')
+          if ($publisher.Count -ne 1 -or $publisher[0].conclusion -ne 'failure') { throw 'Publisher did not fail.' }
+          $agent = @($jobs | Where-Object name -eq 'agent')[0]
+          "SOURCE_GENERATED_AT=$(([DateTimeOffset]$agent.completedAt).ToUniversalTime().ToString('o'))" |
+            Add-Content -LiteralPath $env:GITHUB_ENV
+      - uses: actions/download-artifact@v8
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.source_run_id }}
+          pattern: "{agent,agent-output-fallback}"
+          merge-multiple: true
+          path: ${{ runner.temp }}/recovery-agent
+      - uses: actions/download-artifact@v8
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.source_run_id }}
+          name: m365-agent-public-metadata
+          path: ${{ runner.temp }}/recovery-source
+      - name: Revalidate and publish the accepted output without running another model
+        shell: pwsh
+        env:
+          SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+        run: |
+          . ./scripts/M365DashboardContent.ps1
+          $accepted = Join-Path $env:RUNNER_TEMP 'recovery-source/messages.json'
+          Assert-M365SnapshotCurrent -AcceptedJson $accepted -CurrentJson reports/m365/latest/messages.json
+          ./scripts/Publish-M365AgentInsights.ps1 `
+            -AgentOutputPath "$env:RUNNER_TEMP/recovery-agent/agent_output.json" `
+            -MessagesJson $accepted -PreviousInsightsPath reports/m365/latest/insights.json `
+            -UseDeterministicMessageUpdates -SourceGeneratedAt $env:SOURCE_GENERATED_AT `
+            -SourceAgentRunId $env:SOURCE_RUN_ID -OutputPath reports/m365/latest/insights.json
+          ./scripts/New-M365MessageCenterDashboard.ps1 `
+            -MessagesJson reports/m365/latest/messages.json -InsightsJson reports/m365/latest/insights.json `
+            -OutputPath reports/m365/latest/index.html
+          New-Item -ItemType Directory -Path _site -Force | Out-Null
+          Copy-Item reports/m365/latest/* _site -Recurse -Force
+          Copy-Item reports/m365/related-documents.json _site -Force
+          '' | Set-Content _site/.nojekyll
+      - name: Persist only verified derived files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/m365/latest/insights.json reports/m365/latest/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Recover validated M365 summary publication [skip ci]"
+            git push
+          fi
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+          include-hidden-files: true
+
+  deploy:
+    needs: recover
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v5
+        id: deployment
