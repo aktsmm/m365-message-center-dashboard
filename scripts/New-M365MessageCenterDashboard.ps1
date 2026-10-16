@@ -353,6 +353,10 @@ $html = @'
     .message h3 { margin: 6px 0 10px; font-size: 1.12rem; letter-spacing: -0.02em; }
     .message-id { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.78rem; }
     .message-date { min-width: 105px; color: var(--cp-text-muted); font-size: 0.82rem; text-align: right; }
+    .ja-headline { margin: 4px 0 6px; font-weight: 750; font-size: 1.02rem; line-height: 1.5; }
+    .ja-headline.pending { font-weight: 400; color: var(--cp-text-soft); font-size: 0.86rem; }
+    .export-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+    .export-actions button { font: inherit; padding: 6px 12px; border: 1px solid var(--cp-border, #c8c6c4); border-radius: 0.5rem; background: var(--cp-surface-soft); color: inherit; cursor: pointer; }
     .message-original { margin-top: -4px; color: var(--cp-text-soft); font-size: 0.84rem; }
     .message-summary { margin: 16px 0 0; color: var(--cp-text-muted); }
     .message-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
@@ -566,7 +570,11 @@ $html = @'
     </details>
     <section aria-labelledby="messages-title">
       <div class="section-head"><div><div class="eyebrow">Message Center 更新一覧</div><h2 id="messages-title">すべての公開済み更新</h2></div><div class="section-note" id="result-count" role="status" aria-live="polite" aria-atomic="true"></div></div>
-      <div class="message-list" id="messages"></div>
+            <div class="export-actions" role="group" aria-label="表示中の更新を書き出す">
+              <button type="button" data-export="json">JSON（想定問答付き）</button>
+              <button type="button" data-export="csv">CSV</button>
+              <button type="button" data-export="notes">スライドノート用 想定問答（Markdown）</button>
+            </div>      <div class="message-list" id="messages"></div>
     </section>
 
     <footer>
@@ -730,6 +738,37 @@ $html = @'
         ${entry?.nextAttemptAt ? `<small class="section-note"> · 次回確認予定 ${fmt(entry.nextAttemptAt)}</small>` : ""}
       </div>`;
     }
+    function headlineInfo(message) {
+      const translation = MESSAGE_TRANSLATIONS.get(String(message.id).toUpperCase());
+      const status = CONTENT_STATE.messages[message.id]?.translation || "missing";
+      const text = translation ? DashboardView.headline(translation.japaneseDetailedSummary) : "";
+      return { text, status };
+    }
+    function headlineHtml(message) {
+      const { text, status } = headlineInfo(message);
+      if (!text) return `<p class="ja-headline pending">日本語見出しは生成待ちです（原題のみ表示）。</p>`;
+      return `<p class="ja-headline" lang="ja">${escapeHtml(text)}${status === "current" ? "" : ` <span class="chip" title="保存済みの日本語要約の冒頭です。現在の原文版との照合は未完了です。">保存版・原文未照合</span>`}</p>`;
+    }
+    function exportRecords() {
+      const visible = DashboardView.sortMessages(DATA.messages.filter(matches), state.sort);
+      return visible.map(message => {
+        const { text, status } = headlineInfo(message);
+        const entry = RELATED_DOCUMENTS[message.id];
+        return DashboardView.exportRecord(message, { headline: text, translationStatus: status,
+          originalUrl: originalMessageUrl(message), documentStatus: entry?.status || "not_researched",
+          documents: (entry?.documents || []).slice(0, 3) });
+      });
+    }
+    function downloadText(name, text, type) {
+      const url = URL.createObjectURL(new Blob([text], { type }));
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = name;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
     function titleLink(message) {
       const url = originalMessageUrl(message);
       const title = escapeHtml(displayMessageTitle(message));
@@ -873,6 +912,7 @@ $html = @'
         ].filter(Boolean).join("");
         return `<article class="priority-card">
           <div class="message-id">${escapeHtml(message.id)}</div>
+          ${headlineHtml(message)}
           <h3>${titleLink(message)}</h3>
           <div class="priority-reasons">${reasons}</div>
           <a href="#${escapeHtml(messageDomId(message))}">一覧の Message Center 更新を確認</a>
@@ -947,12 +987,12 @@ $html = @'
             </details>`;
         return `<article class="message" id="${escapeHtml(messageDomId(message))}">
           <div class="message-top">
-            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${titleLink(message)}</h3>${displayMessageTitle(message) !== message.title ? `<div class="message-original">原題: ${escapeHtml(message.title)}</div>` : ""}<div class="chips">${chips}</div></div>
+            <div><div class="message-id">${escapeHtml(message.id)}</div>${headlineHtml(message)}<h3>${titleLink(message)}</h3>${displayMessageTitle(message) !== message.title ? `<div class="message-original">原題: ${escapeHtml(message.title)}</div>` : ""}<div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
           ${translationStatus === "current" ? `<p class="message-summary">${escapeHtml(translation.japaneseDetailedSummary)}</p>` : ""}
           <dl class="message-facts">${DashboardView.facts(message).map(fact =>
-            `<div><dt>${fact.label} <small class="section-note">原文抜粋</small></dt><dd>${escapeHtml(fact.text)}</dd></div>`).join("")}</dl>
+            `<div><dt>${fact.label} <small class="section-note">原文抜粋（英語）</small></dt><dd>${escapeHtml(fact.text)}</dd></div>`).join("")}</dl>
           ${messageLinks(message)}
           ${fullContent}
           ${translationContent}
@@ -1055,6 +1095,16 @@ $html = @'
           article.scrollIntoView({ block: "start" });
           detail.querySelector("summary")?.focus({ preventScroll: true });
         }
+      }
+      const exportButton = event.target.closest("[data-export]");
+      if (exportButton) {
+        const records = exportRecords();
+        const stamp = new Date().toISOString().slice(0, 10);
+        const kind = exportButton.dataset.export;
+        if (kind === "json") downloadText(`m365-updates-${stamp}.json`, JSON.stringify({ generatedAt: DATA.meta.generatedAt, conditions: describeConditions(), items: records }, null, 2), "application/json");
+        else if (kind === "csv") downloadText(`m365-updates-${stamp}.csv`, DashboardView.toCsv(records), "text/csv");
+        else downloadText(`m365-qa-notes-${stamp}.md`, DashboardView.notesMarkdown(records, { generatedAt: DATA.meta.generatedAt, conditions: describeConditions() }), "text/markdown");
+        return;
       }
       const clearButton = event.target.closest("[data-clear-filters], #clear-filters");
       if (clearButton) clearFilters({ restorePersistentFocus: clearButton.hasAttribute("data-clear-filters") });

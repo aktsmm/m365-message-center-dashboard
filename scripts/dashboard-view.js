@@ -120,6 +120,112 @@ const DashboardView = (() => {
     return reference - timestamp > hours * 3600000 ? "stale" : "current";
   }
 
+  // A scannable Japanese lead taken from the first sentence of an existing Japanese summary.
+  function headline(summary, limit = 80) {
+    const text = String(summary || "").replace(/\s+/g, " ").trim();
+    if (!text) return "";
+    const sentence = text.split(/(?<=[。．!！?？])/)[0].trim();
+    if (sentence.length <= limit) return sentence;
+    const cut = sentence.slice(0, limit);
+    const boundary = Math.max(cut.lastIndexOf("、"), cut.lastIndexOf("，"), cut.lastIndexOf(" "));
+    return `${(boundary >= limit * 0.5 ? cut.slice(0, boundary) : cut).trimEnd()}…`;
+  }
+
+  function formatJst(value) {
+    const timestamp = dateValue(value);
+    return Number.isFinite(timestamp)
+      ? new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "long", day: "numeric", timeZone: "Asia/Tokyo" })
+        .format(new Date(timestamp))
+      : "";
+  }
+
+  const NOT_IN_SOURCE = "提供された原文の抜粋では確認できません。管理センターの原文で確認してください。";
+
+  // Source-grounded Q&A: answers are verified Japanese text or original excerpts, never inferred.
+  function qa(message, { headline: japanese = "", translationStatus = "missing" } = {}) {
+    const found = Object.fromEntries(facts(message).map(fact => [fact.key, fact.text]));
+    const answer = (question, text, basis, language = "en") => text
+      ? { question, answer: text, basis, language }
+      : { question, answer: NOT_IN_SOURCE, basis: "not-in-source", language: "ja" };
+    const deadline = formatJst(message.actionRequiredByDateTime);
+    return [
+      japanese && translationStatus === "current"
+        ? { question: "何が変わりますか？", answer: japanese, basis: "verified-translation", language: "ja" }
+        : answer("何が変わりますか？", found.change, "original-excerpt"),
+      answer("誰に影響しますか？", found.impact, "original-excerpt"),
+      answer("いつから始まりますか？", found.timing, "original-excerpt"),
+      answer("管理者は何をすべきですか？", found.action, "original-excerpt"),
+      deadline
+        ? { question: "対応期限はありますか？", answer: `原文に ${deadline} の対応期限が記載されています。`, basis: "original-metadata", language: "ja" }
+        : { question: "対応期限はありますか？", answer: "原文に対応期限の記載はありません。", basis: "original-metadata", language: "ja" }
+    ];
+  }
+
+  function exportRecord(message, context = {}) {
+    const translationStatus = context.translationStatus || "missing";
+    return {
+      id: message.id,
+      title: message.title,
+      japaneseHeadline: context.headline || "",
+      headlineStatus: context.headline ? (translationStatus === "current" ? "verified" : "saved-unverified") : "pending",
+      category: message.category || "",
+      severity: message.severity || "",
+      isMajorChange: Boolean(message.isMajorChange),
+      services: [...(message.services || [])],
+      startDateTime: message.startDateTime || null,
+      lastModifiedDateTime: message.lastModifiedDateTime || null,
+      actionRequiredByDateTime: message.actionRequiredByDateTime || null,
+      originalUrl: context.originalUrl || "",
+      documentStatus: context.documentStatus || "not_researched",
+      documents: (context.documents || []).map(document => ({ title: document.title, url: document.url, locale: document.locale })),
+      facts: facts(message),
+      qa: qa(message, { headline: context.headline, translationStatus })
+    };
+  }
+
+  const csvCell = value => {
+    let text = String(value ?? "").replace(/\r?\n/g, " ");
+    if (/^[=+\-@\t\r]/.test(text)) text = `'${text}`;
+    return `"${text.replace(/"/g, '""')}"`;
+  };
+
+  const CSV_COLUMNS = ["id", "title", "japaneseHeadline", "headlineStatus", "category", "severity", "isMajorChange",
+    "services", "startDateTime", "lastModifiedDateTime", "actionRequiredByDateTime", "originalUrl",
+    "documentStatus", "documents"];
+
+  function toCsv(records) {
+    const rows = records.map(record => CSV_COLUMNS.map(column => csvCell(
+      column === "services" ? record.services.join("; ")
+        : column === "documents" ? record.documents.map(document => `${document.title} <${document.url}>`).join("; ")
+          : record[column])));
+    return `\uFEFF${[CSV_COLUMNS.map(csvCell).join(","), ...rows.map(row => row.join(","))].join("\r\n")}`;
+  }
+
+  function notesMarkdown(records, { generatedAt = "", conditions = "" } = {}) {
+    const basis = { "verified-translation": "検証済みの日本語要約", "original-excerpt": "原文抜粋（英語）",
+      "original-metadata": "原文メタデータ", "not-in-source": "原文に記載なし" };
+    const body = records.map(record => [
+      `## ${record.id} ${record.japaneseHeadline || record.title}`,
+      record.japaneseHeadline ? `原題: ${record.title}` : "",
+      record.headlineStatus === "saved-unverified" ? "※日本語見出しは保存済みで、現在の原文版は未照合です。" : "",
+      "",
+      "### 想定問答",
+      ...record.qa.flatMap(item => [`**Q. ${item.question}**`, `A. ${item.answer}`, `（根拠: ${basis[item.basis]}）`, ""]),
+      "### 出典",
+      record.originalUrl ? `- メッセージ原文: ${record.originalUrl}` : "- メッセージ原文: 管理センターで確認してください",
+      ...record.documents.map(document => `- ${document.title}: ${document.url}`),
+      ""
+    ].filter(line => line !== "" || true).join("\n")).join("\n");
+    return `# Microsoft 365 変更通知 想定問答（スライドノート用）\n\n`
+      + `この問答は原文の抜粋と検証済みの要約だけで作成しています。回答は推測しません。${generatedAt ? `\n\nスナップショット: ${generatedAt}` : ""}`
+      + `${conditions ? `\n\n表示条件: ${conditions}` : ""}\n\n${body}\n`;
+  }
+
+  function translationEta(pending, perRun = 4) {
+    return { pending, runs: Math.ceil(pending / perRun), days: Math.ceil(pending / perRun) };
+  }
+
   return { DAY, normalizeText, validDate, readFilters, writeFilters, deadlineBucket,
-    priorityCompare, sortMessages, inDateRange, excerpt, facts, citationIds, freshness };
+    priorityCompare, sortMessages, inDateRange, excerpt, facts, citationIds, freshness,
+    headline, formatJst, qa, exportRecord, toCsv, notesMarkdown, translationEta, NOT_IN_SOURCE };
 })();
