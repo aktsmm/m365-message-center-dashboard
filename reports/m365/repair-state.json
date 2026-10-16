@@ -1,33 +1,33 @@
 {
   "schemaVersion": 1,
-  "observedAt": "2026-10-16T02:25:13.3662887+00:00",
+  "observedAt": "2026-10-16T02:42:47.9870939+00:00",
   "snapshotGeneratedAt": "2026-10-15T00:39:16.9516112+00:00",
   "summary": {
-    "status": "invalid",
-    "reason": "Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Placeholder citation in watch; Unknown inline or declared MC IDs"
+    "reason": "Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Inline citation absent from referencedIds: MC1727; Placeholder citation in watch; Unknown inline or declared MC IDs",
+    "status": "invalid"
   },
   "translations": {
     "total": 84,
-    "current": 0,
-    "pending": 84
+    "pending": 84,
+    "current": 0
   },
   "attempts": {
     "translations": {
-      "status": "following_core",
       "workflow": "m365-weekly-translations.lock.yml",
-      "requestedAt": "2026-10-16T01:56:53.3897961+00:00"
+      "requestedAt": "2026-10-16T02:42:47.9870939+00:00",
+      "status": "following_core"
     },
     "core": {
-      "status": "dispatched",
       "workflow": "m365-weekly-insights.lock.yml",
-      "requestedAt": "2026-10-16T01:56:53.3897961+00:00"
+      "requestedAt": "2026-10-16T02:42:47.9870939+00:00",
+      "status": "dispatched",
+      "previousSkippedRunId": 38837847709
     }
   },
   "action": {
-    "lane": "core",
-    "status": "authorization_required",
-    "reason": "Trusted automation approval has not been recorded. No dispatch is attempted until the scoped bot allowlist is approved.",
-    "nextAttemptAt": "2026-10-17T01:56:53.0000000+00:00",
-    "workflow": "m365-weekly-insights.lock.yml"
+    "workflow": "m365-weekly-insights.lock.yml",
+    "retrySkippedRunId": 38837847709,
+    "status": "dispatched",
+    "lane": "core"
   }
 }
