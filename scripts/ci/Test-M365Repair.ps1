@@ -41,12 +41,20 @@ try {
     }
     $statePath = Join-Path $temporary 'repair-state.json'
     if (Test-Path -LiteralPath $statePath) { throw 'Dry run must not persist a repair checkpoint.' }
-    $applied = & $repair @parameters -Apply | ConvertFrom-Json
+    $previousActions = $env:GITHUB_ACTIONS
+    try {
+        $env:GITHUB_ACTIONS = 'true'
+        $blocked = & $repair @parameters -Apply | ConvertFrom-Json
+        if ($blocked.action.status -ne 'authorization_required' -or $calls.Count) {
+            throw 'Unapproved automation must stop before any dispatch or role bypass.'
+        }
+    } finally { $env:GITHUB_ACTIONS = $previousActions }
+    $applied = & $repair @parameters -Apply -TrustedAutomationApproved | ConvertFrom-Json
     if ($applied.action.status -ne 'dispatched' -or @($calls | Where-Object { $_ -like 'workflow run*' }).Count -ne 1) {
         throw 'Apply must request exactly one scoped repair.'
     }
     if (($calls -join "`n") -match 'Export|Graph|azure/login') { throw 'Repair must not acquire Graph data.' }
-    $again = & $repair @parameters -Apply | ConvertFrom-Json
+    $again = & $repair @parameters -Apply -TrustedAutomationApproved | ConvertFrom-Json
     if ($again.action.status -ne 'cooldown' -or @($calls | Where-Object { $_ -like 'workflow run*' }).Count -ne 1) {
         throw 'Cooldown must prevent duplicate dispatches.'
     }

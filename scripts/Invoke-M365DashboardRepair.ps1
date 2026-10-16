@@ -8,6 +8,7 @@ param(
     [string]$Repository = $env:GITHUB_REPOSITORY,
     [string]$StatePath,
     [DateTimeOffset]$ReferenceTime = [DateTimeOffset]::UtcNow,
+    [switch]$TrustedAutomationApproved,
     [switch]$Apply
 )
 
@@ -67,6 +68,10 @@ if ($lane) {
         $plan.action.status = 'cooldown'
         $plan.action.nextAttemptAt = ([DateTimeOffset]::Parse($attempt.requestedAt)).AddHours(24).ToString('o')
     }
+}
+if ($Apply -and $lane -and $env:GITHUB_ACTIONS -eq 'true' -and -not $TrustedAutomationApproved) {
+    $plan.action.status = 'authorization_required'
+    $plan.action.reason = 'Trusted automation approval has not been recorded. No dispatch is attempted until the scoped bot allowlist is approved.'
 }
 
 function Save-RepairCheckpoint {
