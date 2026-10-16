@@ -10,6 +10,7 @@ param(
     [DateTimeOffset]$ReferenceTime = [DateTimeOffset]::UtcNow,
     [switch]$TrustedAutomationApproved,
     [long]$RetrySkippedRunId = 0,
+    [ValidateRange(6, 168)][int]$CooldownHours = 11,
     [switch]$Apply
 )
 
@@ -43,7 +44,7 @@ if ($insights -and $insights.PSObject.Properties.Name -contains 'messageTranslat
     foreach ($translation in @($insights.messageTranslations)) { $translations[$translation.id] = $translation }
 }
 $currentCount = @($document.messages | Where-Object {
-    $translations.ContainsKey($_.id) -and (Test-M365TranslationSource -Translation $translations[$_.id] -Message $_)
+    $translations.ContainsKey($_.id) -and (Test-M365TranslationComplete -Translation $translations[$_.id] -Message $_)
 }).Count
 $previous = if (Test-Path -LiteralPath $StatePath) {
     Get-Content -LiteralPath $StatePath -Raw -Encoding UTF8 | ConvertFrom-Json -AsHashtable
@@ -65,9 +66,9 @@ if ($lane) {
     $workflow = if ($lane -eq 'core') { 'm365-weekly-insights.lock.yml' } else { 'm365-weekly-translations.lock.yml' }
     $plan.action = @{ status = 'planned'; lane = $lane; workflow = $workflow }
     $attempt = $plan.attempts[$lane]
-    if ($attempt -and ($ReferenceTime - [DateTimeOffset]$attempt.requestedAt).TotalHours -lt 24) {
+    if ($attempt -and ($ReferenceTime - [DateTimeOffset]$attempt.requestedAt).TotalHours -lt $CooldownHours) {
         $plan.action.status = 'cooldown'
-        $plan.action.nextAttemptAt = ([DateTimeOffset]$attempt.requestedAt).AddHours(24).ToString('o')
+        $plan.action.nextAttemptAt = ([DateTimeOffset]$attempt.requestedAt).AddHours($CooldownHours).ToString('o')
     }
 }
 if ($Apply -and $lane -and $env:GITHUB_ACTIONS -eq 'true' -and -not $TrustedAutomationApproved) {

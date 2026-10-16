@@ -139,6 +139,7 @@ try {
     for ($slot = 1; $slot -le 4; $slot++) {
         $b = $batch.messages[$slot - 1]
         $typed["translation_${slot}_id"] = $b.id
+        $typed["translation_${slot}_japanese_title"] = 'Teams の会議設定を更新します'
         $typed["translation_${slot}_japanese_detailed_summary"] = '変更内容と影響を提示された本文の範囲で確認してください。' * 4
         $typed["translation_${slot}_japanese_body_translation"] = '提示された本文の日本語訳です。'
         $typed["translation_${slot}_source_character_count"] = $b.sourceCharacterCount
@@ -155,14 +156,28 @@ try {
     Assert-Quality ([DateTimeOffset]$merged.summaryGeneratedAt -eq [DateTimeOffset]$summary.summaryGeneratedAt -and $merged.summarySourceHash -ceq $summary.summarySourceHash) 'Translation bridge preserves core provenance'
     $legacy = @($merged.messageTranslations | Where-Object id -eq 'MC1')[0]
     Assert-Quality ($legacy.PSObject.Properties.Name -notcontains 'sourceHash') 'Historical translation not relabeled current'
+    $titled = @($merged.messageTranslations | Where-Object id -eq $batch.messages[0].id)[0]
+    Assert-Quality ($titled.japaneseTitle -ceq 'Teams の会議設定を更新します') 'Publisher stores validated Japanese title'
+    $typed['translation_1_japanese_title'] = 'English only title'
+    Write-Fixture @{ items = @($typed) } $agentPath
+    Assert-Rejected { & (Join-Path $scripts 'Publish-M365AgentTranslations.ps1') @bridgeParams } 'Non-Japanese title rejected'
+    $typed['translation_1_japanese_title'] = 'Teams の会議設定を更新します'
+    Write-Fixture @{ items = @($typed) } $agentPath
     $summary.watch = 'MC1727: なし'
     Write-Fixture $summary $previousPath
     Assert-Rejected { & (Join-Path $scripts 'Publish-M365AgentTranslations.ps1') @bridgeParams } 'Bridge refuses invalid inherited weekly summary'
     $summary.watch = '今後の更新内容を継続確認します。'
-    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m } })
+    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m; japaneseTitle = '更新内容を確認する通知です' } })
     Write-Fixture $summary $previousPath
     & (Join-Path $scripts 'New-M365AgentContext.ps1') @params
     Assert-Quality (@((Get-Content -LiteralPath $batchPath -Raw | ConvertFrom-Json).messages).Count -eq 0) 'Fresh queue empty'
+    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m } })
+    Write-Fixture $summary $previousPath
+    & (Join-Path $scripts 'New-M365AgentContext.ps1') @params
+    Assert-Quality (@((Get-Content -LiteralPath $batchPath -Raw | ConvertFrom-Json).messages).Count -gt 0) 'Verified translations lacking a Japanese title are queued'
+    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m; japaneseTitle = '更新内容を確認する通知です' } })
+    Write-Fixture $summary $previousPath
+    & (Join-Path $scripts 'New-M365AgentContext.ps1') @params
     & (Join-Path $scripts 'New-M365AgentContext.ps1') @params
     Assert-Quality (@((Get-Content -LiteralPath $batchPath -Raw | ConvertFrom-Json).messages).Count -eq 0) 'Empty queue idempotent'
     $messages[0].bodyText += ' Source changed.'

@@ -56,7 +56,7 @@ if ($Mode -eq 'Translations') {
         $candidates = @($ordered | Select-Object -Skip ([int]$start) -First $AgentTranslationBatchSize)
     } else {
         $candidates = @($messages | Where-Object {
-            -not (Test-M365TranslationSource -Translation $previousById[[string]$_.id] -Message $_)
+            -not (Test-M365TranslationComplete -Translation $previousById[[string]$_.id] -Message $_)
         } | Sort-Object @{ Expression = {
             $date = [string](Get-M365ContentProperty $_ 'lastModifiedDateTime')
             if ($date) { [DateTimeOffset]::Parse($date, [Globalization.CultureInfo]::InvariantCulture).UtcTicks } else { 0 }

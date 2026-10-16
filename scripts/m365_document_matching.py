@@ -43,11 +43,11 @@ intune iphone ipad authenticationstrengths synchronization hybrid configuration
 
 STOP_WORDS = set("""
 microsoft azure updated update updates new introducing introduce introduction upcoming
-changes change changing enhanced enhancement improved improvements optimized
+changes changing enhanced enhancement improved improvements optimized
 optimizations experience experiences manage management controls control available
 availability general preview public private release rollout default support supported
 retirement retiring retire retired deprecation deprecated moves moving ends end
-starting using use users user allow allows enabling enable create creating all
+starting using use users user allow allows enabling enable create creating all my
 admin center organization organizational app apps application applications
 access policy policies settings setting information content data details feature features
 a an the of for with in on at to and or as by from into through across after before
@@ -87,6 +87,8 @@ SYNONYMS = {
 def words(value):
     # Prevent fragments of private addresses/URLs/identifiers from becoming queries.
     value = re.sub(r"https?://\S+|\S+@\S+|\b[0-9a-f]{8}-[0-9a-f-]{27,}\b", " ", value, flags=re.I)
+    # Keep "sign-in(s)" one term so it cannot match the unrelated "single sign-on".
+    value = re.sub(r"\bsign[- ]?ins?\b", "signin", value, flags=re.I)
     return re.findall(r"[a-z][a-z0-9]*", value.lower())
 
 
@@ -106,6 +108,30 @@ def public_query(message):
     query = " ".join(["Microsoft"] + [word for word in safe if word != "microsoft"][:22])
     safe_query(query)
     return query
+
+
+def alternate_queries(message, primary, limit=2):
+    """Narrower public-vocabulary variants for notifications the primary query did not resolve."""
+    title = message.get("title", "")
+    skip = {"updated", "updates", "changes", "improved", "enhanced", "microsoft"}
+    safe = list(dict.fromkeys(word for word in words(title) if word in PUBLIC_WORDS and word not in skip))
+    name, aliases, _ = product(message)
+    head = aliases[0] if name != "microsoft365" else "microsoft 365"
+    variants = []
+    if len(safe) >= 3:
+        variants.append(" ".join([head] + [word for word in safe[-4:] if word not in head.split()]))
+        variants.append(" ".join([head] + [word for word in safe[:4] if word not in head.split()]))
+    elif safe:
+        variants.append(" ".join([head] + [word for word in safe if word not in head.split()]))
+    result = []
+    for variant in variants:
+        try:
+            cleaned = safe_query(variant)
+        except ValueError:
+            continue
+        if cleaned != primary.lower() and cleaned not in result and len(cleaned.split()) >= 2:
+            result.append(cleaned)
+    return result[:limit]
 
 
 def safe_query(value):

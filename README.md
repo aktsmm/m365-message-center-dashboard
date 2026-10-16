@@ -18,7 +18,7 @@ Repository-authored content and generated Pages presentation are licensed under 
 - 決定論的に生成した日本語メッセージ要約
 - Agentic Workflow が検証済みの日本語週次要約と、参照する MC ID
 - 同一公開 snapshot から決定論的に生成した MC ごとの日本語タイトルと、日本語要約（100文字以内）
-- Agentic Workflow が検証済みの、限定バッチの MC ごとの日本語詳細要約と本文の日本語訳
+- Agentic Workflow が検証済みの、限定バッチの MC ごとの日本語タイトル（4〜80文字）・日本語詳細要約・本文の日本語訳
 - 同じ MC の Graph `details` に含まれる、検証済みの Message Center URL と `learn.microsoft.com` の公式ドキュメント URL
 - 承認済み snapshot に対応する Microsoft Learn の公開記事タイトル・URL・確認日時・採用根拠（通知データとは別の `related-documents.json`）
 
@@ -35,6 +35,8 @@ Agentic Workflow は URL を生成・推測せず、同一 run の snapshot に�
 `scripts/Update-M365RelatedDocuments.py` は **Graph を呼びません**。`reports/m365/latest` と全履歴の承認済み `messages.json`、JSON がない旧 HTML の埋め込み `DATA` を監査し、通知の ID・日付・本文・分類を書き換えず、別の `reports/m365/related-documents.json` に結果を記録します。`Update-M365DashboardSnapshots.ps1` で旧 HTML を含む全期間を再描画できます。歴史データを新たな Pages endpoint に公開することはありません。本文・details の明示 Learn URL を優先し、以後の export では本文 HTML の Learn リンクも `officialDocumentUrls` として保持します（userinfo や任意のクエリは保存せず、公開 Docs の `view` / `preserve-view` だけを許可します）。
 
 検索は、通知タイトルに含まれる単語を `scripts/m365_document_matching.py` の**公開製品・機能語彙だけに限定して再構成**し、[公開 Microsoft Learn MCP](https://learn.microsoft.com/ja-jp/training/support/mcp) へ送ります。未知の固有名、メールアドレス、URL、数値識別子、通知ID、本文は検索へ渡しません。公式 Python MCP SDK を用い、GitHub Copilot MCP のサインインや Graph/OIDC 認証から切り離しています。通知本文・テナント名・ユーザー情報は MCP に送りません。
+
+候補を取り込む検索は、最初の検索語で候補が見つからない場合に限り、同じ公開語彙だけを使った最大2つの絞り込み検索語（製品名＋機能語の前半／後半）を追加で試します。また「sign-in」と「single sign-on」のように語が似ているだけの別機能は、`sign-in` を1語として扱い一致させません。判定ロジックの変更は調査バージョン（`researchVersion`）を上げ、保存済みの全通知を段階的に再検証します。
 
 本文の明示 Learn リンクを優先し、不足分は検索結果から候補を自動抽出します。候補の英語本文を取得し、同じ節・短い文脈内での製品・機能語の一致率（70%以上）、プラットフォーム、記事見出しをローカルで照合します。Entra workforce と External ID customer、別製品、プラットフォーム違い、巨大なリリースノートの別々の節にしか語がない資料は採用しません。自動候補の採用根拠・一致語・公式記事の抜粋・本文ハッシュを保存します。これは決定論的な関連性判定であり、通知の展開段階・提供日が現行資料と同一であることを保証するものではありません。展開時期は通知の記載を正本とします。
 
@@ -83,7 +85,7 @@ python scripts\Update-M365RelatedDocuments.py --check
 
 画面の「公式資料の自動調査」には現在の通知の状態別件数を表示し、状態別に絞り込めます。Actions summary と `related-documents.json` の audit には全期間と現在分の件数、未処理の残り、実行ごとの処理数、完全／部分の状態を記録します。
 
-カードの見出しは機能を特定できるタイトルを優先します。日本語タイトルが「情報提供に関するお知らせ」のような汎用ラベルしかない場合は、通知の具体的な原題を見出しに使い、同じラベルが並んで変更内容を識別できなくなることを避けます。通知の保存データや翻訳の検証契約は変更しません。
+各カードとピックアップでは、日本語タイトル（未生成の間は日本語要約の冒頭 1 文）を見出しとして先頭に置き、その下に英語の原題を残します。日本語タイトルが「情報提供に関するお知らせ」のような汎用ラベルしかない場合に、原題を見出しとして使う補完は従来どおりです。通知の保存データや翻訳の検証契約は、日本語タイトルが任意項目として加わる以外は変えません。
 
 ### 他のダイジェストから取り入れた運用パターン
 
@@ -98,7 +100,7 @@ python scripts\Update-M365RelatedDocuments.py --check
 1. **Microsoft Graph**: `ServiceMessage.Read.All` を使い Message Center を取得します。
 2. **GitHub Actions**: 本文を安全なテキストに変換した lab-public snapshot、details、決定論的な日本語要約を生成します。
 3. **Core GitHub Agentic Workflow**: 保存済みの承認済み snapshot を、その run の変更不可の artifact として受け渡し、週次 AI insights を生成します。Graph を再取得しません。MC ごとの日本語タイトル・100文字以内の要約・許可済み公式リンクは、その同じ snapshot から決定論的に生成します。
-4. **Translations GitHub Agentic Workflow**: core の成功後に起動し、4件までの bounded translation batch を検証・公開します。主パイプラインの週2回の実行により、最大8カード/週が詳細な日本語要約と本文訳の対象になります。欠落・原文版未照合・原文変更を自動的に再生成の対象にします。Graph を再取得しません。
+4. **Translations GitHub Agentic Workflow**: core の成功後に起動し、4件までの bounded translation batch（日本語タイトル・詳細要約・本文訳）を検証・公開します。主パイプラインの週2回の実行に加え、品質検査・修復（1日最大2回）が不足分を4件ずつ追加で依頼するため、約80件のバックログは約10日で解消する見込みです。欠落・原文版未照合・原文変更・日本語タイトル未生成を自動的に再生成の対象にします。Graph を再取得しません。
 5. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
 
 公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
@@ -117,7 +119,7 @@ python scripts\Update-M365RelatedDocuments.py --check
 
 画面には取得・週次要約・翻訳・公式資料の状態を分けて表示します。週次要約が参照不整合や旧版なら、その未検証の文章を表示せず、原文メタデータによる確認候補を表示します。5日以上前の取得データには更新確認が必要な状態を表示し、古い取得を新しい取得と見せません。通知のタイトルから管理センター原文を開け、期限経過と今後30日以内の期限は別々に扱います。検索は保存済み日本語訳・公式資料名にも対応し、通知更新日（JST）・並び順・検索・サービス・資料条件をURLで再現・共有できます。
 
-**M365 dashboard content quality and repair** は毎日 **12:27 JST** と手動実行で、承認済みの保存データだけを検査します。週次要約の不整合・未照合・旧版を先に修復し、その後に欠落／旧版の翻訳を処理します。1回の検査で依頼する workflow は最大1件、同じ修復レーンは24時間の cooldown を設けます。core の成功後に通常の4件までの翻訳が続くため、その分も同じ cooldown に含め、成功イベントによる無限ループや大量のAI実行を避けます。全てが現行版なら追加のエージェント実行はしません。
+**M365 dashboard content quality and repair** は毎日 **12:27 / 00:27 JST** と手動実行で、承認済みの保存データだけを検査します。週次要約の不整合・未照合・旧版を先に修復し、その後に欠落／旧版の翻訳、および日本語タイトル未生成の翻訳を処理します。1回の検査で依頼する workflow は最大1件、同じ修復レーンは11時間の cooldown（1日最大2回、翻訳は1回4件まで）を設けます。core の成功後に通常の4件までの翻訳が続くため、その分も同じ cooldown に含め、成功イベントによる無限ループや大量のAI実行を避けます。全てが現行版なら追加のエージェント実行はしません。
 
 bot起動は、要約・翻訳の2本だけに公式の `on.bots: ["github-actions[bot]"]` を設定し、どちらも main に限定しています。人間の既定role検証は維持し、repoメンバー権限・Graph権限・PATを追加しません。修復workflowだけが同じrepoの固定workflowを依頼するActions write権限と `-TrustedAutomationApproved` を使います。scopeが未設定のActions呼び出しは引き続き `authorization_required` で停止します。
 
@@ -133,7 +135,7 @@ agentとdetectionが成功し、公開のGit transportだけが失敗した場�
 
 ## 日本語見出しと書き出し
 
-- 各カードとピックアップの上に、保存済みの日本語詳細要約の冒頭 1 文（最大 80 文字）を日本語見出しとして表示します。原文版と照合済みでない保存訳には「保存版・原文未照合」を付け、未生成のものは「生成待ち」と表示します。英語の原題と「原文抜粋（英語）」は、原文の根拠として常に残します。
+- 各カードとピックアップの上に、日本語タイトル（翻訳 workflow が原文から自然な 1 行で作成し、公開前に日本語を含む 4〜80 文字であることを検証）を表示します。タイトルが未生成の間は、保存済みの日本語詳細要約の冒頭 1 文（最大 80 文字）で代用します。原文版と照合済みでない保存訳には「保存版・原文未照合」を付け、未生成のものは「生成待ち」と表示します。英語の原題と「原文抜粋（英語）」は、原文の根拠として常に残します。日本語タイトルは検索対象にも含まれます。
 - 表示中の更新を JSON（想定問答付き）、CSV、スライドノート用 Markdown として書き出せます。想定問答は原文抜粋と照合済みの要約だけから作り、原文にない項目は「原文では確認できません」と明記して推測しません。CSV は数式の実行を防ぐため先頭文字を無害化します。
 - 元の `messages.json` / `facts.json` / `insights.json` は変更しません。
 

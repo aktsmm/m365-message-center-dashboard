@@ -15,7 +15,23 @@ sys.path.insert(0, str(ROOT / "scripts"))
 spec = importlib.util.spec_from_file_location("documents", ROOT / "scripts/Update-M365RelatedDocuments.py")
 documents = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(documents)
-from m365_document_matching import public_query, relevance, safe_query
+from m365_document_matching import alternate_queries, public_query, relevance, safe_query
+
+
+class QueryExpansionTests(unittest.TestCase):
+    def test_alternate_queries_use_only_public_vocabulary_and_differ_from_primary(self):
+        message = {"id": "MC1", "title": "Microsoft Entra: Allow password change after secure sign-in with My Sign-Ins",
+                   "bodyText": "private tenant contoso.example secret"}
+        primary = public_query(message)
+        for query in alternate_queries(message, primary):
+            self.assertNotEqual(query, primary.lower())
+            self.assertNotIn("contoso", query)
+            safe_query(query)
+
+    def test_sign_in_feature_does_not_match_single_sign_on_articles(self):
+        message = {"id": "MC2", "title": "Microsoft Entra: Allow password change after secure sign-in with My Sign-Ins"}
+        body = "# Add password-based single sign-on\nSecure password vaulting for my applications uses single sign-on."
+        self.assertIsNone(relevance(message, "https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/x", body))
 
 
 class DocumentsTests(unittest.TestCase):

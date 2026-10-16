@@ -55,6 +55,12 @@ function Test-M365TranslationSource {
     return ($hash -cmatch '^[a-f0-9]{64}$' -and $hash -ceq (Get-M365MessageSourceHash -Message $Message))
 }
 
+function Test-M365TranslationComplete {
+    param($Translation, [Parameter(Mandatory)]$Message)
+    $title = [string](Get-M365ContentProperty $Translation 'japaneseTitle')
+    return ((Test-M365TranslationSource -Translation $Translation -Message $Message) -and $title.Trim().Length -ge 4)
+}
+
 function Get-M365SnapshotSourceHash {
     param([Parameter(Mandatory)]$Document)
     $entries = [string[]]@(foreach ($message in @(Get-M365ContentProperty $Document 'messages' @())) {

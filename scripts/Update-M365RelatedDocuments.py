@@ -15,12 +15,12 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamable_http_client
 from mcp.shared.exceptions import McpError
 
-from m365_document_matching import public_query, relevance
+from m365_document_matching import alternate_queries, public_query, relevance
 
 ROOT = Path(__file__).resolve().parents[1]
 ENDPOINT = "https://learn.microsoft.com/api/mcp"
 STATES = {"not_researched", "no_verified_document", "fetch_failed", "verified"}
-RESEARCH_VERSION = 3
+RESEARCH_VERSION = 4
 
 
 def now():
@@ -35,7 +35,15 @@ def save(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    temporary.replace(path)
+    # Windows indexers/scanners can briefly hold the destination; retry the atomic replace.
+    for attempt in range(6):
+        try:
+            temporary.replace(path)
+            return
+        except PermissionError:
+            if attempt == 5:
+                raise
+            time.sleep(1 + attempt)
 
 
 def digest(message):
@@ -303,23 +311,30 @@ async def research(session, cache, message, query, review, delay):
     searched = False
     try:
         # Even a new/unknown feature always gets a safe product/feature-only query.
-        result = await call(session, cache, "search:" + query, "microsoft_docs_search",
-                            {"query": query}, delay, ttl_days=3)
-        if not isinstance(result.get("results"), list):
-            raise ValueError("Learn search returned an invalid results schema")
-        searched = True
-        for item in result["results"]:
-            try:
-                url = learn_url(item["contentUrl"]).split("#")[0]
-            except (KeyError, ValueError):
-                continue
-            if url in candidates:
-                continue
-            # Rank snippets locally before fetching; source text never leaves the process.
-            match = relevance(message, url, "# " + item.get("title", "") + "\n" + item.get("content", ""))
-            if match:
-                candidates[url] = "automatic_learn_search"
+        searched_queries = [query]
+        for current in [query] + alternate_queries(message, query):
+            if current != query and any(source != "explicit_message_link" for source in candidates.values()):
+                break
+            result = await call(session, cache, "search:" + current, "microsoft_docs_search",
+                                {"query": current}, delay, ttl_days=3)
+            if not isinstance(result.get("results"), list):
+                raise ValueError("Learn search returned an invalid results schema")
+            searched = True
+            if current != query:
+                searched_queries.append(current)
+            for item in result["results"]:
+                try:
+                    url = learn_url(item["contentUrl"]).split("#")[0]
+                except (KeyError, ValueError):
+                    continue
+                if url in candidates:
+                    continue
+                # Rank snippets locally before fetching; source text never leaves the process.
+                match = relevance(message, url, "# " + item.get("title", "") + "\n" + item.get("content", ""))
+                if match:
+                    candidates[url] = "automatic_learn_search"
         entry["searchEvidenceKey"] = "search:" + query
+        entry["searchedQueries"] = searched_queries
     except (httpx.HTTPError, McpError, RuntimeError, ValueError, TimeoutError) as error:
         entry["errors"].append({"type": type(error).__name__, "message": "Public Learn search failed"})
         print(f'{message["id"]}: public Learn search: {type(error).__name__}', flush=True)
