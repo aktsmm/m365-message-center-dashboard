@@ -741,8 +741,9 @@ $html = @'
     function headlineInfo(message) {
       const translation = MESSAGE_TRANSLATIONS.get(String(message.id).toUpperCase());
       const status = CONTENT_STATE.messages[message.id]?.translation || "missing";
-      const text = translation ? DashboardView.headline(translation.japaneseDetailedSummary) : "";
-      return { text, status };
+      const title = String(translation?.japaneseTitle || "").trim();
+      const text = title || (translation ? DashboardView.headline(translation.japaneseDetailedSummary) : "");
+      return { text, status, fromTitle: Boolean(title) };
     }
     function headlineHtml(message) {
       const { text, status } = headlineInfo(message);
@@ -854,6 +855,7 @@ $html = @'
         message.severity,
         message.japaneseSummary,
         message.bodyText,
+        MESSAGE_TRANSLATIONS.get(message.id)?.japaneseTitle,
         MESSAGE_TRANSLATIONS.get(message.id)?.japaneseDetailedSummary,
         MESSAGE_TRANSLATIONS.get(message.id)?.japaneseBodyTranslation,
         ...(RELATED_DOCUMENTS[message.id]?.documents || []).map(document => document.title),

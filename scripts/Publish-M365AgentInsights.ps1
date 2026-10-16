@@ -370,8 +370,16 @@ if ($TranslationBatchJson) {
         if ($sourceTruncated -ne [bool]$batchMessage.sourceTruncated) {
             throw "Translation truncation flag does not match the current batch for MC ID: $id"
         }
+        $titleText = $null
+        if ($translation.PSObject.Properties.Name -contains 'japanese_title' -and $null -ne $translation.japanese_title) {
+            $titleText = ([string]$translation.japanese_title -replace '\s+', ' ').Trim()
+            if ($titleText.Length -lt 4 -or $titleText.Length -gt 80 -or $titleText -notmatch '[\p{IsHiragana}\p{IsKatakana}\p{IsCJKUnifiedIdeographs}]') {
+                throw "Translation Japanese title must be 4-80 characters and contain Japanese text for MC ID: $id"
+            }
+        }
         $validatedTranslations += [ordered]@{
             id                     = $id
+            japaneseTitle           = $titleText
             japaneseDetailedSummary = $detailSummary
             japaneseBodyTranslation = $bodyTranslation
             sourceCharacterCount    = [int]$batchMessage.sourceCharacterCount

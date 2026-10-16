@@ -107,6 +107,10 @@ safe-outputs:
           description: "MC ID for translation batch slot 1."
           required: false
           type: string
+        translation_1_japanese_title:
+          description: "Optional but expected: natural Japanese one-line title for slot 1 (4-80 characters) that says what changes. Not a literal word-for-word translation."
+          required: false
+          type: string
         translation_1_japanese_detailed_summary:
           description: "Japanese detailed summary for slot 1, 80-1200 characters."
           required: false
@@ -125,6 +129,10 @@ safe-outputs:
           type: boolean
         translation_2_id:
           description: "MC ID for translation batch slot 2."
+          required: false
+          type: string
+        translation_2_japanese_title:
+          description: "Optional but expected: natural Japanese one-line title for slot 2 (4-80 characters) that says what changes. Not a literal word-for-word translation."
           required: false
           type: string
         translation_2_japanese_detailed_summary:
@@ -147,6 +155,10 @@ safe-outputs:
           description: "MC ID for translation batch slot 3."
           required: false
           type: string
+        translation_3_japanese_title:
+          description: "Optional but expected: natural Japanese one-line title for slot 3 (4-80 characters) that says what changes. Not a literal word-for-word translation."
+          required: false
+          type: string
         translation_3_japanese_detailed_summary:
           description: "Japanese detailed summary for slot 3, 80-1200 characters."
           required: false
@@ -165,6 +177,10 @@ safe-outputs:
           type: boolean
         translation_4_id:
           description: "MC ID for translation batch slot 4."
+          required: false
+          type: string
+        translation_4_japanese_title:
+          description: "Optional but expected: natural Japanese one-line title for slot 4 (4-80 characters) that says what changes. Not a literal word-for-word translation."
           required: false
           type: string
         translation_4_japanese_detailed_summary:
@@ -287,7 +303,10 @@ Call `publish-m365-translations` exactly once:
   or call a different safe output.
 - Otherwise map each `translationBatch` item, in order, to the matching numbered slot:
   `translation_1_*` for the first item through `translation_4_*` for the fourth. For each used
-  slot, supply all five fields: `_id`, `_japanese_detailed_summary`, `_japanese_body_translation`,
+  slot, supply all five required fields: `_id`, `_japanese_detailed_summary`, `_japanese_body_translation`,
+  `_source_character_count`, and `_source_truncated`; also supply `_japanese_title`: one natural
+  Japanese line (4-80 characters) stating what changes, so an administrator understands the item at a glance.
+  Do not populate an unused slot.
   `_source_character_count`, and `_source_truncated`. Do not populate an unused slot.
 - Write a useful Japanese detailed summary (80-1200 characters) and translate only the supplied
   `translationBatch.bodyText`; do not invent or complete text beyond that bounded source. Copy

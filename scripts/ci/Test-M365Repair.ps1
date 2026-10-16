@@ -94,7 +94,7 @@ try {
     if ($translation.action.lane -ne 'translations' -or $translation.translations.pending -ne 1) {
         throw 'A repaired summary must allow the bounded translation lane.'
     }
-    $insights.messageTranslations = @(@{ id = 'MC900001'; sourceHash = Get-M365MessageSourceHash -Message $message })
+    $insights.messageTranslations = @(@{ id = 'MC900001'; sourceHash = Get-M365MessageSourceHash -Message $message; japaneseTitle = '更新内容を確認する通知です' })
     $insights | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $insightsPath -Encoding UTF8
     $healthy = & $repair @later | ConvertFrom-Json
     if ($healthy.action.status -ne 'not_needed' -or $healthy.translations.pending) {

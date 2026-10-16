@@ -52,6 +52,7 @@ function Get-StructuredTranslationUpdates {
             "translation_${slot}_source_character_count",
             "translation_${slot}_source_truncated"
         )
+        $optionalFieldNames = @("translation_${slot}_japanese_title")
         $providedFields = [System.Collections.Generic.List[string]]::new()
         foreach ($fieldName in $fieldNames) {
             if ($propertyNames -contains $fieldName -and $null -ne $Item.$fieldName) {
@@ -60,7 +61,7 @@ function Get-StructuredTranslationUpdates {
         }
 
         if ($slot -gt $ExpectedCount) {
-            if ($providedFields.Count) {
+            if ($providedFields.Count -or @($optionalFieldNames | Where-Object { $propertyNames -contains $_ -and $null -ne $Item.$_ }).Count) {
                 throw "Translation slot $slot is outside the current batch and must not be populated."
             }
             continue
@@ -108,8 +109,14 @@ function Get-StructuredTranslationUpdates {
             throw "Translation slot $slot source_truncated must be a JSON boolean."
         }
 
+        $japaneseTitle = $null
+        if ($propertyNames -contains "translation_${slot}_japanese_title" -and $null -ne $Item."translation_${slot}_japanese_title") {
+            $japaneseTitle = $Item."translation_${slot}_japanese_title"
+            if ($japaneseTitle -isnot [string]) { throw "Translation slot $slot japanese_title must be a string." }
+        }
         $updates.Add([ordered]@{
             id                       = $id
+            japanese_title            = $japaneseTitle
             japanese_detailed_summary = $detailSummary
             japanese_body_translation = $bodyTranslation
             source_character_count    = [int]$sourceCharacterCount
