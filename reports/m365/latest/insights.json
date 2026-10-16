@@ -1,31 +1,27 @@
 {
-  "generatedAt": "2026-10-12T01:28:07.8800870+00:00",
+  "generatedAt": "2026-10-15T00:42:23.2842083+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra認証強化・Targeted Release廃止・Office LTSC 2021サポート終了が今週〜今月の最重要トピック",
-  "executiveSummary": "今回のMessage Center 81件では、(1) Office LTSC 2021のサポートが2026年10月13日に終了(MC1472429)、(2) Targeted Releaseが2027年1月に廃止され、11月から管理者による登録変更ができなくなる(MC1490899、対応期限10/31)、(3) Entra IDのサインイン保護(CSP強化、MC1481309)・カスタムCSS廃止(MC1458474)・SSPR登録済み認証方法必須化(MC1325414)・SMS第一要素サインイン廃止継続(MC1474104)などID・認証のセキュリティ強化が集中しています。またEdgeではレガシーWAMサインイン廃止(MC1490911)が11月初旬に予定されています。パスキー関連(MC1450133、MC1459133、MC1437671)はタイムライン更新があり、導入計画の見直し機会です。一方、MC1477999(TeamsのチャットリストからのCopilot削除)は実施見送りとなったため対応不要です。",
-  "thisWeek": "MC1472429: Office LTSC 2021(Visio/Project等含む)の利用端末を棚卸しし、10月13日のサポート終了に向けた移行方針を確認する。\nMC1490899: Targeted Release登録ユーザーを確認し、Frontier/標準/Deferredのどれにするか決定する(対応期限10月31日)。\nMC1481309: login.microsoftonline.comのサインインページで外部スクリプト等に依存するカスタムコンポーネントや拡張がないか確認する(10月中旬〜下旬に展開)。\nMC1458474: 2026年7月21日時点でカスタムCSSを使用しているテナントは、レイアウト/配置プロパティの利用有無を確認する(10月下旬に廃止開始、対応期限10月26日)。\nMC1477999: 見送り決定のため、以前の周知内容を取り下げる。",
-  "thisMonth": "MC1325414: SSPRが登録済み認証方法のみを要求するようになるため、利用者の登録状況を確認し登録キャンペーンを計画する(対応期限11月6日)。\nMC1490911: Edge 157以降のレガシーWAMサインイン廃止(11月初旬)に備え、--disable-features=msOneAuthWAMでOneAuthを無効化している環境を洗い出す。\nMC1462915: *.cloud.microsoftへの接続がネットワーク/セキュリティ制御で許可されているか確認する(11月初旬にリダイレクト対象が拡大)。\nMC1474104: SMS第一要素サインインの利用状況を確認し、パスキー等のフィッシング耐性のある方式への移行計画を立てる。\nMC1454378: 新しい共有エクスペリエンス(ヒーローリンク)が10月初旬〜11月末に展開されるため、ヘルプデスクや社内向け周知を準備する。\nMC1450133, MC1459133, MC1437671: パスキー関連機能のタイムライン更新を踏まえ、導入ロードマップを調整する。",
-  "watch": "MC1480873: Agent 365のサードパーティエージェント可観測性(Public Preview 10月下旬、GA 11月下旬)の進捗。\nMC1492959: Audio Overviewの秘密度ラベル対応(OneDrive保存時)と対応コンテンツ拡大。\nMC1489931: Microsoft 365 Backupのアクティビティログ(10月中旬展開)。\nMC1422061, MC1188230: 長期の廃止スケジュール(Conditional Accessのカスタムコントロール、FIDO2プロパティ)の動向。",
-  "customerQuestions": "Office LTSC 2021を利用している端末・アプリ(Visio/Project含む)はどれくらいあり、Microsoft 365 Appsへの移行計画はありますか?(MC1472429)\nTargeted Releaseに登録中のユーザーはどなたで、今後はFrontier・標準・Deferredのどれが適切ですか?(MC1490899)\nEntraのサインインページやカスタムブランディングで、外部スクリプトやカスタムCSSのレイアウト/配置プロパティに依存していませんか?(MC1481309, MC1458474)\nSSPR利用者のうち、認証方法を明示的に登録していない割合はどの程度ですか?(MC1325414)\nSMSサインインやパスワード中心の運用から、パスキーへ移行する計画とパイロット対象はありますか?(MC1474104, MC1450133)\nEdgeでmsone OneAuth WAMを無効化するポリシーを使っていますか?また*.cloud.microsoftへの接続は許可されていますか?(MC1490911, MC1462915)",
+  "headline": "11月4日開始のEntra Agent ID既定変更と、Targeted Release廃止・パスキー/MFA関連の準備が今週〜今月の焦点",
+  "executiveSummary": "今週のMessage Center(84件)では、Entra、Copilot/Agent 365、Edge、Microsoft 365管理の変更が目立ちます。最優先は、11月4日開始のEntra Agent ID関連の既定動作変更です。MC1506733では、ロールを持たない既定ユーザーがエージェントブループリントを作成できるようになります。無効にするには管理者が「Users can create agent blueprints」をオフにする必要があります。MC1506728では、AgentIdentity.CreateAsManagerがブループリントプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。いずれも展開は2026年11月上旬から下旬の予定です。次に、MC1490899ではTargeted Releaseが2027年1月に廃止され、Frontier/Standard/Deferredへ移行します。アクション期限は2026年10月31日で、11月には管理者がユーザーの追加・削除・変更をできなくなります。認証面では、MC1481309のEntraサインインCSP強化が10月中旬〜下旬に展開されます(アクション期限2026年10月19日)。MC1474104はSMS第一要素サインインの廃止を継続し、期限は2027年2月1日です。MC1450134ではWHfBとmacOS PSSOが単独のMFA要素として認識される予定で、タイムラインが更新されました。Copilot関連では、MC1462915がcopilot.cloud.microsoft/*.cloud.microsoftへの接続許可確認を求めています。MC1472429のOffice LTSC 2021等のサポートは2026年10月13日に終了しました。",
+  "thisWeek": "MC1506733: 既定ユーザーによるエージェントブループリント作成を許可するか判断し、不要なら11月4日前に「Users can create agent blueprints」をオフにする設定を確認する\\nMC1506728: AgentIdentity.CreateAsManagerに依存し、アプリ専用認証で自身のエージェントIDを作成するエージェントがあるか棚卸しし、管理者同意または別の認可モデルへの移行を検討する\\nMC1490899: Targeted Release登録ユーザーを確認し、10月31日のアクション期限までにFrontier/Standard/Deferredの方針を決めて設定する\\nMC1481309: ログインページのCSP強化(10月中旬〜下旬に展開、アクション期限10月19日)に対し、サインイン画面への外部スクリプト注入や拡張機能・カスタムスクリプトの影響を確認する\\nMC1472429: Office LTSC 2021、Visio/Project LTSC 2021等のサポートが10月13日に終了したため、残存端末を特定し、アップグレード計画を立てる\\nMC1462915: copilot.cloud.microsoft および *.cloud.microsoft への接続がネットワーク・セキュリティ制御で許可されているか確認する",
+  "thisMonth": "MC1474104: SMS第一要素サインインの利用者を特定し、パスキー等のフィッシング耐性のある方式への移行計画を作成する(期限2027年2月1日)\\nMC1450134: WHfB/macOS PSSOを単独MFA要素として扱う更新タイムラインを確認し、Authentication Strengthや追加パスキー登録の運用への影響を整理する\\nMC1437671: My Sign-Insでのセキュアサインイン後のパスワード変更機能は既定で無効のため、有効化の要否とヘルプデスク負荷への効果を検討する\\nMC1490911: 11月初旬のEdge 157以降で旧direct-WALサインイン実装が廃止されるため、Windows上のEdgeプロファイルのOneAuth移行状況を確認する\\nMC1505610: Brand Centerセットアップ時にPublic CDNが既定でオフになるため、組織フォントを使う場合はPublic CDNの明示的な有効化が必要かを確認する\\nMC1387526: Microsoft 365 BackupのSharePoint/OneDrive/Exchange全ワークロードバックアップの適用可否を、データ保護ポリシーと合わせて評価する",
+  "watch": "MC1506733 / MC1506728: 11月上旬〜下旬のEntra Agent ID展開状況と、テナントで管理者同意が必要になる箇所\\nMC1727: なし\\nMC1467356: Edge Manifest V2拡張機能の企業向け廃止(2027年初頭予定、2027年1月上旬〜4月下旬に展開)に向けたMV2拡張機能の利用状況\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし\\nMC1469329: Copilot StudioとCopilot Cowork内のアプリ構築プレビューの地域展開と、Copilot Creditsの消費・課金への影響\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし",
+  "customerQuestions": "Entra上でエージェントブループリントを誰が作成できるべきか。既定ユーザーに許可する方針か、制限する方針か(MC1506733)\\n自社にAgentIdentity.CreateAsManagerに依存するエージェントはあるか。管理者同意のプロセスは整っているか(MC1506728)\\nTargeted Releaseを使っているユーザーは誰か。移行先はFrontier、Standard、Deferredのどれが適切か(MC1490899)\\nEntraのサインインページに対して、カスタムスクリプトや拡張機能など、CSP強化の影響を受ける要素はあるか(MC1481309)\\nSMS第一要素サインインを使っているユーザーはどの程度いるか。パスキーなどへの移行計画はあるか(MC1474104)\\nWHfBやmacOS PSSOを単独のMFA要素として扱うことで、現在の条件付きアクセスやAuthentication Strength設計はどう変わるか(MC1450134)\\nOffice LTSC 2021が残る端末はあるか。サポート終了後のアップグレード計画はどうなっているか(MC1472429)\\nネットワーク制御で *.cloud.microsoft への接続は許可されているか(MC1462915)",
   "referencedIds": [
-    "MC1188230",
-    "MC1325414",
-    "MC1422061",
+    "MC1387526",
     "MC1437671",
-    "MC1450133",
-    "MC1454378",
-    "MC1458474",
-    "MC1459133",
+    "MC1450134",
     "MC1462915",
+    "MC1467356",
+    "MC1469329",
     "MC1472429",
     "MC1474104",
-    "MC1477999",
-    "MC1480873",
     "MC1481309",
-    "MC1489931",
     "MC1490899",
     "MC1490911",
-    "MC1492959"
+    "MC1505610",
+    "MC1506728",
+    "MC1506733"
   ],
   "messageUpdates": [
     {
@@ -491,13 +487,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1477999",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1478465",
       "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
@@ -585,6 +574,34 @@
       "id": "MC1492959",
       "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1505610",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1506727",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1506728",
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1506733",
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -1060,13 +1077,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1477999",
-      "japaneseDetailedSummary": "Microsoft Teamsにおいて、Copilotへのアクセス方法が一本化されます。現在はTeamsのチャットリストとTeamsアプリバーのCopilotアプリの両方からCopilotにアクセスできますが、2026年10月以降、チャットリストのCopilotエントリポイントが削除され、ユーザーはCopilotアプリからのみアクセスする形になります。Copilotアプリでは全機能が利用できるのに対し、チャットリストのエントリポイントは限定的な機能しか提供していませんでした。この変更により、単一で一貫したアクセスポイントが提供され、ユーザーがCopilotを見つけやすく、再度利用しやすくなるとともに、インターフェースの煩雑さが軽減されます。移行を支援するため、削除前にコーチマーク(案内表示)がチャットリストのエントリポイントからCopilotアプリへユーザーを誘導します。対象は世界規模およびGCCで、2026年10月中旬から展開が始まる予定です。管理者はエンドユーザーへの事前周知や、Copilotアプリの利用方法に関する案内準備を検討すると良いでしょう。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Teamsにおいて、より一貫性のある効率的なMicrosoft 365 Copilotエクスペリエンスを提供するため、TeamsでのCopilotへのアクセス方法を簡素化します。\n現在、ユーザーはTeamsのチャットリストまたはTeamsアプリバーのCopilotアプリのいずれかからCopilotにアクセスできます。2026年10月以降、チャットリストからCopilotのエントリポイントを削除し、ユーザーをCopilotアプリからのアクセスへ誘導します。Copilotアプリでは全機能セットにアクセスできますが、チャットリストのエントリポイントはより限定的なエクスペリエンスを提供していました。\nこの変更により、Teams内でCopilotへの単一で一貫したアクセスポイントが作られ、ユーザーがCopilotを発見し、再度利用しやすくなるとともに、インターフェースの煩雑さが軽減されます。移行を支援するため、チャットリストのエントリポイントが削除される前に、コーチマークがユーザーをCopilotアプリへ誘導します。\n[展開スケジュール]\n• Copilotチャットリストエントリポイントの削除(世界規模、GCC): 2026年10月中旬に開始予定、(以降切り詰め)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1478465",
       "japaneseDetailedSummary": "Microsoft Security Copilotのエージェントが、Defender、Entra、Intune、Purviewといった主要セキュリティ製品のワークフローに組み込まれます。Ignite 2025でMicrosoftは、自律的かつ予防的な防御を実現する新しいエージェントを多数発表しました。本日より、Microsoft 365 E5/E7ライセンスを持つ組織は、追加購入なしでSecurity Copilotの機能とエージェントを利用できるようになります。テナントには、ライセンス1,000ユーザーあたり月400 Security Compute Units(SCU)が付与され、月あたり最大10,000 SCUまで利用可能です。E5/E7を契約している組織のセキュリティ担当者は、追加コストなくAIを活用したセキュリティ対応能力を強化できる点が実務上の大きなメリットです。",
       "japaneseBodyTranslation": "[内容と背景]\nMicrosoft Security Copilotのエージェントは、Microsoft Defender、Microsoft Entra、Microsoft Intune、Microsoft Purviewを利用するセキュリティチームの業務フローに組み込まれています。Ignite 2025において、Microsoftはこれらの製品全体にまたがる新しいエージェントを多数発表し、ワークフロー全体でエージェント型の防御を実現し、自律的かつ予防的な保護を可能にしました。\n[展開スケジュール]\nチームが導入しやすいように、本日より、お客様の組織は既存のMicrosoft 365 E5/E7の権利の一部として、Security Copilotの機能とエージェントにアクセスできるようになります。\n[組織への影響]\n影響を受けるユーザー:\n・Microsoft 365 E5またはE7を契約している組織\n対象プラットフォーム/サービス:\n・Defender\n・Entra\n・Intune\n・Purview\n・Security Copilotポータル\n発生する内容:\n・Security Copilotは、Microsoft 365 E5/E7に自動的に含まれるようになります(別途購入は不要)。\n・テナントは、ライセンス1,000ユーザーあたり月400 Security Compute Units(SCU)を受け取り、月あたり最大10,000 SCUまで利用可能です。\n・コアエージェンティ(以下、本文はソース側で途中で切り詰められています)",
@@ -1151,6 +1161,13 @@
       "sourceTruncated": true
     },
     {
+      "id": "MC1492959",
+      "japaneseDetailedSummary": "Microsoft 365 全体に関わる Audio Overview の機能強化です。長いノートブックではトピック別のエピソードに分けて音声を聞き分けやすくなります。OneDrive に保存する際は Microsoft Purview 秘匿性ラベルに対応し、ソースに付与されたラベルのうち最も制限の厳しいものが保存ファイルに継承されます。ただしノートブック内の Audio Overview にはまだラベルは適用されません。さらに OneNote ページなど、より多くのコンテンツ種別を基に音声概要を生成できるようになります。提供された本文は途中で切れており、展開時期や詳細な対象は記載がないため、顧客には情報保護ポリシーとの整合性を中心に説明するのが有効です。",
+      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft は、長いコンテンツをより簡単にナビゲートでき、企業の情報保護をサポートし、より多くの種類のコンテンツから音声概要を作成できるようにする、Audio Overview の新機能を展開しています。\nエピソード\nより長くコンテンツ量の多いノートブックでは、Audio Overview がトピックごとのエピソードに沿って議論を整理できます。これにより、ユーザーは音声内を移動しやすくなり、コンテンツの異なる部分に集中できます。\nOneDrive に保存する際の秘匿性ラベル\nAudio Overview は、OneDrive に保存する際に Microsoft Purview 秘匿性ラベルをサポートするようになりました。ソースコンテンツに秘匿性ラベルが付いている場合、保存された Audio Overview はソースの中で最も制限の厳しいラベルを継承します。秘匿性ラベルは OneDrive 内の保存ファイルに適用されます。ノートブック内の Audio Overview には、まだ秘匿性ラベルは付与されません。\nサポートされるコンテンツ種別の拡大\nAudio Overview は、ノートブックに追加された次のような追加の種類のコンテンツを理解し、それに基づいて議論できるようになりました:\n• OneNote ページ\n• Lo(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
       "id": "MC985483",
       "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
@@ -1158,9 +1175,30 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1492959",
-      "japaneseDetailedSummary": "Microsoft 365 全体に関わる Audio Overview の機能強化です。長いノートブックではトピック別のエピソードに分けて音声を聞き分けやすくなります。OneDrive に保存する際は Microsoft Purview 秘匿性ラベルに対応し、ソースに付与されたラベルのうち最も制限の厳しいものが保存ファイルに継承されます。ただしノートブック内の Audio Overview にはまだラベルは適用されません。さらに OneNote ページなど、より多くのコンテンツ種別を基に音声概要を生成できるようになります。提供された本文は途中で切れており、展開時期や詳細な対象は記載がないため、顧客には情報保護ポリシーとの整合性を中心に説明するのが有効です。",
-      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft は、長いコンテンツをより簡単にナビゲートでき、企業の情報保護をサポートし、より多くの種類のコンテンツから音声概要を作成できるようにする、Audio Overview の新機能を展開しています。\nエピソード\nより長くコンテンツ量の多いノートブックでは、Audio Overview がトピックごとのエピソードに沿って議論を整理できます。これにより、ユーザーは音声内を移動しやすくなり、コンテンツの異なる部分に集中できます。\nOneDrive に保存する際の秘匿性ラベル\nAudio Overview は、OneDrive に保存する際に Microsoft Purview 秘匿性ラベルをサポートするようになりました。ソースコンテンツに秘匿性ラベルが付いている場合、保存された Audio Overview はソースの中で最も制限の厳しいラベルを継承します。秘匿性ラベルは OneDrive 内の保存ファイルに適用されます。ノートブック内の Audio Overview には、まだ秘匿性ラベルは付与されません。\nサポートされるコンテンツ種別の拡大\nAudio Overview は、ノートブックに追加された次のような追加の種類のコンテンツを理解し、それに基づいて議論できるようになりました:\n• OneNote ページ\n• Lo(原文はここで途切れています)",
+      "id": "MC1506733",
+      "japaneseDetailedSummary": "Microsoft Entraで、エージェント ブループリントを作成できるユーザーの既定が変わります。11月4日以降、「Users can create agent blueprints」を管理者が無効化しない限り、Entraの組み込み/カスタムロールを持たない既定ユーザーも新しいエージェント ブループリントを作成可能になります。望まない場合は、ロールアウト開始前にテナント設定で無効化して備えられます。ロールアウトは2026年11月上旬〜下旬です。ガバナンス方針に応じて設定を確認し、ユーザーによるエージェント作成の可否を顧客と合意することが重要です。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entraは、エージェント ブループリントを作成できるユーザーの既定を変更します。11月4日以降、管理者が「Users can create agent blueprints」をオフにしない限り、既定のユーザーが新しいエージェント ブループリントを作成できるようになります。つまり、組み込みまたはカスタムのEntraロールを持たないユーザーも、組織内で新しいエージェント ブループリントを作成できます。現在からロールアウト開始までの間に、テナント設定を行って準備できます。組織のユーザーに新しいエージェント ブループリントとそのIDを作成させたくない場合は、以下の手順に従ってください。\n[ロールアウトスケジュール]\n• ワールドワイド: 2026年11月上旬に開始し、2026年11月下旬までに完了する予定\n[組織への影響]\n影響を受ける対象\n• Microsoft Entraを使用する組織\n• Microsoft Entraの組み込みまたはカスタムロールを持たない既定ユーザー\nプラットフォームとサービス\n• Microsoft Entra\n今後の動作\n• 管理者がオフにしない限り、既定ユーザーがエージェント ブループリントを作成できるようになります(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1506727",
+      "japaneseDetailedSummary": "Microsoft製またはMicrosoftプラットフォーム上で構築されたサポート対象エージェントについて、オブザーバビリティデータ(利用状況・アクティビティ指標)の閲覧にAgent 365ライセンスが不要になります。Microsoft 365管理センターで管理者がエージェントの利用状況を把握しやすくなります。ただしオブザーバビリティ指標に限定され、その他のAgent 365機能や、サードパーティ基盤のエージェントの指標のライセンス要件は変わりません。ワールドワイドGAは2026年11月下旬です。ライセンス計画やエージェント可視化の運用について顧客と議論できます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft製、またはMicrosoftプラットフォーム上で構築されたサポート対象エージェントのオブザーバビリティデータについて、Agent 365ライセンス要件を撤廃します。この変更により、Microsoft 365管理センターでの利用状況とアクティビティの分析情報へのアクセスが拡大し、管理者がエージェントの使われ方を監視しやすくなります。\nこの変更はオブザーバビリティ指標に限定されます。その他のAgent 365機能、およびサードパーティ プラットフォーム上で構築されたエージェントのアクティビティ指標に対するライセンス要件は撤廃されません。\n[ロールアウトスケジュール]\n• 一般提供(ワールドワイド): 2026年11月下旬に開始し、2026年11月下旬までに完了する予定\n[組織への影響]\n影響を受ける対象\n• Microsoft製またはMicrosoftプラットフォーム上で構築されたサポート対象エージェントを使用する組織\nプラットフォームとサービス\n• Microsoft 365管理センター\n• Agent 365オブザーバビリティ\n今後の動作\n• Microsoft製またはMicrosoftプラット(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1506728",
+      "japaneseDetailedSummary": "Microsoft Entra Agent IDで、エージェントによる自身のID作成の制限が強化されます。従来はエージェント作成時にAgentIdentity.CreateAsManagerが管理者承認なしで自動付与されていましたが、11月4日以降、エージェントのブループリントプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。アプリ専用認証で自分のエージェントIDを作成するエージェントは、Microsoft Graphアプリケーション権限を明示的に付与するか、別のサポート対象の認可モデルへ移行する必要があります。ロールアウトは2026年11月上旬〜下旬です。該当エージェントの棚卸しが必要です。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entra Agent IDは、エージェントが自身のIDを自律的に作成することに対する制限を強化します。現在、すべてのエージェントには作成時に管理者の承認なしでAgentIdentity.CreateAsManagerが付与されています。11月4日以降、Microsoft Entraはエージェント ブループリント プリンシパルにAgentIdentity.CreateAsManagerを自動的に付与しなくなり、IDの作成には管理者の同意が必要になります。\nアプリ専用認証を使用して自身のエージェントIDを作成するエージェントは、強制適用がテナントに及ぶ前に、Microsoft GraphアプリケーションのアクセS許可AgentIdentity.CreateAsManagerを明示的に付与されるか、別のサポートされる認可モデルに移行する必要があります。\n[ロールアウトスケジュール]\n• 一般提供(ワールドワイド): 2026年11月上旬に開始し、2026年11月下旬までに完了する予定\n[組織への影響]\n影響を受ける対象\n• Microsoft Entraを使用する組織\n• 組織にこれに依存するエージェントがない場合、対応は不要です(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC1505610",
+      "japaneseDetailedSummary": "Brand Centerのセットアップ時に、Public CDNを有効化しなくても設定を完了できるようになります。従来はセットアップ時にPublic CDNが有効化されていましたが、今後は既定で未選択となり、管理者が明示的に選択・確認した場合のみ有効化されます。組織フォントなどPublic CDNに依存する機能は、有効化するまで利用できません。ワールドワイドGAは2026年10月中旬に開始し、10月下旬に完了予定です。ガバナンス機能のみ使いたい顧客に有益で、フォント機能の要否を確認する会話が必要です。",
+      "japaneseBodyTranslation": "[内容と理由:]\n管理者がPublic CDNを有効にせずにBrand Centerをセットアップできるよう、セットアップ体験を更新します。\n現在は、Public CDNを必要としないブランドガバナンス機能のみを使いたい場合でも、Brand Centerのセットアップの一環としてPublic CDNが有効化されます。今回の更新により、組織フォントなどPublic CDNに依存する機能が必要になるまでPublic CDNを保留したまま、Brand Centerの利用を開始できます。\n[ロールアウトスケジュール:]\n一般提供(ワールドワイド): 2026年10月中旬に展開を開始し、2026年10月下旬までに完了する予定です。\n[組織への影響:]\n管理者がMicrosoft 365管理センターでBrand Centerをセットアップする際:\n• Public CDNは既定で選択解除されます。\n• Public CDNなしでBrand Centerのセットアップを完了できます。\n• Public CDNは、管理者が明示的にオプションを選択し変更を確認した場合にのみ有効になります。\n• フォント関連の機能は、Publi(原文はここで途切れています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }

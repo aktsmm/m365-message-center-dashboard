@@ -1,34 +1,335 @@
 {
   "meta": {
-    "runId": "38191797102",
-    "generatedAt": "2026-10-12T01:26:02.5180951+00:00",
+    "runId": "38661120165",
+    "generatedAt": "2026-10-15T00:39:16.9516112+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 81,
+    "total": 84,
     "majorChanges": 23,
     "highSeverity": 0,
     "actionRequired": 11,
-    "actionDueWithin30Days": 5,
-    "updatedLast7Days": 11
+    "actionDueWithin30Days": 4,
+    "updatedLast7Days": 13
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 42
+      "count": 44
     },
     {
       "name": "Microsoft Entra",
-      "count": 24
+      "count": 26
     },
     {
       "name": "Microsoft 365 Copilot Chat",
-      "count": 18
+      "count": 17
     }
   ],
   "messages": [
+    {
+      "id": "MC1450134",
+      "title": "(Updated) Microsoft Entra: Windows Hello for Business and macOS Platform SSO as standalone MFA factors",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-08-07T21:56:10.0000000+00:00",
+      "endDateTime": "2027-01-29T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-13T23:51:25.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 13, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft Entra will soon recognize Windows Hello for Business (WHfB) and macOS Platform Single Sign-On (PSSO) as standalone multifactor authentication (MFA) factors in supported authentication scenarios.\nToday, WHfB and macOS PSSO can satisfy MFA requirements during primary sign-in, but users may still be required to register and use an additional passkey or authentication method for certain step-up authentication prompts, Authentication Strength policies, and sign-in frequency checks.\nAfter this rollout, users who authenticate with WHfB or macOS PSSO will be able to satisfy supported MFA requirements without registering an additional passkey. This change helps organizations expand the use of phishing-resistant authentication methods and reduce reliance on less secure authentication methods. As part of this change, a user's WHfB and macOS PSSO credentials will be displayed in My Security Info as auto-registered passkeys.\n[Rollout schedule]\n• General Availability (Worldwide, GCC): Beginning in early October 2026 and expected to complete in mid-December 2026 (previously late November)\n[Impact on your organization]\nWho is affected\n• Organizations using Microsoft Entra ID\n• Users who authenticate with Windows Hello for Business\n• Users who authenticate with macOS Platform SSO\n• Organizations using Conditional Access Authentication Strength policies\nPlatforms and services\n• Microsoft Entra ID\n• Windows Hello for Business\n• macOS Platform SSO\n• Conditional Access\n• Authentication Strength policies\nWhat will happen\nAfter rollout:\n• Users signing in with WHfB or macOS PSSO can complete supported MFA challenges without requiring a separate passkey.\n• WHfB and macOS PSSO will satisfy supported MFA requirements for step-up authentication scenarios.\n• WHfB and macOS PSSO can be used during 2FA to satisfy supported Authentication Strength policy requirements.\n• WHfB and macOS PSSO can be used during 2FA to satisfy supported sign-in frequency challenge requirements.\n• Users whose only MFA method is WHfB or macOS PSSO will be considered MFA-capable.\n• Users who sign in with only a password will no longer be automatically prompted to register an additional MFA method if WHfB or macOS PSSO is their only registered MFA credential.\n• Users with WHfB or macOS PSSO credentials, will be able to see them listed in My Security Info as auto-registered passkeys.\n[Action required and recommendations]\nNo configuration changes are required.\nWe recommend reviewing user onboarding and MFA registration processes before rollout. Because WHfB and macOS PSSO credentials are device-bound, users may not be able to complete MFA challenges from devices where those credentials are not available.\nRecommended actions:\n• Update onboarding guidance to ensure users register at least one portable MFA method.\n• Consider requiring users to register a synced passkey or Microsoft Authenticator passkey in addition to WHfB or macOS PSSO.\n• Review custom Authentication Strength policies to confirm WHfB and macOS PSSO are allowed where appropriate.\n• Update user documentation because users with only WHfB or macOS PSSO registered will no longer be automatically guided to register an additional MFA method.\nLearn more (To be updated closer to GA rollout.)\n• Plan a Windows Hello for Business deployment | Security | Windows | Microsoft Learn\n• Prepare users to provision and use Windows Hello for Business | Security | Windows | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra will recognize Windows Hello for Business and macOS Platform SSO as standalone MFA factors starting early October 2026, allowing users to meet MFA requirements without additional passkeys. No configuration changes are needed, but organizations should update onboarding and MFA registration guidance accordingly."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/",
+        "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/prepare-users"
+      ]
+    },
+    {
+      "id": "MC1506733",
+      "title": "Action may be required: Review who can create agents in Microsoft Entra",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-13T22:14:27.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-13T22:14:34.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft Entra is changing who can create agent blueprints by default. Starting November 4, default users will be able to create new agent blueprints unless an administrator turns off Users can create agent blueprints. This means that users without built-in or custom Entra roles will be able to create new agent blueprints in their organization. From now until rollout begins, you can set your tenant preferences to prepare for this rollout. If you do not want users in your organization to create new agent blueprints and their identities, follow the instructions below.\n[Rollout schedule]\n• Worldwide: Beginning in early November 2026 and expected to complete by late November 2026\n[Impact on your organization]\nWho is affected\n• Organizations using Microsoft Entra\n• Default users who don't have a built-in or custom Microsoft Entra role\nPlatforms and services\n• Microsoft Entra\nWhat will happen\n• Default users will be able to create agent blueprints unless an administrator turns off Users can create agent blueprints. If you set the toggle to No, default users will not be able to create new agents. Supported administrators and users assigned the Agent ID Developer role can continue to create them.\n• If you change this toggle now, your tenant won't change right away. Your setting takes effect when the rollout begins in early November.\n[Action required and recommendations]\nIf default users should be allowed to create agents in your organization, no action is required. Choosing to allow users to create agent blueprints will not begin until the functionality is available in your tenant.\nTo restrict creation:\n• Sign in to the Microsoft Entra admin center using this link.\n• Go to Entra ID > Users > User settings.\n• Under Default user role permissions, find Users can create agent blueprints.\n• Set the toggle to No, then save the change.\nFor more information and instructions on setting the toggle for your organization, see Manage who can create agent blueprints here.\nThis change affects new agent blueprint creation by default users. It does not:\n• Change or remove existing agent blueprints.\n• Change who can create agent identities from existing blueprints.\n• Block an app or an agent from creating identities\n• Affect creation requirements within platforms such as Microsoft Foundry or Security Copilot, such as requiring licenses and Azure subscriptions.\nThe new setting is independent of Users can register applications. Review both settings separately.\nLearn more\n• Delegate application management administrator permissions - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting November 4, 2026, default users in Microsoft Entra can create agent blueprints unless administrators disable this via the \"Users can create agent blueprints\" setting. Admins can restrict this by toggling the setting to No in the Entra admin center before rollout completes in late November."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/role-based-access-control/delegate-app-roles"
+      ]
+    },
+    {
+      "id": "MC1506728",
+      "title": "Microsoft Entra: Changes to AgentIdentity.CreateAsManager permission for agent identities",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-13T22:12:32.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-13T22:12:41.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft Entra Agent ID is enforcing tighter restrictions for autonomous creation of an agent’s own identities. Currently, all agents are granted AgentIdentity.CreateAsManager upon creation without administrator approval. Starting November 4, Microsoft Entra will no longer automatically grant AgentIdentity.CreateAsManager to agent blueprint principals, and creation of identities will need an admin to grant consent.\nAgents that use app-only authentication to create their own agent identities must be explicitly granted the AgentIdentity.CreateAsManager Microsoft Graph application permission or move to another supported authorization model before enforcement reaches their tenant.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning in early November 2026 and expected to complete by late November 2026\n[Impact on your organization]\nWho is affected\n• Organizations using Microsoft Entra\n• No action is required if your organization doesn't have an agent that depends on the automatic AgentIdentity.CreateAsManager grant.\nPlatforms and services\n• Microsoft Entra\nWhat will happen\nToday, an agent blueprint principal is granted AgentIdentity.CreateAsManager automatically. This implicit grant allows the principal to create agent identities without a tenant-admin granting an app-role assignment.\nAfter enforcement, an administrator must grant the Microsoft Graph application permission AgentIdentity.CreateAsManager to agents that needs this authority.\nThis change:\n• Makes app-only agent identity creation authority visible, auditable, and revocable.\n• Makes AgentIdentity.CreateAsManager revocable if consented\n• Affects existing and future agents.\n• Doesn't remove existing agent identities or agent blueprints.\n• Doesn't remove the ability for agent identity blueprints to create agent identities, when AgentIdentity.CreateAsManager is explicitly granted by an administrator\n• Doesn't affect an agent that uses a directory role to authorize creation of agent identities.\n[Action required and recommendations]\nNo action is required if your organization doesn't have an agent that depends on the automatic AgentIdentity.CreateAsManager grant.\nIdentify agents that create agent identities without a signed-in user.\n• Sign in to the Microsoft Entra admin center.\n• Go to Entra ID>Audit Logs.\n• Set the Category to \"ApplicationManagement\"\n• Set the Activity filter to \"Add Service Principal\"\nFind events where the Initiated By (actor) Type is Application and the Target is an agent identity.\nFor each affected agent:\n• Sign in to the Microsoft Entra admin center.\n• Go to Entra ID>Agent blueprints>Search for your agent blueprint>Granted permissions\n• Review if the Agent has any other granted permissions that may allow for creation of agent identities. If there are no other permissions allowing for creation, this agent relies on AgentIdentity.CreateAsManager.\n• Starting October 16, you may grant the explicit AgentIdentity.CreateAsManager Microsoft Graph application permission through tenant-wide admin consent or manual app-role creation. Granting it earlier will cause an error. A successful grant appears in the Granted Permissions table with “An administrator” in the Granted By column.\n• Test app-only agent identity creation before enforcement begins.\n• Update operational guidance for a failed request after enforcement.\nIf an app-only request relies only on the automatic grant after enforcement reaches your tenant, the request will fail with a 403 authorization error.\nLearn more\n• For more about how to grant your agents access to resources, visit Grant agents access to Microsoft 365 resources | Microsoft Learn.\n• For the Microsoft Graph permission reference on AgentIdentity.CreateAsManager, visit Microsoft Graph permissions reference - Microsoft Graph | Microsoft Learn.\n[Compliance considerations]\nNo specific compliance impacts have been identified for this configuration update.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting November 4, Microsoft Entra will stop automatically granting the AgentIdentity.CreateAsManager permission to agent blueprints. Admin consent will be required for agents to create identities. This change, rolling out worldwide in November 2026, enhances control and auditability of agent identity creation."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/agent-id/grant-agent-access-microsoft-365",
+        "https://learn.microsoft.com/entra/identity/enterprise-apps/grant-admin-consent",
+        "https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0",
+        "https://learn.microsoft.com/graph/permissions-reference"
+      ]
+    },
+    {
+      "id": "MC1506727",
+      "title": "Microsoft Agent 365: Expanded access to Microsoft agent usage and activity insights in Microsoft 365 admin center",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-13T22:12:00.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-13T22:12:09.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nWe’re removing the Agent 365 license requirement for observability data for supported agents built by Microsoft or on Microsoft platforms. This change expands access to usage and activity insights in the Microsoft 365 admin center, helping administrators monitor how agents are used.\nThis change is limited to observability metrics. It does not remove licensing requirements for other Agent 365 capabilities or for agent activity metrics for agents built on third-party platforms.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning in late November 2026 and expected to complete by late November 2026\n[Impact on your organization]\nWho is affected\n• Organizations using supported agents built by Microsoft or on Microsoft platforms\nPlatforms and services\n• Microsoft 365 admin center\n• Agent 365 observability\nWhat will happen\n• An Agent 365 license will no longer be required to view usage and activity metrics for supported agents built by Microsoft or on Microsoft platforms.\n• The change applies to both existing and new supported agents.\n• In Registry, the affected usage and activity columns are Active users, Total sessions, Exception rate, and Run Time.\n• In Agent overview, affected cards and charts include Active users, Active users over time, and Trending agents by active users. These views may already be visible in organizations without an Agent 365 license. Reported values and trends may change temporarily as activity data accumulates during rollout.\n• In Agent details > Activity, affected metrics include the Active users, Sessions, Exceptions, and Agent run-time cards, and the Active users over time and Sessions over time charts.\n• As the change reaches your organization, some metrics may initially appear lower or show incomplete trends while activity data is collected. This temporary change does not necessarily indicate reduced agent usage.\n• Allow up to 30 days after data collection begins for a full 30-day reporting view for each enabled agent or platform. Completing the rollout does not mean every agent will immediately have a full 30-day history.\n• Data availability continues to depend on the agent or platform sending activity data and on applicable observability settings.\n• Existing licensing and access requirements for third-party agent observability are unchanged.\n• Other licensed Agent 365 capabilities, including risk-related features, continue to require the applicable license.\n[Action required and recommendations]\nWhen comparing usage before and after rollout, account for the time required to collect a full reporting window rather than interpreting a lower displayed value alone as a decline in usage.\nReview the affected Microsoft 365 admin center views as the change reaches your organization.\nLearn more\n• Data handling, data residency, and compliance in Agent 365 observability | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations were identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft is removing the Agent 365 license requirement for observability data of supported agents built by Microsoft or on Microsoft platforms, expanding access to usage and activity insights in the Microsoft 365 admin center starting late November 2026. Licensing for other Agent 365 features and third-party agents remains unchanged."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-agent-365/admin/data-residency-protection-compliance"
+      ]
+    },
+    {
+      "id": "MC1440972",
+      "title": "(Updated) Microsoft Edge: Upgraded Copilot new tab page",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-27T22:59:03.0000000+00:00",
+      "endDateTime": "2026-12-14T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-13T20:46:08.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated October 13, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft Edge is introducing an upgraded Copilot new tab page that brings Microsoft 365 Copilot chat, web search, and work content into a single experience. Users can search the web, navigate to websites, interact with Microsoft 365 Copilot, and access relevant work content from a single experience.\nThe updated experience includes enhanced Copilot chat integration, compose capabilities, suggested actions, curated work content, and a refreshed design to help users complete tasks more efficiently.\nThis message is associated with Microsoft 365 Roadmap ID 566703.\n[Rollout schedule]\n• Public Preview: Beginning in late September 2026 (previously early September) and expected to complete by mid-October 2026 (previously mid-September)\n• General Availability (Worldwide): Beginning in early November 2026 (previously mid-October)\n[Impact on your organization]\nWho is affected\n• Users in your organization who have the Copilot new tab page enabled in Microsoft Edge.\n• Users who do not have the Copilot new tab page enabled will continue to see the existing new tab page experience.\n• To access this experience, users must have a Microsoft 365 Copilot license.\nPlatforms and services\n• Microsoft Edge\n• Microsoft 365 Copilot\nWhat will happen\nThe Copilot new tab page is off by default.\nWhen enabled, users will see:\n• An updated search box for navigating to websites, searching the web, or sending a query to Microsoft 365 Copilot.\n• Enhanced Copilot chat and compose capabilities.\n• Suggested actions and work content to help users begin and complete tasks.\n• Work cards that may surface organizational content such as files and calendar events.\n• A refreshed design, app launcher, pinned quick links, and updated theme settings.\n• Starting in September 2026, Discover feed and feed toggle functionality will be limited. We plan to continue improving and expanding these capabilities as the Copilot new tab page evolves\n• A Discover feed with curated news and content where supported.\nAdmins can enable the Copilot new tab page through the Microsoft Edge management service using the CopilotNewTabPageEnabled policy and assign the configuration to all users or selected Microsoft Entra groups.\nDepending on organizational policy settings, users may be able to disable the experience after it has been enabled.\nUsers who are not enabled will continue to see the existing Microsoft Edge new tab page.\n[Action required and recommendations]\nThe Copilot new tab page is off by default. No admin action required before rollout as this change applies only to organizations that enabled the Copilot new tab page via CopilotNewTabPageEnabled. If your organization has enabled this policy, users will automatically see the upgraded Copilot new tab page. If the policy is not configured or is disabled, there is no change to your users' new tab page experience.\nIf your organization plans to enable the experience, we recommend that you:\n• Review your current Microsoft Edge and Copilot new tab page configuration.\n• Determine which users or Microsoft Entra groups should receive the experience.\n• Verify that affected users have a Microsoft 365 Copilot license.\n• Evaluate the effect of surfacing organizational files and calendar events through work cards.\n• Review applicable AI governance and compliance requirements before enabling the experience.\n• Notify affected users about the updated new tab page.\n• Update relevant user guidance, training, and support documentation.\nLearn more\n• Configure the Copilot new tab page | Microsoft Edge | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes this change introduce or significantly modify AI, ML, or agent capabilities that interact with or provide access to customer data?Yes. The upgraded Copilot new tab page integrates Microsoft 365 Copilot chat and can surface organizational content, including files and calendar events, through work cards and suggested prompts.\nDoes this change provide end users with a new way to interact with generative AI?Yes. Users can send queries directly to Microsoft 365 Copilot from the new tab page search box and access integrated Copilot chat functionality within the Microsoft Edge new tab experience.\nDoes this change include an admin control?Yes. Administrators can enable the Copilot new tab page through the Microsoft Edge management service and assign the configuration to all users or selected Microsoft Entra groups.\nCan users enable or disable the feature themselves?Yes. Depending on organizational settings, users may be able to turn off the Copilot new tab page experience and switch between Work cards and Chat chips.\nCan the feature be controlled through Microsoft Entra ID group membership?Yes. Administrators can assign the Copilot new tab page configuration to one or more Microsoft Entra groups.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "566703"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft Edge is upgrading the Copilot new tab page to integrate Microsoft 365 Copilot chat, web search, and work content in one experience with enhanced chat, compose features, suggested actions, and a refreshed design. Rollout begins late September 2026, requiring a Copilot license and admin enablement."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/deployedge/microsoft-edge-management-configure-the-copilot-new-tab-page"
+      ]
+    },
+    {
+      "id": "MC1469329",
+      "title": "Build apps in Microsoft Copilot Studio and Copilot Cowork",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-09-08T17:42:20.0000000+00:00",
+      "endDateTime": "2027-01-25T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-13T18:25:32.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated October 13, 2026: Following our earlier announcement, Apps in Copilot Studio has started its public preview rollout. Availability will expand gradually by region. Makers building apps in Copilot Studio will use the Copilot Credits available in the environment they're building in. Copilot Credits for app building are allocated, monitored, and billed through the same Power Platform admin center experience you already use for agents in Copilot Studio — no separate setup is required. Admins can review the credit allocation documentation in PPAC to learn more: https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-copilot-credits-capacity\n[What and why:]\nWe are announcing a preview of the new app-building experience in Microsoft Copilot Cowork. A corresponding experience in Microsoft Copilot Studio will follow within the next couple of weeks. These experiences make it easier for people to turn ideas into apps using natural-language guidance and generative AI.\nMakers can create a working first draft through natural-language conversation, refine it, preview and test it, and then publish and share it. Apps can use organizational data through connectors permitted by your organization’s policies. Apps built in Cowork can be opened and further edited in Copilot Studio. Apps created through these experiences will be visible to administrators in the new Apps experience in the Microsoft 365 admin center, providing consistent governance and organization-wide visibility.\n[Rollout schedule:]\nRollout for Copilot Cowork will begin on September 8, 2026, and is expected to complete by September 14, 2026.\nThe corresponding experience in Microsoft Copilot Studio is expected to become available within the next weeks.\n[Impact on your organization:]\n• The app-building experience in Copilot Cowork is available in preview through the Frontier Program to users who have a Microsoft 365 Copilot license and access to Cowork.\n• When the app-building experience in Copilot Studio becomes available, it will be enabled by default for eligible makers. During preview, administrators can turn the experience on or off in the Microsoft 365 admin center and scope access to specific security groups.\n• Eligible users will be able to create and refine apps through conversation, preview and test them, and publish and share them with people or groups permitted by organizational policies.\n• Apps use Microsoft Entra authentication and follow your organization's existing connector, environment, data, security, compliance, and sharing policies. Published apps are visible in Apps > All apps in the Microsoft 365 admin center.\n• Based on the organization’s governance policies, makers who create apps through these experiences are automatically routed to an isolated personal developer environment instead of the shared environment.\n• The personal developer environment is protected from the start by secure defaults that administrators can adjust to meet organizational requirements. Applicable policies are enforced when each app is created, helping keep apps within the organization’s governance boundaries.\n• For organizations that have not enabled environment routing, routing will be automatically applied to apps created through these experiences. This change does not affect other resources created in Power Platform or Copilot Studio.\n[Action required / Recommendations:]\n• Complete Frontier Program onboarding for your organization and enable eligible app creators in the Microsoft 365 admin center under Apps > Overview.\n• Review the default configuration and adjust the policies to match your requirements in Microsoft 365 admin center > Apps > Settings.\n• Inform your maker community when each experience becomes available and share your organization’s requirements for building and sharing apps.\n• Review the Copilot Credits requirements for building and running apps and configure usage-based billing as needed.\nLearn more\n• Get started with the Microsoft Copilot Frontier Program\n• Build apps in Copilot Cowork documentation link\n• Manage apps in the Microsoft 365 admin center\n• Manage Copilot Cowork for your organization\n• Copilot Credits Guide\n• Understand usage-based billing and cost management for Copilot Credits",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Copilot Studio and Copilot Cowork preview app-building with natural-language AI, enabling makers to create, test, and publish apps using organizational data and policies. Copilot Credits manage usage and billing. Admins control access and governance via the Microsoft 365 admin center. Rollout started September 2026."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/manage/get-started-frontier",
+        "https://learn.microsoft.com/microsoft-365/copilot/cowork",
+        "https://learn.microsoft.com/microsoft-365/copilot/cowork/cowork-admin-governance",
+        "https://learn.microsoft.com/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
+        "https://learn.microsoft.com/power-platform/admin/manage-copilot-studio-copilot-credits-capacity"
+      ]
+    },
+    {
+      "id": "MC1437671",
+      "title": "(Updated) Microsoft Entra: Allow password change after secure sign-in with My Sign-Ins",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-07-23T22:39:23.0000000+00:00",
+      "endDateTime": "2026-12-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-13T16:45:08.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 9, 2026: We have updated the content. Thank you for your patience.\n[What and Why]\nWe're introducing a new Microsoft Entra capability that allows password change after secure sign-in directly from My Sign-Ins using an existing strong credential, such as a passkey, FIDO2 security key, or Windows Hello for Business. Users can complete this action even if they don't know their current password and without using self-service password reset (SSPR) or contacting the helpdesk.\nMany organizations are adopting allowed password changes after secure sign-ins but still maintain passwords for legacy applications and services. This update helps reduce password-related support requests and removes a common barrier to adoption. The feature is disabled by default and requires administrator enablement before users can access it.\n[Rollout Schedule]\n• General Availability (Worldwide and GCC): Beginning end of October 2026 (previously mid-October) and expected to complete by end of November 2026 (previously late October)\n[Impact on Your Organization]\nWho is affected\n• Microsoft Entra administrators who manage password change settings\n• Users who have a registered allowed password change after secure sign-in method (passkey, FIDO2 security key, or Windows Hello for Business) and also maintain a password\n• Organizations that choose to enable the feature\nPlatforms/Services\n• Microsoft Entra\n• My Sign-Ins (mysignins.microsoft.com)\nWhat will happen\n• Because this feature is off by default, there is no change to your users' experience unless you turn it on.\n• After the feature is enabled, eligible users will see a new Change password option in My Sign-Ins.\n• Users can authenticate set a new password without knowing their existing password.\n• Users are not required to enroll in or use SSPR to complete this action.\n• Administrators can choose to enable or disable the capability through Microsoft Entra management interfaces available at release.\n• Authentication continues to require a strong password change method, such as a passkey, FIDO2 security key, or Windows Hello for Business.\n• The setting is tenant-wide: you can turn it on for your entire tenant or leave it off for everyone. There is no per-user or per-group scoping.\n[Action Required/Recommendations]\nNo action is required.\nIf your organization plans to support allowed password changes after secure sign-in:\n• Review your password management and allowed password changes after secure sign-in strategy.\n• Evaluate whether enabling this capability aligns with your organization's security and support requirements.\n• Communicate the new self-service capability to helpdesk and support teams.\n• Update internal user guidance and documentation as needed.\n• If your organization chooses to offer allowed password changes after secure sign-in, enable the feature through the Microsoft Entra admin experience or supported APIs when it becomes available in October 2026.\nLearn more\n• Microsoft Learn documentation will be available when the feature releases in October.\n[Compliance Considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. The feature is disabled by default and requires explicit administrator enablement.\nDoes the change modify how users can access or correct their personal data?Yes. Users gain a new self-service method to update their password using an existing allowed password change after secure sign-in.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra will enable users to change passwords after secure sign-in using strong credentials (passkey, FIDO2, Windows Hello) without knowing the current password or using SSPR. This feature, disabled by default, requires admin activation and will roll out globally from October to November 2026."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1505610",
+      "title": "Public CDN is becoming optional during Brand Center setup",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-12T23:06:14.0000000+00:00",
+      "endDateTime": "2026-12-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-12T23:06:21.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nWe are updating the Brand Center setup experience so that administrators can set up Brand Center without enabling Public CDN.\nToday, Public CDN is enabled as part of Brand Center setup, even when an organization only wants to use branding governance capabilities that do not require it. With this update, organizations can begin using Brand Center while deferring Public CDN until they need capabilities that depend on it, such as organizational fonts.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-October 2026 and expect to complete by late October 2026.\n[Impact on Your Organization:]\nWhen an administrator sets up Brand Center in the Microsoft 365 admin center:\n• Public CDN will be unselected by default.\n• Brand Center setup can be completed without Public CDN.\n• Public CDN will only be enabled after an administrator explicitly selects the option and confirms the change.\n• Font-related capabilities will remain unavailable until Public CDN is enabled.\n• If Public CDN is already enabled for the tenant, this update will not disable or change it.\nThis change separates Brand Center setup from Public CDN activation. It does not remove the Public CDN requirement for organizational fonts.\nWhy we are making this change\nSome organizations want to begin using Brand Center for branding governance without introducing an external or public content-delivery dependency.\nMaking Public CDN optional provides a more incremental adoption path: organizations can establish Brand Center first and enable font capabilities only when they are ready.\n[Action Required/Recommendations:]\nNo action is required. If your organization plans to use organizational fonts, an administrator must explicitly enable Public CDN during setup or later from the applicable settings experience.\n• Set up the SharePoint Brand Center\n• Use organizational fonts in SharePoint\n• Learn more about Microsoft 365 Public CDN\n[Compliance considerations:]\nQuestionAnswer\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. The feature includes or affects admin controls, policies, permissions, roles, authentication, or management settings as described in this message. Review the linked documentation or admin center controls for group-based configuration support.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Brand Center setup will no longer require enabling Public CDN by default, allowing organizations to use branding governance without it. Public CDN remains necessary for font features and must be explicitly enabled. This change rolls out worldwide in October 2026 with no action required unless fonts are used."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/sharepoint/brand-center-overview",
+        "https://learn.microsoft.com/en-us/sharepoint/brand-fonts"
+      ]
+    },
+    {
+      "id": "MC1387526",
+      "title": "Microsoft 365 Backup: Full workload backup for SharePoint, OneDrive, and Exchange",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-11T16:46:49.0000000+00:00",
+      "endDateTime": "2027-04-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-12T17:02:03.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nWe are introducing Full Workload Backup for Microsoft 365 Backup, a new capability that allows admins to quickly protect an entire workload (SharePoint, OneDrive, or Exchange) with a single policy. This feature automatically includes all existing and newly created artifacts that are not already covered by custom policies, helping organizations improve data protection coverage, reduce administrative overhead, and ensure continuous backup for critical business data at scale.\nThis enhancement supports enterprise-ready data protection and automation, enabling organizations to safeguard content more efficiently while maintaining control through existing policy configurations.\nThis message is associated with Microsoft 365 Roadmap ID 464990.\n[Rollout Schedule:]\n• Public Preview (Worldwide): We will begin rolling out in early July 2026 and expect to complete by mid-July 2026.\n• General Availability: We will begin rolling out in mid-September 2026 and expect to complete by mid-October 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Admins managing Microsoft 365 Backup policies\n• Organizations currently using or planning to use Microsoft 365 Backup\nPlatforms/Services:\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\nWhat will happen:\n• A new option to back up all artifacts within a selected workload will be available.\n• Admins can enable Full Workload Backup per workload (SharePoint, OneDrive, Exchange).\n• All eligible artifacts not covered by existing custom backup policies will be automatically protected.\n• Newly created artifacts will be included in backup coverage automatically on subsequent runs.\n• Existing custom backup policies will continue to take precedence and remain unchanged.\n• Admins can upload a CSV file to exclude specific artifacts.\n• The feature is available by default but requires admin configuration to enable.\n[Action Required/Recommendations:]\nNo immediate action is required before rollout.\nAfter rollout, we recommend that you:\n• Review your current Microsoft 365 Backup policies and coverage.\n• Evaluate whether Full Workload Backup aligns with your data protection strategy.\n• Inform backup administrators about this new capability.\n• Update internal documentation if you manage backup procedures.\nTo enable the feature:\n• Go to the Microsoft 365 Backup dashboard in the Microsoft 365 admin center.\n• Select the workload you want to protect and choose the option to back up all artifacts.\n• (Optional) Upload a CSV file on the Exclude sites step to exclude specific sites from the scope of the policy.\n• Review the coverage summary and confirm to create the Full Workload Backup policy.\nLearn more:\n• Create, view, and edit backup policies in Microsoft 365 Backup | Microsoft Learn (will be updated before rollout begins)\n• Overview of Microsoft 365 Backup | Microsoft Learn (will be updated before rollout begins)\n[Compliance considerations:]\nNo compliance considerations identified, review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "464990"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Backup introduces Full Workload Backup for SharePoint, OneDrive, and Exchange, enabling admins to protect entire workloads with one policy. It automatically covers all existing and new artifacts, reduces admin effort, and supports enterprise data protection. Rollout begins July 2026; admin configuration is required to enable."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/backup/backup-overview?view=o365-worldwide"
+      ]
+    },
     {
       "id": "MC1492959",
       "title": "Audio Overview Updates",
@@ -54,65 +355,8 @@
           "name": "Summary",
           "value": "Microsoft is enhancing Audio Overview with topic-based episodes for easier navigation, support for sensitivity labels when saving to OneDrive, and expanded content types including OneNote, Loop pages, emails, and Teams chats. The update rolls out worldwide from late October to November 2026 with no admin action needed."
         }
-      ]
-    },
-    {
-      "id": "MC1437671",
-      "title": "(Updated) Microsoft Entra: Authenticated password change in My Sign-Ins",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-23T22:39:23.0000000+00:00",
-      "endDateTime": "2026-12-31T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-09T16:43:01.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
       ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated October 9, 2026: We have updated the content. Thank you for your patience.\n[What and Why]\nWe're introducing a new Microsoft Entra capability that Allow password change after secure sign-in directly from My Sign-Ins using an existing strong credential, such as a passkey, FIDO2 security key, or Windows Hello for Business. Users can complete this action even if they don't know their current password and without using self-service password reset (SSPR) or contacting the helpdesk.\nMany organizations are adopting allowed password changes after secure sign-ins but still maintain passwords for legacy applications and services. This update helps reduce password-related support requests and removes a common barrier to adoption. The feature is disabled by default and requires administrator enablement before users can access it.\n[Rollout Schedule]\n• General Availability (Worldwide and GCC): Beginning end of October 2026 (previously mid-October) and expected to complete by end of November 2026 (previously late October)\n[Impact on Your Organization]\nWho is affected\n• Microsoft Entra administrators who manage password change settings\n• Users who have a registered allowed password change after secure sign-in method (passkey, FIDO2 security key, or Windows Hello for Business) and also maintain a password\n• Organizations that choose to enable the feature\nPlatforms/Services\n• Microsoft Entra\n• My Sign-Ins (mysignins.microsoft.com)\nWhat will happen\n• Because this feature is off by default, there is no change to your users' experience unless you turn it on.\n• After the feature is enabled, eligible users will see a new Change password option in My Sign-Ins.\n• Users can authenticate set a new password without knowing their existing password.\n• Users are not required to enroll in or use SSPR to complete this action.\n• Administrators can choose to enable or disable the capability through Microsoft Entra management interfaces available at release.\n• Authentication continues to require a strong password change method, such as a passkey, FIDO2 security key, or Windows Hello for Business.\n• The setting is tenant-wide: you can turn it on for your entire tenant or leave it off for everyone. There is no per-user or per-group scoping.\n[Action Required/Recommendations]\nNo action is required.\nIf your organization plans to support allowed password changes after secure sign-in:\n• Review your password management and allowed password changes after secure sign-in strategy.\n• Evaluate whether enabling this capability aligns with your organization's security and support requirements.\n• Communicate the new self-service capability to helpdesk and support teams.\n• Update internal user guidance and documentation as needed.\n• If your organization chooses to offer allowed password changes after secure sign-in, enable the feature through the Microsoft Entra admin experience or supported APIs when it becomes available in October 2026.\nLearn more\n• Microsoft Learn documentation will be available when the feature releases in October.\n[Compliance Considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. The feature is disabled by default and requires explicit administrator enablement.\nDoes the change modify how users can access or correct their personal data?Yes. Users gain a new self-service method to update their password using an existing allowed password change after secure sign-in.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra will enable users to change passwords after secure sign-in using strong credentials (passkey, FIDO2, Windows Hello) without knowing the current password or using SSPR. This feature, disabled by default, requires admin activation and will roll out globally from October to November 2026."
-        }
-      ]
-    },
-    {
-      "id": "MC1477999",
-      "title": "(Updated) Microsoft Teams: Removing Copilot from the chat list",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-23T21:46:58.0000000+00:00",
-      "endDateTime": "2026-10-12T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-09T04:19:20.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "Retirement",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated October 8, 2026: After additional consideration we have decided not to proceed with this change. You can safely disregard this message. We apologize for any inconvenience this may have caused.\n[What and why]\nTo provide a more consistent and streamlined Microsoft 365 Copilot experience in Microsoft Teams, we are simplifying how users access Copilot in Teams.\nToday, users can access Copilot either from the Teams chat list or from the Copilot app in the Teams app bar. Beginning in October 2026, we will remove the Copilot entry point from the Teams chat list and direct users to access Copilot through the Copilot app. The Copilot app provides access to the full set of Copilot capabilities, while the chat list entry point provides a more limited experience.\nThis change creates a single, consistent access point for Copilot in Teams, helping users discover and return to Copilot more easily while reducing interface clutter. To help users transition, a coachmark will direct users from the chat list entry point to the Copilot app before the chat list entry point is removed.\n[Rollout schedule]\n• Copilot chat list entry point removal (Worldwide, GCC): Cancelled\n[Impact on your organization]\nWho is affected\n• Organizations whose users access Microsoft 365 Copilot in Microsoft Teams\n• Users of Microsoft Teams desktop and web applications who currently access Copilot from the Teams chat list.\n• Mobile users are not affected.\nPlatforms and services\n• Microsoft Teams desktop\n• Microsoft Teams web\nWhat will happen\n• The Copilot entry point in the Teams chat list will be removed.\n• Prior to the mid-October removal, users who access Copilot from the chat list will see a coachmark directing them to the Copilot app.\n• The Copilot app in the Teams app bar will remain available and unchanged.\n• If the Copilot app has been unpinned from the Teams app bar, users will be directed to the app overflow menu where they can locate the Copilot app.\n• Existing Copilot conversations, notifications, supported deep links, and session continuity will continue to work.\n• No user conversations, prompts, chat history, or Copilot data will be removed.\n• Mobile experiences are unchanged.\n• This change is enabled by Microsoft and does not require tenant configuration.\nBefore:\nAfter:\n[Action required and recommendations]\nNo action is required.\nWe recommend that administrators:\n• Inform users that Copilot in Teams will be accessed through the Copilot app in the Teams app bar going forward.\n• Update internal training materials, screenshots, adoption content, and support documentation that reference the Copilot chat list entry point.\n• Notify help desk and support teams before rollout.\n• Review Teams app setup policies and consider pinning the Copilot app for users if it is not already pinned.\n• Monitor user feedback after rollout and direct users to the Copilot app if they are looking for the retired chat list entry point.\nLearn more\n• Pin Microsoft Copilot Chat in the Microsoft 365 apps | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified, review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Updated October 8, 2026: After additional consideration we have decided not to proceed with this change. You can safely disregard this message. We apologize for any inconvenience this may have caused."
-        }
-      ]
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1462915",
@@ -139,6 +383,10 @@
           "name": "Summary",
           "value": "Starting September 2026, Microsoft will redirect users from m365.cloud.microsoft to copilot.cloud.microsoft. Organizations must allow connections to *.cloud.microsoft in network and security controls to avoid Copilot access disruptions. Validate connectivity, update allow lists, and coordinate with security teams before the redirect."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/external-id/tenant-restrictions-v2",
+        "https://learn.microsoft.com/microsoft-365/copilot/microsoft-365-copilot-requirements"
       ]
     },
     {
@@ -168,6 +416,9 @@
           "name": "Summary",
           "value": "Microsoft Entra ID will support passkey registration and sign-in for B2B users, enabling phishing-resistant MFA in resource tenants starting late October 2026. Internal guest users get Microsoft Authenticator app passkeys; external users do not. The feature is enabled by default, intersecting with SMS/voice retirement policies. No action required, but administrators should review policies."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/external-id/user-properties"
       ]
     },
     {
@@ -197,6 +448,9 @@
           "name": "Summary",
           "value": "Microsoft Entra will allow users to register passkeys or passwordless sign-in as their first multifactor authentication method, removing the need to set up SMS or voice first. This phased rollout begins late October 2026, aiming to ease adoption of phishing-resistant authentication without requiring user action."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-register-passkey"
       ]
     },
     {
@@ -225,7 +479,8 @@
           "name": "Summary",
           "value": "Microsoft Edge on Windows will retire its legacy direct-WAM sign-in in version 157, fully adopting the OneAuth library to standardize authentication. Rollout starts and completes in November 2026. Admins should identify unmigrated profiles, test transitions, and prepare for possible user sign-in prompts."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1490899",
@@ -252,6 +507,10 @@
           "name": "Summary",
           "value": "Microsoft 365 Targeted Release will retire in January 2027, replaced by Frontier, Standard, and Deferred release options. Administrators must update user enrollments and release preferences by November 2026, when Targeted Release management ends and a unified release preferences experience launches in the admin center."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/manage/configure-release-options",
+        "https://learn.microsoft.com/microsoft-365/admin/manage/targeted-release-retirement"
       ]
     },
     {
@@ -289,7 +548,8 @@
           "name": "Platforms",
           "value": "Android, Desktop, iOS, Mac, Web"
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1489931",
@@ -325,7 +585,8 @@
           "name": "Platforms",
           "value": "Web"
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1480873",
@@ -353,7 +614,8 @@
           "name": "Summary",
           "value": "Microsoft Agent 365 will support observability for third-party agents from Amazon Bedrock, Google Vertex AI, and Anthropic Claude, enabling unified monitoring of runs, sessions, and exceptions. Rollout begins late October 2026 with admin controls for enabling data collection and platform-specific setup requirements."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1485054",
@@ -381,6 +643,13 @@
           "name": "Summary",
           "value": "Microsoft Entra App Gallery introduces self-service onboarding for new applications, allowing ISVs to validate SSO and provisioning integrations, manage submissions, and track status via the Microsoft Entra admin center. Public preview is available now; general availability begins mid-November 2026. No action required."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/enterprise-apps/app-gallery-sso-requirements",
+        "https://learn.microsoft.com/entra/identity/enterprise-apps/app-gallery-user-provisioning-requirements",
+        "https://learn.microsoft.com/entra/identity/enterprise-apps/publish-app-gallery",
+        "https://learn.microsoft.com/entra/identity/enterprise-apps/update-or-remove-app-gallery",
+        "https://learn.microsoft.com/entra/identity/enterprise-apps/v2-howto-app-gallery-listing"
       ]
     },
     {
@@ -408,7 +677,8 @@
           "name": "Summary",
           "value": "Microsoft Edge's Copilot is updated with a new icon, simplified UX, and enhanced features like Voice and Vision. The rollout begins mid-October 2026, requires no admin action, and maintains existing security, compliance, and admin controls. Users with Copilot enabled will see these changes automatically."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1478975",
@@ -444,7 +714,8 @@
           "name": "Platforms",
           "value": "Android, Desktop, iOS, Web"
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1477184",
@@ -472,7 +743,8 @@
           "name": "Summary",
           "value": "Microsoft 365 admin center's Agent Registry now consolidates duplicate agent entries into single records with version history, simplifying management and governance. Rollout occurs mid-September to mid-October 2026. Admins should update reports and documentation due to changes in agent counts; no action is required."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1454397",
@@ -501,7 +773,8 @@
           "name": "Summary",
           "value": "Starting mid-September to November 2026, Exchange Online updates Tenant External Recipient Rate Limit (TERRL) quotas for new, trial, and education tenants, adjusting limits based on tenant age and license type. Trial quotas reduce to 500 recipients daily; EDU licenses get a new quota formula. No immediate action required."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1481309",
@@ -530,6 +803,9 @@
           "name": "Summary",
           "value": "Microsoft Entra ID will enhance sign-in security by enforcing a Content Security Policy blocking external script injection starting mid-October 2026. Only trusted Microsoft scripts will run, affecting organizations using script-injecting tools on login.microsoftonline.com. No action needed if such tools aren't used."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity-platform/content-security-policy"
       ]
     },
     {
@@ -567,6 +843,10 @@
           "name": "Platforms",
           "value": "Web"
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
+        "https://learn.microsoft.com/deployedge/microsoft-edge-policies"
       ]
     },
     {
@@ -595,7 +875,8 @@
           "name": "Summary",
           "value": "Microsoft Edge for Android will retire Citrix Mobile VPN (mVPN) integration starting mid-September 2026 due to compatibility issues. Organizations using this integration must identify affected users, assess dependencies, plan migration to alternative solutions, and communicate changes before support ends. Other Edge features remain unaffected."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1478957",
@@ -623,6 +904,10 @@
           "name": "Summary",
           "value": "Microsoft 365 profile cards will show dotted-line managers in the organization panel starting October 2026, helping users understand complex reporting structures. This additive update requires organizations to provide dotted-line manager data via HR systems like SAP SuccessFactors or Workday. No action is required unless enabling this feature."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
+        "https://learn.microsoft.com/microsoft-365/admin/people-relationships-m365"
       ]
     },
     {
@@ -650,7 +935,8 @@
           "name": "Summary",
           "value": "Microsoft 365 Apps Cloud Update will allow Monthly Enterprise Channel devices to roll back to releases from two versions prior with security updates, maintaining that state until updates resume. Rolling out worldwide in September 2026, this feature enhances recovery options without automatic changes to devices."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1478465",
@@ -677,7 +963,8 @@
           "name": "Summary",
           "value": "Security Copilot is now included with Microsoft 365 E5/E7 plans, integrating agents across Defender, Entra, Intune, Purview, and its portal. No purchase or action is needed. Organizations get monthly Security Compute Units, developer tools, and can explore additional paid features or opt out by contacting support."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1477996",
@@ -704,6 +991,9 @@
           "name": "Summary",
           "value": "Viva Insights personal insights and Viva Learning usage reports will be retired from the Microsoft 365 admin center by mid-November 2026. Admins should access Viva Learning metrics directly in the app and update documentation and communications accordingly."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/viva/learning/reports"
       ]
     },
     {
@@ -741,7 +1031,8 @@
           "name": "Platforms",
           "value": "Desktop"
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1474455",
@@ -769,6 +1060,11 @@
           "name": "Summary",
           "value": "The Microsoft Copilot app now supports in-app browsing on Windows and Mac, allowing users to open websites side-by-side with chat. Administrators can opt-in selected devices to test this feature, manage policies, and prepare support. Browsing data is stored locally, and users can open links externally if desired."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/deployedge/configure-microsoft-edge",
+        "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies",
+        "https://learn.microsoft.com/en-us/windows/client-management/configure-microsoft-copilot-policies"
       ]
     },
     {
@@ -797,6 +1093,9 @@
           "name": "Summary",
           "value": "Microsoft 365 companion apps (Calendar, People, Files) will retire on December 16, 2026, ceasing support and functionality. Admins must stop new installations and remove existing apps. Core Microsoft 365 features remain unaffected, accessible via Outlook, Teams, and other tools. Users should be informed and guided accordingly."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365-apps/companions/companion-app-retirement"
       ]
     },
     {
@@ -825,6 +1124,10 @@
           "name": "Summary",
           "value": "Microsoft is retiring SMS first-factor sign-in for Microsoft Entra ID workforce tenants worldwide starting February 1, 2027, to enhance security. Organizations must identify affected users, migrate them to phishing-resistant methods like passkeys, and update policies to avoid sign-in disruptions and comply with new requirements."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+        "https://learn.microsoft.com/entra/identity/authentication/howto-authentication-sms-signin"
       ]
     },
     {
@@ -862,7 +1165,8 @@
           "name": "Platforms",
           "value": "Android, Desktop, iOS, Mac, Web"
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1473151",
@@ -889,6 +1193,9 @@
           "name": "Summary",
           "value": "IE mode in Microsoft Edge is supported through at least the end of 2029. Organizations using it should inventory dependencies, assess modernization options, and plan migrations early to avoid disruption. No immediate action is required if IE mode is not used. Microsoft offers free App Assure support for compatibility issues."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
       ]
     },
     {
@@ -925,6 +1232,9 @@
           "name": "Platforms",
           "value": "Web"
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-management-service-monitoring-dashboard"
       ]
     },
     {
@@ -952,7 +1262,8 @@
           "name": "Summary",
           "value": "Microsoft is updating Microsoft Browser and Visio usage reports on September 21, 2026, improving metric accuracy and including more apps. Active-user counts may rise, but historical data won't change. Administrators should review reports, note the baseline change date, and validate API integrations."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1426371",
@@ -981,6 +1292,10 @@
           "name": "Summary",
           "value": "Passkeys became the default Microsoft Entra authentication on September 1, 2026. Microsoft-provided SMS and voice authentication will retire February 1, 2027, requiring customers to use telecom providers from the Microsoft Security Store. Transition to passkeys is recommended for stronger, phishing-resistant security."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-plan-prerequisites-phishing-resistant-passwordless-authentication%22%20target="
       ]
     },
     {
@@ -1009,6 +1324,10 @@
           "name": "Summary",
           "value": "Support for Office LTSC 2021 and related apps ends October 13, 2026, with no further updates or support. Users should upgrade to Microsoft 365 Apps or Office LTSC 2024 to maintain security, compliance, and performance before that date."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/lifecycle/faq/fixed-policy",
+        "https://learn.microsoft.com/en-us/lifecycle/faq/modern-policy"
       ]
     },
     {
@@ -1036,44 +1355,8 @@
           "name": "Summary",
           "value": "Microsoft is introducing a feature to change the organizer of eligible Outlook meetings, allowing transfer of meeting ownership within an organization. Phase 1 (late 2026) supports non-online meetings; later phases will add online and Teams meetings. The new organizer must accept the transfer, preserving meeting content and attendee settings."
         }
-      ]
-    },
-    {
-      "id": "MC1440972",
-      "title": "(Updated) Microsoft Edge: Upgraded Copilot new tab page",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-27T22:59:03.0000000+00:00",
-      "endDateTime": "2026-12-14T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-14T23:01:37.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
       ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated September 14, 2026: We have updated the timeline and content. Thank you for your patience.\n[What and why]\nMicrosoft Edge is introducing an upgraded Copilot new tab page that brings Microsoft 365 Copilot chat, web search, and work content into a single experience. Users can search the web, navigate to websites, interact with Microsoft 365 Copilot, and access relevant work content from a single experience.\nThe updated experience includes enhanced Copilot chat integration, compose capabilities, suggested actions, curated work content, and a refreshed design to help users complete tasks more efficiently.\nThis message is associated with Microsoft 365 Roadmap ID 566703.\n[Rollout schedule]\n• Public Preview: Beginning in late September 2026 (previously early September) and expected to complete by mid-October 2026 (previously mid-September)\n• General Availability (Worldwide): Beginning in mid-October 2026 (previously mid-September) and expect to complete by early November 2026 (previously mid-September)\n[Impact on your organization]\nWho is affected\n• Users in your organization who have the Copilot new tab page enabled in Microsoft Edge.\n• Users who do not have the Copilot new tab page enabled will continue to see the existing new tab page experience.\n• To access this experience, users must have a Microsoft 365 Copilot license.\nPlatforms and services\n• Microsoft Edge\n• Microsoft 365 Copilot\nWhat will happen\nThe Copilot new tab page is off by default.\nWhen enabled, users will see:\n• An updated search box for navigating to websites, searching the web, or sending a query to Microsoft 365 Copilot.\n• Enhanced Copilot chat and compose capabilities.\n• Suggested actions and work content to help users begin and complete tasks.\n• Work cards that may surface organizational content such as files and calendar events.\n• A refreshed design, app launcher, pinned quick links, and updated theme settings.\n• Starting in September 2026, Discover feed and feed toggle functionality will be limited. We plan to continue improving and expanding these capabilities as the Copilot new tab page evolves\n• A Discover feed with curated news and content where supported.\nAdmins can enable the Copilot new tab page through the Microsoft Edge management service using the CopilotNewTabPageEnabled policy and assign the configuration to all users or selected Microsoft Entra groups.\nDepending on organizational policy settings, users may be able to disable the experience after it has been enabled.\nUsers who are not enabled will continue to see the existing Microsoft Edge new tab page.\n[Action required and recommendations]\nThe Copilot new tab page is off by default. No admin action required before rollout as this change applies only to organizations that enabled the Copilot new tab page via CopilotNewTabPageEnabled. If your organization has enabled this policy, users will automatically see the upgraded Copilot new tab page. If the policy is not configured or is disabled, there is no change to your users' new tab page experience.\nIf your organization plans to enable the experience, we recommend that you:\n• Review your current Microsoft Edge and Copilot new tab page configuration.\n• Determine which users or Microsoft Entra groups should receive the experience.\n• Verify that affected users have a Microsoft 365 Copilot license.\n• Evaluate the effect of surfacing organizational files and calendar events through work cards.\n• Review applicable AI governance and compliance requirements before enabling the experience.\n• Notify affected users about the updated new tab page.\n• Update relevant user guidance, training, and support documentation.\nLearn more\n• Configure the Copilot new tab page | Microsoft Edge | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes this change introduce or significantly modify AI, ML, or agent capabilities that interact with or provide access to customer data?Yes. The upgraded Copilot new tab page integrates Microsoft 365 Copilot chat and can surface organizational content, including files and calendar events, through work cards and suggested prompts.\nDoes this change provide end users with a new way to interact with generative AI?Yes. Users can send queries directly to Microsoft 365 Copilot from the new tab page search box and access integrated Copilot chat functionality within the Microsoft Edge new tab experience.\nDoes this change include an admin control?Yes. Administrators can enable the Copilot new tab page through the Microsoft Edge management service and assign the configuration to all users or selected Microsoft Entra groups.\nCan users enable or disable the feature themselves?Yes. Depending on organizational settings, users may be able to turn off the Copilot new tab page experience and switch between Work cards and Chat chips.\nCan the feature be controlled through Microsoft Entra ID group membership?Yes. Administrators can assign the Copilot new tab page configuration to one or more Microsoft Entra groups.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "566703"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft Edge's upgraded Copilot new tab page integrates Microsoft 365 Copilot chat, web search, and work content into one experience with enhanced chat, compose features, suggested actions, and work cards. Rollout begins late September 2026, enabled via admin policy, requiring a Microsoft 365 Copilot license."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
-        }
-      ]
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1470885",
@@ -1100,6 +1383,10 @@
           "name": "Summary",
           "value": "Microsoft 365 Copilot adds a new prompt input directly on the Copilot button in Word, Excel, and PowerPoint for faster, contextual content creation. Rolling out worldwide from September to December 2026 on Windows, macOS, and web, it requires no admin action but updates to training and documentation."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/copilot/manage",
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/pin-copilot-chat-navbar"
       ]
     },
     {
@@ -1127,7 +1414,8 @@
           "name": "Summary",
           "value": "User.ReadBasic.All will no longer provide access to user app role assignments and license details starting mid-September 2026 to fix a security issue. Applications needing this data must switch to User.Read.All or LicenseAssignment.Read.All permissions and update accordingly to avoid disruptions."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1470425",
@@ -1154,7 +1442,8 @@
           "name": "Summary",
           "value": "September 2026 updates to Microsoft Copilot Cost Management introduce auto-application of new services to spending policies, user spending alerts, expanded and enhanced consumption reporting, custom approval workflows, and improved policy health guidance. Admins should review policies, configure notifications, and familiarize with new reporting features."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1469962",
@@ -1183,6 +1472,9 @@
           "name": "Summary",
           "value": "Microsoft is updating the sender email for Copilot-related educational and enablement emails to microsoftcopilotupdates@microsoft.com by mid-September 2026. Organizations should update mail flow rules and safe sender lists accordingly. The email content remains unchanged, and no tenant action is required for rollout."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/defender-office-365/tenant-allow-block-list-email-spoof-configure"
       ]
     },
     {
@@ -1220,6 +1512,10 @@
           "name": "Platforms",
           "value": "Web"
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
+        "https://learn.microsoft.com/deployedge/microsoft-edge-browser-policies/composeinlineenabled"
       ]
     },
     {
@@ -1248,33 +1544,10 @@
           "name": "Summary",
           "value": "Microsoft Entra is enhancing passkey registration campaigns to optimize user experience and increase phishing-resistant authentication adoption. Eligible users will be automatically prompted based on qualifying passkey profiles. Rollout begins early September 2026. Administrators should review campaign configurations and user assignments before rollout."
         }
-      ]
-    },
-    {
-      "id": "MC1469329",
-      "title": "Build apps in Microsoft Copilot Studio and Copilot Cowork",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-08T17:42:20.0000000+00:00",
-      "endDateTime": "2027-01-25T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-08T17:42:53.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
       ],
-      "tags": [
-        "Admin impact",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and why:]\nWe are announcing a preview of the new app-building experience in Microsoft Copilot Cowork. A corresponding experience in Microsoft Copilot Studio will follow within the next couple of weeks. These experiences make it easier for people to turn ideas into apps using natural-language guidance and generative AI.\nMakers can create a working first draft through natural-language conversation, refine it, preview and test it, and then publish and share it. Apps can use organizational data through connectors permitted by your organization’s policies. Apps built in Cowork can be opened and further edited in Copilot Studio. Apps created through these experiences will be visible to administrators in the new Apps experience in the Microsoft 365 admin center, providing consistent governance and organization-wide visibility.\n[Rollout schedule:]\nRollout for Copilot Cowork will begin on September 8, 2026, and is expected to complete by September 14, 2026.\nThe corresponding experience in Microsoft Copilot Studio is expected to become available within the next weeks.\n[Impact on your organization:]\n• The app-building experience in Copilot Cowork is available in preview through the Frontier Program to users who have a Microsoft 365 Copilot license and access to Cowork.\n• When the app-building experience in Copilot Studio becomes available, it will be enabled by default for eligible makers. During preview, administrators can turn the experience on or off in the Microsoft 365 admin center and scope access to specific security groups.\n• Eligible users will be able to create and refine apps through conversation, preview and test them, and publish and share them with people or groups permitted by organizational policies.\n• Apps use Microsoft Entra authentication and follow your organization's existing connector, environment, data, security, compliance, and sharing policies. Published apps are visible in Apps > All apps in the Microsoft 365 admin center.\n• Based on the organization’s governance policies, makers who create apps through these experiences are automatically routed to an isolated personal developer environment instead of the shared environment.\n• The personal developer environment is protected from the start by secure defaults that administrators can adjust to meet organizational requirements. Applicable policies are enforced when each app is created, helping keep apps within the organization’s governance boundaries.\n• For organizations that have not enabled environment routing, routing will be automatically applied to apps created through these experiences. This change does not affect other resources created in Power Platform or Copilot Studio.\n[Action required / Recommendations:]\n• Complete Frontier Program onboarding for your organization and enable eligible app creators in the Microsoft 365 admin center under Apps > Overview.\n• Review the default configuration and adjust the policies to match your requirements in Microsoft 365 admin center > Apps > Settings.\n• Inform your maker community when each experience becomes available and share your organization’s requirements for building and sharing apps.\n• Review the Copilot Credits requirements for building and running apps and configure usage-based billing as needed.\nLearn more\n• Get started with the Microsoft Copilot Frontier Program\n• Build apps in Copilot Cowork documentation link\n• Manage apps in the Microsoft 365 admin center\n• Manage Copilot Cowork for your organization\n• Copilot Credits Guide\n• Understand usage-based billing and cost management for Copilot Credits",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft announces a preview of app-building in Copilot Cowork starting September 8, 2026, with Copilot Studio following soon. Users with licenses can create, test, and publish apps using natural language and organizational data, governed by existing policies and managed via the Microsoft 365 admin center."
-        }
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-enable-authenticator-passkey",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-mfa-registration-campaign"
       ]
     },
     {
@@ -1303,7 +1576,8 @@
           "name": "Summary",
           "value": "Microsoft Edge will retire Manifest V2 (MV2) extensions by early 2027, fully switching to Manifest V3 (MV3) for improved security and performance. MV2 extensions will be disabled, blocked from new installs, and policies supporting MV2 removed. Enterprises must migrate to MV3 before the deprecation deadline."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1440968",
@@ -1332,7 +1606,8 @@
           "name": "Summary",
           "value": "Microsoft Entra ID is optimizing passkey registration to better align with administrator policies, prioritize local device passkeys, and improve successful registrations without UI changes. The rollout begins late August 2026, completing by mid-September. No action is required; organizations should continue promoting passkey adoption."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1466760",
@@ -1359,7 +1634,8 @@
           "name": "Summary",
           "value": "Starting late August 2026, users can access existing Pages via the \"/\" menu in Copilot chat, while the \"Edit in Pages\" menu will focus on creating new Pages. This update streamlines referencing Pages without affecting existing content or permissions. No action is required."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1454108",
@@ -1389,6 +1665,12 @@
           "name": "Summary",
           "value": "Microsoft 365 Copilot app is updating to a unified app for personal and work accounts with clearer visual cues, a simpler name and icon, and a new web URL (copilot.cloud.microsoft). Rollout begins mid-August 2026, with no changes to security, compliance, or enterprise controls."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/entra/external-id/tenant-restrictions-v2",
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-app-admin-settings",
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-requirements",
+        "https://learn.microsoft.com/en-us/windows/client-management/manage-recall"
       ]
     },
     {
@@ -1425,6 +1707,9 @@
           "name": "Platforms",
           "value": "Desktop"
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/answers/questions/5791778/how-do-i-enable-or-disable-microsoft-copilot-on-ms"
       ]
     },
     {
@@ -1457,6 +1742,9 @@
           "name": "Summary",
           "value": "A new Message consumption usage report for Microsoft 365 Copilot Chat pay-as-you-go billing is now in preview, showing message usage by tenant, user, agent, and billing policy. It alerts when users exceed 2000 billed messages. General availability begins January 2027 with automatic rollout."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/activity-reports/message-consumption"
       ]
     },
     {
@@ -1486,7 +1774,8 @@
           "name": "Summary",
           "value": "Microsoft Entra improves the iOS Microsoft Authenticator app's passkey restore experience with a clearer, guided flow for device migration, launching worldwide mid-September 2026. It affects iOS users with iCloud backup, requires no action, and includes updated user guidance without policy changes."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1158329",
@@ -1523,6 +1812,10 @@
           "name": "Platforms",
           "value": "Android, Desktop, iOS, Mac, Web"
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/graph/api/resources/enhancedpersonalizationsetting?view=graph-rest-beta",
+        "https://learn.microsoft.com/graph/control-enhanced-personalization-privacy"
       ]
     },
     {
@@ -1550,6 +1843,9 @@
           "name": "Summary",
           "value": "The Admin app for very small businesses in Teams, Outlook, and Microsoft365.com will retire by October 2026, with rollout starting August 2026. It will no longer be pre-installed or supported. Admins should use Microsoft Admin Center, Teams Admin Center, or Microsoft 365 Admin Agent instead."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-gb/microsoft-365/copilot/copilot-ai-admin-agent"
       ]
     },
     {
@@ -1578,7 +1874,8 @@
           "name": "Summary",
           "value": "Microsoft Agent 365 will add an Active Users export in the Microsoft 365 admin center, allowing AI and Global Admins to generate a CSV report of users who used agents in the past 30 days. This read-only feature aids licensing reviews and requires no preparation."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1462460",
@@ -1605,6 +1902,9 @@
           "name": "Summary",
           "value": "Microsoft Entra is updating its self-service identity management domain from myaccount.microsoft.com to myaccount.cloud.microsoft, consolidating related sites for a unified experience. The change rolls out worldwide in late November 2026. Users need no action; administrators should ensure *.cloud.microsoft domains are allowed in network policies."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/enterprise/cloud-microsoft-domain?view=o365-worldwide"
       ]
     },
     {
@@ -1633,6 +1933,9 @@
           "name": "Summary",
           "value": "Access to Copilot Chat on the Microsoft 365 Copilot mobile app will be simplified by removing restrictions from the Intune policy and \"Analyze content\" privacy control. This change, rolling out August to September 2026, requires no admin action but may affect organizational controls and documentation."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/copilot/manage"
       ]
     },
     {
@@ -1662,7 +1965,8 @@
           "name": "Summary",
           "value": "Microsoft Teams will add a toggle for licensed organizers and presenters to turn Meeting AI (Copilot and Facilitator) on or off during meetings, starting mid-September 2026. Turning off AI disables recording and transcription. The feature respects existing policies, requires no action, and aims to enhance control over AI use in meetings."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1461528",
@@ -1690,6 +1994,9 @@
           "name": "Summary",
           "value": "On August 25, 2026, Microsoft 365 Roadmap will be renamed AI at Work Roadmap, expanding to include Dynamics 365, Power Platform, and Dataverse updates from September 2026. It centralizes AI-powered innovation tracking without changing access or workflows; no immediate action is required."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/manage/mrc-mcp"
       ]
     },
     {
@@ -1719,6 +2026,10 @@
           "name": "Summary",
           "value": "Microsoft Entra now applies system-preferred authentication to first-factor sign-ins for tenants in the Microsoft managed state, selecting the most secure registered method. Rollout is from late June to late September 2026. Tenants can keep or change this setting and should update user guidance accordingly."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/fundamentals/whats-new",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-system-preferred-authentication"
       ]
     },
     {
@@ -1746,7 +2057,8 @@
           "name": "Summary",
           "value": "Microsoft 365 admin center Usage reports domains will change starting mid-August 2026, with current and new domains active in parallel for at least 30 days. Organizations must update firewall, proxy, and scripts to include new domains to avoid access issues. Redirects and domain retirements will be announced later."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1459132",
@@ -1774,6 +2086,19 @@
           "name": "Summary",
           "value": "Microsoft Edge will retire support for Windows Information Protection (WIP) and Microsoft Defender Application Guard (MDAG) by late September 2026. Organizations using these on Windows 10 must migrate to Microsoft Purview solutions and Edge's built-in security features, as these capabilities are already removed in Windows 11 version 24H2."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/deployedge/microsoft-edge-security-browse-safer",
+        "https://learn.microsoft.com/deployedge/microsoft-edge-security-dlp",
+        "https://learn.microsoft.com/deployedge/microsoft-edge-security-smartscreen",
+        "https://learn.microsoft.com/deployedge/microsoft-edge-security-windows-defender-application-guard",
+        "https://learn.microsoft.com/deployedge/ms-edge-security-for-business",
+        "https://learn.microsoft.com/lifecycle/products/windows-10-enterprise-ltsc-2019",
+        "https://learn.microsoft.com/lifecycle/products/windows-10-enterprise-ltsc-2021",
+        "https://learn.microsoft.com/purview/dlp-learn-about-dlp?view=o365-worldwide",
+        "https://learn.microsoft.com/purview/endpoint-dlp-getting-started",
+        "https://learn.microsoft.com/purview/information-protection",
+        "https://learn.microsoft.com/windows/whats-new/extended-security-updates"
       ]
     },
     {
@@ -1802,35 +2127,11 @@
           "name": "Summary",
           "value": "Microsoft Entra ID will retire custom CSS layout and positioning properties in company branding by late October 2026 to enhance security and reduce phishing risks. Organizations using these properties must update branding configurations before then; new use will be blocked from July 21, 2026. Branding will revert to default layouts after retirement."
         }
-      ]
-    },
-    {
-      "id": "MC1450134",
-      "title": "(Updated) Microsoft Entra: Windows Hello for Business and macOS Platform SSO as standalone MFA factors",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-07T21:56:10.0000000+00:00",
-      "endDateTime": "2026-12-20T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-08-18T20:28:17.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
       ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated August 18, 2026: We have updated the content. Thank you for your patience.\n[What and why]\nMicrosoft Entra will soon recognize Windows Hello for Business (WHfB) and macOS Platform Single Sign-On (PSSO) as standalone multifactor authentication (MFA) factors in supported authentication scenarios.\nToday, WHfB and macOS PSSO can satisfy MFA requirements during primary sign-in, but users may still be required to register and use an additional passkey or authentication method for certain step-up authentication prompts, Authentication Strength policies, and sign-in frequency checks.\nAfter this rollout, users who authenticate with WHfB or macOS PSSO will be able to satisfy supported MFA requirements without registering an additional passkey. This change helps organizations expand the use of phishing-resistant authentication methods and reduce reliance on less secure authentication methods. As part of this change, a user's WHfB and macOS PSSO credentials will be displayed in My Security Info as auto-registered passkeys.\n[Rollout schedule]\n• General Availability (Worldwide, GCC): Beginning in early October 2026 and expected to complete in late November 2026\n[Impact on your organization]\nWho is affected\n• Organizations using Microsoft Entra ID\n• Users who authenticate with Windows Hello for Business\n• Users who authenticate with macOS Platform SSO\n• Organizations using Conditional Access Authentication Strength policies\nPlatforms and services\n• Microsoft Entra ID\n• Windows Hello for Business\n• macOS Platform SSO\n• Conditional Access\n• Authentication Strength policies\nWhat will happen\nAfter rollout:\n• Users signing in with WHfB or macOS PSSO can complete supported MFA challenges without requiring a separate passkey.\n• WHfB and macOS PSSO will satisfy supported MFA requirements for step-up authentication scenarios.\n• WHfB and macOS PSSO can be used during 2FA to satisfy supported Authentication Strength policy requirements.\n• WHfB and macOS PSSO can be used during 2FA to satisfy supported sign-in frequency challenge requirements.\n• Users whose only MFA method is WHfB or macOS PSSO will be considered MFA-capable.\n• Users who sign in with only a password will no longer be automatically prompted to register an additional MFA method if WHfB or macOS PSSO is their only registered MFA credential.\n• Users with WHfB or macOS PSSO credentials, will be able to see them listed in My Security Info as auto-registered passkeys.\n[Action required and recommendations]\nNo configuration changes are required.\nWe recommend reviewing user onboarding and MFA registration processes before rollout. Because WHfB and macOS PSSO credentials are device-bound, users may not be able to complete MFA challenges from devices where those credentials are not available.\nRecommended actions:\n• Update onboarding guidance to ensure users register at least one portable MFA method.\n• Consider requiring users to register a synced passkey or Microsoft Authenticator passkey in addition to WHfB or macOS PSSO.\n• Review custom Authentication Strength policies to confirm WHfB and macOS PSSO are allowed where appropriate.\n• Update user documentation because users with only WHfB or macOS PSSO registered will no longer be automatically guided to register an additional MFA method.\nLearn more (To be updated closer to GA rollout.)\n• Plan a Windows Hello for Business deployment | Security | Windows | Microsoft Learn\n• Prepare users to provision and use Windows Hello for Business | Security | Windows | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra will recognize Windows Hello for Business and macOS Platform SSO as standalone MFA factors starting October 2026, allowing users to meet MFA requirements without additional passkeys. No configuration changes are needed, but organizations should update onboarding and MFA registration guidance accordingly."
-        }
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/fundamentals/how-to-customize-branding",
+        "https://learn.microsoft.com/entra/fundamentals/how-to-customize-branding-themes-apps",
+        "https://learn.microsoft.com/entra/fundamentals/reference-company-branding-css-template"
       ]
     },
     {
@@ -1867,7 +2168,8 @@
           "name": "Platforms",
           "value": "Desktop"
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1449170",
@@ -1895,6 +2197,9 @@
           "name": "Summary",
           "value": "Microsoft Edge will stop running unload event handlers by default starting September 2026, requiring sites to explicitly permit them via Permissions Policy. Organizations should migrate to modern lifecycle events like visibilitychange and pagehide, update applications, and use provided policies temporarily during transition."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/deployedge/microsoft-edge-policies/forcepermissionpolicyunloaddefaultenabled"
       ]
     },
     {
@@ -1923,6 +2228,10 @@
           "name": "Summary",
           "value": "Starting November 9, 2026, Microsoft Entra ID SSPR will require explicitly registered authentication methods for password reset verification, disallowing directory-sourced contact info unless registered. A registration campaign begins October 5, 2026. Organizations must ensure users register methods to avoid reset failures."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/answers/tags/455/microsoft-security-entra-entra-id",
+        "https://learn.microsoft.com/entra/identity/authentication/howto-sspr-authenticationdata"
       ]
     },
     {
@@ -1951,6 +2260,11 @@
           "name": "Summary",
           "value": "Microsoft Entra ID will retire support for custom CSS positioning properties in company branding starting October 2026 to enhance security and phishing resistance. Existing users must remove these properties by then, as no migration path exists. Branding elements remain visible but may revert to default placement."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/fundamentals/how-to-customize-branding",
+        "https://learn.microsoft.com/entra/fundamentals/how-to-customize-branding-themes-apps",
+        "https://learn.microsoft.com/entra/fundamentals/reference-company-branding-css-template"
       ]
     },
     {
@@ -1974,7 +2288,8 @@
       "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ",
       "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。対応期限は 2026年8月20日 です。",
       "bodyText": "[What and why]\nWe're performing a one-time cleanup of aged pending requests in the All Agents request management experience. This cleanup is intended to remove stale requests that have remained pending for an extended period and help maintain a more current and manageable request queue.\nBeginning August 20, 2026, pending requests created before June 1, 2026 will be permanently removed unless they are reviewed and actioned before the cleanup begins.\nRequests that have already been approved or rejected are not affected.\n[Rollout schedule]\n• Worldwide: Beginning August 20, 2026 and expected to complete in late August 2026\n[Impact on your organization]\nWho is affected\n• Administrators responsible for reviewing and managing requests in All Agents\nPlatforms and services\n• Microsoft 365\n• All Agents\nWhat will happen\n• Pending requests dated before June 1, 2026 will be removed as part of this one-time cleanup.\n• Requests that have already been approved or rejected will remain unchanged.\n• Pending requests created on or after June 1, 2026 are not affected.\n• This is a one-time cleanup activity. No recurring deletion process is being introduced.\n[Action required and recommendations]\nReview any pending requests created before June 1, 2026 and determine whether they should be retained.\nBefore August 20, 2026:\n• Go to All Agents > Requests.\n• Review pending requests created before June 1, 2026.\n• Approve or reject any requests you want to preserve.\nRequests that are approved or rejected before the cleanup begins will not be removed. Requests that remain pending when the cleanup begins will be permanently removed.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": []
+      "details": [],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1437679",
@@ -2010,7 +2325,8 @@
           "name": "Platforms",
           "value": "Android, iOS"
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1287370",
@@ -2038,7 +2354,8 @@
           "name": "Summary",
           "value": "Microsoft is auto-upgrading shared calendars in Outlook and Exchange Online from the legacy MAPI model to a modern REST model, improving sync reliability and performance. The seamless, server-side rollout begins August 2026 for GCC High/DoD tenants, requires no user action, preserves permissions, and excludes events older than one year."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1221452",
@@ -2067,6 +2384,12 @@
           "name": "Summary",
           "value": "Starting March 2026, Microsoft Entra ID will GA passkey profiles and synced passkeys for tenants with Passkeys (FIDO2) enabled. Existing configurations migrate to a Default passkey profile with a new passkeyType property. Automatic migration and registration campaign updates roll out regionally through October 2026."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-enable-passkey-fido2",
+        "https://learn.microsoft.com/entra/identity/authentication/synced-passkey-faq"
       ]
     },
     {
@@ -2096,6 +2419,9 @@
           "name": "Summary",
           "value": "Microsoft Entra passkeys on Windows will be generally available from late April 2026, enabling phishing-resistant, passwordless sign-in on Windows devices without explicit opt-in. This supports corporate, personal, and shared devices, with admin controls via Authentication Methods policies and Conditional Access. No action is needed unless blocking is desired."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows"
       ]
     },
     {
@@ -2124,42 +2450,8 @@
           "name": "Summary",
           "value": "Microsoft Entra ID is retiring Custom Controls in Conditional Access by May 2027, replacing them with External MFA for standardized third-party MFA integration. Administrators must migrate policies by September 2026, updating Conditional Access to use External MFA to ensure continued support and security."
         }
-      ]
-    },
-    {
-      "id": "MC1387526",
-      "title": "Microsoft 365 Backup: Full workload backup for SharePoint, OneDrive, and Exchange",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-06-11T16:46:49.0000000+00:00",
-      "endDateTime": "2026-11-16T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-06-11T16:46:55.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
       ],
-      "tags": [
-        "Admin impact",
-        "New feature"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nWe are introducing Full Workload Backup for Microsoft 365 Backup, a new capability that allows admins to quickly protect an entire workload (SharePoint, OneDrive, or Exchange) with a single policy. This feature automatically includes all existing and newly created artifacts that are not already covered by custom policies, helping organizations improve data protection coverage, reduce administrative overhead, and ensure continuous backup for critical business data at scale.\nThis enhancement supports enterprise-ready data protection and automation, enabling organizations to safeguard content more efficiently while maintaining control through existing policy configurations.\nThis message is associated with Microsoft 365 Roadmap ID 464990.\n[Rollout Schedule:]\n• Public Preview (Worldwide): We will begin rolling out in early July 2026 and expect to complete by mid-July 2026.\n• General Availability: We will begin rolling out in mid-September 2026 and expect to complete by mid-October 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Admins managing Microsoft 365 Backup policies\n• Organizations currently using or planning to use Microsoft 365 Backup\nPlatforms/Services:\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\nWhat will happen:\n• A new option to back up all artifacts within a selected workload will be available.\n• Admins can enable Full Workload Backup per workload (SharePoint, OneDrive, Exchange).\n• All eligible artifacts not covered by existing custom backup policies will be automatically protected.\n• Newly created artifacts will be included in backup coverage automatically on subsequent runs.\n• Existing custom backup policies will continue to take precedence and remain unchanged.\n• Admins can upload a CSV file to exclude specific artifacts.\n• The feature is available by default but requires admin configuration to enable.\n[Action Required/Recommendations:]\nNo immediate action is required before rollout.\nAfter rollout, we recommend that you:\n• Review your current Microsoft 365 Backup policies and coverage.\n• Evaluate whether Full Workload Backup aligns with your data protection strategy.\n• Inform backup administrators about this new capability.\n• Update internal documentation if you manage backup procedures.\nTo enable the feature:\n• Go to the Microsoft 365 Backup dashboard in the Microsoft 365 admin center.\n• Select the workload you want to protect and choose the option to back up all artifacts.\n• (Optional) Upload a CSV file on the Exclude sites step to exclude specific sites from the scope of the policy.\n• Review the coverage summary and confirm to create the Full Workload Backup policy.\nLearn more:\n• Create, view, and edit backup policies in Microsoft 365 Backup | Microsoft Learn (will be updated before rollout begins)\n• Overview of Microsoft 365 Backup | Microsoft Learn (will be updated before rollout begins)\n[Compliance considerations:]\nNo compliance considerations identified, review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "464990"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Backup introduces Full Workload Backup for SharePoint, OneDrive, and Exchange, enabling admins to protect entire workloads with one policy. It automatically covers all existing and new artifacts, reduces admin effort, and supports enterprise data protection. Rollout begins July 2026; admin configuration is required to enable."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
-        }
-      ]
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1282571",
@@ -2186,7 +2478,8 @@
           "name": "Summary",
           "value": "Excel's Copilot entry points are being consolidated into a single, consistent location with the right-side chat pane as the primary interface. Rollout starts late April 2026 (worldwide) and October 2026 (GCC). No action is required; the feature remains on by default for licensed users."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1225192",
@@ -2214,6 +2507,9 @@
           "name": "Summary",
           "value": "Starting January 30, 2026, Microsoft Entra ID Governance requires tenants to link an Azure subscription to use guest governance features. Without this, creating or updating guest-scoped policies will be blocked. Existing policies run, but new actions need subscription-linked billing under the Monthly Active User model."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/id-governance/microsoft-entra-id-governance-licensing-for-guest-users"
       ]
     },
     {
@@ -2242,6 +2538,10 @@
           "name": "Summary",
           "value": "Support for Office LTSC 2021 and related apps ends October 13, 2026, with no further updates or support. Organizations should upgrade to Microsoft 365 Apps or Office LTSC 2024 to maintain security, compliance, and performance, avoiding risks from using unsupported software."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/lifecycle/faq/fixed-policy",
+        "https://learn.microsoft.com/lifecycle/faq/modern-policy"
       ]
     },
     {
@@ -2269,6 +2569,10 @@
           "name": "Summary",
           "value": "Starting February 9, 2026, Microsoft will enforce mandatory multi-factor authentication (MFA) for all users signing into the Microsoft 365 admin center to enhance security. Admins should set up MFA now to avoid access issues; users must verify or add their MFA methods."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/security-and-compliance/multi-factor-authentication-microsoft-365?view=o365-worldwide",
+        "https://learn.microsoft.com/microsoft-365/admin/security-and-compliance/set-up-multi-factor-authentication?view=o365-worldwide"
       ]
     },
     {
@@ -2296,7 +2600,8 @@
           "name": "Summary",
           "value": "Microsoft Edge Workspaces will migrate saved data from OneDrive/SharePoint to Edge Sync starting mid-February 2026, removing collaboration features. Migration is automatic for all organizations using Workspaces, with no admin action needed. Sync-disabled devices will have local-only new Workspaces. Opt-out requires contacting Microsoft CSS."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1191924",
@@ -2324,7 +2629,8 @@
           "name": "Summary",
           "value": "Microsoft Entra ID will enhance authentication security by enforcing a Content Security Policy that blocks external script injection, allowing only trusted Microsoft scripts. This rollout begins mid-October 2026, affecting browser-based sign-ins on login.microsoftonline.com, with no impact on Entra External ID tenants."
         }
-      ]
+      ],
+      "officialDocumentUrls": []
     },
     {
       "id": "MC1188230",
@@ -2350,6 +2656,9 @@
           "name": "Summary",
           "value": "Starting October to November 2027, Microsoft will retire the isAttestationEnforced and keyRestrictions properties from the fido2AuthenticationMethodConfiguration API. These will sync with new properties in the updated passkey policy API schema during transition. Admins must update configurations, automations, and integrations accordingly."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/graph/api/resources/fido2authenticationmethodconfiguration?view=graph-rest-1.0"
       ]
     },
     {
@@ -2378,6 +2687,11 @@
           "name": "Summary",
           "value": "Microsoft Defender Application Guard for Office, retired in April 2024, will be removed from Office by December 2027. Files will open in Protected View instead. Admins should enable Microsoft Defender for Endpoint ASR rules and Windows Defender Application Control to maintain security. No admin action is required for removal."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/defender-endpoint/overview-attack-surface-reduction",
+        "https://learn.microsoft.com/defender-office-365/app-guard-for-office-install",
+        "https://learn.microsoft.com/windows/security/application-security/application-control/windows-defender-application-control/wdac"
       ]
     },
     {
@@ -2406,6 +2720,9 @@
           "name": "Summary",
           "value": "The Microsoft Graph API's Create Meeting API will require a passcode by default from February 24, 2025, changing the current default setting. In October 2027, the option to create meetings without passcodes will be removed for increased security. Users should update applications accordingly."
         }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/graph/api/resources/joinmeetingidsettings?view=graph-rest-1.0"
       ]
     }
   ]

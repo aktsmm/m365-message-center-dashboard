@@ -547,6 +547,7 @@ try {
     if ($html -notmatch 'href="about/"') { throw 'Dashboard footer is missing the visible automation explanation link.' }
     $demoUrls = @(
         'https://aktsmm.github.io/azure-ops-pulse-demo/#/overview',
+        'https://aktsmm.github.io/azure-update-digest/',
         'https://aktsmm.github.io/m365-message-center-dashboard/',
         'https://aktsmm.github.io/m365-copilot-update-digest/',
         'https://aktsmm.github.io/daily-dev-byte/',
