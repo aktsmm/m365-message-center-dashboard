@@ -131,6 +131,12 @@ agentとdetectionが成功し、公開のGit transportだけが失敗した場�
 
 アクセストークン、Graph 認証情報、client secret、API key、password は Git、Artifacts、Pages に保存・公開しません。credential-like 値は公開 snapshot を生成する前に `[REDACTED]` に置換します。
 
+## 日本語見出しと書き出し
+
+- 各カードとピックアップの上に、保存済みの日本語詳細要約の冒頭 1 文（最大 80 文字）を日本語見出しとして表示します。原文版と照合済みでない保存訳には「保存版・原文未照合」を付け、未生成のものは「生成待ち」と表示します。英語の原題と「原文抜粋（英語）」は、原文の根拠として常に残します。
+- 表示中の更新を JSON（想定問答付き）、CSV、スライドノート用 Markdown として書き出せます。想定問答は原文抜粋と照合済みの要約だけから作り、原文にない項目は「原文では確認できません」と明記して推測しません。CSV は数式の実行を防ぐため先頭文字を無害化します。
+- 元の `messages.json` / `facts.json` / `insights.json` は変更しません。
+
 ## Repository layout
 
 ```text

@@ -78,3 +78,33 @@ test("freshness has explicit stale and unknown states, not success-shaped fallba
   assert.equal(view.freshness("bad", reference), "unknown");
   assert.equal(view.freshness("2027-01-01T00:00:00Z", reference), "unknown");
 });
+
+test("headline takes a bounded first Japanese sentence", () => {
+  assert.equal(view.headline("Teams の会議が変わります。詳細は次の通りです。"), "Teams の会議が変わります。");
+  const long = view.headline(`${"あ".repeat(60)}、${"い".repeat(60)}。`);
+  assert.ok(long.length <= 81 && long.endsWith("…"));
+  assert.equal(view.headline("  "), "");
+});
+
+test("qa never invents answers and labels basis", () => {
+  const message = { id: "MC1", title: "T", bodyText: "[What and why]: New feature arrives.", actionRequiredByDateTime: null };
+  const items = plain(view.qa(message));
+  assert.equal(items.length, 5);
+  assert.equal(items[0].basis, "original-excerpt");
+  assert.equal(items[1].basis, "not-in-source");
+  assert.equal(items[1].answer, view.NOT_IN_SOURCE);
+  const verified = plain(view.qa(message, { headline: "新機能が追加されます。", translationStatus: "current" }));
+  assert.equal(verified[0].basis, "verified-translation");
+});
+
+test("csv neutralizes formulas and notes cite sources", () => {
+  const record = view.exportRecord({ id: "MC2", title: "=cmd()", bodyText: "", services: ["Teams"] },
+    { headline: "見出し", translationStatus: "unverified", originalUrl: "https://admin.microsoft.com/x", documents: [] });
+  assert.equal(record.headlineStatus, "saved-unverified");
+  const csv = view.toCsv([record]);
+  assert.ok(csv.startsWith("\uFEFF"));
+  assert.ok(csv.includes(`"'=cmd()"`));
+  const notes = view.notesMarkdown([record], {});
+  assert.ok(notes.includes("想定問答") && notes.includes("原文未照合") === false || notes.includes("未照合"));
+  assert.ok(notes.includes("https://admin.microsoft.com/x"));
+});
