@@ -10,6 +10,8 @@ param(
     [string]$PreviousInsightsPath,
     [switch]$UseDeterministicMessageUpdates,
     [switch]$PreserveSummaryMetadata,
+    [DateTimeOffset]$SourceGeneratedAt = [DateTimeOffset]::UtcNow,
+    [string]$SourceAgentRunId = $env:GITHUB_RUN_ID,
     [Parameter(Mandatory)][string]$OutputPath
 )
 
@@ -412,12 +414,17 @@ if ($PreserveSummaryMetadata) {
     if (-not $PreviousInsightsPath -or -not (Test-Path -LiteralPath $PreviousInsightsPath)) {
         throw 'PreserveSummaryMetadata requires previous insights.'
     }
-    foreach ($name in @('summaryGeneratedAt', 'summarySourceHash')) {
+    foreach ($name in @('summaryGeneratedAt', 'summarySourceHash', 'sourceAgentRunId')) {
         if ($previousInsights.PSObject.Properties.Name -contains $name) { $insights[$name] = $previousInsights.$name }
     }
 } else {
     $insights.summarySourceHash = Get-M365SnapshotSourceHash -Document $messages
-    $insights.summaryGeneratedAt = $insights.generatedAt
+    if ($SourceGeneratedAt -gt [DateTimeOffset]::UtcNow.AddMinutes(5)) { throw 'Summary source timestamp is in the future.' }
+    $insights.summaryGeneratedAt = $SourceGeneratedAt.ToUniversalTime().ToString('o')
+    if ($SourceAgentRunId) {
+        if ($SourceAgentRunId -notmatch '^\d+$') { throw 'Invalid source agent run ID.' }
+        $insights.sourceAgentRunId = $SourceAgentRunId
+    }
 }
 
 $parent = Split-Path -Parent $OutputPath

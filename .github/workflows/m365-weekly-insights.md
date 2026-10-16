@@ -95,6 +95,7 @@ safe-outputs:
         - name: Checkout repository
           uses: actions/checkout@v7
           with:
+            ref: main
             fetch-depth: 0
 
         - name: Download public Message Center snapshot
