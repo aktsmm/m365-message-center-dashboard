@@ -482,6 +482,7 @@ $html = @'
     <section class="panel" aria-labelledby="health-title" style="padding: 20px; margin-bottom: 18px">
       <h2 id="health-title">データと要約の状態</h2>
       <div class="health-grid" id="health-status" role="status"></div>
+      <p class="notice" id="repair-authorization">自動検査は稼働しますが、AI修復のbot起動は所有者の承認待ちです。権限チェックを回避したり、未実行の修復を完了扱いにはしません。</p>
       <p class="section-note">取得・AI要約・公式資料の確認は別の処理です。古い状態を「確認済み」に置き換えず、原文と照合してから表示します。</p>
     </section>
     <section class="metrics" aria-label="公開スナップショットの集計">
