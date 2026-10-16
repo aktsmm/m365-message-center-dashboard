@@ -1,25 +1,19 @@
 {
-  "generatedAt": "2026-10-15T00:42:23.2842083+00:00",
+  "generatedAt": "2026-10-16T02:59:56.0247680+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "11月4日開始のEntra Agent ID既定変更と、Targeted Release廃止・パスキー/MFA関連の準備が今週〜今月の焦点",
-  "executiveSummary": "今週のMessage Center(84件)では、Entra、Copilot/Agent 365、Edge、Microsoft 365管理の変更が目立ちます。最優先は、11月4日開始のEntra Agent ID関連の既定動作変更です。MC1506733では、ロールを持たない既定ユーザーがエージェントブループリントを作成できるようになります。無効にするには管理者が「Users can create agent blueprints」をオフにする必要があります。MC1506728では、AgentIdentity.CreateAsManagerがブループリントプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。いずれも展開は2026年11月上旬から下旬の予定です。次に、MC1490899ではTargeted Releaseが2027年1月に廃止され、Frontier/Standard/Deferredへ移行します。アクション期限は2026年10月31日で、11月には管理者がユーザーの追加・削除・変更をできなくなります。認証面では、MC1481309のEntraサインインCSP強化が10月中旬〜下旬に展開されます(アクション期限2026年10月19日)。MC1474104はSMS第一要素サインインの廃止を継続し、期限は2027年2月1日です。MC1450134ではWHfBとmacOS PSSOが単独のMFA要素として認識される予定で、タイムラインが更新されました。Copilot関連では、MC1462915がcopilot.cloud.microsoft/*.cloud.microsoftへの接続許可確認を求めています。MC1472429のOffice LTSC 2021等のサポートは2026年10月13日に終了しました。",
-  "thisWeek": "MC1506733: 既定ユーザーによるエージェントブループリント作成を許可するか判断し、不要なら11月4日前に「Users can create agent blueprints」をオフにする設定を確認する\\nMC1506728: AgentIdentity.CreateAsManagerに依存し、アプリ専用認証で自身のエージェントIDを作成するエージェントがあるか棚卸しし、管理者同意または別の認可モデルへの移行を検討する\\nMC1490899: Targeted Release登録ユーザーを確認し、10月31日のアクション期限までにFrontier/Standard/Deferredの方針を決めて設定する\\nMC1481309: ログインページのCSP強化(10月中旬〜下旬に展開、アクション期限10月19日)に対し、サインイン画面への外部スクリプト注入や拡張機能・カスタムスクリプトの影響を確認する\\nMC1472429: Office LTSC 2021、Visio/Project LTSC 2021等のサポートが10月13日に終了したため、残存端末を特定し、アップグレード計画を立てる\\nMC1462915: copilot.cloud.microsoft および *.cloud.microsoft への接続がネットワーク・セキュリティ制御で許可されているか確認する",
-  "thisMonth": "MC1474104: SMS第一要素サインインの利用者を特定し、パスキー等のフィッシング耐性のある方式への移行計画を作成する(期限2027年2月1日)\\nMC1450134: WHfB/macOS PSSOを単独MFA要素として扱う更新タイムラインを確認し、Authentication Strengthや追加パスキー登録の運用への影響を整理する\\nMC1437671: My Sign-Insでのセキュアサインイン後のパスワード変更機能は既定で無効のため、有効化の要否とヘルプデスク負荷への効果を検討する\\nMC1490911: 11月初旬のEdge 157以降で旧direct-WALサインイン実装が廃止されるため、Windows上のEdgeプロファイルのOneAuth移行状況を確認する\\nMC1505610: Brand Centerセットアップ時にPublic CDNが既定でオフになるため、組織フォントを使う場合はPublic CDNの明示的な有効化が必要かを確認する\\nMC1387526: Microsoft 365 BackupのSharePoint/OneDrive/Exchange全ワークロードバックアップの適用可否を、データ保護ポリシーと合わせて評価する",
-  "watch": "MC1506733 / MC1506728: 11月上旬〜下旬のEntra Agent ID展開状況と、テナントで管理者同意が必要になる箇所\\nMC1727: なし\\nMC1467356: Edge Manifest V2拡張機能の企業向け廃止(2027年初頭予定、2027年1月上旬〜4月下旬に展開)に向けたMV2拡張機能の利用状況\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし\\nMC1469329: Copilot StudioとCopilot Cowork内のアプリ構築プレビューの地域展開と、Copilot Creditsの消費・課金への影響\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし\\nMC1727: なし",
-  "customerQuestions": "Entra上でエージェントブループリントを誰が作成できるべきか。既定ユーザーに許可する方針か、制限する方針か(MC1506733)\\n自社にAgentIdentity.CreateAsManagerに依存するエージェントはあるか。管理者同意のプロセスは整っているか(MC1506728)\\nTargeted Releaseを使っているユーザーは誰か。移行先はFrontier、Standard、Deferredのどれが適切か(MC1490899)\\nEntraのサインインページに対して、カスタムスクリプトや拡張機能など、CSP強化の影響を受ける要素はあるか(MC1481309)\\nSMS第一要素サインインを使っているユーザーはどの程度いるか。パスキーなどへの移行計画はあるか(MC1474104)\\nWHfBやmacOS PSSOを単独のMFA要素として扱うことで、現在の条件付きアクセスやAuthentication Strength設計はどう変わるか(MC1450134)\\nOffice LTSC 2021が残る端末はあるか。サポート終了後のアップグレード計画はどうなっているか(MC1472429)\\nネットワーク制御で *.cloud.microsoft への接続は許可されているか(MC1462915)",
+  "headline": "Entra のエージェント作成既定値変更(11/4開始)と WHfB/PSSO の MFA 要素化に注意",
+  "executiveSummary": "今週は Microsoft Entra 関連の変更が中心です。MC1506733 では、11月4日以降、Entra ロールを持たない既定ユーザーが、管理者が「Users can create agent blueprints」を無効化しない限りエージェント ブループリントを作成できるようになります(展開は2026年11月上旬〜下旬)。MC1506728 では、同じく11月4日から AgentIdentity.CreateAsManager がブループリント プリンシパルへ自動付与されなくなり、アプリ専用認証でエージェント ID を自作するエージェントには管理者の同意が必要になります。MC1450134 は WHfB と macOS PSSO を単独の MFA 要素として扱う変更で、タイムラインが更新されました(抜粋には新しい日付は含まれていません)。MC1437671 は My Sign-Ins でのパスワード変更機能で、既定で無効、管理者の有効化が必要です(GA は10月末開始予定)。",
+  "thisWeek": "MC1506733: エージェント ブループリント作成を既定ユーザーに許可するか判断し、許可しない場合は 11/4 前に「Users can create agent blueprints」の設定を確認・無効化する\nMC1506728: アプリ専用認証でエージェント ID を自作するエージェントの有無を棚卸しし、AgentIdentity.CreateAsManager の明示付与または別の認可モデルへの移行要否を確認する",
+  "thisMonth": "MC1450134: 更新後のタイムラインを管理センターで確認し、Authentication Strength や sign-in frequency ポリシーへの影響を整理する\nMC1437671: My Sign-Ins でのパスワード変更機能を有効化するか方針を決める(既定は無効、GA は10月末開始予定)\nMC1505610: Brand Center 設定時に Public CDN が既定で未選択になるため、組織フォント利用の要否を確認する",
+  "watch": "MC1450134: WHfB / macOS PSSO の展開時期と、MFA 要件の挙動変化\nMC1506727: Agent 365 ライセンス不要になる可観測性メトリクス(2026年11月下旬展開予定)\nMC1469329: Copilot Studio と Copilot Cowork のアプリ作成プレビューと Copilot Credits の消費\nMC1440972: Edge の Copilot 新しいタブ ページ(GA は2026年11月上旬開始予定)",
+  "customerQuestions": "既定ユーザーにエージェント ブループリントの作成を許可してよいか。許可しない場合、誰が作成権限を持つべきか。\nアプリ専用認証でエージェント ID を自律的に作成するエージェントはあるか。管理者同意の運用フローは整っているか。\nWHfB / macOS PSSO を MFA 要素として扱うことで、既存の Authentication Strength や sign-in frequency ポリシーの設計を見直す必要があるか。\nパスワードを使うレガシー アプリが残っている場合、My Sign-Ins からのパスワード変更を有効化するか。\nBrand Center で組織フォントを使う予定はあるか。その場合、Public CDN の有効化をいつ行うか。",
   "referencedIds": [
-    "MC1387526",
     "MC1437671",
+    "MC1440972",
     "MC1450134",
-    "MC1462915",
-    "MC1467356",
     "MC1469329",
-    "MC1472429",
-    "MC1474104",
-    "MC1481309",
-    "MC1490899",
-    "MC1490911",
     "MC1505610",
+    "MC1506727",
     "MC1506728",
     "MC1506733"
   ],
@@ -1168,16 +1162,9 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
-      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1506733",
-      "japaneseDetailedSummary": "Microsoft Entraで、エージェント ブループリントを作成できるユーザーの既定が変わります。11月4日以降、「Users can create agent blueprints」を管理者が無効化しない限り、Entraの組み込み/カスタムロールを持たない既定ユーザーも新しいエージェント ブループリントを作成可能になります。望まない場合は、ロールアウト開始前にテナント設定で無効化して備えられます。ロールアウトは2026年11月上旬〜下旬です。ガバナンス方針に応じて設定を確認し、ユーザーによるエージェント作成の可否を顧客と合意することが重要です。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entraは、エージェント ブループリントを作成できるユーザーの既定を変更します。11月4日以降、管理者が「Users can create agent blueprints」をオフにしない限り、既定のユーザーが新しいエージェント ブループリントを作成できるようになります。つまり、組み込みまたはカスタムのEntraロールを持たないユーザーも、組織内で新しいエージェント ブループリントを作成できます。現在からロールアウト開始までの間に、テナント設定を行って準備できます。組織のユーザーに新しいエージェント ブループリントとそのIDを作成させたくない場合は、以下の手順に従ってください。\n[ロールアウトスケジュール]\n• ワールドワイド: 2026年11月上旬に開始し、2026年11月下旬までに完了する予定\n[組織への影響]\n影響を受ける対象\n• Microsoft Entraを使用する組織\n• Microsoft Entraの組み込みまたはカスタムロールを持たない既定ユーザー\nプラットフォームとサービス\n• Microsoft Entra\n今後の動作\n• 管理者がオフにしない限り、既定ユーザーがエージェント ブループリントを作成できるようになります(原文はここで途切れています)",
+      "id": "MC1505610",
+      "japaneseDetailedSummary": "Brand Centerのセットアップ時に、Public CDNを有効化しなくても設定を完了できるようになります。従来はセットアップ時にPublic CDNが有効化されていましたが、今後は既定で未選択となり、管理者が明示的に選択・確認した場合のみ有効化されます。組織フォントなどPublic CDNに依存する機能は、有効化するまで利用できません。ワールドワイドGAは2026年10月中旬に開始し、10月下旬に完了予定です。ガバナンス機能のみ使いたい顧客に有益で、フォント機能の要否を確認する会話が必要です。",
+      "japaneseBodyTranslation": "[内容と理由:]\n管理者がPublic CDNを有効にせずにBrand Centerをセットアップできるよう、セットアップ体験を更新します。\n現在は、Public CDNを必要としないブランドガバナンス機能のみを使いたい場合でも、Brand Centerのセットアップの一環としてPublic CDNが有効化されます。今回の更新により、組織フォントなどPublic CDNに依存する機能が必要になるまでPublic CDNを保留したまま、Brand Centerの利用を開始できます。\n[ロールアウトスケジュール:]\n一般提供(ワールドワイド): 2026年10月中旬に展開を開始し、2026年10月下旬までに完了する予定です。\n[組織への影響:]\n管理者がMicrosoft 365管理センターでBrand Centerをセットアップする際:\n• Public CDNは既定で選択解除されます。\n• Public CDNなしでBrand Centerのセットアップを完了できます。\n• Public CDNは、管理者が明示的にオプションを選択し変更を確認した場合にのみ有効になります。\n• フォント関連の機能は、Publi(原文はここで途切れています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1196,11 +1183,21 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1505610",
-      "japaneseDetailedSummary": "Brand Centerのセットアップ時に、Public CDNを有効化しなくても設定を完了できるようになります。従来はセットアップ時にPublic CDNが有効化されていましたが、今後は既定で未選択となり、管理者が明示的に選択・確認した場合のみ有効化されます。組織フォントなどPublic CDNに依存する機能は、有効化するまで利用できません。ワールドワイドGAは2026年10月中旬に開始し、10月下旬に完了予定です。ガバナンス機能のみ使いたい顧客に有益で、フォント機能の要否を確認する会話が必要です。",
-      "japaneseBodyTranslation": "[内容と理由:]\n管理者がPublic CDNを有効にせずにBrand Centerをセットアップできるよう、セットアップ体験を更新します。\n現在は、Public CDNを必要としないブランドガバナンス機能のみを使いたい場合でも、Brand Centerのセットアップの一環としてPublic CDNが有効化されます。今回の更新により、組織フォントなどPublic CDNに依存する機能が必要になるまでPublic CDNを保留したまま、Brand Centerの利用を開始できます。\n[ロールアウトスケジュール:]\n一般提供(ワールドワイド): 2026年10月中旬に展開を開始し、2026年10月下旬までに完了する予定です。\n[組織への影響:]\n管理者がMicrosoft 365管理センターでBrand Centerをセットアップする際:\n• Public CDNは既定で選択解除されます。\n• Public CDNなしでBrand Centerのセットアップを完了できます。\n• Public CDNは、管理者が明示的にオプションを選択し変更を確認した場合にのみ有効になります。\n• フォント関連の機能は、Publi(原文はここで途切れています)",
+      "id": "MC1506733",
+      "japaneseDetailedSummary": "Microsoft Entraで、エージェント ブループリントを作成できるユーザーの既定が変わります。11月4日以降、「Users can create agent blueprints」を管理者が無効化しない限り、Entraの組み込み/カスタムロールを持たない既定ユーザーも新しいエージェント ブループリントを作成可能になります。望まない場合は、ロールアウト開始前にテナント設定で無効化して備えられます。ロールアウトは2026年11月上旬〜下旬です。ガバナンス方針に応じて設定を確認し、ユーザーによるエージェント作成の可否を顧客と合意することが重要です。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entraは、エージェント ブループリントを作成できるユーザーの既定を変更します。11月4日以降、管理者が「Users can create agent blueprints」をオフにしない限り、既定のユーザーが新しいエージェント ブループリントを作成できるようになります。つまり、組み込みまたはカスタムのEntraロールを持たないユーザーも、組織内で新しいエージェント ブループリントを作成できます。現在からロールアウト開始までの間に、テナント設定を行って準備できます。組織のユーザーに新しいエージェント ブループリントとそのIDを作成させたくない場合は、以下の手順に従ってください。\n[ロールアウトスケジュール]\n• ワールドワイド: 2026年11月上旬に開始し、2026年11月下旬までに完了する予定\n[組織への影響]\n影響を受ける対象\n• Microsoft Entraを使用する組織\n• Microsoft Entraの組み込みまたはカスタムロールを持たない既定ユーザー\nプラットフォームとサービス\n• Microsoft Entra\n今後の動作\n• 管理者がオフにしない限り、既定ユーザーがエージェント ブループリントを作成できるようになります(原文はここで途切れています)",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
+    },
+    {
+      "id": "MC985483",
+      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
+      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     }
-  ]
+  ],
+  "summarySourceHash": "c5e3f415fff607b80a8ea1430ce77a568cfcd8e4c4cc14548723ba6df728da7a",
+  "summaryGeneratedAt": "2026-10-16T02:44:50.0000000+00:00",
+  "sourceAgentRunId": "38841832444"
 }
