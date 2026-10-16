@@ -9,6 +9,7 @@ param(
     [string]$StatePath,
     [DateTimeOffset]$ReferenceTime = [DateTimeOffset]::UtcNow,
     [switch]$TrustedAutomationApproved,
+    [long]$RetrySkippedRunId = 0,
     [switch]$Apply
 )
 
@@ -64,14 +65,41 @@ if ($lane) {
     $workflow = if ($lane -eq 'core') { 'm365-weekly-insights.lock.yml' } else { 'm365-weekly-translations.lock.yml' }
     $plan.action = @{ status = 'planned'; lane = $lane; workflow = $workflow }
     $attempt = $plan.attempts[$lane]
-    if ($attempt -and ($ReferenceTime - [DateTimeOffset]::Parse($attempt.requestedAt)).TotalHours -lt 24) {
+    if ($attempt -and ($ReferenceTime - [DateTimeOffset]$attempt.requestedAt).TotalHours -lt 24) {
         $plan.action.status = 'cooldown'
-        $plan.action.nextAttemptAt = ([DateTimeOffset]::Parse($attempt.requestedAt)).AddHours(24).ToString('o')
+        $plan.action.nextAttemptAt = ([DateTimeOffset]$attempt.requestedAt).AddHours(24).ToString('o')
     }
 }
 if ($Apply -and $lane -and $env:GITHUB_ACTIONS -eq 'true' -and -not $TrustedAutomationApproved) {
     $plan.action.status = 'authorization_required'
     $plan.action.reason = 'Trusted automation approval has not been recorded. No dispatch is attempted until the scoped bot allowlist is approved.'
+}
+if ($Apply -and $lane -and $plan.action.status -eq 'cooldown' -and $RetrySkippedRunId -gt 0) {
+    $runJson = gh api "repos/$Repository/actions/runs/$RetrySkippedRunId"
+    if ($LASTEXITCODE -ne 0) { throw 'Could not verify the previously skipped run.' }
+    $run = $runJson | ConvertFrom-Json
+    if ($run.status -ne 'completed' -or $run.head_branch -ne 'main' -or
+        $run.event -ne 'workflow_dispatch' -or $run.actor.login -ne 'github-actions[bot]' -or
+        $run.path -ne ".github/workflows/$($plan.action.workflow)") {
+        throw 'Retry requires the completed, scoped bot workflow on main.'
+    }
+    $requestedAt = [DateTimeOffset]$plan.attempts[$lane].requestedAt
+    $createdAt = [DateTimeOffset]$run.created_at
+    if ($createdAt -lt $requestedAt.AddSeconds(-5) -or $createdAt -gt $requestedAt.AddMinutes(5)) {
+        throw 'The skipped run does not match the recorded most recent repair attempt.'
+    }
+    $jobsJson = gh run view $RetrySkippedRunId --repo $Repository --json jobs
+    if ($LASTEXITCODE -ne 0) { throw 'Could not verify whether the agent actually started.' }
+    $jobs = @(($jobsJson | ConvertFrom-Json).jobs)
+    $agents = @($jobs | Where-Object name -eq 'agent')
+    $publishers = @($jobs | Where-Object { $_.name -in @('publish_m365_dashboard', 'publish_m365_translations') })
+    if ($agents.Count -ne 1 -or $agents[0].conclusion -ne 'skipped' -or
+        @($publishers | Where-Object conclusion -ne 'skipped').Count) {
+        throw 'The previous agent started or publishing ran; its cooldown cannot be reset.'
+    }
+    $plan.action.status = 'planned'
+    $plan.action.retrySkippedRunId = $RetrySkippedRunId
+    $plan.action.Remove('nextAttemptAt')
 }
 
 function Save-RepairCheckpoint {
@@ -90,6 +118,7 @@ if ($Apply -and $plan.action.status -eq 'planned') {
         $plan.action.status = 'already_running'
     } else {
         $stamp = @{ requestedAt = $plan.observedAt; status = 'requested'; workflow = $plan.action.workflow }
+        if ($plan.action.ContainsKey('retrySkippedRunId')) { $stamp.previousSkippedRunId = $plan.action.retrySkippedRunId }
         $plan.attempts[$lane] = $stamp
         # A successful core run already triggers one bounded translation run.
         if ($lane -eq 'core') {

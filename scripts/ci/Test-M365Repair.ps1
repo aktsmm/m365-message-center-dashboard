@@ -7,13 +7,28 @@ $temporary = Join-Path ([IO.Path]::GetTempPath()) "m365-repair-$([guid]::NewGuid
 $latest = Join-Path $temporary 'latest'
 New-Item -ItemType Directory -Path $latest -Force | Out-Null
 $calls = [Collections.Generic.List[string]]::new()
+$retryAgent = 'skipped'
 function gh {
     $command = $args -join ' '
     $calls.Add($command)
     $global:LASTEXITCODE = 0
     if ($command -like 'run list*') { return '[]' }
+    if ($command -like 'api*') {
+        return '{"status":"completed","head_branch":"main","event":"workflow_dispatch","actor":{"login":"github-actions[bot]"},"path":".github/workflows/m365-weekly-insights.lock.yml","created_at":"2026-10-16T01:00:01Z"}'
+    }
+    if ($command -like 'run view*') {
+        return (@{ jobs = @(@{ name = 'agent'; conclusion = $retryAgent }, @{ name = 'publish_m365_dashboard'; conclusion = 'skipped' }) } | ConvertTo-Json -Depth 5)
+    }
 }
 try {
+    foreach ($name in @('m365-weekly-insights.md', 'm365-weekly-translations.md')) {
+        $workflow = Get-Content -LiteralPath (Join-Path $root ".github\workflows\$name") -Raw -Encoding UTF8
+        if ($workflow -notmatch '(?m)^  bots:\s*\r?\n    - "github-actions\[bot\]"' -or
+            -not $workflow.Contains("if: github.ref == 'refs/heads/main' &&") -or
+            $workflow -match '(?m)^  roles:') {
+            throw 'Trusted automation must use only the exact bot allowlist on main and preserve default human roles.'
+        }
+    }
     $message = [ordered]@{
         id = 'MC900001'; title = 'Microsoft Teams meeting control'; category = 'PlanForChange'
         bodyText = 'Synthetic approved source.'; services = @('Microsoft Teams')
@@ -57,6 +72,18 @@ try {
     $again = & $repair @parameters -Apply -TrustedAutomationApproved | ConvertFrom-Json
     if ($again.action.status -ne 'cooldown' -or @($calls | Where-Object { $_ -like 'workflow run*' }).Count -ne 1) {
         throw 'Cooldown must prevent duplicate dispatches.'
+    }
+    $retryAgent = 'success'
+    $rejected = $false
+    try { & $repair @parameters -Apply -TrustedAutomationApproved -RetrySkippedRunId 123 | Out-Null } catch { $rejected = $true }
+    if (-not $rejected -or @($calls | Where-Object { $_ -like 'workflow run*' }).Count -ne 1) {
+        throw 'An actually started agent must keep its cooldown.'
+    }
+    $retryAgent = 'skipped'
+    $retried = & $repair @parameters -Apply -TrustedAutomationApproved -RetrySkippedRunId 123 | ConvertFrom-Json
+    if ($retried.action.status -ne 'dispatched' -or $retried.action.retrySkippedRunId -ne 123 -or
+        @($calls | Where-Object { $_ -like 'workflow run*' }).Count -ne 2) {
+        throw 'Only a verified not-started attempt may be retried once.'
     }
     . (Join-Path $root 'scripts\M365DashboardContent.ps1')
     $insights.watch = 'MC900001: 展開状況を確認'
