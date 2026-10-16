@@ -74,7 +74,7 @@ $html = @'
         <li>GitHub Actions が Microsoft Graph の Message Center を取得します。</li>
         <li>公開用 snapshot を生成し、本文を安全なテキストとして、details を name/value として出力します。</li>
         <li>core GitHub Agentic Workflow が保存済みの承認済み snapshot をその run の artifact として受け取り、週次インサイトを作成します。MC ごとの日本語タイトル・100文字以内の要約・公式リンクは、その snapshot から決定論的に生成します。Graph を再取得しません。</li>
-        <li>core の成功後に translations GitHub Agentic Workflow が起動し、実行ごとに最大4件の詳細な日本語要約と本文訳を検証します。主パイプラインの月曜日・木曜日の実行により、最大8カード/週が翻訳対象になります。欠落・原文版未照合・原文変更も再生成の対象です。</li>
+        <li>core の成功後に translations GitHub Agentic Workflow が起動し、実行ごとに最大4件の日本語タイトル・詳細な日本語要約・本文訳を検証します。主パイプラインの月曜日・木曜日の実行に加え、品質検査・修復が1日最大2回、不足分を4件ずつ追加で依頼します。欠落・原文版未照合・原文変更・日本語タイトル未生成も再生成の対象です。</li>
         <li>検証済みの snapshot、インサイト、公式リンク、翻訳だけを GitHub Pages に公開します。</li>
       </ol>
     </section>
