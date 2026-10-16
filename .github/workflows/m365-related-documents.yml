@@ -2,6 +2,9 @@ name: M365 official documents and snapshot-only Pages
 
 on:
   workflow_dispatch:
+  schedule:
+    # Retry unresolved documentation independently from Graph collection.
+    - cron: '37 2,14 * * *'
   push:
     branches: [main]
     paths:
@@ -56,13 +59,16 @@ jobs:
         with:
           python-version: '3.12'
       - uses: actions/cache@v5
+        id: learn-cache
         with:
           path: .cache/m365-documents.json
           key: learn-documents-${{ github.run_id }}
           restore-keys: learn-documents-
       - run: python -m pip install -r scripts/requirements-documents.txt
       - name: Enrich approved on-disk snapshots using unauthenticated public Learn MCP
-        run: python scripts/Update-M365RelatedDocuments.py
+        run: python scripts/Update-M365RelatedDocuments.py --max-messages 100 --max-seconds 900 --summary "$GITHUB_STEP_SUMMARY"
+      - name: Validate evidence and coverage after enrichment
+        run: python scripts/Update-M365RelatedDocuments.py --check
       - name: Rebuild all approved snapshots without Graph
         shell: pwsh
         run: |
@@ -86,6 +92,19 @@ jobs:
         with:
           path: _site
           include-hidden-files: true
+      - name: Preserve research checkpoint if the run is interrupted
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: official-document-research-checkpoint
+          path: reports/m365/related-documents.json
+          retention-days: 7
+      - name: Save resumable research cache even after a failed gate
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          path: .cache/m365-documents.json
+          key: learn-documents-${{ github.run_id }}-${{ github.run_attempt }}
 
   deploy:
     needs: enrich

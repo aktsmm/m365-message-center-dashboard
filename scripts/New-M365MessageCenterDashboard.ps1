@@ -48,6 +48,9 @@ if ($RelatedDocumentsJson -and (Test-Path -LiteralPath $RelatedDocumentsJson)) {
             $(if ($message.PSObject.Properties.Name -contains 'officialDocumentUrls') { @($message.officialDocumentUrls) -join "`n" } else { '' }))
         $hash = [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData(
             [Text.Encoding]::UTF8.GetBytes(($values -join [char]31)))).ToLowerInvariant()
+        if ($entry.ContainsKey('variants') -and $entry.variants.ContainsKey($hash)) {
+            $entry = $entry.variants[$hash]
+        }
         if ($hash -notin $entry.sourceHashes) {
             Write-Warning "Related documents require re-verification for changed message $($message.id)."
             continue
@@ -80,7 +83,12 @@ if ($RelatedDocumentsJson -and (Test-Path -LiteralPath $RelatedDocumentsJson)) {
         if ($entry.status -eq 'verified' -and -not @($entry.documents).Count) {
             throw "Verified document state is empty for $($message.id)"
         }
-        $relatedDocuments[$message.id] = $entry
+        $relatedDocuments[$message.id] = @{
+            status = $entry.status
+            documents = $entry.documents
+            checkedAt = $entry.checkedAt
+            nextAttemptAt = $(if ($entry.ContainsKey('nextAttemptAt')) { $entry.nextAttemptAt } else { $null })
+        }
     }
 }
 $safeDocumentsJson = ConvertTo-Json -InputObject $relatedDocuments -Depth 12 -Compress
@@ -429,6 +437,21 @@ $html = @'
       <div class="services" id="services"></div>
     </section>
 
+    <section class="context-panel" aria-labelledby="document-status-title">
+      <div><h2 id="document-status-title">公式資料の自動調査</h2>
+        <p id="document-coverage" role="status"></p>
+        <p>新しい通知も自動で検索・本文確認します。資料未確認は「資料が存在しない」という意味ではありません。未確認は3日後、取得失敗は次回の補完で再試行します。</p>
+      </div>
+      <div><label for="document-filter">関連資料の状態で絞り込む</label>
+        <select id="document-filter" class="search">
+          <option value="all">すべての調査状態</option>
+          <option value="verified">関連資料あり</option>
+          <option value="no_verified_document">調査済み・対応資料未確認</option>
+          <option value="fetch_failed">取得失敗・自動再試行</option>
+          <option value="not_researched">自動調査待ち</option>
+        </select>
+      </div>
+    </section>
     <section class="filter-panel" aria-labelledby="filter-title">
       <div class="filter-panel-head">
         <div>
@@ -490,7 +513,7 @@ $html = @'
     ];
     const FOCUS_BY_SERVICE = new Map(SERVICE_FOCUSES.map(focus => [focus.service, focus]));
     const FOCUS_ORDER = new Map(SERVICE_FOCUSES.map((focus, index) => [focus.slug, index]));
-    const state = { filter: "all", query: "", focuses: [] };
+    const state = { filter: "all", query: "", focuses: [], documentStatus: "all" };
     const themeToggle = document.getElementById("theme-toggle");
     const urlTheme = new URLSearchParams(window.location.search).get("scoutTheme");
     const forcedTheme = ["light", "dark"].includes(urlTheme) ? urlTheme : null;
@@ -560,7 +583,13 @@ $html = @'
       if (raw !== canonical) writeFocusesToUrl("replaceState");
     }
     const messageDomId = message => `message-${String(message.id ?? "").replace(/[^A-Za-z0-9_-]/g, character => `-${character.codePointAt(0).toString(16)}-`)}`;
-    const hasActiveConditions = () => state.focuses.length || state.filter !== "all" || state.query;
+    function displayMessageTitle(message) {
+      const update = MESSAGE_UPDATES.get(String(message.id).toUpperCase());
+      const japaneseTitle = update?.japaneseTitle || message.japaneseTitle;
+      const generic = !japaneseTitle || /の(?:情報提供|変更予定|問題の予防または修正)に関するお知らせ/.test(japaneseTitle);
+      return generic ? message.title : japaneseTitle;
+    }
+    const hasActiveConditions = () => state.focuses.length || state.filter !== "all" || state.query || state.documentStatus !== "all";
     const filterLabel = () => ({
       major: "重要な変更",
       due: "対応期限が記載",
@@ -571,6 +600,7 @@ $html = @'
       if (state.focuses.length) conditions.push(state.focuses.map(slug => FOCUS_BY_SLUG.get(slug).label).join("、"));
       if (state.filter !== "all") conditions.push(filterLabel());
       if (state.query) conditions.push(`検索「${state.query}」`);
+      if (state.documentStatus !== "all") conditions.push(document.getElementById("document-filter").selectedOptions[0].text);
       return conditions.length ? conditions.join("、") : "すべての公開済み更新";
     };
     const safeOfficialUrl = value => {
@@ -602,7 +632,7 @@ $html = @'
       const original = originalMessageUrl(message);
       const entry = RELATED_DOCUMENTS[message.id];
       const status = {
-        not_researched: "未調査",
+        not_researched: "未調査（自動調査待ち）",
         no_verified_document: "対応する公式資料を確認できていません",
         fetch_failed: "公式資料の取得に失敗しました"
       };
@@ -616,6 +646,7 @@ $html = @'
           `<li><a class="document-link" href="${escapeHtml(document.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(document.title)}</a> <span class="section-note">(${document.locale === "ja-jp" ? "日本語" : "英語"})</span></li>`).join("")}</ul>` : ""}
         ${entry?.status !== "verified" ? `<p class="section-note">${escapeHtml(status[entry?.status] || status.not_researched)}</p>` : ""}
         ${entry?.checkedAt ? `<small class="section-note">確認 ${fmt(entry.checkedAt)}</small>` : ""}
+        ${entry?.nextAttemptAt ? `<small class="section-note"> · 次回確認予定 ${fmt(entry.nextAttemptAt)}</small>` : ""}
       </div>`;
     }
 
@@ -624,6 +655,13 @@ $html = @'
       DATA.meta.source === "fixture" ? "合成プレビュー データ" : "Microsoft Graph の公開スナップショット";
     document.getElementById("context-generated").textContent = fmt(DATA.meta.generatedAt);
     document.getElementById("context-total").textContent = `${DATA.summary.total} 件`;
+    const documentCounts = DATA.messages.reduce((counts, message) => {
+      const status = RELATED_DOCUMENTS[message.id]?.status || "not_researched";
+      counts[status] = (counts[status] || 0) + 1;
+      return counts;
+    }, {});
+    document.getElementById("document-coverage").textContent =
+      `現在の ${DATA.messages.length} 件: 関連資料あり ${documentCounts.verified || 0} 件、対応資料未確認 ${documentCounts.no_verified_document || 0} 件、取得失敗 ${documentCounts.fetch_failed || 0} 件、自動調査待ち ${documentCounts.not_researched || 0} 件。`;
     document.getElementById("context-source").textContent =
       DATA.meta.source === "fixture" ? "合成プレビュー" : "Microsoft Graph";
     document.getElementById("metric-total").textContent = DATA.summary.total;
@@ -649,6 +687,7 @@ $html = @'
          <p class="insight-pending">初回のGitHub Agentic Workflow完了後、ここに重要変更・期限・推奨アクションが表示されます。</p>`;
 
     function matches(message) {
+      if (state.documentStatus !== "all" && (RELATED_DOCUMENTS[message.id]?.status || "not_researched") !== state.documentStatus) return false;
       const details = Array.isArray(message.details) ? message.details : [];
       const haystack = [
         message.id,
@@ -718,7 +757,7 @@ $html = @'
         ].filter(Boolean).join("");
         return `<article class="priority-card">
           <div class="message-id">${escapeHtml(message.id)}</div>
-          <h3>${escapeHtml(update?.japaneseTitle || message.japaneseTitle || message.title)}</h3>
+          <h3>${escapeHtml(displayMessageTitle(message))}</h3>
           <div class="priority-reasons">${reasons}</div>
           <a href="#${escapeHtml(messageDomId(message))}">一覧の Message Center 更新を確認</a>
           ${messageLinks(message)}
@@ -784,7 +823,7 @@ $html = @'
             </details>`;
         return `<article class="message" id="${escapeHtml(messageDomId(message))}">
           <div class="message-top">
-            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(update?.japaneseTitle || message.japaneseTitle || "日本語タイトルを準備中")}</h3><div class="message-original">原題: ${escapeHtml(message.title)}</div><div class="chips">${chips}</div></div>
+            <div><div class="message-id">${escapeHtml(message.id)}</div><h3>${escapeHtml(displayMessageTitle(message))}</h3>${displayMessageTitle(message) !== message.title ? `<div class="message-original">原題: ${escapeHtml(message.title)}</div>` : ""}<div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
           ${(update?.japaneseSummary || message.japaneseSummary) ? `<p class="message-summary">${escapeHtml(update?.japaneseSummary || message.japaneseSummary)}</p>` : ""}
@@ -808,6 +847,8 @@ $html = @'
       state.focuses = [];
       state.filter = "all";
       state.query = "";
+      state.documentStatus = "all";
+      document.getElementById("document-filter").value = "all";
       document.getElementById("search").value = "";
       writeFocusesToUrl("pushState");
       render();
@@ -816,6 +857,10 @@ $html = @'
 
     document.getElementById("search").addEventListener("input", event => {
       state.query = event.target.value.trim();
+      render();
+    });
+    document.getElementById("document-filter").addEventListener("change", event => {
+      state.documentStatus = event.target.value;
       render();
     });
     document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
