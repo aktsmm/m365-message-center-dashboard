@@ -260,6 +260,9 @@ $html = @'
     }
     .hero-repo-link:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
     .hero-repo-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; padding: 0; }
+    .hero-stats span { padding: 6px 12px; border-radius: 999px; background: var(--cp-surface-soft); font-size: 0.9rem; font-weight: 650; }
+    .hero-stats strong { font-size: 1.05rem; }
     .hero-access-note { margin: 10px 0 0; color: var(--cp-text-muted); font-size: 0.88rem; }
     .context-panel, .filter-panel, .priority-section {
       margin-bottom: 18px; padding: clamp(20px, 4vw, 32px); background: var(--cp-panel-strong);
@@ -461,8 +464,9 @@ $html = @'
 
     <header class="hero">
       <div class="eyebrow">Microsoft 365 Change Radar · lab-public</div>
-      <h1>Microsoft 365 の変更を、<br>確認しやすく。</h1>
-      <p class="lede">公開承認済みテスト テナントの通知だけを表示。何が変わるか、誰に影響するか、いつ・何を確認するかを、原文と公式資料で整理できます。</p>
+      <h1>Message Center の変更を、<br>見逃さない。</h1>
+      <p class="lede">Microsoft 365 の通知を日本語で要約し、変更内容・影響・期限・公式資料までひと目で確認できます。公開承認済みテスト テナントの通知だけを表示します。</p>
+      <p class="hero-stats" id="hero-stats" role="status"></p>
       <a class="hero-repo-link" href="https://admin.microsoft.com/#/MessageCenter" target="_blank" rel="noopener noreferrer">Microsoft 365 管理センターの Message Center を開く</a>
       <p class="hero-access-note">利用にはサインインと対象テナントでの適切な権限が必要です。</p>
       <a class="hero-repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub リポジトリを開く</a>
@@ -820,6 +824,12 @@ $html = @'
       const updated = Date.parse(message.lastModifiedDateTime);
       return updated <= Date.now() && updated >= Date.now() - 7 * DashboardView.DAY;
     }).length;
+    document.getElementById("hero-stats").innerHTML = [
+      ["公開中", document.getElementById("metric-total").textContent, "件"],
+      ["重要な変更", document.getElementById("metric-major").textContent, "件"],
+      ["30日以内の期限", document.getElementById("metric-due").textContent, "件"],
+      ["直近7日の更新", document.getElementById("metric-updated").textContent, "件"]
+    ].map(([label, value, unit]) => `<span>${label} <strong>${escapeHtml(value)}</strong> ${unit}</span>`).join("");
     const translationCounts = Object.values(CONTENT_STATE.messages).reduce((counts, entry) => {
       counts[entry.translation] = (counts[entry.translation] || 0) + 1;
       return counts;
