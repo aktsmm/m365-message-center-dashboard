@@ -248,21 +248,20 @@ $html = @'
     .hero { padding: 56px 8px 28px; max-width: 840px; }
     .eyebrow { color: var(--cp-text-muted); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
     h1 {
-      margin: 12px 0 18px; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 0.98; letter-spacing: -0.065em;
-      color: var(--cp-text);
-      background: linear-gradient(105deg, var(--cp-link), var(--cp-accent), var(--cp-warning), var(--cp-success));
-      background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin: 10px 0 14px; font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.3; letter-spacing: -0.02em;
+      color: var(--cp-text); font-weight: 800;
     }
-    .lede { max-width: 720px; margin: 0; color: var(--cp-text-muted); font-size: clamp(1.05rem, 2vw, 1.35rem); }
+    .lede { max-width: 720px; margin: 0; color: var(--cp-text-muted); font-size: clamp(0.98rem, 1.6vw, 1.12rem); }
     .hero-repo-link {
       display: inline-flex; align-items: center; margin-top: 20px; padding: 10px 14px; border: 1px solid var(--cp-border-strong);
       border-radius: 999px; color: var(--cp-link); background: var(--cp-surface); font-weight: 700; text-decoration: none;
     }
     .hero-repo-link:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
     .hero-repo-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
-    .hero-stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 6px; padding: 0; }
-    .hero-stats span { padding: 6px 12px; border-radius: 999px; background: var(--cp-surface-soft); font-size: 0.9rem; font-weight: 650; }
-    .hero-stats strong { font-size: 1.05rem; }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 8px; padding: 0; }
+    .hero-stats span { padding: 10px 16px; border-radius: 0.9rem; background: var(--cp-surface-soft); font-size: 0.86rem; font-weight: 650; color: var(--cp-text-muted); }
+    .hero-stats strong { display: block; font-size: 1.7rem; line-height: 1.2; color: var(--cp-text); }
+    .hero-stats small { font-size: 0.85rem; font-weight: 600; }
     .hero-access-note { margin: 10px 0 0; color: var(--cp-text-muted); font-size: 0.88rem; }
     .context-panel, .filter-panel, .priority-section {
       margin-bottom: 18px; padding: clamp(20px, 4vw, 32px); background: var(--cp-panel-strong);
@@ -395,7 +394,7 @@ $html = @'
     .metric { min-height: 0; padding: 14px 18px; flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 8px; }
     .metric-value { font-size: 2rem; }
     .hero { padding: 32px 8px 24px; }
-    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+    .hero h1 { font-size: clamp(1.7rem, 6vw, 2.3rem); }
     .demo-links { order: 3; flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; }
     .demo-link { flex-shrink: 0; }
     select { font: inherit; }
@@ -464,8 +463,8 @@ $html = @'
 
     <header class="hero">
       <div class="eyebrow">Microsoft 365 Change Radar · lab-public</div>
-      <h1>Message Center の変更を、<br>見逃さない。</h1>
-      <p class="lede">Microsoft 365 の通知を日本語で要約し、変更内容・影響・期限・公式資料までひと目で確認できます。公開承認済みテスト テナントの通知だけを表示します。</p>
+      <h1>いま確認すべき、Microsoft 365 の変更。</h1>
+      <p class="lede">Message Center の通知を日本語で要約。期限・影響・公式資料を一覧のまま確認できます（公開承認済みテスト テナントの通知のみ）。</p>
       <p class="hero-stats" id="hero-stats" role="status"></p>
       <a class="hero-repo-link" href="https://admin.microsoft.com/#/MessageCenter" target="_blank" rel="noopener noreferrer">Microsoft 365 管理センターの Message Center を開く</a>
       <p class="hero-access-note">利用にはサインインと対象テナントでの適切な権限が必要です。</p>
@@ -829,7 +828,7 @@ $html = @'
       ["重要な変更", document.getElementById("metric-major").textContent, "件"],
       ["30日以内の期限", document.getElementById("metric-due").textContent, "件"],
       ["直近7日の更新", document.getElementById("metric-updated").textContent, "件"]
-    ].map(([label, value, unit]) => `<span>${label} <strong>${escapeHtml(value)}</strong> ${unit}</span>`).join("");
+    ].map(([label, value, unit]) => `<span>${label}<strong>${escapeHtml(value)}<small> ${unit}</small></strong></span>`).join("");
     const translationCounts = Object.values(CONTENT_STATE.messages).reduce((counts, entry) => {
       counts[entry.translation] = (counts[entry.translation] || 0) + 1;
       return counts;
