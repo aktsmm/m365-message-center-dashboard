@@ -353,8 +353,9 @@ $html = @'
     .message h3 { margin: 6px 0 10px; font-size: 1.12rem; letter-spacing: -0.02em; }
     .message-id { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.78rem; }
     .message-date { min-width: 105px; color: var(--cp-text-muted); font-size: 0.82rem; text-align: right; }
-    .ja-headline { margin: 4px 0 6px; font-weight: 750; font-size: 1.02rem; line-height: 1.5; }
-    .ja-headline.pending { font-weight: 400; color: var(--cp-text-soft); font-size: 0.86rem; }
+    .ja-lead { margin: 6px 0 0; color: var(--cp-text); font-size: 0.95rem; line-height: 1.6; }
+    .ja-lead.pending { color: var(--cp-text-soft); font-size: 0.82rem; }
+    .message-top h3 { font-size: 1.2rem; line-height: 1.45; }
     .export-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
     .export-actions button { font: inherit; padding: 6px 12px; border: 1px solid var(--cp-border, #c8c6c4); border-radius: 0.5rem; background: var(--cp-surface-soft); color: inherit; cursor: pointer; }
     .message-original { margin-top: -4px; color: var(--cp-text-soft); font-size: 0.84rem; }
@@ -746,9 +747,19 @@ $html = @'
       return { text, status, fromTitle: Boolean(title) };
     }
     function headlineHtml(message) {
-      const { text, status } = headlineInfo(message);
-      if (!text) return `<p class="ja-headline pending">日本語見出しは生成待ちです（原題のみ表示）。</p>`;
-      return `<p class="ja-headline" lang="ja">${escapeHtml(text)}${status === "current" ? "" : ` <span class="chip" title="保存済みの日本語要約の冒頭です。現在の原文版との照合は未完了です。">保存版・原文未照合</span>`}</p>`;
+      const { text, status, fromTitle } = headlineInfo(message);
+      if (fromTitle) return "";
+      if (!text) return `<p class="ja-lead pending">日本語タイトルは生成待ちです。</p>`;
+      return `<p class="ja-lead" lang="ja">${escapeHtml(text)}${status === "current" ? "" : ` <span class="chip" title="保存済みの日本語要約の冒頭です。現在の原文版との照合は未完了です。">保存版・原文未照合</span>`}</p>`;
+    }
+    // A real Japanese title is the heading; the English original becomes a quiet subtitle.
+    function cardHeading(message) {
+      const { text, fromTitle } = headlineInfo(message);
+      if (fromTitle) {
+        return `<h3 lang="ja">${titleLink(message, text)}</h3><div class="message-original" lang="en">原題: ${escapeHtml(message.title)}</div>`;
+      }
+      const shown = displayMessageTitle(message);
+      return `<h3>${titleLink(message)}</h3>${shown !== message.title ? `<div class="message-original">原題: ${escapeHtml(message.title)}</div>` : ""}${headlineHtml(message)}`;
     }
     function exportRecords() {
       const visible = DashboardView.sortMessages(DATA.messages.filter(matches), state.sort);
@@ -770,9 +781,9 @@ $html = @'
       link.remove();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     }
-    function titleLink(message) {
+    function titleLink(message, override) {
       const url = originalMessageUrl(message);
-      const title = escapeHtml(displayMessageTitle(message));
+      const title = escapeHtml(override || displayMessageTitle(message));
       return url ? `<a class="title-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${title}</a>` : title;
     }
     function deadlineChip(message) {
@@ -914,8 +925,7 @@ $html = @'
         ].filter(Boolean).join("");
         return `<article class="priority-card">
           <div class="message-id">${escapeHtml(message.id)}</div>
-          ${headlineHtml(message)}
-          <h3>${titleLink(message)}</h3>
+          ${cardHeading(message)}
           <div class="priority-reasons">${reasons}</div>
           <a href="#${escapeHtml(messageDomId(message))}">一覧の Message Center 更新を確認</a>
           ${messageLinks(message)}
@@ -989,12 +999,18 @@ $html = @'
             </details>`;
         return `<article class="message" id="${escapeHtml(messageDomId(message))}">
           <div class="message-top">
-            <div><div class="message-id">${escapeHtml(message.id)}</div>${headlineHtml(message)}<h3>${titleLink(message)}</h3>${displayMessageTitle(message) !== message.title ? `<div class="message-original">原題: ${escapeHtml(message.title)}</div>` : ""}<div class="chips">${chips}</div></div>
+            <div><div class="message-id">${escapeHtml(message.id)}</div>${cardHeading(message)}<div class="chips">${chips}</div></div>
             <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
           ${translationStatus === "current" ? `<p class="message-summary">${escapeHtml(translation.japaneseDetailedSummary)}</p>` : ""}
-          <dl class="message-facts">${DashboardView.facts(message).map(fact =>
-            `<div><dt>${fact.label} <small class="section-note">原文抜粋（英語）</small></dt><dd>${escapeHtml(fact.text)}</dd></div>`).join("")}</dl>
+          ${(() => {
+            const rows = DashboardView.facts(message).map(fact =>
+              `<div><dt>${fact.label} <small class="section-note">原文抜粋（英語）</small></dt><dd>${escapeHtml(fact.text)}</dd></div>`).join("");
+            if (!rows) return "";
+            return translationStatus === "current"
+              ? `<details class="message-content"><summary>原文抜粋（英語）: 変更・影響・時期・対応</summary><dl class="message-facts">${rows}</dl></details>`
+              : `<dl class="message-facts">${rows}</dl>`;
+          })()}
           ${messageLinks(message)}
           ${fullContent}
           ${translationContent}
