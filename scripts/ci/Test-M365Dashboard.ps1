@@ -815,7 +815,7 @@ try {
     $readme = Get-Content -LiteralPath (Join-Path $root 'README.md') -Raw -Encoding UTF8
     $aboutGenerator = Get-Content -LiteralPath (Join-Path $root 'scripts\New-M365DashboardAboutPage.ps1') -Raw -Encoding UTF8
     if ($readme -notmatch '月曜日・木曜日 07:17 JST' -or
-        $readme -notmatch '1日最大2回' -or
+        $readme -notmatch '1日最大4回' -or
         $readme -notmatch '各カードにある \*\*日本語訳と詳細要約\*\*' -or
         $readme -match '74/74' -or
         $readme -notmatch 'copilot-requests: write' -or
@@ -823,7 +823,7 @@ try {
         $readme -notmatch 'サインインと対象テナントでの適切な権限が必要です' -or
         $readme -match 'controller-only' -or
         $aboutGenerator -notmatch '月曜日・木曜日 07:17 JST' -or
-        $aboutGenerator -notmatch '1日最大2回' -or
+        $aboutGenerator -notmatch '1日最大4回' -or
         $aboutGenerator -notmatch '各カードにある「日本語訳と詳細要約」' -or
         $aboutGenerator -match '74/74' -or
         $aboutGenerator -notmatch '個人検証用テスト テナント' -or
