@@ -358,7 +358,9 @@ $html = @'
     .ja-lead { margin: 6px 0 0; color: var(--cp-text); font-size: 0.95rem; line-height: 1.6; }
     .ja-lead.pending { color: var(--cp-text-soft); font-size: 0.82rem; }
     .message-top h3 { font-size: 1.2rem; line-height: 1.45; }
-    .export-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 12px; }
+    .select-card { display: block; margin-bottom: 4px; font-size: 0.82rem; color: var(--cp-text-muted); cursor: pointer; }
+    .select-card input { margin-right: 4px; }
+    .export-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0 12px; }
     .export-actions button { font: inherit; padding: 6px 12px; border: 1px solid var(--cp-border, #c8c6c4); border-radius: 0.5rem; background: var(--cp-surface-soft); color: inherit; cursor: pointer; }
     .message-original { margin-top: -4px; color: var(--cp-text-soft); font-size: 0.84rem; }
     .message-summary { margin: 16px 0 0; color: var(--cp-text-muted); }
@@ -575,7 +577,10 @@ $html = @'
     <section aria-labelledby="messages-title">
       <div class="section-head"><div><div class="eyebrow">Message Center 更新一覧</div><h2 id="messages-title">すべての公開済み更新</h2></div><div class="section-note" id="result-count" role="status" aria-live="polite" aria-atomic="true"></div></div>
             <div class="export-actions" role="group" aria-label="表示中の更新を書き出す">
-              <button type="button" data-export="json">JSON（想定問答付き）</button>
+              <span class="section-note" id="export-scope" role="status"></span>
+        <button type="button" data-select-all>表示中を全選択</button>
+        <button type="button" data-select-none>選択を解除</button>
+        <button type="button" data-export="json">JSON（想定問答付き）</button>
               <button type="button" data-export="csv">CSV</button>
               <button type="button" data-export="notes">スライドノート用 想定問答（Markdown）</button>
             </div>      <div class="message-list" id="messages"></div>
@@ -764,9 +769,17 @@ $html = @'
       const shown = displayMessageTitle(message);
       return `<h3>${titleLink(message)}</h3>${shown !== message.title ? `<div class="message-original">原題: ${escapeHtml(message.title)}</div>` : ""}${headlineHtml(message)}`;
     }
+    const selectedIds = new Set();
+    function updateExportScope(visible) {
+      const chosen = visible.filter(message => selectedIds.has(message.id)).length;
+      document.getElementById("export-scope").textContent = chosen
+        ? `書き出し対象: 選択した ${chosen} 件（表示中 ${visible.length} 件）`
+        : `書き出し対象: 表示中の ${visible.length} 件（カードを選ぶと選択分だけ）`;
+    }
     function exportRecords() {
       const visible = DashboardView.sortMessages(DATA.messages.filter(matches), state.sort);
-      return visible.map(message => {
+      const chosen = visible.filter(message => selectedIds.has(message.id));
+      return (chosen.length ? chosen : visible).map(message => {
         const { text, status } = headlineInfo(message);
         const entry = RELATED_DOCUMENTS[message.id];
         return DashboardView.exportRecord(message, { headline: text, translationStatus: status,
@@ -1009,7 +1022,7 @@ $html = @'
         return `<article class="message" id="${escapeHtml(messageDomId(message))}">
           <div class="message-top">
             <div><div class="message-id">${escapeHtml(message.id)}</div>${cardHeading(message)}<div class="chips">${chips}</div></div>
-            <div class="message-date"><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
+            <div class="message-date"><label class="select-card"><input type="checkbox" data-select="${escapeHtml(message.id)}"${selectedIds.has(message.id) ? " checked" : ""}> 書き出しに含める</label><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
           ${translationStatus === "current" ? `<p class="message-summary">${escapeHtml(translation.japaneseDetailedSummary)}</p>` : ""}
           ${(() => {
@@ -1026,6 +1039,7 @@ $html = @'
         </article>`;
       }).join("") : `<div class="panel empty"><p>${escapeHtml(conditionText)}に一致するメッセージはありません。</p><button class="clear-filters" type="button" data-clear-filters>条件をすべてクリア</button></div>`;
       restoreServiceControlFocus(serviceFocusSelector);
+      updateExportScope(visible);
     }
     function syncViewControls() {
       document.getElementById("search").value = state.query;
@@ -1102,7 +1116,20 @@ $html = @'
       const button = event.target.closest("button[data-focus-toggle]");
       if (button) toggleFocus(button.dataset.focusToggle);
     });
+    document.addEventListener("change", event => {
+      const box = event.target.closest("input[data-select]");
+      if (!box) return;
+      if (box.checked) selectedIds.add(box.dataset.select); else selectedIds.delete(box.dataset.select);
+      updateExportScope(DATA.messages.filter(matches));
+    });
     document.addEventListener("click", event => {
+      const selectAll = event.target.closest("[data-select-all]");
+      const selectNone = event.target.closest("[data-select-none]");
+      if (selectAll || selectNone) {
+        DATA.messages.filter(matches).forEach(message => selectAll ? selectedIds.add(message.id) : selectedIds.delete(message.id));
+        render();
+        return;
+      }
       const detailLink = event.target.closest("[data-open-detail]");
       if (detailLink) {
         const message = DATA.messages.find(item => item.id === detailLink.dataset.openDetail);
