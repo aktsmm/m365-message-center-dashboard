@@ -1,6 +1,6 @@
 const DashboardView = (() => {
   const DAY = 86400000;
-  const filterValues = ["all", "major", "due", "high", "soon", "overdue"];
+  const filterValues = ["all", "major", "due", "high", "soon", "overdue", "now", "month"];
   const documentValues = ["all", "verified", "no_verified_document", "fetch_failed", "not_researched"];
   const sortValues = ["updated", "deadline", "start"];
   const normalizeText = value => String(value || "").split(/((?:[A-Za-z]:\\|\\\\)[^\s]+)/g)
@@ -45,6 +45,44 @@ const DashboardView = (() => {
     if (!Number.isFinite(deadline)) return "none";
     if (deadline < reference) return "overdue";
     return deadline <= reference + 30 * DAY ? "soon" : "later";
+  }
+
+  // Deterministic triage: no AI, derived only from the published deadline, dates and wording.
+  const URGENT_TITLE = /\b(action (?:may be )?required|retir\w*|deprecat\w*|end of support|will be removed|breaking change|no longer)\b/i;
+  const TIERS = {
+    now: { label: "今すぐ確認", rank: 0 },
+    month: { label: "今月準備", rank: 1 },
+    info: { label: "情報のみ", rank: 2 },
+    past: { label: "期限経過", rank: 3 }
+  };
+
+  function tier(message, reference = Date.now()) {
+    const bucket = deadlineBucket(message, reference);
+    if (bucket === "overdue") return "past";
+    if (bucket === "soon" || URGENT_TITLE.test(String(message.title || ""))) return "now";
+    const start = dateValue(message.startDateTime);
+    const nearRollout = Number.isFinite(start) && start >= reference - 30 * DAY && start <= reference + 45 * DAY;
+    return bucket === "later" || message.isMajorChange || nearRollout ? "month" : "info";
+  }
+
+  const CATEGORY_LABELS = {
+    plan_for_change: "計画が必要", planforchange: "計画が必要",
+    stay_informed: "情報提供", stayinformed: "情報提供",
+    prevent_or_fix_issue: "問題の予防・修正", preventorfixissue: "問題の予防・修正"
+  };
+  function categoryLabel(value) {
+    const key = String(value || "").toLowerCase().replace(/[\s-]/g, "_");
+    return CATEGORY_LABELS[key] || CATEGORY_LABELS[key.replace(/_/g, "")] || String(value || "未分類");
+  }
+
+  // "(Updated)" notices lead with a dated change note; surface it instead of burying it.
+  function updateNote(message) {
+    if (!/^\s*\(updated\)/i.test(String(message.title || ""))) return null;
+    const text = String(message.bodyText || "").replace(/\r\n/g, "\n");
+    const match = text.match(/^\s*Updated\s+([A-Za-z]+ \d{1,2}, \d{4})\s*:?\s*([^\n]*(?:\n(?!\s*\n)[^\n]*)?)/i);
+    if (!match) return null;
+    const note = excerpt(match[2], 200);
+    return note ? { date: match[1], text: note } : null;
   }
 
   function priorityCompare(left, right, reference = Date.now()) {
@@ -171,6 +209,8 @@ const DashboardView = (() => {
       category: message.category || "",
       severity: message.severity || "",
       isMajorChange: Boolean(message.isMajorChange),
+      priorityTier: tier(message),
+      updateNote: updateNote(message),
       services: [...(message.services || [])],
       startDateTime: message.startDateTime || null,
       lastModifiedDateTime: message.lastModifiedDateTime || null,
@@ -227,5 +267,6 @@ const DashboardView = (() => {
 
   return { DAY, normalizeText, validDate, readFilters, writeFilters, deadlineBucket,
     priorityCompare, sortMessages, inDateRange, excerpt, facts, citationIds, freshness,
-    headline, formatJst, qa, exportRecord, toCsv, notesMarkdown, translationEta, NOT_IN_SOURCE };
+    headline, formatJst, qa, exportRecord, toCsv, notesMarkdown, translationEta, NOT_IN_SOURCE,
+    tier, TIERS, categoryLabel, updateNote };
 })();

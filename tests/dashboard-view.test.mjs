@@ -108,3 +108,30 @@ test("csv neutralizes formulas and notes cite sources", () => {
   assert.ok(notes.includes("想定問答") && notes.includes("原文未照合") === false || notes.includes("未照合"));
   assert.ok(notes.includes("https://admin.microsoft.com/x"));
 });
+
+test("tier triages deterministically from deadline, wording and rollout date", () => {
+  const ref = Date.parse("2026-10-16T00:00:00Z");
+  assert.equal(view.tier({ title: "X", actionRequiredByDateTime: "2026-10-30T00:00:00Z" }, ref), "now");
+  assert.equal(view.tier({ title: "Retirement of Y" }, ref), "now");
+  assert.equal(view.tier({ title: "X", actionRequiredByDateTime: "2026-09-01T00:00:00Z" }, ref), "past");
+  assert.equal(view.tier({ title: "X", actionRequiredByDateTime: "2027-03-01T00:00:00Z" }, ref), "month");
+  assert.equal(view.tier({ title: "X", isMajorChange: true }, ref), "month");
+  assert.equal(view.tier({ title: "X", startDateTime: "2026-11-01T00:00:00Z" }, ref), "month");
+  assert.equal(view.tier({ title: "X", startDateTime: "2027-06-01T00:00:00Z" }, ref), "info");
+});
+
+test("category labels are Japanese and unknown values pass through", () => {
+  assert.equal(view.categoryLabel("planForChange"), "計画が必要");
+  assert.equal(view.categoryLabel("stayInformed"), "情報提供");
+  assert.equal(view.categoryLabel("preventOrFixIssue"), "問題の予防・修正");
+  assert.equal(view.categoryLabel(""), "未分類");
+});
+
+test("update note surfaces the dated change line only for updated notices", () => {
+  const body = "Updated October 13, 2026: We have updated the timeline below.\n\n[Summary]\nBody.";
+  const note = plain(view.updateNote({ title: "(Updated) Teams: Thing", bodyText: body }));
+  assert.equal(note.date, "October 13, 2026");
+  assert.match(note.text, /updated the timeline/);
+  assert.equal(view.updateNote({ title: "Teams: Thing", bodyText: body }), null);
+  assert.equal(view.updateNote({ title: "(Updated) Teams: Thing", bodyText: "No dated line." }), null);
+});

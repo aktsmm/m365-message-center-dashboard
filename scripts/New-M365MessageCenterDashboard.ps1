@@ -355,6 +355,12 @@ $html = @'
     .message h3 { margin: 6px 0 10px; font-size: 1.12rem; letter-spacing: -0.02em; }
     .message-id { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.78rem; }
     .message-date { min-width: 105px; color: var(--cp-text-muted); font-size: 0.82rem; text-align: right; }
+    .tier { font-weight: 750; }
+    .tier-now { background: #f8d9d2; color: #8f2410; }
+    .tier-month { background: #fbe9d4; color: #8a4b00; }
+    .tier-past { background: #e6e3df; color: #5b544e; }
+    .update-note { margin: 10px 0 0; padding: 8px 12px; border-left: 3px solid var(--cp-accent); background: var(--cp-surface-soft); border-radius: 0.4rem; font-size: 0.88rem; color: var(--cp-text-muted); }
+    .update-note strong { color: var(--cp-text); margin-right: 4px; }
     .ja-lead { margin: 6px 0 0; color: var(--cp-text); font-size: 0.95rem; line-height: 1.6; }
     .ja-lead.pending { color: var(--cp-text-soft); font-size: 0.82rem; }
     .message-top h3 { font-size: 1.2rem; line-height: 1.45; }
@@ -371,7 +377,7 @@ $html = @'
     .title-link:hover { color: var(--cp-link); text-decoration: underline; }
     .title-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
     .notice { padding: 12px 16px; border-left: 4px solid var(--cp-warning); background: var(--cp-surface-soft); color: var(--cp-text); border-radius: 0.625rem; }
-    #health-title { font-size: 1.35rem; }
+    #health-title { font-size: 1rem; }
     .panel > summary, .insights > summary { cursor: pointer; font-weight: 750; }
     .compact-disclosure { padding: 14px 18px; margin-bottom: 14px; }
     .compact-disclosure > p { color: var(--cp-text-muted); }
@@ -489,12 +495,10 @@ $html = @'
     </section>
     </details>
 
-    <section class="panel" aria-labelledby="health-title" style="padding: 20px; margin-bottom: 18px">
-      <h2 id="health-title">データと要約の状態</h2>
+    <details class="panel compact-disclosure" id="health-panel">
+      <summary id="health-title">データの更新状況（運用情報）</summary>
       <div class="health-grid" id="health-status" role="status"></div>
-      <p class="notice" id="repair-status">自動修復は承認済みの保存データだけを使い、翻訳は1回4件まで進めます。未照合の保存訳は原文抜粋と区別し、起動要求だけで修復完了とは扱いません。</p>
-      <p class="section-note">取得・AI要約・公式資料の確認は別の処理です。古い状態を「確認済み」に置き換えず、原文と照合してから表示します。</p>
-    </section>
+    </details>
     <section class="metrics" aria-label="公開スナップショットの集計">
       <article class="metric"><div class="metric-label">公開中の更新</div><div class="metric-value" id="metric-total">0</div></article>
       <article class="metric metric-alert"><div class="metric-label">重要な変更</div><div class="metric-value" id="metric-major">0</div></article>
@@ -535,7 +539,8 @@ $html = @'
           <button class="filter" data-filter="due" type="button" aria-pressed="false">対応期限が記載</button>
           <button class="filter" data-filter="soon" type="button" aria-pressed="false">今後30日以内</button>
           <button class="filter" data-filter="overdue" type="button" aria-pressed="false">期限経過</button>
-          <button class="filter" data-filter="high" type="button" aria-pressed="false">高重要度</button>
+          <button class="filter" data-filter="now" type="button" aria-pressed="false">今すぐ確認</button>
+          <button class="filter" data-filter="month" type="button" aria-pressed="false">今月準備</button>
         </div>
         <div class="advanced-filters">
           <label>関連資料の状態<select id="document-filter" class="search">
@@ -686,6 +691,8 @@ $html = @'
     const hasActiveConditions = () => state.focuses.length || state.filter !== "all" || state.query || state.documentStatus !== "all" || state.from || state.to;
     const filterLabel = () => ({
       major: "重要な変更",
+      now: "今すぐ確認",
+      month: "今月準備",
       due: "対応期限が記載",
       high: "高重要度",
       soon: "今後30日以内の対応期限",
@@ -730,9 +737,9 @@ $html = @'
       const original = originalMessageUrl(message);
       const entry = RELATED_DOCUMENTS[message.id];
       const status = {
-        not_researched: "未調査（自動調査待ち）",
-        no_verified_document: "対応する公式資料を確認できていません",
-        fetch_failed: "公式資料の取得に失敗しました"
+        not_researched: "公式資料を調査中です",
+        no_verified_document: "対応する公式資料は見つかっていません",
+        fetch_failed: "公式資料を取得できませんでした（自動で再試行します）"
       };
       const documents = (entry?.documents || []).slice(0, 3);
       return `<div class="message-links">
@@ -743,8 +750,6 @@ $html = @'
         ${documents.length ? `<ul>${documents.map(document =>
           `<li><a class="document-link" href="${escapeHtml(document.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(document.title)}</a> <span class="section-note">(${document.locale === "ja-jp" ? "日本語" : "英語"})</span></li>`).join("")}</ul>` : ""}
         ${entry?.status !== "verified" ? `<p class="section-note">${escapeHtml(status[entry?.status] || status.not_researched)}</p>` : ""}
-        ${entry?.checkedAt ? `<small class="section-note">確認 ${fmt(entry.checkedAt)}</small>` : ""}
-        ${entry?.nextAttemptAt ? `<small class="section-note"> · 次回確認予定 ${fmt(entry.nextAttemptAt)}</small>` : ""}
       </div>`;
     }
     function headlineInfo(message) {
@@ -862,7 +867,7 @@ $html = @'
       .join("");
     const usableInsights = INSIGHTS && ["current", "unverified"].includes(CONTENT_STATE.summary.status);
     document.getElementById("insight-content").innerHTML = usableInsights
-      ? `${CONTENT_STATE.summary.status === "unverified" ? `<p class="notice">保存済みの週次要約です。原文の版は未照合のため、自動再生成の対象です。</p>` : ""}
+      ? `${CONTENT_STATE.summary.status === "unverified" ? `<p class="section-note">この週次要約は、最新の原文との照合がまだです。</p>` : ""}
          <h2 class="insight-headline">${escapeHtml(INSIGHTS.headline)}</h2>
          <p class="insight-summary">${escapeHtml(INSIGHTS.executiveSummary)}</p>
          <div class="insight-grid">
@@ -871,9 +876,9 @@ $html = @'
            <article class="insight-column"><h3>継続監視</h3><ul>${listItems(INSIGHTS.watch)}</ul></article>
          </div>
          <details class="message-content"><summary>利用部門と確認したいこと</summary><ul>${listItems(INSIGHTS.customerQuestions)}</ul></details>
-         <p class="section-note">週次要約の生成 ${fmt(INSIGHTS.summaryGeneratedAt || INSIGHTS.generatedAt)} · 原文を最終確認してください。</p>`
-      : `<h2 class="insight-headline">原文に基づく確認候補</h2>
-         <p class="notice">週次AI要約は、参照IDまたは原文の版の検証待ちです。未検証の内容は表示せず、自動修復の対象にしています。</p>
+         <p class="section-note">週次要約の生成 ${fmt(INSIGHTS.summaryGeneratedAt || INSIGHTS.generatedAt)} · 詳細は各通知の原文でご確認ください。</p>`
+      : `<h2 class="insight-headline">注目の通知</h2>
+         <p class="section-note">週次要約は更新の準備中です。期限や重要度の高い通知を先に表示します。</p>
          <ul>${DashboardView.sortMessages(DATA.messages.filter(message => message.isMajorChange || message.actionRequiredByDateTime), "deadline").slice(0, 4).map(message =>
            `<li><a href="#${escapeHtml(messageDomId(message))}" data-open-detail="${escapeHtml(message.id)}">${escapeHtml(message.id)}</a>: ${escapeHtml(displayMessageTitle(message))} ${message.actionRequiredByDateTime ? `（期限 ${fmt(message.actionRequiredByDateTime)}）` : ""}</li>`).join("")}</ul>`;
 
@@ -899,6 +904,8 @@ $html = @'
       if (state.focuses.length && !getMessageFocusSlugs(message).some(slug => state.focuses.includes(slug))) return false;
       if (state.filter === "major" && !message.isMajorChange) return false;
       if (state.filter === "due" && !message.actionRequiredByDateTime) return false;
+      if (state.filter === "now" && DashboardView.tier(message) !== "now") return false;
+      if (state.filter === "month" && DashboardView.tier(message) !== "month") return false;
       if (state.filter === "high" && !["high", "critical"].includes(String(message.severity).toLowerCase())) return false;
       if (state.filter === "soon" && DashboardView.deadlineBucket(message) !== "soon") return false;
       if (state.filter === "overdue" && DashboardView.deadlineBucket(message) !== "overdue") return false;
@@ -932,8 +939,9 @@ $html = @'
 
     function renderPriorities(visible) {
       const priorities = visible
-        .filter(message => message.actionRequiredByDateTime || message.isMajorChange)
-        .sort(priorityComparison)
+        .filter(message => ["now", "month"].includes(DashboardView.tier(message)))
+        .sort((left, right) => DashboardView.TIERS[DashboardView.tier(left)].rank - DashboardView.TIERS[DashboardView.tier(right)].rank
+          || priorityComparison(left, right))
         .slice(0, 4);
       document.getElementById("priority-scope").textContent = hasActiveConditions()
         ? "現在の絞り込み結果から表示"
@@ -941,6 +949,7 @@ $html = @'
       document.getElementById("priorities").innerHTML = priorities.length ? priorities.map(message => {
         const update = MESSAGE_UPDATES.get(String(message.id).toUpperCase());
         const reasons = [
+          `<span class="chip tier tier-${DashboardView.tier(message)}">${DashboardView.TIERS[DashboardView.tier(message)].label}</span>`,
           deadlineChip(message),
           message.isMajorChange ? `<span class="chip major">重要な変更</span>` : ""
         ].filter(Boolean).join("");
@@ -986,15 +995,18 @@ $html = @'
         const translation = MESSAGE_TRANSLATIONS.get(String(message.id).toUpperCase());
         const translationStatus = CONTENT_STATE.messages[message.id]?.translation || "missing";
         const high = ["high", "critical"].includes(String(message.severity).toLowerCase());
+        const tierKey = DashboardView.tier(message);
         const chips = [
+          `<span class="chip tier tier-${tierKey}">${DashboardView.TIERS[tierKey].label}</span>`,
           message.isMajorChange ? `<span class="chip major">重要な変更</span>` : "",
           high ? `<span class="chip high">${escapeHtml(message.severity)}</span>` : "",
           deadlineChip(message),
           translationLabel(message),
-          `<span class="chip" title="関連資料の調査状態です。資料未確認は不存在を意味しません。">${RELATED_DOCUMENTS[message.id]?.documents?.length ? "公式資料あり" : "公式資料の確認待ち"}</span>`,
-          `<span class="chip">${escapeHtml(message.category || "未分類")}</span>`,
+          RELATED_DOCUMENTS[message.id]?.documents?.length ? `<span class="chip">公式資料あり</span>` : "",
+          `<span class="chip">${escapeHtml(DashboardView.categoryLabel(message.category))}</span>`,
           ...(message.services || []).map(service => `<span class="chip">${escapeHtml(service)}</span>`)
         ].filter(Boolean).join("");
+        const updateNote = DashboardView.updateNote(message);
         const body = message.bodyText
           ? `<p class="message-body">${escapeHtml(message.bodyText).replace(/\r?\n/g, "<br>")}</p>`
           : `<p class="message-body">本文はありません。</p>`;
@@ -1009,20 +1021,21 @@ $html = @'
           : "";
         const translationContent = translation
           ? `<details class="message-content message-translation"><summary>日本語訳と詳細要約${translationStatus !== "current" ? "（保存版・原文照合待ち）" : ""}</summary>
-              ${translationStatus !== "current" ? `<p class="notice">この訳文は現在の原文との版照合が完了していません。古い時期・対応が残る可能性があるため、下の原文抜粋と管理センターで確認してください。自動再生成の対象です。</p>` : ""}
+              ${translationStatus !== "current" ? `<p class="notice">この日本語訳は、最新の原文との照合がまだです。内容が古い可能性があるため、原文でも確認してください。</p>` : ""}
               <h4>詳細要約</h4><p class="message-body">${escapeHtml(translation.japaneseDetailedSummary).replace(/\r?\n/g, "<br>")}</p>
               <h4>${translation.sourceTruncated ? "本文の日本語訳（抜粋）" : "本文の日本語訳"}</h4>
-              ${translation.sourceTruncated ? `<p class="insight-pending">原文の先頭 ${escapeHtml(translation.sourceCharacterCount)} 文字を翻訳しています。全文は「Message Center の全文と詳細」で確認してください。</p>` : ""}
+              ${translation.sourceTruncated ? `<p class="insight-pending">原文の先頭 ${escapeHtml(translation.sourceCharacterCount)} 文字を元にしています。続きは「Message Center の全文と詳細」でご確認ください。</p>` : ""}
               <p class="message-body">${escapeHtml(translation.japaneseBodyTranslation).replace(/\r?\n/g, "<br>")}</p>
             </details>`
           : `<details class="message-content message-translation"><summary>日本語訳と詳細要約</summary>
-              <p class="insight-pending">この更新の AI 翻訳は、週次の限定バッチで生成予定です。未検証の訳文は表示しません。</p>
+              <p class="insight-pending">日本語訳は準備中です。</p>
             </details>`;
         return `<article class="message" id="${escapeHtml(messageDomId(message))}">
           <div class="message-top">
             <div><div class="message-id">${escapeHtml(message.id)}</div>${cardHeading(message)}<div class="chips">${chips}</div></div>
             <div class="message-date"><label class="select-card"><input type="checkbox" data-select="${escapeHtml(message.id)}"${excludedIds.has(message.id) ? "" : " checked"}> 出力に含める</label><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
+          ${updateNote ? `<p class="update-note"><strong>更新（${escapeHtml(updateNote.date)}）</strong> <span lang="en">${escapeHtml(updateNote.text)}</span></p>` : ""}
           ${translationStatus === "current" ? `<p class="message-summary">${escapeHtml(translation.japaneseDetailedSummary)}</p>` : ""}
           ${(() => {
             const rows = DashboardView.facts(message).map(fact =>
