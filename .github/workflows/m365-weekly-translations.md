@@ -9,7 +9,7 @@ on:
         required: false
         type: string
       translation_ids:
-        description: "Optional comma-separated current MC IDs (maximum four) for the serialized catch-up controller."
+        description: "Optional comma-separated current MC IDs (maximum three) for the serialized catch-up controller."
         required: false
         type: string
       translation_request_id:
@@ -67,8 +67,8 @@ pre-agent-steps:
         AgentContextPath               = '.m365-agent-context.json'
         AgentContextLimit              = 1000
         AgentContextBodyMaxChars       = 1000
-        AgentTranslationBatchSize      = 4
-        AgentTranslationBodyMaxChars   = 1000
+        AgentTranslationBatchSize      = 3
+        AgentTranslationBodyMaxChars   = 2500
       }
       if ($translationIds) {
         $contextParameters.AgentTranslationIds = $translationIds
@@ -111,6 +111,10 @@ safe-outputs:
           description: "Optional but expected: natural Japanese one-line title for slot 1 (4-80 characters) that says what changes. Not a literal word-for-word translation."
           required: false
           type: string
+        translation_1_japanese_facts:
+          description: "Four labelled Japanese lines for slot 1, grounded only in the supplied text: 変更：..., 影響：..., 時期：..., 対応：... (each 4-400 characters; write 原文に記載なし when not stated)."
+          required: false
+          type: string
         translation_1_japanese_detailed_summary:
           description: "Japanese detailed summary for slot 1, 80-1200 characters."
           required: false
@@ -133,6 +137,10 @@ safe-outputs:
           type: string
         translation_2_japanese_title:
           description: "Optional but expected: natural Japanese one-line title for slot 2 (4-80 characters) that says what changes. Not a literal word-for-word translation."
+          required: false
+          type: string
+        translation_2_japanese_facts:
+          description: "Four labelled Japanese lines for slot 2, grounded only in the supplied text: 変更：..., 影響：..., 時期：..., 対応：... (each 4-400 characters; write 原文に記載なし when not stated)."
           required: false
           type: string
         translation_2_japanese_detailed_summary:
@@ -159,6 +167,10 @@ safe-outputs:
           description: "Optional but expected: natural Japanese one-line title for slot 3 (4-80 characters) that says what changes. Not a literal word-for-word translation."
           required: false
           type: string
+        translation_3_japanese_facts:
+          description: "Four labelled Japanese lines for slot 3, grounded only in the supplied text: 変更：..., 影響：..., 時期：..., 対応：... (each 4-400 characters; write 原文に記載なし when not stated)."
+          required: false
+          type: string
         translation_3_japanese_detailed_summary:
           description: "Japanese detailed summary for slot 3, 80-1200 characters."
           required: false
@@ -173,30 +185,6 @@ safe-outputs:
           type: number
         translation_3_source_truncated:
           description: "Exact sourceTruncated boolean from translationBatch slot 3."
-          required: false
-          type: boolean
-        translation_4_id:
-          description: "MC ID for translation batch slot 4."
-          required: false
-          type: string
-        translation_4_japanese_title:
-          description: "Optional but expected: natural Japanese one-line title for slot 4 (4-80 characters) that says what changes. Not a literal word-for-word translation."
-          required: false
-          type: string
-        translation_4_japanese_detailed_summary:
-          description: "Japanese detailed summary for slot 4, 80-1200 characters."
-          required: false
-          type: string
-        translation_4_japanese_body_translation:
-          description: "Japanese translation of the supplied bounded body text for slot 4."
-          required: false
-          type: string
-        translation_4_source_character_count:
-          description: "Exact sourceCharacterCount from translationBatch slot 4."
-          required: false
-          type: number
-        translation_4_source_truncated:
-          description: "Exact sourceTruncated boolean from translationBatch slot 4."
           required: false
           type: boolean
       steps:
@@ -302,12 +290,16 @@ Call `publish-m365-translations` exactly once:
 - If `translationBatch` is empty, call it with no fields. Do not retry, synthesize a translation,
   or call a different safe output.
 - Otherwise map each `translationBatch` item, in order, to the matching numbered slot:
-  `translation_1_*` for the first item through `translation_4_*` for the fourth. For each used
+  `translation_1_*` for the first item through `translation_3_*` for the third. For each used
   slot, supply all five required fields: `_id`, `_japanese_detailed_summary`, `_japanese_body_translation`,
-  `_source_character_count`, and `_source_truncated`; also supply `_japanese_title`: one natural
-  Japanese line (4-80 characters) stating what changes, so an administrator understands the item at a glance.
-  Do not populate an unused slot.
   `_source_character_count`, and `_source_truncated`. Do not populate an unused slot.
+- Also supply `_japanese_title`: one natural Japanese line (4-80 characters) stating what changes, so
+  an administrator understands the item at a glance. Also supply `_japanese_facts`: exactly four lines
+  in this form, each one concise sentence of 4-400 characters:
+  `変更：...` / `影響：...` / `時期：...` / `対応：...`. State only what the supplied `bodyText`
+  says; for anything it does not state write `原文に記載なし`. Never introduce a year, version, or date
+  that is not in `bodyText`. The `bodyText` can be up to 2,500 characters of the notification; when
+  `sourceTruncated` is true, the rest is not supplied.
 - Write a useful Japanese detailed summary (80-1200 characters) and translate only the supplied
   `translationBatch.bodyText`; do not invent or complete text beyond that bounded source. Copy
   `sourceCharacterCount` as a number and `sourceTruncated` as a boolean directly from the matching

@@ -787,6 +787,7 @@ $html = @'
         const { text, status } = headlineInfo(message);
         const entry = RELATED_DOCUMENTS[message.id];
         return DashboardView.exportRecord(message, { headline: text, translationStatus: status,
+          japaneseFacts: MESSAGE_TRANSLATIONS.get(String(message.id).toUpperCase())?.japaneseFacts || null,
           originalUrl: originalMessageUrl(message), documentStatus: entry?.status || "not_researched",
           documents: (entry?.documents || []).slice(0, 3) });
       });
@@ -893,6 +894,7 @@ $html = @'
         message.japaneseSummary,
         message.bodyText,
         MESSAGE_TRANSLATIONS.get(message.id)?.japaneseTitle,
+        ...Object.values(MESSAGE_TRANSLATIONS.get(message.id)?.japaneseFacts || {}),
         MESSAGE_TRANSLATIONS.get(message.id)?.japaneseDetailedSummary,
         MESSAGE_TRANSLATIONS.get(message.id)?.japaneseBodyTranslation,
         ...(RELATED_DOCUMENTS[message.id]?.documents || []).map(document => document.title),
@@ -1038,12 +1040,16 @@ $html = @'
           ${updateNote ? `<p class="update-note"><strong>更新（${escapeHtml(updateNote.date)}）</strong> <span lang="en">${escapeHtml(updateNote.text)}</span></p>` : ""}
           ${translationStatus === "current" ? `<p class="message-summary">${escapeHtml(translation.japaneseDetailedSummary)}</p>` : ""}
           ${(() => {
+            const jf = translationStatus === "current" ? translation?.japaneseFacts : null;
+            const labels = [["change", "変更"], ["impact", "影響"], ["timing", "時期"], ["action", "対応"]];
+            const japaneseRows = jf ? labels.filter(([key]) => jf[key]).map(([key, label]) =>
+              `<div><dt>${label}</dt><dd lang="ja">${escapeHtml(jf[key])}</dd></div>`).join("") : "";
             const rows = DashboardView.facts(message).map(fact =>
               `<div><dt>${fact.label} <small class="section-note">原文抜粋（英語）</small></dt><dd>${escapeHtml(fact.text)}</dd></div>`).join("");
-            if (!rows) return "";
-            return translationStatus === "current"
+            const english = rows ? (translationStatus === "current"
               ? `<details class="message-content"><summary>原文抜粋（英語）: 変更・影響・時期・対応</summary><dl class="message-facts">${rows}</dl></details>`
-              : `<dl class="message-facts">${rows}</dl>`;
+              : `<dl class="message-facts">${rows}</dl>`) : "";
+            return japaneseRows ? `<dl class="message-facts">${japaneseRows}</dl>${english}` : english;
           })()}
           ${messageLinks(message)}
           ${fullContent}

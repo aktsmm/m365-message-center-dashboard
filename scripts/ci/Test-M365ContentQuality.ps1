@@ -140,6 +140,7 @@ try {
         $b = $batch.messages[$slot - 1]
         $typed["translation_${slot}_id"] = $b.id
         $typed["translation_${slot}_japanese_title"] = 'Teams の会議設定を更新します'
+        $typed["translation_${slot}_japanese_facts"] = "変更：会議設定の既定値が変更されます。`n影響：原文に記載なし`n時期：段階的に展開されます。`n対応：管理者は設定を確認してください。"
         $typed["translation_${slot}_japanese_detailed_summary"] = '変更内容と影響を提示された本文の範囲で確認してください。' * 4
         $typed["translation_${slot}_japanese_body_translation"] = '提示された本文の日本語訳です。'
         $typed["translation_${slot}_source_character_count"] = $b.sourceCharacterCount
@@ -158,6 +159,15 @@ try {
     Assert-Quality ($legacy.PSObject.Properties.Name -notcontains 'sourceHash') 'Historical translation not relabeled current'
     $titled = @($merged.messageTranslations | Where-Object id -eq $batch.messages[0].id)[0]
     Assert-Quality ($titled.japaneseTitle -ceq 'Teams の会議設定を更新します') 'Publisher stores validated Japanese title'
+    Assert-Quality ($titled.japaneseFacts.change -ceq '会議設定の既定値が変更されます。' -and $titled.japaneseFacts.impact -ceq '原文に記載なし') 'Publisher stores validated Japanese facts'
+    $typed['translation_1_japanese_facts'] = "変更：会議設定の既定値が変更されます。`n影響：原文に記載なし`n時期：2031年に開始します。`n対応：管理者は設定を確認してください。"
+    Write-Fixture @{ items = @($typed) } $agentPath
+    Assert-Rejected { & (Join-Path $scripts 'Publish-M365AgentTranslations.ps1') @bridgeParams } 'Year absent from the notification rejected'
+    $typed['translation_1_japanese_facts'] = "変更：English only fact`n影響：原文に記載なし`n時期：段階的に展開されます。`n対応：管理者は設定を確認してください。"
+    Write-Fixture @{ items = @($typed) } $agentPath
+    Assert-Rejected { & (Join-Path $scripts 'Publish-M365AgentTranslations.ps1') @bridgeParams } 'Non-Japanese fact rejected'
+    $typed['translation_1_japanese_facts'] = "変更：会議設定の既定値が変更されます。`n影響：原文に記載なし`n時期：段階的に展開されます。`n対応：管理者は設定を確認してください。"
+    Write-Fixture @{ items = @($typed) } $agentPath
     $typed['translation_1_japanese_title'] = 'English only title'
     Write-Fixture @{ items = @($typed) } $agentPath
     Assert-Rejected { & (Join-Path $scripts 'Publish-M365AgentTranslations.ps1') @bridgeParams } 'Non-Japanese title rejected'
@@ -167,15 +177,15 @@ try {
     Write-Fixture $summary $previousPath
     Assert-Rejected { & (Join-Path $scripts 'Publish-M365AgentTranslations.ps1') @bridgeParams } 'Bridge refuses invalid inherited weekly summary'
     $summary.watch = '今後の更新内容を継続確認します。'
-    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m; japaneseTitle = '更新内容を確認する通知です' } })
+    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m; japaneseTitle = '更新内容を確認する通知です'; japaneseFacts = @{ change = '変更内容を確認します。' } } })
     Write-Fixture $summary $previousPath
     & (Join-Path $scripts 'New-M365AgentContext.ps1') @params
     Assert-Quality (@((Get-Content -LiteralPath $batchPath -Raw | ConvertFrom-Json).messages).Count -eq 0) 'Fresh queue empty'
-    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m } })
+    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m; japaneseTitle = '更新内容を確認する通知です' } })
     Write-Fixture $summary $previousPath
     & (Join-Path $scripts 'New-M365AgentContext.ps1') @params
-    Assert-Quality (@((Get-Content -LiteralPath $batchPath -Raw | ConvertFrom-Json).messages).Count -gt 0) 'Verified translations lacking a Japanese title are queued'
-    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m; japaneseTitle = '更新内容を確認する通知です' } })
+    Assert-Quality (@((Get-Content -LiteralPath $batchPath -Raw | ConvertFrom-Json).messages).Count -gt 0) 'Verified translations lacking Japanese facts are queued'
+    $summary.messageTranslations = @(foreach ($m in $messages) { @{ id = $m.id; sourceHash = Get-M365MessageSourceHash $m; japaneseTitle = '更新内容を確認する通知です'; japaneseFacts = @{ change = '変更内容を確認します。' } } })
     Write-Fixture $summary $previousPath
     & (Join-Path $scripts 'New-M365AgentContext.ps1') @params
     & (Join-Path $scripts 'New-M365AgentContext.ps1') @params

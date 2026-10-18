@@ -180,19 +180,22 @@ const DashboardView = (() => {
   const NOT_IN_SOURCE = "提供された原文の抜粋では確認できません。管理センターの原文で確認してください。";
 
   // Source-grounded Q&A: answers are verified Japanese text or original excerpts, never inferred.
-  function qa(message, { headline: japanese = "", translationStatus = "missing" } = {}) {
+  function qa(message, { headline: japanese = "", translationStatus = "missing", japaneseFacts = null } = {}) {
     const found = Object.fromEntries(facts(message).map(fact => [fact.key, fact.text]));
-    const answer = (question, text, basis, language = "en") => text
-      ? { question, answer: text, basis, language }
-      : { question, answer: NOT_IN_SOURCE, basis: "not-in-source", language: "ja" };
+    const verified = translationStatus === "current" && japaneseFacts ? japaneseFacts : {};
+    const answer = (question, text, basis, language = "en", key = "") => verified[key]
+      ? { question, answer: verified[key], basis: "verified-translation", language: "ja" }
+      : text
+        ? { question, answer: text, basis, language }
+        : { question, answer: NOT_IN_SOURCE, basis: "not-in-source", language: "ja" };
     const deadline = formatJst(message.actionRequiredByDateTime);
     return [
       japanese && translationStatus === "current"
-        ? { question: "何が変わりますか？", answer: japanese, basis: "verified-translation", language: "ja" }
-        : answer("何が変わりますか？", found.change, "original-excerpt"),
-      answer("誰に影響しますか？", found.impact, "original-excerpt"),
-      answer("いつから始まりますか？", found.timing, "original-excerpt"),
-      answer("管理者は何をすべきですか？", found.action, "original-excerpt"),
+        ? { question: "何が変わりますか？", answer: verified.change || japanese, basis: "verified-translation", language: "ja" }
+        : answer("何が変わりますか？", found.change, "original-excerpt", "en", "change"),
+      answer("誰に影響しますか？", found.impact, "original-excerpt", "en", "impact"),
+      answer("いつから始まりますか？", found.timing, "original-excerpt", "en", "timing"),
+      answer("管理者は何をすべきですか？", found.action, "original-excerpt", "en", "action"),
       deadline
         ? { question: "対応期限はありますか？", answer: `原文に ${deadline} の対応期限が記載されています。`, basis: "original-metadata", language: "ja" }
         : { question: "対応期限はありますか？", answer: "原文に対応期限の記載はありません。", basis: "original-metadata", language: "ja" }
@@ -219,7 +222,7 @@ const DashboardView = (() => {
       documentStatus: context.documentStatus || "not_researched",
       documents: (context.documents || []).map(document => ({ title: document.title, url: document.url, locale: document.locale })),
       facts: facts(message),
-      qa: qa(message, { headline: context.headline, translationStatus })
+      qa: qa(message, { headline: context.headline, translationStatus, japaneseFacts: context.japaneseFacts })
     };
   }
 
