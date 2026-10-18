@@ -100,7 +100,7 @@ python scripts\Update-M365RelatedDocuments.py --check
 1. **Microsoft Graph**: `ServiceMessage.Read.All` を使い Message Center を取得します。
 2. **GitHub Actions**: 本文を安全なテキストに変換した lab-public snapshot、details、決定論的な日本語要約を生成します。
 3. **Core GitHub Agentic Workflow**: 保存済みの承認済み snapshot を、その run の変更不可の artifact として受け渡し、週次 AI insights を生成します。Graph を再取得しません。MC ごとの日本語タイトル・100文字以内の要約・許可済み公式リンクは、その同じ snapshot から決定論的に生成します。
-4. **Translations GitHub Agentic Workflow**: core の成功後に起動し、4件までの bounded translation batch（日本語タイトル・詳細要約・本文訳）を検証・公開します。主パイプラインの週2回の実行に加え、品質検査・修復（1日最大2回）が不足分を4件ずつ追加で依頼するため、約80件のバックログは約10日で解消する見込みです。欠落・原文版未照合・原文変更・日本語タイトル未生成を自動的に再生成の対象にします。Graph を再取得しません。
+4. **Translations GitHub Agentic Workflow**: core の成功後に起動し、4件までの bounded translation batch（日本語タイトル・詳細要約・本文訳）を検証・公開します。主パイプラインの週2回の実行に加え、品質検査・修復（1日最大4回）が不足分を4件ずつ追加で依頼するため、約70件のバックログは約5日で解消する見込みです。欠落・原文版未照合・原文変更・日本語タイトル未生成を自動的に再生成の対象にします。Graph を再取得しません。
 5. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
 
 公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
@@ -119,7 +119,7 @@ python scripts\Update-M365RelatedDocuments.py --check
 
 画面には取得・週次要約・翻訳・公式資料の状態を分けて表示します。週次要約が参照不整合や旧版なら、その未検証の文章を表示せず、原文メタデータによる確認候補を表示します。5日以上前の取得データには更新確認が必要な状態を表示し、古い取得を新しい取得と見せません。通知のタイトルから管理センター原文を開け、期限経過と今後30日以内の期限は別々に扱います。検索は保存済み日本語訳・公式資料名にも対応し、通知更新日（JST）・並び順・検索・サービス・資料条件をURLで再現・共有できます。
 
-**M365 dashboard content quality and repair** は毎日 **12:27 / 00:27 JST** と手動実行で、承認済みの保存データだけを検査します。週次要約の不整合・未照合・旧版を先に修復し、その後に欠落／旧版の翻訳、および日本語タイトル未生成の翻訳を処理します。1回の検査で依頼する workflow は最大1件、同じ修復レーンは11時間の cooldown（1日最大2回、翻訳は1回4件まで）を設けます。core の成功後に通常の4件までの翻訳が続くため、その分も同じ cooldown に含め、成功イベントによる無限ループや大量のAI実行を避けます。全てが現行版なら追加のエージェント実行はしません。
+**M365 dashboard content quality and repair** は約6時間ごと（1日4回）と手動実行で、承認済みの保存データだけを検査します。週次要約の不整合・未照合・旧版を先に修復し、その後に欠落／旧版の翻訳、および日本語タイトル未生成の翻訳を処理します。1回の検査で依頼する workflow は最大1件、同じ修復レーンは5時間の cooldown（1日最大4回、翻訳は1回4件まで。GitHub のスケジュール遅延で間隔が縮んでも取りこぼさないための設定）を設けます。core の成功後に通常の4件までの翻訳が続くため、その分も同じ cooldown に含め、成功イベントによる無限ループや大量のAI実行を避けます。全てが現行版なら追加のエージェント実行はしません。
 
 bot起動は、要約・翻訳の2本だけに公式の `on.bots: ["github-actions[bot]"]` を設定し、どちらも main に限定しています。人間の既定role検証は維持し、repoメンバー権限・Graph権限・PATを追加しません。修復workflowだけが同じrepoの固定workflowを依頼するActions write権限と `-TrustedAutomationApproved` を使います。scopeが未設定のActions呼び出しは引き続き `authorization_required` で停止します。
 
