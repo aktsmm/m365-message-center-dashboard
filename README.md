@@ -198,7 +198,7 @@ python -m pip install -r scripts\requirements-documents.txt
 ./scripts/ci/Test-M365Dashboard.ps1
 ./scripts/ci/Test-M365ContentQuality.ps1
 ./scripts/ci/Test-M365Repair.ps1
-node --test tests\dashboard-view.test.mjs
+node --test tests\dashboard-view.test.mjs tests\workflow-lock.test.mjs
 python -m unittest discover -s tests -p test_documents.py
 ```
 
