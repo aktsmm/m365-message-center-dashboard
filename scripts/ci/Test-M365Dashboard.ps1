@@ -795,7 +795,9 @@ try {
         $translationSafeOutputSection.Contains('base64-json:') -or
         $translationSafeOutputSection.Contains('gzip-base64:') -or
         -not $translationSafeOutputSection.Contains('translation_1_id:') -or
-        -not $translationSafeOutputSection.Contains('translation_4_source_truncated:') -or
+        -not $translationSafeOutputSection.Contains('translation_3_source_truncated:') -or
+        $translationSafeOutputSection.Contains('translation_4_id:') -or
+        -not $translationSafeOutputSection.Contains('translation_1_japanese_facts:') -or
         -not $translationSafeOutputSection.Contains('call it with no fields')) {
         throw 'Translations workflow must use typed bounded translation slots without opaque payloads.'
     }

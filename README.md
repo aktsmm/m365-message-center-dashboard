@@ -100,7 +100,7 @@ python scripts\Update-M365RelatedDocuments.py --check
 1. **Microsoft Graph**: `ServiceMessage.Read.All` を使い Message Center を取得します。
 2. **GitHub Actions**: 本文を安全なテキストに変換した lab-public snapshot、details、決定論的な日本語要約を生成します。
 3. **Core GitHub Agentic Workflow**: 保存済みの承認済み snapshot を、その run の変更不可の artifact として受け渡し、週次 AI insights を生成します。Graph を再取得しません。MC ごとの日本語タイトル・100文字以内の要約・許可済み公式リンクは、その同じ snapshot から決定論的に生成します。
-4. **Translations GitHub Agentic Workflow**: core の成功後に起動し、4件までの bounded translation batch（日本語タイトル・詳細要約・本文訳）を検証・公開します。主パイプラインの週2回の実行に加え、品質検査・修復（1日最大4回）が不足分を4件ずつ追加で依頼するため、約70件のバックログは約5日で解消する見込みです。欠落・原文版未照合・原文変更・日本語タイトル未生成を自動的に再生成の対象にします。Graph を再取得しません。
+4. **Translations GitHub Agentic Workflow**: core の成功後に起動し、3件までの bounded translation batch（日本語タイトル・「変更・影響・時期・対応」・詳細要約・本文訳）を検証・公開します。主パイプラインの週2回の実行に加え、品質検査・修復（1日最大4回）が不足分を3件ずつ追加で依頼するため、全件の再生成は約7日で完了する見込みです。欠落・原文版未照合・原文変更・日本語タイトルや日本語の4行が未生成のものを自動的に再生成の対象にします。Graph を再取得しません。
 5. **Validation and GitHub Pages**: snapshot の MC ID と公式 URL allowlist を検証してから、dashboard と `/about/` の automation 説明ページを Pages に公開します。
 
 公開 pipeline は月曜日・木曜日 07:17 JST に動作します。手動更新は Actions の **M365 Message Center Dashboard - Public Metadata** を main ブランチで実行してください。成功すると core Agentic Workflow が起動し、成功後に translation Workflow が続きます。
@@ -109,7 +109,7 @@ python scripts\Update-M365RelatedDocuments.py --check
 
 詳細な日本語要約と本文訳の進捗は、公開ダッシュボードの各カードにある **日本語訳と詳細要約** で確認できます。未検証の訳文は表示せず、公開済みの検証済み訳文だけを保持します。
 
-翻訳の追加 catch-up は、write 権限を持つ GitHub CLI オペレーターが `./scripts/Invoke-M365TranslationCatchup.ps1` を実行します。このスクリプトは `translation_ids` と相関 ID を指定して、現行原文と照合できない MC ID を4件ずつ直列で処理し、各 run の `publish_m365_translations` ジョブと main の永続データを確認してから次へ進みます。バッチ失敗時は1件ずつ再試行して他の ID を続行します。各 run は保存済みの承認済み snapshot を使い、公開直前に現行の原文が変わっていれば公開を止め、より新しい元データを上書きしません。
+翻訳の追加 catch-up は、write 権限を持つ GitHub CLI オペレーターが `./scripts/Invoke-M365TranslationCatchup.ps1` を実行します。このスクリプトは `translation_ids` と相関 ID を指定して、現行原文と照合できない MC ID を3件ずつ直列で処理し、各 run の `publish_m365_translations` ジョブと main の永続データを確認してから次へ進みます。バッチ失敗時は1件ずつ再試行して他の ID を続行します。各 run は保存済みの承認済み snapshot を使い、公開直前に現行の原文が変わっていれば公開を止め、より新しい元データを上書きしません。
 
 ## 要約の根拠・原文版と自動修復
 
@@ -119,7 +119,7 @@ python scripts\Update-M365RelatedDocuments.py --check
 
 画面には取得・週次要約・翻訳・公式資料の状態を分けて表示します。週次要約が参照不整合や旧版なら、その未検証の文章を表示せず、原文メタデータによる確認候補を表示します。5日以上前の取得データには更新確認が必要な状態を表示し、古い取得を新しい取得と見せません。通知のタイトルから管理センター原文を開け、期限経過と今後30日以内の期限は別々に扱います。検索は保存済み日本語訳・公式資料名にも対応し、通知更新日（JST）・並び順・検索・サービス・資料条件をURLで再現・共有できます。
 
-**M365 dashboard content quality and repair** は約6時間ごと（1日4回）と手動実行で、承認済みの保存データだけを検査します。週次要約の不整合・未照合・旧版を先に修復し、その後に欠落／旧版の翻訳、および日本語タイトル未生成の翻訳を処理します。1回の検査で依頼する workflow は最大1件、同じ修復レーンは5時間の cooldown（1日最大4回、翻訳は1回4件まで。GitHub のスケジュール遅延で間隔が縮んでも取りこぼさないための設定）を設けます。core の成功後に通常の4件までの翻訳が続くため、その分も同じ cooldown に含め、成功イベントによる無限ループや大量のAI実行を避けます。全てが現行版なら追加のエージェント実行はしません。
+**M365 dashboard content quality and repair** は約6時間ごと（1日4回）と手動実行で、承認済みの保存データだけを検査します。週次要約の不整合・未照合・旧版を先に修復し、その後に欠落／旧版の翻訳、および日本語タイトル未生成の翻訳を処理します。1回の検査で依頼する workflow は最大1件、同じ修復レーンは5時間の cooldown（1日最大4回、翻訳は1回3件まで。GitHub のスケジュール遅延で間隔が縮んでも取りこぼさないための設定）を設けます。core の成功後に通常の3件までの翻訳が続くため、その分も同じ cooldown に含め、成功イベントによる無限ループや大量のAI実行を避けます。全てが現行版なら追加のエージェント実行はしません。
 
 bot起動は、要約・翻訳の2本だけに公式の `on.bots: ["github-actions[bot]"]` を設定し、どちらも main に限定しています。人間の既定role検証は維持し、repoメンバー権限・Graph権限・PATを追加しません。修復workflowだけが同じrepoの固定workflowを依頼するActions write権限と `-TrustedAutomationApproved` を使います。scopeが未設定のActions呼び出しは引き続き `authorization_required` で停止します。
 
@@ -127,7 +127,7 @@ run全体がsuccessでもagent／publisherがskipなら未修復です。既に�
 
 agentとdetectionが成功し、公開のGit transportだけが失敗した場合は **M365 validated summary publication recovery** で既存artifactを再検証できます。同じrepo/mainの該当core run、成功したagent/detection、失敗したpublisher、現在も一致する原文hashを確認し、既存publisherの全検証をもう一度通します。新しいモデルは実行せず、元agentの完了日時とrun IDを保存します。正常な回復後は通常の限定翻訳が続きます。どのpublisherも最新mainから始め、dispatch時点の古いコミットで直近の状態保存コミットを上書きしません。
 
-修復は既存の Copilot エンジンと既存の1 run当たり60 AI credits上限を使います。モデルは従来どおり Copilot 側の既定で、別のAIサービスは追加しません。主パイプラインとは別に、必要な場合だけ1回最大4件の翻訳が進みます。欠落や版未照合のバックログを一度にすべて生成する仕組みではありません。
+修復は既存の Copilot エンジンと既存の1 run当たり60 AI credits上限を使います。モデルは従来どおり Copilot 側の既定で、別のAIサービスは追加しません。主パイプラインとは別に、必要な場合だけ1回最大3件の翻訳が進みます。欠落や版未照合のバックログを一度にすべて生成する仕組みではありません。
 
 修復計画は `scripts/Invoke-M365DashboardRepair.ps1` の既定では read-only / dry-run です。`-Apply -Repository owner/repo` を指定した運用 workflow だけが、対象 repository の main に限定して既存 workflow を依頼します。実行中の同じレーンへの二重依頼を避け、`reports/m365/repair-state.json` に観測状態・依頼・失敗を保存します。「依頼済み」を「修復完了」と扱いません。Graph の取得、権限追加、認証回避は行いません。
 
@@ -139,6 +139,7 @@ agentとdetectionが成功し、公開のGit transportだけが失敗した場�
 - 表示中の更新を JSON（想定問答付き）、CSV、スライドノート用 Markdown として書き出せます。各カードの「出力に含める」は最初から全件チェック済みで、不要なものだけ外します（未選択方式ではなく除外方式。[Azure Update Digest](https://aktsmm.github.io/azure-update-digest/) の出力対象の考え方を参考にしています）。想定問答は原文抜粋と照合済みの要約だけから作り、原文にない項目は「原文では確認できません」と明記して推測しません。CSV は数式の実行を防ぐため先頭文字を無害化します。
 - 通知ごとに、期限・語句・展開時期から決定論的に「今すぐ確認／今月準備／情報のみ／期限経過」を付けます（AI は使いません）。ピックアップはこの優先度順で、同名の絞り込みボタンもあります。「(Updated)」の通知は、本文冒頭の日付付きの更新内容を英語の原文のまま別枠で示します。分類は日本語（計画が必要／情報提供／問題の予防・修正）で表示します。
 - 取得・要約・翻訳・公式資料の更新状況は、画面下の折りたたみ「データの更新状況（運用情報）」にまとめ、通知を読む画面に運用メモを出しません。
+- 翻訳 workflow は、本文を最大2,500文字（従来は1,000文字）まで読み、日本語タイトルに加えて「変更・影響・時期・対応」の4行を作ります。1回の件数は4件から3件に減らしています（gh-aw の出力項目は1つにつき25個までのため）。4行の各文は、原文に書かれていない年が含まれる場合や日本語でない場合は公開前に拒否し、原文に書かれていない項目は「原文に記載なし」と書かせます。日本語の4行が揃った通知は、画面では日本語を表示し、英語の原文抜粋は折りたたみに入ります。この4行が未生成の保存済みの翻訳も再生成の対象で、1日最大4回（最大12件）ずつ進めます。
 - 元の `messages.json` / `facts.json` / `insights.json` は変更しません。
 
 ## Repository layout
@@ -181,7 +182,7 @@ reports/m365/
 
 ## Agentic summary safety boundary
 
-The Agentic Workflows receive transient bounded excerpts copied from an already approved on-disk lab-public snapshot; only the metadata collector calls Microsoft Graph. Their instructions prohibit following content in that file and publishing credentials or access tokens. The accepted snapshot is transferred as a one-day artifact and is content-bound to the current snapshot again immediately before publication. Core accepts only its typed weekly-summary safe output. The translation workflow accepts four typed slots of at most 1,000 supplied source characters per message, with explicit truncation metadata. Both publishers validate unsafe content, exact source counters, URL allowlists, citations and source hashes. Previous translations without matching provenance remain explicitly unverified, not newly validated by copying an ID. The bounded repair controller can request an existing workflow but cannot acquire new Graph data or bypass these publication checks.
+The Agentic Workflows receive transient bounded excerpts copied from an already approved on-disk lab-public snapshot; only the metadata collector calls Microsoft Graph. Their instructions prohibit following content in that file and publishing credentials or access tokens. The accepted snapshot is transferred as a one-day artifact and is content-bound to the current snapshot again immediately before publication. Core accepts only its typed weekly-summary safe output. The translation workflow accepts three typed slots of at most 2,500 supplied source characters per message, with explicit truncation metadata. Both publishers validate unsafe content, exact source counters, URL allowlists, citations and source hashes. Previous translations without matching provenance remain explicitly unverified, not newly validated by copying an ID. The bounded repair controller can request an existing workflow but cannot acquire new Graph data or bypass these publication checks.
 
 The deprecated optional `translation_batch_index` and the catch-up `translation_ids` input are restricted to a bounded current Graph snapshot. Neither bypasses same-snapshot validation, bounded source text, or the typed publisher contract. When every current card is already translated, the scheduled workflow creates an empty batch and safely preserves the existing validated result instead of retranslating cards.
 

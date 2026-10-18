@@ -52,7 +52,7 @@ function Get-StructuredTranslationUpdates {
             "translation_${slot}_source_character_count",
             "translation_${slot}_source_truncated"
         )
-        $optionalFieldNames = @("translation_${slot}_japanese_title")
+        $optionalFieldNames = @("translation_${slot}_japanese_title", "translation_${slot}_japanese_facts")
         $providedFields = [System.Collections.Generic.List[string]]::new()
         foreach ($fieldName in $fieldNames) {
             if ($propertyNames -contains $fieldName -and $null -ne $Item.$fieldName) {
@@ -101,9 +101,9 @@ function Get-StructuredTranslationUpdates {
             throw "Translation slot $slot source_character_count must be a JSON number."
         }
         if ($sourceCharacterCount -lt 0 -or
-            $sourceCharacterCount -gt 2000 -or
+            $sourceCharacterCount -gt 3000 -or
             $sourceCharacterCount -ne [Math]::Truncate($sourceCharacterCount)) {
-            throw "Translation slot $slot source_character_count must be a whole number between 0 and 2000."
+            throw "Translation slot $slot source_character_count must be a whole number between 0 and 3000."
         }
         if ($sourceTruncated -isnot [bool]) {
             throw "Translation slot $slot source_truncated must be a JSON boolean."
@@ -114,9 +114,20 @@ function Get-StructuredTranslationUpdates {
             $japaneseTitle = $Item."translation_${slot}_japanese_title"
             if ($japaneseTitle -isnot [string]) { throw "Translation slot $slot japanese_title must be a string." }
         }
+        $facts = [ordered]@{}
+        $factsKey = "translation_${slot}_japanese_facts"
+        if ($propertyNames -contains $factsKey -and $null -ne $Item.$factsKey) {
+            if ($Item.$factsKey -isnot [string]) { throw "Translation slot $slot japanese_facts must be a string." }
+            $labels = [ordered]@{ '変更' = 'change'; '影響' = 'impact'; '時期' = 'timing'; '対応' = 'action' }
+            foreach ($line in ($Item.$factsKey -split "`r?`n")) {
+                if ($line -match '^\s*(変更|影響|時期|対応)\s*[：:]\s*(.+?)\s*$') { $facts[$labels[$Matches[1]]] = $Matches[2] }
+            }
+            if ($facts.Count -ne 4) { throw "Translation slot $slot japanese_facts must contain 変更/影響/時期/対応 lines." }
+        }
         $updates.Add([ordered]@{
             id                       = $id
             japanese_title            = $japaneseTitle
+            japanese_facts            = $facts
             japanese_detailed_summary = $detailSummary
             japanese_body_translation = $bodyTranslation
             source_character_count    = [int]$sourceCharacterCount

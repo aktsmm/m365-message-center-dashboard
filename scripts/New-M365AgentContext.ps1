@@ -10,7 +10,7 @@ param(
     [ValidateRange(1, 1000)][int]$AgentContextLimit = 1000,
     [ValidateRange(1, 1000)][int]$AgentContextBodyMaxChars = 1000,
     [ValidateRange(1, 4)][int]$AgentTranslationBatchSize = 4,
-    [ValidateRange(1, 1000)][int]$AgentTranslationBodyMaxChars = 1000
+    [ValidateRange(1, 3000)][int]$AgentTranslationBodyMaxChars = 1000
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest

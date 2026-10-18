@@ -5,7 +5,7 @@
 [CmdletBinding()]
 param(
     [string]$Repository = 'aktsmm/m365-message-center-dashboard',
-    [ValidateRange(1, 4)][int]$BatchSize = 4,
+    [ValidateRange(1, 3)][int]$BatchSize = 3,
     [ValidateRange(1, 5)][int]$BatchAttempts = 2,
     [ValidateRange(0, 100)][int]$MaximumBatches = 0
 )

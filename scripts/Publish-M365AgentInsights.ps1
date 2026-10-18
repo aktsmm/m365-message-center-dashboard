@@ -102,7 +102,7 @@ function Get-RequiredTranslationInteger {
     param(
         [Parameter(Mandatory)][object]$Update,
         [Parameter(Mandatory)][string]$Name,
-        [ValidateRange(0, 2000)][int]$Maximum
+        [ValidateRange(0, 3000)][int]$Maximum
     )
 
     if ($Update.PSObject.Properties.Name -notcontains $Name -or $null -eq $Update.$Name) {
@@ -339,7 +339,7 @@ if ($TranslationBatchJson) {
             throw "Translation batch source hash does not match the approved snapshot: $id"
         }
         $sourceLength = ([string](Get-M365ContentProperty $messagesById[$id] 'bodyText')).Length
-        $batchCount = Get-RequiredTranslationInteger -Update $batchMessage -Name 'sourceCharacterCount' -Maximum 2000
+        $batchCount = Get-RequiredTranslationInteger -Update $batchMessage -Name 'sourceCharacterCount' -Maximum 3000
         $batchTruncated = Get-RequiredTranslationBoolean -Update $batchMessage -Name 'sourceTruncated'
         if ($batchCount -gt $sourceLength -or ($sourceLength -gt 0 -and $batchCount -eq 0) -or
             $batchTruncated -ne ($sourceLength -gt $batchCount)) {
@@ -362,7 +362,7 @@ if ($TranslationBatchJson) {
         if ($detailSummary.Length -lt 80) { throw "Translation detailed summary is too short for MC ID: $id" }
         $bodyTranslation = Get-RequiredUpdateText -Update $translation -Name 'japanese_body_translation' -MaxLength 5000
         $batchMessage = $batchById[$id]
-        $sourceCharacterCount = Get-RequiredTranslationInteger -Update $translation -Name 'source_character_count' -Maximum 2000
+        $sourceCharacterCount = Get-RequiredTranslationInteger -Update $translation -Name 'source_character_count' -Maximum 3000
         if ($sourceCharacterCount -ne [int]$batchMessage.sourceCharacterCount) {
             throw "Translation source character count does not match the current batch for MC ID: $id"
         }
@@ -377,9 +377,28 @@ if ($TranslationBatchJson) {
                 throw "Translation Japanese title must be 4-80 characters and contain Japanese text for MC ID: $id"
             }
         }
+        $factsOut = [ordered]@{}
+        if ($translation.PSObject.Properties.Name -contains 'japanese_facts' -and $null -ne $translation.japanese_facts) {
+            $sourceYears = @([regex]::Matches([string](Get-M365ContentProperty $messagesById[$id] 'bodyText'), '\b(20\d\d)\b') | ForEach-Object { $_.Value })
+            $factProps = @($translation.japanese_facts.PSObject.Properties | ForEach-Object { $_.Name })
+            foreach ($factName in 'change', 'impact', 'timing', 'action') {
+                if ($factProps -notcontains $factName) { continue }
+                $factText = ([string]$translation.japanese_facts.$factName -replace '[ \t]+', ' ').Trim()
+                if (-not $factText) { continue }
+                if ($factText.Length -lt 4 -or $factText.Length -gt 400 -or $factText -notmatch '[\p{IsHiragana}\p{IsKatakana}\p{IsCJKUnifiedIdeographs}]') {
+                    throw "Translation Japanese $factName must be 4-400 characters of Japanese text for MC ID: $id"
+                }
+                # A year that the notification never mentions is a fabrication; fail closed.
+                foreach ($year in [regex]::Matches($factText, '(?<!\d)(20\d\d)(?!\d)') | ForEach-Object { $_.Value }) {
+                    if ($sourceYears -notcontains $year) { throw "Translation Japanese $factName cites year $year absent from the notification: $id" }
+                }
+                $factsOut[$factName] = $factText
+            }
+        }
         $validatedTranslations += [ordered]@{
             id                     = $id
             japaneseTitle           = $titleText
+            japaneseFacts           = $factsOut
             japaneseDetailedSummary = $detailSummary
             japaneseBodyTranslation = $bodyTranslation
             sourceCharacterCount    = [int]$batchMessage.sourceCharacterCount

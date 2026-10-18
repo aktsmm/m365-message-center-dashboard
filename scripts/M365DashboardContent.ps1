@@ -58,7 +58,10 @@ function Test-M365TranslationSource {
 function Test-M365TranslationComplete {
     param($Translation, [Parameter(Mandatory)]$Message)
     $title = [string](Get-M365ContentProperty $Translation 'japaneseTitle')
-    return ((Test-M365TranslationSource -Translation $Translation -Message $Message) -and $title.Trim().Length -ge 4)
+    $facts = Get-M365ContentProperty $Translation 'japaneseFacts'
+    $change = if ($facts) { [string](Get-M365ContentProperty $facts 'change') } else { '' }
+    return ((Test-M365TranslationSource -Translation $Translation -Message $Message) -and
+        $title.Trim().Length -ge 4 -and $change.Trim().Length -ge 4)
 }
 
 function Get-M365SnapshotSourceHash {

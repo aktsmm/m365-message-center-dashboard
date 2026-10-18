@@ -20,7 +20,7 @@ param(
     [ValidateRange(1, 1000)][int]$AgentContextLimit = 1000,
     [ValidateRange(200, 2000)][int]$AgentContextBodyMaxChars = 1000,
     [ValidateRange(1, 10)][int]$AgentTranslationBatchSize = 4,
-    [ValidateRange(200, 2000)][int]$AgentTranslationBodyMaxChars = 1000,
+    [ValidateRange(200, 3000)][int]$AgentTranslationBodyMaxChars = 1000,
     [Nullable[int]]$AgentTranslationBatchIndex,
     [string]$AgentTranslationIds,
     [switch]$DisableAgentTranslationBatch,

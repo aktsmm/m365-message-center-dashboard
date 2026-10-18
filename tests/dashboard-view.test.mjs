@@ -135,3 +135,14 @@ test("update note surfaces the dated change line only for updated notices", () =
   assert.equal(view.updateNote({ title: "Teams: Thing", bodyText: body }), null);
   assert.equal(view.updateNote({ title: "(Updated) Teams: Thing", bodyText: "No dated line." }), null);
 });
+
+test("qa prefers verified Japanese facts and keeps the original-excerpt fallback", () => {
+  const message = { id: "MC3", title: "T", bodyText: "[What and why]: New feature arrives." };
+  const jf = { change: "新機能が追加されます。", impact: "原文に記載なし", timing: "11月に開始します。", action: "設定を確認してください。" };
+  const items = plain(view.qa(message, { headline: "新機能", translationStatus: "current", japaneseFacts: jf }));
+  assert.equal(items[1].answer, "原文に記載なし");
+  assert.equal(items[2].answer, "11月に開始します。");
+  assert.ok(items.slice(0, 4).every(item => item.basis === "verified-translation"));
+  const unverified = plain(view.qa(message, { translationStatus: "unverified", japaneseFacts: jf }));
+  assert.equal(unverified[0].basis, "original-excerpt");
+});
