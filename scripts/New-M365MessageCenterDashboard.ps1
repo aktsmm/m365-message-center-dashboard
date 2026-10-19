@@ -1039,7 +1039,7 @@ $html = @'
         return `<article class="message" id="${escapeHtml(messageDomId(message))}">
           <div class="message-top">
             <div><div class="message-id">${escapeHtml(message.id)}</div>${cardHeading(message)}<div class="chips">${chips}</div></div>
-            <div class="message-date"><label class="select-card"><input type="checkbox" data-select="${escapeHtml(message.id)}"${excludedIds.has(message.id) ? "" : " checked"}> 出力に含める</label><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
+            <div class="message-date"><label class="select-card" title="書き出しに含める（外すと除外）"><input type="checkbox" data-select="${escapeHtml(message.id)}" aria-label="${escapeHtml(message.id)} を書き出しに含める"${excludedIds.has(message.id) ? "" : " checked"}></label><div>更新 ${fmt(message.lastModifiedDateTime)}</div><div>開始 ${fmt(message.startDateTime)}</div></div>
           </div>
           ${updateNote ? `<p class="update-note"><strong>更新（${escapeHtml(updateNote.date)}）</strong> <span lang="en">${escapeHtml(updateNote.text)}</span></p>` : ""}
           ${translationStatus === "current" ? `<p class="message-summary">${escapeHtml(translation.japaneseDetailedSummary)}</p>` : ""}
