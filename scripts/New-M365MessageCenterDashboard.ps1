@@ -261,10 +261,19 @@ $html = @'
     }
     .hero-repo-link:hover { color: var(--cp-accent); border-color: var(--cp-accent); }
     .hero-repo-link:focus-visible { outline: 3px solid var(--cp-accent); outline-offset: 3px; }
-    .hero-stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 8px; padding: 0; }
-    .hero-stats span { padding: 10px 16px; border-radius: 0.9rem; background: var(--cp-surface-soft); font-size: 0.86rem; font-weight: 650; color: var(--cp-text-muted); }
-    .hero-stats strong { display: block; font-size: 1.7rem; line-height: 1.2; color: var(--cp-text); }
-    .hero-stats small { font-size: 0.85rem; font-weight: 600; }
+    .hero-list { list-style: none; margin: 18px 0 8px; padding: 0; display: grid; gap: 8px; max-width: 820px; }
+    .hero-list li { display: flex; align-items: stretch; border: 1px solid var(--cp-border); border-radius: 0.8rem; background: var(--cp-surface-soft); overflow: hidden; }
+    .hero-row { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 12px 14px; color: inherit; text-decoration: none; }
+    .hero-row:hover, .hero-row:focus-visible { background: rgba(154, 59, 39, 0.08); outline: none; }
+    .hero-row .tier { flex: none; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 750; white-space: nowrap; }
+    .hero-title-text { flex: 1; min-width: 0; font-weight: 650; overflow-wrap: anywhere; }
+    .hero-when { flex: none; color: var(--cp-text-muted); font-size: 0.84rem; white-space: nowrap; }
+    .hero-orig { flex: none; display: flex; align-items: center; padding: 0 14px; border-left: 1px solid var(--cp-border); font-size: 0.82rem; font-weight: 700; color: var(--cp-accent); text-decoration: none; white-space: nowrap; }
+    .hero-orig:hover { text-decoration: underline; }
+    .hero-more { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; }
+    .hero-more button { font: inherit; font-weight: 700; cursor: pointer; padding: 6px 14px; border: 1px solid var(--cp-border); border-radius: 999px; background: transparent; color: var(--cp-accent); }
+    .hero-more button:hover, .hero-more button:focus-visible { border-color: var(--cp-accent); outline: none; }
+    @media (max-width: 640px) { .hero-row { flex-wrap: wrap; } .hero-when { width: 100%; } }
     .hero-access-note { margin: 10px 0 0; color: var(--cp-text-muted); font-size: 0.88rem; }
     .context-panel, .filter-panel, .priority-section {
       margin-bottom: 18px; padding: clamp(20px, 4vw, 32px); background: var(--cp-panel-strong);
@@ -360,9 +369,9 @@ $html = @'
     .message-id { color: var(--cp-text-soft); font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.78rem; }
     .message-date { min-width: 105px; color: var(--cp-text-muted); font-size: 0.82rem; text-align: right; }
     .tier { font-weight: 750; }
-    .tier-now { background: #f8d9d2; color: #8f2410; }
-    .tier-month { background: #fbe9d4; color: #8a4b00; }
-    .tier-past { background: #e6e3df; color: #5b544e; }
+    .chip.tier-now { background: #f8d9d2; color: #8f2410; }
+    .chip.tier-month { background: #fbe9d4; color: #8a4b00; }
+    .chip.tier-past { background: #e6e3df; color: #5b544e; }
     .update-note { margin: 10px 0 0; padding: 8px 12px; border-left: 3px solid var(--cp-accent); background: var(--cp-surface-soft); border-radius: 0.4rem; font-size: 0.88rem; color: var(--cp-text-muted); }
     .update-note strong { color: var(--cp-text); margin-right: 4px; }
     .ja-lead { margin: 6px 0 0; color: var(--cp-text); font-size: 0.95rem; line-height: 1.6; }
@@ -475,9 +484,10 @@ $html = @'
 
     <header class="hero">
       <div class="eyebrow">Microsoft 365 Change Radar · lab-public</div>
-      <h1>いま確認すべき、Microsoft 365 の変更。</h1>
+      <h1 id="hero-title">今週、先に見るべき通知</h1>
       <p class="lede">Message Center の通知を日本語で要約。期限・影響・公式資料を一覧のまま確認できます（公開承認済みテスト テナントの通知のみ）。</p>
-      <p class="hero-stats" id="hero-stats" role="status"></p>
+      <ol class="hero-list" id="hero-list" aria-label="先に確認する通知"></ol>
+      <p class="hero-more" id="hero-more"></p>
       <a class="hero-repo-link" href="https://admin.microsoft.com/#/MessageCenter" target="_blank" rel="noopener noreferrer">Microsoft 365 管理センターの Message Center を開く</a>
       <p class="hero-access-note">利用にはサインインと対象テナントでの適切な権限が必要です。</p>
       <a class="hero-repo-link" href="https://github.com/aktsmm/m365-message-center-dashboard">GitHub リポジトリを開く</a>
@@ -845,12 +855,33 @@ $html = @'
       const updated = Date.parse(message.lastModifiedDateTime);
       return updated <= Date.now() && updated >= Date.now() - 7 * DashboardView.DAY;
     }).length;
-    document.getElementById("hero-stats").innerHTML = [
-      ["公開中", document.getElementById("metric-total").textContent, "件"],
-      ["重要な変更", document.getElementById("metric-major").textContent, "件"],
-      ["30日以内の期限", document.getElementById("metric-due").textContent, "件"],
-      ["直近7日の更新", document.getElementById("metric-updated").textContent, "件"]
-    ].map(([label, value, unit]) => `<span>${label}<strong>${escapeHtml(value)}<small> ${unit}</small></strong></span>`).join("");
+    const heroTiers = DATA.messages.reduce((counts, message) => {
+      const key = DashboardView.tier(message);
+      counts[key] = (counts[key] || 0) + 1;
+      return counts;
+    }, { now: 0, month: 0, info: 0, past: 0 });
+    const heroPicks = DATA.messages
+      .filter(message => ["now", "month"].includes(DashboardView.tier(message)))
+      .sort((left, right) => DashboardView.TIERS[DashboardView.tier(left)].rank - DashboardView.TIERS[DashboardView.tier(right)].rank
+        || priorityComparison(left, right))
+      .slice(0, 3);
+    document.getElementById("hero-list").innerHTML = heroPicks.map(message => {
+      const key = DashboardView.tier(message);
+      const info = headlineInfo(message);
+      const original = originalMessageUrl(message);
+      const when = message.actionRequiredByDateTime ? `期限 ${fmt(message.actionRequiredByDateTime)}`
+        : message.startDateTime ? `開始 ${fmt(message.startDateTime)}` : "";
+      return `<li><a class="hero-row" href="#${escapeHtml(messageDomId(message))}" data-open-detail="${escapeHtml(message.id)}">
+          <span class="chip tier tier-${key}">${DashboardView.TIERS[key].label}</span>
+          <span class="hero-title-text"${info.fromTitle ? ' lang="ja"' : ""}>${escapeHtml(info.fromTitle ? info.text : displayMessageTitle(message))}</span>
+          <span class="hero-when">${escapeHtml(when)}</span></a>
+        ${original ? `<a class="hero-orig" href="${escapeHtml(original)}" target="_blank" rel="noopener noreferrer">原文 ↗</a>` : ""}</li>`;
+    }).join("");
+    document.getElementById("hero-more").innerHTML = [
+      ["now", `今すぐ確認 ${heroTiers.now} 件をすべて見る →`, heroTiers.now],
+      ["month", `今月準備 ${heroTiers.month} 件 →`, heroTiers.month],
+      ["overdue", `期限経過 ${heroTiers.past} 件 →`, heroTiers.past]
+    ].filter(([, , count]) => count).map(([filter, label]) => `<button type="button" data-hero-filter="${filter}">${label}</button>`).join("");
     const translationCounts = Object.values(CONTENT_STATE.messages).reduce((counts, entry) => {
       counts[entry.translation] = (counts[entry.translation] || 0) + 1;
       return counts;
@@ -1104,6 +1135,14 @@ $html = @'
       state.documentStatus = event.target.value;
       writeFocusesToUrl("pushState");
       render();
+    });
+    document.getElementById("hero-more").addEventListener("click", event => {
+      const button = event.target.closest("[data-hero-filter]");
+      if (!button) return;
+      state.filter = button.dataset.heroFilter;
+      writeFocusesToUrl("pushState");
+      render();
+      document.getElementById("messages-title").scrollIntoView({ behavior: "smooth", block: "start" });
     });
     document.querySelectorAll(".filter").forEach(button => button.addEventListener("click", () => {
       state.filter = button.dataset.filter;
