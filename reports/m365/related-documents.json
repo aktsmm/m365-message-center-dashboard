@@ -19771,35 +19771,157 @@
       "rationale": "Articles verified against this snapshot version.",
       "nextAttemptAt": "2026-11-15T10:05:48.789821+00:00",
       "variants": {}
+    },
+    "MC1510951": {
+      "sourceHashes": [
+        "345119ed983650c42ea15a9723c7ebfc8fb3ae92d10771e5f847119ceec0bc57"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-10-19T00:14:24.934295+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
+          "title": "夏時間のヘルプとサポート",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-19T00:14:31.880255+00:00",
+          "bodySha256": "bfa6c8b86af3f5c8619385275ea97562cb829e42680c0fe45a96135a86490f9b",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
+            "bodySha256": "2749e898fb769c29f2bb88efd75b1e6e9bbb5d1a405b895443e0c6f29684e172",
+            "reviewedAt": "2026-10-19T00:14:31.880303+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft",
+      "explicitUrls": [
+        "https://learn.microsoft.com/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft",
+      "searchedQueries": [
+        "Microsoft",
+        "microsoft windows"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-11-18T00:14:31.880312+00:00",
+      "variants": {}
+    },
+    "MC1509797": {
+      "sourceHashes": [
+        "313ead09cd089fcfc44679d3fd2b97148a688c29f4f1fa660153ae09a4ea1560"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-10-19T00:14:31.944680+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/lifecycle/faq/fixed-policy",
+          "title": "ライフサイクルに関する FAQ - 固定ポリシー",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-19T00:14:40.713131+00:00",
+          "bodySha256": "47c1bd3cb7affb8da0c90498a49c1539cf872a2fdd14d31602303e8ac26e8be7",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/lifecycle/faq/fixed-policy",
+            "bodySha256": "ad8bd186a9c77ec34453babae904ac393f8de6a74dc8e69538bf73b010dc192f",
+            "reviewedAt": "2026-10-19T00:14:40.713187+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft support office ltsc",
+      "explicitUrls": [
+        "https://learn.microsoft.com/lifecycle/faq/fixed-policy"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/lifecycle/faq/fixed-policy",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft support office ltsc",
+      "searchedQueries": [
+        "Microsoft support office ltsc",
+        "office support ltsc"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-11-18T00:14:40.713196+00:00",
+      "variants": {}
+    },
+    "MC1509789": {
+      "sourceHashes": [
+        "8c13e90ad20aba061b61b991405154900a3f060622f642a5fff7eeb5fbd6f232"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-19T00:14:40.776390+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft edge browser default",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft edge browser default",
+      "searchedQueries": [
+        "Microsoft edge browser default",
+        "edge browser default"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-10-22T00:14:43.759993+00:00",
+      "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 144,
-    "snapshotOccurrences": 2743,
+    "uniqueMessages": 147,
+    "snapshotOccurrences": 2747,
     "snapshots": 34,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-10-13T22:14:27+00:00",
-    "checkedAt": "2026-10-19T00:10:03.040339+00:00",
+    "publicationEnd": "2026-10-16T19:15:07+00:00",
+    "checkedAt": "2026-10-19T00:14:43.867539+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 50,
+      "no_verified_document": 51,
       "not_researched": 0,
-      "verified": 94
+      "verified": 96
     },
     "latestCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 18,
+      "no_verified_document": 19,
       "not_researched": 0,
-      "verified": 66
+      "verified": 67
     },
-    "latestTotal": 84,
+    "latestTotal": 86,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 3,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 146,
+      "no_verified_document": 147,
       "not_researched": 0,
-      "verified": 176
+      "verified": 178
     },
     "retrievalErrors": 0,
     "coverage": "complete",
