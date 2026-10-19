@@ -1,27 +1,27 @@
 {
   "meta": {
-    "runId": "38661120165",
-    "generatedAt": "2026-10-15T00:39:16.9516112+00:00",
+    "runId": "39179748686",
+    "generatedAt": "2026-10-19T00:13:04.3066794+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 84,
-    "majorChanges": 23,
-    "highSeverity": 0,
+    "total": 86,
+    "majorChanges": 24,
+    "highSeverity": 1,
     "actionRequired": 11,
     "actionDueWithin30Days": 4,
-    "updatedLast7Days": 13
+    "updatedLast7Days": 12
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 44
+      "count": 47
     },
     {
       "name": "Microsoft Entra",
-      "count": 26
+      "count": 25
     },
     {
       "name": "Microsoft 365 Copilot Chat",
@@ -29,6 +29,94 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1510951",
+      "title": "(Updated) Windows updates are available for 2026 time zone changes in Canada",
+      "category": "preventOrFixIssue",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-10-16T19:15:07.0000000+00:00",
+      "endDateTime": "2027-10-16T19:15:07.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-16T21:15:44.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ（主要な変更）",
+      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "bodyText": "(Updated October 16, 2026: Added guidance for managing the Alberta and British Columbia time zone changes in Outlook Time Zone Changes for Alberta and British Columbia.)\nWhat and why\nWindows updates are now available to support the 2026 time zone changes in Manitoba, Alberta, and British Columbia. On November 1, 2026, clocks in affected regions will not be set back by one hour.\nManitoba will permanently stay on UTC-5, Alberta and affected locations will permanently stay on UTC-6, and most of British Columbia will permanently stay on UTC-7. The new Windows updates add region-specific time zones to support these changes.\nRollout schedule\n• September 22, 2026: The Alberta and British Columbia changes became available in the September 2026 non-security preview update for Windows 11, versions 25H2 and 24H2.\n• October 13, 2026: The Manitoba change became available for all supported versions of Windows. The Alberta and British Columbia changes became available for all other supported versions of Windows, including Windows Server. These changes are included in the October 2026 security update.\n• November 1, 2026: The time zone transitions take effect at 2:00 a.m. local time. Clocks in affected areas will not be set back by one hour.\nImpact on your organization\nDevices in affected regions will display an incorrect local time after the November 1, 2026 transition if the applicable Windows update is not installed or the appropriate time zone is not selected. The updates add the following region-specific time zones:\n• (UTC-05:00) Manitoba\n• (UTC-06:00) Mountain Time (Alberta)\n• (UTC-07:00) Pacific Time (British Columbia)\nThe Alberta time zone change also applies to Yellowknife and Inuvik in the Northwest Territories and locations in southeastern British Columbia that align with Alberta.\nDevices configured to set the time zone automatically will select the appropriate new time zone. On other devices, the new region-specific time zone must be selected manually.\nAction required/recommendations\n• Install the applicable Windows update on affected devices before November 1, 2026.\n• Confirm that affected devices use the appropriate region-specific time zone after installing the update.\n• If a device cannot receive the update before November 1, 2026, read and follow the interim guidance for each affected region detailed in the Daylight Saving Time & Time Zone Blog and move the device to the appropriate region-specific time zone as soon as possible.\nNote: To manage this change in Outlook, please follow the guidance in the article Outlook Time Zone Changes for Alberta and British Columbia.\nCompliance considerations\nNo compliance considerations are identified. Review as appropriate for your organization and region-specific time zone.\nAdditional information\n• Daylight Saving Time & Time Zone Blog\n• Alberta 2026 time zone update available now\n• British Columbia 2026 time zone update available now\n• Manitoba 2026 time zone update available now\n• Outlook Time Zone Changes for Alberta and British Columbia | Microsoft Support\n• Daylight saving time help and support",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Windows updates are available to support 2026 time zone changes in Manitoba, Alberta, and British Columbia, effective November 1, 2026. Devices must install updates and select new region-specific time zones to avoid incorrect local time. Guidance for Outlook and interim steps are provided."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support"
+      ]
+    },
+    {
+      "id": "MC1509797",
+      "title": "Support for Office LTSC 2021 and additional apps ended on October 13, 2026",
+      "category": "planForChange",
+      "severity": "high",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-15T23:09:32.0000000+00:00",
+      "endDateTime": "2026-12-13T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-15T23:09:40.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 高 です。",
+      "bodyText": "[What and Why:]\nAs previously communicated, support for Office LTSC 2021 ended on October 13, 2026. Microsoft no longer provides security updates, bug fixes, or technical support for this version of Office. Although the applications may continue to function, using unsupported software could expose your organization to potential security and compliance risks, system incompatibilities, and other issues.\nSupport for Visio LTSC 2021, Project LTSC 2021, and several other products also ended on October 13, 2026. Organizations that continue to use these products should transition to a supported version as soon as possible to receive ongoing security updates, bug fixes, and technical support.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): Support for Office LTSC 2021, Visio LTSC 2021, Project LTSC 2021, and other affected products ended on October 13, 2026.\n[Impact on Your Organization:]\nDevices running Office LTSC 2021 or another affected product no longer receive security updates, bug fixes, or technical assistance. The applications do not automatically stop working, but continued use of unsupported software may increase your organization's exposure to security and compliance risks and could result in compatibility or reliability issues.\n[Action Required/Recommendations:]\nIdentify any devices in your organization that are still running Office LTSC 2021 or another affected product and move them to a supported solution.\nFor most organizations, we recommend upgrading devices to a Microsoft 365 or Office 365 suite that includes Microsoft 365 Apps for enterprise or Microsoft 365 Apps for business. Microsoft 365 Apps provides always-up-to-date versions of familiar apps like Word, Excel, and PowerPoint for desktop, mobile, and web with continuous support under the Modern Lifecycle Policy, and is eligible for use with Microsoft Copilot.\n• Enterprises should review Microsoft 365 E3, Office 365 E3, or Microsoft 365 Apps for enterprise.\n• Organizations with fewer than 300 users should review Microsoft 365 Business Premium, Microsoft 365 Business Standard, or Microsoft 365 Apps for business.\nFor scenarios that require a fully disconnected solution, we recommend upgrading to Office LTSC 2024. Office LTSC 2024 is Microsoft's current supported on-premises version of Office for commercial customers and is supported until October 2029 under the Fixed Lifecycle Policy.\nResources:\n• Read the upgrade guidance for an overview of how to move from Office LTSC 2021 to Microsoft 365 Apps.\n• Consider engaging Microsoft FastTrack, a Microsoft support service, for moving to Microsoft 365.\nTake action now to help maintain security, compliance, and access to supported Office apps.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change modify, interrupt, or disable any Microsoft 365 service capability?Yes. Support for Office LTSC 2021 and other affected products ended on October 13, 2026. Organizations should move to supported versions to receive ongoing updates and support.\nDoes the change require admin action?Yes. Admins should identify affected devices and move them to a supported Microsoft 365 Apps, Office, Visio, or Project version as appropriate.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Support for Office LTSC 2021 and related apps ended on October 13, 2026, with no more security updates or support. Organizations should upgrade to Microsoft 365 Apps or Office LTSC 2024 to maintain security, compliance, and support. Admins must identify and update affected devices promptly."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/lifecycle/faq/fixed-policy"
+      ]
+    },
+    {
+      "id": "MC1509789",
+      "title": "Microsoft Edge: Browser-native XSLT will be disabled by default",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-15T23:03:32.0000000+00:00",
+      "endDateTime": "2027-02-15T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-15T23:04:47.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nMicrosoft Edge is deprecating browser-native Extensible Stylesheet Language Transformations (XSLT). Edge will disable the XSLTProcessor JavaScript API and XML processing instructions that reference XSLT stylesheets by default. XML processing instructions that reference CSS stylesheets are not affected.\nThe native XSLT implementation depends on an aging native codebase that processes untrusted XML and XSLT content. Removing this functionality reduces the browser attack surface. XSLT also has low modern web usage, and safer migration alternatives are available.\n[Rollout Schedule:]\nGeneral Availability (Worldwide, GCC, GCC High, DoD): We will begin rolling out in mid-December 2026 and expect to complete by mid-December 2026.\n[Impact on Your Organization:]\nOrganizations may be affected if internal websites, public websites, embedded-device interfaces, or third-party web applications depend on browser-native XSLT. In Microsoft Edge 159, browser-native XSLT will be off by default in Stable. The temporary XSLTEnabled policy is planned for removal in Microsoft Edge 176 in Summer 2027.\n[Action Required/Recommendations:]\nBefore Microsoft Edge Stable 159, identify applications that use the XSLTProcessor JavaScript API or XML processing instructions that reference XSL stylesheets. To check for browser-native XSLT usage with Lighthouse in Microsoft Edge:\n• Open the application in a current version of Microsoft Edge.\n• Sign in and navigate to the application page you want to test.\n• Open Edge DevTools with F12 or Ctrl+Shift+I.\n• Select the Lighthouse tool. If it isn't visible, select More tools (+) > Lighthouse.\n• Select:• Mode: Navigation\n• Category: Best Practices\n• For authenticated applications: In Lighthouse Settings, turn off Clear storage so the audit preserves your signed-in session. Leave it enabled for public pages that don't require stored application state.\n• Select Analyze page load.\n• In the report:• Search for XSLT, deprecated, or XSLTProcessor.\n• Check for Uses deprecated APIs.\n• Expand Issues were logged in the DevTools Issues panel.\n• Check the DevTools Issues and Console tools for XSLT deprecation warnings.\n• Repeat the audit for each relevant page and exercise important application workflows.\nMigrate affected applications to supported alternatives or contact the developers/vendor responsible for the affected site to update the application and remove its dependency on browser-native XSLT. If more time is needed, configure the temporary XSLTEnabled policy while application owners complete migration.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change include an admin control?Yes. Admins can temporarily use the XSLTEnabled policy to manage XSLT behavior while migrating affected applications.\nDoes the change modify or disable a capability?Yes. Browser-native XSLT will be disabled by default and the temporary policy is planned for removal in a future Edge release.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Edge will disable browser-native XSLT by default starting mid-December 2026 to reduce security risks. Organizations should identify and migrate affected applications before Edge Stable 159. A temporary XSLTEnabled policy will be available but removed by Edge 176 in Summer 2027."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
     {
       "id": "MC1450134",
       "title": "(Updated) Microsoft Entra: Windows Hello for Business and macOS Platform SSO as standalone MFA factors",
@@ -1516,38 +1604,6 @@
       "officialDocumentUrls": [
         "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
         "https://learn.microsoft.com/deployedge/microsoft-edge-browser-policies/composeinlineenabled"
-      ]
-    },
-    {
-      "id": "MC1469555",
-      "title": "Microsoft Entra: Optimized passkey registration campaign experience",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-09T00:42:31.0000000+00:00",
-      "endDateTime": "2026-10-18T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-09T00:44:03.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "[What and why]\nFollowing earlier announcements regarding passkey registration campaigns and targeting logic (MC1279092 and MC1440968), we're continuing to refine how Microsoft Entra identifies and guides eligible users toward passkey registration. These changes help increase adoption of phishing-resistant authentication while maintaining alignment with administrator-configured passkey policies.\nWe're introducing enhancements to the Microsoft Entra registration campaign to help organizations increase passkey registration and adoption.\nWith this change, users who are eligible to register a passkey will receive an optimized registration experience. We're also expanding the Microsoft managed registration campaign experience so that users assigned to qualifying passkey profiles can be automatically prompted to register a passkey.\nThese updates help organizations accelerate adoption of phishing-resistant authentication while continuing to honor configured passkey policies and administrative controls.\nA passkey profile qualifies when it meets one of the following criteria:\nPasskey profile configurationQualification criteria\nUnrestrictedNo passkey profile restrictions are configured.\nSynced-onlyOnly synced passkeys are allowed and no key restrictions are configured.\nDevice-bound-onlyOnly device-bound passkeys are allowed and no key restrictions are configured.\nAAGUID-restrictedThe allow list contains at least one AAGUID for iCloud Keychain, Google Password Manager (GPM), Microsoft Authenticator passkey, or Microsoft Entra passkey on Windows.\nDevice-bound with attestation enforcedThe profile qualifies regardless of key restrictions. Key restrictions are not evaluated.\n[Rollout schedule]\n• General Availability (Worldwide, GCC): Beginning in early September 2026 and expected to complete by mid-September 2026\n[Impact on your organization]\nWho is affected\n• Administrators who manage Microsoft Entra registration campaigns and passkey authentication method policies\n• Users who are in scope for a registration campaign and are permitted to register passkeys\nPlatforms and services\n• Microsoft Entra registration campaign\n• Microsoft Entra authentication methods policy\n• Passkey registration experience\nWhat will happen\n• Eligible users will receive an optimized passkey registration experience.\n• When a registration campaign is in the Microsoft managed state, Microsoft will evaluate each in-scope user's passkey profile at sign-in.\n• Users assigned to at least one qualifying passkey profile may be prompted to register a passkey.\n• When a registration campaign is in the Enabled state, qualifying profile checks do not apply. All in-scope users who are allowed to register passkeys may be prompted to register a passkey.\n• Existing registration campaign scope and authentication method policies continue to determine which users are eligible to register passkeys.\nNote: If your registration campaign is in the Microsoft managed state and in-scope users meet one or more of the new qualifying passkey profile criteria, Microsoft managed logic may automatically update campaign targeting to include passkeys. As a result, eligible users may begin receiving passkey registration prompts after rollout.\n[Action required and recommendations]\nReview your registration campaign configuration before rollout.\nRecommended actions:\n• Review users and groups that are currently in scope for your registration campaign.\n• Review passkey profiles assigned to in-scope users.\n• Determine whether in-scope users are assigned to qualifying passkey profiles.\n• If you do not want Microsoft managed dynamic targeting, change the registration campaign state and directly configure targeted authentication methods.\n• Verify that intended users are enabled for passkeys through your authentication methods policy.\nLearn more\n• Configure the Microsoft Entra registration campaign - Enable and support passkeys in Authenticator for Microsoft Entra ID - Microsoft Entra ID | Microsoft Learn\n• Run a Registration Campaign to Set Up a Passkey or Microsoft Authenticator - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\n• The registration campaign does not override configured passkey authentication method policies.\n• Users can only be prompted to register passkeys permitted by their assigned passkey profiles.\n• In the Microsoft managed state, Microsoft uses dynamic logic to determine passkey targeting and may automatically update targeted authentication methods.\n• Administrators retain control over registration campaign scope, registration campaign state, and authentication method policies.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra is enhancing passkey registration campaigns to optimize user experience and increase phishing-resistant authentication adoption. Eligible users will be automatically prompted based on qualifying passkey profiles. Rollout begins early September 2026. Administrators should review campaign configurations and user assignments before rollout."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/entra/identity/authentication/how-to-enable-authenticator-passkey",
-        "https://learn.microsoft.com/entra/identity/authentication/how-to-mfa-registration-campaign"
       ]
     },
     {
