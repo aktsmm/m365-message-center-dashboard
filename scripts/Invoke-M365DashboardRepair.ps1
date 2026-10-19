@@ -10,7 +10,7 @@ param(
     [DateTimeOffset]$ReferenceTime = [DateTimeOffset]::UtcNow,
     [switch]$TrustedAutomationApproved,
     [long]$RetrySkippedRunId = 0,
-    [ValidateRange(4, 168)][int]$CooldownHours = 5,
+    [ValidateRange(2, 168)][int]$CooldownHours = 3,
     [switch]$Apply
 )
 

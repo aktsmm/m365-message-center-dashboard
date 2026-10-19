@@ -235,11 +235,11 @@ Repository 名が `<OWNER>.github.io` の場合だけ、account root に公開�
 
 ### 要約・翻訳の品質検査と自動修復
 
-`M365 dashboard content quality and repair` を有効にすると、約6時間ごと（1日4回）に承認済みの保存データだけを検査します。必要な場合だけ、週次要約の修復、または最大3件の翻訳（日本語タイトルと「変更・影響・時期・対応」の付与を含む）を既存の Copilot workflow に依頼します。1検査1依頼・同一レーン5時間間隔（1日最大4回、GitHub のスケジュール遅延を見込んだ設定）で、core後に続く翻訳も同じ間隔に含めます。未処理が無くなれば依頼は発生しません。初期の未照合バックログを一度に全件生成するものではありません。主パイプラインに加えて発生するAI利用、既存の1 run当たり60 AI credits上限、予算・監視担当を確認してください。
+`M365 dashboard content quality and repair` を有効にすると、約6時間ごと（1日4回）に承認済みの保存データだけを検査します。必要な場合だけ、週次要約の修復、または最大3件の翻訳（日本語タイトルと「変更・影響・時期・対応」の付与を含む）を既存の Copilot workflow に依頼します。1検査1依頼・同一レーン3時間間隔（1日最大4回、GitHub のスケジュール遅延を見込んだ設定）で、core後に続く翻訳も同じ間隔に含めます。未処理が無くなれば依頼は発生しません。初期の未照合バックログを一度に全件生成するものではありません。主パイプラインに加えて発生するAI利用、既存の1 run当たり60 AI credits上限、予算・監視担当を確認してください。
 
 修復workflowの `actions: write` は、同じ repository の main の指定済み workflow を依頼するためです。要約・翻訳の2本だけが公式の `on.bots` で `github-actions[bot]` を許可し、main限定の条件と人間の既定role検証を維持します。Graph権限・追加secret・PATは使いません。手動の計画確認は `Invoke-M365DashboardRepair.ps1 -Repository owner/repo`（既定dry-run）、検査と状態保存は運用workflowの `-Apply` を使います。`reports/m365/repair-state.json` の依頼状態と、実際の workflow 結果・原文版照合を区別して確認します。
 
-運用workflowだけが `-TrustedAutomationApproved` を明示します。未設定のActions呼び出しは `authorization_required` で止めます。`roles: all`、人のPAT、別イベントへの切替で回避しないでください。`success` runでもagent／publisherがskipなら未修復です。直前のbot依頼でagentが開始されなかった場合に限り、手動の `retry_skipped_run_id` でAPI確認付きの再試行を行えます。開始済み処理の5時間cooldownを解除する入力ではありません。
+運用workflowだけが `-TrustedAutomationApproved` を明示します。未設定のActions呼び出しは `authorization_required` で止めます。`roles: all`、人のPAT、別イベントへの切替で回避しないでください。`success` runでもagent／publisherがskipなら未修復です。直前のbot依頼でagentが開始されなかった場合に限り、手動の `retry_skipped_run_id` でAPI確認付きの再試行を行えます。開始済み処理の3時間cooldownを解除する入力ではありません。
 
 処理中に原文が更新された場合、古いartifactで新しいデータを上書きせず、公開を止めて現行データでの再試行を待ちます。過去の訳文に原文hashがない場合は未照合と表示し、検証済みと偽装しません。日付・サービス・検索・並び順は画面の共有URLで再現できます。
 
@@ -257,7 +257,7 @@ Repository 名が `<OWNER>.github.io` の場合だけ、account root に公開�
 - [ ] 独立した関連資料 workflow の検証・補完・Pages 公開が成功
 - [ ] 未登録の通知IDも自動調査され、未調査・対応資料未確認・取得失敗と次回処理を区別している
 - [ ] 週次要約の本文参照と原文版、翻訳の原文版が検証され、未照合は注意付きで区別される
-- [ ] 自動修復の1検査1依頼・5時間間隔（1日最大4回）・AI利用予算・監視担当を確認した
+- [ ] 自動修復の1検査1依頼・3時間間隔（1日最大4回）・AI利用予算・監視担当を確認した
 - [ ] `reports/m365/` と Pages に credential-like 値がない
 - [ ] 継承した upstream snapshot を顧客 Pages の現在データとして公開していない
 - [ ] Pages の公開範囲と内容を顧客レビュー担当者が承認
