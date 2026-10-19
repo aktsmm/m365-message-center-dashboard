@@ -1,21 +1,20 @@
 {
-  "generatedAt": "2026-10-19T00:00:35.2583640+00:00",
+  "generatedAt": "2026-10-19T00:18:30.4522970+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra のエージェント作成既定値変更(11/4開始)と WHfB/PSSO の MFA 要素化に注意",
-  "executiveSummary": "今週は Microsoft Entra 関連の変更が中心です。MC1506733 では、11月4日以降、Entra ロールを持たない既定ユーザーが、管理者が「Users can create agent blueprints」を無効化しない限りエージェント ブループリントを作成できるようになります(展開は2026年11月上旬〜下旬)。MC1506728 では、同じく11月4日から AgentIdentity.CreateAsManager がブループリント プリンシパルへ自動付与されなくなり、アプリ専用認証でエージェント ID を自作するエージェントには管理者の同意が必要になります。MC1450134 は WHfB と macOS PSSO を単独の MFA 要素として扱う変更で、タイムラインが更新されました(抜粋には新しい日付は含まれていません)。MC1437671 は My Sign-Ins でのパスワード変更機能で、既定で無効、管理者の有効化が必要です(GA は10月末開始予定)。",
-  "thisWeek": "MC1506733: エージェント ブループリント作成を既定ユーザーに許可するか判断し、許可しない場合は 11/4 前に「Users can create agent blueprints」の設定を確認・無効化する\nMC1506728: アプリ専用認証でエージェント ID を自作するエージェントの有無を棚卸しし、AgentIdentity.CreateAsManager の明示付与または別の認可モデルへの移行要否を確認する",
-  "thisMonth": "MC1450134: 更新後のタイムラインを管理センターで確認し、Authentication Strength や sign-in frequency ポリシーへの影響を整理する\nMC1437671: My Sign-Ins でのパスワード変更機能を有効化するか方針を決める(既定は無効、GA は10月末開始予定)\nMC1505610: Brand Center 設定時に Public CDN が既定で未選択になるため、組織フォント利用の要否を確認する",
-  "watch": "MC1450134: WHfB / macOS PSSO の展開時期と、MFA 要件の挙動変化\nMC1506727: Agent 365 ライセンス不要になる可観測性メトリクス(2026年11月下旬展開予定)\nMC1469329: Copilot Studio と Copilot Cowork のアプリ作成プレビューと Copilot Credits の消費\nMC1440972: Edge の Copilot 新しいタブ ページ(GA は2026年11月上旬開始予定)",
-  "customerQuestions": "既定ユーザーにエージェント ブループリントの作成を許可してよいか。許可しない場合、誰が作成権限を持つべきか。\nアプリ専用認証でエージェント ID を自律的に作成するエージェントはあるか。管理者同意の運用フローは整っているか。\nWHfB / macOS PSSO を MFA 要素として扱うことで、既存の Authentication Strength や sign-in frequency ポリシーの設計を見直す必要があるか。\nパスワードを使うレガシー アプリが残っている場合、My Sign-Ins からのパスワード変更を有効化するか。\nBrand Center で組織フォントを使う予定はあるか。その場合、Public CDN の有効化をいつ行うか。",
+  "headline": "Entra新規エージェント作成の既定変更、Targeted release廃止準備、Office LTSC 2021サポート終了への対応が今週の焦点",
+  "executiveSummary": "今週は ID・リリース管理・サポート終了に関する変更が中心です。MC1506733 では、Entra で 11 月 4 日から既定ユーザーがエージェント ブループリントを作成可能になります(管理者が「Users can create agent blueprints」をオフにしない場合)。MC1490899 では Targeted release が 2027 年 1 月に廃止され、2026 年 11 月から登録の追加・削除・変更ができなくなります。MC1481309 は Entra サインイン画面の CSP 強化で、ブラウザー拡張や監視ツールなど外部スクリプトを挿入するソリューションに影響する可能性があります(展開は 2026 年 10 月中旬〜下旬)。MC1509797 は Office LTSC 2021 等が 2026 年 10 月 13 日にサポート終了した旨の通知で、セキュリティ更新が提供されなくなります。MC1462915 は *.cloud.microsoft への接続許可の確認が必要です。なお、抜粋に含まれない日程や手順は「不明」であり、「なし」と確認されたものではありません。",
+  "thisWeek": "MC1481309: Entra サインイン ページ(login.microsoftonline.com)で外部スクリプトを挿入するブラウザー拡張・監視/カスタマイズ ツールの利用有無を確認する(展開は 10 月中旬〜下旬)。\nMC1506733: 11 月 4 日の既定変更に備え、エージェント ブループリント作成を既定ユーザーに許可するかを決定し、許可しない場合は「Users can create agent blueprints」の設定を確認する。\nMC1509797: Office LTSC 2021、Visio LTSC 2021、Project LTSC 2021 等の稼働端末を棚卸しし、サポート版への移行計画を作成する。",
+  "thisMonth": "MC1490899: Targeted release 登録ユーザーを確認し、Frontier / Standard / Deferred のうち適切なリリース設定を M365 管理センターで選択する(11 月に登録変更が不可になる)。\nMC1462915: ネットワーク/セキュリティ制御で *.cloud.microsoft への接続が許可されているか確認する(接続を遮断していた組織は 11 月初旬にリダイレクト予定)。",
+  "watch": "MC1474104: Entra ID の SMS 先行要素サインイン廃止の次フェーズ(2027-02-01 が期限として記載)。パスキー等の耐フィッシング認証への移行を継続監視する。\nMC1426371: パスキー既定化と Microsoft 提供の SMS/音声認証廃止に関する更新を継続監視する。",
+  "customerQuestions": "Entra のサインイン画面にスクリプトを挿入するブラウザー拡張や監視ツールを利用していますか。\n既定ユーザーによるエージェント ブループリント作成を許可しますか、それともオフにしますか。\nTargeted release に登録されているユーザーは誰で、今後 Frontier / Standard / Deferred のどれを選びますか。\nOffice LTSC 2021 や Visio/Project LTSC 2021 を利用している端末はどれくらいありますか。\n*.cloud.microsoft への接続をプロキシーやファイアウォールで制限していませんか。\nSMS を先行要素として使うユーザーはいますか。パスキーへの移行計画はありますか。",
   "referencedIds": [
-    "MC1437671",
-    "MC1440972",
-    "MC1450134",
-    "MC1469329",
-    "MC1505610",
-    "MC1506727",
-    "MC1506728",
-    "MC1506733"
+    "MC1426371",
+    "MC1462915",
+    "MC1474104",
+    "MC1481309",
+    "MC1490899",
+    "MC1506733",
+    "MC1509797"
   ],
   "messageUpdates": [
     {
@@ -383,13 +382,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1469555",
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1469962",
       "japaneseTitle": "Microsoft 365 Copilot Chat、Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat、Microsoft 365 suite。重要度は 通常 です。",
@@ -596,6 +588,27 @@
       "id": "MC1506733",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1509789",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1509797",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 高 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1510951",
+      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ（主要な変更）",
+      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -856,6 +869,22 @@
       "sourceTruncated": true
     },
     {
+      "id": "MC1450134",
+      "japaneseTitle": "Entra:WHfBとmacOS PSSOが単独のMFA要素として認識される",
+      "japaneseFacts": {
+        "change": "WHfBとmacOS PSSOが、サポートされるシナリオで単独のMFA要素として認識されます。",
+        "impact": "Entra ID利用組織、WHfB/PSSOユーザー、認証強度ポリシー利用組織が対象です。",
+        "timing": "2026年10月上旬に開始し、12月中旬に完了予定(従来は11月下旬)です。",
+        "action": "提供された本文には対応の記載がなく、原文に記載なし(本文は途中で切れています)。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entraは、Windows Hello for Business(WHfB)とmacOS Platform SSO(PSSO)を、サポートされる認証シナリオで単独のMFA要素として認識するようになります。これにより、ステップアップ認証、認証強度ポリシー、サインイン頻度チェックで、追加のパスキー登録なしにMFA要件を満たせます。WHfB/PSSOのみを登録しているユーザーはMFA対応とみなされ、パスワードのみでサインインしても追加MFA登録を自動で促されなくなります。資格情報はMy Security Infoに自動登録パスキーとして表示されます。展開は2026年10月上旬に開始し、12月中旬に完了予定(従来は11月下旬)で、タイムラインが更新されました。対象はEntra ID、WHfB、macOS PSSO、条件付きアクセスの認証強度ポリシーを利用する組織です。",
+      "japaneseBodyTranslation": "2026年10月13日更新:タイムラインを更新しました。\n[内容と理由]\nMicrosoft Entraは、サポートされる認証シナリオで、Windows Hello for Business(WHfB)とmacOS Platform Single Sign-On(PSSO)を単独の多要素認証(MFA)要素として認識するようになります。\n現在、WHfBとmacOS PSSOはプライマリサインイン時のMFA要件を満たせますが、一部のステップアップ認証、認証強度ポリシー、サインイン頻度チェックでは、追加のパスキーや認証方法の登録・使用が必要な場合があります。\n展開後は、WHfBまたはmacOS PSSOで認証したユーザーは、追加のパスキーを登録せずにサポートされるMFA要件を満たせます。これにより、フィッシング耐性のある認証方法の利用が拡大し、安全性の低い認証方法への依存を減らせます。この変更に伴い、WHfBとmacOS PSSOの資格情報は、My Security Infoに自動登録されたパスキーとして表示されます。\n[展開スケジュール]\n•一般提供(Worldwide、GCC):2026年10月上旬に開始、12月中旬に完了予定(従来は11月下旬)\n[組織への影響]\n影響を受ける対象\n• Microsoft Entra IDを使用する組織\n• WHfBで認証するユーザー\n• macOS Platform SSOで認証するユーザー\n• 条件付きアクセスの認証強度ポリシーを使用する組織\nプラットフォームとサービス\n• Microsoft Entra ID、Windows Hello for Business、macOS Platform SSO、条件付きアクセス、認証強度ポリシー\n展開後の動作\n• WHfBまたはmacOS PSSOでサインインするユーザーは、別のパスキーなしでサポートされるMFAチャレンジを完了できます。\n• ステップアップ認証でもMFA要件を満たします。\n• 2FA時に、サポートされる認証強度ポリシー要件を満たせます。\n• 2FA時に、サポートされるサインイン頻度のチャレンジ要件を満たせます。\n• MFA方法がWHfBまたはmacOS PSSOのみのユーザーはMFA対応とみなされます。\n• パスワードのみでサインインするユーザーは、WHfB/PSSOが唯一のMFA資格情報の場合、追加MFA方法の登録を自動では促されなくなります。\n• WHfB/PSSO資格情報はMy Security Infoに自動登録パスキーとして表示されます。\n[必要なアクションと推奨事項](以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "aedcede8b8a27991f68cf1949be006022df331668fe78f73ce7bfcf5f7fd4e24",
+      "validatedAt": "2026-10-19T00:00:35.2517336+00:00"
+    },
+    {
       "id": "MC1454108",
       "japaneseDetailedSummary": "Microsoft 365 CopilotアプリがシンプルなCopilotブランドに統一されます。個人アカウントと職場アカウントを1つのアプリ体験に統合し、アカウント区別のための視覚的インジケーターが追加されます。アプリ名・アイコンが刷新され、WebアプリURLもCopilotに近いものに変更されます。セキュリティ・コンプライアンス・プライバシー・エンタープライズ制御は変更ありません。2026年8月中旬より世界展開開始(モバイル・Webアプリ)、2026年9月初旬より標準展開予定。管理者は新URLへのリダイレクトに備えた準備が必要です。",
       "japaneseBodyTranslation": "2026年8月21日更新:URLリダイレクトのタイミングを更新しました。\n【内容と理由】\nCopilotエクスペリエンス簡素化の取り組みの一環として、今後数週間で追加アップデートを展開します。他のMicrosoft 365アプリと同様に、Copilotはパーソナルアカウントとワークアカウントにまたがるシングルアプリ体験へ移行します。このアップデートの一部として、ユーザーはログイン中のアカウントを区別するための明確な視覚的インジケーターを確認できるようになり、アプリはよりシンプルな名前とアイコンを採用し、WebアプリのURLはCopilotに一致するよう変更されます。セキュリティ、コンプライアンス、プライバシー、エンタープライズ制御は変更されません。\n【展開スケジュール】\n・2026年8月中旬より、モバイルおよびWebアプリの世界展開を開始。WindowsおよびMacアプリのオプトインによる早期アクセスも開始。copilot.cloud.microsoftのURLもFrontierでテスト可能になります。\n・2026年9月初旬より、標準展開開始。",
@@ -982,13 +1011,6 @@
       "sourceTruncated": true,
       "sourceHash": "8df2f4022f3a82ad5fd0ae0c3f972a6a6dd10c211ae58f14b68c8c8344235d3f",
       "validatedAt": "2026-10-17T08:01:43.7821249+00:00"
-    },
-    {
-      "id": "MC1469555",
-      "japaneseDetailedSummary": "Microsoft Entraのパスキー登録キャンペーンについて、以前の発表(MC1279092、MC1440968)に続く改善が2026年9月9日より展開され、2026年10月18日頃までに完了予定です。パスキー登録の対象となるユーザーには最適化された登録体験が提供されるようになり、Microsoft管理の登録キャンペーン体験も拡張され、対象のパスキープロファイルに割り当てられたユーザーには自動的にパスキー登録が促されるようになります。これはフィッシング耐性の高い認証手段の採用を組織全体で加速することを目的としており、管理者が設定したパスキーポリシーとの整合性は維持されます。IDおよびセキュリティ管理者は、既存のパスキー登録ポリシーやユーザーへの通知方法への影響を確認し、ヘルプデスクへの問い合わせ増加に備えて社内周知を検討することが推奨されます。",
-      "japaneseBodyTranslation": "[内容と理由]\nパスキー登録キャンペーンとターゲティングロジックに関する以前の発表(MC1279092およびMC1440968)を踏まえ、Microsoft Entraがパスキー登録の対象ユーザーを識別し誘導する方法を引き続き改善します。これらの変更は、管理者が設定したパスキーポリシーとの整合性を維持しつつ、フィッシング耐性のある認証の採用を促進するのに役立ちます。\n組織がパスキーの登録と採用を促進できるよう、Microsoft Entra登録キャンペーンに機能強化を導入します。\nこの変更により、パスキー登録の対象となるユーザーには最適化された登録体験が提供されます。また、Microsoft管理の登録キャンペーン体験を拡張し、対象のパスキープロファイルに割り当てられたユーザーが自動的にパスキー登録を促されるようにします。\nこれらの更新により、設定済みのパスキーポリシーと管理(以下、原文は途中で切れています)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
     },
     {
       "id": "MC1469962",
@@ -1196,11 +1218,20 @@
       "validatedAt": "2026-10-16T18:58:56.5222167+00:00"
     },
     {
-      "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
-      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
+      "id": "MC1506728",
+      "japaneseTitle": "Entra:AgentIdentity.CreateAsManagerの自動付与を廃止",
+      "japaneseFacts": {
+        "change": "11月4日以降、AgentIdentity.CreateAsManagerがブループリントのプリンシパルに自動付与されなくなります。",
+        "impact": "自動付与に依存し、アプリ専用認証でエージェントIDを作成するエージェントを持つEntra利用組織です。",
+        "timing": "2026年11月上旬に開始し、11月下旬に完了予定です。",
+        "action": "依存するエージェントがあれば管理者が権限を明示付与するか別の認可モデルへ移行します。監査ログで該当を特定できます。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entra Agent IDは、エージェントによる自身のIDの自律的な作成を厳格化します。現在はエージェント作成時にAgentIdentity.CreateAsManagerが管理者承認なしで自動付与されますが、11月4日以降、エージェントブループリントのプリンシパルへの自動付与は行われなくなり、管理者の同意が必要になります。アプリ専用認証でエージェントIDを作成するエージェントは、強制適用前に当該Microsoft Graphアプリケーション権限を明示的に付与されるか、別のサポート対象の認可モデルへ移行する必要があります。既存・今後のエージェントが対象で、既存のエージェントIDやブループリントは削除されません。展開は2026年11月上旬から下旬の予定です。自動付与に依存するエージェントがなければ対応不要で、監査ログで該当エージェントを特定する手順が示されています。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entra Agent IDは、エージェントが自身のIDを自律的に作成することに対する制限を強化します。現在、すべてのエージェントは作成時に管理者の承認なしでAgentIdentity.CreateAsManagerを付与されています。11月4日以降、Microsoft Entraはエージェントブループリントのプリンシパルに対してAgentIdentity.CreateAsManagerを自動付与しなくなり、ID作成には管理者の同意が必要になります。\nアプリ専用認証で自身のエージェントIDを作成するエージェントは、強制適用がテナントに到達する前に、Microsoft Graphアプリケーション権限AgentIdentity.CreateAsManagerを明示的に付与されるか、別のサポート対象の認可モデルに移行する必要があります。\n[展開スケジュール]\n• 一般提供(Worldwide):2026年11月上旬に開始、11月下旬に完了予定\n[組織への影響]\n影響を受ける対象\n• Microsoft Entraを使用する組織\n• AgentIdentity.CreateAsManagerの自動付与に依存するエージェントがない場合、対応は不要です。\nプラットフォームとサービス\n• Microsoft Entra\n動作\n現在、エージェントブループリントのプリンシパルにはAgentIdentity.CreateAsManagerが自動付与され、テナント管理者がアプリロール割り当てを行わなくてもエージェントIDを作成できます。\n強制適用後は、この権限が必要なエージェントに対し、管理者がMicrosoft Graphアプリケーション権限AgentIdentity.CreateAsManagerを付与する必要があります。\nこの変更は:\n• アプリ専用のエージェントID作成権限を可視化・監査可能・取り消し可能にします。\n• 同意された場合でも取り消し可能にします。\n• 既存および今後のエージェントに影響します。\n• 既存のエージェントIDやブループリントは削除しません。\n• 管理者が明示的に付与した場合、ブループリントがエージェントIDを作成する機能は維持されます。\n• ディレクトリロールで認可するエージェントには影響しません。\n[必要なアクションと推奨事項]\n自動付与に依存するエージェントがない場合、対応は不要です。\nサインインユーザーなしでエージェントIDを作成するエージェントを特定します。\n• Microsoft Entra管理センターにサインインします。\n• Entra ID>Audit Logs に移動します。\n• Category を「ApplicationManagement」に設定します。\n• Activity フィルターを「Add Service Principal」に設定します。\nInitiated By (actor) の種類が Application のイベントを探します...(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "aa436cc476b70a08a702e4882dd010e1d338b59c9f83a3104bd9024c928f33aa",
+      "validatedAt": "2026-10-19T00:00:35.2550871+00:00"
     },
     {
       "id": "MC1506733",
@@ -1219,39 +1250,14 @@
       "validatedAt": "2026-10-19T00:00:35.2542487+00:00"
     },
     {
-      "id": "MC1450134",
-      "japaneseTitle": "Entra:WHfBとmacOS PSSOが単独のMFA要素として認識される",
-      "japaneseFacts": {
-        "change": "WHfBとmacOS PSSOが、サポートされるシナリオで単独のMFA要素として認識されます。",
-        "impact": "Entra ID利用組織、WHfB/PSSOユーザー、認証強度ポリシー利用組織が対象です。",
-        "timing": "2026年10月上旬に開始し、12月中旬に完了予定(従来は11月下旬)です。",
-        "action": "提供された本文には対応の記載がなく、原文に記載なし(本文は途中で切れています)。"
-      },
-      "japaneseDetailedSummary": "Microsoft Entraは、Windows Hello for Business(WHfB)とmacOS Platform SSO(PSSO)を、サポートされる認証シナリオで単独のMFA要素として認識するようになります。これにより、ステップアップ認証、認証強度ポリシー、サインイン頻度チェックで、追加のパスキー登録なしにMFA要件を満たせます。WHfB/PSSOのみを登録しているユーザーはMFA対応とみなされ、パスワードのみでサインインしても追加MFA登録を自動で促されなくなります。資格情報はMy Security Infoに自動登録パスキーとして表示されます。展開は2026年10月上旬に開始し、12月中旬に完了予定(従来は11月下旬)で、タイムラインが更新されました。対象はEntra ID、WHfB、macOS PSSO、条件付きアクセスの認証強度ポリシーを利用する組織です。",
-      "japaneseBodyTranslation": "2026年10月13日更新:タイムラインを更新しました。\n[内容と理由]\nMicrosoft Entraは、サポートされる認証シナリオで、Windows Hello for Business(WHfB)とmacOS Platform Single Sign-On(PSSO)を単独の多要素認証(MFA)要素として認識するようになります。\n現在、WHfBとmacOS PSSOはプライマリサインイン時のMFA要件を満たせますが、一部のステップアップ認証、認証強度ポリシー、サインイン頻度チェックでは、追加のパスキーや認証方法の登録・使用が必要な場合があります。\n展開後は、WHfBまたはmacOS PSSOで認証したユーザーは、追加のパスキーを登録せずにサポートされるMFA要件を満たせます。これにより、フィッシング耐性のある認証方法の利用が拡大し、安全性の低い認証方法への依存を減らせます。この変更に伴い、WHfBとmacOS PSSOの資格情報は、My Security Infoに自動登録されたパスキーとして表示されます。\n[展開スケジュール]\n•一般提供(Worldwide、GCC):2026年10月上旬に開始、12月中旬に完了予定(従来は11月下旬)\n[組織への影響]\n影響を受ける対象\n• Microsoft Entra IDを使用する組織\n• WHfBで認証するユーザー\n• macOS Platform SSOで認証するユーザー\n• 条件付きアクセスの認証強度ポリシーを使用する組織\nプラットフォームとサービス\n• Microsoft Entra ID、Windows Hello for Business、macOS Platform SSO、条件付きアクセス、認証強度ポリシー\n展開後の動作\n• WHfBまたはmacOS PSSOでサインインするユーザーは、別のパスキーなしでサポートされるMFAチャレンジを完了できます。\n• ステップアップ認証でもMFA要件を満たします。\n• 2FA時に、サポートされる認証強度ポリシー要件を満たせます。\n• 2FA時に、サポートされるサインイン頻度のチャレンジ要件を満たせます。\n• MFA方法がWHfBまたはmacOS PSSOのみのユーザーはMFA対応とみなされます。\n• パスワードのみでサインインするユーザーは、WHfB/PSSOが唯一のMFA資格情報の場合、追加MFA方法の登録を自動では促されなくなります。\n• WHfB/PSSO資格情報はMy Security Infoに自動登録パスキーとして表示されます。\n[必要なアクションと推奨事項](以降は原文が途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "aedcede8b8a27991f68cf1949be006022df331668fe78f73ce7bfcf5f7fd4e24",
-      "validatedAt": "2026-10-19T00:00:35.2517336+00:00"
-    },
-    {
-      "id": "MC1506728",
-      "japaneseTitle": "Entra:AgentIdentity.CreateAsManagerの自動付与を廃止",
-      "japaneseFacts": {
-        "change": "11月4日以降、AgentIdentity.CreateAsManagerがブループリントのプリンシパルに自動付与されなくなります。",
-        "impact": "自動付与に依存し、アプリ専用認証でエージェントIDを作成するエージェントを持つEntra利用組織です。",
-        "timing": "2026年11月上旬に開始し、11月下旬に完了予定です。",
-        "action": "依存するエージェントがあれば管理者が権限を明示付与するか別の認可モデルへ移行します。監査ログで該当を特定できます。"
-      },
-      "japaneseDetailedSummary": "Microsoft Entra Agent IDは、エージェントによる自身のIDの自律的な作成を厳格化します。現在はエージェント作成時にAgentIdentity.CreateAsManagerが管理者承認なしで自動付与されますが、11月4日以降、エージェントブループリントのプリンシパルへの自動付与は行われなくなり、管理者の同意が必要になります。アプリ専用認証でエージェントIDを作成するエージェントは、強制適用前に当該Microsoft Graphアプリケーション権限を明示的に付与されるか、別のサポート対象の認可モデルへ移行する必要があります。既存・今後のエージェントが対象で、既存のエージェントIDやブループリントは削除されません。展開は2026年11月上旬から下旬の予定です。自動付与に依存するエージェントがなければ対応不要で、監査ログで該当エージェントを特定する手順が示されています。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entra Agent IDは、エージェントが自身のIDを自律的に作成することに対する制限を強化します。現在、すべてのエージェントは作成時に管理者の承認なしでAgentIdentity.CreateAsManagerを付与されています。11月4日以降、Microsoft Entraはエージェントブループリントのプリンシパルに対してAgentIdentity.CreateAsManagerを自動付与しなくなり、ID作成には管理者の同意が必要になります。\nアプリ専用認証で自身のエージェントIDを作成するエージェントは、強制適用がテナントに到達する前に、Microsoft Graphアプリケーション権限AgentIdentity.CreateAsManagerを明示的に付与されるか、別のサポート対象の認可モデルに移行する必要があります。\n[展開スケジュール]\n• 一般提供(Worldwide):2026年11月上旬に開始、11月下旬に完了予定\n[組織への影響]\n影響を受ける対象\n• Microsoft Entraを使用する組織\n• AgentIdentity.CreateAsManagerの自動付与に依存するエージェントがない場合、対応は不要です。\nプラットフォームとサービス\n• Microsoft Entra\n動作\n現在、エージェントブループリントのプリンシパルにはAgentIdentity.CreateAsManagerが自動付与され、テナント管理者がアプリロール割り当てを行わなくてもエージェントIDを作成できます。\n強制適用後は、この権限が必要なエージェントに対し、管理者がMicrosoft Graphアプリケーション権限AgentIdentity.CreateAsManagerを付与する必要があります。\nこの変更は:\n• アプリ専用のエージェントID作成権限を可視化・監査可能・取り消し可能にします。\n• 同意された場合でも取り消し可能にします。\n• 既存および今後のエージェントに影響します。\n• 既存のエージェントIDやブループリントは削除しません。\n• 管理者が明示的に付与した場合、ブループリントがエージェントIDを作成する機能は維持されます。\n• ディレクトリロールで認可するエージェントには影響しません。\n[必要なアクションと推奨事項]\n自動付与に依存するエージェントがない場合、対応は不要です。\nサインインユーザーなしでエージェントIDを作成するエージェントを特定します。\n• Microsoft Entra管理センターにサインインします。\n• Entra ID>Audit Logs に移動します。\n• Category を「ApplicationManagement」に設定します。\n• Activity フィルターを「Add Service Principal」に設定します。\nInitiated By (actor) の種類が Application のイベントを探します...(以降は原文が途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "aa436cc476b70a08a702e4882dd010e1d338b59c9f83a3104bd9024c928f33aa",
-      "validatedAt": "2026-10-19T00:00:35.2550871+00:00"
+      "id": "MC985483",
+      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
+      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
+      "sourceCharacterCount": 1000,
+      "sourceTruncated": true
     }
   ],
-  "summaryGeneratedAt": "2026-10-16T02:44:50+00:00",
-  "summarySourceHash": "c5e3f415fff607b80a8ea1430ce77a568cfcd8e4c4cc14548723ba6df728da7a",
-  "sourceAgentRunId": "38841832444"
+  "summarySourceHash": "9dc29006ab4cc5029af32a4e99b9c1e9a4af4bf311e1bfeda29ae7dacee8c698",
+  "summaryGeneratedAt": "2026-10-19T00:18:30.2522538+00:00",
+  "sourceAgentRunId": "39179810783"
 }
