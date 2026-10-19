@@ -129,6 +129,9 @@ $html = @'
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
+    document.head.append(Object.assign(document.createElement("link"), { rel: "icon", href: "data:," }));
+  </script>
+  <script>
     (() => {
       const param = new URLSearchParams(window.location.search).get("scoutTheme");
       const forcedTheme = ["light", "dark"].includes(param) ? param : null;
@@ -287,6 +290,7 @@ $html = @'
     .insight-column ul { margin: 0; padding-left: 18px; color: var(--cp-text-muted); }
     .insight-column li + li { margin-top: 8px; }
     .insight-pending { color: var(--cp-text-muted); }
+    .metrics[hidden] { display: none; }
     .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px; }
     .metric, .panel, .message {
       background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px;
@@ -499,7 +503,7 @@ $html = @'
       <summary id="health-title">データの更新状況（運用情報）</summary>
       <div class="health-grid" id="health-status" role="status"></div>
     </details>
-    <section class="metrics" aria-label="公開スナップショットの集計">
+    <section class="metrics" aria-label="公開スナップショットの集計" hidden>
       <article class="metric"><div class="metric-label">公開中の更新</div><div class="metric-value" id="metric-total">0</div></article>
       <article class="metric metric-alert"><div class="metric-label">重要な変更</div><div class="metric-value" id="metric-major">0</div></article>
       <article class="metric"><div class="metric-label">今後30日以内の対応期限</div><div class="metric-value" id="metric-due">0</div></article>
