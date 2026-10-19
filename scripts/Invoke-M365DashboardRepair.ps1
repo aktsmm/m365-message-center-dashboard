@@ -11,6 +11,7 @@ param(
     [switch]$TrustedAutomationApproved,
     [long]$RetrySkippedRunId = 0,
     [ValidateRange(2, 168)][int]$CooldownHours = 3,
+    [ValidateRange(0, 60)][int]$RetryDelaySeconds = 10,
     [switch]$Apply
 )
 
@@ -66,7 +67,7 @@ if ($lane) {
     $workflow = if ($lane -eq 'core') { 'm365-weekly-insights.lock.yml' } else { 'm365-weekly-translations.lock.yml' }
     $plan.action = @{ status = 'planned'; lane = $lane; workflow = $workflow }
     $attempt = $plan.attempts[$lane]
-    if ($attempt -and ($ReferenceTime - [DateTimeOffset]$attempt.requestedAt).TotalHours -lt $CooldownHours) {
+    if ($attempt -and $attempt.status -ne 'dispatch_failed' -and ($ReferenceTime - [DateTimeOffset]$attempt.requestedAt).TotalHours -lt $CooldownHours) {
         $plan.action.status = 'cooldown'
         $plan.action.nextAttemptAt = ([DateTimeOffset]$attempt.requestedAt).AddHours($CooldownHours).ToString('o')
     }
@@ -126,8 +127,14 @@ if ($Apply -and $plan.action.status -eq 'planned') {
             $plan.attempts.translations = @{ requestedAt = $plan.observedAt; status = 'following_core'; workflow = 'm365-weekly-translations.lock.yml' }
         }
         Save-RepairCheckpoint
-        gh workflow run $plan.action.workflow --repo $Repository --ref main
-        if ($LASTEXITCODE -ne 0) {
+        $dispatched = $false
+        foreach ($try in 1..3) {
+            gh workflow run $plan.action.workflow --repo $Repository --ref main
+            if ($LASTEXITCODE -eq 0) { $dispatched = $true; break }
+            # A transient GitHub 5xx creates no run, so a short bounded retry cannot duplicate work.
+            if ($try -lt 3) { Start-Sleep -Seconds ($RetryDelaySeconds * $try) }
+        }
+        if (-not $dispatched) {
             $plan.attempts[$lane].status = 'dispatch_failed'
             $plan.action.status = 'dispatch_failed'
             Save-RepairCheckpoint

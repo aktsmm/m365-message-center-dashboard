@@ -7,11 +7,13 @@ $temporary = Join-Path ([IO.Path]::GetTempPath()) "m365-repair-$([guid]::NewGuid
 $latest = Join-Path $temporary 'latest'
 New-Item -ItemType Directory -Path $latest -Force | Out-Null
 $calls = [Collections.Generic.List[string]]::new()
+$global:ghFailures = 0
 $retryAgent = 'skipped'
 function gh {
     $command = $args -join ' '
     $calls.Add($command)
     $global:LASTEXITCODE = 0
+    if ($command -like 'workflow run*' -and $global:ghFailures -gt 0) { $global:ghFailures--; $global:LASTEXITCODE = 1; return }
     if ($command -like 'run list*') { return '[]' }
     if ($command -like 'api*') {
         return '{"status":"completed","head_branch":"main","event":"workflow_dispatch","actor":{"login":"github-actions[bot]"},"path":".github/workflows/m365-weekly-insights.lock.yml","created_at":"2026-10-16T01:00:01Z"}'
@@ -86,6 +88,25 @@ try {
         throw 'Only a verified not-started attempt may be retried once.'
     }
     . (Join-Path $root 'scripts\M365DashboardContent.ps1')
+    $flaky = "$temporary-flaky"; Copy-Item -LiteralPath $temporary -Destination $flaky -Recurse -Force
+    Remove-Item -LiteralPath (Join-Path $flaky 'repair-state.json') -ErrorAction SilentlyContinue
+    $global:ghFailures = 2
+    $before = @($calls | Where-Object { $_ -like 'workflow run*' }).Count
+    $flakyParameters = @{ SnapshotRoot = $flaky; Repository = 'example/dashboard'; ReferenceTime = [DateTimeOffset]'2026-10-16T02:00:00Z'; RetryDelaySeconds = 0 }
+    $recovered = & $repair @flakyParameters -Apply -TrustedAutomationApproved | ConvertFrom-Json
+    $after = @($calls | Where-Object { $_ -like 'workflow run*' }).Count
+    if ($recovered.action.status -ne 'dispatched' -or ($after - $before) -ne 3) {
+        throw 'A transient dispatch failure must be retried within a small bound.'
+    }
+    $global:ghFailures = 99
+    Remove-Item -LiteralPath (Join-Path $flaky 'repair-state.json') -ErrorAction SilentlyContinue
+    $failed = $false
+    try { & $repair @flakyParameters -Apply -TrustedAutomationApproved | Out-Null } catch { $failed = $true }
+    $global:ghFailures = 0
+    $state = Get-Content -LiteralPath (Join-Path $flaky 'repair-state.json') -Raw | ConvertFrom-Json
+    if (-not $failed -or $state.attempts.core.status -ne 'dispatch_failed') { throw 'A persistent dispatch failure must be recorded.' }
+    $retryLater = & $repair @flakyParameters -Apply -TrustedAutomationApproved | ConvertFrom-Json
+    if ($retryLater.action.status -ne 'dispatched') { throw 'A failed dispatch must not hold a cooldown.' }
     $insights.watch = 'MC900001: 展開状況を確認'
     $insights.summarySourceHash = Get-M365SnapshotSourceHash -Document $document
     $insights | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $insightsPath -Encoding UTF8
@@ -111,4 +132,5 @@ try {
     Write-Host 'Repair planning, scoped dispatch, cooldown, no-op and source-race checks passed.'
 } finally {
     Remove-Item -LiteralPath $temporary -Recurse -Force
+    Remove-Item -LiteralPath "$temporary-flaky" -Recurse -Force -ErrorAction SilentlyContinue
 }
