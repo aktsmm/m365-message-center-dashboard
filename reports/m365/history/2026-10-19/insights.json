@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T00:18:30.4522970+00:00",
+  "generatedAt": "2026-10-19T00:23:50.0768687+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra新規エージェント作成の既定変更、Targeted release廃止準備、Office LTSC 2021サポート終了への対応が今週の焦点",
   "executiveSummary": "今週は ID・リリース管理・サポート終了に関する変更が中心です。MC1506733 では、Entra で 11 月 4 日から既定ユーザーがエージェント ブループリントを作成可能になります(管理者が「Users can create agent blueprints」をオフにしない場合)。MC1490899 では Targeted release が 2027 年 1 月に廃止され、2026 年 11 月から登録の追加・削除・変更ができなくなります。MC1481309 は Entra サインイン画面の CSP 強化で、ブラウザー拡張や監視ツールなど外部スクリプトを挿入するソリューションに影響する可能性があります(展開は 2026 年 10 月中旬〜下旬)。MC1509797 は Office LTSC 2021 等が 2026 年 10 月 13 日にサポート終了した旨の通知で、セキュリティ更新が提供されなくなります。MC1462915 は *.cloud.microsoft への接続許可の確認が必要です。なお、抜粋に含まれない日程や手順は「不明」であり、「なし」と確認されたものではありません。",
@@ -1255,9 +1255,57 @@
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
+    },
+    {
+      "id": "MC1510951",
+      "japaneseTitle": "カナダ2026年タイムゾーン変更に対応するWindows更新プログラムを提供",
+      "japaneseFacts": {
+        "change": "マニトバ、アルバータ、ブリティッシュコロンビア向けの地域別タイムゾーンを追加するWindows更新プログラムが提供されました。",
+        "impact": "更新プログラム未適用または適切なタイムゾーン未選択の場合、2026年11月1日以降に端末の現地時刻が誤表示されます。",
+        "timing": "2026年11月1日午前2時に切り替わり、時計は1時間戻されません。更新は9月22日と10月13日に提供済みです。",
+        "action": "11月1日前に更新プログラムを適用し、地域別タイムゾーンを確認してください。適用できない場合は暫定ガイダンスに従ってください。"
+      },
+      "japaneseDetailedSummary": "マニトバ州、アルバータ州、ブリティッシュコロンビア州の2026年タイムゾーン変更に対応するWindows更新プログラムが提供されました。2026年11月1日に対象地域では時計が1時間戻されず、マニトバはUTC-5、アルバータ等はUTC-6、BC州の大部分はUTC-7に固定されます。9月22日にWindows 11 25H2/24H2向けプレビュー更新で、10月13日に全サポート対象バージョン向けセキュリティ更新で提供されました。未適用または適切なタイムゾーン未選択の端末は現地時刻が誤表示されます。自動設定の端末は新タイムゾーンを自動選択しますが、それ以外は手動選択が必要です。11月1日前の更新適用とタイムゾーン確認が推奨されます。原文は途中で切れており、続きは供給されていません。",
+      "japaneseBodyTranslation": "(2026年10月16日更新:OutlookにおけるアルバータおよびBCのタイムゾーン変更の管理ガイダンスを追加。)\n概要と理由\n2026年のマニトバ、アルバータ、ブリティッシュコロンビアのタイムゾーン変更に対応するWindows更新プログラムが利用可能になりました。2026年11月1日、対象地域では時計が1時間戻されません。\nマニトバは恒久的にUTC-5、アルバータおよび対象地域は恒久的にUTC-6、BC州の大部分は恒久的にUTC-7となります。新しい更新プログラムにより地域別タイムゾーンが追加されます。\n展開スケジュール\n• 2026年9月22日:アルバータとBCの変更が、Windows 11 25H2および24H2の9月の非セキュリティプレビュー更新で提供されました。\n• 2026年10月13日:マニトバの変更が全てのサポート対象Windowsで提供され、アルバータとBCの変更もWindows Serverを含む他のサポート対象バージョンで提供されました。10月のセキュリティ更新に含まれます。\n• 2026年11月1日:現地時間午前2時にタイムゾーン移行が発効し、対象地域の時計は1時間戻されません。\n組織への影響\n該当する更新プログラムが未適用、または適切なタイムゾーンが未選択の場合、11月1日以降、対象地域の端末は誤った現地時刻を表示します。追加されるタイムゾーン:\n• (UTC-05:00) マニトバ\n• (UTC-06:00) 山岳部時間(アルバータ)\n• (UTC-07:00) 太平洋時間(ブリティッシュコロンビア)\nアルバータの変更はノースウェスト準州のイエローナイフとイヌヴィク、およびアルバータに合わせるBC州南東部にも適用されます。\nタイムゾーン自動設定の端末は新しいタイムゾーンを自動選択します。その他の端末では手動選択が必要です。\n必要なアクション/推奨事項\n• 2026年11月1日までに、対象端末へ該当するWindows更新プログラムをインストールする。\n• 更新後、対象端末が適切な地域別タイムゾーンを使用しているか確認する。\n• 11月1日までに更新できない場合は、Daylight Saving Time & Time Zone Blogの各地域向け暫定ガイダンスに従い、できるだけ早く適切なタイムゾーンへ変更する。\n注:この変更を管理するには(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "61480dcf7a201c14c189747bad4d70520a6f932cb6308da57f7a952be4a5a272",
+      "validatedAt": "2026-10-19T00:23:50.0651922+00:00"
+    },
+    {
+      "id": "MC1509797",
+      "japaneseTitle": "Office LTSC 2021などのサポートが2026年10月13日に終了",
+      "japaneseFacts": {
+        "change": "Office LTSC 2021、Visio LTSC 2021、Project LTSC 2021などのサポートが終了しました。",
+        "impact": "セキュリティ更新、バグ修正、技術サポートが提供されず、セキュリティ・コンプライアンス上のリスクや互換性問題が生じ得ます。",
+        "timing": "2026年10月13日にサポートが終了しました。",
+        "action": "対象端末を特定し、Microsoft 365 Appsなど、または完全切断環境ではOffice LTSC 2024へ移行してください。"
+      },
+      "japaneseDetailedSummary": "Office LTSC 2021のサポートは2026年10月13日に終了し、Visio LTSC 2021、Project LTSC 2021などの製品も同日に終了しました。以後、セキュリティ更新、バグ修正、技術サポートは提供されません。アプリは自動的に動作停止しませんが、継続利用はセキュリティ・コンプライアンスのリスクや互換性・信頼性の問題につながる可能性があります。対象製品が稼働する端末を特定し、サポート対象へ移行する必要があります。多くの組織にはMicrosoft 365 Apps for enterprise/businessを含むスイートへのアップグレードが推奨され、完全に切断された環境ではOffice LTSC 2024(2029年10月までサポート)が推奨されます。原文は途中で切れています。",
+      "japaneseBodyTranslation": "[概要と理由:]\n以前案内したとおり、Office LTSC 2021のサポートは2026年10月13日に終了しました。Microsoftはこのバージョンのセキュリティ更新、バグ修正、技術サポートを提供しません。アプリケーションは引き続き動作する場合がありますが、サポート外のソフトウェアの使用は、セキュリティおよびコンプライアンス上のリスク、システム非互換性などの問題を招く可能性があります。\nVisio LTSC 2021、Project LTSC 2021、その他いくつかの製品のサポートも2026年10月13日に終了しました。これらを使い続ける組織は、継続的なセキュリティ更新、バグ修正、技術サポートを受けるため、できるだけ早くサポート対象バージョンへ移行してください。\n[展開スケジュール:]\n一般提供(全世界):Office LTSC 2021、Visio LTSC 2021、Project LTSC 2021、その他対象製品のサポートは2026年10月13日に終了しました。\n[組織への影響:]\nOffice LTSC 2021または他の対象製品を実行している端末は、セキュリティ更新、バグ修正、技術支援を受けられません。アプリは自動的に停止しませんが、継続使用はセキュリティ・コンプライアンスのリスクを高め、互換性や信頼性の問題を招く可能性があります。\n[必要なアクション/推奨事項:]\nOffice LTSC 2021または他の対象製品が稼働する端末を特定し、サポート対象のソリューションへ移行してください。\n多くの組織には、Microsoft 365 Apps for enterpriseまたはMicrosoft 365 Apps for businessを含むMicrosoft 365/Office 365スイートへのアップグレードを推奨します。Microsoft 365 Appsは、デスクトップ、モバイル、Web向けにWord、Excel、PowerPointなどの常に最新版を提供し、モダンライフサイクルポリシーで継続サポートされ、Microsoft Copilotも利用できます。\n• 大企業はMicrosoft 365 E3、Office 365 E3、またはMicrosoft 365 Apps for enterpriseを検討してください。\n• 300ユーザー未満の組織はMicrosoft 365 Business Premium、Business Standard、またはMicrosoft 365 Apps for businessを検討してください。\n完全に切断されたソリューションが必要な場合は、Office LTSC 2024へのアップグレードを推奨します。Office LTSC 2024は商用顧客向けの現行のサポート対象オンプレミス版Officeで、固定ライフサイクルポリシーの下、2029年10月までサポートされます。\nリソース:\n• Office LTSC 2021からの移行の概要については、アップグレードガイダンスを参照してください。(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "75fd633ad1e056abd897a11ef3c3793e8cd684ef7e22f03489c44fabd330d337",
+      "validatedAt": "2026-10-19T00:23:50.0695480+00:00"
+    },
+    {
+      "id": "MC1509789",
+      "japaneseTitle": "Edge:ブラウザー内蔵XSLTが既定で無効化される",
+      "japaneseFacts": {
+        "change": "EdgeはXSLTProcessor APIとXSLTを参照するXML処理命令を既定で無効化します。CSS参照は影響しません。",
+        "impact": "内部/公開サイト、組み込み機器UI、サードパーティWebアプリがブラウザー内蔵XSLTに依存する場合に影響します。",
+        "timing": "全世界、GCC、GCC High、DoDで2026年12月中旬に展開し、Edge 159 Stableで既定オフ、XSLTEnabledポリシーはEdge 176で削除予定です。",
+        "action": "Edge 159 Stable前にLighthouse等で利用状況を確認し、移行またはベンダーへ依頼してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Edgeはブラウザー内蔵のXSLTを非推奨とし、XSLTProcessor JavaScript APIおよびXSLTスタイルシートを参照するXML処理命令を既定で無効にします。CSSスタイルシートを参照する処理命令は影響を受けません。古いネイティブコードが信頼できないXML/XSLTを処理するため、攻撃対象領域を減らす目的です。2026年12月中旬に全世界、GCC、GCC High、DoDで展開され、Edge 159 Stableで既定オフになります。一時的なXSLTEnabledポリシーはSummer 2027のEdge 176で削除予定です。内部・公開サイト、組み込み機器インターフェース、サードパーティWebアプリが依存している場合は影響を受けます。Edge 159 Stable前にLighthouseやDevToolsで使用箇所を特定し、代替への移行またはベンダーへの更新依頼が推奨されます。原文は途中で切れています。",
+      "japaneseBodyTranslation": "[概要と理由:]\nMicrosoft Edgeは、ブラウザー内蔵のExtensible Stylesheet Language Transformations(XSLT)を非推奨とします。EdgeはXSLTProcessor JavaScript APIと、XSLTスタイルシートを参照するXML処理命令を既定で無効にします。CSSスタイルシートを参照するXML処理命令は影響を受けません。\nネイティブXSLT実装は、信頼できないXMLおよびXSLTコンテンツを処理する古いネイティブコードベースに依存しています。この機能を削除することでブラウザーの攻撃対象領域が減ります。またXSLTは現代のWebでの利用が少なく、より安全な移行代替手段があります。\n[展開スケジュール:]\n一般提供(全世界、GCC、GCC High、DoD):2026年12月中旬に展開を開始し、2026年12月中旬に完了する予定です。\n[組織への影響:]\n内部Webサイト、公開Webサイト、組み込みデバイスのインターフェース、またはサードパーティWebアプリがブラウザー内蔵XSLTに依存している場合、影響を受ける可能性があります。Microsoft Edge 159 Stableでは、ブラウザー内蔵XSLTは既定でオフになります。一時的なXSLTEnabledポリシーは、2027年夏のMicrosoft Edge 176で削除される予定です。\n[必要なアクション/推奨事項:]\nMicrosoft Edge Stable 159より前に、XSLTProcessor JavaScript API、またはXSLスタイルシートを参照するXML処理命令を使用するアプリケーションを特定してください。EdgeのLighthouseで確認する手順:\n• 最新のEdgeでアプリケーションを開く。\n• サインインし、テストするページへ移動する。\n• F12またはCtrl+Shift+IでEdge DevToolsを開く。\n• Lighthouseを選択する。表示されない場合は、その他のツール(+)> Lighthouseを選択する。\n• モード:Navigation、カテゴリ:Best Practicesを選択する。\n• 認証が必要なアプリでは、Lighthouse設定で「Clear storage」をオフにしてサインイン状態を維持する。保存状態が不要な公開ページではオンのままにする。\n• Analyze page loadを選択する。\n• レポートでXSLT、deprecated、XSLTProcessorを検索し、Uses deprecated APIsを確認し、DevToolsのIssuesパネルに記録された問題を展開する。\n• DevToolsのIssuesとConsoleでXSLT非推奨警告を確認する。\n• 関連する各ページで監査を繰り返し、主要なワークフローを実行する。\n影響を受けるアプリケーションをサポートされる代替手段へ移行するか、対象サイトの開発者/ベンダーに更新を依頼して内蔵XSLTへの依存を削除してもらってください。さらに時間が必要な場合は、一時的な(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "e0f6153d9957cdf8b99d68ab0f8eb2b020967e4b168104448352521dbb94736a",
+      "validatedAt": "2026-10-19T00:23:50.0721778+00:00"
     }
   ],
-  "summarySourceHash": "9dc29006ab4cc5029af32a4e99b9c1e9a4af4bf311e1bfeda29ae7dacee8c698",
   "summaryGeneratedAt": "2026-10-19T00:18:30.2522538+00:00",
+  "summarySourceHash": "9dc29006ab4cc5029af32a4e99b9c1e9a4af4bf311e1bfeda29ae7dacee8c698",
   "sourceAgentRunId": "39179810783"
 }
