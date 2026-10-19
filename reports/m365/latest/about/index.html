@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
+    document.head.append(Object.assign(document.createElement("link"), { rel: "icon", href: "data:," }));
+  </script>
     (() => {
       const param = new URLSearchParams(window.location.search).get("scoutTheme");
       const forcedTheme = ["light", "dark"].includes(param) ? param : null;
