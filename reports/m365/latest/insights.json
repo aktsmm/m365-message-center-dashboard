@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T20:46:24.8146856+00:00",
+  "generatedAt": "2026-10-20T07:48:03.1247642+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra新規エージェント作成の既定変更、Targeted release廃止準備、Office LTSC 2021サポート終了への対応が今週の焦点",
   "executiveSummary": "今週は ID・リリース管理・サポート終了に関する変更が中心です。MC1506733 では、Entra で 11 月 4 日から既定ユーザーがエージェント ブループリントを作成可能になります(管理者が「Users can create agent blueprints」をオフにしない場合)。MC1490899 では Targeted release が 2027 年 1 月に廃止され、2026 年 11 月から登録の追加・削除・変更ができなくなります。MC1481309 は Entra サインイン画面の CSP 強化で、ブラウザー拡張や監視ツールなど外部スクリプトを挿入するソリューションに影響する可能性があります(展開は 2026 年 10 月中旬〜下旬)。MC1509797 は Office LTSC 2021 等が 2026 年 10 月 13 日にサポート終了した旨の通知で、セキュリティ更新が提供されなくなります。MC1462915 は *.cloud.microsoft への接続許可の確認が必要です。なお、抜粋に含まれない日程や手順は「不明」であり、「なし」と確認されたものではありません。",
@@ -762,6 +762,22 @@
       "sourceTruncated": true
     },
     {
+      "id": "MC1387526",
+      "japaneseTitle": "Microsoft 365 BackupにSharePoint等の全ワークロードバックアップ追加",
+      "japaneseFacts": {
+        "change": "単一ポリシーでSharePoint、OneDrive、Exchangeのワークロード全体を保護するFull Workload Backupが追加されます。",
+        "impact": "Microsoft 365 Backupポリシーを管理する管理者と、利用中または利用予定の組織。既存のカスタムポリシーが優先され変更されません。",
+        "timing": "パブリックプレビューは2026年7月上旬〜中旬、GAは2026年9月中旬に開始し10月中旬に完了予定です。",
+        "action": "展開前の対応は不要です。展開後はポリシーと適用範囲の確認、方針との適合評価、管理者への周知を推奨します。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365 Backupに、SharePoint、OneDrive、Exchangeのいずれかのワークロード全体を単一ポリシーで保護するFull Workload Backupが追加されます(Roadmap ID 464990)。カスタムポリシーで保護されていない既存および新規作成の成果物が自動的に対象となり、既存のカスタムポリシーが優先されます。CSVのアップロードで特定の成果物を除外できます。機能は既定で利用可能ですが、有効化には管理者の構成が必要です。プレビューは2026年7月上旬から中旬、GAは9月中旬から10月中旬の展開予定です。事前対応は不要で、展開後にバックアップポリシーの確認、戦略との適合評価、管理者への周知、社内手順書の更新を推奨します。原文は途中で切れています。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 Backupの新機能Full Workload Backupを導入します。管理者は単一のポリシーでワークロード全体(SharePoint、OneDrive、またはExchange)を迅速に保護できます。この機能は、カスタムポリシーで対象になっていない既存および新規作成のすべての成果物を自動的に含め、データ保護の網羅性向上、管理負荷の軽減、重要な業務データの大規模な継続バックアップを支援します。\nこの強化により、エンタープライズ向けのデータ保護と自動化が可能になり、既存のポリシー構成による制御を維持しながら、より効率的にコンテンツを保護できます。\nこのメッセージはMicrosoft 365 ロードマップID 464990に関連しています。\n[ロールアウトスケジュール]\n• パブリックプレビュー(Worldwide):2026年7月上旬に開始し、2026年7月中旬までに完了予定\n• 一般提供:2026年9月中旬に開始し、2026年10月中旬までに完了予定\n[組織への影響]\n影響を受ける対象:\n• Microsoft 365 Backupポリシーを管理する管理者\n• Microsoft 365 Backupを現在利用中または利用予定の組織\nプラットフォーム/サービス:\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\n動作:\n• 選択したワークロード内のすべての成果物をバックアップする新しいオプションが利用可能になります。\n• 管理者はワークロード(SharePoint、OneDrive、Exchange)ごとにFull Workload Backupを有効にできます。\n• 既存のカスタムバックアップポリシーの対象外のすべての適格な成果物が自動的に保護されます。\n• 新規作成された成果物は、以降の実行で自動的にバックアップ対象に含まれます。\n• 既存のカスタムバックアップポリシーが引き続き優先され、変更されません。\n• 管理者はCSVファイルをアップロードして特定の成果物を除外できます。\n• この機能は既定で利用可能ですが、有効化には管理者の構成が必要です。\n[必要な対応/推奨事項]\n展開前の即時対応は不要です。\n展開後は次を推奨します:\n• 現在のMicrosoft 365 Backupポリシーと適用範囲を確認する。\n• Full Workload Backupがデータ保護戦略に合致するか評価する。\n• バックアップ管理者に新機能を周知する。\n• バックアップ手順を管理している場合は社内ドキュメントを更新する。\n有効化するには:\n• Microsoft 365管理センターのMicrosoft 365 Backupダッシュボードに移動します。\n• 保護するワークロードを選択し、すべての成果物をバックアップするオプションを選びます。\n• (任意)アップロード...(原文はここで途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "33ed7c57dd620859d6f3bb7c06a3e0dce4806fee28f57f18d7a411592c0f2049",
+      "validatedAt": "2026-10-19T20:46:24.8089458+00:00"
+    },
+    {
       "id": "MC1411574",
       "japaneseDetailedSummary": "Microsoft Entra IDのシステム優先認証が第1要素認証にも適用拡大。設定が「Microsoftマネージド」状態の組織では、第1・第2要素両方でシステムが最もセキュアな認証方法を自動選択。「有効」「無効」状態の組織には影響なし。2026年6月末〜7月末にロールアウト。管理者は変更影響の事前確認を推奨。",
       "japaneseBodyTranslation": "2026年7月9日更新: リマインダーとして投稿を更新しました。\n【概要】\nシステム優先認証がMicrosoft Entra IDで第1要素・第2要素の両方に適用されるようになりました（Microsoftマネージド状態の場合）。ユーザー登録済み認証情報を評価し、最もセキュアな方法でサインインを促します。\n【ロールアウト】\n• 全世界: 2026年6月末〜7月末\n【影響範囲】\n対象: システム優先認証がMicrosoftマネージド状態の組織。「有効」「無効」状態では第1要素サインインの動作は変わりません",
@@ -795,6 +811,22 @@
       "japaneseBodyTranslation": "[概要と目的]\nMicrosoftのセキュア・フューチャー・イニシアチブ（SFI）およびID セキュリティとフィッシング耐性への注力に合わせ、MicrosoftはMicrosoft Entraのカスタムブランディングを強化し、より安全で信頼性が高く一貫したサインインエクスペリエンスをサポートします。2026年10月より、Microsoft Entra IDはカスタムブランディングで使用されるカスタムCSSの位置指定プロパティのサポートを廃止します。すべてのカスタムCSSの完全廃止は将来の日程で予定されており、その変更前に追加通知が提供されます。\nこの更新により、詐欺的または誤解を招くサインインページレイアウトの機会をさらに減らし、ユーザーをフィッシング攻撃から保護しながらブランドカスタマイズ機能を維持する、信頼できるサインインエクスペリエンスをサポートします。\n• 一般提供（全世界およびGCC）：2026年10月より開始、2026年11月末までに完了予定\n[組織への影響]\n影響を受けるユーザー\n• Microsoft Entra IDの会社ブランディングを管理している管理者\n• 現在",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
+    },
+    {
+      "id": "MC1437671",
+      "japaneseTitle": "My Sign-Insでパスキー等による安全なサインイン後のパスワード変更が可能に",
+      "japaneseFacts": {
+        "change": "パスキー、FIDO2セキュリティキー、Windows Hello for Businessで認証すれば、現在のパスワードを知らなくてもMy Sign-Insからパスワードを変更できる機能が追加されます。",
+        "impact": "Entra管理者、強力な認証方法を登録しパスワードも保持するユーザー。機能は既定で無効で、テナント全体の設定のみ(ユーザー/グループ単位不可)です。",
+        "timing": "GAは2026年10月末開始(従来は10月中旬)、11月末完了予定(従来は10月下旬)。対象はWorldwideとGCCです。",
+        "action": "必須の対応はありません。利用する場合はパスワード管理戦略を見直してください(以降の推奨事項は原文が途中で切れており不明)。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entraの新機能として、My Sign-Insでパスキー、FIDO2セキュリティキー、Windows Hello for Businessなどの強力な資格情報で認証した後、現在のパスワードを知らなくても、SSPRやヘルプデスクを使わずにパスワードを変更できるようになります。レガシーアプリ向けにパスワードを維持する組織のサポート問い合わせ削減が目的です。機能は既定で無効で、管理者が有効化すると対象ユーザーにパスワード変更オプションが表示されます。設定はテナント全体で、ユーザーやグループ単位の制御はできません。GAは2026年10月末に開始し11月末に完了予定で、従来の予定から延期されました。必須対応はありませんが、採用予定なら戦略の見直しが推奨されます。原文は途中で切れています。",
+      "japaneseBodyTranslation": "2026年10月9日更新:内容を更新しました。\n[内容と理由]\nMy Sign-Insから、パスキー、FIDO2セキュリティキー、Windows Hello for Businessなどの既存の強力な資格情報を使い、安全なサインイン後にパスワードを変更できる新しいMicrosoft Entra機能を導入します。ユーザーは現在のパスワードを知らなくても、セルフサービスパスワードリセット(SSPR)やヘルプデスクへの連絡なしで実行できます。\n多くの組織が安全なサインイン後のパスワード変更を採用しつつ、レガシーアプリやサービス向けにパスワードを維持しています。この更新はパスワード関連の問い合わせを減らし、導入の障壁を取り除きます。機能は既定で無効で、ユーザーが利用する前に管理者が有効化する必要があります。\n[ロールアウトスケジュール]\n• 一般提供(Worldwide、GCC):2026年10月末に開始(従来は10月中旬)、2026年11月末までに完了予定(従来は10月下旬)\n[組織への影響]\n影響を受ける対象\n• パスワード変更設定を管理するMicrosoft Entra管理者\n• 対応する認証方法(パスキー、FIDO2セキュリティキー、Windows Hello for Business)を登録し、パスワードも保持するユーザー\n• 機能の有効化を選択する組織\nプラットフォーム/サービス\n• Microsoft Entra\n• My Sign-Ins(mysignins.microsoft.com)\n動作\n• 既定でオフのため、有効化しない限りユーザー体験に変更はありません。\n• 有効化後、対象ユーザーにはMy Sign-Insに新しい[パスワードの変更]オプションが表示されます。\n• ユーザーは既存のパスワードを知らなくても新しいパスワードを設定できます。\n• この操作にSSPRの登録や使用は不要です。\n• 管理者はリリース時に提供されるMicrosoft Entraの管理インターフェイスで有効/無効を選択できます。\n• 認証には引き続き、パスキー、FIDO2セキュリティキー、Windows Hello for Businessなどの強力な方法が必要です。\n• 設定はテナント全体です。テナント全体で有効にするか、全員で無効のままにするかで、ユーザー/グループ単位の範囲指定はありません。\n[必要な対応/推奨事項]\n必須の対応はありません。\n組織が安全なサインイン後のパスワード変更をサポートする予定の場合:\n• パスワード管理および安全なサインイン後のパスワード変更の戦略を見直してください。\n• 評価...(原文はここで途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "46d2434f61dabc50da035547f84c708d0f5a71336b3152f976d4265550f2c190",
+      "validatedAt": "2026-10-19T20:46:24.7858265+00:00"
     },
     {
       "id": "MC1437679",
@@ -1117,13 +1149,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1478969",
-      "japaneseDetailedSummary": "Microsoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)統合サポートが、Edgeバージョン153以降で廃止されます。レガシーなサードパーティコンポーネントに依存しており、Androidプラットフォームの要件変化に伴い互換性・保守上の課題が継続的に生じているための対応です。廃止開始は2026年9月中旬を予定しています。影響を受けるのは、Microsoft Edge for AndroidでCitrix mVPN統合を利用して社内リソースにアクセスしている組織およびユーザー、ならびにこれを管理する管理者です。Citrix mVPNを利用していない組織はこのメッセージを無視して問題ありません。該当組織は、代替のVPNアクセス手段への移行を9月中旬までに検討する必要があります。",
-      "japaneseBodyTranslation": "組織でMicrosoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)統合サポートを使用していない場合、このメッセージは無視して問題ありません。\n[内容と理由]\nMicrosoftは、Edgeバージョン153以降、Microsoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)統合サポートを廃止します。Edge for AndroidにおけるCitrix mVPN統合は、Androidプラットフォームの要件が進化し続ける中で、継続的な互換性および保守上の課題をもたらすレガシーなサードパーティコンポーネントに依存しています。\nMicrosoft Edgeユーザーに安全で信頼性が高く、サポート可能な環境を確保するため、MicrosoftはEdge for AndroidにおけるCitrix mVPN統合サポートを廃止します。\n[展開スケジュール]\n・廃止は2026年9月中旬に開始します。\n[組織への影響]\n影響を受けるユーザー:\n・現在Microsoft Edge for AndroidでCitrix Mobile VPN(mVPN)統合を使用している組織。\n・Citrix mVPNを利用して社内リソースにアクセスしているユーザー。\n・管理を担当する管理者(以下、本文はソース側で途中で切り詰められています)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1478975",
       "japaneseDetailedSummary": "Microsoft Agent 365 の Agent2Agent (A2A) プロトコル対応エージェントを、Microsoft 365 Agents Toolkit で構築した宣言型エージェントの「接続エージェント」として利用できるようになります。従来の OpenAPI や MCP サーバーに加え、自然言語での連携や複雑なワークフローが可能になり、管理者は Microsoft 365 管理センターで一元的に管理・ガバナンスできます。世界全体で GA が 2026 年 8 月下旬に開始され、9 月下旬に完了予定です。提示された抜粋は途中で切れているため、詳細な影響や必要な対応は原文をご確認ください。エージェント開発・管理方針に関する顧客との会話の材料になります。",
       "japaneseBodyTranslation": "[内容と理由]\nMicrosoft は、Agent2Agent (A2A) プロトコルを実装した Microsoft Agent 365 エージェントを、Microsoft 365 Agents Toolkit で構築された宣言型エージェントの接続エージェントとして使用できるようにするサポートを導入します。\nこの機能強化により、宣言型エージェントが接続できる外部エージェントサービスの種類が拡大します。既存の OpenAPI および Model Context Protocol (MCP) サーバーのサポートに加え、宣言型エージェントは Agent2Agent 対応エージェントに接続でき、自然言語でのやり取りやより複雑なワークフローが可能になります。\nこの機能は、開発者が宣言型エージェントを構築する際の柔軟性を高めるとともに、管理者に Microsoft 365 管理センターを通じた一元的な管理とガバナンスを提供します。\n[ロールアウトスケジュール]\n• 一般提供 (全世界): 2026 年 8 月下旬に開始され、2026 年 9 月下旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• Microsoft 365 管理者 (Microsoft の エージェントを管理する担当者)...",
@@ -1166,20 +1191,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1490899",
-      "japaneseDetailedSummary": "Microsoft 365のTargeted releaseは2027年1月に廃止され、Frontier、Standard release、Deferred releaseの3つのリリースオプションに移行します。2026年11月以降、管理者はTargeted release登録へのユーザー追加・削除・変更ができなくなります。現在Targeted releaseに登録されているユーザーを確認し、Microsoft 365管理センターで組織に適したリリース設定を選ぶ準備が必要です。Deferredは主要更新をStandard開始の約30日後に受け取る設定です。顧客とは、検証用ユーザーの再配置と各オプションの選定基準を協議するとよいでしょう(提供本文は途中で切れています)。",
-      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft 365が3つのリリースオプション(Frontier、Standard release、Deferred release)へ移行するため、Microsoft 365サービスのTargeted releaseは2027年1月に廃止されます。\nこの変更に備え、現在Targeted releaseに登録されているユーザーを確認し、組織のニーズに最も適したリリース設定を構成してください。\nMicrosoft 365管理センターで希望するリリース設定を選択します:\n• プレビューアクセス• Frontier:一般提供前に、対象のAI機能および非AI機能をプレビューするオプトインです。\n• 一般提供アクセス• Standard release:一般提供時に更新を受け取ります。\n• Deferred release:対象の主要更新をStandard release開始の約30日後に受け取り、検証や準備のための追加時間を確保できます。\n2026年11月以降、管理者はTargeted release登録へのユーザーの追加、削除、変更ができなくなります。関連する管理エクスペリエンスの変更に関する追加情報は(原文はここで途切れています)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1490911",
-      "japaneseDetailedSummary": "Windows版Microsoft Edgeは、バージョン157以降で従来のdirect-WAMサインイン実装を廃止し、OneAuth認証ライブラリへの統合を完了します。認証フローの標準化、サポート性の向上、二重の認証コードパスの排除、診断・回復機能の改善が目的です。Windows WAM自体は廃止されず、OneAuthは引き続きWAMを使用します。GA(全世界、GCC)は2026年11月上旬に開始し同月上旬に完了予定です。影響対象はWindowsでEdgeを使う組織、OneAuthへ未移行のプロファイル、--disable-features=msOneAuthWAMでOneAuth WAMを無効化している組織です(提供本文は途中で切れています)。",
-      "japaneseBodyTranslation": "[内容と理由:]\nMicrosoft Edgeは、Windows上の従来のdirect-WAMサインイン実装を、Microsoft Edgeバージョン157から廃止し、OneAuth認証ライブラリへの統合を完了します。\nこの変更により、Microsoft 365クライアントアプリ全体で認証フローが標準化され、プラットフォームのサポート性が簡素化され、二重スタックの認証コードパスが排除され、診断および回復の仕組みが改善されます。Windows Web Account Manager(WAM)自体は廃止されません。OneAuthは引き続きWindows WAMを使用します。\n[ロールアウトスケジュール:]\n一般提供(全世界、GCC):ロールアウトは2026年11月上旬に開始し、2026年11月上旬に完了する予定です。\n[組織への影響:]\n影響を受けるユーザー:\n• WindowsでMicrosoft Edgeを使用している組織\n• まだOneAuthに自動移行されていないEdgeプロファイルを持つユーザー\n• --disable-features=msOneAuthWAMを使用してOneAuth WAMを明示的に無効化した組織\nプラットフォーム/サービス:\n• Microsoft Edge(原文はここで途切れています)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1492959",
       "japaneseTitle": "Audio Overview にエピソード分割や秘密度ラベル対応を追加",
       "japaneseDetailedSummary": "Audio Overview に3つの機能強化が展開されます。(1) 長いノートブックの内容をトピック別エピソードに整理、(2) OneDrive に保存した Audio Overview が Microsoft Purview 秘密度ラベルに対応し、ソースの最も制限の厳しいラベルを継承(ノートブック内の Audio Overview にはまだラベルは付きません)、(3) OneNote ページなど、より多くのコンテンツ種別に対応。対象は Audio Overview を使うユーザーと情報保護を管理する管理者です。展開時期と必要な対応は抜粋からは不明です。",
@@ -1188,6 +1199,22 @@
       "sourceTruncated": true,
       "sourceHash": "d7a396e5faea0758c7ba69cebf9e7f019ee17b27a2d1219327ff90ece801f5ee",
       "validatedAt": "2026-10-18T08:17:20.0562927+00:00"
+    },
+    {
+      "id": "MC1505610",
+      "japaneseTitle": "Brand Center設定時にPublic CDNが任意になる",
+      "japaneseFacts": {
+        "change": "Brand Centerの設定時にPublic CDNを有効にしなくても設定を完了でき、Public CDNは既定で未選択になります。",
+        "impact": "Microsoft 365管理センターでBrand Centerを設定する管理者。フォント関連機能はPublic CDNを有効にするまで利用できません。既に有効なテナントは変更されません。",
+        "timing": "Worldwideで2026年10月中旬に展開開始、10月下旬に完了予定です。",
+        "action": "必須の対応はありません。組織フォントを使う場合は、設定時または後から管理者が明示的にPublic CDNを有効にします。"
+      },
+      "japaneseDetailedSummary": "Brand Centerの設定体験が更新され、管理者はPublic CDNを有効にせずにBrand Centerを設定できるようになります。従来はセットアップ時にPublic CDNが有効化されていました。今後はPublic CDNが既定で未選択となり、管理者が明示的に選択して確認した場合のみ有効になります。組織フォントなどPublic CDNに依存する機能は、有効化するまで利用できません。既にPublic CDNが有効なテナントには影響せず、無効化もされません。組織フォントにPublic CDNが必要という要件は変わりません。ロールアウトはWorldwideで2026年10月中旬に始まり10月下旬に完了予定です。必須対応はありません。",
+      "japaneseBodyTranslation": "[内容と理由]\n管理者がPublic CDNを有効にせずにBrand Centerを設定できるよう、設定体験を更新します。\n現在は、Public CDNを必要としないブランドガバナンス機能のみを使いたい組織でも、Brand Centerの設定の一環としてPublic CDNが有効になります。この更新により、組織フォントなどPublic CDNに依存する機能が必要になるまで、Public CDNを後回しにしてBrand Centerの利用を開始できます。\n[ロールアウトスケジュール]\n一般提供(Worldwide):2026年10月中旬に展開を開始し、2026年10月下旬までに完了予定です。\n[組織への影響]\n管理者がMicrosoft 365管理センターでBrand Centerを設定する際:\n• Public CDNは既定で未選択になります。\n• Public CDNなしでBrand Centerの設定を完了できます。\n• Public CDNは、管理者が明示的にオプションを選択し変更を確認した場合にのみ有効になります。\n• フォント関連機能は、Public CDNが有効になるまで利用できません。\n• テナントで既にPublic CDNが有効な場合、この更新で無効化や変更は行われません。\nこの変更はBrand Centerの設定とPublic CDNの有効化を分離するものです。組織フォントに対するPublic CDN要件は削除されません。\nこの変更の理由\n一部の組織は、外部またはパブリックなコンテンツ配信への依存を導入せずに、ブランドガバナンスのためにBrand Centerを使い始めたいと考えています。Public CDNを任意にすることで段階的な導入が可能になり、準備ができた時点でフォント機能を有効にできます。\n[必要な対応/推奨事項]\n必須の対応はありません。組織フォントを使用する予定の場合、管理者は設定時または該当する設定画面から後で、明示的にPublic CDNを有効にする必要があります。\n• SharePoint Brand Centerを設定する\n• SharePointで組織フォントを使用する\n• Microsoft 365 Public CDNの詳細\n[コンプライアンス上の考慮事項]\n管理者コントロールを含み、Entra IDグループのメンバーシップで制御できますか?はい。この機能は、本メッセージに記載の管理設定、ポリシー、アクセス許可、ロール、認証、管理設定を含むか、それらに影響します。グループベースの構成サポートについては、リンク先のドキュメントまたは管理センターのコントロールを確認してください。",
+      "sourceCharacterCount": 2343,
+      "sourceTruncated": false,
+      "sourceHash": "31ae9449de888ae09cf9b03bb321df7eb442d193506360d471a88157c4a105d1",
+      "validatedAt": "2026-10-19T20:46:24.8044694+00:00"
     },
     {
       "id": "MC1506727",
@@ -1293,52 +1320,52 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1387526",
-      "japaneseTitle": "Microsoft 365 BackupにSharePoint等の全ワークロードバックアップ追加",
+      "id": "MC1490911",
+      "japaneseTitle": "Edge for Windows:従来のWAMサインイン実装を廃止しOneAuthへ統一",
       "japaneseFacts": {
-        "change": "単一ポリシーでSharePoint、OneDrive、Exchangeのワークロード全体を保護するFull Workload Backupが追加されます。",
-        "impact": "Microsoft 365 Backupポリシーを管理する管理者と、利用中または利用予定の組織。既存のカスタムポリシーが優先され変更されません。",
-        "timing": "パブリックプレビューは2026年7月上旬〜中旬、GAは2026年9月中旬に開始し10月中旬に完了予定です。",
-        "action": "展開前の対応は不要です。展開後はポリシーと適用範囲の確認、方針との適合評価、管理者への周知を推奨します。"
+        "change": "Edge 157以降、Windows版Edgeの従来の直接WAMサインイン実装を廃止し、OneAuthに統合します。",
+        "impact": "Windows版Edgeを使う組織、OneAuthに未移行のプロファイル、msOneAuthWAMを無効化している組織が対象で、まれに再サインインが必要です。",
+        "timing": "一般提供(Worldwide、GCC)は2026年11月上旬に開始し、同月上旬に完了予定です。",
+        "action": "(signininternals/redacted) 155以降のパイロット端末で--enable-features=msForceOneAuthWAMを使って事前検証します。"
       },
-      "japaneseDetailedSummary": "Microsoft 365 Backupに、SharePoint、OneDrive、Exchangeのいずれかのワークロード全体を単一ポリシーで保護するFull Workload Backupが追加されます(Roadmap ID 464990)。カスタムポリシーで保護されていない既存および新規作成の成果物が自動的に対象となり、既存のカスタムポリシーが優先されます。CSVのアップロードで特定の成果物を除外できます。機能は既定で利用可能ですが、有効化には管理者の構成が必要です。プレビューは2026年7月上旬から中旬、GAは9月中旬から10月中旬の展開予定です。事前対応は不要で、展開後にバックアップポリシーの確認、戦略との適合評価、管理者への周知、社内手順書の更新を推奨します。原文は途中で切れています。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 Backupの新機能Full Workload Backupを導入します。管理者は単一のポリシーでワークロード全体(SharePoint、OneDrive、またはExchange)を迅速に保護できます。この機能は、カスタムポリシーで対象になっていない既存および新規作成のすべての成果物を自動的に含め、データ保護の網羅性向上、管理負荷の軽減、重要な業務データの大規模な継続バックアップを支援します。\nこの強化により、エンタープライズ向けのデータ保護と自動化が可能になり、既存のポリシー構成による制御を維持しながら、より効率的にコンテンツを保護できます。\nこのメッセージはMicrosoft 365 ロードマップID 464990に関連しています。\n[ロールアウトスケジュール]\n• パブリックプレビュー(Worldwide):2026年7月上旬に開始し、2026年7月中旬までに完了予定\n• 一般提供:2026年9月中旬に開始し、2026年10月中旬までに完了予定\n[組織への影響]\n影響を受ける対象:\n• Microsoft 365 Backupポリシーを管理する管理者\n• Microsoft 365 Backupを現在利用中または利用予定の組織\nプラットフォーム/サービス:\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\n動作:\n• 選択したワークロード内のすべての成果物をバックアップする新しいオプションが利用可能になります。\n• 管理者はワークロード(SharePoint、OneDrive、Exchange)ごとにFull Workload Backupを有効にできます。\n• 既存のカスタムバックアップポリシーの対象外のすべての適格な成果物が自動的に保護されます。\n• 新規作成された成果物は、以降の実行で自動的にバックアップ対象に含まれます。\n• 既存のカスタムバックアップポリシーが引き続き優先され、変更されません。\n• 管理者はCSVファイルをアップロードして特定の成果物を除外できます。\n• この機能は既定で利用可能ですが、有効化には管理者の構成が必要です。\n[必要な対応/推奨事項]\n展開前の即時対応は不要です。\n展開後は次を推奨します:\n• 現在のMicrosoft 365 Backupポリシーと適用範囲を確認する。\n• Full Workload Backupがデータ保護戦略に合致するか評価する。\n• バックアップ管理者に新機能を周知する。\n• バックアップ手順を管理している場合は社内ドキュメントを更新する。\n有効化するには:\n• Microsoft 365管理センターのMicrosoft 365 Backupダッシュボードに移動します。\n• 保護するワークロードを選択し、すべての成果物をバックアップするオプションを選びます。\n• (任意)アップロード...(原文はここで途切れています)",
+      "japaneseDetailedSummary": "Microsoft EdgeはWindows版で、従来の直接WAMサインイン実装をEdge 157以降で廃止し、OneAuth認証ライブラリへの統合を完了します。Windows WAM自体は非推奨ではなく、OneAuthが引き続きWAMを使用します。未移行プロファイルはOneAuthへ直接移行し、従来のWAMフォールバックは常時オフになります。大半のユーザーは透過的に移行しますが、まれに再サインインが必要です。展開は2026年11月上旬の予定です。管理者は(signininternals/redacted) 155以降のパイロット端末で強制フラグを使って、サインイン、SSO、アカウント同期を検証することが推奨されています。本文は途中で切れており、以降の詳細は不明です。",
+      "japaneseBodyTranslation": "【内容と理由】\nMicrosoft Edgeは、Edge 157以降、Windows上の従来の直接WAMサインイン実装を廃止し、OneAuth認証ライブラリへの統合を完了します。\nこの変更はMicrosoft 365クライアントアプリ間の認証フローを標準化し、サポート性を高め、二重の認証コードパスをなくし、診断・復旧機能を改善します。Windows Web Account Manager(WAM)自体は非推奨ではなく、OneAuthは引き続きWindows WAMを使用します。\n【展開スケジュール】\n一般提供(Worldwide、GCC):2026年11月上旬に開始し、11月上旬に完了予定です。\n【組織への影響】\n影響を受ける対象:\n• Windows上でEdgeを使用する組織\n• OneAuthへ自動移行されていないEdgeプロファイルを持つユーザー\n• --disable-features=msOneAuthWAMでOneAuth WAMを明示的に無効化した組織\n対象プラットフォーム/サービス:\n• Windows版Microsoft Edge\n• ブラウザーのサインイン、ID、トークン取得、シングルサインオン、アカウント同期\n発生すること:\n• Edge 157以降、残りのすべてのプロファイルがOneAuth認証へ直接移行します。\n• 従来のWAMフォールバックはあらゆる状況で既定オフになります。\n• ほとんどのユーザーは透過的に移行します。\n• まれに、Edgeへの再サインインが必要になる場合があります。\n【必要な対応/推奨事項】\nEdge 157が環境に到達する前に、未移行プロファイルを特定し移行をテストすることを推奨します。\n• Edgeで(signininternals/redacted)\n• Edge Auth Library Information > Libraryで、OneAuthかWAMかを確認します。\n• OneAuthなら既に新方式で、対応は不要です。\n• WAMなら従来方式のままです。\nEdge 155以降のパイロット端末では、次の強制フラグで起動して157前に検証できます:\nmsedge.exe --enable-features=msForceOneAuthWAM\n(signininternals/redacted)\nサポート部門には、Edge 157への更新後、少数のユーザーのプロファイルメニューにサインイン操作が表示される可能性があることを周知してください。サインイン問題が発生した場合は、次でOneAuthログを収集します:\nmsedge.exe --enable-fe(以降は原文が切れています)",
       "sourceCharacterCount": 2500,
       "sourceTruncated": true,
-      "sourceHash": "33ed7c57dd620859d6f3bb7c06a3e0dce4806fee28f57f18d7a411592c0f2049",
-      "validatedAt": "2026-10-19T20:46:24.8089458+00:00"
+      "sourceHash": "1b0e30bac893418918d1928aa37f0ab8aa14d7c319f9673803450cc050264b2e",
+      "validatedAt": "2026-10-20T07:48:03.1068015+00:00"
     },
     {
-      "id": "MC1505610",
-      "japaneseTitle": "Brand Center設定時にPublic CDNが任意になる",
+      "id": "MC1478969",
+      "japaneseTitle": "Edge for AndroidでCitrix mVPN連携のサポートを終了",
       "japaneseFacts": {
-        "change": "Brand Centerの設定時にPublic CDNを有効にしなくても設定を完了でき、Public CDNは既定で未選択になります。",
-        "impact": "Microsoft 365管理センターでBrand Centerを設定する管理者。フォント関連機能はPublic CDNを有効にするまで利用できません。既に有効なテナントは変更されません。",
-        "timing": "Worldwideで2026年10月中旬に展開開始、10月下旬に完了予定です。",
-        "action": "必須の対応はありません。組織フォントを使う場合は、設定時または後から管理者が明示的にPublic CDNを有効にします。"
+        "change": "Edge 153以降、Edge for AndroidのCitrix Mobile VPN(mVPN)連携サポートを廃止します。",
+        "impact": "Edge for AndroidでCitrix mVPNを使い社内リソースにアクセスする組織・ユーザー・管理者が対象で、他のEdge機能には影響しません。",
+        "timing": "廃止は2026年9月中旬に開始します。",
+        "action": "影響ユーザーと依存関係を特定し、代替手段を検証して、廃止前にユーザーを移行し周知します。"
       },
-      "japaneseDetailedSummary": "Brand Centerの設定体験が更新され、管理者はPublic CDNを有効にせずにBrand Centerを設定できるようになります。従来はセットアップ時にPublic CDNが有効化されていました。今後はPublic CDNが既定で未選択となり、管理者が明示的に選択して確認した場合のみ有効になります。組織フォントなどPublic CDNに依存する機能は、有効化するまで利用できません。既にPublic CDNが有効なテナントには影響せず、無効化もされません。組織フォントにPublic CDNが必要という要件は変わりません。ロールアウトはWorldwideで2026年10月中旬に始まり10月下旬に完了予定です。必須対応はありません。",
-      "japaneseBodyTranslation": "[内容と理由]\n管理者がPublic CDNを有効にせずにBrand Centerを設定できるよう、設定体験を更新します。\n現在は、Public CDNを必要としないブランドガバナンス機能のみを使いたい組織でも、Brand Centerの設定の一環としてPublic CDNが有効になります。この更新により、組織フォントなどPublic CDNに依存する機能が必要になるまで、Public CDNを後回しにしてBrand Centerの利用を開始できます。\n[ロールアウトスケジュール]\n一般提供(Worldwide):2026年10月中旬に展開を開始し、2026年10月下旬までに完了予定です。\n[組織への影響]\n管理者がMicrosoft 365管理センターでBrand Centerを設定する際:\n• Public CDNは既定で未選択になります。\n• Public CDNなしでBrand Centerの設定を完了できます。\n• Public CDNは、管理者が明示的にオプションを選択し変更を確認した場合にのみ有効になります。\n• フォント関連機能は、Public CDNが有効になるまで利用できません。\n• テナントで既にPublic CDNが有効な場合、この更新で無効化や変更は行われません。\nこの変更はBrand Centerの設定とPublic CDNの有効化を分離するものです。組織フォントに対するPublic CDN要件は削除されません。\nこの変更の理由\n一部の組織は、外部またはパブリックなコンテンツ配信への依存を導入せずに、ブランドガバナンスのためにBrand Centerを使い始めたいと考えています。Public CDNを任意にすることで段階的な導入が可能になり、準備ができた時点でフォント機能を有効にできます。\n[必要な対応/推奨事項]\n必須の対応はありません。組織フォントを使用する予定の場合、管理者は設定時または該当する設定画面から後で、明示的にPublic CDNを有効にする必要があります。\n• SharePoint Brand Centerを設定する\n• SharePointで組織フォントを使用する\n• Microsoft 365 Public CDNの詳細\n[コンプライアンス上の考慮事項]\n管理者コントロールを含み、Entra IDグループのメンバーシップで制御できますか?はい。この機能は、本メッセージに記載の管理設定、ポリシー、アクセス許可、ロール、認証、管理設定を含むか、それらに影響します。グループベースの構成サポートについては、リンク先のドキュメントまたは管理センターのコントロールを確認してください。",
-      "sourceCharacterCount": 2343,
-      "sourceTruncated": false,
-      "sourceHash": "31ae9449de888ae09cf9b03bb321df7eb442d193506360d471a88157c4a105d1",
-      "validatedAt": "2026-10-19T20:46:24.8044694+00:00"
-    },
-    {
-      "id": "MC1437671",
-      "japaneseTitle": "My Sign-Insでパスキー等による安全なサインイン後のパスワード変更が可能に",
-      "japaneseFacts": {
-        "change": "パスキー、FIDO2セキュリティキー、Windows Hello for Businessで認証すれば、現在のパスワードを知らなくてもMy Sign-Insからパスワードを変更できる機能が追加されます。",
-        "impact": "Entra管理者、強力な認証方法を登録しパスワードも保持するユーザー。機能は既定で無効で、テナント全体の設定のみ(ユーザー/グループ単位不可)です。",
-        "timing": "GAは2026年10月末開始(従来は10月中旬)、11月末完了予定(従来は10月下旬)。対象はWorldwideとGCCです。",
-        "action": "必須の対応はありません。利用する場合はパスワード管理戦略を見直してください(以降の推奨事項は原文が途中で切れており不明)。"
-      },
-      "japaneseDetailedSummary": "Microsoft Entraの新機能として、My Sign-Insでパスキー、FIDO2セキュリティキー、Windows Hello for Businessなどの強力な資格情報で認証した後、現在のパスワードを知らなくても、SSPRやヘルプデスクを使わずにパスワードを変更できるようになります。レガシーアプリ向けにパスワードを維持する組織のサポート問い合わせ削減が目的です。機能は既定で無効で、管理者が有効化すると対象ユーザーにパスワード変更オプションが表示されます。設定はテナント全体で、ユーザーやグループ単位の制御はできません。GAは2026年10月末に開始し11月末に完了予定で、従来の予定から延期されました。必須対応はありませんが、採用予定なら戦略の見直しが推奨されます。原文は途中で切れています。",
-      "japaneseBodyTranslation": "2026年10月9日更新:内容を更新しました。\n[内容と理由]\nMy Sign-Insから、パスキー、FIDO2セキュリティキー、Windows Hello for Businessなどの既存の強力な資格情報を使い、安全なサインイン後にパスワードを変更できる新しいMicrosoft Entra機能を導入します。ユーザーは現在のパスワードを知らなくても、セルフサービスパスワードリセット(SSPR)やヘルプデスクへの連絡なしで実行できます。\n多くの組織が安全なサインイン後のパスワード変更を採用しつつ、レガシーアプリやサービス向けにパスワードを維持しています。この更新はパスワード関連の問い合わせを減らし、導入の障壁を取り除きます。機能は既定で無効で、ユーザーが利用する前に管理者が有効化する必要があります。\n[ロールアウトスケジュール]\n• 一般提供(Worldwide、GCC):2026年10月末に開始(従来は10月中旬)、2026年11月末までに完了予定(従来は10月下旬)\n[組織への影響]\n影響を受ける対象\n• パスワード変更設定を管理するMicrosoft Entra管理者\n• 対応する認証方法(パスキー、FIDO2セキュリティキー、Windows Hello for Business)を登録し、パスワードも保持するユーザー\n• 機能の有効化を選択する組織\nプラットフォーム/サービス\n• Microsoft Entra\n• My Sign-Ins(mysignins.microsoft.com)\n動作\n• 既定でオフのため、有効化しない限りユーザー体験に変更はありません。\n• 有効化後、対象ユーザーにはMy Sign-Insに新しい[パスワードの変更]オプションが表示されます。\n• ユーザーは既存のパスワードを知らなくても新しいパスワードを設定できます。\n• この操作にSSPRの登録や使用は不要です。\n• 管理者はリリース時に提供されるMicrosoft Entraの管理インターフェイスで有効/無効を選択できます。\n• 認証には引き続き、パスキー、FIDO2セキュリティキー、Windows Hello for Businessなどの強力な方法が必要です。\n• 設定はテナント全体です。テナント全体で有効にするか、全員で無効のままにするかで、ユーザー/グループ単位の範囲指定はありません。\n[必要な対応/推奨事項]\n必須の対応はありません。\n組織が安全なサインイン後のパスワード変更をサポートする予定の場合:\n• パスワード管理および安全なサインイン後のパスワード変更の戦略を見直してください。\n• 評価...(原文はここで途切れています)",
+      "japaneseDetailedSummary": "Microsoftは、Edge 153以降、Edge for AndroidにおけるCitrix Mobile VPN(mVPN)連携サポートを廃止します。理由は、レガシーなサードパーティ製コンポーネントに依存し、Androidの要件変化に対して互換性と保守性の課題があるためです。廃止は2026年9月中旬に始まります。Edge for AndroidでCitrix mVPNを使い社内リソースへアクセスしているユーザーは、代替のサポート対象モバイルアクセス手段へ移行が必要になる場合があり、mVPN連携に依存するワークフローは動作しなくなる可能性があります。他のEdge for Android機能は影響を受けません。管理者は利用状況の特定、依存関係の確認、移行計画、ユーザーへの周知を行い、廃止前に移行を完了する必要があります。本文は途中で切れており、コンプライアンス情報以降は不明です。",
+      "japaneseBodyTranslation": "組織でMicrosoft Edge for AndroidのCitrix Mobile VPN(mVPN)連携サポートを使用していない場合、このメッセージは無視して問題ありません。\n【内容と理由】\nMicrosoftは、Edge 153以降、Microsoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)連携サポートを廃止します。Edge for AndroidのCitrix mVPN連携は、Androidプラットフォーム要件の進化に伴い、継続的な互換性と保守上の課題を生むレガシーなサードパーティ製コンポーネントに依存しています。\nEdgeユーザーに安全で信頼性が高く保守可能な体験を提供するため、MicrosoftはEdge for AndroidのCitrix mVPN連携サポートを廃止します。\n【展開スケジュール】\n• 廃止は2026年9月中旬に開始します。\n【組織への影響】\n影響を受ける対象:\n• 現在Edge for AndroidでCitrix Mobile VPN(mVPN)連携を使用している組織\n• Edge for Androidで社内リソースへアクセスするためCitrix mVPNに依存しているユーザー\n• モバイルアクセス、Androidデバイスサポート、Edge for Android構成を担当する管理者\nプラットフォーム/サービス:\n• Microsoft Edge for Android\n• Citrix Mobile VPN(mVPN)\n• Androidデバイス\n発生すること:\n• Microsoft Edge for AndroidはCitrix mVPNと連携しなくなります。\n• Edge for AndroidでCitrix mVPNに依存して社内リソースへアクセスするユーザーは、サポートされる代替のモバイルアクセスソリューションへの移行が必要になる場合があります。\n• Edge for AndroidのCitrix mVPN連携に特に依存する既存のワークフローは、期待どおりに動作しなくなる可能性があります。\n• この変更はCitrix mVPN連携のみに影響し、Edge for Androidの他の機能には影響しません。\n【必要な対応/推奨事項】\n管理者は次の対応を行ってください:\n• 影響を受けるユーザーの特定:Edge for AndroidでCitrix mVPNを使用しているか確認します。\n• 依存関係の確認:Edge for AndroidのCitrix mVPN連携に依存する業務フロー、アプリ、社内サイトを評価します。\n• 移行戦略の策定:要件を満たす代替のサポート対象モバイルアクセスソリューションを評価・検証します。\n• 影響を受けるユーザーへの周知:今後の変更を伝え、承認された代替ソリューションの案内を提供します。\n• 廃止前の移行完了:サポート終了前に、影響ユーザーがCitrix mVPN依存のワークフローから移行するようにします。\n【コンプライアンスに関する考慮事項】\n(以降は原文が切れています)",
       "sourceCharacterCount": 2500,
       "sourceTruncated": true,
-      "sourceHash": "46d2434f61dabc50da035547f84c708d0f5a71336b3152f976d4265550f2c190",
-      "validatedAt": "2026-10-19T20:46:24.7858265+00:00"
+      "sourceHash": "56f9ed4f904b4b1c80cf0425688cbebdf37b4c3b6444954e4cd047f507f376ef",
+      "validatedAt": "2026-10-20T07:48:03.1174421+00:00"
+    },
+    {
+      "id": "MC1490899",
+      "japaneseTitle": "Microsoft 365のTargeted releaseが2027年1月に廃止",
+      "japaneseFacts": {
+        "change": "Targeted releaseは2027年1月に廃止され、Frontier、Standard release、Deferred releaseの3つに移行します。",
+        "impact": "Targeted releaseに登録されたユーザー/テナントを持つ組織と、リリース設定を管理する管理者が対象です。",
+        "timing": "2026年11月に登録変更が無効化され統合設定画面が提供され、2027年1月に廃止されます。",
+        "action": "現在の登録ユーザーを確認し、必要に応じてFrontier、Standard、Deferredのいずれかに登録します。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365のTargeted releaseは2027年1月に廃止され、Frontier(AI機能と非AI機能のプレビュー)、Standard release(一般提供時に更新)、Deferred release(Standard開始の約30日後に主要更新)の3つに移行します。2026年11月には管理者がTargeted releaseの登録を追加・削除・変更できなくなり、同時に統合リリース設定画面が提供されます。Targeted release割り当てのユーザーは廃止まで従来どおり機能を受け取ります。管理者は現在の登録ユーザーを確認し、組織に合う設定を選ぶ必要があります。管理画面変更の詳細は今後の投稿で案内されます。本文は途中で切れており、以降は不明です。",
+      "japaneseBodyTranslation": "【内容と理由】\nMicrosoft 365がFrontier、Standard release、Deferred releaseの3つのリリース選択肢へ移行することに伴い、Microsoft 365サービスのTargeted releaseは2027年1月に廃止されます。\n準備として、現在Targeted releaseに登録されているユーザーを確認し、組織のニーズに最適なリリース設定を構成してください。\nMicrosoft 365管理センターで希望のリリース設定を選択します:\n• プレビューアクセス:Frontier:一般提供前に、対象のAI機能および非AI機能をプレビューできます。\n• 一般提供アクセス:Standard release:一般提供時に更新を受け取ります。\n• Deferred release:対象の主要更新をStandard release開始の約30日後に受け取り、検証や準備の時間を確保できます。\n2026年11月に、管理者はTargeted releaseの登録へのユーザー追加、削除、変更ができなくなります。管理者エクスペリエンスの変更に関する追加情報は、今後のMessage centerの投稿で共有されます。\n【展開スケジュール】\n• 現在:現在のリリース設定を確認し、必要に応じてFrontier、Standard release、Deferred releaseに登録します。\n• 2026年11月:Targeted release登録の変更が無効化されます。\n• 2026年11月:統合リリース設定エクスペリエンスが利用可能になり、そこでFrontier、Standard release、Deferred releaseの設定を更新します。\n• 2027年1月:Targeted releaseが廃止され、割り当てはMicrosoft 365機能の配信に使われなくなります。\n【組織への影響】\n影響を受ける対象:\n• Microsoft 365 Targeted releaseにユーザーまたはテナントが登録されている組織\n• Microsoft 365のリリース設定を管理する管理者\nプラットフォーム/サービス:\n• Microsoft 365管理センター\n• Microsoft Teams\n• Outlook(新)\n• Outlook on the web\n• Office for the Web\n• Microsoft OneDrive\n• SharePoint Online\n• Exchange Onlineの一部コンポーネント\n発生すること:\n• 2026年11月、管理者はTargeted release割り当ての追加、削除、変更ができなくなります。\n• 2026年11月、管理者はMicrosoft 365管理センターの単一の統合リリース設定画面でFrontier、Standard、Deferredを構成できます。\n• 現在Targeted releaseに割り当てられたユーザーは、廃止まで既存の割り当てを通じて対象機能を受け取り続けます。\n• (以降は原文が切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "2022472fda5ae32770e1d2aff8b657e2b5fbc06a1ffaee670a6d9e40804afbeb",
+      "validatedAt": "2026-10-20T07:48:03.1130308+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-10-19T00:18:30.2522538+00:00",
