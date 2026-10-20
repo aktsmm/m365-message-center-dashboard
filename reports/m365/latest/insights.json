@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T07:48:03.1247642+00:00",
+  "generatedAt": "2026-10-20T13:44:06.1386052+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra新規エージェント作成の既定変更、Targeted release廃止準備、Office LTSC 2021サポート終了への対応が今週の焦点",
   "executiveSummary": "今週は ID・リリース管理・サポート終了に関する変更が中心です。MC1506733 では、Entra で 11 月 4 日から既定ユーザーがエージェント ブループリントを作成可能になります(管理者が「Users can create agent blueprints」をオフにしない場合)。MC1490899 では Targeted release が 2027 年 1 月に廃止され、2026 年 11 月から登録の追加・削除・変更ができなくなります。MC1481309 は Entra サインイン画面の CSP 強化で、ブラウザー拡張や監視ツールなど外部スクリプトを挿入するソリューションに影響する可能性があります(展開は 2026 年 10 月中旬〜下旬)。MC1509797 は Office LTSC 2021 等が 2026 年 10 月 13 日にサポート終了した旨の通知で、セキュリティ更新が提供されなくなります。MC1462915 は *.cloud.microsoft への接続許可の確認が必要です。なお、抜粋に含まれない日程や手順は「不明」であり、「なし」と確認されたものではありません。",
@@ -1093,20 +1093,6 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1474104",
-      "japaneseDetailedSummary": "Microsoft Entra ID における SMS を使った第一要素サインインの廃止に関する続報です。フィッシング耐性の高い認証方式(パスキー等)への移行を促す取り組みの一環で、既に Entra ID Free テナントおよび新規テナントでは SMS サインインが無効化済みです。今回は次段階の廃止に向けた更新であり、過去の関連通知(MC1426371、MC1448374、MC1449181)も参照されています。対象は Entra ID のワークフォーステナント認証のみで、Azure AD B2C や Entra External ID の顧客 ID シナリオには適用されません。管理者は 2027年2月1日までに対応が必要とされており、SMS 認証に依存しているユーザーやアプリケーションへの影響を事前に洗い出し、パスキーなどのフィッシング耐性認証への切り替えを計画することが重要です。IT部門は影響範囲の棚卸しとヘルプデスク・エンドユーザー向けの周知を早めに進める必要があります。",
-      "japaneseBodyTranslation": "[内容と背景]\nセキュリティ向上と、脆弱性のある認証方式への依存を減らすため、Microsoft は Microsoft Entra ID における SMS を使った第一要素サインインの廃止を継続して進めています。Microsoft は、電話ベースの認証に伴うフィッシング、詐欺、アカウント侵害のリスクを低減できることから、パスキーなどのフィッシング耐性のある認証方式を推奨されるサインイン手段として推奨しています。\nMicrosoft は既に、Microsoft Entra ID Free テナントにおける SMS 第一要素サインインを廃止し、新規作成テナントでの SMS サインインの有効化を停止しています。本通知は、この廃止の次段階に関する更新情報と、組織が準備のために取るべき対応をお知らせするものです。Microsoft は過去のメッセージセンター投稿(MC1426371、MC1448374、MC1449181)で以前の廃止措置を発表しています。\nこの廃止は、Microsoft Entra ID のワークフォーステナント認証シナリオにのみ適用されます。Azure AD B2C または Microsoft Entra External ID の顧客 ID シナリオには適用され",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1474111",
-      "japaneseDetailedSummary": "Microsoft 365 コンパニオンアプリ(Calendar、People、Files)の廃止が発表されました。これらはタスクバー統合型アプリで日常業務の効率化を目的としていましたが、2026年12月16日をもって動作・サポートが終了します。管理者は同日までにテナント内のデバイスからアプリを削除することが推奨されています。詳細な管理者向けガイダンスは「Microsoft 365 companion app retirement」に記載されています。ロールアウトスケジュールとして、本通知公開時点からアプリの自動インストールの段階的停止が開始され、セキュリティ修正を含む更新提供は終了しますが、既存インストールは廃止期間中も引き続き利用可能です。2026年12月16日以降は完全に機能停止となります。IT管理者は事前に社内の利用状況を確認し、代替アプリへの移行やデバイスからのアンインストール計画を立てる必要があります。",
-      "japaneseBodyTranslation": "[内容と背景:]\nMicrosoft 365 コンパニオンアプリ(Calendar、People、Files)は、タスクバーに統合されたアプリで、日常のワークフローを効率化し、ユーザーが集中力を維持し、コンテキストスイッチを減らし、タスクをより速く完了できるように設計されています。\nこれらのコンパニオンアプリは廃止され、2026年12月16日以降は動作せず、サポートも提供されなくなります。管理者にはこの日までにテナント内のデバイスからアプリを削除することを推奨します。詳細な管理者向けガイダンスは「Microsoft 365 companion app retirement」に記載されています。\n[展開スケジュール:]\nMicrosoft 365 コンパニオンアプリは2026年12月16日にサポート終了(EOL)を迎えます。\n・本メッセージの公開時点から、Microsoft はコンパニオンアプリの自動インストールの段階的廃止を開始します。セキュリティ修正を含む更新・修正プログラムの提供は終了しますが、既存のインストールは廃止期間中も引き続き機能します。\n・2026年12月16日:残存するコンパニオンアプリは動作を停止し、サポートも終了します。\n[組織への影響:]\nこの廃止",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1474455",
       "japaneseDetailedSummary": "Microsoft Copilot アプリ(Windows/Mac)に、チャット内で共有されたウェブサイトをアプリ内で Copilot のチャット会話と並べて開けるようにする「アプリ内ブラウジング」機能が追加されます。現在は既定で無効ですが、管理者が選択した Windows/Mac デバイスをオプトインしてテスト可能な状態で提供が開始されています。より広範な展開は2026年11月下旬に開始予定です。管理者はオプトインとアップデート展開の手順(参照リンクあり)により、早期アクセスを利用して自組織での事前検証、管理環境下での動作確認、サポート部門やユーザーへの新しいエクスペリエンスの事前周知を行うことができます。IT部門は展開前にセキュリティ・ブラウジングポリシーへの影響を確認し、必要に応じて対象デバイスの選定や社内アナウンスを準備することが望まれます。",
       "japaneseBodyTranslation": "[内容と背景:]\nMicrosoft Copilot アプリ(Windows および Mac)に、Copilot がチャットで共有したウェブサイトを、Copilot チャット会話と並べてデスクトップアプリ内で開けるようにするサポートを追加します。これは現在利用可能ですが、既定では有効になっておらず、管理者が選択した Windows および Mac デバイスをオプトインしてテストすることができます。\n[展開スケジュール:]\n・オプトインでの利用開始:現在利用可能。\n・広範な展開の開始:2026年11月下旬から開始。\n[組織への影響:]\n管理者は、選択したデバイスをオプトインし、以下にリンクされている手順に従ってアップデートを展開することで、早期アクセスを管理できます。この早期アクセスにより、以下が可能になります:\n・広範な展開の前に、自組織でアプリ内ブラウジングをテストする。これにより、ユーザーは Copilot デスクトップアプリ内でリンクを開けるようになります。\n・組織の管理された環境で、展開されたアプリ内ブラウジングの動作を検証する。\n・Copilot の Windows および Mac エンドポイントに適用される更新後のエクスペリエンスに向けて、サポートチームとユーザーを準備する。\nユーザーに表示される内容\nユー",
@@ -1117,13 +1103,6 @@
       "id": "MC1477184",
       "japaneseDetailedSummary": "Microsoft 365 管理センターの Agent Registry(エージェントレジストリ)が改善され、同一エージェントが複数のスコープやバージョンで公開されている場合に重複表示されていた問題が解消されます。今後は1つのエージェントにつき1レコードへ統合され、エージェント詳細のフライアウトから全バージョンの履歴を確認できるようになります。ガバナンス操作は引き続きエージェント全体に適用されます。対象は全体管理者、グローバル閲覧者、AI管理者、Agent Registry利用組織です。世界規模での展開は2026年9月中旬に開始し、9月下旬までに完了予定です。管理者は事前の作業は不要ですが、エージェント一覧の表示が変わる点を運用チームへ周知しておくと良いでしょう。特に複数バージョンを公開している組織では、統合後のインベントリ確認を推奨します。",
       "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 管理センターの Agent Registry(エージェントレジストリ)エクスペリエンスを改善し、同じエージェントの重複エントリを1つのレコードに統合します。これまでは、同じエージェントが異なるスコープで公開された場合や、複数の公開バージョンが存在する場合に、複数回表示されることがありました。\nこの更新により、エージェントガバナンスが簡素化され、展開済みエージェントの明確なインベントリが提供され、管理者が単一の場所からエージェントのライフサイクルとバージョン履歴を管理しやすくなります。エージェントの全バージョンはエージェント詳細のフライアウトからアクセス可能になり、ガバナンス操作は引き続きエージェント全体に適用されます。\n[展開スケジュール]\n• 世界規模: 2026年9月中旬に開始し、9月下旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• 全体管理者\n• グローバル閲覧者\n• AI管理者\n• Agent Registryを利用している組織\nプラットフォームおよびサービス\n• Microsoft 365 管理センター\n• Agent Registry\n発生する内容\n• 各エージェン(以降切り詰め)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1477996",
-      "japaneseDetailedSummary": "Microsoft 365 管理センターから、Viva Learning の使用状況レポートと Viva Insights のパーソナルインサイトのアクティブユーザー推移チャートが廃止されます。Viva Learningについては、管理者は引き続きViva Learningアプリ内で直接使用状況の指標を確認できます。対象は全世界で、2026年10月上旬から展開が始まり、11月中旬までに完了予定です。影響を受けるのはMicrosoft 365テナント管理者、およびViva InsightsまたはViva Learning使用状況レポートを利用している組織です。廃止後もViva Learningの分析はViva Learningのレポート機能を通じて継続されます。管理者は、廃止されるレポートを参照しているドキュメントの更新や、代替の確認手段への移行準備を進めることが推奨されます。",
-      "japaneseBodyTranslation": "[内容と理由:]\nViva Learning の使用状況レポートと Viva Insights のパーソナルインサイトのアクティブユーザー推移チャートが、Microsoft 365 管理センターから廃止されます。Viva Learningについては、管理者は引き続きViva Learningアプリ内で直接使用状況の指標にアクセスできます。\n[展開スケジュール:]\n一般提供(世界規模): 2026年10月上旬から展開を開始し、2026年11月中旬までに完了予定です。\n[組織への影響:]\n影響を受ける対象:\n• Microsoft 365テナント管理者\n• Microsoft Viva Insights、またはViva Learning使用状況レポートを利用している組織\nプラットフォーム/サービス:\n• Microsoft 365 管理センター\n• Viva Insights\n• Viva Learning\n発生する内容:\n• Viva Insightsのパーソナルインサイトのアクティブユーザー推移チャートが廃止されます。\n• Viva Learningの使用状況レポートがMicrosoft 365管理センターから削除されます。\n• Viva Learningの分析はViva Learningのレポート機能を通じて引き続き提供されます。\n[必要な対応/推奨事項:]\n• 廃止されるレポートを参照しているドキュメントを更新してください(以降切り詰め)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1147,6 +1126,22 @@
       "japaneseBodyTranslation": "[内容と背景]\nMicrosoft 365プロフィールカードの組織パネルに、追加的なユーザーインターフェース更新を導入します。データが利用可能な場合、直属の上司に加えて、その人物の点線関係(ドットライン)のマネージャー関係を表示できるようになります。この更新は、報告関係がプロジェクト、事業部門、地域、または機能をまたぐ企業において、従業員が組織構造をより良く理解する助けとなります。\n[展開スケジュール]\n・一般提供(世界規模):展開は2026年10月上旬に開始し、2026年10月下旬までに完了する見込みです。\n[組織への影響]\n影響を受けるユーザー:\n・ドットラインマネージャー関係のデータを提供している組織のユーザー。\n対象プラットフォームおよびサービス:\n・Microsoft 365プロフィールカード\n発生する内容:\n・ユーザーは組織パネルにおいて、ドットラインマネージャーを表す追加のマネージャー関係を目にする場合があります。組織によっては、この関係に対して「ピープルリード」や「ケイパビリティマネージャー」など異なるラベルを使用することがあります。\n・ユーザーはドット(以下、本文はソース側で途中で切り詰められています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
+    },
+    {
+      "id": "MC1478969",
+      "japaneseTitle": "Edge for AndroidでCitrix mVPN連携のサポートを終了",
+      "japaneseFacts": {
+        "change": "Edge 153以降、Edge for AndroidのCitrix Mobile VPN(mVPN)連携サポートを廃止します。",
+        "impact": "Edge for AndroidでCitrix mVPNを使い社内リソースにアクセスする組織・ユーザー・管理者が対象で、他のEdge機能には影響しません。",
+        "timing": "廃止は2026年9月中旬に開始します。",
+        "action": "影響ユーザーと依存関係を特定し、代替手段を検証して、廃止前にユーザーを移行し周知します。"
+      },
+      "japaneseDetailedSummary": "Microsoftは、Edge 153以降、Edge for AndroidにおけるCitrix Mobile VPN(mVPN)連携サポートを廃止します。理由は、レガシーなサードパーティ製コンポーネントに依存し、Androidの要件変化に対して互換性と保守性の課題があるためです。廃止は2026年9月中旬に始まります。Edge for AndroidでCitrix mVPNを使い社内リソースへアクセスしているユーザーは、代替のサポート対象モバイルアクセス手段へ移行が必要になる場合があり、mVPN連携に依存するワークフローは動作しなくなる可能性があります。他のEdge for Android機能は影響を受けません。管理者は利用状況の特定、依存関係の確認、移行計画、ユーザーへの周知を行い、廃止前に移行を完了する必要があります。本文は途中で切れており、コンプライアンス情報以降は不明です。",
+      "japaneseBodyTranslation": "組織でMicrosoft Edge for AndroidのCitrix Mobile VPN(mVPN)連携サポートを使用していない場合、このメッセージは無視して問題ありません。\n【内容と理由】\nMicrosoftは、Edge 153以降、Microsoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)連携サポートを廃止します。Edge for AndroidのCitrix mVPN連携は、Androidプラットフォーム要件の進化に伴い、継続的な互換性と保守上の課題を生むレガシーなサードパーティ製コンポーネントに依存しています。\nEdgeユーザーに安全で信頼性が高く保守可能な体験を提供するため、MicrosoftはEdge for AndroidのCitrix mVPN連携サポートを廃止します。\n【展開スケジュール】\n• 廃止は2026年9月中旬に開始します。\n【組織への影響】\n影響を受ける対象:\n• 現在Edge for AndroidでCitrix Mobile VPN(mVPN)連携を使用している組織\n• Edge for Androidで社内リソースへアクセスするためCitrix mVPNに依存しているユーザー\n• モバイルアクセス、Androidデバイスサポート、Edge for Android構成を担当する管理者\nプラットフォーム/サービス:\n• Microsoft Edge for Android\n• Citrix Mobile VPN(mVPN)\n• Androidデバイス\n発生すること:\n• Microsoft Edge for AndroidはCitrix mVPNと連携しなくなります。\n• Edge for AndroidでCitrix mVPNに依存して社内リソースへアクセスするユーザーは、サポートされる代替のモバイルアクセスソリューションへの移行が必要になる場合があります。\n• Edge for AndroidのCitrix mVPN連携に特に依存する既存のワークフローは、期待どおりに動作しなくなる可能性があります。\n• この変更はCitrix mVPN連携のみに影響し、Edge for Androidの他の機能には影響しません。\n【必要な対応/推奨事項】\n管理者は次の対応を行ってください:\n• 影響を受けるユーザーの特定:Edge for AndroidでCitrix mVPNを使用しているか確認します。\n• 依存関係の確認:Edge for AndroidのCitrix mVPN連携に依存する業務フロー、アプリ、社内サイトを評価します。\n• 移行戦略の策定:要件を満たす代替のサポート対象モバイルアクセスソリューションを評価・検証します。\n• 影響を受けるユーザーへの周知:今後の変更を伝え、承認された代替ソリューションの案内を提供します。\n• 廃止前の移行完了:サポート終了前に、影響ユーザーがCitrix mVPN依存のワークフローから移行するようにします。\n【コンプライアンスに関する考慮事項】\n(以降は原文が切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "56f9ed4f904b4b1c80cf0425688cbebdf37b4c3b6444954e4cd047f507f376ef",
+      "validatedAt": "2026-10-20T07:48:03.1174421+00:00"
     },
     {
       "id": "MC1478975",
@@ -1189,6 +1184,38 @@
       "japaneseBodyTranslation": "[内容と理由]\n管理者がMicrosoft 365 Backup内で直接バックアップポリシーと復元アクティビティを監視できるよう、アクティビティログを導入します。アクティビティログにより、Microsoft 365 Backupの画面を離れることなく、構成変更、復元の進行状況、失敗、運用状態の可視性が向上します。\n[ロールアウトスケジュール]\n• 一般提供(全世界):ロールアウトは2026年10月中旬に開始し、2026年10月中旬に完了する予定です。\n[組織への影響]\n影響を受けるユーザー\n• Microsoft 365 Backupを管理する管理者\nプラットフォームとサービス\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\n今後の動作\n• SharePoint Online、OneDrive、Exchange Onlineを含むサポート対象ワークロード全体のMicrosoft 365 Backupアクション用にアクティビティログが利用可能になります。\n• アクティビティログのエントリには、サービス、アクティビティの種類、状態、影響、ポリシーまたは復元タスクの詳細、タイムスタンプなどのメタデータが含まれます。(原文はここで途切れています)",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
+    },
+    {
+      "id": "MC1490899",
+      "japaneseTitle": "Microsoft 365のTargeted releaseが2027年1月に廃止",
+      "japaneseFacts": {
+        "change": "Targeted releaseは2027年1月に廃止され、Frontier、Standard release、Deferred releaseの3つに移行します。",
+        "impact": "Targeted releaseに登録されたユーザー/テナントを持つ組織と、リリース設定を管理する管理者が対象です。",
+        "timing": "2026年11月に登録変更が無効化され統合設定画面が提供され、2027年1月に廃止されます。",
+        "action": "現在の登録ユーザーを確認し、必要に応じてFrontier、Standard、Deferredのいずれかに登録します。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365のTargeted releaseは2027年1月に廃止され、Frontier(AI機能と非AI機能のプレビュー)、Standard release(一般提供時に更新)、Deferred release(Standard開始の約30日後に主要更新)の3つに移行します。2026年11月には管理者がTargeted releaseの登録を追加・削除・変更できなくなり、同時に統合リリース設定画面が提供されます。Targeted release割り当てのユーザーは廃止まで従来どおり機能を受け取ります。管理者は現在の登録ユーザーを確認し、組織に合う設定を選ぶ必要があります。管理画面変更の詳細は今後の投稿で案内されます。本文は途中で切れており、以降は不明です。",
+      "japaneseBodyTranslation": "【内容と理由】\nMicrosoft 365がFrontier、Standard release、Deferred releaseの3つのリリース選択肢へ移行することに伴い、Microsoft 365サービスのTargeted releaseは2027年1月に廃止されます。\n準備として、現在Targeted releaseに登録されているユーザーを確認し、組織のニーズに最適なリリース設定を構成してください。\nMicrosoft 365管理センターで希望のリリース設定を選択します:\n• プレビューアクセス:Frontier:一般提供前に、対象のAI機能および非AI機能をプレビューできます。\n• 一般提供アクセス:Standard release:一般提供時に更新を受け取ります。\n• Deferred release:対象の主要更新をStandard release開始の約30日後に受け取り、検証や準備の時間を確保できます。\n2026年11月に、管理者はTargeted releaseの登録へのユーザー追加、削除、変更ができなくなります。管理者エクスペリエンスの変更に関する追加情報は、今後のMessage centerの投稿で共有されます。\n【展開スケジュール】\n• 現在:現在のリリース設定を確認し、必要に応じてFrontier、Standard release、Deferred releaseに登録します。\n• 2026年11月:Targeted release登録の変更が無効化されます。\n• 2026年11月:統合リリース設定エクスペリエンスが利用可能になり、そこでFrontier、Standard release、Deferred releaseの設定を更新します。\n• 2027年1月:Targeted releaseが廃止され、割り当てはMicrosoft 365機能の配信に使われなくなります。\n【組織への影響】\n影響を受ける対象:\n• Microsoft 365 Targeted releaseにユーザーまたはテナントが登録されている組織\n• Microsoft 365のリリース設定を管理する管理者\nプラットフォーム/サービス:\n• Microsoft 365管理センター\n• Microsoft Teams\n• Outlook(新)\n• Outlook on the web\n• Office for the Web\n• Microsoft OneDrive\n• SharePoint Online\n• Exchange Onlineの一部コンポーネント\n発生すること:\n• 2026年11月、管理者はTargeted release割り当ての追加、削除、変更ができなくなります。\n• 2026年11月、管理者はMicrosoft 365管理センターの単一の統合リリース設定画面でFrontier、Standard、Deferredを構成できます。\n• 現在Targeted releaseに割り当てられたユーザーは、廃止まで既存の割り当てを通じて対象機能を受け取り続けます。\n• (以降は原文が切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "2022472fda5ae32770e1d2aff8b657e2b5fbc06a1ffaee670a6d9e40804afbeb",
+      "validatedAt": "2026-10-20T07:48:03.1130308+00:00"
+    },
+    {
+      "id": "MC1490911",
+      "japaneseTitle": "Edge for Windows:従来のWAMサインイン実装を廃止しOneAuthへ統一",
+      "japaneseFacts": {
+        "change": "Edge 157以降、Windows版Edgeの従来の直接WAMサインイン実装を廃止し、OneAuthに統合します。",
+        "impact": "Windows版Edgeを使う組織、OneAuthに未移行のプロファイル、msOneAuthWAMを無効化している組織が対象で、まれに再サインインが必要です。",
+        "timing": "一般提供(Worldwide、GCC)は2026年11月上旬に開始し、同月上旬に完了予定です。",
+        "action": "(signininternals/redacted) 155以降のパイロット端末で--enable-features=msForceOneAuthWAMを使って事前検証します。"
+      },
+      "japaneseDetailedSummary": "Microsoft EdgeはWindows版で、従来の直接WAMサインイン実装をEdge 157以降で廃止し、OneAuth認証ライブラリへの統合を完了します。Windows WAM自体は非推奨ではなく、OneAuthが引き続きWAMを使用します。未移行プロファイルはOneAuthへ直接移行し、従来のWAMフォールバックは常時オフになります。大半のユーザーは透過的に移行しますが、まれに再サインインが必要です。展開は2026年11月上旬の予定です。管理者は(signininternals/redacted) 155以降のパイロット端末で強制フラグを使って、サインイン、SSO、アカウント同期を検証することが推奨されています。本文は途中で切れており、以降の詳細は不明です。",
+      "japaneseBodyTranslation": "【内容と理由】\nMicrosoft Edgeは、Edge 157以降、Windows上の従来の直接WAMサインイン実装を廃止し、OneAuth認証ライブラリへの統合を完了します。\nこの変更はMicrosoft 365クライアントアプリ間の認証フローを標準化し、サポート性を高め、二重の認証コードパスをなくし、診断・復旧機能を改善します。Windows Web Account Manager(WAM)自体は非推奨ではなく、OneAuthは引き続きWindows WAMを使用します。\n【展開スケジュール】\n一般提供(Worldwide、GCC):2026年11月上旬に開始し、11月上旬に完了予定です。\n【組織への影響】\n影響を受ける対象:\n• Windows上でEdgeを使用する組織\n• OneAuthへ自動移行されていないEdgeプロファイルを持つユーザー\n• --disable-features=msOneAuthWAMでOneAuth WAMを明示的に無効化した組織\n対象プラットフォーム/サービス:\n• Windows版Microsoft Edge\n• ブラウザーのサインイン、ID、トークン取得、シングルサインオン、アカウント同期\n発生すること:\n• Edge 157以降、残りのすべてのプロファイルがOneAuth認証へ直接移行します。\n• 従来のWAMフォールバックはあらゆる状況で既定オフになります。\n• ほとんどのユーザーは透過的に移行します。\n• まれに、Edgeへの再サインインが必要になる場合があります。\n【必要な対応/推奨事項】\nEdge 157が環境に到達する前に、未移行プロファイルを特定し移行をテストすることを推奨します。\n• Edgeで(signininternals/redacted)\n• Edge Auth Library Information > Libraryで、OneAuthかWAMかを確認します。\n• OneAuthなら既に新方式で、対応は不要です。\n• WAMなら従来方式のままです。\nEdge 155以降のパイロット端末では、次の強制フラグで起動して157前に検証できます:\nmsedge.exe --enable-features=msForceOneAuthWAM\n(signininternals/redacted)\nサポート部門には、Edge 157への更新後、少数のユーザーのプロファイルメニューにサインイン操作が表示される可能性があることを周知してください。サインイン問題が発生した場合は、次でOneAuthログを収集します:\nmsedge.exe --enable-fe(以降は原文が切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "1b0e30bac893418918d1928aa37f0ab8aa14d7c319f9673803450cc050264b2e",
+      "validatedAt": "2026-10-20T07:48:03.1068015+00:00"
     },
     {
       "id": "MC1492959",
@@ -1320,52 +1347,52 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1490911",
-      "japaneseTitle": "Edge for Windows:従来のWAMサインイン実装を廃止しOneAuthへ統一",
+      "id": "MC1477996",
+      "japaneseTitle": "Viva Insights個人インサイトとViva Learning利用状況レポートの廃止",
       "japaneseFacts": {
-        "change": "Edge 157以降、Windows版Edgeの従来の直接WAMサインイン実装を廃止し、OneAuthに統合します。",
-        "impact": "Windows版Edgeを使う組織、OneAuthに未移行のプロファイル、msOneAuthWAMを無効化している組織が対象で、まれに再サインインが必要です。",
-        "timing": "一般提供(Worldwide、GCC)は2026年11月上旬に開始し、同月上旬に完了予定です。",
-        "action": "(signininternals/redacted) 155以降のパイロット端末で--enable-features=msForceOneAuthWAMを使って事前検証します。"
+        "change": "Viva Learning利用状況レポートとViva Insights個人インサイトのアクティブユーザー推移グラフがMicrosoft 365管理センターから廃止されます。",
+        "impact": "Microsoft 365テナント管理者、およびViva InsightsまたはViva Learning利用状況レポートを使う組織が対象です。",
+        "timing": "2026年10月上旬に展開開始、2026年11月中旬に完了予定(全世界GA)。",
+        "action": "関連ドキュメントの更新、レポート場所変更の周知、今後はViva Learning内のレポートを利用してください。"
       },
-      "japaneseDetailedSummary": "Microsoft EdgeはWindows版で、従来の直接WAMサインイン実装をEdge 157以降で廃止し、OneAuth認証ライブラリへの統合を完了します。Windows WAM自体は非推奨ではなく、OneAuthが引き続きWAMを使用します。未移行プロファイルはOneAuthへ直接移行し、従来のWAMフォールバックは常時オフになります。大半のユーザーは透過的に移行しますが、まれに再サインインが必要です。展開は2026年11月上旬の予定です。管理者は(signininternals/redacted) 155以降のパイロット端末で強制フラグを使って、サインイン、SSO、アカウント同期を検証することが推奨されています。本文は途中で切れており、以降の詳細は不明です。",
-      "japaneseBodyTranslation": "【内容と理由】\nMicrosoft Edgeは、Edge 157以降、Windows上の従来の直接WAMサインイン実装を廃止し、OneAuth認証ライブラリへの統合を完了します。\nこの変更はMicrosoft 365クライアントアプリ間の認証フローを標準化し、サポート性を高め、二重の認証コードパスをなくし、診断・復旧機能を改善します。Windows Web Account Manager(WAM)自体は非推奨ではなく、OneAuthは引き続きWindows WAMを使用します。\n【展開スケジュール】\n一般提供(Worldwide、GCC):2026年11月上旬に開始し、11月上旬に完了予定です。\n【組織への影響】\n影響を受ける対象:\n• Windows上でEdgeを使用する組織\n• OneAuthへ自動移行されていないEdgeプロファイルを持つユーザー\n• --disable-features=msOneAuthWAMでOneAuth WAMを明示的に無効化した組織\n対象プラットフォーム/サービス:\n• Windows版Microsoft Edge\n• ブラウザーのサインイン、ID、トークン取得、シングルサインオン、アカウント同期\n発生すること:\n• Edge 157以降、残りのすべてのプロファイルがOneAuth認証へ直接移行します。\n• 従来のWAMフォールバックはあらゆる状況で既定オフになります。\n• ほとんどのユーザーは透過的に移行します。\n• まれに、Edgeへの再サインインが必要になる場合があります。\n【必要な対応/推奨事項】\nEdge 157が環境に到達する前に、未移行プロファイルを特定し移行をテストすることを推奨します。\n• Edgeで(signininternals/redacted)\n• Edge Auth Library Information > Libraryで、OneAuthかWAMかを確認します。\n• OneAuthなら既に新方式で、対応は不要です。\n• WAMなら従来方式のままです。\nEdge 155以降のパイロット端末では、次の強制フラグで起動して157前に検証できます:\nmsedge.exe --enable-features=msForceOneAuthWAM\n(signininternals/redacted)\nサポート部門には、Edge 157への更新後、少数のユーザーのプロファイルメニューにサインイン操作が表示される可能性があることを周知してください。サインイン問題が発生した場合は、次でOneAuthログを収集します:\nmsedge.exe --enable-fe(以降は原文が切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "1b0e30bac893418918d1928aa37f0ab8aa14d7c319f9673803450cc050264b2e",
-      "validatedAt": "2026-10-20T07:48:03.1068015+00:00"
+      "japaneseDetailedSummary": "Microsoft 365管理センターからViva Learning利用状況レポートと、Viva Insights個人インサイトのアクティブユーザー推移グラフが廃止されます。Viva Learningの分析はViva Learningアプリ内のレポート機能で引き続き利用できます。展開は2026年10月上旬から11月中旬にかけて全世界で行われる予定です。テナント管理者やこれらのレポートを利用する組織が対象で、ドキュメントの更新、レポート担当管理者への場所変更の周知、Viva Learning内レポートの利用が推奨されています。",
+      "japaneseBodyTranslation": "[内容と理由]\nViva Learning利用状況レポートとViva Insights個人インサイトのアクティブユーザー推移グラフは、Microsoft 365管理センターから廃止されます。Viva Learningについては、管理者はViva Learningアプリで引き続き利用状況メトリックにアクセスできます。\n[展開スケジュール]\n一般提供(全世界):2026年10月上旬に展開を開始し、2026年11月中旬までに完了する予定です。\n[組織への影響]\n対象:\n• Microsoft 365テナント管理者\n• Microsoft Viva InsightsまたはViva Learning利用状況レポートを使用する組織\nプラットフォーム/サービス:\n• Microsoft 365管理センター\n• Viva Insights\n• Viva Learning\n今後起こること:\n• Viva Insights個人インサイトのアクティブユーザー推移グラフが廃止されます。\n• Viva Learning利用状況レポートがMicrosoft 365管理センターから削除されます。\n• Viva Learningの分析は、Viva Learningのレポート機能で引き続き提供されます。\n[必要な対応/推奨事項]\n• 廃止されたVivaレポートを参照しているドキュメントを更新する。\n• レポート管理者にレポートの場所の変更を周知する。\n• 今後はViva Learning内のレポートを使用する。\n• 参照:Reporting in Viva Learning | Microsoft Learn",
+      "sourceCharacterCount": 1211,
+      "sourceTruncated": false,
+      "sourceHash": "39c6422b47c241ab4e820a5a3ae15cecf33c7f76f41bcabf34d037f490d1f6b4",
+      "validatedAt": "2026-10-20T13:44:06.1298381+00:00"
     },
     {
-      "id": "MC1478969",
-      "japaneseTitle": "Edge for AndroidでCitrix mVPN連携のサポートを終了",
+      "id": "MC1474104",
+      "japaneseTitle": "Entra IDのSMS第一要素サインインを2027年2月に廃止",
       "japaneseFacts": {
-        "change": "Edge 153以降、Edge for AndroidのCitrix Mobile VPN(mVPN)連携サポートを廃止します。",
-        "impact": "Edge for AndroidでCitrix mVPNを使い社内リソースにアクセスする組織・ユーザー・管理者が対象で、他のEdge機能には影響しません。",
-        "timing": "廃止は2026年9月中旬に開始します。",
-        "action": "影響ユーザーと依存関係を特定し、代替手段を検証して、廃止前にユーザーを移行し周知します。"
+        "change": "Microsoft Entra IDでSMS第一要素サインイン(電話番号とSMSワンタイムコード)の廃止が次の段階に進みます。",
+        "impact": "SMS第一要素サインインを許可または主な認証として利用する組織。Azure AD B2CとEntra External IDは対象外です。",
+        "timing": "全世界およびGCCで2027年2月1日から廃止されます。",
+        "action": "対象ユーザーを特定し、2027年2月1日までに代替認証方法を登録させ、変更を周知してください。"
       },
-      "japaneseDetailedSummary": "Microsoftは、Edge 153以降、Edge for AndroidにおけるCitrix Mobile VPN(mVPN)連携サポートを廃止します。理由は、レガシーなサードパーティ製コンポーネントに依存し、Androidの要件変化に対して互換性と保守性の課題があるためです。廃止は2026年9月中旬に始まります。Edge for AndroidでCitrix mVPNを使い社内リソースへアクセスしているユーザーは、代替のサポート対象モバイルアクセス手段へ移行が必要になる場合があり、mVPN連携に依存するワークフローは動作しなくなる可能性があります。他のEdge for Android機能は影響を受けません。管理者は利用状況の特定、依存関係の確認、移行計画、ユーザーへの周知を行い、廃止前に移行を完了する必要があります。本文は途中で切れており、コンプライアンス情報以降は不明です。",
-      "japaneseBodyTranslation": "組織でMicrosoft Edge for AndroidのCitrix Mobile VPN(mVPN)連携サポートを使用していない場合、このメッセージは無視して問題ありません。\n【内容と理由】\nMicrosoftは、Edge 153以降、Microsoft Edge for AndroidにおけるCitrix Mobile VPN(mVPN)連携サポートを廃止します。Edge for AndroidのCitrix mVPN連携は、Androidプラットフォーム要件の進化に伴い、継続的な互換性と保守上の課題を生むレガシーなサードパーティ製コンポーネントに依存しています。\nEdgeユーザーに安全で信頼性が高く保守可能な体験を提供するため、MicrosoftはEdge for AndroidのCitrix mVPN連携サポートを廃止します。\n【展開スケジュール】\n• 廃止は2026年9月中旬に開始します。\n【組織への影響】\n影響を受ける対象:\n• 現在Edge for AndroidでCitrix Mobile VPN(mVPN)連携を使用している組織\n• Edge for Androidで社内リソースへアクセスするためCitrix mVPNに依存しているユーザー\n• モバイルアクセス、Androidデバイスサポート、Edge for Android構成を担当する管理者\nプラットフォーム/サービス:\n• Microsoft Edge for Android\n• Citrix Mobile VPN(mVPN)\n• Androidデバイス\n発生すること:\n• Microsoft Edge for AndroidはCitrix mVPNと連携しなくなります。\n• Edge for AndroidでCitrix mVPNに依存して社内リソースへアクセスするユーザーは、サポートされる代替のモバイルアクセスソリューションへの移行が必要になる場合があります。\n• Edge for AndroidのCitrix mVPN連携に特に依存する既存のワークフローは、期待どおりに動作しなくなる可能性があります。\n• この変更はCitrix mVPN連携のみに影響し、Edge for Androidの他の機能には影響しません。\n【必要な対応/推奨事項】\n管理者は次の対応を行ってください:\n• 影響を受けるユーザーの特定:Edge for AndroidでCitrix mVPNを使用しているか確認します。\n• 依存関係の確認:Edge for AndroidのCitrix mVPN連携に依存する業務フロー、アプリ、社内サイトを評価します。\n• 移行戦略の策定:要件を満たす代替のサポート対象モバイルアクセスソリューションを評価・検証します。\n• 影響を受けるユーザーへの周知:今後の変更を伝え、承認された代替ソリューションの案内を提供します。\n• 廃止前の移行完了:サポート終了前に、影響ユーザーがCitrix mVPN依存のワークフローから移行するようにします。\n【コンプライアンスに関する考慮事項】\n(以降は原文が切れています)",
+      "japaneseDetailedSummary": "Microsoft Entra IDワークフォーステナントで、SMS第一要素サインインの廃止が継続されます。全世界およびGCCで2027年2月1日以降、電話番号とSMSワンタイムコードによる主なサインインはできなくなり、既存の構成は尊重されず、管理・構成画面も削除されます。他の認証方法を登録済みのユーザーは引き続きサインインできますが、未移行の場合はサインインが妨げられる可能性があります。管理者は対象ユーザーを特定し、パスキーなどフィッシング耐性のある代替方法の登録を促し、周知する必要があります。なお原文は途中で切れています。",
+      "japaneseBodyTranslation": "[内容と理由]\nセキュリティを向上し、脆弱な認証方法への依存を減らすため、MicrosoftはMicrosoft Entra IDでのSMS第一要素サインインの廃止を継続します。Microsoftは、電話ベースの認証に伴うフィッシング、不正、アカウント侵害のリスクを減らせるため、パスキーなどフィッシング耐性のある認証方法を推奨サインイン方法として推奨します。\nMicrosoftは以前、Microsoft Entra ID FreeテナントでSMS第一要素サインインを廃止し、新規作成テナントでSMSサインインを有効にしないようにしました。本通知は、廃止の次の段階と、準備のために組織が取るべき対応を案内するものです。以前の廃止に関する通知は、Message CenterのMC1426371、MC1448374、MC1449181で案内されています。\nこの廃止は、Microsoft Entra IDのワークフォーステナントの認証シナリオにのみ適用されます。Azure AD B2CやMicrosoft Entra External IDの顧客ID シナリオには適用されません。\n[展開スケジュール]\n• 全世界およびGCC:2027年2月1日以降、Microsoft Entra IDテナントでSMS第一要素サインインが廃止されます。\n[組織への影響]\n対象:\n• ユーザーにSMS第一要素認証によるサインインを許可している組織\n• SMS第一要素サインインを主な認証方法として利用している組織\nプラットフォームとサービス:\n• Microsoft Entra ID\n• SMS第一要素パスワードレスサインイン(SignInNoPassword)\n今後起こること:\n2027年2月1日以降:\n• ユーザーは電話番号とSMSワンタイムパスコードを主なサインイン方法として認証できなくなります。\n• 既存のSMS第一要素サインイン構成は尊重されなくなります。\n• SMS第一要素サインインの管理および構成の画面はMicrosoftの管理画面から削除されます。\n• 登録済みの電話番号とSMSワンタイムパスコードによるサインインの試行はブロックされます。\n• 他の認証方法を登録済みのユーザーは引き続きサインインできます。\n• 廃止日までに対象ユーザーを移行しない組織では、サインインに支障が出る可能性があります。\n[必要な対応と推奨事項]\n組織でSMS第一要素サインインを使用している場合は、2027年2月1日までに次の対応を完了してください。\n• 現在SMS第一要素サインインを使用しているユーザーを特定する。\n• 対象ユーザーが2027年2月1日までに代替の認証方法を登録するようにする。\n• サインインの支障を防ぐため、この変更を対象ユーザーに周知する。\n(原文はここで途切れています)",
       "sourceCharacterCount": 2500,
       "sourceTruncated": true,
-      "sourceHash": "56f9ed4f904b4b1c80cf0425688cbebdf37b4c3b6444954e4cd047f507f376ef",
-      "validatedAt": "2026-10-20T07:48:03.1174421+00:00"
+      "sourceHash": "3e7655807473ccf1c73e263501f1b76dbec41472e6889be9c87844d18dec0092",
+      "validatedAt": "2026-10-20T13:44:06.1341651+00:00"
     },
     {
-      "id": "MC1490899",
-      "japaneseTitle": "Microsoft 365のTargeted releaseが2027年1月に廃止",
+      "id": "MC1474111",
+      "japaneseTitle": "Microsoft 365コンパニオンアプリを2026年12月16日に廃止",
       "japaneseFacts": {
-        "change": "Targeted releaseは2027年1月に廃止され、Frontier、Standard release、Deferred releaseの3つに移行します。",
-        "impact": "Targeted releaseに登録されたユーザー/テナントを持つ組織と、リリース設定を管理する管理者が対象です。",
-        "timing": "2026年11月に登録変更が無効化され統合設定画面が提供され、2027年1月に廃止されます。",
-        "action": "現在の登録ユーザーを確認し、必要に応じてFrontier、Standard、Deferredのいずれかに登録します。"
+        "change": "Calendar、People、Filesのコンパニオンアプリが廃止され、自動インストールも段階的に停止されます。",
+        "impact": "アプリをインストールした全世界のエンタープライズ顧客が対象です。Microsoft 365データや既存機能は削除されません。",
+        "timing": "2026年12月16日に機能せずサポート終了となります。公開時点から自動インストールの停止が始まります。",
+        "action": "ユーザーへの周知、新規展開の停止、既存インストールの削除、社内資料の参照削除を行ってください。"
       },
-      "japaneseDetailedSummary": "Microsoft 365のTargeted releaseは2027年1月に廃止され、Frontier(AI機能と非AI機能のプレビュー)、Standard release(一般提供時に更新)、Deferred release(Standard開始の約30日後に主要更新)の3つに移行します。2026年11月には管理者がTargeted releaseの登録を追加・削除・変更できなくなり、同時に統合リリース設定画面が提供されます。Targeted release割り当てのユーザーは廃止まで従来どおり機能を受け取ります。管理者は現在の登録ユーザーを確認し、組織に合う設定を選ぶ必要があります。管理画面変更の詳細は今後の投稿で案内されます。本文は途中で切れており、以降は不明です。",
-      "japaneseBodyTranslation": "【内容と理由】\nMicrosoft 365がFrontier、Standard release、Deferred releaseの3つのリリース選択肢へ移行することに伴い、Microsoft 365サービスのTargeted releaseは2027年1月に廃止されます。\n準備として、現在Targeted releaseに登録されているユーザーを確認し、組織のニーズに最適なリリース設定を構成してください。\nMicrosoft 365管理センターで希望のリリース設定を選択します:\n• プレビューアクセス:Frontier:一般提供前に、対象のAI機能および非AI機能をプレビューできます。\n• 一般提供アクセス:Standard release:一般提供時に更新を受け取ります。\n• Deferred release:対象の主要更新をStandard release開始の約30日後に受け取り、検証や準備の時間を確保できます。\n2026年11月に、管理者はTargeted releaseの登録へのユーザー追加、削除、変更ができなくなります。管理者エクスペリエンスの変更に関する追加情報は、今後のMessage centerの投稿で共有されます。\n【展開スケジュール】\n• 現在:現在のリリース設定を確認し、必要に応じてFrontier、Standard release、Deferred releaseに登録します。\n• 2026年11月:Targeted release登録の変更が無効化されます。\n• 2026年11月:統合リリース設定エクスペリエンスが利用可能になり、そこでFrontier、Standard release、Deferred releaseの設定を更新します。\n• 2027年1月:Targeted releaseが廃止され、割り当てはMicrosoft 365機能の配信に使われなくなります。\n【組織への影響】\n影響を受ける対象:\n• Microsoft 365 Targeted releaseにユーザーまたはテナントが登録されている組織\n• Microsoft 365のリリース設定を管理する管理者\nプラットフォーム/サービス:\n• Microsoft 365管理センター\n• Microsoft Teams\n• Outlook(新)\n• Outlook on the web\n• Office for the Web\n• Microsoft OneDrive\n• SharePoint Online\n• Exchange Onlineの一部コンポーネント\n発生すること:\n• 2026年11月、管理者はTargeted release割り当ての追加、削除、変更ができなくなります。\n• 2026年11月、管理者はMicrosoft 365管理センターの単一の統合リリース設定画面でFrontier、Standard、Deferredを構成できます。\n• 現在Targeted releaseに割り当てられたユーザーは、廃止まで既存の割り当てを通じて対象機能を受け取り続けます。\n• (以降は原文が切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "2022472fda5ae32770e1d2aff8b657e2b5fbc06a1ffaee670a6d9e40804afbeb",
-      "validatedAt": "2026-10-20T07:48:03.1130308+00:00"
+      "japaneseDetailedSummary": "タスクバー統合アプリであるMicrosoft 365コンパニオンアプリ(Calendar、People、Files)が廃止され、2026年12月16日以降は機能せずサポートも終了します。公開時点からMicrosoft 365 Appsの更新による自動インストールは段階的に停止され、セキュリティ修正を含む更新や修正は提供されません。管理者は新規インストールを防ぎ、管理対象デバイスから既存アプリを削除し、ユーザーへ周知し、社内資料から参照を除く必要があります。データや既存機能への影響はなく、Outlook、Teams、File Explorerなどで代替できます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365コンパニオンアプリ(Calendar、People、Files)は、日常業務を効率化し、集中を保ち、コンテキストの切り替えを減らし、作業を素早く完了できるように設計されたタスクバー統合アプリです。\nコンパニオンアプリは廃止され、2026年12月16日以降は機能せず、サポートも終了します。管理者には、この日までにテナント内のデバイスからアプリを削除することを推奨します。詳細な管理者向けガイダンスは「Microsoft 365 companion app retirement」にあります。\n[展開スケジュール]\nMicrosoft 365コンパニオンアプリは2026年12月16日にサポート終了となります。\n• このメッセージの公開時点から、Microsoftはコンパニオンアプリの自動インストールを段階的に停止します。セキュリティ修正を含む更新と修正は提供されなくなります。既存のインストールは廃止期間中も動作し続ける場合があります。\n• 2026年12月16日:残っているコンパニオンアプリは機能しなくなり、サポートされなくなります。\n[組織への影響]\nこの廃止は、アプリをインストールした全世界のエンタープライズ顧客に影響します。\nMicrosoftはMicrosoft 365 Appsの更新によるコンパニオンアプリの自動インストールを停止します。管理者は他の展開方法による新規インストールを防止し、管理対象デバイスから既存のインストールを削除する必要があります。管理対象外デバイスのユーザーは自分でアンインストールしてください。\nコンパニオンアプリは予定表、People、ファイルを探すための追加の手段であったため、削除しても既存の機能やMicrosoft 365データが削除・影響を受けることはありません。\nユーザーは、Outlook、Teams、Windows検索ボックス、エクスプローラー、SharePoint、OneDriveなど既存のMicrosoft 365およびWindowsの機能で引き続き予定表、People、ファイルを探せます。\n[必要な対応/推奨事項]\n管理者は、コンパニオンアプリが廃止されることをユーザーに知らせる、新規インストールの展開を停止する、既存のインストールを削除する、社内のドキュメント、ガイド、通知、トレーニング資料から参照を削除するなどの手順が必要です。\n必要なすべての手順は、上記の廃止に関する記事を確認してください。\n廃止期間中に更新や修正が必要になる可能性のある問題が発生した場合は、廃止に関する記事のトラブルシューティングのセクションを参照してください。",
+      "sourceCharacterCount": 2315,
+      "sourceTruncated": false,
+      "sourceHash": "df83a85cf64aedccc6a6a79f369c9899d2488223a04c8135165468456caf80f2",
+      "validatedAt": "2026-10-20T13:44:06.1328247+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-10-19T00:18:30.2522538+00:00",
