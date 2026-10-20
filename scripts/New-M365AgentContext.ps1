@@ -58,6 +58,13 @@ if ($Mode -eq 'Translations') {
         $candidates = @($messages | Where-Object {
             -not (Test-M365TranslationComplete -Translation $previousById[[string]$_.id] -Message $_)
         } | Sort-Object @{ Expression = {
+            # Notifications an administrator must act on first get their Japanese text first.
+            $deadline = [string](Get-M365ContentProperty $_ 'actionRequiredByDateTime')
+            $title = [string](Get-M365ContentProperty $_ 'title')
+            $upcoming = $deadline -and ([DateTimeOffset]::Parse($deadline, [Globalization.CultureInfo]::InvariantCulture) -ge [DateTimeOffset]::UtcNow)
+            if ($upcoming -or $title -match '(?i)\b(action (may be )?required|retir\w*|deprecat\w*|end of support|will be removed|breaking change|no longer)\b') { 0 }
+            elseif ([bool](Get-M365ContentProperty $_ 'isMajorChange' $false)) { 1 } else { 2 }
+        } }, @{ Expression = {
             $date = [string](Get-M365ContentProperty $_ 'lastModifiedDateTime')
             if ($date) { [DateTimeOffset]::Parse($date, [Globalization.CultureInfo]::InvariantCulture).UtcTicks } else { 0 }
         }; Descending = $true }, id | Select-Object -First $AgentTranslationBatchSize)

@@ -873,7 +873,7 @@ $html = @'
         : message.startDateTime ? `開始 ${fmt(message.startDateTime)}` : "";
       return `<li><a class="hero-row" href="#${escapeHtml(messageDomId(message))}" data-open-detail="${escapeHtml(message.id)}">
           <span class="chip tier tier-${key}">${DashboardView.TIERS[key].label}</span>
-          <span class="hero-title-text"${info.fromTitle ? ' lang="ja"' : ""}>${escapeHtml(info.fromTitle ? info.text : displayMessageTitle(message))}</span>
+          <span class="hero-title-text"${info.text ? ' lang="ja"' : ""}${info.text ? ` title="${escapeHtml(message.title)}"` : ""}>${escapeHtml(info.text || displayMessageTitle(message))}</span>
           <span class="hero-when">${escapeHtml(when)}</span></a>
         ${original ? `<a class="hero-orig" href="${escapeHtml(original)}" target="_blank" rel="noopener noreferrer">原文 ↗</a>` : ""}</li>`;
     }).join("");
