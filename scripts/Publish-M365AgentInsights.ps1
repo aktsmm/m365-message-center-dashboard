@@ -385,7 +385,13 @@ if ($TranslationBatchJson) {
                 if ($factProps -notcontains $factName) { continue }
                 $factText = ([string]$translation.japanese_facts.$factName -replace '[ \t]+', ' ').Trim()
                 if (-not $factText) { continue }
-                if ($factText.Length -lt 4 -or $factText.Length -gt 400 -or $factText -notmatch '[\p{IsHiragana}\p{IsKatakana}\p{IsCJKUnifiedIdeographs}]') {
+                if ($factText.Length -gt 400) {
+                    # Over-long text is shortened at a sentence boundary so one verbose line cannot discard the whole batch.
+                    $cut = $factText.Substring(0, 400)
+                    $end = $cut.LastIndexOf('。')
+                    $factText = if ($end -ge 40) { $cut.Substring(0, $end + 1) } else { $cut.Substring(0, 399) + '…' }
+                }
+                if ($factText.Length -lt 4 -or $factText -notmatch '[\p{IsHiragana}\p{IsKatakana}\p{IsCJKUnifiedIdeographs}]') {
                     throw "Translation Japanese $factName must be 4-400 characters of Japanese text for MC ID: $id"
                 }
                 # A year that the notification never mentions is a fabrication; fail closed.
