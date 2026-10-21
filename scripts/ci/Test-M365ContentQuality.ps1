@@ -166,6 +166,11 @@ try {
     $typed['translation_1_japanese_facts'] = "変更：English only fact`n影響：原文に記載なし`n時期：段階的に展開されます。`n対応：管理者は設定を確認してください。"
     Write-Fixture @{ items = @($typed) } $agentPath
     Assert-Rejected { & (Join-Path $scripts 'Publish-M365AgentTranslations.ps1') @bridgeParams } 'Non-Japanese fact rejected'
+    $typed['translation_1_japanese_facts'] = "変更：会議設定の既定値が変更されます。`n影響：原文に記載なし`n時期：段階的に展開されます。`n対応：" + ('管理者は設定を確認してください。' * 40)
+    Write-Fixture @{ items = @($typed) } $agentPath
+    & (Join-Path $scripts 'Publish-M365AgentTranslations.ps1') @bridgeParams
+    $trimmed = @((Get-Content -LiteralPath $publishedPath -Raw | ConvertFrom-Json).messageTranslations | Where-Object id -eq $batch.messages[0].id)[0]
+    Assert-Quality ($trimmed.japaneseFacts.action.Length -le 400 -and $trimmed.japaneseFacts.action.EndsWith('。')) 'Over-long Japanese fact is shortened at a sentence boundary instead of failing the batch'
     $typed['translation_1_japanese_facts'] = "変更：会議設定の既定値が変更されます。`n影響：原文に記載なし`n時期：段階的に展開されます。`n対応：管理者は設定を確認してください。"
     Write-Fixture @{ items = @($typed) } $agentPath
     $typed['translation_1_japanese_title'] = 'English only title'
