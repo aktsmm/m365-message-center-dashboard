@@ -19897,11 +19897,11 @@
   },
   "audit": {
     "uniqueMessages": 147,
-    "snapshotOccurrences": 2833,
-    "snapshots": 35,
+    "snapshotOccurrences": 2919,
+    "snapshots": 36,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-10-16T19:15:07+00:00",
-    "checkedAt": "2026-10-20T18:40:02.985029+00:00",
+    "checkedAt": "2026-10-21T07:57:47.634655+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 51,
