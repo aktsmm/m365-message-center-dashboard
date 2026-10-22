@@ -1,27 +1,27 @@
 {
   "meta": {
-    "runId": "39179748686",
-    "generatedAt": "2026-10-19T00:13:04.3066794+00:00",
+    "runId": "39701221661",
+    "generatedAt": "2026-10-22T00:42:13.2863898+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 86,
+    "total": 87,
     "majorChanges": 24,
     "highSeverity": 1,
     "actionRequired": 11,
-    "actionDueWithin30Days": 4,
-    "updatedLast7Days": 12
+    "actionDueWithin30Days": 3,
+    "updatedLast7Days": 7
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 47
+      "count": 49
     },
     {
       "name": "Microsoft Entra",
-      "count": 25
+      "count": 24
     },
     {
       "name": "Microsoft 365 Copilot Chat",
@@ -29,6 +29,136 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1519855",
+      "title": "Microsoft Entra: Choose your own telephony provider for SMS and voice authentication",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-21T23:24:44.0000000+00:00",
+      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-21T23:24:58.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "[What and why]\nStarting October 30, 2026, Microsoft Entra ID will make Choose Your Own Telephony Provider (CYOT) generally available. CYOT enables organizations to use a supported third-party telecommunications provider for SMS and voice authentication. Organizations select a supported provider through Microsoft Security Store and manage their commercial relationship directly with the provider.\nMicrosoft recommends phishing-resistant authentication methods, such as passkeys, instead of SMS or voice authentication. Organizations should use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning October 30, 2026\n[Impact on your organization]\nWho is affected\n• Organizations with users who require SMS or voice authentication for business, regulatory, or technical reasons\nPlatforms and services\n• Microsoft Entra ID\n• Microsoft Security Store\nWhat will happen\n• Starting October 30, 2026, organizations can choose to configure a supported telephony provider for SMS and voice authentication.\n• Your selected provider will deliver the SMS messages or voice calls users need to complete authentication.\n• Microsoft Entra ID will continue to enforce authentication method policies and coordinate the authentication experience.\n• Your organization will manage its commercial relationship with the selected provider.\n• Microsoft-provided SMS and voice authentication is scheduled to be retired on February 1, 2027, for all users except Global Administrators and external users. The retirement date for Global Administrators and external users is July 1, 2027. Internal guest users remain subject to the February 1, 2027 retirement date.\n• After the applicable retirement date, users whose only available MFA method is SMS or voice must register a passkey during sign-in unless the organization has configured a supported telephony provider. This registration prompt is blocking.\n[Action required and recommendations]\nIf your organization plans to adopt CYOT:\n• Identify affected users. Determine which users have a documented business, regulatory, or technical requirement for SMS or voice authentication.\n• Evaluate phishing-resistant alternatives. Confirm that a phishing-resistant authentication method does not meet the requirements for those users.\n• Review supported telephony providers. Compare providers based on geographic coverage, supported delivery channels, pricing, support, security, and compliance capabilities.\n• Review organizational requirements. Work with the appropriate teams to review procurement, privacy, and regulatory requirements before selecting a provider.\n• Plan your transition. Review Passkeys by default and retirement of Microsoft-provided SMS and voice authentication and plan your transition based on the retirement date applicable to each user population.\n• Validate purchasing requirements. Review Purchase a SaaS solution and deploy a linked solution. Purchasing through Security Store requires an Azure billing subscription and resource group, plus the appropriate Azure subscription role.\n• Estimate costs. Review provider pricing and expected Azure infrastructure charges before deployment.\nLearn more\n• Choose a telephony provider for SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n• Estimate telephony provider and Azure hosting costs: ExternalPhoneProvider-AzureFunction-Sample/docs/COST-CALCULATOR.md at main · Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n• Purchase and deploy a SaaS solution from Security Store - Microsoft Security Store | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes the change add any integration to third-party software products, and if so, what?Yes. The change enables organizations to use a supported third-party telephony provider for SMS and voice authentication. Organizations select a provider through Microsoft Security Store, and the selected provider delivers the SMS messages or voice calls used for authentication.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting October 30, 2026, Microsoft Entra ID allows organizations to choose a supported third-party telephony provider for SMS and voice authentication via Microsoft Security Store. Microsoft-provided SMS/voice authentication retires by February 1, 2027, except for some users until July 1, 2027. Organizations manage provider relationships directly."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
+      ]
+    },
+    {
+      "id": "MC1518032",
+      "title": "Microsoft 365 apps: Introducing Update Repair in Inventory",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-20T22:59:49.0000000+00:00",
+      "endDateTime": "2026-12-25T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-20T23:00:15.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nWe are introducing Update Repair in Inventory to help admins identify and remediate Windows devices with Microsoft 365 apps that are out of date or experiencing update issues. In the Microsoft 365 apps admin center, admins can review device status and recommended actions, remotely start Online Repair for eligible devices, and follow manual remediation guidance for devices that need attention. Repair reinstalls Microsoft 365 apps using the latest available build for the device's configured update channel.\n[Rollout schedule]\n• Public Preview (Worldwide): Rollout began in mid-October 2026 and is expected to complete by late October 2026.\n• General Availability (Worldwide): Rollout will begin in mid-November 2026 and is expected to complete by late November 2026.\n[Impact on your organization]\nWho is affected\n• Admins managing Windows devices with Microsoft 365 apps installed.\nPlatforms and services\n• Windows devices with Microsoft 365 apps\n• Microsoft 365 apps admin center\nWhat will happen\n• Admins can more easily identify devices with Microsoft 365 apps update issues and decide how to remediate them.\n• Eligible devices can be repaired remotely, reducing the need for hands-on intervention.\n• Repair closes open Office apps and reinstalls Microsoft 365 apps.\n• Devices that need attention still require administrator review and manual remediation.\n[Action required and recommendations]\n• Go to the Microsoft 365 apps admin center and make sure Inventory is enabled.\n• Update Repair uses Inventory data from Windows devices with Microsoft 365 apps installed to identify devices that need attention or repair. For the Repair action, devices must be running build 16.0.20326.20000 or later.\n• Before starting a repair, notify affected users, ask them to save their work and close Office apps, and schedule the action to minimize disruption.\n• Keep devices powered on, signed in, and connected so they can receive the action at their next Inventory check-in.\n[Learn more]\n• Use Update Repair to identify and remediate Microsoft 365 Apps update issues - Microsoft 365 Apps | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "576286"
+        },
+        {
+          "name": "Summary",
+          "value": "Update Repair in Inventory helps admins identify and fix Windows devices with outdated or problematic Microsoft 365 apps via the admin center. It enables remote Online Repair for eligible devices, rolling out from October to November 2026. Admins must enable Inventory and notify users before repairs."
+        },
+        {
+          "name": "Platforms",
+          "value": "Desktop, Web"
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365-apps/admin-center/update-repair"
+      ]
+    },
+    {
+      "id": "MC1515930",
+      "title": "Cowork browser use setting renamed to Browser use in Microsoft Copilot",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-19T23:18:11.0000000+00:00",
+      "endDateTime": "2026-12-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-19T23:18:23.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[Introduction]\nWe’re renaming the Cowork settings panel in Copilot Settings to Browser use in Microsoft Copilot. This panel contains the setting that lets admins manage whether Copilot apps can use the Microsoft Edge browser to perform tasks on behalf of users.\nThis change makes the browser use setting easier for admins to find and manage as we organize Cowork-related controls into more discoverable, capability-specific settings.\nThere is no change to the setting’s functionality or existing configuration as part of this rename.\n[When this will happen:]\nGeneral Availability (Worldwide): We will begin rolling out on mid October 2026 and expect to complete by mid October 2026.\n[How this will affect your organization:]\nThe Cowork settings panel will be renamed to Browser use in Microsoft Copilot. The new name makes it easier for admins to identify and discover the setting that controls whether Copilot apps can use the Microsoft Edge browser to perform tasks on behalf of users.\nThere is no change to the functionality or existing configuration of the setting as a result of this rename.\n[What you need to do to prepare:]\nNo action is required. Existing configurations will remain unchanged.\nAdmins should be aware that the setting previously found under Cowork will now appear as Browser use in Microsoft Copilot in Copilot Settings.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "The Cowork settings panel in Microsoft Copilot is renamed to Browser use in Microsoft Copilot to improve discoverability. This change, rolling out in mid-October 2026, does not affect functionality or configurations. No action is required; admins will find the setting under the new name."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1506727",
+      "title": "Microsoft Agent 365: Expanded access to Microsoft agent usage and activity insights in Microsoft 365 admin center",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-13T22:12:00.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-19T16:40:21.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated October 19, 2026: We have updated the content. Thank you for your patience.\n[What and why]\nStarting in late October 2026, Microsoft is expanding access to Agent 365 usage and activity insights in the Microsoft Admin Center for Microsoft pre-built agents and agents built on Microsoft platforms. This change expands access to the agent overview, active users, advanced usage (activity, sessions, exception rate, run time), regardless of Agent 365 licensing status, regardless of Agent 365 licensing status, giving administrators foundational visibility into agent usage and activity and helping them understand where additional management, governance, and security capabilities may be needed.\nThis change is limited to some management metrics for agents built by Microsoft or built on Microsoft Platforms, not inclusive of agents built on 3rd party platforms. Agent 365 or ME7 licensing continues to provide access to the broader set of Agent 365 management, governance, security, and business value capabilities, enabling organizations to go beyond foundational visibility to more deeply manage and protect their agent environment.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning in late October 2026 and expected to complete by late November 2026\n[Impact on your organization]\nWho is affected\n• Organizations using supported agents built by Microsoft or built on Microsoft platforms\nPlatforms and services\n• Microsoft 365 admin center\n• Agent 365 management\nWhat will happen\n• Administrators will have expanded access to Agent 365 usage and activity insights for supported agents built by Microsoft or on Microsoft platforms, including agent overview, active users, activity, sessions, exception rate, and run time. • In Registry, the affected usage and activity columns are Active users, Total sessions, Exception rate, and Run Time.\n• In Agent overview, affected cards and charts include Active users, Active users over time, and Trending agents by active users. These views may already be visible in organizations without an Agent 365 license. Reported values and trends may change temporarily as activity data accumulates during rollout.\n• In Agent details > Activity, affected metrics include the Active users, Sessions, Exceptions, and Agent run-time cards, and the Active users over time and Sessions over time charts.\n• The change applies to both existing and new agents.\n• As this change reaches your organization, some metrics or trends may initially appear incomplete while activity data accumulates. Allow up to 30 days after data collection begins for a full 30-day reporting view. Lower displayed values during this period do not necessarily indicate a decline in agent usage\n• Data availability continues to depend on the agent or platform sending activity data and on applicable observability settings.\n• Existing licensing and access requirements for the full value of observability metrics, including risk-related features will continue to require a paid A365 or ME7 license.\nAction required and recommendations\nReview the expanded usage and activity insights in Microsoft 365 admin center to better understand agent usage and activity across your organization.\nWhen comparing usage before and after rollout, account for the time required to collect a full reporting window. Lower displayed values during rollout may reflect incomplete activity history rather than a decline in usage.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting late October 2026, Microsoft 365 admin center will expand access to usage and activity insights for Microsoft-built or platform-based agents, regardless of Agent 365 licensing. This provides foundational visibility into agent metrics, while full management features still require paid licenses. Rollout completes by late November 2026."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
     {
       "id": "MC1510951",
       "title": "(Updated) Windows updates are available for 2026 time zone changes in Canada",
@@ -212,37 +342,6 @@
         "https://learn.microsoft.com/entra/identity/enterprise-apps/grant-admin-consent",
         "https://learn.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0",
         "https://learn.microsoft.com/graph/permissions-reference"
-      ]
-    },
-    {
-      "id": "MC1506727",
-      "title": "Microsoft Agent 365: Expanded access to Microsoft agent usage and activity insights in Microsoft 365 admin center",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-13T22:12:00.0000000+00:00",
-      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-13T22:12:09.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and why]\nWe’re removing the Agent 365 license requirement for observability data for supported agents built by Microsoft or on Microsoft platforms. This change expands access to usage and activity insights in the Microsoft 365 admin center, helping administrators monitor how agents are used.\nThis change is limited to observability metrics. It does not remove licensing requirements for other Agent 365 capabilities or for agent activity metrics for agents built on third-party platforms.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning in late November 2026 and expected to complete by late November 2026\n[Impact on your organization]\nWho is affected\n• Organizations using supported agents built by Microsoft or on Microsoft platforms\nPlatforms and services\n• Microsoft 365 admin center\n• Agent 365 observability\nWhat will happen\n• An Agent 365 license will no longer be required to view usage and activity metrics for supported agents built by Microsoft or on Microsoft platforms.\n• The change applies to both existing and new supported agents.\n• In Registry, the affected usage and activity columns are Active users, Total sessions, Exception rate, and Run Time.\n• In Agent overview, affected cards and charts include Active users, Active users over time, and Trending agents by active users. These views may already be visible in organizations without an Agent 365 license. Reported values and trends may change temporarily as activity data accumulates during rollout.\n• In Agent details > Activity, affected metrics include the Active users, Sessions, Exceptions, and Agent run-time cards, and the Active users over time and Sessions over time charts.\n• As the change reaches your organization, some metrics may initially appear lower or show incomplete trends while activity data is collected. This temporary change does not necessarily indicate reduced agent usage.\n• Allow up to 30 days after data collection begins for a full 30-day reporting view for each enabled agent or platform. Completing the rollout does not mean every agent will immediately have a full 30-day history.\n• Data availability continues to depend on the agent or platform sending activity data and on applicable observability settings.\n• Existing licensing and access requirements for third-party agent observability are unchanged.\n• Other licensed Agent 365 capabilities, including risk-related features, continue to require the applicable license.\n[Action required and recommendations]\nWhen comparing usage before and after rollout, account for the time required to collect a full reporting window rather than interpreting a lower displayed value alone as a decline in usage.\nReview the affected Microsoft 365 admin center views as the change reaches your organization.\nLearn more\n• Data handling, data residency, and compliance in Agent 365 observability | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations were identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft is removing the Agent 365 license requirement for observability data of supported agents built by Microsoft or on Microsoft platforms, expanding access to usage and activity insights in the Microsoft 365 admin center starting late November 2026. Licensing for other Agent 365 features and third-party agents remains unchanged."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/microsoft-agent-365/admin/data-residency-protection-compliance"
       ]
     },
     {
@@ -1027,34 +1126,6 @@
       "officialDocumentUrls": []
     },
     {
-      "id": "MC1478465",
-      "title": "Security Copilot is now included as part of your Microsoft 365 E5/E7 plan",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-24T15:52:25.0000000+00:00",
-      "endDateTime": "2026-11-23T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-24T15:53:51.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "[What and why:]\nMicrosoft Security Copilot agents are built into the flow of work of security teams using Microsoft Defender, Microsoft Entra, Microsoft Intune and Microsoft Purview. At Ignite 2025, Microsoft introduced a dozen new agents across these products, bringing agentic defense across workflows to enable autonomous and proactive protection.\n[Rollout schedule:]\nTo make it easier for teams to get started, beginning today, your organization has access to Security Copilot features and agents as part of your existing Microsoft 365 E5/E7 entitlement.\n[Impact on your organization:]\nWho is affected:\n• Organizations with Microsoft 365 E5 or E7\nPlatforms/Services:\n• Defender\n• Entra\n• Intune\n• Purview\n• Security Copilot portal\nWhat will happen:\n• Security Copilot will be automatically included with Microsoft 365 E5/E7 (no separate purchase required).\n• Your tenant will receive 400 Security Compute Units (SCUs) per month per 1,000 licensed users, up to 10,000 SCUs per month.\n• Core agentic security experiences will be available across Defender, Entra, Intune, Purview, and the Security Copilot portal.\n• Developer tools and APIs will be available to build custom agents and integrations.\n• Existing security, compliance, and access policies continue to apply.\nAdditional capabilities outside the included entitlement may incur extra charges, including:\n• Microsoft Sentinel data lake compute or storage.\n• Non-agentic Data Security Investigations in Purview.\n• Azure Logic Apps usage with Security Copilot.\n• Third-party agents purchased via Microsoft Security Store.\n[Action required / Recommendations:]\nNo action is required to enable this feature.\nWe recommend:\n• Reviewing new agentic scenarios and capabilities in the Security Copilot Adoption Hub.\n• Reviewing the documentation for details on what’s included.\n• Requesting assistance from a Microsoft 365 FastTrack specialist to unlock the full value of Security Copilot.\n• Exploring Microsoft and partner-published agents in Microsoft Security Store, also accessible within Microsoft Defender and Entra.\nIf you would like to opt out of this entitlement, please contact support.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Security Copilot is now included with Microsoft 365 E5/E7 plans, integrating agents across Defender, Entra, Intune, Purview, and its portal. No purchase or action is needed. Organizations get monthly Security Compute Units, developer tools, and can explore additional paid features or opt out by contacting support."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1477996",
       "title": "Retirement of Viva Insights (personal insights) and Viva Learning usage reports",
       "category": "planForChange",
@@ -1631,36 +1702,6 @@
         {
           "name": "Summary",
           "value": "Microsoft Edge will retire Manifest V2 (MV2) extensions by early 2027, fully switching to Manifest V3 (MV3) for improved security and performance. MV2 extensions will be disabled, blocked from new installs, and policies supporting MV2 removed. Enterprises must migrate to MV3 before the deprecation deadline."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1440968",
-      "title": "(Updated) Microsoft Entra ID: Optimizations for passkey registration experience",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-27T22:53:27.0000000+00:00",
-      "endDateTime": "2026-10-19T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-04T16:33:45.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated September 4, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nWe're rolling out optimizations to passkey registration across Microsoft Entra ID. These changes improve how passkey registration is handled through Registration Campaign, Authentication Strengths, and My Sign-Ins.\nThe updated registration logic will more consistently:\n• Guide users to register passkey types that comply with administrator configured passkey profile restrictions, reducing unsuccessful or non-compliant registration attempts.\n• Prioritize registration of a passkey that is local to the user's current device when permitted by policy.\nThese improvements are designed to increase successful passkey registrations, reduce registration friction, and help organizations strengthen adoption of phishing resistant authentication methods.\nThere are no user interface changes associated with this update.\n[Rollout schedule]\n• General Availability (Worldwide and GCC): Beginning in late August 2026 and expected to complete by mid-September 2026 (previously late August)\n[Impact on your organization]\nWho is affected\n• Users who register passkeys through Registration Campaign, Authentication Strengths, or My Sign-Ins\n• Organizations using passkey profiles, including Synced-only, Device-bound-only, Attestation Enforced, and AAGUID-restricted configurations\n• Organizations using AAGUID-restricted passkey profiles will benefit from these registration optimizations. The greatest benefit is expected for Microsoft-supported passkey experiences. Other AAGUID-restricted providers continue to be supported and can be configured as before.\nPlatforms and services\n• Microsoft Entra ID Registration Campaign\n• Authentication Strengths\n• My Sign-Ins self-service passkey registration\n• Microsoft-supported passkey experiences for AAGUID-restricted profiles:• Entra passkey on Windows\n• Microsoft Authenticator passkey\n• iCloud Keychain passkey\n• Google Password Manager passkey\nWhat will happen\n• Users will continue to register passkeys through the same registration screens and entry points they use today.\n• Registration will more consistently align with administrator configured passkey profile requirements.\n• When permitted by policy, registration will prioritize a passkey native to the user's current device to improve the sign-in experience.\n[Action required and recommendations]\nNo action is required.\nOrganizations should continue driving passkey adoption through Registration Campaign and Authentication Strengths. These optimizations are intended to improve the likelihood of successful passkey registration while helping users remain compliant with organizational passkey policies.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra ID is optimizing passkey registration to better align with administrator policies, prioritize local device passkeys, and improve successful registrations without UI changes. The rollout begins late August 2026, completing by mid-September. No action is required; organizations should continue promoting passkey adoption."
         }
       ],
       "officialDocumentUrls": []
