@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T07:48:45.1411855+00:00",
+  "generatedAt": "2026-10-22T13:58:57.5911211+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra のエージェント作成既定変更(11/4)と Targeted release 廃止準備、Office LTSC 2021 サポート終了への対応が優先",
   "executiveSummary": "今週は Microsoft Entra 関連の変更が中心です。MC1506733 では、11月4日から管理者が「Users can create agent blueprints」を無効化しない限り、既定ユーザーがエージェントブループリントを作成可能になります(展開は2026年11月上旬〜下旬)。MC1506728 では同日以降、AgentIdentity.CreateAsManager がエージェントブループリントのプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。MC1490899 では Targeted release が2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります(アクション期限は10月31日と記載)。MC1509797 では Office LTSC 2021、Visio/Project LTSC 2021 等のサポートが10月13日に終了済みで、セキュリティ更新が提供されません。MC1519855 では Entra の Choose Your Own Telephony Provider が10月30日から GA となります。MC1510951 ではカナダの時間帯変更(11月1日に時計を戻さない)向けの Windows 更新が提供済みです。いずれも抜粋範囲外の詳細(手順の全文など)は未確認です。",
@@ -655,13 +655,6 @@
       "id": "MC1158329",
       "japaneseDetailedSummary": "Microsoft 365 Copilotの「メモリ」機能が更新され、チャット履歴を活用した応答のパーソナライズが強化されます。ユーザーは設定画面で保存されたメモリの表示・管理を行う新しいコントロールを利用でき、パーソナライズのオン/オフも選択可能です。対象はメモリ機能が有効なテナントの全Copilot Chatユーザーです。公開プレビュー(Frontier)は2025年11月中旬に開始済み、一般提供(GA)は当初2026年1月開始・7月完了予定でしたが、2026年9月中旬開始・10月下旬完了予定に延期されました。管理者は展開スケジュールの変更を踏まえ、ユーザー向けの周知やプライバシー・データ利用に関する社内ポリシーの確認を行うことが推奨されます。",
       "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。ご理解いただきありがとうございます。\n[概要]\nパーソナライゼーションとユーザーエクスペリエンスの向上のため、Microsoft 365 Copilotの「メモリ」機能を更新します。この更新により、Copilotはチャット履歴を使用して応答をパーソナライズし、ユーザーがより関連性の高い文脈に沿った返答を受け取れるようになります。また、保存されたメモリの表示・管理を容易にする、Copilot設定画面の刷新されたユーザーコントロールも導入します。これはすべてのCopilot Chatユーザーが利用可能になります。\nチャット履歴を使用したパーソナライゼーションの制御も可能で、詳細は設定画面でユーザーに提供されます。\n[展開時期]\n・パブリックプレビュー(Frontier):2025年11月中旬から展開開始。\n・一般提供(GA):2026年9月中旬開始(以前は1月上旬予定)、2026年10月下旬完了予定(以前は7月下旬予定)。\n[組織への影響]\nメモリ機能が有効なテナントのすべてのMicrosoft 365 Copilotユーザーが対象です。\n発生する内容:\n・Copi",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1182696",
-      "japaneseDetailedSummary": "Microsoft Defender Application Guard for Officeは2024年4月に廃止済みで、Officeから完全に削除されます。Windows 11 バージョン 23H2 のサポート終了に合わせた変更です。削除は2フェーズで実施されます。フェーズ1はOfficeバージョン2602から始まり、Current Channelは2026年2月初旬、Monthly Enterprise Channelは2026年4月、Semi-Annual Enterprise Channelは2026年7月が対象です。フェーズ2はOfficeバージョン2612で完全削除となり、Current Channelは2026年12月初旬、Monthly Enterprise Channelは2027年2月、Semi-Annual Enterprise Channelは2027年7月です。従来Application Guardで開いていたファイルは「保護されたビュー」で開くようになり、引き続き脅威から保護されます。対象はApplication Guardを使用していたすべてのWin32ユーザーです。管理者はグループポリシーや構成の見直しが必要になる場合があります。",
-      "japaneseBodyTranslation": "Microsoft Defender Application Guard for Officeは2024年4月に廃止され、現在Officeから削除されています。この変更はWindows 11バージョン23H2のサポート終了に合わせたものであり、ユーザーのセキュリティエクスペリエンスの合理化を目的としています。以前Application Guardで開いていたドキュメントは、今後は保護されたビューで開かれ、引き続き脅威に対する強固な保護が維持されます。\n実施時期:\nフェーズ1：Officeバージョン2602から削除開始\n• Current Channel: 2026年2月初旬\n• Monthly Enterprise Channel: 2026年4月\n• Semi-Annual Enterprise Channel: 2026年7月\nフェーズ2：Officeバージョン2612で完全削除\n• Current Channel: 2026年12月初旬\n• Monthly Enterprise Channel: 2027年2月\n• Semi-Annual Enterprise Channel: 2027年7月\n組織への影響:\n対象者：以前Microsoft Defender Application Guard for Officeを使用していたすべてのWin32ユーザー。\n変更内容：\n• 以前Application Guardで開いていたファイルは、今後は保護されたビューで開かれます。\n• Application Gu",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1553,13 +1546,54 @@
     },
     {
       "id": "MC985483",
-      "japaneseDetailedSummary": "Microsoft Graph APIのCreate onlineMeeting APIでパスコードのデフォルト動作が変更。2025年2月24日よりisPasscodeRequiredのデフォルトがfalseからtrueに変更され、未指定時は自動でパスコード要求に。2027年10月にはパスコード要否の指定オプション自体が廃止予定。対象APIを使うアプリの見直し・更新が必要。",
-      "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
+      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
+      "japaneseFacts": {
+        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
+        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
+        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
+        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
+      "sourceCharacterCount": 1148,
+      "sourceTruncated": false,
+      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
+      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1182696",
+      "japaneseTitle": "Office の Application Guard を段階的に削除、保護ビューへ移行",
+      "japaneseFacts": {
+        "change": "Microsoft Defender Application Guard for Office を Office から削除し、従来 Application Guard で開いていたファイルは保護ビューで開かれます。",
+        "impact": "Application Guard for Office を使用していたすべての Win32 ユーザーが対象です。",
+        "timing": "フェーズ1は Office 2602(Current Channel は 2026年2月上旬、MEC は 2026年4月、SAEC は 2026年7月)、フェーズ2は 2612(Current は 2026年12月上旬、MEC は 2027年2月、SAEC は 2027年7月)です。",
+        "action": "削除自体に管理者の作業は不要ですが、ASR ルールと WDAC の有効化、社内ドキュメントやヘルプデスク案内の見直しが推奨されています。"
+      },
+      "japaneseDetailedSummary": "Microsoft Defender Application Guard for Office は 2024年4月に廃止され、現在 Office から削除されています。Windows 11 23H2 のサポート終了に合わせた変更で、従来 Application Guard で開いていた文書は保護ビューで開かれます。フェーズ1(Office 2602)で無効化され、サポート例外はフェーズ2まで利用できる場合があります。フェーズ2(Office 2612)で完全に削除され、回避策はありません。対象は Application Guard を使っていたすべての Win32 ユーザーです。管理者の作業は必須ではありませんが、Defender for Endpoint の ASR ルールと WDAC の有効化、社内ドキュメントやヘルプデスクガイダンスの見直しが推奨されます。コンプライアンス上の考慮事項は特定されていません。",
+      "japaneseBodyTranslation": "Microsoft Defender Application Guard for Office は 2024年4月に廃止され、現在 Office から削除されています。この変更は Windows 11 バージョン 23H2 のサポート終了に合わせたもので、ユーザーのセキュリティ体験を簡素化します。以前 Application Guard で開いていたドキュメントは保護ビューで開かれ、脅威に対する強力な保護が維持されます。\n実施時期:\nフェーズ1:Office バージョン 2602 で削除開始\n• Current Channel:2026年2月上旬\n• Monthly Enterprise Channel:2026年4月\n• Semi-Annual Enterprise Channel:2026年7月\nフェーズ2:Office バージョン 2612 で完全削除\n• Current Channel:2026年12月上旬\n• Monthly Enterprise Channel:2027年2月\n• Semi-Annual Enterprise Channel:2027年7月\n組織への影響:\n対象:以前 Microsoft Defender Application Guard for Office を使用していたすべての Win32 ユーザー。\n発生すること:\n• 以前 Application Guard で開いていたファイルは保護ビューで開かれます。\n• Application Guard for Office はフェーズ1で無効化されます。サポート例外はフェーズ2まで利用できる場合があります。\n• フェーズ2で完全に削除され、回避策はありません。\n• 管理者は Microsoft Defender for Endpoint の攻撃面減少(ASR)ルールと Windows Defender Application Control(WDAC)の有効化が推奨されます。\n準備のために:\n削除自体に管理者の作業は不要ですが、強力な保護を維持するため次を推奨します。\n• Office ファイル内の危険な動作をブロックするため、Defender for Endpoint の ASR ルールを有効化する。\n• 信頼された署名済みコードのみを実行するため、WDAC を有効化する。\n• Application Guard for Office に依存していた場合は、社内ドキュメントとヘルプデスクの案内を見直す。\nApplication Guard for Office の利用状況の確認方法は、Microsoft Learn の「Confirm that Application Guard for Office is enabled and working」を参照してください。\nコンプライアンス上の考慮事項:特定されていません。必要に応じて組織で確認してください。",
+      "sourceCharacterCount": 2116,
+      "sourceTruncated": false,
+      "sourceHash": "20b32bbaec9bfdbedabacc894f33a282abb6f51adbe7bab21058e69e4d28e5b0",
+      "validatedAt": "2026-10-22T13:58:57.5595318+00:00"
+    },
+    {
+      "id": "MC1519855",
+      "japaneseTitle": "Entra で SMS/音声認証の通信事業者を選択可能に(CYOT)",
+      "japaneseFacts": {
+        "change": "Entra ID の Choose Your Own Telephony Provider (CYOT) が一般提供され、SMS・音声認証に対応サードパーティ事業者を選べます。",
+        "impact": "業務・規制・技術上の理由で SMS や音声認証が必要なユーザーを持つ組織が対象です。",
+        "timing": "2026年10月30日から世界規模で GA、Microsoft 提供の SMS/音声認証は 2027年2月1日(Global Administrator と外部ユーザーは 2027年7月1日)に廃止予定です。",
+        "action": "CYOT 採用時は対象ユーザーの特定、フィッシング耐性のある代替手段の評価、対応プロバイダーの比較を行います。以降の推奨事項は原文に記載なし(切り詰め)。"
+      },
+      "japaneseDetailedSummary": "2026年10月30日から、Microsoft Entra ID で Choose Your Own Telephony Provider (CYOT) が一般提供(世界規模)されます。組織は Microsoft Security Store を通じて対応するサードパーティ通信事業者を選び、SMS・音声認証に利用でき、事業者との商契約は組織が直接管理します。Microsoft はパスキーなどフィッシング耐性のある方式を推奨しており、通信事業者の利用は業務・規制・技術上の要件があるユーザーに限るべきとしています。Microsoft 提供の SMS・音声認証は 2027年2月1日に廃止予定(Global Administrator と外部ユーザーは 2027年7月1日、内部ゲストは 2月1日)です。廃止後、SMS や音声のみが MFA 方式のユーザーは、対応プロバイダー未設定の場合サインイン時にパスキー登録が必須となります。原文は途中で切れています。",
+      "japaneseBodyTranslation": "[内容と理由]\n2026年10月30日から、Microsoft Entra ID は Choose Your Own Telephony Provider (CYOT) を一般提供します。CYOT により、組織は SMS および音声認証にサポート対象のサードパーティ通信事業者を利用できます。組織は Microsoft Security Store からサポート対象のプロバイダーを選択し、プロバイダーとの商契約を直接管理します。\nMicrosoft は SMS や音声認証ではなく、パスキーなどのフィッシング耐性のある認証方式を推奨しています。通信事業者は、業務上、規制上、または技術上、電話ベースの認証が必要なユーザー層にのみ利用してください。\n[展開スケジュール]\n• 一般提供(全世界):2026年10月30日開始\n[組織への影響]\n対象\n• 業務、規制、技術上の理由で SMS や音声認証が必要なユーザーがいる組織\nプラットフォームとサービス\n• Microsoft Entra ID\n• Microsoft Security Store\n発生すること\n• 2026年10月30日以降、組織は SMS および音声認証用にサポート対象の通信事業者を構成できます。\n• 選択したプロバイダーが、認証に必要な SMS メッセージや音声通話を配信します。\n• Microsoft Entra ID は引き続き認証方法ポリシーを適用し、認証体験を調整します。\n• 組織は選択したプロバイダーとの商契約を管理します。\n• Microsoft 提供の SMS・音声認証は、Global Administrator と外部ユーザーを除くすべてのユーザーについて 2027年2月1日に廃止予定です。Global Administrator と外部ユーザーの廃止日は 2027年7月1日です。内部ゲストユーザーは 2027年2月1日の廃止日が適用されます。\n• 該当する廃止日以降、利用可能な MFA 方式が SMS または音声のみのユーザーは、組織がサポート対象の通信事業者を構成していない限り、サインイン時にパスキーを登録する必要があります。この登録プロンプトはブロッキングです。\n[必要な対応と推奨事項]\nCYOT の採用を予定する場合:\n• 影響を受けるユーザーを特定する。SMS や音声認証に文書化された業務、規制、技術上の要件があるユーザーを確認します。\n• フィッシング耐性のある代替手段を評価する。それらのユーザーの要件を満たさないことを確認します。\n• サポート対象の通信事業者を確認する。地理的カバレッジ、サポート(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "f1a2c68605c0cfdcdf6dce2d1fdd53d02558b6c94d2facb5c86ba4c9bb9f28b0",
+      "validatedAt": "2026-10-22T13:58:57.5837574+00:00"
     }
   ],
-  "summarySourceHash": "bff737798865b4129845ecb643722f3edad36cdf9cb81b41658ca73b19157c7c",
   "summaryGeneratedAt": "2026-10-22T07:48:45.0036563+00:00",
+  "summarySourceHash": "bff737798865b4129845ecb643722f3edad36cdf9cb81b41658ca73b19157c7c",
   "sourceAgentRunId": "39742636795"
 }
