@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T13:58:57.5911211+00:00",
+  "generatedAt": "2026-10-22T18:43:11.2283681+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra のエージェント作成既定変更(11/4)と Targeted release 廃止準備、Office LTSC 2021 サポート終了への対応が優先",
   "executiveSummary": "今週は Microsoft Entra 関連の変更が中心です。MC1506733 では、11月4日から管理者が「Users can create agent blueprints」を無効化しない限り、既定ユーザーがエージェントブループリントを作成可能になります(展開は2026年11月上旬〜下旬)。MC1506728 では同日以降、AgentIdentity.CreateAsManager がエージェントブループリントのプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。MC1490899 では Targeted release が2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります(アクション期限は10月31日と記載)。MC1509797 では Office LTSC 2021、Visio/Project LTSC 2021 等のサポートが10月13日に終了済みで、セキュリティ更新が提供されません。MC1519855 では Entra の Choose Your Own Telephony Provider が10月30日から GA となります。MC1510951 ではカナダの時間帯変更(11月1日に時計を戻さない)向けの Windows 更新が提供済みです。いずれも抜粋範囲外の詳細(手順の全文など)は未確認です。",
@@ -657,6 +657,22 @@
       "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。ご理解いただきありがとうございます。\n[概要]\nパーソナライゼーションとユーザーエクスペリエンスの向上のため、Microsoft 365 Copilotの「メモリ」機能を更新します。この更新により、Copilotはチャット履歴を使用して応答をパーソナライズし、ユーザーがより関連性の高い文脈に沿った返答を受け取れるようになります。また、保存されたメモリの表示・管理を容易にする、Copilot設定画面の刷新されたユーザーコントロールも導入します。これはすべてのCopilot Chatユーザーが利用可能になります。\nチャット履歴を使用したパーソナライゼーションの制御も可能で、詳細は設定画面でユーザーに提供されます。\n[展開時期]\n・パブリックプレビュー(Frontier):2025年11月中旬から展開開始。\n・一般提供(GA):2026年9月中旬開始(以前は1月上旬予定)、2026年10月下旬完了予定(以前は7月下旬予定)。\n[組織への影響]\nメモリ機能が有効なテナントのすべてのMicrosoft 365 Copilotユーザーが対象です。\n発生する内容:\n・Copi",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
+    },
+    {
+      "id": "MC1182696",
+      "japaneseTitle": "Office の Application Guard を段階的に削除、保護ビューへ移行",
+      "japaneseFacts": {
+        "change": "Microsoft Defender Application Guard for Office を Office から削除し、従来 Application Guard で開いていたファイルは保護ビューで開かれます。",
+        "impact": "Application Guard for Office を使用していたすべての Win32 ユーザーが対象です。",
+        "timing": "フェーズ1は Office 2602(Current Channel は 2026年2月上旬、MEC は 2026年4月、SAEC は 2026年7月)、フェーズ2は 2612(Current は 2026年12月上旬、MEC は 2027年2月、SAEC は 2027年7月)です。",
+        "action": "削除自体に管理者の作業は不要ですが、ASR ルールと WDAC の有効化、社内ドキュメントやヘルプデスク案内の見直しが推奨されています。"
+      },
+      "japaneseDetailedSummary": "Microsoft Defender Application Guard for Office は 2024年4月に廃止され、現在 Office から削除されています。Windows 11 23H2 のサポート終了に合わせた変更で、従来 Application Guard で開いていた文書は保護ビューで開かれます。フェーズ1(Office 2602)で無効化され、サポート例外はフェーズ2まで利用できる場合があります。フェーズ2(Office 2612)で完全に削除され、回避策はありません。対象は Application Guard を使っていたすべての Win32 ユーザーです。管理者の作業は必須ではありませんが、Defender for Endpoint の ASR ルールと WDAC の有効化、社内ドキュメントやヘルプデスクガイダンスの見直しが推奨されます。コンプライアンス上の考慮事項は特定されていません。",
+      "japaneseBodyTranslation": "Microsoft Defender Application Guard for Office は 2024年4月に廃止され、現在 Office から削除されています。この変更は Windows 11 バージョン 23H2 のサポート終了に合わせたもので、ユーザーのセキュリティ体験を簡素化します。以前 Application Guard で開いていたドキュメントは保護ビューで開かれ、脅威に対する強力な保護が維持されます。\n実施時期:\nフェーズ1:Office バージョン 2602 で削除開始\n• Current Channel:2026年2月上旬\n• Monthly Enterprise Channel:2026年4月\n• Semi-Annual Enterprise Channel:2026年7月\nフェーズ2:Office バージョン 2612 で完全削除\n• Current Channel:2026年12月上旬\n• Monthly Enterprise Channel:2027年2月\n• Semi-Annual Enterprise Channel:2027年7月\n組織への影響:\n対象:以前 Microsoft Defender Application Guard for Office を使用していたすべての Win32 ユーザー。\n発生すること:\n• 以前 Application Guard で開いていたファイルは保護ビューで開かれます。\n• Application Guard for Office はフェーズ1で無効化されます。サポート例外はフェーズ2まで利用できる場合があります。\n• フェーズ2で完全に削除され、回避策はありません。\n• 管理者は Microsoft Defender for Endpoint の攻撃面減少(ASR)ルールと Windows Defender Application Control(WDAC)の有効化が推奨されます。\n準備のために:\n削除自体に管理者の作業は不要ですが、強力な保護を維持するため次を推奨します。\n• Office ファイル内の危険な動作をブロックするため、Defender for Endpoint の ASR ルールを有効化する。\n• 信頼された署名済みコードのみを実行するため、WDAC を有効化する。\n• Application Guard for Office に依存していた場合は、社内ドキュメントとヘルプデスクの案内を見直す。\nApplication Guard for Office の利用状況の確認方法は、Microsoft Learn の「Confirm that Application Guard for Office is enabled and working」を参照してください。\nコンプライアンス上の考慮事項:特定されていません。必要に応じて組織で確認してください。",
+      "sourceCharacterCount": 2116,
+      "sourceTruncated": false,
+      "sourceHash": "20b32bbaec9bfdbedabacc894f33a282abb6f51adbe7bab21058e69e4d28e5b0",
+      "validatedAt": "2026-10-22T13:58:57.5595318+00:00"
     },
     {
       "id": "MC1187682",
@@ -1449,22 +1465,6 @@
       "validatedAt": "2026-10-19T20:46:24.8044694+00:00"
     },
     {
-      "id": "MC1506727",
-      "japaneseTitle": "Agent 365のエージェント利用状況の閲覧にライセンス不要に",
-      "japaneseFacts": {
-        "change": "Microsoft製またはMicrosoftプラットフォーム上の対応エージェントの可観測性データ閲覧で、Agent 365ライセンスが不要になります。",
-        "impact": "これら対応エージェントを利用する組織。サードパーティ製エージェントや他のAgent 365機能のライセンス要件は変更されません。",
-        "timing": "全世界GAは2026年11月下旬に開始し、11月下旬に完了予定です。",
-        "action": "原文の抜粋内には記載なし(抜粋が途中で終了しています)。"
-      },
-      "japaneseDetailedSummary": "Microsoft 365管理センターで、Microsoft製またはMicrosoftプラットフォーム上で構築された対応エージェントの利用状況・アクティビティ指標(可観測性データ)を表示する際、Agent 365ライセンスが不要になります。既存および新規の対応エージェントが対象です。レジストリ(アクティブユーザー、総セッション数、例外率、実行時間)、エージェント概要、エージェント詳細のアクティビティが影響を受けます。展開中は指標が一時的に低く見えたり傾向が不完全になることがありますが、利用減少を意味しません。完全な30日分の表示には、データ収集開始から最大30日かかります。サードパーティ製エージェントやリスク関連機能など他のAgent 365機能は引き続きライセンスが必要です。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft製またはMicrosoftプラットフォーム上で構築された対応エージェントの可観測性データについて、Agent 365ライセンス要件を撤廃します。これにより、Microsoft 365管理センターでの利用状況とアクティビティの分析情報へのアクセスが拡大し、管理者がエージェントの利用状況を監視しやすくなります。この変更は可観測性メトリックに限定されます。他のAgent 365機能や、サードパーティ プラットフォーム上のエージェントのアクティビティ指標に対するライセンス要件は撤廃されません。\n[展開スケジュール]\n• 一般提供(全世界):2026年11月下旬に開始し、2026年11月下旬に完了予定\n[組織への影響]\n対象者\n• Microsoft製またはMicrosoftプラットフォーム上の対応エージェントを使用する組織\nプラットフォームとサービス\n• Microsoft 365管理センター\n• Agent 365の可観測性\n今後の動作\n• Microsoft製またはMicrosoftプラットフォーム上の対応エージェントの利用状況・アクティビティ指標の表示に、Agent 365ライセンスは不要になります。\n• 既存および新規の対応エージェントに適用されます。\n• レジストリでは、アクティブユーザー、総セッション数、例外率、実行時間の列が対象です。\n• エージェント概要では、アクティブユーザー、アクティブユーザーの推移、アクティブユーザー別のトレンドエージェントのカードとグラフが対象です。これらはAgent 365ライセンスのない組織で既に表示される場合があります。展開中、アクティビティデータの蓄積に伴い値や傾向が一時的に変わることがあります。\n• エージェントの詳細 > アクティビティでは、アクティブユーザー、セッション、例外、エージェント実行時間のカードと、アクティブユーザーの推移、セッションの推移のグラフが対象です。\n• 変更が組織に到達した時点では、データ収集中のため一部の指標が低く表示されたり、傾向が不完全に見えることがあります。これは必ずしも利用の減少を意味しません。\n• 有効化された各エージェントまたはプラットフォームで30日間の完全なレポートを表示するには、データ収集開始から最大30日かかります。展開完了は、すべてのエージェントに30日分の履歴があることを意味しません。\n• データの可用性は、エージェントまたはプラットフォームがアクティビティデータを送信すること、および適用される可観測性設定に引き続き依存します。\n• サードパーティ製エージェントの可観測性に関する既存のライセンスとアクセス要件は変更ありません。\n• リスク関連機能を含む他のライセンス対象のAgent 365機能は、引き続き該当ライセンスが必要です。\n[必要な対応と推奨事項]\n(原文はここで途中終了)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "8a46a300ff79256814396dc4902c42dc3315bf1d750f3b8c5e03194316599bfb",
-      "validatedAt": "2026-10-19T08:57:06.6061861+00:00"
-    },
-    {
       "id": "MC1506728",
       "japaneseTitle": "Entra:AgentIdentity.CreateAsManagerの自動付与を廃止",
       "japaneseFacts": {
@@ -1545,6 +1545,22 @@
       "validatedAt": "2026-10-19T00:23:50.0651922+00:00"
     },
     {
+      "id": "MC1519855",
+      "japaneseTitle": "Entra で SMS/音声認証の通信事業者を選択可能に(CYOT)",
+      "japaneseFacts": {
+        "change": "Entra ID の Choose Your Own Telephony Provider (CYOT) が一般提供され、SMS・音声認証に対応サードパーティ事業者を選べます。",
+        "impact": "業務・規制・技術上の理由で SMS や音声認証が必要なユーザーを持つ組織が対象です。",
+        "timing": "2026年10月30日から世界規模で GA、Microsoft 提供の SMS/音声認証は 2027年2月1日(Global Administrator と外部ユーザーは 2027年7月1日)に廃止予定です。",
+        "action": "CYOT 採用時は対象ユーザーの特定、フィッシング耐性のある代替手段の評価、対応プロバイダーの比較を行います。以降の推奨事項は原文に記載なし(切り詰め)。"
+      },
+      "japaneseDetailedSummary": "2026年10月30日から、Microsoft Entra ID で Choose Your Own Telephony Provider (CYOT) が一般提供(世界規模)されます。組織は Microsoft Security Store を通じて対応するサードパーティ通信事業者を選び、SMS・音声認証に利用でき、事業者との商契約は組織が直接管理します。Microsoft はパスキーなどフィッシング耐性のある方式を推奨しており、通信事業者の利用は業務・規制・技術上の要件があるユーザーに限るべきとしています。Microsoft 提供の SMS・音声認証は 2027年2月1日に廃止予定(Global Administrator と外部ユーザーは 2027年7月1日、内部ゲストは 2月1日)です。廃止後、SMS や音声のみが MFA 方式のユーザーは、対応プロバイダー未設定の場合サインイン時にパスキー登録が必須となります。原文は途中で切れています。",
+      "japaneseBodyTranslation": "[内容と理由]\n2026年10月30日から、Microsoft Entra ID は Choose Your Own Telephony Provider (CYOT) を一般提供します。CYOT により、組織は SMS および音声認証にサポート対象のサードパーティ通信事業者を利用できます。組織は Microsoft Security Store からサポート対象のプロバイダーを選択し、プロバイダーとの商契約を直接管理します。\nMicrosoft は SMS や音声認証ではなく、パスキーなどのフィッシング耐性のある認証方式を推奨しています。通信事業者は、業務上、規制上、または技術上、電話ベースの認証が必要なユーザー層にのみ利用してください。\n[展開スケジュール]\n• 一般提供(全世界):2026年10月30日開始\n[組織への影響]\n対象\n• 業務、規制、技術上の理由で SMS や音声認証が必要なユーザーがいる組織\nプラットフォームとサービス\n• Microsoft Entra ID\n• Microsoft Security Store\n発生すること\n• 2026年10月30日以降、組織は SMS および音声認証用にサポート対象の通信事業者を構成できます。\n• 選択したプロバイダーが、認証に必要な SMS メッセージや音声通話を配信します。\n• Microsoft Entra ID は引き続き認証方法ポリシーを適用し、認証体験を調整します。\n• 組織は選択したプロバイダーとの商契約を管理します。\n• Microsoft 提供の SMS・音声認証は、Global Administrator と外部ユーザーを除くすべてのユーザーについて 2027年2月1日に廃止予定です。Global Administrator と外部ユーザーの廃止日は 2027年7月1日です。内部ゲストユーザーは 2027年2月1日の廃止日が適用されます。\n• 該当する廃止日以降、利用可能な MFA 方式が SMS または音声のみのユーザーは、組織がサポート対象の通信事業者を構成していない限り、サインイン時にパスキーを登録する必要があります。この登録プロンプトはブロッキングです。\n[必要な対応と推奨事項]\nCYOT の採用を予定する場合:\n• 影響を受けるユーザーを特定する。SMS や音声認証に文書化された業務、規制、技術上の要件があるユーザーを確認します。\n• フィッシング耐性のある代替手段を評価する。それらのユーザーの要件を満たさないことを確認します。\n• サポート対象の通信事業者を確認する。地理的カバレッジ、サポート(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "f1a2c68605c0cfdcdf6dce2d1fdd53d02558b6c94d2facb5c86ba4c9bb9f28b0",
+      "validatedAt": "2026-10-22T13:58:57.5837574+00:00"
+    },
+    {
       "id": "MC985483",
       "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
       "japaneseFacts": {
@@ -1561,36 +1577,52 @@
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     },
     {
-      "id": "MC1182696",
-      "japaneseTitle": "Office の Application Guard を段階的に削除、保護ビューへ移行",
+      "id": "MC1518032",
+      "japaneseTitle": "インベントリに Update Repair を追加、Microsoft 365 アプリの更新問題を修復",
       "japaneseFacts": {
-        "change": "Microsoft Defender Application Guard for Office を Office から削除し、従来 Application Guard で開いていたファイルは保護ビューで開かれます。",
-        "impact": "Application Guard for Office を使用していたすべての Win32 ユーザーが対象です。",
-        "timing": "フェーズ1は Office 2602(Current Channel は 2026年2月上旬、MEC は 2026年4月、SAEC は 2026年7月)、フェーズ2は 2612(Current は 2026年12月上旬、MEC は 2027年2月、SAEC は 2027年7月)です。",
-        "action": "削除自体に管理者の作業は不要ですが、ASR ルールと WDAC の有効化、社内ドキュメントやヘルプデスク案内の見直しが推奨されています。"
+        "change": "Microsoft 365 アプリ管理センターのインベントリに Update Repair が追加され、更新が古い/問題のある Windows デバイスを特定し、オンライン修復を遠隔実行できます。",
+        "impact": "Microsoft 365 アプリがインストールされた Windows デバイスを管理する管理者が対象です。",
+        "timing": "パブリックプレビューは 2026 年 10 月中旬開始、10 月下旬完了予定。一般提供は 2026 年 11 月中旬開始、11 月下旬完了予定です。",
+        "action": "インベントリを有効化し、修復前にユーザーへ通知して作業保存と Office アプリ終了を依頼してください。修復にはビルド 16.0.20326.20000 以降が必要です。"
       },
-      "japaneseDetailedSummary": "Microsoft Defender Application Guard for Office は 2024年4月に廃止され、現在 Office から削除されています。Windows 11 23H2 のサポート終了に合わせた変更で、従来 Application Guard で開いていた文書は保護ビューで開かれます。フェーズ1(Office 2602)で無効化され、サポート例外はフェーズ2まで利用できる場合があります。フェーズ2(Office 2612)で完全に削除され、回避策はありません。対象は Application Guard を使っていたすべての Win32 ユーザーです。管理者の作業は必須ではありませんが、Defender for Endpoint の ASR ルールと WDAC の有効化、社内ドキュメントやヘルプデスクガイダンスの見直しが推奨されます。コンプライアンス上の考慮事項は特定されていません。",
-      "japaneseBodyTranslation": "Microsoft Defender Application Guard for Office は 2024年4月に廃止され、現在 Office から削除されています。この変更は Windows 11 バージョン 23H2 のサポート終了に合わせたもので、ユーザーのセキュリティ体験を簡素化します。以前 Application Guard で開いていたドキュメントは保護ビューで開かれ、脅威に対する強力な保護が維持されます。\n実施時期:\nフェーズ1:Office バージョン 2602 で削除開始\n• Current Channel:2026年2月上旬\n• Monthly Enterprise Channel:2026年4月\n• Semi-Annual Enterprise Channel:2026年7月\nフェーズ2:Office バージョン 2612 で完全削除\n• Current Channel:2026年12月上旬\n• Monthly Enterprise Channel:2027年2月\n• Semi-Annual Enterprise Channel:2027年7月\n組織への影響:\n対象:以前 Microsoft Defender Application Guard for Office を使用していたすべての Win32 ユーザー。\n発生すること:\n• 以前 Application Guard で開いていたファイルは保護ビューで開かれます。\n• Application Guard for Office はフェーズ1で無効化されます。サポート例外はフェーズ2まで利用できる場合があります。\n• フェーズ2で完全に削除され、回避策はありません。\n• 管理者は Microsoft Defender for Endpoint の攻撃面減少(ASR)ルールと Windows Defender Application Control(WDAC)の有効化が推奨されます。\n準備のために:\n削除自体に管理者の作業は不要ですが、強力な保護を維持するため次を推奨します。\n• Office ファイル内の危険な動作をブロックするため、Defender for Endpoint の ASR ルールを有効化する。\n• 信頼された署名済みコードのみを実行するため、WDAC を有効化する。\n• Application Guard for Office に依存していた場合は、社内ドキュメントとヘルプデスクの案内を見直す。\nApplication Guard for Office の利用状況の確認方法は、Microsoft Learn の「Confirm that Application Guard for Office is enabled and working」を参照してください。\nコンプライアンス上の考慮事項:特定されていません。必要に応じて組織で確認してください。",
-      "sourceCharacterCount": 2116,
+      "japaneseDetailedSummary": "Microsoft 365 アプリ管理センターのインベントリに Update Repair が導入されます。更新が古い、または更新に問題がある Windows デバイスを管理者が特定し、推奨アクションの確認、対象デバイスへのオンライン修復の遠隔実行、手動修復ガイダンスの参照ができます。修復はデバイスの更新チャネルの最新ビルドで Microsoft 365 アプリを再インストールし、開いている Office アプリは閉じられます。パブリックプレビューは 2026 年 10 月中旬に開始し下旬に完了予定、一般提供は 11 月中旬開始で下旬完了予定です。管理者はインベントリの有効化、ビルド 16.0.20326.20000 以降の確認、ユーザーへの事前通知、デバイスの電源オン・サインイン・接続維持を行う必要があります。要確認デバイスには引き続き手動対応が必要です。",
+      "japaneseBodyTranslation": "[概要と理由]\n更新が古い、または更新に問題がある Microsoft 365 アプリを持つ Windows デバイスを管理者が特定し修復できるよう、インベントリに Update Repair を導入します。Microsoft 365 アプリ管理センターで、デバイスの状態と推奨アクションの確認、対象デバイスへのオンライン修復の遠隔開始、対応が必要なデバイスの手動修復ガイダンスの参照ができます。修復は、デバイスに構成された更新チャネルの最新ビルドで Microsoft 365 アプリを再インストールします。\n[展開スケジュール]\n• パブリックプレビュー(全世界):2026 年 10 月中旬に開始、10 月下旬に完了予定。\n• 一般提供(全世界):2026 年 11 月中旬に開始、11 月下旬に完了予定。\n[組織への影響]\n対象:Microsoft 365 アプリがインストールされた Windows デバイスを管理する管理者。\nプラットフォーム/サービス:Microsoft 365 アプリがある Windows デバイス、Microsoft 365 アプリ管理センター。\n今後の動作:\n• 更新問題のあるデバイスを特定し、修復方法を判断しやすくなります。\n• 対象デバイスは遠隔で修復でき、手作業が減ります。\n• 修復は開いている Office アプリを閉じ、Microsoft 365 アプリを再インストールします。\n• 要確認のデバイスは引き続き管理者の確認と手動修復が必要です。\n[必要な対応と推奨事項]\n• Microsoft 365 アプリ管理センターでインベントリが有効か確認してください。\n• Update Repair は Microsoft 365 アプリがインストールされた Windows デバイスのインベントリデータを使用します。修復アクションにはビルド 16.0.20326.20000 以降が必要です。\n• 修復前にユーザーへ通知し、作業の保存と Office アプリの終了を依頼し、影響が最小になるよう実行を計画してください。\n• デバイスは電源オン、サインイン、接続状態を保ち、次回のインベントリチェックイン時にアクションを受け取れるようにしてください。\n[詳細]\n• Update Repair を使用した Microsoft 365 アプリの更新問題の特定と修復(Microsoft Learn)\n[コンプライアンス]\n特記事項はありません。必要に応じて確認してください。",
+      "sourceCharacterCount": 2228,
       "sourceTruncated": false,
-      "sourceHash": "20b32bbaec9bfdbedabacc894f33a282abb6f51adbe7bab21058e69e4d28e5b0",
-      "validatedAt": "2026-10-22T13:58:57.5595318+00:00"
+      "sourceHash": "d8ee1376ee44df90a7ef897b3ba6d247e2a54e19ffac531b3ca8db8c9d6ddef9",
+      "validatedAt": "2026-10-22T18:43:11.1929533+00:00"
     },
     {
-      "id": "MC1519855",
-      "japaneseTitle": "Entra で SMS/音声認証の通信事業者を選択可能に(CYOT)",
+      "id": "MC1515930",
+      "japaneseTitle": "Copilot 設定の「Cowork」パネルが「Browser use」に名称変更",
       "japaneseFacts": {
-        "change": "Entra ID の Choose Your Own Telephony Provider (CYOT) が一般提供され、SMS・音声認証に対応サードパーティ事業者を選べます。",
-        "impact": "業務・規制・技術上の理由で SMS や音声認証が必要なユーザーを持つ組織が対象です。",
-        "timing": "2026年10月30日から世界規模で GA、Microsoft 提供の SMS/音声認証は 2027年2月1日(Global Administrator と外部ユーザーは 2027年7月1日)に廃止予定です。",
-        "action": "CYOT 採用時は対象ユーザーの特定、フィッシング耐性のある代替手段の評価、対応プロバイダーの比較を行います。以降の推奨事項は原文に記載なし(切り詰め)。"
+        "change": "Copilot 設定の Cowork パネルが「Browser use in Microsoft Copilot」に名称変更されます。機能や既存構成は変わりません。",
+        "impact": "Copilot アプリによる Edge ブラウザー利用を管理する管理者が対象です。",
+        "timing": "一般提供(全世界)は 2026 年 10 月中旬に展開開始し、10 月中旬に完了予定です。",
+        "action": "対応は不要です。以前 Cowork にあった設定が新名称で表示されることを把握してください。"
       },
-      "japaneseDetailedSummary": "2026年10月30日から、Microsoft Entra ID で Choose Your Own Telephony Provider (CYOT) が一般提供(世界規模)されます。組織は Microsoft Security Store を通じて対応するサードパーティ通信事業者を選び、SMS・音声認証に利用でき、事業者との商契約は組織が直接管理します。Microsoft はパスキーなどフィッシング耐性のある方式を推奨しており、通信事業者の利用は業務・規制・技術上の要件があるユーザーに限るべきとしています。Microsoft 提供の SMS・音声認証は 2027年2月1日に廃止予定(Global Administrator と外部ユーザーは 2027年7月1日、内部ゲストは 2月1日)です。廃止後、SMS や音声のみが MFA 方式のユーザーは、対応プロバイダー未設定の場合サインイン時にパスキー登録が必須となります。原文は途中で切れています。",
-      "japaneseBodyTranslation": "[内容と理由]\n2026年10月30日から、Microsoft Entra ID は Choose Your Own Telephony Provider (CYOT) を一般提供します。CYOT により、組織は SMS および音声認証にサポート対象のサードパーティ通信事業者を利用できます。組織は Microsoft Security Store からサポート対象のプロバイダーを選択し、プロバイダーとの商契約を直接管理します。\nMicrosoft は SMS や音声認証ではなく、パスキーなどのフィッシング耐性のある認証方式を推奨しています。通信事業者は、業務上、規制上、または技術上、電話ベースの認証が必要なユーザー層にのみ利用してください。\n[展開スケジュール]\n• 一般提供(全世界):2026年10月30日開始\n[組織への影響]\n対象\n• 業務、規制、技術上の理由で SMS や音声認証が必要なユーザーがいる組織\nプラットフォームとサービス\n• Microsoft Entra ID\n• Microsoft Security Store\n発生すること\n• 2026年10月30日以降、組織は SMS および音声認証用にサポート対象の通信事業者を構成できます。\n• 選択したプロバイダーが、認証に必要な SMS メッセージや音声通話を配信します。\n• Microsoft Entra ID は引き続き認証方法ポリシーを適用し、認証体験を調整します。\n• 組織は選択したプロバイダーとの商契約を管理します。\n• Microsoft 提供の SMS・音声認証は、Global Administrator と外部ユーザーを除くすべてのユーザーについて 2027年2月1日に廃止予定です。Global Administrator と外部ユーザーの廃止日は 2027年7月1日です。内部ゲストユーザーは 2027年2月1日の廃止日が適用されます。\n• 該当する廃止日以降、利用可能な MFA 方式が SMS または音声のみのユーザーは、組織がサポート対象の通信事業者を構成していない限り、サインイン時にパスキーを登録する必要があります。この登録プロンプトはブロッキングです。\n[必要な対応と推奨事項]\nCYOT の採用を予定する場合:\n• 影響を受けるユーザーを特定する。SMS や音声認証に文書化された業務、規制、技術上の要件があるユーザーを確認します。\n• フィッシング耐性のある代替手段を評価する。それらのユーザーの要件を満たさないことを確認します。\n• サポート対象の通信事業者を確認する。地理的カバレッジ、サポート(以降は原文が途中で切れています)",
+      "japaneseDetailedSummary": "Copilot 設定の Cowork パネルが「Browser use in Microsoft Copilot」に名称変更されます。このパネルには、Copilot アプリがユーザーに代わって Microsoft Edge ブラウザーでタスクを実行できるかを管理する設定が含まれます。Cowork 関連の制御を、機能別でより見つけやすい設定に整理する取り組みの一環です。設定の機能や既存の構成に変更はありません。一般提供(全世界)として 2026 年 10 月中旬に展開が始まり、同じく 10 月中旬に完了する予定です。管理者の対応は不要ですが、以前 Cowork にあった設定が新しい名称で表示される点に注意してください。",
+      "japaneseBodyTranslation": "[はじめに]\nCopilot 設定の Cowork 設定パネルの名称を「Browser use in Microsoft Copilot」に変更します。このパネルには、Copilot アプリがユーザーに代わってタスクを実行する際に Microsoft Edge ブラウザーを使用できるかを管理者が管理する設定が含まれます。\nこの変更は、Cowork 関連の制御を機能別のより見つけやすい設定に整理する中で、ブラウザー利用設定を管理者が見つけやすく管理しやすくするものです。\nこの名称変更に伴う設定の機能や既存の構成の変更はありません。\n[実施時期]\n一般提供(全世界):2026 年 10 月中旬に展開を開始し、10 月中旬に完了する予定です。\n[組織への影響]\nCowork 設定パネルは「Browser use in Microsoft Copilot」に名称変更されます。新しい名称により、Copilot アプリが Microsoft Edge ブラウザーを使ってタスクを実行できるかを制御する設定を管理者が識別しやすくなります。\nこの名称変更による機能や既存構成の変更はありません。\n[準備のために必要な対応]\n対応は不要です。既存の構成は変更されません。\n以前 Cowork にあった設定は、Copilot 設定で「Browser use in Microsoft Copilot」として表示されます。",
+      "sourceCharacterCount": 1343,
+      "sourceTruncated": false,
+      "sourceHash": "d443209bbf445d758029a25af56defe5c4fe80acd1193a3639dd0771153a383e",
+      "validatedAt": "2026-10-22T18:43:11.2148929+00:00"
+    },
+    {
+      "id": "MC1506727",
+      "japaneseTitle": "Agent 365 の利用状況インサイトをライセンス不問で拡大提供",
+      "japaneseFacts": {
+        "change": "Microsoft 製/Microsoft プラットフォーム上のエージェントの利用状況・アクティビティ指標が、Agent 365 ライセンスの有無にかかわらず管理センターで利用可能になります。",
+        "impact": "Microsoft 製または Microsoft プラットフォーム上のサポート対象エージェントを使う組織の管理者です。サードパーティ基盤のエージェントは対象外です。",
+        "timing": "一般提供(全世界)は 2026 年 10 月下旬に開始し、11 月下旬に完了予定です。",
+        "action": "原文(提供範囲)に記載なし。展開中は指標や傾向が一時的に変動する場合があります。"
+      },
+      "japaneseDetailedSummary": "2026 年 10 月下旬から、Microsoft 365 管理センターで Microsoft 製の事前構築エージェントおよび Microsoft プラットフォーム上のエージェントについて、エージェント概要、アクティブユーザー、アクティビティ、セッション、例外率、実行時間などの Agent 365 利用状況インサイトが、Agent 365 のライセンス有無にかかわらず利用可能になります。サードパーティ基盤のエージェントは対象外で、より広範な管理・ガバナンス・セキュリティ機能には引き続き Agent 365 または ME7 ライセンスが必要です。Registry、Agent overview、Agent details > Activity の各指標が対象で、既存・新規エージェントの両方に適用されます。展開中は値や傾向が一時的に変わる場合があります。一般提供は 10 月下旬開始、11 月下旬完了予定です。本文は途中で切れており、以降の内容は不明です。",
+      "japaneseBodyTranslation": "2026 年 10 月 19 日更新:内容を更新しました。ご理解に感謝します。\n[概要と理由]\n2026 年 10 月下旬から、Microsoft は Microsoft 管理センターにおける、Microsoft の事前構築エージェントおよび Microsoft プラットフォーム上で構築されたエージェント向けの Agent 365 利用状況・アクティビティインサイトへのアクセスを拡大します。この変更により、エージェント概要、アクティブユーザー、詳細な利用状況(アクティビティ、セッション、例外率、実行時間)が、Agent 365 のライセンス状況にかかわらず利用可能になり、管理者はエージェントの利用状況の基本的な可視性を得て、追加の管理・ガバナンス・セキュリティ機能が必要な箇所を把握できます。\nこの変更は、Microsoft 製または Microsoft プラットフォーム上のエージェントの一部の管理指標に限られ、サードパーティプラットフォーム上のエージェントは含まれません。Agent 365 または ME7 ライセンスにより、より広範な Agent 365 の管理、ガバナンス、セキュリティ、ビジネス価値の機能が引き続き提供されます。\n[展開スケジュール]\n• 一般提供(全世界):2026 年 10 月下旬に開始し、11 月下旬に完了予定\n[組織への影響]\n対象\n• Microsoft 製または Microsoft プラットフォーム上のサポート対象エージェントを使用する組織\nプラットフォームとサービス\n• Microsoft 365 管理センター\n• Agent 365 管理\n今後の動作\n• 管理者は、サポート対象エージェントについて、エージェント概要、アクティブユーザー、アクティビティ、セッション、例外率、実行時間などの Agent 365 利用状況インサイトへのアクセスが拡大されます。\n• Registry では、対象の列は Active users、Total sessions、Exception rate、Run Time です。\n• Agent overview では、Active users、Active users over time、Trending agents by active users のカードとグラフが対象です。これらはすでに Agent 365 ライセンスのない組織で表示される場合があります。展開中に活動データが蓄積されるため、値や傾向が一時的に変わることがあります。\n• Agent details > Activity では、Active users、Sessions、Exceptions、Agent run-time のカードと、Active users over time、Sessions over time のグラフが対象です。\n• この変更は既存および新規のエージェントの両方に適用されます。\n• この変更が組織に反映される際、一部の指標や傾向が最初は不完全に表示される場合があります...(原文はここで途切れています)",
       "sourceCharacterCount": 2500,
       "sourceTruncated": true,
-      "sourceHash": "f1a2c68605c0cfdcdf6dce2d1fdd53d02558b6c94d2facb5c86ba4c9bb9f28b0",
-      "validatedAt": "2026-10-22T13:58:57.5837574+00:00"
+      "sourceHash": "61697389efbced832aa39250aca305eea69116558b259add48c0e2cb13136886",
+      "validatedAt": "2026-10-22T18:43:11.2195209+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-10-22T07:48:45.0036563+00:00",
