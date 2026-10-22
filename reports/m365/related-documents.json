@@ -19636,59 +19636,18 @@
     },
     "MC1506727": {
       "sourceHashes": [
-        "11e4b1bca4e3d674fe7ff6e1db6d8b735a57aefe5b7844a4086186dae6c85574"
+        "0c8b9963eab9fbc24b03abe9c52e1c20f5119cbf8d7850934a7032ba89f8d400"
       ],
-      "status": "verified",
-      "checkedAt": "2026-10-16T10:05:48.914901+00:00",
-      "documents": [
-        {
-          "url": "https://learn.microsoft.com/ja-jp/microsoft-agent-365/admin/data-residency-protection-compliance",
-          "title": "エージェント 365 の可観測性でのデータ処理、データ所在地、コンプライアンス",
-          "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:05:59.094562+00:00",
-          "bodySha256": "bdd7cafbee228b843c601d22cf86e0c36b638fe34720e2685c9fd302ce0dbdda",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "explicit_message_link",
-          "rationale": "Explicit official article from this approved notification.",
-          "featureEvidence": {
-            "product": "agent365",
-            "matchedTerms": [
-              "activity",
-              "insights",
-              "usage"
-            ],
-            "requiredFeatureTerms": [
-              "activity",
-              "insights",
-              "usage"
-            ],
-            "coverage": 1.0,
-            "platforms": [],
-            "score": 1.0,
-            "articleExcerpt": "## Overview\r\n\r\nAgent 365 observability collects runtime activity data from supported agents and uses that data to power agent oversight and analytics experiences across Microsoft.\r\n\r\nIn the Microsoft 365 admin center, observability data provides IT administrators with analytics and insights such as agent usage trends, performance signals, and overall agent health across the organization. This data helps administrators understand how agents are being used and identify operational or governance issues.\r\n\r\nMicrosoft Purview and Microsoft Defender use relevant agent activity data to support compliance monitoring, security analytics, and investigation scenarios.\r\n\r\nMicrosoft agent development platforms such as Microsoft Foundry, Microsoft Copilot Studio, and Agent Builder include built‑in observability support that powers Agent 365 capabilities by default. If an organization signs up for an Agent 365 trial or has an active Agent 365 license, agents built using these platforms automatically send observability data to Agent 365, and developers don't need to take any extra steps to enable this behavior.\r\n\r\nFor custom or third‑party agents, developers must explicitly integrate with Agent 365 observability and allow agent activity data to be sent to the service.\r\n\r\n",
-            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/data-residency-protection-compliance",
-            "bodySha256": "76235bd92ebe93f767cad053b76dd1d60e8637eee6dc1af3e22ee2614b089b58",
-            "reviewedAt": "2026-10-16T10:05:59.094562+00:00"
-          }
-        }
-      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-22T00:43:37.451737+00:00",
+      "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft agent access usage activity insights admin center",
-      "explicitUrls": [
-        "https://learn.microsoft.com/microsoft-agent-365/admin/data-residency-protection-compliance"
-      ],
+      "explicitUrls": [],
       "searchProvider": "Microsoft Learn public MCP",
       "researchVersion": 4,
       "errors": [],
-      "candidates": [
-        {
-          "url": "https://learn.microsoft.com/microsoft-agent-365/admin/data-residency-protection-compliance",
-          "source": "explicit_message_link",
-          "decision": "adopted",
-          "score": 1.0
-        }
-      ],
+      "candidates": [],
       "searchEvidenceKey": "search:Microsoft agent access usage activity insights admin center",
       "searchedQueries": [
         "Microsoft agent access usage activity insights admin center",
@@ -19696,9 +19655,75 @@
         "agent access usage activity"
       ],
       "searchSucceeded": true,
-      "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T10:05:59.094562+00:00",
-      "variants": {}
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-10-25T00:43:41.733258+00:00",
+      "variants": {
+        "11e4b1bca4e3d674fe7ff6e1db6d8b735a57aefe5b7844a4086186dae6c85574": {
+          "sourceHashes": [
+            "11e4b1bca4e3d674fe7ff6e1db6d8b735a57aefe5b7844a4086186dae6c85574"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T10:05:48.914901+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-agent-365/admin/data-residency-protection-compliance",
+              "title": "エージェント 365 の可観測性でのデータ処理、データ所在地、コンプライアンス",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:05:59.094562+00:00",
+              "bodySha256": "bdd7cafbee228b843c601d22cf86e0c36b638fe34720e2685c9fd302ce0dbdda",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "agent365",
+                "matchedTerms": [
+                  "activity",
+                  "insights",
+                  "usage"
+                ],
+                "requiredFeatureTerms": [
+                  "activity",
+                  "insights",
+                  "usage"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "## Overview\r\n\r\nAgent 365 observability collects runtime activity data from supported agents and uses that data to power agent oversight and analytics experiences across Microsoft.\r\n\r\nIn the Microsoft 365 admin center, observability data provides IT administrators with analytics and insights such as agent usage trends, performance signals, and overall agent health across the organization. This data helps administrators understand how agents are being used and identify operational or governance issues.\r\n\r\nMicrosoft Purview and Microsoft Defender use relevant agent activity data to support compliance monitoring, security analytics, and investigation scenarios.\r\n\r\nMicrosoft agent development platforms such as Microsoft Foundry, Microsoft Copilot Studio, and Agent Builder include built‑in observability support that powers Agent 365 capabilities by default. If an organization signs up for an Agent 365 trial or has an active Agent 365 license, agents built using these platforms automatically send observability data to Agent 365, and developers don't need to take any extra steps to enable this behavior.\r\n\r\nFor custom or third‑party agents, developers must explicitly integrate with Agent 365 observability and allow agent activity data to be sent to the service.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-agent-365/admin/data-residency-protection-compliance",
+                "bodySha256": "76235bd92ebe93f767cad053b76dd1d60e8637eee6dc1af3e22ee2614b089b58",
+                "reviewedAt": "2026-10-16T10:05:59.094562+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft agent access usage activity insights admin center",
+          "explicitUrls": [
+            "https://learn.microsoft.com/microsoft-agent-365/admin/data-residency-protection-compliance"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/microsoft-agent-365/admin/data-residency-protection-compliance",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 1.0
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft agent access usage activity insights admin center",
+          "searchedQueries": [
+            "Microsoft agent access usage activity insights admin center",
+            "agent activity insights admin center",
+            "agent access usage activity"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T10:05:59.094562+00:00"
+        }
+      }
     },
     "MC1505610": {
       "sourceHashes": [
@@ -19875,7 +19900,7 @@
         "8c13e90ad20aba061b61b991405154900a3f060622f642a5fff7eeb5fbd6f232"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-19T00:14:40.776390+00:00",
+      "checkedAt": "2026-10-22T00:44:06.581300+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft edge browser default",
@@ -19891,37 +19916,263 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-22T00:14:43.759993+00:00",
+      "nextAttemptAt": "2026-10-25T00:44:09.556476+00:00",
+      "variants": {}
+    },
+    "MC1519855": {
+      "sourceHashes": [
+        "6a23494141a6da24e3aef7b32ef51813299280c8b7a4abde31f715898bfb0d76"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-10-22T00:43:41.838074+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
+          "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-22T00:43:47.101706+00:00",
+          "bodySha256": "83ec253a56a82222dde9352b5982fb64c74264fbaf8d0ad1dfaf4bf39c850adc",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "authentication",
+              "choose",
+              "own",
+              "provider",
+              "sms",
+              "telephony",
+              "voice"
+            ],
+            "requiredFeatureTerms": [
+              "authentication",
+              "choose",
+              "own",
+              "provider",
+              "sms",
+              "telephony",
+              "voice"
+            ],
+            "coverage": 1.0,
+            "platforms": [],
+            "score": 1.2,
+            "articleExcerpt": "# Choose a telephony provider for SMS and voice authentication\r\n\r\nMicrosoft Entra ID will support Choose Your Own Telephony Provider, which lets organizations continue using SMS or voice authentication with a supported telephony provider. You select a telephony provider through the Microsoft Security Store and manage the provider relationship for your organization.\r\n\r\nMicrosoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\r\n\r\nImportant\r\n\r\nChoose Your Own Telephony Provider isn't available to configure yet. Information about the providers participating in the private preview is available now. The configuration experience becomes available beginning October 30, 2026.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
+            "bodySha256": "142a1d683b21c28ff4bf67c052d3d6637317b0b5e28e476f12a5b0e34c7f3c39",
+            "reviewedAt": "2026-10-22T00:43:47.101745+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sms-voice-retirement",
+          "title": "既定でのパスキーと、Microsoftが提供する SMS および音声認証の廃止",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-22T00:43:51.140481+00:00",
+          "bodySha256": "065e40588dae2ff7ec7f6dd578d03180d34e4c6e384f459b3bc2d7385849e5b9",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "authentication",
+              "choose",
+              "provider",
+              "sms",
+              "telephony",
+              "voice"
+            ],
+            "requiredFeatureTerms": [
+              "authentication",
+              "choose",
+              "own",
+              "provider",
+              "sms",
+              "telephony",
+              "voice"
+            ],
+            "coverage": 0.857,
+            "platforms": [],
+            "score": 1.057,
+            "articleExcerpt": "# Passkeys by default and retirement of Microsoft-provided SMS and voice authentication\r\n\r\nTo help enterprises adopt AI at scale, it is imperative for users to use secure authentication and move from phishable authentication methods to phishing-resistant authentication methods like [passkeys](concept-authentication-passkeys-fido2). Therefore, Microsoft Entra ID is making passkeys the default sign-in experience, so every organization gets phishing-resistant security by default. SMS and voice are no longer positioned as secure authentication methods and will no longer be provided natively in Entra ID.\r\n\r\nStarting September 1, 2026, passkeys become the default authentication experience and will be automatically enabled for users enabled for SMS or voice. From February 1, 2027, Microsoft-provided telephony delivery for SMS and voice will be retired for all users except Global Administrators and external users. For Global Administrators and external users, Microsoft-provided SMS and voice authentication will be retired on July 1, 2027. Customers who still require these methods should configure a telephony provider through Microsoft Security Store. Soprano and Telesign are the initial providers available during the private preview, and more providers will become available by general availability. For provider and offer information, see [Choose a telephony provider for SMS and voice authentication](concept-phone-providers).\r\n\r\nUsers who already sign in with passkeys, Windows Hello for Business, or another phishing-resistant method can continue using those methods. However, users who remain enabled for SMS or voice might still receive prompts to register passkeys on eligible devices. The July 1, 2027 retirement date applies to Global Administrators and external users. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. To check who in your tenant still uses SMS or Voice, see Find active SMS or Voice users in your tenant.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
+            "bodySha256": "d7df995ad5f4b8f334445ecea4cfc66a0301c17a0d165e62701b75933b44b658",
+            "reviewedAt": "2026-10-22T00:43:51.140593+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
+          "title": "SaaS ソリューションを購入し、リンクされたソリューションをデプロイする",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-22T00:43:55.171419+00:00",
+          "bodySha256": "1d1825f5c9add28cbf22e18e9b5e9e9580ea6ef573b4fec493e1966aca4b9529",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
+            "bodySha256": "7442a4e1f94b64e451f17ecfd1c74a465cb4536afd38ed8c54023bfbcff2c816",
+            "reviewedAt": "2026-10-22T00:43:55.171466+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft entra sms voice authentication",
+      "explicitUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 1.2
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 1.057
+        },
+        {
+          "url": "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft entra sms voice authentication",
+      "searchedQueries": [
+        "Microsoft entra sms voice authentication"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-11-21T00:43:55.171474+00:00",
+      "variants": {}
+    },
+    "MC1518032": {
+      "sourceHashes": [
+        "1296efa3c37d924fe1ee0e7c79cc04ed019c1e1dd9d0dcc3a32c635ed7b8102b"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-10-22T00:43:55.278752+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365-apps/admin-center/update-repair",
+          "title": "[更新プログラムの修復] を使用して Microsoft 365 Apps の更新プログラムの問題を特定して修復する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-22T00:44:03.055548+00:00",
+          "bodySha256": "50276c9b52e514a6a4ba84c304d2db4571943e0f25170f45b4203dce58f41673",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "office",
+            "matchedTerms": [
+              "inventory",
+              "repair"
+            ],
+            "requiredFeatureTerms": [
+              "inventory",
+              "repair"
+            ],
+            "coverage": 1.0,
+            "platforms": [],
+            "score": 1.0,
+            "articleExcerpt": "## How Update Repair works\r\n\r\nUpdate Repair uses device data reported to Inventory, including the installed Microsoft 365 Apps version and build, the target version policy, and Click-to-Run error information. It compares the installed version with the latest version available for the device's configured update channel and assigns a status.\r\n\r\nThe report shows devices in the **Needs repair** and **Needs attention** states. Devices that are **Up to date** or **Outdated** aren't shown because they don't currently require remediation.\r\n\r\n| Status | What it means |\r\n| --- | --- |\r\n| **Up to date** | The device is on the latest available version for its update channel. |\r\n| **Outdated** | The device is one or two versions behind and has no reported error. |\r\n| **Needs repair** | The device is at least one version behind and has an error that doesn't require separate remediation, or it's at least three versions behind and has no reported error. |\r\n| **Needs attention** | The device has an error that requires separate remediation, or it otherwise qualifies for repair but is running a Microsoft 365 Apps build earlier than `16.0.20326.20000`. These devices aren't eligible for the **Repair** action. |\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365-apps/admin-center/update-repair",
+            "bodySha256": "4ec8c72ef8739d7727a8e9276d2423077f30e779ba3796fd98495782c5f40038",
+            "reviewedAt": "2026-10-22T00:44:03.055595+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft update",
+      "explicitUrls": [
+        "https://learn.microsoft.com/microsoft-365-apps/admin-center/update-repair"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/microsoft-365-apps/admin-center/update-repair",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 1.0
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft update",
+      "searchedQueries": [
+        "Microsoft update",
+        "office update"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-11-21T00:44:03.055602+00:00",
+      "variants": {}
+    },
+    "MC1515930": {
+      "sourceHashes": [
+        "e8307b121ffa6e2bba1a552c989fe0f237819876df8e1b914de45f24468a05e9"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-22T00:44:03.163800+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft cowork browser copilot",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft cowork browser copilot",
+      "searchedQueries": [
+        "Microsoft cowork browser copilot",
+        "copilot cowork browser"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-10-25T00:44:06.474032+00:00",
       "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 147,
-    "snapshotOccurrences": 2919,
-    "snapshots": 36,
+    "uniqueMessages": 150,
+    "snapshotOccurrences": 3007,
+    "snapshots": 37,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-10-16T19:15:07+00:00",
-    "checkedAt": "2026-10-21T20:38:13.982227+00:00",
+    "publicationEnd": "2026-10-21T23:24:44+00:00",
+    "checkedAt": "2026-10-22T00:44:09.714101+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 51,
+      "no_verified_document": 53,
       "not_researched": 0,
-      "verified": 96
+      "verified": 97
     },
     "latestCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 19,
+      "no_verified_document": 21,
       "not_researched": 0,
-      "verified": 67
+      "verified": 66
     },
-    "latestTotal": 86,
+    "latestTotal": 87,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 5,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 147,
+      "no_verified_document": 149,
       "not_researched": 0,
-      "verified": 178
+      "verified": 180
     },
     "retrievalErrors": 0,
     "coverage": "complete",
