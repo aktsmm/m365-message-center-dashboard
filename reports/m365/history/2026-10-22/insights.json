@@ -1,20 +1,29 @@
 {
-  "generatedAt": "2026-10-21T21:54:34.8877675+00:00",
+  "generatedAt": "2026-10-22T07:48:45.1411855+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra新規エージェント作成の既定変更、Targeted release廃止準備、Office LTSC 2021サポート終了への対応が今週の焦点",
-  "executiveSummary": "今週は ID・リリース管理・サポート終了に関する変更が中心です。MC1506733 では、Entra で 11 月 4 日から既定ユーザーがエージェント ブループリントを作成可能になります(管理者が「Users can create agent blueprints」をオフにしない場合)。MC1490899 では Targeted release が 2027 年 1 月に廃止され、2026 年 11 月から登録の追加・削除・変更ができなくなります。MC1481309 は Entra サインイン画面の CSP 強化で、ブラウザー拡張や監視ツールなど外部スクリプトを挿入するソリューションに影響する可能性があります(展開は 2026 年 10 月中旬〜下旬)。MC1509797 は Office LTSC 2021 等が 2026 年 10 月 13 日にサポート終了した旨の通知で、セキュリティ更新が提供されなくなります。MC1462915 は *.cloud.microsoft への接続許可の確認が必要です。なお、抜粋に含まれない日程や手順は「不明」であり、「なし」と確認されたものではありません。",
-  "thisWeek": "MC1481309: Entra サインイン ページ(login.microsoftonline.com)で外部スクリプトを挿入するブラウザー拡張・監視/カスタマイズ ツールの利用有無を確認する(展開は 10 月中旬〜下旬)。\nMC1506733: 11 月 4 日の既定変更に備え、エージェント ブループリント作成を既定ユーザーに許可するかを決定し、許可しない場合は「Users can create agent blueprints」の設定を確認する。\nMC1509797: Office LTSC 2021、Visio LTSC 2021、Project LTSC 2021 等の稼働端末を棚卸しし、サポート版への移行計画を作成する。",
-  "thisMonth": "MC1490899: Targeted release 登録ユーザーを確認し、Frontier / Standard / Deferred のうち適切なリリース設定を M365 管理センターで選択する(11 月に登録変更が不可になる)。\nMC1462915: ネットワーク/セキュリティ制御で *.cloud.microsoft への接続が許可されているか確認する(接続を遮断していた組織は 11 月初旬にリダイレクト予定)。",
-  "watch": "MC1474104: Entra ID の SMS 先行要素サインイン廃止の次フェーズ(2027-02-01 が期限として記載)。パスキー等の耐フィッシング認証への移行を継続監視する。\nMC1426371: パスキー既定化と Microsoft 提供の SMS/音声認証廃止に関する更新を継続監視する。",
-  "customerQuestions": "Entra のサインイン画面にスクリプトを挿入するブラウザー拡張や監視ツールを利用していますか。\n既定ユーザーによるエージェント ブループリント作成を許可しますか、それともオフにしますか。\nTargeted release に登録されているユーザーは誰で、今後 Frontier / Standard / Deferred のどれを選びますか。\nOffice LTSC 2021 や Visio/Project LTSC 2021 を利用している端末はどれくらいありますか。\n*.cloud.microsoft への接続をプロキシーやファイアウォールで制限していませんか。\nSMS を先行要素として使うユーザーはいますか。パスキーへの移行計画はありますか。",
+  "headline": "Entra のエージェント作成既定変更(11/4)と Targeted release 廃止準備、Office LTSC 2021 サポート終了への対応が優先",
+  "executiveSummary": "今週は Microsoft Entra 関連の変更が中心です。MC1506733 では、11月4日から管理者が「Users can create agent blueprints」を無効化しない限り、既定ユーザーがエージェントブループリントを作成可能になります(展開は2026年11月上旬〜下旬)。MC1506728 では同日以降、AgentIdentity.CreateAsManager がエージェントブループリントのプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。MC1490899 では Targeted release が2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります(アクション期限は10月31日と記載)。MC1509797 では Office LTSC 2021、Visio/Project LTSC 2021 等のサポートが10月13日に終了済みで、セキュリティ更新が提供されません。MC1519855 では Entra の Choose Your Own Telephony Provider が10月30日から GA となります。MC1510951 ではカナダの時間帯変更(11月1日に時計を戻さない)向けの Windows 更新が提供済みです。いずれも抜粋範囲外の詳細(手順の全文など)は未確認です。",
+  "thisWeek": "MC1506733: 11月4日前に「Users can create agent blueprints」を無効にするか、既定ユーザーに許可するかをテナント方針として決定する\nMC1506728: app-only 認証で自身のエージェントIDを作成するエージェントの有無を確認し、AgentIdentity.CreateAsManager の明示付与または別の認可モデルへの移行を検討する\nMC1490899: Targeted release 登録ユーザーを確認し、Frontier / Standard / Deferred のうち希望するリリース設定を選択する(アクション期限10月31日)\nMC1509797: Office LTSC 2021、Visio LTSC 2021、Project LTSC 2021 等の稼働状況を棚卸しし、サポート対象バージョンへの移行計画を立てる\nMC1510951: Manitoba、Alberta、British Columbia のユーザーや拠点がある場合、Windows 更新の適用状況を確認する(11月1日に時計は戻されない)\nMC1458474: Entra 会社ブランディングでカスタム CSS のレイアウト/位置指定プロパティを使っているか確認する(2026年10月下旬から廃止開始)",
+  "thisMonth": "MC1325414: SSPR が明示登録された認証方法を必須とする変更(11月7日の記載あり)に向け、ユーザーの認証方法登録状況を確認する\nMC1474104: SMS first-factor サインイン廃止の次フェーズに向け、対象ユーザーと代替の phishing-resistant 方式(passkey 等)を整理する\nMC1519855: SMS/音声認証を業務・規制・技術上必要とするユーザー群があるか確認し、サードパーティ通信事業者の利用要否を検討する(10月30日 GA)\nMC1490911: Edge 157 以降の旧 WAM サインイン廃止に向け、--disable-features=msOneAuthWAM で OneAuth WAM を無効化している環境がないか確認する(11月上旬展開)\nMC1422061: Conditional Access の Custom Controls の利用有無を確認し、External MFA への移行を計画する(2027年5月に完全廃止)\nMC1509789: 社内・サードパーティ Web アプリがブラウザ内蔵 XSLT に依存していないか確認する(Edge 159、2026年12月中旬展開)",
+  "watch": "MC1518032: Microsoft 365 apps の Update Repair in Inventory が GA(2026年11月中旬〜下旬の展開予定)になる動きを監視する\nMC1506727: Agent 365 の利用状況・アクティビティの管理者向け表示拡大(2026年10月下旬開始)を監視する\nMC1450134: WHfB と macOS Platform SSO を単独の MFA 要素として扱う変更のタイムライン更新を引き続き確認する\nMC1481309: Entra サインインページの CSP 強化(2026年10月中旬〜下旬展開)の影響を監視する",
+  "customerQuestions": "既定ユーザーによるエージェントブループリント作成を許可しますか、それとも11月4日前に無効化しますか?\napp-only 認証で自身のエージェントIDを作成するエージェントはありますか?AgentIdentity.CreateAsManager の管理者同意の運用は決まっていますか?\nTargeted release に登録されているユーザーは誰で、Frontier、Standard、Deferred のどれに移行しますか?\nOffice LTSC 2021、Visio LTSC 2021、Project LTSC 2021 が残っている端末はどれくらいあり、移行期限をどう設定しますか?\nSMS や音声認証が業務上・規制上必要なユーザー群はありますか?passkey への移行計画はありますか?\nEntra 会社ブランディングでカスタム CSS を使っていますか?Edge 上の XSLT 依存 Web アプリや旧 WAM 無効化設定はありますか?",
   "referencedIds": [
-    "MC1426371",
-    "MC1462915",
+    "MC1325414",
+    "MC1422061",
+    "MC1450134",
+    "MC1458474",
     "MC1474104",
     "MC1481309",
     "MC1490899",
+    "MC1490911",
+    "MC1506727",
+    "MC1506728",
     "MC1506733",
-    "MC1509797"
+    "MC1509789",
+    "MC1509797",
+    "MC1510951",
+    "MC1518032",
+    "MC1519855"
   ],
   "messageUpdates": [
     {
@@ -210,13 +219,6 @@
       "id": "MC1437679",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1440968",
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -473,13 +475,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1478465",
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1478946",
       "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
@@ -613,6 +608,27 @@
       "learnUrls": []
     },
     {
+      "id": "MC1515930",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1518032",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1519855",
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
       "id": "MC985483",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
@@ -680,6 +696,38 @@
       "sourceTruncated": true
     },
     {
+      "id": "MC1192661",
+      "japaneseTitle": "Edge ワークスペースを新アーキテクチャへ移行、共有機能は廃止",
+      "japaneseFacts": {
+        "change": "保存済みワークスペースのデータを OneDrive/SharePoint から Edge Sync サービスへ移行し、共同作業・共有機能を削除します。",
+        "impact": "Edge ワークスペースを使用する全組織が対象です。EdgeWorkspacesEnabled ポリシーで無効化している組織はデータ移行されません。",
+        "timing": "Production、GCC、GCCH、DoD で2026年2月中旬にロールアウトを開始します。",
+        "action": "管理者の対応は不要で自動移行されます。オプトアウトはロールアウト前に Microsoft CSS へ連絡し、利用が多い場合はユーザー通知と社内文書の更新を行ってください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Edge ワークスペースの信頼性とパフォーマンス向上のため、新しいアーキテクチャへ移行します。保存済みワークスペースのデータは OneDrive/SharePoint から Edge Sync サービスへ移行され、コラボレーションおよび共有機能は削除されます。Edge ワークスペースを使用するすべての組織が対象で、一般提供(Production、GCC、GCCH、DoD)のロールアウトは2026年2月中旬に開始します。EdgeWorkspacesEnabled ポリシーで無効化している場合はデータが移行されません。ポリシーで Sync を無効にしている場合も既存ワークスペースは移行されますが、移行後に作成した新規ワークスペースはデバイス間で同期されずローカルのみになります。管理者の対応は不要で、オプトアウトしたい場合はロールアウト前に CSS へ連絡します。利用が多い組織はユーザーへの周知と文書更新が推奨されます。コンプライアンス上の考慮事項は特定されていません。",
+      "japaneseBodyTranslation": "[はじめに]\nMicrosoft Edge ワークスペースの信頼性とパフォーマンスを向上させるため、新しいアーキテクチャへ移行します。2022年に導入されたワークスペースは、保存・共有できる永続的なタブのセットを作成する機能です。この更新の一環として、保存済みワークスペースのデータを OneDrive/SharePoint から Edge Sync サービスへ移行し、コラボレーション/共有機能を削除します。\n[実施時期:]\n一般提供(Production、GCC、GCCH、DoD):2026年2月中旬にロールアウトを開始します。\n[組織への影響:]\n影響を受ける対象:Microsoft Edge ワークスペースを使用するすべての組織。\n実施内容:\n• 保存済みワークスペースのデータが OneDrive/SharePoint から Edge Sync サービスへ移行されます。\n• コラボレーションおよび共有機能が削除されます。\n• EdgeWorkspacesEnabled ポリシーでワークスペースを無効にしている組織では、データは移行されません。\n• ポリシーで Sync を無効にしている場合でも、現行アーキテクチャで作成された既存ワークスペースは移行されます。ただし、移行後に作成された新規ワークスペースはデバイス間で同期されず、各デバイスのローカルに留まります。\n[準備のためにできること:]\n• 管理者の対応は不要です。移行はロールアウト中に自動的に行われます。\n• オプトアウトを希望する場合は、ロールアウト開始前に Microsoft CSS へ連絡してください。\n• ワークスペースを多用している場合は、ユーザーに通知し、社内ドキュメントを更新してください。\n詳細:Microsoft Edge のワークスペース\n[コンプライアンス上の考慮事項:]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 1548,
+      "sourceTruncated": false,
+      "sourceHash": "0429a912dee93f2ddf69709cba74ffb2eb9981f97cf36df867e51a97d0a3da6b",
+      "validatedAt": "2026-10-21T21:54:34.8618831+00:00"
+    },
+    {
+      "id": "MC1215070",
+      "japaneseTitle": "Microsoft 365 管理センターで MFA が必須化(2026年2月9日〜)",
+      "japaneseFacts": {
+        "change": "Microsoft 365 管理センターへのサインインで、MFA の完了が必須となる強制を拡大します。",
+        "impact": "MFA を完了できないユーザーは管理センターにサインインできません。対象は portal.office.com/adminportal/home、admin.cloud.microsoft、admin.microsoft.com です。",
+        "timing": "2026年2月9日から強制を拡大します。2025年2月から段階的に要求されています。",
+        "action": "グローバル管理者は aka.ms/MFAWizard で設定し、ユーザーは aka.ms/mfasetup で認証方法を確認・追加してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft は2025年2月から Microsoft 365 管理センターへのサインインに MFA を要求しており、2026年2月9日からは強制をさらに拡大し、MFA を完了しないとサインインできなくなります。対象 URL は portal.office.com/adminportal/home、admin.cloud.microsoft、admin.microsoft.com です。既に MFA を設定済みの場合は追加対応不要ですが、管理センターにアクセスする全ユーザーが Microsoft Authenticator などの認証方法を登録しているか確認することが推奨されています。未設定の場合、グローバル管理者は aka.ms/MFAWizard、ユーザーは aka.ms/mfasetup から設定します。本文は途中で切れており、以降の追加情報URLなどは提供されていません。",
+      "japaneseBodyTranslation": "既に多要素認証(MFA)を設定済みの場合は、ありがとうございます。現時点で追加の対応は不要です。未設定の場合は、以下をお読みください。\n社内および製品全体のサイバーセキュリティ強化への継続的な取り組みの一環として、昨年の2025年2月から、Microsoft は Microsoft 365 管理センターへのサインイン時に全ユーザーへ MFA を要求し始めました。2026年2月9日から、Microsoft は強制をさらに拡大し、MFA を正常に完了しないと Microsoft 365 管理センターにサインインできなくなります。\nMicrosoft 365 管理センターでの MFA の導入は、アカウント侵害のリスクを大幅に低減し、不正アクセスを防ぎ、機密データを保護します。ユーザー名とパスワードに加えた保護層により、フィッシング、クレデンシャルスタッフィング、ブルートフォース、パスワード使い回し攻撃によるデータ窃取や不正アクセスを困難にします。\n今すぐ対応してください\nグローバル管理者:組織で MFA を設定するには、aka.ms/MFAWizard の MFA セットアップガイド、または「Microsoft 365 の多要素認証を設定する」を参照してください。\nMicrosoft 365 管理センターにアクセスするユーザー:aka.ms/mfasetup で確認方法を確認し、必要に応じて追加してください。\n組織への影響\n管理者が Microsoft 365 管理センターにサインインできるようにするには、テナントで MFA を有効にする必要があります。この変更の影響を受ける管理センターの URL は次のとおりです。\n• (portal.office.com/redacted)\n• (admin.cloud.microsoft/redacted)\n• (admin.microsoft.com/redacted)\n準備のために\n• 未設定の場合は、組織で MFA の必須強制が展開された際のサインイン問題を避けるため、できるだけ早く MFA を設定してください。\n• 設定済みの場合、対応は不要です。管理センターにアクセスする全ユーザーが、Microsoft Authenticator などの確認方法をアカウントに追加していることの確認を推奨します。\n• グローバル管理者:aka.ms/MFAWizard の MFA セットアップガイド、または「Microsoft 365 の多要素認証を設定する」を参照してください。\n• ユーザー:aka.ms/mfasetup で確認方法を確認し、必要に応じて追加してください。\n詳細については、ブログ記事の FAQ を参照してください。\n追加情報URL(関連サポートドキュメントへのリンク):\n(aka.ms/redacted)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "52c887d1946c16bab8a97e1bd48462c3ce3f417bbab08139ce3354f38d1ae2bc",
+      "validatedAt": "2026-10-21T21:54:34.8571461+00:00"
+    },
+    {
       "id": "MC1221452",
       "japaneseTitle": "Entra IDのパスキープロファイルがGA、既存FIDO2テナントは移行",
       "japaneseFacts": {
@@ -717,6 +765,22 @@
       "japaneseBodyTranslation": "2026年7月9日更新：タイムラインを更新しました。\n[はじめに]\nMicrosoft 365 Copilotアプリのチャット画面下部にブランドフッターを表示できる新しい共同ブランディング機能を導入します。管理者は組織ロゴをM365 Copilotアプリに追加でき、ユーザーが信頼できる職場管理のCopilotを使用していることを確認しやすくなります。\nロードマップID 555852に関連。\n[実施時期]\n• GA（世界）：2026年7月中旬（以前は6月末）展開開始、7月末（以前は7月初旬）完了予定。\n[組織への影響]\n影響対象\n• Microsoft 365 Copilotアプリを使用する全M365テナント。\n発生すること\n• 管理者はM365管理センターでロゴをアップロードしてCopilotアプリのフッターをカスタマイズできます。\n• フッター",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
+    },
+    {
+      "id": "MC1278920",
+      "japaneseTitle": "Office LTSC 2021 などのサポートが2026年10月13日に終了",
+      "japaneseFacts": {
+        "change": "Office LTSC 2021、Visio LTSC 2021、Project LTSC 2021 ほかのサポートが2026年10月13日に終了します。",
+        "impact": "終了後は更新、セキュリティ修正、技術サポートが提供されず、セキュリティやコンプライアンス上のリスクが生じます。",
+        "timing": "2026年10月13日。",
+        "action": "Microsoft 365 Apps への移行、または完全切断環境では Office LTSC 2024 への移行を推奨します。"
+      },
+      "japaneseDetailedSummary": "Office LTSC 2021 のサポートは2026年10月13日に終了し、Visio LTSC 2021、Project LTSC 2021 などの製品も同日で終了します。終了後は更新プログラム、セキュリティ修正、技術サポートが提供されず、アプリは動作しても、セキュリティ、コンプライアンス、互換性、信頼性の面でリスクがあります。推奨対応は、Microsoft 365 Apps を含む Microsoft 365 / Office 365 スイートへの移行です。企業は Microsoft 365 E3、Office 365 E3、Microsoft 365 Apps for enterprise を、300ユーザー未満の組織は Business Premium、Business Standard、Apps for business を検討できます。完全に切断された環境では、2029年10月までサポートされる Office LTSC 2024 への移行が推奨されています。アップグレードガイドや FastTrack の利用も案内されています。",
+      "japaneseBodyTranslation": "既にお知らせしたとおり、Office LTSC 2021 のサポートは2026年10月13日に終了します。この日以降、このバージョンの Office には更新プログラム、セキュリティ修正、技術サポートが提供されません。アプリケーションは引き続き動作する場合がありますが、サポート対象外のソフトウェアの使用は、セキュリティリスク、コンプライアンスリスク、システムの非互換性などの問題につながる可能性があります。\nVisio LTSC 2021、Microsoft Project LTSC 2021、その他いくつかの製品のサポートも2026年10月13日に終了します。これらを使用している組織は、セキュリティ、コンプライアンス、パフォーマンスを維持するため、できるだけ早くアップグレードしてください。\n[組織への影響:]\nサポート終了後、Office LTSC 2021 のスイートおよびスタンドアロン版はセキュリティ更新プログラムやその他の修正を受け取れなくなり、これらを実行しているデバイスには技術支援も提供されません。サポート対象外のソフトウェアを使い続けると、セキュリティやコンプライアンスのリスクにさらされ、サービスの信頼性やパフォーマンスに影響する可能性があります。\n[準備のために必要な対応:]\nデスクトップ版 Office アプリへのアクセスを維持しつつリスクを軽減するため、Microsoft 365 Apps(エンタープライズ向けまたはビジネス向け)を含む Microsoft 365 または Office 365 スイートへのデバイスのアップグレードを推奨します。Microsoft 365 Apps は、Word、Excel、PowerPoint などのおなじみのアプリをデスクトップ、モバイル、Web 向けに常に最新の状態で提供し、モダン ライフサイクル ポリシーの下で継続的にサポートされ、Microsoft 365 Copilot アドオンの利用対象です。\n• 企業は Microsoft 365 E3、Office 365 E3、または Microsoft 365 Apps for enterprise を検討してください。\n• 300ユーザー未満の組織は Microsoft 365 Business Premium、Microsoft 365 Business Standard、または Microsoft 365 Apps for business を検討してください。\n完全に切断されたソリューションが必要なシナリオでは、Office LTSC 2024 へのアップグレードを推奨します。Office LTSC 2024 は Microsoft 365 Apps の価値の一部を含み、固定ライフサイクル ポリシーの下で2029年10月までサポートされます。\nこの移行に備えるため、次のリソースをご利用ください。\n• Office LTSC 2021 から Microsoft 365 Apps への移行の概要については、アップグレードガイドをお読みください。\n• Microsoft 365 への移行には、Microsoft のサポートサービスである Microsoft FastTrack の利用もご検討ください。\n潜在的な中断を避け、組織のソフトウェア環境を安全かつ最新に保つために、事前に計画してください。",
+      "sourceCharacterCount": 2412,
+      "sourceTruncated": false,
+      "sourceHash": "f158ecdd3d8c598ef9d8bc121a2e42b84fc715afe2d70c781d24689ac2d9a511",
+      "validatedAt": "2026-10-21T21:54:34.8504664+00:00"
     },
     {
       "id": "MC1282568",
@@ -885,13 +949,6 @@
       "sourceTruncated": true,
       "sourceHash": "f5cfc7131cd539f603c8f6a764e922bfb0943e13407c788331677efeffc19f19",
       "validatedAt": "2026-10-21T17:27:26.1115494+00:00"
-    },
-    {
-      "id": "MC1440968",
-      "japaneseDetailedSummary": "Microsoft Entra IDにおけるパスキー登録エクスペリエンスの最適化が展開されます。登録キャンペーン、認証強度、「マイ サインイン」を通じたパスキー登録処理が改善され、管理者が設定したパスキープロファイル制限に準拠したパスキータイプへの誘導がより一貫して行われます。また、ポリシーで許可されている場合、ユーザーの現在のデバイスにローカルなパスキーの登録が優先されます。UIの変更はありません。2026年8月下旬に全世界およびGCCで一般提供開始予定です。フィッシング耐性のある認証方法の採用促進を目指す組織にとって有益な更新です。",
-      "japaneseBodyTranslation": "[概要]\nMicrosoft Entra ID全体でパスキー登録の最適化を展開しています。これらの変更により、登録キャンペーン、認証強度、およびマイ サインインを通じたパスキー登録の処理方法が改善されます。\n更新された登録ロジックにより、より一貫して以下が実現されます:\n• 管理者が設定したパスキープロファイルの制限に準拠したパスキータイプへのユーザー誘導が改善され、登録失敗や非準拠の登録試行が減少します。\n• ポリシーで許可されている場合、ユーザーの現在のデバイスにローカルなパスキーの登録が優先されます。\nこれらの改善は、パスキー登録の成功率向上、登録時の摩擦軽減、およびフィッシング耐性のある認証方法の採用強化を目的としています。\nこの更新に関連するユーザーインターフェースの変更はありません。\n[展開スケジュール]\n• 一般提供(全世界およびGCC):2026年8月下旬開始、2026年8月下旬完了予定\n[組織への影響]\n影響を受けるユーザー",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
     },
     {
       "id": "MC1440972",
@@ -1269,13 +1326,6 @@
       "validatedAt": "2026-10-20T13:44:06.1298381+00:00"
     },
     {
-      "id": "MC1478465",
-      "japaneseDetailedSummary": "Microsoft Security Copilotのエージェントが、Defender、Entra、Intune、Purviewといった主要セキュリティ製品のワークフローに組み込まれます。Ignite 2025でMicrosoftは、自律的かつ予防的な防御を実現する新しいエージェントを多数発表しました。本日より、Microsoft 365 E5/E7ライセンスを持つ組織は、追加購入なしでSecurity Copilotの機能とエージェントを利用できるようになります。テナントには、ライセンス1,000ユーザーあたり月400 Security Compute Units(SCU)が付与され、月あたり最大10,000 SCUまで利用可能です。E5/E7を契約している組織のセキュリティ担当者は、追加コストなくAIを活用したセキュリティ対応能力を強化できる点が実務上の大きなメリットです。",
-      "japaneseBodyTranslation": "[内容と背景]\nMicrosoft Security Copilotのエージェントは、Microsoft Defender、Microsoft Entra、Microsoft Intune、Microsoft Purviewを利用するセキュリティチームの業務フローに組み込まれています。Ignite 2025において、Microsoftはこれらの製品全体にまたがる新しいエージェントを多数発表し、ワークフロー全体でエージェント型の防御を実現し、自律的かつ予防的な保護を可能にしました。\n[展開スケジュール]\nチームが導入しやすいように、本日より、お客様の組織は既存のMicrosoft 365 E5/E7の権利の一部として、Security Copilotの機能とエージェントにアクセスできるようになります。\n[組織への影響]\n影響を受けるユーザー:\n・Microsoft 365 E5またはE7を契約している組織\n対象プラットフォーム/サービス:\n・Defender\n・Entra\n・Intune\n・Purview\n・Security Copilotポータル\n発生する内容:\n・Security Copilotは、Microsoft 365 E5/E7に自動的に含まれるようになります(別途購入は不要)。\n・テナントは、ライセンス1,000ユーザーあたり月400 Security Compute Units(SCU)を受け取り、月あたり最大10,000 SCUまで利用可能です。\n・コアエージェンティ(以下、本文はソース側で途中で切り詰められています)",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1478946",
       "japaneseDetailedSummary": "Cloud Updateにおいて、月次エンタープライズチャネル(Monthly Enterprise Channel)を利用するデバイス向けにロールバックオプションが拡張されます。管理者は、2バージョン前のリリースまでデバイスをロールバックでき、そのリリース向けの最新セキュリティ更新プログラムを適用したまま、更新再開の準備が整うまでロールバック状態を維持できます。これにより、セキュリティを確保しつつ互換性や運用上の問題を調査・解決する時間的余裕が生まれます。世界規模での一般提供は2026年9月に開始し、同月末までの完了を予定しています。Microsoft 365 Apps管理センターから一元管理できる点も運用上の利点です。IT管理者にとっては、更新プログラム適用後の不具合対応に柔軟性が増す重要な変更です。",
       "japaneseBodyTranslation": "[内容と背景]\nCloud Updateは、月次エンタープライズチャネル(Monthly Enterprise Channel)のデバイスに対するロールバックオプションを拡張します。管理者は、デバイスを2バージョン前のリリースにロールバックできるようになり、そのリリース向けの最新のセキュリティ更新プログラムを適用した状態を維持できます。また、更新の再開準備が整うまで、後続のリリースにわたってロールバック状態のままデバイスを維持できます。これにより、セキュリティ対応とMicrosoft 365 Apps管理センターを通じた一元管理を維持しながら、互換性や運用上の問題を調査・解決するための追加の時間が確保されます。\n[展開スケジュール]\n一般提供(世界規模):2026年9月に展開を開始し、2026年9月下旬までに完了する見込みです。\n[組織への影響]\nこの機能は、Cloud Updateで管理されている月次エンタープライズチャネルのデバイスに対して、管理者に追加の復旧オプションを提供します。更新プログラムによって互換性や運用上の問題が発生した場合、管理者は影響を受けたデバイスを2バージョン前のリリース(以下、本文はソース側で途中で切り詰められています)",
@@ -1507,57 +1557,9 @@
       "japaneseBodyTranslation": "この廃止前は、Microsoft Graph APIでオンライン会議作成時にパスコード要否を選択可能で、未指定時はパスコード不要でした。\n更新後：セキュリティ強化のた、未指定時はデフォルトでパスコードが要求されます。2025年2月24日よりisPasscodeRequiredのデフォルト値がfalseからtrueに変更されます。\nアプリ更新：Create onlineMeeting APIを使用するアプリを確認・更新し新動作に対応してください。\n今後：2027年10月にパスコード要否指定オプションが廃止され全会議でパスコード必須となります。（以下省略）",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
-    },
-    {
-      "id": "MC1215070",
-      "japaneseTitle": "Microsoft 365 管理センターで MFA が必須化(2026年2月9日〜)",
-      "japaneseFacts": {
-        "change": "Microsoft 365 管理センターへのサインインで、MFA の完了が必須となる強制を拡大します。",
-        "impact": "MFA を完了できないユーザーは管理センターにサインインできません。対象は portal.office.com/adminportal/home、admin.cloud.microsoft、admin.microsoft.com です。",
-        "timing": "2026年2月9日から強制を拡大します。2025年2月から段階的に要求されています。",
-        "action": "グローバル管理者は aka.ms/MFAWizard で設定し、ユーザーは aka.ms/mfasetup で認証方法を確認・追加してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft は2025年2月から Microsoft 365 管理センターへのサインインに MFA を要求しており、2026年2月9日からは強制をさらに拡大し、MFA を完了しないとサインインできなくなります。対象 URL は portal.office.com/adminportal/home、admin.cloud.microsoft、admin.microsoft.com です。既に MFA を設定済みの場合は追加対応不要ですが、管理センターにアクセスする全ユーザーが Microsoft Authenticator などの認証方法を登録しているか確認することが推奨されています。未設定の場合、グローバル管理者は aka.ms/MFAWizard、ユーザーは aka.ms/mfasetup から設定します。本文は途中で切れており、以降の追加情報URLなどは提供されていません。",
-      "japaneseBodyTranslation": "既に多要素認証(MFA)を設定済みの場合は、ありがとうございます。現時点で追加の対応は不要です。未設定の場合は、以下をお読みください。\n社内および製品全体のサイバーセキュリティ強化への継続的な取り組みの一環として、昨年の2025年2月から、Microsoft は Microsoft 365 管理センターへのサインイン時に全ユーザーへ MFA を要求し始めました。2026年2月9日から、Microsoft は強制をさらに拡大し、MFA を正常に完了しないと Microsoft 365 管理センターにサインインできなくなります。\nMicrosoft 365 管理センターでの MFA の導入は、アカウント侵害のリスクを大幅に低減し、不正アクセスを防ぎ、機密データを保護します。ユーザー名とパスワードに加えた保護層により、フィッシング、クレデンシャルスタッフィング、ブルートフォース、パスワード使い回し攻撃によるデータ窃取や不正アクセスを困難にします。\n今すぐ対応してください\nグローバル管理者:組織で MFA を設定するには、aka.ms/MFAWizard の MFA セットアップガイド、または「Microsoft 365 の多要素認証を設定する」を参照してください。\nMicrosoft 365 管理センターにアクセスするユーザー:aka.ms/mfasetup で確認方法を確認し、必要に応じて追加してください。\n組織への影響\n管理者が Microsoft 365 管理センターにサインインできるようにするには、テナントで MFA を有効にする必要があります。この変更の影響を受ける管理センターの URL は次のとおりです。\n• (portal.office.com/redacted)\n• (admin.cloud.microsoft/redacted)\n• (admin.microsoft.com/redacted)\n準備のために\n• 未設定の場合は、組織で MFA の必須強制が展開された際のサインイン問題を避けるため、できるだけ早く MFA を設定してください。\n• 設定済みの場合、対応は不要です。管理センターにアクセスする全ユーザーが、Microsoft Authenticator などの確認方法をアカウントに追加していることの確認を推奨します。\n• グローバル管理者:aka.ms/MFAWizard の MFA セットアップガイド、または「Microsoft 365 の多要素認証を設定する」を参照してください。\n• ユーザー:aka.ms/mfasetup で確認方法を確認し、必要に応じて追加してください。\n詳細については、ブログ記事の FAQ を参照してください。\n追加情報URL(関連サポートドキュメントへのリンク):\n(aka.ms/redacted)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "52c887d1946c16bab8a97e1bd48462c3ce3f417bbab08139ce3354f38d1ae2bc",
-      "validatedAt": "2026-10-21T21:54:34.8571461+00:00"
-    },
-    {
-      "id": "MC1278920",
-      "japaneseTitle": "Office LTSC 2021 などのサポートが2026年10月13日に終了",
-      "japaneseFacts": {
-        "change": "Office LTSC 2021、Visio LTSC 2021、Project LTSC 2021 ほかのサポートが2026年10月13日に終了します。",
-        "impact": "終了後は更新、セキュリティ修正、技術サポートが提供されず、セキュリティやコンプライアンス上のリスクが生じます。",
-        "timing": "2026年10月13日。",
-        "action": "Microsoft 365 Apps への移行、または完全切断環境では Office LTSC 2024 への移行を推奨します。"
-      },
-      "japaneseDetailedSummary": "Office LTSC 2021 のサポートは2026年10月13日に終了し、Visio LTSC 2021、Project LTSC 2021 などの製品も同日で終了します。終了後は更新プログラム、セキュリティ修正、技術サポートが提供されず、アプリは動作しても、セキュリティ、コンプライアンス、互換性、信頼性の面でリスクがあります。推奨対応は、Microsoft 365 Apps を含む Microsoft 365 / Office 365 スイートへの移行です。企業は Microsoft 365 E3、Office 365 E3、Microsoft 365 Apps for enterprise を、300ユーザー未満の組織は Business Premium、Business Standard、Apps for business を検討できます。完全に切断された環境では、2029年10月までサポートされる Office LTSC 2024 への移行が推奨されています。アップグレードガイドや FastTrack の利用も案内されています。",
-      "japaneseBodyTranslation": "既にお知らせしたとおり、Office LTSC 2021 のサポートは2026年10月13日に終了します。この日以降、このバージョンの Office には更新プログラム、セキュリティ修正、技術サポートが提供されません。アプリケーションは引き続き動作する場合がありますが、サポート対象外のソフトウェアの使用は、セキュリティリスク、コンプライアンスリスク、システムの非互換性などの問題につながる可能性があります。\nVisio LTSC 2021、Microsoft Project LTSC 2021、その他いくつかの製品のサポートも2026年10月13日に終了します。これらを使用している組織は、セキュリティ、コンプライアンス、パフォーマンスを維持するため、できるだけ早くアップグレードしてください。\n[組織への影響:]\nサポート終了後、Office LTSC 2021 のスイートおよびスタンドアロン版はセキュリティ更新プログラムやその他の修正を受け取れなくなり、これらを実行しているデバイスには技術支援も提供されません。サポート対象外のソフトウェアを使い続けると、セキュリティやコンプライアンスのリスクにさらされ、サービスの信頼性やパフォーマンスに影響する可能性があります。\n[準備のために必要な対応:]\nデスクトップ版 Office アプリへのアクセスを維持しつつリスクを軽減するため、Microsoft 365 Apps(エンタープライズ向けまたはビジネス向け)を含む Microsoft 365 または Office 365 スイートへのデバイスのアップグレードを推奨します。Microsoft 365 Apps は、Word、Excel、PowerPoint などのおなじみのアプリをデスクトップ、モバイル、Web 向けに常に最新の状態で提供し、モダン ライフサイクル ポリシーの下で継続的にサポートされ、Microsoft 365 Copilot アドオンの利用対象です。\n• 企業は Microsoft 365 E3、Office 365 E3、または Microsoft 365 Apps for enterprise を検討してください。\n• 300ユーザー未満の組織は Microsoft 365 Business Premium、Microsoft 365 Business Standard、または Microsoft 365 Apps for business を検討してください。\n完全に切断されたソリューションが必要なシナリオでは、Office LTSC 2024 へのアップグレードを推奨します。Office LTSC 2024 は Microsoft 365 Apps の価値の一部を含み、固定ライフサイクル ポリシーの下で2029年10月までサポートされます。\nこの移行に備えるため、次のリソースをご利用ください。\n• Office LTSC 2021 から Microsoft 365 Apps への移行の概要については、アップグレードガイドをお読みください。\n• Microsoft 365 への移行には、Microsoft のサポートサービスである Microsoft FastTrack の利用もご検討ください。\n潜在的な中断を避け、組織のソフトウェア環境を安全かつ最新に保つために、事前に計画してください。",
-      "sourceCharacterCount": 2412,
-      "sourceTruncated": false,
-      "sourceHash": "f158ecdd3d8c598ef9d8bc121a2e42b84fc715afe2d70c781d24689ac2d9a511",
-      "validatedAt": "2026-10-21T21:54:34.8504664+00:00"
-    },
-    {
-      "id": "MC1192661",
-      "japaneseTitle": "Edge ワークスペースを新アーキテクチャへ移行、共有機能は廃止",
-      "japaneseFacts": {
-        "change": "保存済みワークスペースのデータを OneDrive/SharePoint から Edge Sync サービスへ移行し、共同作業・共有機能を削除します。",
-        "impact": "Edge ワークスペースを使用する全組織が対象です。EdgeWorkspacesEnabled ポリシーで無効化している組織はデータ移行されません。",
-        "timing": "Production、GCC、GCCH、DoD で2026年2月中旬にロールアウトを開始します。",
-        "action": "管理者の対応は不要で自動移行されます。オプトアウトはロールアウト前に Microsoft CSS へ連絡し、利用が多い場合はユーザー通知と社内文書の更新を行ってください。"
-      },
-      "japaneseDetailedSummary": "Microsoft Edge ワークスペースの信頼性とパフォーマンス向上のため、新しいアーキテクチャへ移行します。保存済みワークスペースのデータは OneDrive/SharePoint から Edge Sync サービスへ移行され、コラボレーションおよび共有機能は削除されます。Edge ワークスペースを使用するすべての組織が対象で、一般提供(Production、GCC、GCCH、DoD)のロールアウトは2026年2月中旬に開始します。EdgeWorkspacesEnabled ポリシーで無効化している場合はデータが移行されません。ポリシーで Sync を無効にしている場合も既存ワークスペースは移行されますが、移行後に作成した新規ワークスペースはデバイス間で同期されずローカルのみになります。管理者の対応は不要で、オプトアウトしたい場合はロールアウト前に CSS へ連絡します。利用が多い組織はユーザーへの周知と文書更新が推奨されます。コンプライアンス上の考慮事項は特定されていません。",
-      "japaneseBodyTranslation": "[はじめに]\nMicrosoft Edge ワークスペースの信頼性とパフォーマンスを向上させるため、新しいアーキテクチャへ移行します。2022年に導入されたワークスペースは、保存・共有できる永続的なタブのセットを作成する機能です。この更新の一環として、保存済みワークスペースのデータを OneDrive/SharePoint から Edge Sync サービスへ移行し、コラボレーション/共有機能を削除します。\n[実施時期:]\n一般提供(Production、GCC、GCCH、DoD):2026年2月中旬にロールアウトを開始します。\n[組織への影響:]\n影響を受ける対象:Microsoft Edge ワークスペースを使用するすべての組織。\n実施内容:\n• 保存済みワークスペースのデータが OneDrive/SharePoint から Edge Sync サービスへ移行されます。\n• コラボレーションおよび共有機能が削除されます。\n• EdgeWorkspacesEnabled ポリシーでワークスペースを無効にしている組織では、データは移行されません。\n• ポリシーで Sync を無効にしている場合でも、現行アーキテクチャで作成された既存ワークスペースは移行されます。ただし、移行後に作成された新規ワークスペースはデバイス間で同期されず、各デバイスのローカルに留まります。\n[準備のためにできること:]\n• 管理者の対応は不要です。移行はロールアウト中に自動的に行われます。\n• オプトアウトを希望する場合は、ロールアウト開始前に Microsoft CSS へ連絡してください。\n• ワークスペースを多用している場合は、ユーザーに通知し、社内ドキュメントを更新してください。\n詳細:Microsoft Edge のワークスペース\n[コンプライアンス上の考慮事項:]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
-      "sourceCharacterCount": 1548,
-      "sourceTruncated": false,
-      "sourceHash": "0429a912dee93f2ddf69709cba74ffb2eb9981f97cf36df867e51a97d0a3da6b",
-      "validatedAt": "2026-10-21T21:54:34.8618831+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-10-19T00:18:30.2522538+00:00",
-  "summarySourceHash": "9dc29006ab4cc5029af32a4e99b9c1e9a4af4bf311e1bfeda29ae7dacee8c698",
-  "sourceAgentRunId": "39179810783"
+  "summarySourceHash": "bff737798865b4129845ecb643722f3edad36cdf9cb81b41658ca73b19157c7c",
+  "summaryGeneratedAt": "2026-10-22T07:48:45.0036563+00:00",
+  "sourceAgentRunId": "39742636795"
 }
