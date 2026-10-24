@@ -20386,11 +20386,11 @@
   },
   "audit": {
     "uniqueMessages": 150,
-    "snapshotOccurrences": 3094,
-    "snapshots": 38,
+    "snapshotOccurrences": 3181,
+    "snapshots": 39,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-10-21T23:24:44+00:00",
-    "checkedAt": "2026-10-23T18:39:48.276190+00:00",
+    "checkedAt": "2026-10-24T07:34:39.765696+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 50,
