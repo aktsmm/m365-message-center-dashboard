@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T00:26:31.8826018+00:00",
+  "generatedAt": "2026-10-25T05:01:15.9890885+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra のエージェント作成既定変更(11/4)と Targeted release 廃止準備、Office LTSC 2021 サポート終了への対応が優先",
   "executiveSummary": "今週は Microsoft Entra 関連の変更が中心です。MC1506733 では、11月4日から管理者が「Users can create agent blueprints」を無効化しない限り、既定ユーザーがエージェントブループリントを作成可能になります(展開は2026年11月上旬〜下旬)。MC1506728 では同日以降、AgentIdentity.CreateAsManager がエージェントブループリントのプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。MC1490899 では Targeted release が2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります(アクション期限は10月31日と記載)。MC1509797 では Office LTSC 2021、Visio/Project LTSC 2021 等のサポートが10月13日に終了済みで、セキュリティ更新が提供されません。MC1519855 では Entra の Choose Your Own Telephony Provider が10月30日から GA となります。MC1510951 ではカナダの時間帯変更(11月1日に時計を戻さない)向けの Windows 更新が提供済みです。いずれも抜粋範囲外の詳細(手順の全文など)は未確認です。",
@@ -638,6 +638,22 @@
   ],
   "messageTranslations": [
     {
+      "id": "MC1069563",
+      "japaneseTitle": "Copilot Chat従量課金向けメッセージ消費レポートを追加",
+      "japaneseFacts": {
+        "change": "Microsoft 365管理センターにCopilot Chatの課金メッセージ消費を示す新しい「Message consumption」使用状況レポートが追加される。",
+        "impact": "Copilotの従量課金を設定し、エージェント利用を有効化したテナントの管理者が対象。",
+        "timing": "プレビューは提供中。一般提供は2027年1月初旬に開始、1月末に完了予定(従来は2026年9月)。",
+        "action": "展開は自動で、事前の管理者対応は不要。統合アプリでエージェントを管理する管理者への周知を検討。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365 Copilot Chatの従量課金(pay-as-you-go)コストを管理するため、管理センターに新しい「Message consumption」使用状況レポートが導入されます。課金対象メッセージの合計、累計・日次の推移、ユーザー別、課金ポリシー別、エージェント別、エージェントとユーザーの組み合わせ別を確認できます。プレビュー中は最大30日分の履歴のみ表示され、2025年5月3日より前のデータは含まれません。ユーザーが2000件を超える課金メッセージを消費するとアラートが表示されます。レポートは既定で有効で、レポート > 使用状況 > Microsoft 365 Copilot > Message consumptionに表示されます。一般提供は2027年1月初旬から月末にかけて展開予定(従来は2026年9月)。管理者の事前対応は不要です。",
+      "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。\nMicrosoft 365 Copilot Chatの従量課金コストの管理を支援するため、Microsoft 365管理センターに新しい「Message consumption」使用状況レポートを導入します。このレポートでは、Microsoft 365 Copilotの従量課金ポリシーに関連する課金メッセージを確認でき、消費メッセージの合計、累計および日次の時系列、ユーザー別、課金ポリシー別、エージェント別、エージェントとユーザーの組み合わせ別のメッセージ数が含まれます。レポートはプレビューとして展開されます。プレビュー中は最大30日間の消費履歴が表示され、2025年5月3日より前の使用状況情報はレポートで利用できません。\nこのメッセージはpay-as-you-goモデルのMicrosoft Copilotに関するもので、Microsoft Copilotライセンスは不要です。\nMicrosoft 365ロードマップID 490738に関連します。\n[時期]\nパブリックプレビュー:提供中。\n一般提供(全世界):2027年1月初旬に展開開始(従来は2026年9月)、2027年1月末までに完了予定(従来は2026年9月末)。\n[組織への影響]\n管理センターまたはPower Platform管理センターでMicrosoft 365 Copilotの従量課金を設定し、組織でエージェント利用を有効にすると、テナント、ユーザー、エージェント、エージェントとユーザーの各レベルのメッセージ消費指標を含む新レポートが表示されます。過剰支出を抑えるため、ユーザーが2000件を超える課金メッセージを消費するとアラートが表示されます。\nこのレポートは既定で有効で、管理センターの レポート > 使用状況 > Microsoft 365 Copilot > Message consumption で利用できます。\n[準備のために必要な対応]\n展開は指定日までに自動で行われ、事前の管理者対応は不要です。統合アプリページでエージェントを管理する管理者にこの機能を周知するとよいでしょう。\n詳細:管理センターのMicrosoft 365レポート - Message consumption",
+      "sourceCharacterCount": 2166,
+      "sourceTruncated": false,
+      "sourceHash": "bd197b976c51ae1cbcbd2e35eefe6fae11bcbe365c281de4c9b88721349083ca",
+      "validatedAt": "2026-10-25T00:26:31.8730206+00:00"
+    },
+    {
       "id": "MC1146821",
       "japaneseTitle": "Edge for BusinessにCopilot Chatの「書き換え」機能",
       "japaneseFacts": {
@@ -652,6 +668,22 @@
       "sourceTruncated": true,
       "sourceHash": "48923c0b40be0d7c80f6fe0dea76ce1713fd1efa92535dd4ec1999d7a435d0d9",
       "validatedAt": "2026-10-24T17:34:07.199375+00:00"
+    },
+    {
+      "id": "MC1158329",
+      "japaneseTitle": "Copilotのメモリとパーソナライズ機能の更新",
+      "japaneseFacts": {
+        "change": "Copilotがチャット履歴で応答をパーソナライズし、保存済みメモリを管理する設定画面が刷新される。",
+        "impact": "メモリが有効なテナントのMicrosoft 365 Copilotの全ユーザー。",
+        "timing": "一般提供は2026年9月中旬に開始し、2026年10月下旬に完了予定(従来は1月初旬開始・7月下旬完了)。",
+        "action": "管理者対応は原文上不要。ユーザーと新設定を確認し、必要なら社内資料を更新。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365 Copilotのメモリ機能が更新され、Copilotがチャット履歴を使って応答をパーソナライズするようになります。保存済みメモリを確認・管理しやすい新しい設定画面も提供され、すべてのCopilot Chatユーザーが対象です。既存の管理者およびユーザーのメモリ設定は尊重され、オフの場合はオフのままです。管理者コントロールやポリシー適用に変更はありません。一般提供は2026年9月中旬に開始、10月下旬に完了予定(従来は1月初旬開始、7月下旬完了)。パブリックプレビュー(Frontier)は2025年11月中旬に開始。管理者の対応は原則不要で、更新された設定体験の確認や社内資料の更新を検討できます。コンプライアンス面では、チャット履歴の利用により既存データの処理方法が変わる点が示されています。なお、原文は途中で切れています。",
+      "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。\n[はじめに]\nMicrosoft 365 Copilotのメモリを更新し、パーソナライズとユーザー体験を向上させます。この更新により、Copilotはチャット履歴を使って応答をパーソナライズし、より関連性が高く文脈に沿った返信を提供します。また、保存済みメモリを表示・管理しやすくするため、Copilot設定のユーザーコントロールも刷新します。これはすべてのCopilot Chatユーザーが利用できます。\nチャット履歴によるパーソナライズの制御も可能で、詳細は設定画面でユーザーに示されます。\n[時期]\n• パブリックプレビュー(Frontier):2025年11月中旬に展開開始。\n• 一般提供:2026年9月中旬に開始(従来は1月初旬)、2026年10月下旬に完了予定(従来は7月下旬)。\n[組織への影響]\nメモリが有効なテナントのMicrosoft 365 Copilotの全ユーザー。\n実施内容:\n• Copilotはチャット履歴を使って応答をパーソナライズし、より適切で役立つやり取りを実現します。\n• ユーザーは、Copilotが記憶する内容の可視性と制御を高める再設計されたメモリ設定ページを目にします。\n• 既存の管理者およびユーザーレベルのメモリ設定は尊重されます。メモリがオフの場合はオフのままです。\n• 管理者コントロールやポリシー適用に変更はありません。\n[準備のために]\n• 利用可能になったら、更新されたメモリ設定体験をユーザーと確認する。\n• 社内文書やトレーニング資料を更新したい場合を除き、管理者の対応は不要です。\n詳細:\n• Enhanced personalization control overview | Microsoft Graph | Microsoft Learn\n• enhancedPersonalizationSetting resource type | Microsoft Graph | Microsoft Learn\n[コンプライアンスの考慮事項]\n変更により既存の顧客データの処理・保存・アクセス方法が変わるか:はい。Copilotはチャット履歴を使って応答をパーソナライズするため、文脈に沿った返信を生成する際の既存顧客データの処理方法が変わります。\n顧客データにアクセスするAI/ML機能を導入または大きく変更するか:はい。チャット履歴を取り入れることで、Copilotのパーソナライズモデルが強化され、より適切な応答を生成できます。\nエンドユーザーに生成AIとの新しい対話方法を提供するか:はい。ユーザーはCopilotからよりパーソナライズされた文脈的な応答を受け取ります。(原文はここで途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "aae410a74bc2fe285a797e0ac94bb97d9c3c29d45e61f7eb79e6ca245ee58d63",
+      "validatedAt": "2026-10-25T00:26:31.8778225+00:00"
     },
     {
       "id": "MC1182696",
@@ -920,6 +952,22 @@
       "validatedAt": "2026-10-21T12:06:52.9204619+00:00"
     },
     {
+      "id": "MC1423108",
+      "japaneseTitle": "iOS版Authenticatorのパスキー復元体験を改善",
+      "japaneseFacts": {
+        "change": "iOS版Microsoft Authenticatorでデバイスバインドパスキーの復元フローが、より分かりやすいガイド付きUIに改善される。",
+        "impact": "パスキーを使うiOSユーザー、および新しいiOS端末でAuthenticatorを復元するユーザー。",
+        "timing": "一般提供(全世界)は2026年9月中旬(従来は8月)。",
+        "action": "対応は不要。ユーザーへの周知とヘルプデスク文書の更新を推奨。"
+      },
+      "japaneseDetailedSummary": "iOS版Microsoft Authenticatorで、デバイスバインドパスキーの復元体験が改善されます。新しい端末への移行時に、新規セットアップか既存からの復元かに応じたガイド付きUIが表示され、パスキーを使ったクロスデバイスサインインの説明も強化されます。対象はiOSのみで、Androidは後日対応です。iCloudとiCloudキーチェーンのバックアップが有効で、以前の端末にパスキーがあるユーザーが対象です。機能は既定で有効で、管理者設定やポリシーの変更はありません。一般提供は2026年9月中旬(従来は8月)。対応は不要ですが、ユーザーへの周知とヘルプデスク文書の更新が推奨されています。コンプライアンス上の懸念は特定されていません。",
+      "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。\n[概要と目的]\niOS版Microsoft Authenticatorアプリにおけるデバイスバインドパスキーの復元体験を改善します。ユーザーが新しいデバイスに移行する際に、より明確でガイド付きの復元フローを提供し、パスキーによるクロスデバイスサインインへの理解も高めます。強力なセキュリティ保護を維持しつつ、デバイス移行時の手間を減らす設計です。\n[展開スケジュール]\n一般提供(全世界):2026年9月中旬(従来は8月)\n[組織への影響]\n影響を受けるユーザー\n• Authenticatorでパスキーを使用するiOSユーザー\n• 新しいiOSデバイスでAuthenticatorを復元するユーザー\n対象プラットフォーム/サービス\n• iOS\n• Microsoft Authenticator\n• Microsoft Entra\n実施内容\n• 本変更はiOSデバイスのみが対象です。Androidは今回のリリースに含まれず、後日対応されます。\n• iCloudとiCloudキーチェーンのバックアップが有効で、以前のデバイスにパスキーが保存されているユーザーは、デバイス復元時に更新された体験を目にします。\n• 新しいデバイスでAuthenticatorを復元するユーザーには、更新された復元体験が表示されます。\n• 復元フローには以下が含まれます:新規セットアップか既存からの復元かに応じてユーザーを案内する新しいUI、Authenticatorパスキーとクロスデバイスサインインの利用に関する改善されたガイダンス。\n• 機能は既定で有効です。\n• 既存の管理者設定やポリシーに変更はありません。\n[必要な対応/推奨事項]\n対応は不要です。次の推奨事項を検討してください。\n• iOSでの復元体験の改善についてユーザーに周知する。\n• デバイス移行やAuthenticator復元に関するガイダンスを提供している場合、社内ヘルプデスク文書を更新する。\n[コンプライアンスの考慮事項]\nコンプライアンス上の考慮事項は特定されていません。組織に応じて確認してください。",
+      "sourceCharacterCount": 1929,
+      "sourceTruncated": false,
+      "sourceHash": "2c068a369bda2d2520580800bdd05f59e9e2b6d7367a0310b6cb870eeaeee4da",
+      "validatedAt": "2026-10-25T00:26:31.8766793+00:00"
+    },
+    {
       "id": "MC1426371",
       "japaneseTitle": "Entraでパスキーが既定に、Microsoft提供のSMS・音声認証は2027年2月終了",
       "japaneseFacts": {
@@ -1094,13 +1142,6 @@
       "validatedAt": "2026-10-23T05:07:15.1267241+00:00"
     },
     {
-      "id": "MC1454386",
-      "japaneseDetailedSummary": "Microsoft 365 Copilotモバイルアプリ(iOS・Android)におけるCopilot Chatへのアクセス制限が緩和されます。これまでCopilot Chatのモバイルアクセスを制限していた2つのレガシー制御—IntuneポリシーのBingChatEnterprise.IsAllowedとプライバシー設定の「コンテンツを分析」—が、モバイルアプリに対して機能しなくなります。すでにCopilot Chatへのアクセスが許可されているユーザーに対し、モバイル・Web・デスクトップ間で一貫したエクスペリエンスを提供することが目的です。ロールアウトは2026年8月中旬から9月末にかけてWorldwide・GCC・GCC High・DoDで順次実施されます。管理者はこれらのポリシーへの依存を見直す必要があります。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft 365 CopilotモバイルアプリにおけるCopilot Chatへのアクセスを簡素化します(iOSおよびAndroid対象)。今回の更新により、モバイルアプリでのCopilot Chatアクセスを制限していた2つのレガシーモバイル専用コントロールが機能しなくなります。対象は、Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシーコントロール「コンテンツを分析」です。\nこの変更により、すでにCopilot Chatへのアクセスが許可されているユーザーに対して、モバイル・Web・デスクトップ間で一貫したCopilot Chatエクスペリエンスを提供できるようになります。\n\n【ロールアウトスケジュール】\n一般提供(Worldwide、GCC、GCC High、DoD):2026年8月中旬にロールアウト開始、2026年9月末までに完了予定。\n\n【組織への影響】\n以下のコントロールは、Microsoft 365 CopilotモバイルアプリでのCopilot Chatアクセス制限として機能しなくなります:\n・Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」\n・プライバシーコントロール「コンテンツを分析」\nこれにより、影響を受けたユーザーはCopilot Chaへのアクセスを再び利用できるようになります",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1454397",
       "japaneseTitle": "新規・試用・教育テナントのTERRLクォータ算出方法を変更",
       "japaneseFacts": {
@@ -1191,20 +1232,6 @@
       "id": "MC1461528",
       "japaneseDetailedSummary": "2026年8月25日、Microsoft 365 RoadmapはAI at Work Roadmapに名称変更されました。AI at Work RoadmapはMicrosoft 365、Copilot、エージェント、AI関連エクスペリエンスの今後のイノベーションを一元的に確認できるポータルです。2026年9月からはDynamics 365、Power Platform、Dataverseのロードマップ情報も掲載開始予定です。管理者・IT担当者・変更管理チームは既存のブックマークやリンクを更新することが推奨されます。",
       "japaneseBodyTranslation": "【変更内容と理由】\n2026年8月25日、Microsoft 365 RoadmapはAI at Work Roadmapに名称変更されます。\nAI at Work Roadmapは、Microsoft 365、Copilot、エージェント、および関連するAI搭載エクスペリエンスの今後のイノベーションを発見するための一元的な場所を提供します。2026年9月から、Dynamics 365、Power Platform、DataverseのロードマップInformationもAI at Work Roadmapへの掲載が開始され、Microsoftのビジネスアプリケーション、生産性、AIポートフォリオ全体のイノベーションをより簡単に追跡できるようになります。\nロードマップは、今後の機能と変更を可視化することで、計画および準備活動を引き続きサポートします。\n\n【ロールアウトスケジュール】\n・2026年8月25日:Microsoft 365 RoadmapがAI at Work Roadmapに名称変更\n・2026年9月:新たなDynamics 365、Power Platform、DataverseのCapabilityがAI at Work Roadmapへの掲載を開始\n\n【組織への影響】\n影響を受けるユーザー:\n・Microsoft 365管理者\n・IT専門家\n・変更管理チーム\n・テクノロ",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1462460",
-      "japaneseDetailedSummary": "Microsoft Entraのセルフサービス ID 管理エクスペリエンスで使用されるドメインが更新されます。myaccount.microsoft.com、myapps.microsoft.com、myaccess.microsoft.com、mystaff.microsoft.com の各ドメインが myaccount.cloud.microsoft に統合されます。2026年11月下旬より世界展開が始まり、同月中に完了予定です。ネットワーク管理者はファイアウォールやプロキシの設定を新しいドメインに対応させる必要があります。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft Entraのアイデンティティおよびアクセス管理セルフサービスエクスペリエンスで使用するドメインを更新します。この変更により、myaccount.microsoft.com は myaccount.cloud.microsoft に移行します。現在個別のドメインでホストされているエクスペリエンスも myaccount.cloud.microsoft ドメインに統合されます。\n対象エクスペリエンス:\n• myaccount.microsoft.com\n• myapps.microsoft.com\n• myaccess.microsoft.com\n• mystaff.microsoft.com\nこの変更により、アイデンティティおよびアクセス管理セルフサービスエクスペリエンスのアクセスポイントが統一され、サービスインフラの継続的な改善が支援されます。\n【展開スケジュール】\n• 一般提供(全世界):2026年11月下旬に展開開始、2026年11月下旬に完了予定\n【組織への影響】\n影響を受けるユーザー\n• Microsoft Entraセルフサービスのアイデンティティおよびアクセス管理エクスペリエンスにアクセスするユーザー\n• ネットワーク、プロキシ、ファイアウォールを管理する管理者",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
-      "id": "MC1462914",
-      "japaneseDetailedSummary": "Microsoft Agent 365 に新しいレポート機能が追加されます。AIアドミンおよびグローバルアドミンが、テナントのAgent 365 Registryに登録されたエージェントを過去30日間にアクティブに使用したユーザーの一覧をCSV形式でエクスポートできるようになります。Microsoft 365 管理センター > エージェント > すべてのエージェント > エクスポートから利用可能です。2026年8月下旬に一般提供開始予定で、エージェントのライセンス管理や計画に活用できます。",
-      "japaneseBodyTranslation": "【変更内容と理由】\nMicrosoft Agent 365 に新しいレポート機能を導入します。これにより、AIアドミンおよびグローバルアドミンは、テナントのAgent 365 Registryに登録されたエージェントを過去30日間にアクティブに使用したユーザーのインベントリをエクスポートできます。\nこのレポートはエージェントの使用状況を可視化し、組織がエージェントのライセンス審査や計画活動を支援します。\n【展開スケジュール】\n• 一般提供(全世界):2026年8月下旬に展開開始、2026年8月下旬に完了予定。\n【組織への影響】\n影響を受けるユーザー\n• AIアドミン\n• グローバルアドミン\n対象プラットフォームおよびサービス\n• Microsoft 365 管理センター\n• Microsoft Agent 365\n変更内容\n新しいアクティブユーザーエクスポートオプションが以下の場所で利用可能になります:\nMicrosoft 365 管理センター > エージェント > すべてのエージェント > エクスポート\n承認された管理者は、過去30日間にAgent 365 Registryのエージェントを使用したユーザーを含むCSVレポートを生成できます。",
       "sourceCharacterCount": 1000,
       "sourceTruncated": true
     },
@@ -1865,52 +1892,52 @@
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     },
     {
-      "id": "MC1158329",
-      "japaneseTitle": "Copilotのメモリとパーソナライズ機能の更新",
+      "id": "MC1462460",
+      "japaneseTitle": "Entra My Account等のドメインがcloud.microsoftへ移行",
       "japaneseFacts": {
-        "change": "Copilotがチャット履歴で応答をパーソナライズし、保存済みメモリを管理する設定画面が刷新される。",
-        "impact": "メモリが有効なテナントのMicrosoft 365 Copilotの全ユーザー。",
-        "timing": "一般提供は2026年9月中旬に開始し、2026年10月下旬に完了予定(従来は1月初旬開始・7月下旬完了)。",
-        "action": "管理者対応は原文上不要。ユーザーと新設定を確認し、必要なら社内資料を更新。"
+        "change": "myaccount.microsoft.comがmyaccount.cloud.microsoftへ移り、myapps、myaccess、mystaffも同ドメインに統合されます。",
+        "impact": "Entraのセルフサービスを使うユーザーと、ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理する管理者が対象です。",
+        "timing": "全世界で2026年11月下旬に展開開始・完了の予定です。",
+        "action": "ユーザー対応は不要です。管理者は展開前に*.cloud.microsoftとmyaccount.cloud.microsoftが許可されているか確認することが推奨されます。"
       },
-      "japaneseDetailedSummary": "Microsoft 365 Copilotのメモリ機能が更新され、Copilotがチャット履歴を使って応答をパーソナライズするようになります。保存済みメモリを確認・管理しやすい新しい設定画面も提供され、すべてのCopilot Chatユーザーが対象です。既存の管理者およびユーザーのメモリ設定は尊重され、オフの場合はオフのままです。管理者コントロールやポリシー適用に変更はありません。一般提供は2026年9月中旬に開始、10月下旬に完了予定(従来は1月初旬開始、7月下旬完了)。パブリックプレビュー(Frontier)は2025年11月中旬に開始。管理者の対応は原則不要で、更新された設定体験の確認や社内資料の更新を検討できます。コンプライアンス面では、チャット履歴の利用により既存データの処理方法が変わる点が示されています。なお、原文は途中で切れています。",
-      "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。\n[はじめに]\nMicrosoft 365 Copilotのメモリを更新し、パーソナライズとユーザー体験を向上させます。この更新により、Copilotはチャット履歴を使って応答をパーソナライズし、より関連性が高く文脈に沿った返信を提供します。また、保存済みメモリを表示・管理しやすくするため、Copilot設定のユーザーコントロールも刷新します。これはすべてのCopilot Chatユーザーが利用できます。\nチャット履歴によるパーソナライズの制御も可能で、詳細は設定画面でユーザーに示されます。\n[時期]\n• パブリックプレビュー(Frontier):2025年11月中旬に展開開始。\n• 一般提供:2026年9月中旬に開始(従来は1月初旬)、2026年10月下旬に完了予定(従来は7月下旬)。\n[組織への影響]\nメモリが有効なテナントのMicrosoft 365 Copilotの全ユーザー。\n実施内容:\n• Copilotはチャット履歴を使って応答をパーソナライズし、より適切で役立つやり取りを実現します。\n• ユーザーは、Copilotが記憶する内容の可視性と制御を高める再設計されたメモリ設定ページを目にします。\n• 既存の管理者およびユーザーレベルのメモリ設定は尊重されます。メモリがオフの場合はオフのままです。\n• 管理者コントロールやポリシー適用に変更はありません。\n[準備のために]\n• 利用可能になったら、更新されたメモリ設定体験をユーザーと確認する。\n• 社内文書やトレーニング資料を更新したい場合を除き、管理者の対応は不要です。\n詳細:\n• Enhanced personalization control overview | Microsoft Graph | Microsoft Learn\n• enhancedPersonalizationSetting resource type | Microsoft Graph | Microsoft Learn\n[コンプライアンスの考慮事項]\n変更により既存の顧客データの処理・保存・アクセス方法が変わるか:はい。Copilotはチャット履歴を使って応答をパーソナライズするため、文脈に沿った返信を生成する際の既存顧客データの処理方法が変わります。\n顧客データにアクセスするAI/ML機能を導入または大きく変更するか:はい。チャット履歴を取り入れることで、Copilotのパーソナライズモデルが強化され、より適切な応答を生成できます。\nエンドユーザーに生成AIとの新しい対話方法を提供するか:はい。ユーザーはCopilotからよりパーソナライズされた文脈的な応答を受け取ります。(原文はここで途中で切れています)",
+      "japaneseDetailedSummary": "Microsoft Entraの本人確認・アクセス管理セルフサービスのドメインが更新されます。myaccount.microsoft.comはmyaccount.cloud.microsoftへ移行し、myapps.microsoft.com、myaccess.microsoft.com、mystaff.microsoft.comの各体験も同ドメインに統合されます。ユーザーは自動的に新ドメインへリダイレクトされ、機能や既存のワークフローは変わりません。ただし、ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理している組織では、必要なcloud.microsoftドメインが許可されていないと、展開後にこれらの体験へアクセスできなくなる可能性があります。展開は2026年11月下旬の予定です。管理者は展開前に許可リストの見直し、*.cloud.microsoftの許可確認、社内ドキュメントのURL更新を行うことが推奨されます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entraのアイデンティティおよびアクセス管理のセルフサービス体験で使用するドメインを更新します。この変更により、myaccount.microsoft.comはmyaccount.cloud.microsoftに移行します。現在別々のドメインでホストされている体験も、myaccount.cloud.microsoftドメインの下に統合されます。\nこの更新の対象となる体験:\n• myaccount.microsoft.com\n• myapps.microsoft.com\n• myaccess.microsoft.com\n• mystaff.microsoft.com\nこの変更により、アイデンティティおよびアクセス管理のセルフサービス体験に対して、より一貫した統一的なアクセスポイントが提供され、サービスインフラの継続的な改善も支援されます。\n[展開スケジュール]\n• 一般提供(全世界):2026年11月下旬に開始し、11月下旬に完了する予定です。\n[組織への影響]\n対象ユーザー\n• Microsoft Entraのセルフサービスのアイデンティティおよびアクセス管理体験にアクセスするユーザー\n• ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理する管理者\n対象のプラットフォームとサービス\n• Microsoft Entra\n• Web\n実施される内容\nユーザー向け\n• 対応は不要です。\n• 対象の体験にアクセスするユーザーは、新しいドメインに自動的にリダイレクトされます。\n• 中核となる機能と既存のワークフローは変わりません。\n• 時間をかけて、セルフサービスのアイデンティティおよびアクセス管理体験は統合されたドメインを通じて利用できるようになります。\n管理者向け\n• ほとんどの組織では構成変更は不要と見込まれています。\n• ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理している組織は、必要なcloud.microsoftドメインにアクセスできることを確認してください。\n• 必要なドメインを許可しない場合、展開後にユーザーがこれらの体験にアクセスできなくなる可能性があります。\n[必要な対応と推奨事項]\n管理者への推奨対応\n展開開始前に:\n• Microsoftサービスへのアクセスを制限しているネットワーク、プロキシ、ファイアウォール、エンドポイントのポリシーを確認する。\n• 該当する場合、必要な許可リストに*.cloud.microsoftが含まれていることを確認する。\n• 環境内でmyaccount.cloud.microsoftへのアクセスがブロックされていないことを確認する。\n• 既存のURLを参照している社内ドキュメントやユーザー向けガイダンスを確認し、必要に応じて更新する。\nユーザーは対応不要です。\n詳細\n• Microsoft 365アプリ向け統合cloud.microsoftドメイン | Microsoft 365 for enterprise | Microsoft 365 | Microsoft Learn\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。必要に応じて確認してください。(原文はここで途切れています)",
       "sourceCharacterCount": 2500,
       "sourceTruncated": true,
-      "sourceHash": "aae410a74bc2fe285a797e0ac94bb97d9c3c29d45e61f7eb79e6ca245ee58d63",
-      "validatedAt": "2026-10-25T00:26:31.8778225+00:00"
+      "sourceHash": "59499884d89cc967db9f5007d8aa22e95db7bda2248d53666cb1584d4ef4bedc",
+      "validatedAt": "2026-10-25T05:01:15.9763339+00:00"
     },
     {
-      "id": "MC1069563",
-      "japaneseTitle": "Copilot Chat従量課金向けメッセージ消費レポートを追加",
+      "id": "MC1454386",
+      "japaneseTitle": "モバイルCopilot Chatの旧制御(Intune/分析)が制限しなくなる",
       "japaneseFacts": {
-        "change": "Microsoft 365管理センターにCopilot Chatの課金メッセージ消費を示す新しい「Message consumption」使用状況レポートが追加される。",
-        "impact": "Copilotの従量課金を設定し、エージェント利用を有効化したテナントの管理者が対象。",
-        "timing": "プレビューは提供中。一般提供は2027年1月初旬に開始、1月末に完了予定(従来は2026年9月)。",
-        "action": "展開は自動で、事前の管理者対応は不要。統合アプリでエージェントを管理する管理者への周知を検討。"
+        "change": "Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」が、モバイルアプリのCopilot Chatを制限しなくなります。",
+        "impact": "これらで制限されていたユーザーがモバイルでCopilot Chatを利用できるようになります。既定で有効です。",
+        "timing": "全世界・GCC・GCC High・DoDで2026年8月中旬に展開開始、9月下旬に完了予定です。",
+        "action": "管理者の対応は不要です。これらの制御への依存確認、ヘルプデスクへの周知、社内文書の更新、必要なら統合アプリ設定やアプリのブロックでの制限検討が推奨されます。"
       },
-      "japaneseDetailedSummary": "Microsoft 365 Copilot Chatの従量課金(pay-as-you-go)コストを管理するため、管理センターに新しい「Message consumption」使用状況レポートが導入されます。課金対象メッセージの合計、累計・日次の推移、ユーザー別、課金ポリシー別、エージェント別、エージェントとユーザーの組み合わせ別を確認できます。プレビュー中は最大30日分の履歴のみ表示され、2025年5月3日より前のデータは含まれません。ユーザーが2000件を超える課金メッセージを消費するとアラートが表示されます。レポートは既定で有効で、レポート > 使用状況 > Microsoft 365 Copilot > Message consumptionに表示されます。一般提供は2027年1月初旬から月末にかけて展開予定(従来は2026年9月)。管理者の事前対応は不要です。",
-      "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。\nMicrosoft 365 Copilot Chatの従量課金コストの管理を支援するため、Microsoft 365管理センターに新しい「Message consumption」使用状況レポートを導入します。このレポートでは、Microsoft 365 Copilotの従量課金ポリシーに関連する課金メッセージを確認でき、消費メッセージの合計、累計および日次の時系列、ユーザー別、課金ポリシー別、エージェント別、エージェントとユーザーの組み合わせ別のメッセージ数が含まれます。レポートはプレビューとして展開されます。プレビュー中は最大30日間の消費履歴が表示され、2025年5月3日より前の使用状況情報はレポートで利用できません。\nこのメッセージはpay-as-you-goモデルのMicrosoft Copilotに関するもので、Microsoft Copilotライセンスは不要です。\nMicrosoft 365ロードマップID 490738に関連します。\n[時期]\nパブリックプレビュー:提供中。\n一般提供(全世界):2027年1月初旬に展開開始(従来は2026年9月)、2027年1月末までに完了予定(従来は2026年9月末)。\n[組織への影響]\n管理センターまたはPower Platform管理センターでMicrosoft 365 Copilotの従量課金を設定し、組織でエージェント利用を有効にすると、テナント、ユーザー、エージェント、エージェントとユーザーの各レベルのメッセージ消費指標を含む新レポートが表示されます。過剰支出を抑えるため、ユーザーが2000件を超える課金メッセージを消費するとアラートが表示されます。\nこのレポートは既定で有効で、管理センターの レポート > 使用状況 > Microsoft 365 Copilot > Message consumption で利用できます。\n[準備のために必要な対応]\n展開は指定日までに自動で行われ、事前の管理者対応は不要です。統合アプリページでエージェントを管理する管理者にこの機能を周知するとよいでしょう。\n詳細:管理センターのMicrosoft 365レポート - Message consumption",
-      "sourceCharacterCount": 2166,
+      "japaneseDetailedSummary": "Microsoft 365 Copilotモバイルアプリ(iOS/Android)のCopilot Chatへのアクセスが簡素化されます。従来モバイル専用だった2つの制御、Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」は、今後Copilot Chatのアクセスを制限しなくなります。これにより、Web・デスクトップと同様の一貫した体験になり、これらの制御で制限されていたユーザーはモバイルでアクセスを取り戻します。既定で有効で、ユーザーの対応は不要です。展開は2026年8月中旬から9月下旬の予定(全世界、GCC、GCC High、DoD)です。管理者の対応は不要ですが、これらの制御への依存の確認、ヘルプデスクへの周知、社内文書の更新、制限が必要な場合は統合アプリ設定でのCopilotのブロックやモバイルアプリ自体のブロックの検討が推奨されます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 Copilotモバイルアプリ(iOSおよびAndroid)でのCopilot Chatへのアクセスを簡素化します。この更新により、モバイル専用の2つの従来制御、Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」は、モバイルアプリでのCopilot Chatのアクセスを制限しなくなります。\nこの変更により、既にCopilot Chatへのアクセスが許可されているユーザーに対して、モバイル、Web、デスクトップで一貫したCopilot Chat体験が提供されます。\n[展開スケジュール]\n一般提供(全世界、GCC、GCC High、DoD):2026年8月中旬に展開を開始し、9月下旬に完了する予定です。\n[組織への影響]\n次の制御は、Microsoft 365 Copilotモバイルアプリでのモバイル版Copilot Chatのアクセスを制限しなくなります:\n• Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」\n• プライバシー制御「Analyze content」\nこれにより、影響を受けるユーザーは、WebおよびデスクトップアプリでのアクセスWと同様に、Microsoft 365 Copilotモバイルアプリで再びCopilot Chatにアクセスできるようになります。この変更は既定で有効です。ユーザーの対応は不要です。\n[必要な対応/推奨事項]\nこの変更に対する管理者の対応は不要です。\n次のことを検討できます:\n• 組織が、Microsoft 365 Copilotモバイルアプリでのモバイル版Copilot Chatを制限するために、Intuneアプリ構成キーcom.microsoft.office.officemobile.BingChatEnterprise.IsAllowedまたは「Analyze content」プライバシー制御に依存しているかを確認する。これらの制御の詳細は更新されたLearn記事を参照してください。\n• Microsoft 365 Copilotモバイルアプリで再びCopilot Chatにアクセスできるようになったユーザーからの問い合わせに対応できるよう、ヘルプデスクやサポートチームに周知する。\n• モバイルでのCopilot Chatを制限する手段としてこれらの制御を参照している社内ドキュメントを更新する。\n• Microsoft 365 Copilotモバイルアプリで Copilot Chatを制限する必要がある場合は、Web、デスクトップ、モバイル全体でCopilotをブロックする統合アプリ設定の利用や、Microsoft 365 Copilotモバイルアプリ自体のブロックによるモバイルアクセスの制限など、利用可能な管理オプションを確認する。\nドキュメントリンク:\nManage Microsoft 365 Copilot Chat | Microsoft Learn",
+      "sourceCharacterCount": 2234,
       "sourceTruncated": false,
-      "sourceHash": "bd197b976c51ae1cbcbd2e35eefe6fae11bcbe365c281de4c9b88721349083ca",
-      "validatedAt": "2026-10-25T00:26:31.8730206+00:00"
+      "sourceHash": "91f98d230487022ab3a40dbcb13265c826c401a90fe4db1351735d09be922468",
+      "validatedAt": "2026-10-25T05:01:15.9802175+00:00"
     },
     {
-      "id": "MC1423108",
-      "japaneseTitle": "iOS版Authenticatorのパスキー復元体験を改善",
+      "id": "MC1462914",
+      "japaneseTitle": "Agent 365にアクティブユーザーのエクスポート機能を追加",
       "japaneseFacts": {
-        "change": "iOS版Microsoft Authenticatorでデバイスバインドパスキーの復元フローが、より分かりやすいガイド付きUIに改善される。",
-        "impact": "パスキーを使うiOSユーザー、および新しいiOS端末でAuthenticatorを復元するユーザー。",
-        "timing": "一般提供(全世界)は2026年9月中旬(従来は8月)。",
-        "action": "対応は不要。ユーザーへの周知とヘルプデスク文書の更新を推奨。"
+        "change": "Microsoft 365管理センターのAgents > All Agents > Exportに、過去30日間にAgent 365レジストリのエージェントを利用したユーザーのCSVエクスポートが追加されます。",
+        "impact": "AI管理者とグローバル管理者が対象で、既にAgent 365にアクセスできる管理者には既定で有効です。",
+        "timing": "全世界で2026年8月下旬に展開開始・完了の予定です。",
+        "action": "準備作業は不要です。展開後、ライセンス判断担当者の権限確認や利用データの確認、エクスポートデータの取り扱いポリシー確認が推奨されています。"
       },
-      "japaneseDetailedSummary": "iOS版Microsoft Authenticatorで、デバイスバインドパスキーの復元体験が改善されます。新しい端末への移行時に、新規セットアップか既存からの復元かに応じたガイド付きUIが表示され、パスキーを使ったクロスデバイスサインインの説明も強化されます。対象はiOSのみで、Androidは後日対応です。iCloudとiCloudキーチェーンのバックアップが有効で、以前の端末にパスキーがあるユーザーが対象です。機能は既定で有効で、管理者設定やポリシーの変更はありません。一般提供は2026年9月中旬(従来は8月)。対応は不要ですが、ユーザーへの周知とヘルプデスク文書の更新が推奨されています。コンプライアンス上の懸念は特定されていません。",
-      "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。\n[概要と目的]\niOS版Microsoft Authenticatorアプリにおけるデバイスバインドパスキーの復元体験を改善します。ユーザーが新しいデバイスに移行する際に、より明確でガイド付きの復元フローを提供し、パスキーによるクロスデバイスサインインへの理解も高めます。強力なセキュリティ保護を維持しつつ、デバイス移行時の手間を減らす設計です。\n[展開スケジュール]\n一般提供(全世界):2026年9月中旬(従来は8月)\n[組織への影響]\n影響を受けるユーザー\n• Authenticatorでパスキーを使用するiOSユーザー\n• 新しいiOSデバイスでAuthenticatorを復元するユーザー\n対象プラットフォーム/サービス\n• iOS\n• Microsoft Authenticator\n• Microsoft Entra\n実施内容\n• 本変更はiOSデバイスのみが対象です。Androidは今回のリリースに含まれず、後日対応されます。\n• iCloudとiCloudキーチェーンのバックアップが有効で、以前のデバイスにパスキーが保存されているユーザーは、デバイス復元時に更新された体験を目にします。\n• 新しいデバイスでAuthenticatorを復元するユーザーには、更新された復元体験が表示されます。\n• 復元フローには以下が含まれます:新規セットアップか既存からの復元かに応じてユーザーを案内する新しいUI、Authenticatorパスキーとクロスデバイスサインインの利用に関する改善されたガイダンス。\n• 機能は既定で有効です。\n• 既存の管理者設定やポリシーに変更はありません。\n[必要な対応/推奨事項]\n対応は不要です。次の推奨事項を検討してください。\n• iOSでの復元体験の改善についてユーザーに周知する。\n• デバイス移行やAuthenticator復元に関するガイダンスを提供している場合、社内ヘルプデスク文書を更新する。\n[コンプライアンスの考慮事項]\nコンプライアンス上の考慮事項は特定されていません。組織に応じて確認してください。",
-      "sourceCharacterCount": 1929,
+      "japaneseDetailedSummary": "Microsoft Agent 365に、AI管理者およびグローバル管理者が、テナントのAgent 365レジストリに登録されたエージェントを過去30日間に利用したユーザーの一覧をCSVでエクスポートできる機能が追加されます。出力にはUPN、利用エージェント総数、総セッション数、最終アクティビティ日が含まれます。読み取り専用のレポート機能で、既存エージェント、ユーザー権限、課金プロセスに変更はありません。既にAgent 365にアクセスできる管理者には既定で有効です。2026年8月下旬に全世界で展開される予定です。準備のための対応は不要ですが、ライセンス判断担当者のアクセス権の確認、利用状況の確認、UPNを含むエクスポートデータの閲覧・保管に関する社内ポリシーの確認が推奨されています。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Agent 365に新しいレポート機能を導入します。AI管理者とグローバル管理者は、テナントのAgent 365レジストリに登録されたエージェントを過去30日間に実際に利用したユーザーの一覧をエクスポートできます。\nこのレポートはエージェント利用の可視性を提供し、エージェントのライセンス確認や計画の策定を支援します。\n[展開スケジュール]\n• 一般提供(全世界):2026年8月下旬に展開を開始し、8月下旬に完了する予定です。\n[組織への影響]\n対象ユーザー\n• AI管理者\n• グローバル管理者\n対象のプラットフォームとサービス\n• Microsoft 365管理センター\n• Microsoft Agent 365\n実施される内容\nMicrosoft 365管理センター > Agents > All Agents > Export に、新しい「Active Users」エクスポートオプションが追加されます。\n権限のある管理者は、過去30日間にテナントのAgent 365レジストリにあるエージェントを利用したユーザーを含むCSVレポートを生成できます。\nレポートには以下が含まれます:\n• ユーザープリンシパル名(UPN)\n• 利用したエージェントの総数\n• 総セッション数\n• 最終アクティビティ日\nこれは読み取り専用のレポート機能です。\n以下に変更はありません:\n• 既存のエージェント\n• ユーザーのアクセス許可\n• 課金プロセス\nこの機能は、既にAgent 365にアクセスできるAI管理者とグローバル管理者に対して既定で有効になります。\n[必要な対応/推奨事項]\nこの変更に備えるための対応は不要です。\n展開後、次のことを検討できます:\n• エージェントのライセンス判断を担当する担当者を特定し、適切な管理アクセス権があることを確認する。\n• エクスポートした利用データを確認し、組織全体でのエージェントの採用状況を把握する。\n• レポートを社内のライセンス確認や計画の議論に活用する。\n[コンプライアンス上の考慮事項]\nこの機能は、エージェント活動に関する既存の利用情報を公開する新しい管理用レポート機能です。エクスポートにはユーザー識別子(UPN)と過去30日間の利用指標が含まれます。組織は、利用状況レポートへのアクセスおよびエクスポートしたレポートの保持に関する社内ポリシーを確認する必要があります。",
+      "sourceCharacterCount": 2118,
       "sourceTruncated": false,
-      "sourceHash": "2c068a369bda2d2520580800bdd05f59e9e2b6d7367a0310b6cb870eeaeee4da",
-      "validatedAt": "2026-10-25T00:26:31.8766793+00:00"
+      "sourceHash": "2515edcbf3e34a8e6abfdc7be9c30988fe6cfc8fc866f88829448fbaa3b420b0",
+      "validatedAt": "2026-10-25T05:01:15.9694978+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-10-22T07:48:45.0036563+00:00",
