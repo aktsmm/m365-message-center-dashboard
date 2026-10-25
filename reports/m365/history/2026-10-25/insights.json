@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T05:01:15.9890885+00:00",
+  "generatedAt": "2026-10-25T11:50:23.7115375+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra のエージェント作成既定変更(11/4)と Targeted release 廃止準備、Office LTSC 2021 サポート終了への対応が優先",
   "executiveSummary": "今週は Microsoft Entra 関連の変更が中心です。MC1506733 では、11月4日から管理者が「Users can create agent blueprints」を無効化しない限り、既定ユーザーがエージェントブループリントを作成可能になります(展開は2026年11月上旬〜下旬)。MC1506728 では同日以降、AgentIdentity.CreateAsManager がエージェントブループリントのプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。MC1490899 では Targeted release が2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります(アクション期限は10月31日と記載)。MC1509797 では Office LTSC 2021、Visio/Project LTSC 2021 等のサポートが10月13日に終了済みで、セキュリティ更新が提供されません。MC1519855 では Entra の Choose Your Own Telephony Provider が10月30日から GA となります。MC1510951 ではカナダの時間帯変更(11月1日に時計を戻さない)向けの Windows 更新が提供済みです。いずれも抜粋範囲外の詳細(手順の全文など)は未確認です。",
@@ -890,13 +890,6 @@
       "validatedAt": "2026-10-24T21:01:59.0855012+00:00"
     },
     {
-      "id": "MC1319216",
-      "japaneseDetailedSummary": "Microsoft Teamsの会議中に、ライセンス済み開催者・プレゼンターがMeeting AI（Copilot、ファシリテーター、会議要約含む）のオン/オフをリアルタイムで切り替えられる新トグルが導入されます。価値ある議論ではAIを活用し、センシティブな話題では無効化できます。テナントポリシーおよびコンプライアンス制御は引き続き適用。ロードマップID 558286。展開：ターゲットリリースは2026年8月中旬～下旬、一般提供（全世界）は2026年8月下旬開始予定。",
-      "japaneseBodyTranslation": "2026年7月9日更新：タイムラインを更新しました。\n[概要と目的]\nMicrosoft Teamsは、ライセンス済み会議開催者およびプレゼンターがライブ会議中にMeeting AI（Copilot、ファシリテーター、会議の要約を含む）のオン/オフを切り替えられる新しいトグルを導入します。ライセンス済みの開催者・プレゼンターは価値ある議論の際にインサイトを収集し、センシティブな話題ではAIをオフにできます。既存のテナントポリシーおよびコンプライアンス制御が尊重されます。ロードマップID 558286に対応。\n[展開スケジュール]\n・ターゲットリリース：2026年8月中旬開始、8月下旬完了予定（以前は7月）。\n・一般提供（全世界）：2026年8月下旬開始予定（以前は7月中旬）。",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
-    },
-    {
       "id": "MC1325414",
       "japaneseTitle": "Entra SSPR:登録済み認証方法が必須に(11月)",
       "japaneseFacts": {
@@ -927,13 +920,6 @@
       "sourceTruncated": true,
       "sourceHash": "33ed7c57dd620859d6f3bb7c06a3e0dce4806fee28f57f18d7a411592c0f2049",
       "validatedAt": "2026-10-19T20:46:24.8089458+00:00"
-    },
-    {
-      "id": "MC1411574",
-      "japaneseDetailedSummary": "Microsoft Entra IDのシステム優先認証が第1要素認証にも適用拡大。設定が「Microsoftマネージド」状態の組織では、第1・第2要素両方でシステムが最もセキュアな認証方法を自動選択。「有効」「無効」状態の組織には影響なし。2026年6月末〜7月末にロールアウト。管理者は変更影響の事前確認を推奨。",
-      "japaneseBodyTranslation": "2026年7月9日更新: リマインダーとして投稿を更新しました。\n【概要】\nシステム優先認証がMicrosoft Entra IDで第1要素・第2要素の両方に適用されるようになりました（Microsoftマネージド状態の場合）。ユーザー登録済み認証情報を評価し、最もセキュアな方法でサインインを促します。\n【ロールアウト】\n• 全世界: 2026年6月末〜7月末\n【影響範囲】\n対象: システム優先認証がMicrosoftマネージド状態の組織。「有効」「無効」状態では第1要素サインインの動作は変わりません",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
     },
     {
       "id": "MC1422061",
@@ -1142,6 +1128,22 @@
       "validatedAt": "2026-10-23T05:07:15.1267241+00:00"
     },
     {
+      "id": "MC1454386",
+      "japaneseTitle": "モバイルCopilot Chatの旧制御(Intune/分析)が制限しなくなる",
+      "japaneseFacts": {
+        "change": "Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」が、モバイルアプリのCopilot Chatを制限しなくなります。",
+        "impact": "これらで制限されていたユーザーがモバイルでCopilot Chatを利用できるようになります。既定で有効です。",
+        "timing": "全世界・GCC・GCC High・DoDで2026年8月中旬に展開開始、9月下旬に完了予定です。",
+        "action": "管理者の対応は不要です。これらの制御への依存確認、ヘルプデスクへの周知、社内文書の更新、必要なら統合アプリ設定やアプリのブロックでの制限検討が推奨されます。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365 Copilotモバイルアプリ(iOS/Android)のCopilot Chatへのアクセスが簡素化されます。従来モバイル専用だった2つの制御、Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」は、今後Copilot Chatのアクセスを制限しなくなります。これにより、Web・デスクトップと同様の一貫した体験になり、これらの制御で制限されていたユーザーはモバイルでアクセスを取り戻します。既定で有効で、ユーザーの対応は不要です。展開は2026年8月中旬から9月下旬の予定(全世界、GCC、GCC High、DoD)です。管理者の対応は不要ですが、これらの制御への依存の確認、ヘルプデスクへの周知、社内文書の更新、制限が必要な場合は統合アプリ設定でのCopilotのブロックやモバイルアプリ自体のブロックの検討が推奨されます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 Copilotモバイルアプリ(iOSおよびAndroid)でのCopilot Chatへのアクセスを簡素化します。この更新により、モバイル専用の2つの従来制御、Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」は、モバイルアプリでのCopilot Chatのアクセスを制限しなくなります。\nこの変更により、既にCopilot Chatへのアクセスが許可されているユーザーに対して、モバイル、Web、デスクトップで一貫したCopilot Chat体験が提供されます。\n[展開スケジュール]\n一般提供(全世界、GCC、GCC High、DoD):2026年8月中旬に展開を開始し、9月下旬に完了する予定です。\n[組織への影響]\n次の制御は、Microsoft 365 Copilotモバイルアプリでのモバイル版Copilot Chatのアクセスを制限しなくなります:\n• Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」\n• プライバシー制御「Analyze content」\nこれにより、影響を受けるユーザーは、WebおよびデスクトップアプリでのアクセスWと同様に、Microsoft 365 Copilotモバイルアプリで再びCopilot Chatにアクセスできるようになります。この変更は既定で有効です。ユーザーの対応は不要です。\n[必要な対応/推奨事項]\nこの変更に対する管理者の対応は不要です。\n次のことを検討できます:\n• 組織が、Microsoft 365 Copilotモバイルアプリでのモバイル版Copilot Chatを制限するために、Intuneアプリ構成キーcom.microsoft.office.officemobile.BingChatEnterprise.IsAllowedまたは「Analyze content」プライバシー制御に依存しているかを確認する。これらの制御の詳細は更新されたLearn記事を参照してください。\n• Microsoft 365 Copilotモバイルアプリで再びCopilot Chatにアクセスできるようになったユーザーからの問い合わせに対応できるよう、ヘルプデスクやサポートチームに周知する。\n• モバイルでのCopilot Chatを制限する手段としてこれらの制御を参照している社内ドキュメントを更新する。\n• Microsoft 365 Copilotモバイルアプリで Copilot Chatを制限する必要がある場合は、Web、デスクトップ、モバイル全体でCopilotをブロックする統合アプリ設定の利用や、Microsoft 365 Copilotモバイルアプリ自体のブロックによるモバイルアクセスの制限など、利用可能な管理オプションを確認する。\nドキュメントリンク:\nManage Microsoft 365 Copilot Chat | Microsoft Learn",
+      "sourceCharacterCount": 2234,
+      "sourceTruncated": false,
+      "sourceHash": "91f98d230487022ab3a40dbcb13265c826c401a90fe4db1351735d09be922468",
+      "validatedAt": "2026-10-25T05:01:15.9802175+00:00"
+    },
+    {
       "id": "MC1454397",
       "japaneseTitle": "新規・試用・教育テナントのTERRLクォータ算出方法を変更",
       "japaneseFacts": {
@@ -1229,11 +1231,36 @@
       "sourceTruncated": true
     },
     {
-      "id": "MC1461528",
-      "japaneseDetailedSummary": "2026年8月25日、Microsoft 365 RoadmapはAI at Work Roadmapに名称変更されました。AI at Work RoadmapはMicrosoft 365、Copilot、エージェント、AI関連エクスペリエンスの今後のイノベーションを一元的に確認できるポータルです。2026年9月からはDynamics 365、Power Platform、Dataverseのロードマップ情報も掲載開始予定です。管理者・IT担当者・変更管理チームは既存のブックマークやリンクを更新することが推奨されます。",
-      "japaneseBodyTranslation": "【変更内容と理由】\n2026年8月25日、Microsoft 365 RoadmapはAI at Work Roadmapに名称変更されます。\nAI at Work Roadmapは、Microsoft 365、Copilot、エージェント、および関連するAI搭載エクスペリエンスの今後のイノベーションを発見するための一元的な場所を提供します。2026年9月から、Dynamics 365、Power Platform、DataverseのロードマップInformationもAI at Work Roadmapへの掲載が開始され、Microsoftのビジネスアプリケーション、生産性、AIポートフォリオ全体のイノベーションをより簡単に追跡できるようになります。\nロードマップは、今後の機能と変更を可視化することで、計画および準備活動を引き続きサポートします。\n\n【ロールアウトスケジュール】\n・2026年8月25日:Microsoft 365 RoadmapがAI at Work Roadmapに名称変更\n・2026年9月:新たなDynamics 365、Power Platform、DataverseのCapabilityがAI at Work Roadmapへの掲載を開始\n\n【組織への影響】\n影響を受けるユーザー:\n・Microsoft 365管理者\n・IT専門家\n・変更管理チーム\n・テクノロ",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
+      "id": "MC1462460",
+      "japaneseTitle": "Entra My Account等のドメインがcloud.microsoftへ移行",
+      "japaneseFacts": {
+        "change": "myaccount.microsoft.comがmyaccount.cloud.microsoftへ移り、myapps、myaccess、mystaffも同ドメインに統合されます。",
+        "impact": "Entraのセルフサービスを使うユーザーと、ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理する管理者が対象です。",
+        "timing": "全世界で2026年11月下旬に展開開始・完了の予定です。",
+        "action": "ユーザー対応は不要です。管理者は展開前に*.cloud.microsoftとmyaccount.cloud.microsoftが許可されているか確認することが推奨されます。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entraの本人確認・アクセス管理セルフサービスのドメインが更新されます。myaccount.microsoft.comはmyaccount.cloud.microsoftへ移行し、myapps.microsoft.com、myaccess.microsoft.com、mystaff.microsoft.comの各体験も同ドメインに統合されます。ユーザーは自動的に新ドメインへリダイレクトされ、機能や既存のワークフローは変わりません。ただし、ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理している組織では、必要なcloud.microsoftドメインが許可されていないと、展開後にこれらの体験へアクセスできなくなる可能性があります。展開は2026年11月下旬の予定です。管理者は展開前に許可リストの見直し、*.cloud.microsoftの許可確認、社内ドキュメントのURL更新を行うことが推奨されます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entraのアイデンティティおよびアクセス管理のセルフサービス体験で使用するドメインを更新します。この変更により、myaccount.microsoft.comはmyaccount.cloud.microsoftに移行します。現在別々のドメインでホストされている体験も、myaccount.cloud.microsoftドメインの下に統合されます。\nこの更新の対象となる体験:\n• myaccount.microsoft.com\n• myapps.microsoft.com\n• myaccess.microsoft.com\n• mystaff.microsoft.com\nこの変更により、アイデンティティおよびアクセス管理のセルフサービス体験に対して、より一貫した統一的なアクセスポイントが提供され、サービスインフラの継続的な改善も支援されます。\n[展開スケジュール]\n• 一般提供(全世界):2026年11月下旬に開始し、11月下旬に完了する予定です。\n[組織への影響]\n対象ユーザー\n• Microsoft Entraのセルフサービスのアイデンティティおよびアクセス管理体験にアクセスするユーザー\n• ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理する管理者\n対象のプラットフォームとサービス\n• Microsoft Entra\n• Web\n実施される内容\nユーザー向け\n• 対応は不要です。\n• 対象の体験にアクセスするユーザーは、新しいドメインに自動的にリダイレクトされます。\n• 中核となる機能と既存のワークフローは変わりません。\n• 時間をかけて、セルフサービスのアイデンティティおよびアクセス管理体験は統合されたドメインを通じて利用できるようになります。\n管理者向け\n• ほとんどの組織では構成変更は不要と見込まれています。\n• ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理している組織は、必要なcloud.microsoftドメインにアクセスできることを確認してください。\n• 必要なドメインを許可しない場合、展開後にユーザーがこれらの体験にアクセスできなくなる可能性があります。\n[必要な対応と推奨事項]\n管理者への推奨対応\n展開開始前に:\n• Microsoftサービスへのアクセスを制限しているネットワーク、プロキシ、ファイアウォール、エンドポイントのポリシーを確認する。\n• 該当する場合、必要な許可リストに*.cloud.microsoftが含まれていることを確認する。\n• 環境内でmyaccount.cloud.microsoftへのアクセスがブロックされていないことを確認する。\n• 既存のURLを参照している社内ドキュメントやユーザー向けガイダンスを確認し、必要に応じて更新する。\nユーザーは対応不要です。\n詳細\n• Microsoft 365アプリ向け統合cloud.microsoftドメイン | Microsoft 365 for enterprise | Microsoft 365 | Microsoft Learn\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。必要に応じて確認してください。(原文はここで途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "59499884d89cc967db9f5007d8aa22e95db7bda2248d53666cb1584d4ef4bedc",
+      "validatedAt": "2026-10-25T05:01:15.9763339+00:00"
+    },
+    {
+      "id": "MC1462914",
+      "japaneseTitle": "Agent 365にアクティブユーザーのエクスポート機能を追加",
+      "japaneseFacts": {
+        "change": "Microsoft 365管理センターのAgents > All Agents > Exportに、過去30日間にAgent 365レジストリのエージェントを利用したユーザーのCSVエクスポートが追加されます。",
+        "impact": "AI管理者とグローバル管理者が対象で、既にAgent 365にアクセスできる管理者には既定で有効です。",
+        "timing": "全世界で2026年8月下旬に展開開始・完了の予定です。",
+        "action": "準備作業は不要です。展開後、ライセンス判断担当者の権限確認や利用データの確認、エクスポートデータの取り扱いポリシー確認が推奨されています。"
+      },
+      "japaneseDetailedSummary": "Microsoft Agent 365に、AI管理者およびグローバル管理者が、テナントのAgent 365レジストリに登録されたエージェントを過去30日間に利用したユーザーの一覧をCSVでエクスポートできる機能が追加されます。出力にはUPN、利用エージェント総数、総セッション数、最終アクティビティ日が含まれます。読み取り専用のレポート機能で、既存エージェント、ユーザー権限、課金プロセスに変更はありません。既にAgent 365にアクセスできる管理者には既定で有効です。2026年8月下旬に全世界で展開される予定です。準備のための対応は不要ですが、ライセンス判断担当者のアクセス権の確認、利用状況の確認、UPNを含むエクスポートデータの閲覧・保管に関する社内ポリシーの確認が推奨されています。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Agent 365に新しいレポート機能を導入します。AI管理者とグローバル管理者は、テナントのAgent 365レジストリに登録されたエージェントを過去30日間に実際に利用したユーザーの一覧をエクスポートできます。\nこのレポートはエージェント利用の可視性を提供し、エージェントのライセンス確認や計画の策定を支援します。\n[展開スケジュール]\n• 一般提供(全世界):2026年8月下旬に展開を開始し、8月下旬に完了する予定です。\n[組織への影響]\n対象ユーザー\n• AI管理者\n• グローバル管理者\n対象のプラットフォームとサービス\n• Microsoft 365管理センター\n• Microsoft Agent 365\n実施される内容\nMicrosoft 365管理センター > Agents > All Agents > Export に、新しい「Active Users」エクスポートオプションが追加されます。\n権限のある管理者は、過去30日間にテナントのAgent 365レジストリにあるエージェントを利用したユーザーを含むCSVレポートを生成できます。\nレポートには以下が含まれます:\n• ユーザープリンシパル名(UPN)\n• 利用したエージェントの総数\n• 総セッション数\n• 最終アクティビティ日\nこれは読み取り専用のレポート機能です。\n以下に変更はありません:\n• 既存のエージェント\n• ユーザーのアクセス許可\n• 課金プロセス\nこの機能は、既にAgent 365にアクセスできるAI管理者とグローバル管理者に対して既定で有効になります。\n[必要な対応/推奨事項]\nこの変更に備えるための対応は不要です。\n展開後、次のことを検討できます:\n• エージェントのライセンス判断を担当する担当者を特定し、適切な管理アクセス権があることを確認する。\n• エクスポートした利用データを確認し、組織全体でのエージェントの採用状況を把握する。\n• レポートを社内のライセンス確認や計画の議論に活用する。\n[コンプライアンス上の考慮事項]\nこの機能は、エージェント活動に関する既存の利用情報を公開する新しい管理用レポート機能です。エクスポートにはユーザー識別子(UPN)と過去30日間の利用指標が含まれます。組織は、利用状況レポートへのアクセスおよびエクスポートしたレポートの保持に関する社内ポリシーを確認する必要があります。",
+      "sourceCharacterCount": 2118,
+      "sourceTruncated": false,
+      "sourceHash": "2515edcbf3e34a8e6abfdc7be9c30988fe6cfc8fc866f88829448fbaa3b420b0",
+      "validatedAt": "2026-10-25T05:01:15.9694978+00:00"
     },
     {
       "id": "MC1462915",
@@ -1892,52 +1919,52 @@
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     },
     {
-      "id": "MC1462460",
-      "japaneseTitle": "Entra My Account等のドメインがcloud.microsoftへ移行",
+      "id": "MC1461528",
+      "japaneseTitle": "Microsoft 365 RoadmapがAI at Work Roadmapに名称変更",
       "japaneseFacts": {
-        "change": "myaccount.microsoft.comがmyaccount.cloud.microsoftへ移り、myapps、myaccess、mystaffも同ドメインに統合されます。",
-        "impact": "Entraのセルフサービスを使うユーザーと、ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理する管理者が対象です。",
-        "timing": "全世界で2026年11月下旬に展開開始・完了の予定です。",
-        "action": "ユーザー対応は不要です。管理者は展開前に*.cloud.microsoftとmyaccount.cloud.microsoftが許可されているか確認することが推奨されます。"
+        "change": "Microsoft 365 RoadmapがAI at Work Roadmapに改称され、9月からDynamics 365等の情報も掲載されます。",
+        "impact": "管理者、IT担当者、変更管理チーム等が対象ですが、アクセスや利用方法に変更はありません。",
+        "timing": "2026年8月25日に改称、2026年9月に新たなロードマップ情報の公開が始まります。",
+        "action": "即時対応は不要で、新ロードマップの確認や社内資料・ブックマークの更新が推奨されています。"
       },
-      "japaneseDetailedSummary": "Microsoft Entraの本人確認・アクセス管理セルフサービスのドメインが更新されます。myaccount.microsoft.comはmyaccount.cloud.microsoftへ移行し、myapps.microsoft.com、myaccess.microsoft.com、mystaff.microsoft.comの各体験も同ドメインに統合されます。ユーザーは自動的に新ドメインへリダイレクトされ、機能や既存のワークフローは変わりません。ただし、ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理している組織では、必要なcloud.microsoftドメインが許可されていないと、展開後にこれらの体験へアクセスできなくなる可能性があります。展開は2026年11月下旬の予定です。管理者は展開前に許可リストの見直し、*.cloud.microsoftの許可確認、社内ドキュメントのURL更新を行うことが推奨されます。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entraのアイデンティティおよびアクセス管理のセルフサービス体験で使用するドメインを更新します。この変更により、myaccount.microsoft.comはmyaccount.cloud.microsoftに移行します。現在別々のドメインでホストされている体験も、myaccount.cloud.microsoftドメインの下に統合されます。\nこの更新の対象となる体験:\n• myaccount.microsoft.com\n• myapps.microsoft.com\n• myaccess.microsoft.com\n• mystaff.microsoft.com\nこの変更により、アイデンティティおよびアクセス管理のセルフサービス体験に対して、より一貫した統一的なアクセスポイントが提供され、サービスインフラの継続的な改善も支援されます。\n[展開スケジュール]\n• 一般提供(全世界):2026年11月下旬に開始し、11月下旬に完了する予定です。\n[組織への影響]\n対象ユーザー\n• Microsoft Entraのセルフサービスのアイデンティティおよびアクセス管理体験にアクセスするユーザー\n• ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理する管理者\n対象のプラットフォームとサービス\n• Microsoft Entra\n• Web\n実施される内容\nユーザー向け\n• 対応は不要です。\n• 対象の体験にアクセスするユーザーは、新しいドメインに自動的にリダイレクトされます。\n• 中核となる機能と既存のワークフローは変わりません。\n• 時間をかけて、セルフサービスのアイデンティティおよびアクセス管理体験は統合されたドメインを通じて利用できるようになります。\n管理者向け\n• ほとんどの組織では構成変更は不要と見込まれています。\n• ネットワーク、プロキシ、ファイアウォール、エンドポイントの許可リストを管理している組織は、必要なcloud.microsoftドメインにアクセスできることを確認してください。\n• 必要なドメインを許可しない場合、展開後にユーザーがこれらの体験にアクセスできなくなる可能性があります。\n[必要な対応と推奨事項]\n管理者への推奨対応\n展開開始前に:\n• Microsoftサービスへのアクセスを制限しているネットワーク、プロキシ、ファイアウォール、エンドポイントのポリシーを確認する。\n• 該当する場合、必要な許可リストに*.cloud.microsoftが含まれていることを確認する。\n• 環境内でmyaccount.cloud.microsoftへのアクセスがブロックされていないことを確認する。\n• 既存のURLを参照している社内ドキュメントやユーザー向けガイダンスを確認し、必要に応じて更新する。\nユーザーは対応不要です。\n詳細\n• Microsoft 365アプリ向け統合cloud.microsoftドメイン | Microsoft 365 for enterprise | Microsoft 365 | Microsoft Learn\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。必要に応じて確認してください。(原文はここで途切れています)",
+      "japaneseDetailedSummary": "2026年8月25日にMicrosoft 365 RoadmapはAI at Work Roadmapに名称変更されます。2026年9月からはDynamics 365、Power Platform、Dataverseのロードマップ情報も同ロードマップに掲載され始め、Microsoft 365、Copilot、エージェントなどの情報を一か所で確認できます。アクセス方法や利用方法に変更はなく、既存の計画・追跡ワークフローは修正なしで継続できます。対象はMicrosoft 365管理者、IT担当者、変更管理チーム、意思決定者です。即時の対応は不要で、新しいロードマップの確認、フィルター・CSVエクスポート・RSS等の機能の把握、MCPサーバーのドキュメント確認、社内資料やブックマークの更新が推奨されています。本文は途中で切れています。",
+      "japaneseBodyTranslation": "[概要と理由]\n2026年8月25日に、Microsoft 365 RoadmapはAI at Work Roadmapに名称変更されます。\nAI at Work Roadmapは、Microsoft 365、Copilot、エージェント、関連するAI体験における今後のイノベーションを確認できる単一の窓口です。2026年9月以降、Dynamics 365、Power Platform、Dataverseのロードマップ情報もAI at Work Roadmapに公開され始め、ビジネスアプリケーション、生産性、AIのポートフォリオ全体のイノベーションを追跡しやすくなります。\nロードマップは引き続き、今後の機能や変更の可視性を提供し、計画と準備活動を支援します。\n[展開スケジュール]\n• 2026年8月25日:Microsoft 365 RoadmapがAI at Work Roadmapに名称変更\n• 2026年9月:Dynamics 365、Power Platform、Dataverseの新機能がAI at Work Roadmapに公開され始める\n[組織への影響]\n対象\n• Microsoft 365管理者\n• IT担当者\n• 変更管理チーム\n• 計画や準備活動でロードマップ情報を使う意思決定者\nプラットフォーム/サービス\n• AI at Work Roadmap(旧Microsoft 365 Roadmap)\n発生すること\n• 2026年8月25日にMicrosoft 365 RoadmapがAI at Work Roadmapに名称変更されます。\n• 2026年9月以降、Dynamics 365、Power Platform、Dataverseの新しいロードマップ内容が公開され始めます。\n• ビジネスアプリケーション、生産性体験、Copilot、エージェント、AIソリューションのロードマップ情報を一か所で確認できます。\n• フィルター、エクスポート、RSS、MCP連携などの機能の活用が推奨されます。\n• ロードマップへのアクセス、利用方法に変更はありません。\n• 既存のロードマップ計画・追跡ワークフローは変更なしで継続できます。\n[必要なアクション/推奨事項]\n• 即時の対応は不要です。\n• 推奨事項:\n• 新しいランディングが利用可能になったらAI at Work Roadmapを確認する。\n• フィルター、CSVエクスポート、RSS購読、AI at Work Roadmap Guideによる管理のベストプラクティスなどの機能に慣れておく。\n• AIを活用したワークフローやツールでロードマップデータを利用する場合は、Release Communications MCP Serverのドキュメントを確認する。\n• 旧Microsoft 365 Roadmapを参照する社内ドキュメント、ブックマーク、トレーニング資料などを更新する。(本文は途中で切れています)",
       "sourceCharacterCount": 2500,
       "sourceTruncated": true,
-      "sourceHash": "59499884d89cc967db9f5007d8aa22e95db7bda2248d53666cb1584d4ef4bedc",
-      "validatedAt": "2026-10-25T05:01:15.9763339+00:00"
+      "sourceHash": "9d9561f40b0161cef1c614bc70f2328902af36b2d7e400552ecc6c7d382ade35",
+      "validatedAt": "2026-10-25T11:50:23.6984491+00:00"
     },
     {
-      "id": "MC1454386",
-      "japaneseTitle": "モバイルCopilot Chatの旧制御(Intune/分析)が制限しなくなる",
+      "id": "MC1411574",
+      "japaneseTitle": "Entraのシステム優先認証が第1要素認証にも適用(時期更新)",
       "japaneseFacts": {
-        "change": "Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」が、モバイルアプリのCopilot Chatを制限しなくなります。",
-        "impact": "これらで制限されていたユーザーがモバイルでCopilot Chatを利用できるようになります。既定で有効です。",
-        "timing": "全世界・GCC・GCC High・DoDで2026年8月中旬に展開開始、9月下旬に完了予定です。",
-        "action": "管理者の対応は不要です。これらの制御への依存確認、ヘルプデスクへの周知、社内文書の更新、必要なら統合アプリ設定やアプリのブロックでの制限検討が推奨されます。"
+        "change": "Microsoft管理状態のシステム優先認証が第1要素にも適用され、最も安全な登録済み方法が促されます。",
+        "impact": "Microsoft管理状態のテナントが対象で、有効または無効の設定では第1要素の動作は変わりません。",
+        "timing": "一般提供(全世界)は2026年6月下旬開始、9月下旬完了予定(以前は7月下旬)です。",
+        "action": "提供された本文の範囲では具体的な対応は原文に記載なし。"
       },
-      "japaneseDetailedSummary": "Microsoft 365 Copilotモバイルアプリ(iOS/Android)のCopilot Chatへのアクセスが簡素化されます。従来モバイル専用だった2つの制御、Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」は、今後Copilot Chatのアクセスを制限しなくなります。これにより、Web・デスクトップと同様の一貫した体験になり、これらの制御で制限されていたユーザーはモバイルでアクセスを取り戻します。既定で有効で、ユーザーの対応は不要です。展開は2026年8月中旬から9月下旬の予定(全世界、GCC、GCC High、DoD)です。管理者の対応は不要ですが、これらの制御への依存の確認、ヘルプデスクへの周知、社内文書の更新、制限が必要な場合は統合アプリ設定でのCopilotのブロックやモバイルアプリ自体のブロックの検討が推奨されます。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 Copilotモバイルアプリ(iOSおよびAndroid)でのCopilot Chatへのアクセスを簡素化します。この更新により、モバイル専用の2つの従来制御、Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」とプライバシー制御「Analyze content」は、モバイルアプリでのCopilot Chatのアクセスを制限しなくなります。\nこの変更により、既にCopilot Chatへのアクセスが許可されているユーザーに対して、モバイル、Web、デスクトップで一貫したCopilot Chat体験が提供されます。\n[展開スケジュール]\n一般提供(全世界、GCC、GCC High、DoD):2026年8月中旬に展開を開始し、9月下旬に完了する予定です。\n[組織への影響]\n次の制御は、Microsoft 365 Copilotモバイルアプリでのモバイル版Copilot Chatのアクセスを制限しなくなります:\n• Intuneポリシー「com.microsoft.office.officemobile.BingChatEnterprise.IsAllowed」\n• プライバシー制御「Analyze content」\nこれにより、影響を受けるユーザーは、WebおよびデスクトップアプリでのアクセスWと同様に、Microsoft 365 Copilotモバイルアプリで再びCopilot Chatにアクセスできるようになります。この変更は既定で有効です。ユーザーの対応は不要です。\n[必要な対応/推奨事項]\nこの変更に対する管理者の対応は不要です。\n次のことを検討できます:\n• 組織が、Microsoft 365 Copilotモバイルアプリでのモバイル版Copilot Chatを制限するために、Intuneアプリ構成キーcom.microsoft.office.officemobile.BingChatEnterprise.IsAllowedまたは「Analyze content」プライバシー制御に依存しているかを確認する。これらの制御の詳細は更新されたLearn記事を参照してください。\n• Microsoft 365 Copilotモバイルアプリで再びCopilot Chatにアクセスできるようになったユーザーからの問い合わせに対応できるよう、ヘルプデスクやサポートチームに周知する。\n• モバイルでのCopilot Chatを制限する手段としてこれらの制御を参照している社内ドキュメントを更新する。\n• Microsoft 365 Copilotモバイルアプリで Copilot Chatを制限する必要がある場合は、Web、デスクトップ、モバイル全体でCopilotをブロックする統合アプリ設定の利用や、Microsoft 365 Copilotモバイルアプリ自体のブロックによるモバイルアクセスの制限など、利用可能な管理オプションを確認する。\nドキュメントリンク:\nManage Microsoft 365 Copilot Chat | Microsoft Learn",
-      "sourceCharacterCount": 2234,
-      "sourceTruncated": false,
-      "sourceHash": "91f98d230487022ab3a40dbcb13265c826c401a90fe4db1351735d09be922468",
-      "validatedAt": "2026-10-25T05:01:15.9802175+00:00"
+      "japaneseDetailedSummary": "2026年8月24日にタイムラインが更新されました。Microsoft Entra IDのシステム優先認証が、Microsoft管理状態の場合に第1要素と第2要素の両方に適用されます。登録済みの資格情報から最も安全な方法が選ばれ、例えばパスワードとパスキーがあればパスキーが促される場合があります。ユーザーはキャンセルして別の方法を選べます。設定が「有効」の場合は第2要素のみ、「無効」の場合は適用されず、第1要素の挙動は変わりません。一般提供(全世界)は2026年6月下旬に開始、完了は9月下旬予定(以前は7月下旬)です。このプロンプトはMFAを求めるものではありません。本文は途中で切れており、以降は不明です。",
+      "japaneseBodyTranslation": "2026年8月24日更新:タイムラインを更新しました。\n[概要と理由]\nWhat's New(6月版)で案内したとおり、Microsoft管理状態で第1要素のシステム優先認証を展開しています。\nMicrosoft Entra IDのシステム優先認証は、設定がMicrosoft管理状態の場合、第1要素と第2要素の両方の認証に適用されます。\nシステムはユーザーに登録された資格情報を評価し、各認証ステップで最も順位の高い方法を選択して、利用可能な最も安全な方法でのサインインを促します。\n[展開スケジュール]\n• 一般提供(全世界):2026年6月下旬に開始、9月下旬(以前は7月下旬)に完了予定\n[組織への影響]\n対象\n• システム優先認証の設定がMicrosoft管理状態の組織\n• 設定が有効または無効の場合、第1要素のサインイン動作は変わらず、影響はありません。\nプラットフォームとサービス\n• Microsoft Entra ID\n• システム優先認証\n• ユーザーのサインイン体験\n発生すること\n• Microsoft管理状態のテナントでは、資格情報の順位付けが第1要素と第2要素の両方に適用されます。\n• サインイン時、登録済みの認証方法を確認し、システム定義の順序で最も安全な方法を促します。\n• 方法の順序は動的で、パスキーなどより安全な方法の登録や、Microsoftによる順位の更新で変わることがあります。例えばパスワードとパスキーが登録されている場合、次回の第1要素サインインでパスワードの代わりにパスキーを促すことがあります。\n• 別の方法でサインインするには、キャンセルして他の利用可能な方法を選べます。\n設定状態別の動作:\n• Microsoft管理:第1要素と第2要素の両方に順位付けを適用。\n• 有効:第2要素のみに適用。第1要素の動作は変わりません。\n• 無効:システム優先認証は適用されません。\n注:このプロンプトは、MFAが不要な場合にMFAを求めているという意味ではありません。この更新により、Microsoft Entraは...(本文は途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "0fce4bd84a0e4069cdda2204578c976ed2018854f8303c95d207164180feeeb2",
+      "validatedAt": "2026-10-25T11:50:23.7021024+00:00"
     },
     {
-      "id": "MC1462914",
-      "japaneseTitle": "Agent 365にアクティブユーザーのエクスポート機能を追加",
+      "id": "MC1319216",
+      "japaneseTitle": "Teams会議中にMeeting AIをオン/オフ切替可能に(時期更新)",
       "japaneseFacts": {
-        "change": "Microsoft 365管理センターのAgents > All Agents > Exportに、過去30日間にAgent 365レジストリのエージェントを利用したユーザーのCSVエクスポートが追加されます。",
-        "impact": "AI管理者とグローバル管理者が対象で、既にAgent 365にアクセスできる管理者には既定で有効です。",
-        "timing": "全世界で2026年8月下旬に展開開始・完了の予定です。",
-        "action": "準備作業は不要です。展開後、ライセンス判断担当者の権限確認や利用データの確認、エクスポートデータの取り扱いポリシー確認が推奨されています。"
+        "change": "会議中に主催者・プレゼンターがMeeting AI(Copilot/Facilitator)をオン/オフでき、オフ時は録画・文字起こしも停止します。",
+        "impact": "Meeting AIが有効なテナントのライセンス保有の主催者とプレゼンターが対象で、ポリシーで無効なら表示されません。",
+        "timing": "Targeted Releaseは2026年9月中旬〜下旬、一般提供(全世界)も9月中旬〜下旬の予定です。",
+        "action": "提供された本文の範囲では具体的な対応は原文に記載なし。"
       },
-      "japaneseDetailedSummary": "Microsoft Agent 365に、AI管理者およびグローバル管理者が、テナントのAgent 365レジストリに登録されたエージェントを過去30日間に利用したユーザーの一覧をCSVでエクスポートできる機能が追加されます。出力にはUPN、利用エージェント総数、総セッション数、最終アクティビティ日が含まれます。読み取り専用のレポート機能で、既存エージェント、ユーザー権限、課金プロセスに変更はありません。既にAgent 365にアクセスできる管理者には既定で有効です。2026年8月下旬に全世界で展開される予定です。準備のための対応は不要ですが、ライセンス判断担当者のアクセス権の確認、利用状況の確認、UPNを含むエクスポートデータの閲覧・保管に関する社内ポリシーの確認が推奨されています。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Agent 365に新しいレポート機能を導入します。AI管理者とグローバル管理者は、テナントのAgent 365レジストリに登録されたエージェントを過去30日間に実際に利用したユーザーの一覧をエクスポートできます。\nこのレポートはエージェント利用の可視性を提供し、エージェントのライセンス確認や計画の策定を支援します。\n[展開スケジュール]\n• 一般提供(全世界):2026年8月下旬に展開を開始し、8月下旬に完了する予定です。\n[組織への影響]\n対象ユーザー\n• AI管理者\n• グローバル管理者\n対象のプラットフォームとサービス\n• Microsoft 365管理センター\n• Microsoft Agent 365\n実施される内容\nMicrosoft 365管理センター > Agents > All Agents > Export に、新しい「Active Users」エクスポートオプションが追加されます。\n権限のある管理者は、過去30日間にテナントのAgent 365レジストリにあるエージェントを利用したユーザーを含むCSVレポートを生成できます。\nレポートには以下が含まれます:\n• ユーザープリンシパル名(UPN)\n• 利用したエージェントの総数\n• 総セッション数\n• 最終アクティビティ日\nこれは読み取り専用のレポート機能です。\n以下に変更はありません:\n• 既存のエージェント\n• ユーザーのアクセス許可\n• 課金プロセス\nこの機能は、既にAgent 365にアクセスできるAI管理者とグローバル管理者に対して既定で有効になります。\n[必要な対応/推奨事項]\nこの変更に備えるための対応は不要です。\n展開後、次のことを検討できます:\n• エージェントのライセンス判断を担当する担当者を特定し、適切な管理アクセス権があることを確認する。\n• エクスポートした利用データを確認し、組織全体でのエージェントの採用状況を把握する。\n• レポートを社内のライセンス確認や計画の議論に活用する。\n[コンプライアンス上の考慮事項]\nこの機能は、エージェント活動に関する既存の利用情報を公開する新しい管理用レポート機能です。エクスポートにはユーザー識別子(UPN)と過去30日間の利用指標が含まれます。組織は、利用状況レポートへのアクセスおよびエクスポートしたレポートの保持に関する社内ポリシーを確認する必要があります。",
-      "sourceCharacterCount": 2118,
-      "sourceTruncated": false,
-      "sourceHash": "2515edcbf3e34a8e6abfdc7be9c30988fe6cfc8fc866f88829448fbaa3b420b0",
-      "validatedAt": "2026-10-25T05:01:15.9694978+00:00"
+      "japaneseDetailedSummary": "2026年8月26日更新で内容と時期が変更されました。Teamsでライセンスを持つ会議の主催者とプレゼンターが、ライブ会議中にMeeting AI(CopilotやFacilitator)をオン/オフできる新コントロールが追加されます。オフにするとRecordingとTranscriptionも停止します。対象はポリシーと会議オプションでMeeting AIが有効なテナントです。ポリシーで無効の場合はトグルは表示されません。オフ時はCopilot/Facilitatorの応答やノートは生成されず、既存の成果物は保持ポリシーに従い残ります。Targeted Releaseは2026年9月中旬開始・9月下旬完了、一般提供(全世界)も9月中旬開始・9月下旬完了予定です。文字起こしとMeeting AIは連動します。本文は途中で切れており、以降は不明です。",
+      "japaneseBodyTranslation": "2026年8月26日更新:内容とタイムラインを更新しました。\n[概要と理由]\nMicrosoft Teamsに、ライセンスを持つ会議の主催者とプレゼンターがライブ会議中にMeeting AI(CopilotおよびFacilitatorを含む)をオン/オフできる新しいコントロールが導入されます。既存のMeeting AIの動作を拡張し、AIがいつ有効かをリアルタイムで制御できます。\n議論が有益なときは洞察を取得し、機微な話題になったらAIをオフにできます。AIが成果物にアクセスしないよう、録画と文字起こしもオフになります。\n[展開スケジュール]\n• Targeted Release:2026年9月中旬(以前は8月中旬)に開始、9月下旬(以前は8月下旬)に完了予定。\n• 一般提供(全世界):2026年9月中旬(以前は8月下旬)に開始、9月下旬(以前は9月上旬)に完了予定。\n[組織への影響]\n対象:ポリシーおよび会議オプションでMeeting AI(Copilot/Facilitator)が有効なすべてのMicrosoft 365テナント、Teams会議のライセンスを持つ主催者とプレゼンター。\nプラットフォーム:Teams(デスクトップ、Web、モバイル)、Microsoft 365 Copilot(Meeting AI、Facilitator)。\n動作:\n• スケジュール会議のTeamsツールバーに新コントロールが表示されます。\n• 主催者とプレゼンターは会議中にMeeting AIをオン/オフできます。\n• トグルはポリシーでMeeting AIが許可されている場合のみ表示されます。\n• AIステータスインジケーターで参加者にMeeting AIの稼働状況が表示されます。\n既存のテナントポリシーと会議オプションは尊重されます。ポリシーで無効の場合、トグルは表示されません。\nMeeting AIをオフにした場合:\n• Copilot、Facilitatorの応答、ノートは生成されなくなります。\n• 既に生成された成果物は利用可能で、保持ポリシーに従います。\n• 文字起こしなしでAIを使用した場合、音声テキスト化データは停止し、Recapは生成されません。\n重要:文字起こしの依存関係\n• AIを文字起こしと併用する場合、両者は連動します。\n• Meeting AIをオンにすると文字起こしが自動でオンになり、Recapが生成されます。\n• 文字起こしを開始するとMeeting AIとRecapが自動で有効になります。\n• Meeting AIの使用を防ぐには、文字起こしとMeetin(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "5819644d468f8f791ec666ce7c5975a11302b0e3303b680a28a1ca6ca91221dc",
+      "validatedAt": "2026-10-25T11:50:23.6920161+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-10-22T07:48:45.0036563+00:00",
