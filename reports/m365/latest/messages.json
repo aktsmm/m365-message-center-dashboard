@@ -1,27 +1,27 @@
 {
   "meta": {
-    "runId": "39701221661",
-    "generatedAt": "2026-10-22T00:42:13.2863898+00:00",
+    "runId": "40249189743",
+    "generatedAt": "2026-10-26T00:24:32.3186601+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 87,
-    "majorChanges": 24,
+    "total": 89,
+    "majorChanges": 23,
     "highSeverity": 1,
-    "actionRequired": 11,
+    "actionRequired": 10,
     "actionDueWithin30Days": 3,
     "updatedLast7Days": 7
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 49
+      "count": 50
     },
     {
       "name": "Microsoft Entra",
-      "count": 24
+      "count": 25
     },
     {
       "name": "Microsoft 365 Copilot Chat",
@@ -29,6 +29,92 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1521616",
+      "title": "Microsoft Graph APIs for Copilot cost management",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-22T23:18:55.0000000+00:00",
+      "endDateTime": "2026-11-22T23:18:55.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-22T23:19:46.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "New feature"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nMicrosoft is introducing Microsoft Graph APIs for Copilot cost management, giving organizations a programmatic way to manage Copilot credit spending policies, monitor credit balances, and handle end-user requests for additional credits.\nAdministrators and developers can use the APIs to retrieve tenant, user, and per-service credit balances; create, update, and delete spending policies; assign security groups to policies; configure service-specific settings; and set up email threshold alerts. They can also retrieve, approve, or reject credit requests.\nThese APIs integrate Copilot cost management with existing administration and FinOps processes. This initial release, available through the Microsoft Graph beta surface, focuses on spending-policy administration and balance information; detailed consumption reporting is not included.\n[Rollout Schedule:]\nPublic Preview (Worldwide): We will begin rolling out to the beta endpoint in mid-October 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Administrators and developers who manage Copilot credit spending policies via Microsoft Graph.\nWhat will happen:\n• Organizations gain a new programmatic way to integrate Copilot credit cost management with existing administration and FinOps processes.\n• There is no change to the end-user experience, and no action is required for organizations that do not plan to use these APIs.\n• Detailed consumption reporting is not included in this release.\n[Action Required/Recommendations:]\nNo action is required if your organization does not plan to use these APIs. If you do plan to use them, we recommend you:\n• Review the Microsoft Graph documentation for available beta endpoints and current limitations.\n• Determine the Microsoft Graph permissions and authentication requirements for the operations you plan to automate.\n• Identify which existing administration or FinOps processes you want to integrate with Copilot cost management.\n• Determine which security groups should be assigned to Copilot spending policies, where applicable.\n• Review requirements for configuring credit threshold email alerts and alert recipients.\nA General Availability date is not currently available.\n[Compliance considerations:]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft is introducing Microsoft Graph APIs for Copilot cost management, enabling programmatic control of credit spending policies, balance monitoring, and credit requests. Available in public preview from mid-October 2026 via the beta endpoint, these APIs integrate with existing admin and FinOps processes but exclude detailed consumption reporting. No action is needed if unused."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview"
+      ]
+    },
+    {
+      "id": "MC1521604",
+      "title": "Microsoft Authenticator: Usability improvements for iOS and Android",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-22T23:11:01.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-22T23:11:18.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "[What and why]\nWe’re updating Microsoft Authenticator with several usability improvements across iOS and Android. These updates include a refreshed home experience, clearer guidance for accounts that need to be restored, improvements to restoration and sign-in flows, and additional prompts designed to help keep Authenticator working reliably. Availability and timing vary by platform.\n[Rollout schedule]\n• General Availability (Worldwide, GCC, GCC High, and DoD): Beginning in October 2026 and expected to complete in November 2026\n• The improved restoration experience for push notifications and passwordless sign-in will be available on iOS first, with Android planned to follow in January 2027.\n[Impact on your organization]\nWho is affected\n• Users of Microsoft Authenticator on iOS and Android\nPlatforms and services\n• Microsoft Authenticator for iOS and Android\nWhat will happen\n• Improved Authenticator home experience, iOS and Android: The Authenticator home page is being updated to improve the experience when users view and manage their accounts. On Android, this update will be available in November 2026.\niOs:\nAndroid:\n• Clearer notification for accounts that haven’t been restored, iOS and Android: Users with accounts that have not yet been restored will see a banner informing them that those accounts require attention\n.\n• Improved first-run guidance for account restoration, iOS and Android: The first-run experience will more clearly show which accounts need to be restored, giving users additional context during Authenticator setup.\n• App rating prompt during sign-in, iOS only: Users may see an option to rate Microsoft Authenticator as part of the sign-in experience, giving them an opportunity to provide feedback about the app.\n• Improved restoration experience for push notifications and passwordless sign-in: The restoration flow is being improved for users who use push notifications and passwordless sign-in. This improvement will be available on iOS first, with Android planned for January 2027.\n• Prompt to exclude Authenticator from battery optimization, Android only: After successfully completing an interactive authentication, users may see a non-blocking prompt to exclude Authenticator from Android battery optimization. Excluding the app from battery optimization helps users stay signed in and continue receiving work or school notifications. The prompt will not block authentication.\n[Action required and recommendations]\nNo configuration action is specified in this request.\n• Inform your help desk and security operations teams about the updated Authenticator experiences.\n• Update internal user guidance and screenshots that show the previous Authenticator experiences.\n[Compliance considerations]\nNo compliance considerations identified.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Authenticator will receive usability improvements on iOS and Android starting October 2026, including a refreshed home experience, clearer account restoration guidance, enhanced restoration flows, and platform-specific prompts. Android updates follow in November 2026 and January 2027. No action is required from organizations."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1520901",
+      "title": "Insights Agent V2 Frontier",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-22T17:34:21.0000000+00:00",
+      "endDateTime": "2027-04-30T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-22T17:34:39.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nInsights Agent V2 is now available in Frontier\nInsights Agent V2 gives M365 admins tenant-level visibility into agent adoption. M365 admins retain control over whether user feedback is shared with agent owners. Learn more: Explore user feedback with Microsoft 365 Insights Agent\n[Rollout Schedule:]\nPublic Preview (Worldwide): Roll out is completed.\n[Impact on Your Organization:]\nIf you enable feedback sharing, agent owners can use Insights Agent to review user ratings, comments, and feedback themes for agents they own. Shared feedback is limited to your tenant, and submitter identities are not shown to agent owners. You control whether feedback is shared for all agents, selected agents, or no agents.\n[Action Required/Recommendations:]\nNo action is required by default. Feedback sharing is off (“No agents”). To enable it, go to Agents > Settings > Agent feedback sharing in the Microsoft 365 admin center and select All agents or Selected agents.\n[Compliance considerations:]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Insights Agent V2 is now available in Frontier, providing M365 admins tenant-level visibility into agent adoption and control over user feedback sharing. Feedback sharing is off by default and can be enabled in the Microsoft 365 admin center. No compliance issues identified. Public preview rollout is complete."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
     {
       "id": "MC1519855",
       "title": "Microsoft Entra: Choose your own telephony provider for SMS and voice authentication",
@@ -2156,47 +2242,6 @@
         }
       ],
       "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1459132",
-      "title": "Microsoft Edge: Retirement of Windows Information Protection (WIP) and Microsoft Defender Application Guard (MDAG)",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": true,
-      "startDateTime": "2026-08-21T22:37:17.0000000+00:00",
-      "endDateTime": "2026-10-24T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-08-21T22:37:38.0000000+00:00",
-      "actionRequiredByDateTime": "2026-09-24T07:00:00.0000000+00:00",
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Retirement",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。対応期限は 2026年9月24日 です。",
-      "bodyText": "[What and why]\nWe are retiring support for Windows Information Protection (WIP) and Microsoft Defender Application Guard (MDAG) in Microsoft Edge.\nThese capabilities have already been deprecated in Windows and are no longer available in Windows 11, version 24H2.\nMicrosoft recommends the following alternatives:\n• For WIP scenarios, use Microsoft Purview Information Protection, Microsoft Purview Data Loss Prevention (DLP), Endpoint DLP, and Intune app protection policies.\n• For MDAG scenarios, use the built-in security capabilities available in Microsoft Edge and other supported isolation solutions appropriate for your environment.\n[Rollout schedule]\n• Worldwide: Beginning in late September 2026 and expected to complete in late September 2026\n[Impact on your organization]\nWho is affected\nOrganizations that have configured WIP or MDAG for Microsoft Edge on Windows 10 devices.\nThese features are off by default and require administrators to enable them. Organizations that have never enabled these features are not affected.\nIn practice, this affects a relatively small population of Windows 10 devices because both features were designed for Windows 10 and are already unavailable in Windows 11, version 24H2.\nPlatforms and services\n• Microsoft Edge (including Edge for Business)\n• Windows 10 devices using WIP or MDAG\nWhat will happen\n• Support for WIP and MDAG in Microsoft Edge will be removed.\n• After rollout is complete, these capabilities will no longer function in Microsoft Edge 154 and later versions.\n• Organizations using WIP or MDAG should transition to supported alternatives.\n• Windows 11, version 24H2 devices are not expected to be affected because these capabilities have already been removed from the Windows platform.\n[Action required and recommendations]\nReview your current Microsoft Edge and Windows security configurations to determine whether WIP or MDAG is still in use.\nIf you use WIP, plan migration to:\n• Microsoft Purview Information Protection.\n• Microsoft Purview Data Loss Prevention and Endpoint DLP.\n• Intune app protection policies, where appropriate.\nIf you use MDAG, evaluate supported Microsoft Edge security capabilities and alternative isolation technologies that meet your organization's requirements.\nPlan migration activities before the rollout completes in late September 2026.\nIf you require additional time for migration, contact Microsoft Support or your Microsoft account team to discuss available options.\nLearn more\n• Announcing the sunset of Windows Information Protection (WIP) | Windows IT Pro Blog\n• Browse more safely with Microsoft Edge | Microsoft Edge | Microsoft Learn\n• Extended Security Updates (ESU) program for Windows 10 | What's new | Windows | Microsoft Learn\n• Get started with endpoint data loss prevention | Microsoft Purview | Microsoft Learn\n• Learn about data loss prevention | Microsoft Purview | Microsoft Learn\n• Microsoft Edge security for your business | Microsoft Edge | Microsoft Learn\n• Microsoft Edge support for Microsoft Defender Application Guard | Microsoft Edge | Microsoft Learn\n• Microsoft Edge support for Microsoft Defender SmartScreen | Microsoft Edge | Microsoft Learn\n• Protect your sensitive data with Microsoft Purview | Microsoft Purview | Microsoft Learn\n• Understand Data Loss Prevention (DLP) in Microsoft Edge for Business | Microsoft Edge | Microsoft Learn\n• Website typo protection | Microsoft\n• Windows 10 Enterprise LTSC 2019 - Microsoft Lifecycle | Microsoft Learn\n• Windows 10 Enterprise LTSC 2021 - Microsoft Lifecycle | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nIs administrative action required to maintain existing compliance or security controls?Yes. Organizations using WIP or MDAG must assess current deployments and implement recommended replacement technologies before the retirement date to avoid disruption to existing security and data protection controls.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Edge will retire support for Windows Information Protection (WIP) and Microsoft Defender Application Guard (MDAG) by late September 2026. Organizations using these on Windows 10 must migrate to Microsoft Purview solutions and Edge's built-in security features, as these capabilities are already removed in Windows 11 version 24H2."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/deployedge/microsoft-edge-security-browse-safer",
-        "https://learn.microsoft.com/deployedge/microsoft-edge-security-dlp",
-        "https://learn.microsoft.com/deployedge/microsoft-edge-security-smartscreen",
-        "https://learn.microsoft.com/deployedge/microsoft-edge-security-windows-defender-application-guard",
-        "https://learn.microsoft.com/deployedge/ms-edge-security-for-business",
-        "https://learn.microsoft.com/lifecycle/products/windows-10-enterprise-ltsc-2019",
-        "https://learn.microsoft.com/lifecycle/products/windows-10-enterprise-ltsc-2021",
-        "https://learn.microsoft.com/purview/dlp-learn-about-dlp?view=o365-worldwide",
-        "https://learn.microsoft.com/purview/endpoint-dlp-getting-started",
-        "https://learn.microsoft.com/purview/information-protection",
-        "https://learn.microsoft.com/windows/whats-new/extended-security-updates"
-      ]
     },
     {
       "id": "MC1458474",
