@@ -1,29 +1,20 @@
 {
-  "generatedAt": "2026-10-25T21:02:23.5810138+00:00",
+  "generatedAt": "2026-10-26T07:58:49.8814999+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra のエージェント作成既定変更(11/4)と Targeted release 廃止準備、Office LTSC 2021 サポート終了への対応が優先",
-  "executiveSummary": "今週は Microsoft Entra 関連の変更が中心です。MC1506733 では、11月4日から管理者が「Users can create agent blueprints」を無効化しない限り、既定ユーザーがエージェントブループリントを作成可能になります(展開は2026年11月上旬〜下旬)。MC1506728 では同日以降、AgentIdentity.CreateAsManager がエージェントブループリントのプリンシパルへ自動付与されなくなり、管理者の同意が必要になります。MC1490899 では Targeted release が2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります(アクション期限は10月31日と記載)。MC1509797 では Office LTSC 2021、Visio/Project LTSC 2021 等のサポートが10月13日に終了済みで、セキュリティ更新が提供されません。MC1519855 では Entra の Choose Your Own Telephony Provider が10月30日から GA となります。MC1510951 ではカナダの時間帯変更(11月1日に時計を戻さない)向けの Windows 更新が提供済みです。いずれも抜粋範囲外の詳細(手順の全文など)は未確認です。",
-  "thisWeek": "MC1506733: 11月4日前に「Users can create agent blueprints」を無効にするか、既定ユーザーに許可するかをテナント方針として決定する\nMC1506728: app-only 認証で自身のエージェントIDを作成するエージェントの有無を確認し、AgentIdentity.CreateAsManager の明示付与または別の認可モデルへの移行を検討する\nMC1490899: Targeted release 登録ユーザーを確認し、Frontier / Standard / Deferred のうち希望するリリース設定を選択する(アクション期限10月31日)\nMC1509797: Office LTSC 2021、Visio LTSC 2021、Project LTSC 2021 等の稼働状況を棚卸しし、サポート対象バージョンへの移行計画を立てる\nMC1510951: Manitoba、Alberta、British Columbia のユーザーや拠点がある場合、Windows 更新の適用状況を確認する(11月1日に時計は戻されない)\nMC1458474: Entra 会社ブランディングでカスタム CSS のレイアウト/位置指定プロパティを使っているか確認する(2026年10月下旬から廃止開始)",
-  "thisMonth": "MC1325414: SSPR が明示登録された認証方法を必須とする変更(11月7日の記載あり)に向け、ユーザーの認証方法登録状況を確認する\nMC1474104: SMS first-factor サインイン廃止の次フェーズに向け、対象ユーザーと代替の phishing-resistant 方式(passkey 等)を整理する\nMC1519855: SMS/音声認証を業務・規制・技術上必要とするユーザー群があるか確認し、サードパーティ通信事業者の利用要否を検討する(10月30日 GA)\nMC1490911: Edge 157 以降の旧 WAM サインイン廃止に向け、--disable-features=msOneAuthWAM で OneAuth WAM を無効化している環境がないか確認する(11月上旬展開)\nMC1422061: Conditional Access の Custom Controls の利用有無を確認し、External MFA への移行を計画する(2027年5月に完全廃止)\nMC1509789: 社内・サードパーティ Web アプリがブラウザ内蔵 XSLT に依存していないか確認する(Edge 159、2026年12月中旬展開)",
-  "watch": "MC1518032: Microsoft 365 apps の Update Repair in Inventory が GA(2026年11月中旬〜下旬の展開予定)になる動きを監視する\nMC1506727: Agent 365 の利用状況・アクティビティの管理者向け表示拡大(2026年10月下旬開始)を監視する\nMC1450134: WHfB と macOS Platform SSO を単独の MFA 要素として扱う変更のタイムライン更新を引き続き確認する\nMC1481309: Entra サインインページの CSP 強化(2026年10月中旬〜下旬展開)の影響を監視する",
-  "customerQuestions": "既定ユーザーによるエージェントブループリント作成を許可しますか、それとも11月4日前に無効化しますか?\napp-only 認証で自身のエージェントIDを作成するエージェントはありますか?AgentIdentity.CreateAsManager の管理者同意の運用は決まっていますか?\nTargeted release に登録されているユーザーは誰で、Frontier、Standard、Deferred のどれに移行しますか?\nOffice LTSC 2021、Visio LTSC 2021、Project LTSC 2021 が残っている端末はどれくらいあり、移行期限をどう設定しますか?\nSMS や音声認証が業務上・規制上必要なユーザー群はありますか?passkey への移行計画はありますか?\nEntra 会社ブランディングでカスタム CSS を使っていますか?Edge 上の XSLT 依存 Web アプリや旧 WAM 無効化設定はありますか?",
+  "headline": "Entra認証・ブランディング変更とTargeted Release廃止、Office LTSC 2021サポート終了への対応が優先",
+  "executiveSummary": "今週の最優先はMicrosoft Entra関連のセキュリティ強化です。MC1325414ではSSPRが明示的に登録された認証方法を要求する方針で、タイトルに2026年11月9日開始と示されています。MC1506733では11月4日から既定ユーザーがエージェントブループリントを作成可能になるため、不要なら管理者による設定変更が必要です。MC1458474/MC1481309はサインインのカスタムCSS廃止とCSP強化で、独自ブランディングやスクリプトを使う組織が対象です。MC1490899はTargeted Releaseが2027年1月に廃止され、Frontier/Standard/Deferredへの設定見直しを求めています。MC1509797はOffice LTSC 2021等のサポートが2026年10月13日に終了済みで、セキュリティ更新が提供されません。なお、抜粋に含まれない詳細な対象範囲や手順は不明であり、各MC本文での確認が必要です。",
+  "thisWeek": "MC1325414: SSPR登録済み認証方法必須化(タイトル上は2026年11月9日開始)に向け、ユーザーの認証方法登録状況を確認する\nMC1506733: 11月4日開始前に「Users can create agent blueprints」を許可するか方針を決め、不要なら無効化する\nMC1458474: カスタムCSSのレイアウト/配置プロパティを使用中か確認する(2026年7月21日時点で未使用の組織は影響なしとされています)\nMC1509797: Office LTSC 2021、Visio/Project LTSC 2021等の利用端末を棚卸しし、サポート対象バージョンへの移行計画を立てる",
+  "thisMonth": "MC1490899: Targeted Release登録ユーザーを確認し、Microsoft 365管理センターでFrontier/Standard/Deferredの方針を設定する(2027年1月廃止)\nMC1481309: サインイン画面で外部スクリプトに依存するカスタマイズがないか確認する(ロールアウトは2026年10月中旬開始とされています)\nMC1474104: SMS第一要素サインインの利用状況を確認し、パスキー等のフィッシング耐性のある方式への移行を計画する",
+  "watch": "MC1474104: SMS第一要素サインイン廃止の次フェーズの詳細(抜粋では具体的な日付は未提示)\nMC1506733: 11月上旬から下旬にかけてのロールアウト進捗",
+  "customerQuestions": "SSPRで未登録の連絡先情報(携帯電話・代替メール)に依存しているユーザーはどれくらいいますか?\n一般ユーザーによるエージェントブループリント作成を許可する方針ですか?\nEntraサインイン画面でカスタムCSSや外部スクリプトを使っていますか?\nTargeted Release対象ユーザーをどのリリース設定(Frontier/Standard/Deferred)に移行しますか?\nOffice LTSC 2021等のサポート終了製品はどの程度残っていますか?",
   "referencedIds": [
     "MC1325414",
-    "MC1422061",
-    "MC1450134",
     "MC1458474",
     "MC1474104",
     "MC1481309",
     "MC1490899",
-    "MC1490911",
-    "MC1506727",
-    "MC1506728",
     "MC1506733",
-    "MC1509789",
-    "MC1509797",
-    "MC1510951",
-    "MC1518032",
-    "MC1519855"
+    "MC1509797"
   ],
   "messageUpdates": [
     {
@@ -303,13 +294,6 @@
       "id": "MC1458480",
       "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1459132",
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。対応期限は 2026年9月24日 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -629,6 +613,27 @@
       "learnUrls": []
     },
     {
+      "id": "MC1520901",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1521604",
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1521616",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
       "id": "MC985483",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
@@ -835,6 +840,54 @@
       "sourceTruncated": false,
       "sourceHash": "f158ecdd3d8c598ef9d8bc121a2e42b84fc715afe2d70c781d24689ac2d9a511",
       "validatedAt": "2026-10-21T21:54:34.8504664+00:00"
+    },
+    {
+      "id": "MC1282568",
+      "japaneseTitle": "Windows版Entraパスキーが一般提供へ(GCC High/DoD時期更新)",
+      "japaneseFacts": {
+        "change": "Windows上のEntraパスキーがGAとなり、Windows Hello AAGUIDの明示的な許可が不要になります。",
+        "impact": "非構成証明のデバイス固定パスキーを許可するプロファイルの対象ユーザーが、既定でWindowsパスキーを登録・利用できます。",
+        "timing": "GCC High/DoDは2026年10月初旬開始、10月下旬完了。Worldwide/GCCは4月下旬〜6月中旬です。",
+        "action": "必要な対応は原文に記載なし(プロファイルや条件付きアクセス設定の確認が関連します)。"
+      },
+      "japaneseDetailedSummary": "Windows上のMicrosoft Entraパスキーが一般提供(GA)となり、Windows Helloのコンテナーに保存されるデバイス固定パスキーで、フィッシング耐性のあるパスワードレスサインインが可能になります。Entra参加/登録されていない個人用・共有PCにも対象が広がります。2026年7月20日にタイムラインが更新され、GCC High/DoDは2026年10月初旬開始(従来は9月初旬)、10月下旬完了(従来は9月下旬)です。Worldwide/GCCは2026年4月下旬開始、6月中旬完了予定です。GAではWindows HelloのAAGUID許可リストによる明示的なオプトインが不要になります。デバイス固定の非構成証明パスキーを許可するパスキープロファイルの対象ユーザーは、既定でWindows上でパスキーを登録・利用できるようになります。条件付きアクセスが許可すれば、未参加デバイスでも作成・利用でき、デバイスとEntraアカウントごとに個別登録が必要です。",
+      "japaneseBodyTranslation": "2026年7月20日更新:タイムラインを更新しました。\n[はじめに]\nWindows上のMicrosoft Entraパスキーがまもなく一般提供されます。Windowsデバイスから、Microsoft Entraで保護されたリソースへフィッシング耐性のあるパスワードレスサインインが可能になります。\nこのパブリックプレビューは以前MC1247893で告知されました。\nユーザーはWindows Helloコンテナーに保存されるデバイス固定パスキーを作成し、Windows Hello(顔、指紋、PIN)で認証できます。これにより、Microsoft Entra参加または登録されていないWindowsデバイスにもパスワードレス認証が拡大し、企業管理デバイス、個人デバイス、共有デバイスのシナリオでセキュリティ強化とパスワード依存の低減に役立ちます。\n[いつ行われるか]\n• 一般提供(Worldwide、GCC):2026年4月下旬に展開開始、6月中旬に完了予定。\n• 一般提供(GCC High、DoD):2026年10月初旬に展開開始(従来は9月初旬)、10月下旬に完了予定(従来は9月下旬)。\n組織への影響:\n対象:認証方法ポリシーでパスキーを有効にしたMicrosoft Entra IDを利用し、ユーザーがWindowsデバイスからサインインする組織(企業管理PC、個人デバイス、共有デバイス)。\n実施内容:\n• Windows上のMicrosoft Entraパスキーは、パスキー(FIDO2)プロファイルでのWindows Hello AAGUID許可リストによる明示的なオプトインが不要になります。\n• パブリックプレビューでは、管理者がWindows Hello AAGUIDを明示的に許可する必要がありました。\n• パスキープロファイルがデバイス固定の非構成証明パスキーを許可している場合:\n• 対象ユーザーは追加の管理者設定なしで、既定でWindows上のパスキーを登録・利用できます。\n• その結果:\n• 該当ユーザーがWindowsデバイスでパスキーの登録・利用を開始する可能性があります。\n• 条件付きアクセスが許可する場合:\n• Microsoft Entra参加/登録されていない個人用・共有PCを含むWindowsデバイスでパスキーを作成・利用できます。\n• 各Windowsデバイスで、Entraアカウントごとに個別のパスキー登録が必要です。\n• Windows Hello for Businessは引き続き推奨されます...(原文はここで途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "cdd33e0f9dd09aac2a1441f595a92c36ee3042baee1df5fa4aed32f79f3d56fc",
+      "validatedAt": "2026-10-25T21:02:23.5715331+00:00"
+    },
+    {
+      "id": "MC1282571",
+      "japaneseTitle": "ExcelのCopilot入口を右側チャットペインに集約",
+      "japaneseFacts": {
+        "change": "ExcelのCopilot入口を単一の場所に集約し、右側チャットペインのExcelエージェントを主要UIにします。",
+        "impact": "Copilotが有効なWindows/macOS/Web版Excelユーザー(Microsoft 365 Copilot Premiumライセンス必要)が対象です。",
+        "timing": "Worldwideは2026年4月下旬〜6月初旬、GCC/GCC High/DoDは2026年10月初旬〜10月下旬です。",
+        "action": "対応は不要です。ユーザー周知、資料更新、ヘルプデスクへの共有は任意です。"
+      },
+      "japaneseDetailedSummary": "ExcelでのCopilotへのアクセス方法を変更し、複数あった入口を1か所に集約します。セル選択時や右クリックメニューに表示されていた一部のCopilot入口は削除され、一貫した隅の位置に単一の入口が表示されます。右側チャットペインのExcelエージェント(編集モード)が主要なCopilotインターフェースになります。対象はWindows、macOS、Web版ExcelでCopilotが有効なユーザーで、Microsoft 365 Copilot(Premium)ライセンスが必要です。Copilotの提供状況、ライセンス、既存の管理ポリシーは変わらず、Copilotアクセスを持つユーザーには既定でオンです。Worldwideは2026年4月下旬〜6月初旬、GCC/GCC High/DoDは2026年10月初旬〜10月下旬に展開されます。対応は不要ですが、ユーザーへの周知、社内資料の更新、ヘルプデスクへの共有が任意で推奨されます。",
+      "japaneseBodyTranslation": "[はじめに]\nMicrosoft 365アプリ全体でより明確で一貫性があり直感的な体験を提供するため、ExcelでのCopilotへのアクセス方法を更新します。複数のCopilotの入口を1つの予測しやすい場所に集約し、右側チャットペインのExcel編集モードを主要なCopilotインターフェースとします。この更新により、発見しやすさが向上し、ユーザーのワークフローが簡素化され、ExcelのCopilot体験が他のMicrosoft 365アプリと整合します。\n[いつ行われるか]\n• 一般提供(Worldwide):2026年4月下旬に展開開始、6月初旬に完了予定。\n• 一般提供(GCC、GCC High、DoD):2026年10月初旬に展開開始、10月下旬に完了予定。\n[組織への影響]\n対象:\n• Copilotが有効な、Windows、macOS、Web上のExcel向けMicrosoft 365アプリの全ユーザー。\n• この機能の利用にはMicrosoft 365 Copilot(Premium)ライセンスが必要です。\n実施内容:\n• セル選択時や右クリックメニューに表示される一部のCopilot入口が削除されます。\n• Excel内の一貫した隅の位置に、統合された単一のCopilot入口が表示されます。\nスクリーンショット:更新されたExcelの入口\n• 右側チャットペインのExcelエージェントが、Copilotのプロンプトと応答の主要なインターフェースになります。\n• Copilotの提供状況、ライセンス、既存の管理ポリシーは変わりません。\n• 既にCopilotにアクセスできるユーザーには既定でオンです。\n[準備のためにできること]\n対応は不要です。\n任意で以下を実施できます:\n• 更新されたCopilotの入口とチャット形式の体験についてユーザーに周知する。\n• 特定のCopilotボタンやメニューを参照する社内ドキュメントや研修資料を更新する。\n• 展開中のユーザーからの問い合わせに備えてヘルプデスクに通知する。\n[コンプライアンス上の考慮事項]\nコンプライアンス領域/説明\nエンドユーザーに生成AIとの新しい対話方法を提供しますか?\nユーザーは、Excel内の複数のコンテキスト入口ではなく、主に右側チャットペインを通じてCopilotを利用します。",
+      "sourceCharacterCount": 2141,
+      "sourceTruncated": false,
+      "sourceHash": "f4625248aa1f9b834ab1e94817f529cee257d1cd55999a5a614f6f370a4adff7",
+      "validatedAt": "2026-10-25T21:02:23.5737128+00:00"
+    },
+    {
+      "id": "MC1287370",
+      "japaneseTitle": "共有予定表をMAPIからREST方式へ自動アップグレード(時期更新)",
+      "japaneseFacts": {
+        "change": "共有予定表がMAPIモデルからRESTモデルへサーバー側で自動アップグレードされます。",
+        "impact": "Exchange Onlineで共有予定表に編集者以上の権限を持つユーザーや代理人が対象で、6つを超えて管理する場合は対象外です。",
+        "timing": "GCC High/DoDは2026年8月開始、9月下旬完了。Worldwideは既に有効です。",
+        "action": "ユーザー・管理者の操作は不要です。"
+      },
+      "japaneseDetailedSummary": "OutlookおよびExchange Onlineの共有予定表を、従来のMAPIモデルから新しいRESTモデルへサーバー側で自動アップグレードします。同期の信頼性・性能・一貫性が向上し、ユーザーや管理者の操作は不要です。2026年7月20日にタイムラインが更新され、GCC High/DoDでは2026年8月開始、9月下旬完了(従来は6月末開始、7月下旬完了)となりました。Worldwideでは既に全テナントで有効です。対象はExchange Onlineを使うテナントで、共有予定表に編集者以上の権限を持つユーザーや代理人です。新しい予定表フォルダーは非表示で作成され、同期の完了と検証後に表示されます。1年より古い予定は初回同期から除外されますが、期間内以降に該当する定期的な予定は含まれます。権限や共有関係は維持され、データ損失は想定されません。当初は代理人/プリンシパルごとに最大4つ、将来的に6つまで対象で、6つを超える場合は対象外です。",
+      "japaneseBodyTranslation": "2026年7月20日更新:タイムラインを更新しました。\n[はじめに]\nMicrosoftは、OutlookとExchange Onlineの共有予定表を、従来のMAPIベースのモデルから最新のRESTベースのモデルへ自動アップグレードします。このサーバー側アップグレードにより、共有予定表にアクセスする代理人やユーザーの同期の信頼性、パフォーマンス、一貫性が向上します。変更はシームレスに行われ、ユーザーや管理者の操作は不要です。\n[いつ行われるか]\n一般提供(Worldwide):現時点でWWの全テナントで有効かつ利用可能です。現在、より上位のリングへ拡大しています。\nGCC High/DoD:2026年8月に展開開始(従来は6月末)、2026年9月下旬に完了(従来は7月下旬)。\n注:展開は段階的で、テナントによりタイミングが異なる場合があります。\n[組織への影響]\n対象:\n• Exchange Onlineを使用するMicrosoft 365テナント\n• ユーザーまたは共有メールボックスの共有予定表に対して編集者以上の権限を持つユーザー\n• Outlookで共有予定表にアクセスする代理人およびユーザー\n実施内容:\n• 共有予定表はMAPIモデルからRESTモデルへ自動アップグレードされます。\n• 新しい予定表フォルダーは非表示状態で作成され、完全な同期が正常に完了し検証された後にユーザーに表示されます。\n• 移行はシームレスで、通常のワークフローは中断されない見込みです。\n• 1年より古い予定は初回同期から除外されます。ただし、1年の期間内またはそれ以降に該当するインスタンスを持つ定期的な予定は同期に含まれます。\n• 既存の権限と共有関係は維持され、再共有や権限のリセットは不要です。\n• アップグレードは完全自動で、Outlookの再起動やプロファイル再作成などの手動手順は不要です。\n• この変更によるデータ損失は想定されていません。\n• 当初は代理人またはプリンシパルあたり最大4つの共有予定表が自動アップグレード対象で、時間とともに6つまで拡大します。6つを超える共有予定表を管理する場合は対象外で、現在の設定に変更はありません。\nクラシックOutlookの設定「共有予定表の改善を有効にする」への影響:\n• 移行後、クラシックOutlookは引き続き...(原文はここで途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "72a3c4bc777689ff0a157024639a83067e56b20a40cc01658cb1cbc94b2f10f3",
+      "validatedAt": "2026-10-25T21:02:23.5666949+00:00"
     },
     {
       "id": "MC1290821",
@@ -1219,22 +1272,6 @@
       "sourceTruncated": false,
       "sourceHash": "c021c33b5bdb7be4d344ccb7e261b1eb75ee78e8fdb6b08f7d488273c7ca6049",
       "validatedAt": "2026-10-24T07:29:17.8284294+00:00"
-    },
-    {
-      "id": "MC1459132",
-      "japaneseTitle": "Edge の WIP と MDAG のサポートを終了",
-      "japaneseFacts": {
-        "change": "Edge での WIP と MDAG のサポートが削除され、Edge 154 以降で動作しなくなります。",
-        "impact": "Windows 10 の Edge で WIP または MDAG を有効化した組織が対象で、未使用なら影響なしです。",
-        "timing": "2026年9月下旬に全世界で展開開始、同月下旬に完了予定です。",
-        "action": "使用状況を確認し、Purview、DLP、Intune アプリ保護などへの移行を計画します。"
-      },
-      "japaneseDetailedSummary": "Microsoft Edge における Windows Information Protection (WIP) と Microsoft Defender Application Guard (MDAG) のサポートが終了します。これらは Windows では既に非推奨で、Windows 11 24H2 では利用できません。展開は2026年9月下旬に開始し、同月下旬に完了予定です。完了後は Edge 154 以降でこれらの機能は動作しません。影響を受けるのは Windows 10 上の Edge で WIP または MDAG を有効化している組織のみで、既定では無効のため未使用なら影響はありません。WIP の代替は Microsoft Purview Information Protection、Purview DLP、Endpoint DLP、Intune アプリ保護ポリシー、MDAG の代替は Edge の組み込みセキュリティ機能などです。使用状況を確認し移行を計画してください。延長が必要な場合は Microsoft サポートまたはアカウントチームへ連絡します。",
-      "japaneseBodyTranslation": "【内容と理由】\nMicrosoft Edge における Windows Information Protection (WIP) と Microsoft Defender Application Guard (MDAG) のサポートを終了します。これらの機能は Windows で既に非推奨となっており、Windows 11 バージョン 24H2 では利用できません。\n推奨される代替策:\n• WIP:Microsoft Purview Information Protection、Microsoft Purview データ損失防止 (DLP)、Endpoint DLP、Intune アプリ保護ポリシー\n• MDAG:Microsoft Edge の組み込みセキュリティ機能、およびお客様の環境に適した他のサポート対象の分離ソリューション\n【展開スケジュール】\n• 全世界:2026年9月下旬に開始し、9月下旬に完了予定\n【組織への影響】\n対象:Windows 10 デバイスの Microsoft Edge で WIP または MDAG を構成している組織。これらの機能は既定で無効で、管理者が有効化する必要があります。一度も有効にしていない組織は影響を受けません。どちらも Windows 10 向けに設計され Windows 11 24H2 では既に利用不可のため、影響を受ける Windows 10 デバイスは比較的少数です。\n対象プラットフォーム:Microsoft Edge(Edge for Business を含む)、WIP または MDAG を使用する Windows 10 デバイス\n発生すること:\n• Edge における WIP と MDAG のサポートが削除されます。\n• 展開完了後、Microsoft Edge 154 以降ではこれらの機能は動作しません。\n• 利用中の組織はサポートされる代替策へ移行してください。\n• Windows 11 24H2 デバイスは、既にプラットフォームから削除されているため影響を受けない見込みです。\n【必要な対応と推奨事項】\nEdge と Windows のセキュリティ構成を確認し、WIP または MDAG がまだ使われているか判断してください。\nWIP を使用している場合は、Microsoft Purview Information Protection、Purview DLP と Endpoint DLP、必要に応じて Intune アプリ保護ポリシーへの移行を計画してください。\nMDAG を使用している場合は、Edge のサポートされるセキュリティ機能や、要件を満たす代替の分離技術を評価してください。\n2026年9月下旬の展開完了までに移行作業を計画してください。\n移行に追加の時間が必要な場合は、Microsoft サポートまたはアカウントチームに連絡してください。\n詳細:Announcing the sunset(以降は原文が切り詰められています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "fbed7afcc9b0877e59eae4ed66ff8a1bdfe2765c234fd213d5b5b5fadfb9572e",
-      "validatedAt": "2026-10-20T23:17:53.3058456+00:00"
     },
     {
       "id": "MC1459133",
@@ -1971,57 +2008,9 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
-      "id": "MC1287370",
-      "japaneseTitle": "共有予定表をMAPIからREST方式へ自動アップグレード(時期更新)",
-      "japaneseFacts": {
-        "change": "共有予定表がMAPIモデルからRESTモデルへサーバー側で自動アップグレードされます。",
-        "impact": "Exchange Onlineで共有予定表に編集者以上の権限を持つユーザーや代理人が対象で、6つを超えて管理する場合は対象外です。",
-        "timing": "GCC High/DoDは2026年8月開始、9月下旬完了。Worldwideは既に有効です。",
-        "action": "ユーザー・管理者の操作は不要です。"
-      },
-      "japaneseDetailedSummary": "OutlookおよびExchange Onlineの共有予定表を、従来のMAPIモデルから新しいRESTモデルへサーバー側で自動アップグレードします。同期の信頼性・性能・一貫性が向上し、ユーザーや管理者の操作は不要です。2026年7月20日にタイムラインが更新され、GCC High/DoDでは2026年8月開始、9月下旬完了(従来は6月末開始、7月下旬完了)となりました。Worldwideでは既に全テナントで有効です。対象はExchange Onlineを使うテナントで、共有予定表に編集者以上の権限を持つユーザーや代理人です。新しい予定表フォルダーは非表示で作成され、同期の完了と検証後に表示されます。1年より古い予定は初回同期から除外されますが、期間内以降に該当する定期的な予定は含まれます。権限や共有関係は維持され、データ損失は想定されません。当初は代理人/プリンシパルごとに最大4つ、将来的に6つまで対象で、6つを超える場合は対象外です。",
-      "japaneseBodyTranslation": "2026年7月20日更新:タイムラインを更新しました。\n[はじめに]\nMicrosoftは、OutlookとExchange Onlineの共有予定表を、従来のMAPIベースのモデルから最新のRESTベースのモデルへ自動アップグレードします。このサーバー側アップグレードにより、共有予定表にアクセスする代理人やユーザーの同期の信頼性、パフォーマンス、一貫性が向上します。変更はシームレスに行われ、ユーザーや管理者の操作は不要です。\n[いつ行われるか]\n一般提供(Worldwide):現時点でWWの全テナントで有効かつ利用可能です。現在、より上位のリングへ拡大しています。\nGCC High/DoD:2026年8月に展開開始(従来は6月末)、2026年9月下旬に完了(従来は7月下旬)。\n注:展開は段階的で、テナントによりタイミングが異なる場合があります。\n[組織への影響]\n対象:\n• Exchange Onlineを使用するMicrosoft 365テナント\n• ユーザーまたは共有メールボックスの共有予定表に対して編集者以上の権限を持つユーザー\n• Outlookで共有予定表にアクセスする代理人およびユーザー\n実施内容:\n• 共有予定表はMAPIモデルからRESTモデルへ自動アップグレードされます。\n• 新しい予定表フォルダーは非表示状態で作成され、完全な同期が正常に完了し検証された後にユーザーに表示されます。\n• 移行はシームレスで、通常のワークフローは中断されない見込みです。\n• 1年より古い予定は初回同期から除外されます。ただし、1年の期間内またはそれ以降に該当するインスタンスを持つ定期的な予定は同期に含まれます。\n• 既存の権限と共有関係は維持され、再共有や権限のリセットは不要です。\n• アップグレードは完全自動で、Outlookの再起動やプロファイル再作成などの手動手順は不要です。\n• この変更によるデータ損失は想定されていません。\n• 当初は代理人またはプリンシパルあたり最大4つの共有予定表が自動アップグレード対象で、時間とともに6つまで拡大します。6つを超える共有予定表を管理する場合は対象外で、現在の設定に変更はありません。\nクラシックOutlookの設定「共有予定表の改善を有効にする」への影響:\n• 移行後、クラシックOutlookは引き続き...(原文はここで途切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "72a3c4bc777689ff0a157024639a83067e56b20a40cc01658cb1cbc94b2f10f3",
-      "validatedAt": "2026-10-25T21:02:23.5666949+00:00"
-    },
-    {
-      "id": "MC1282571",
-      "japaneseTitle": "ExcelのCopilot入口を右側チャットペインに集約",
-      "japaneseFacts": {
-        "change": "ExcelのCopilot入口を単一の場所に集約し、右側チャットペインのExcelエージェントを主要UIにします。",
-        "impact": "Copilotが有効なWindows/macOS/Web版Excelユーザー(Microsoft 365 Copilot Premiumライセンス必要)が対象です。",
-        "timing": "Worldwideは2026年4月下旬〜6月初旬、GCC/GCC High/DoDは2026年10月初旬〜10月下旬です。",
-        "action": "対応は不要です。ユーザー周知、資料更新、ヘルプデスクへの共有は任意です。"
-      },
-      "japaneseDetailedSummary": "ExcelでのCopilotへのアクセス方法を変更し、複数あった入口を1か所に集約します。セル選択時や右クリックメニューに表示されていた一部のCopilot入口は削除され、一貫した隅の位置に単一の入口が表示されます。右側チャットペインのExcelエージェント(編集モード)が主要なCopilotインターフェースになります。対象はWindows、macOS、Web版ExcelでCopilotが有効なユーザーで、Microsoft 365 Copilot(Premium)ライセンスが必要です。Copilotの提供状況、ライセンス、既存の管理ポリシーは変わらず、Copilotアクセスを持つユーザーには既定でオンです。Worldwideは2026年4月下旬〜6月初旬、GCC/GCC High/DoDは2026年10月初旬〜10月下旬に展開されます。対応は不要ですが、ユーザーへの周知、社内資料の更新、ヘルプデスクへの共有が任意で推奨されます。",
-      "japaneseBodyTranslation": "[はじめに]\nMicrosoft 365アプリ全体でより明確で一貫性があり直感的な体験を提供するため、ExcelでのCopilotへのアクセス方法を更新します。複数のCopilotの入口を1つの予測しやすい場所に集約し、右側チャットペインのExcel編集モードを主要なCopilotインターフェースとします。この更新により、発見しやすさが向上し、ユーザーのワークフローが簡素化され、ExcelのCopilot体験が他のMicrosoft 365アプリと整合します。\n[いつ行われるか]\n• 一般提供(Worldwide):2026年4月下旬に展開開始、6月初旬に完了予定。\n• 一般提供(GCC、GCC High、DoD):2026年10月初旬に展開開始、10月下旬に完了予定。\n[組織への影響]\n対象:\n• Copilotが有効な、Windows、macOS、Web上のExcel向けMicrosoft 365アプリの全ユーザー。\n• この機能の利用にはMicrosoft 365 Copilot(Premium)ライセンスが必要です。\n実施内容:\n• セル選択時や右クリックメニューに表示される一部のCopilot入口が削除されます。\n• Excel内の一貫した隅の位置に、統合された単一のCopilot入口が表示されます。\nスクリーンショット:更新されたExcelの入口\n• 右側チャットペインのExcelエージェントが、Copilotのプロンプトと応答の主要なインターフェースになります。\n• Copilotの提供状況、ライセンス、既存の管理ポリシーは変わりません。\n• 既にCopilotにアクセスできるユーザーには既定でオンです。\n[準備のためにできること]\n対応は不要です。\n任意で以下を実施できます:\n• 更新されたCopilotの入口とチャット形式の体験についてユーザーに周知する。\n• 特定のCopilotボタンやメニューを参照する社内ドキュメントや研修資料を更新する。\n• 展開中のユーザーからの問い合わせに備えてヘルプデスクに通知する。\n[コンプライアンス上の考慮事項]\nコンプライアンス領域/説明\nエンドユーザーに生成AIとの新しい対話方法を提供しますか?\nユーザーは、Excel内の複数のコンテキスト入口ではなく、主に右側チャットペインを通じてCopilotを利用します。",
-      "sourceCharacterCount": 2141,
-      "sourceTruncated": false,
-      "sourceHash": "f4625248aa1f9b834ab1e94817f529cee257d1cd55999a5a614f6f370a4adff7",
-      "validatedAt": "2026-10-25T21:02:23.5737128+00:00"
-    },
-    {
-      "id": "MC1282568",
-      "japaneseTitle": "Windows版Entraパスキーが一般提供へ(GCC High/DoD時期更新)",
-      "japaneseFacts": {
-        "change": "Windows上のEntraパスキーがGAとなり、Windows Hello AAGUIDの明示的な許可が不要になります。",
-        "impact": "非構成証明のデバイス固定パスキーを許可するプロファイルの対象ユーザーが、既定でWindowsパスキーを登録・利用できます。",
-        "timing": "GCC High/DoDは2026年10月初旬開始、10月下旬完了。Worldwide/GCCは4月下旬〜6月中旬です。",
-        "action": "必要な対応は原文に記載なし(プロファイルや条件付きアクセス設定の確認が関連します)。"
-      },
-      "japaneseDetailedSummary": "Windows上のMicrosoft Entraパスキーが一般提供(GA)となり、Windows Helloのコンテナーに保存されるデバイス固定パスキーで、フィッシング耐性のあるパスワードレスサインインが可能になります。Entra参加/登録されていない個人用・共有PCにも対象が広がります。2026年7月20日にタイムラインが更新され、GCC High/DoDは2026年10月初旬開始(従来は9月初旬)、10月下旬完了(従来は9月下旬)です。Worldwide/GCCは2026年4月下旬開始、6月中旬完了予定です。GAではWindows HelloのAAGUID許可リストによる明示的なオプトインが不要になります。デバイス固定の非構成証明パスキーを許可するパスキープロファイルの対象ユーザーは、既定でWindows上でパスキーを登録・利用できるようになります。条件付きアクセスが許可すれば、未参加デバイスでも作成・利用でき、デバイスとEntraアカウントごとに個別登録が必要です。",
-      "japaneseBodyTranslation": "2026年7月20日更新:タイムラインを更新しました。\n[はじめに]\nWindows上のMicrosoft Entraパスキーがまもなく一般提供されます。Windowsデバイスから、Microsoft Entraで保護されたリソースへフィッシング耐性のあるパスワードレスサインインが可能になります。\nこのパブリックプレビューは以前MC1247893で告知されました。\nユーザーはWindows Helloコンテナーに保存されるデバイス固定パスキーを作成し、Windows Hello(顔、指紋、PIN)で認証できます。これにより、Microsoft Entra参加または登録されていないWindowsデバイスにもパスワードレス認証が拡大し、企業管理デバイス、個人デバイス、共有デバイスのシナリオでセキュリティ強化とパスワード依存の低減に役立ちます。\n[いつ行われるか]\n• 一般提供(Worldwide、GCC):2026年4月下旬に展開開始、6月中旬に完了予定。\n• 一般提供(GCC High、DoD):2026年10月初旬に展開開始(従来は9月初旬)、10月下旬に完了予定(従来は9月下旬)。\n組織への影響:\n対象:認証方法ポリシーでパスキーを有効にしたMicrosoft Entra IDを利用し、ユーザーがWindowsデバイスからサインインする組織(企業管理PC、個人デバイス、共有デバイス)。\n実施内容:\n• Windows上のMicrosoft Entraパスキーは、パスキー(FIDO2)プロファイルでのWindows Hello AAGUID許可リストによる明示的なオプトインが不要になります。\n• パブリックプレビューでは、管理者がWindows Hello AAGUIDを明示的に許可する必要がありました。\n• パスキープロファイルがデバイス固定の非構成証明パスキーを許可している場合:\n• 対象ユーザーは追加の管理者設定なしで、既定でWindows上のパスキーを登録・利用できます。\n• その結果:\n• 該当ユーザーがWindowsデバイスでパスキーの登録・利用を開始する可能性があります。\n• 条件付きアクセスが許可する場合:\n• Microsoft Entra参加/登録されていない個人用・共有PCを含むWindowsデバイスでパスキーを作成・利用できます。\n• 各Windowsデバイスで、Entraアカウントごとに個別のパスキー登録が必要です。\n• Windows Hello for Businessは引き続き推奨されます...(原文はここで途切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "cdd33e0f9dd09aac2a1441f595a92c36ee3042baee1df5fa4aed32f79f3d56fc",
-      "validatedAt": "2026-10-25T21:02:23.5715331+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-10-22T07:48:45.0036563+00:00",
-  "summarySourceHash": "bff737798865b4129845ecb643722f3edad36cdf9cb81b41658ca73b19157c7c",
-  "sourceAgentRunId": "39742636795"
+  "summarySourceHash": "13506b84bb9e105f3145e24ef95b819f1b72852daf9e17a2848c71a6e7d22fd5",
+  "summaryGeneratedAt": "2026-10-26T07:58:49.6232839+00:00",
+  "sourceAgentRunId": "40288792060"
 }
