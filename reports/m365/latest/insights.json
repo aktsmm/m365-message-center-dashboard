@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T15:22:11.0328839+00:00",
+  "generatedAt": "2026-10-26T21:09:03.6849422+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証・ブランディング変更とTargeted Release廃止、Office LTSC 2021サポート終了への対応が優先",
   "executiveSummary": "今週の最優先はMicrosoft Entra関連のセキュリティ強化です。MC1325414ではSSPRが明示的に登録された認証方法を要求する方針で、タイトルに2026年11月9日開始と示されています。MC1506733では11月4日から既定ユーザーがエージェントブループリントを作成可能になるため、不要なら管理者による設定変更が必要です。MC1458474/MC1481309はサインインのカスタムCSS廃止とCSP強化で、独自ブランディングやスクリプトを使う組織が対象です。MC1490899はTargeted Releaseが2027年1月に廃止され、Frontier/Standard/Deferredへの設定見直しを求めています。MC1509797はOffice LTSC 2021等のサポートが2026年10月13日に終了済みで、セキュリティ更新が提供されません。なお、抜粋に含まれない詳細な対象範囲や手順は不明であり、各MC本文での確認が必要です。",
@@ -737,13 +737,6 @@
       "sourceTruncated": false,
       "sourceHash": "047496cbb5c9751edd6ac5c3da7e2a7b27abf3190603d7754af797042b734d47",
       "validatedAt": "2026-10-21T12:06:52.9262586+00:00"
-    },
-    {
-      "id": "MC1191924",
-      "japaneseDetailedSummary": "Microsoft Entra ID のサインインページに新しいコンテンツ セキュリティ ポリシー (CSP) が追加されます。これにより、Microsoft の信頼済みドメインからのスクリプトのみが認証中に実行され、外部からの不正スクリプトの挿入（クロスサイト スクリプティングなど）がブロックされます。本変更はマイクロソフトのセキュア フューチャー イニシアチブの一環です。対象は login.microsoftonline.com を使用するブラウザーベースのサインイン環境を持つ組織で、Microsoft Entra External ID テナントは影響を受けません。ロールアウトは 2026 年 10 月中旬に開始し、10 月下旬に完了予定です。ほとんどの組織では対応不要ですが、カスタム スクリプトを認証フローに組み込んでいる場合は動作確認が必要です。",
-      "japaneseBodyTranslation": "はじめに\nマイクロソフトのセキュア フューチャー イニシアチブの一環として、Microsoft Entra ID サインイン エクスペリエンスのコンテンツ セキュリティ ポリシーを更新します。この変更により、認証中に実行できるスクリプトをマイクロソフトの信頼済みドメインのみに限定する保護レイヤーが追加され、不正または注入された外部コードがブロックされます。この予防的な対策により、クロスサイト スクリプティング（XSS）などの脅威からユーザーを守り、組織のセキュリティをさらに強化します。\n\nいつ発生するか\n一般提供（運用環境/ワールドワイドのみ）：\n• ロールアウト開始：2026 年 10 月中旬\n• 完了予定：2026 年 10 月下旬\nリリース近くになると定期的な通知が送付されます。\n\n組織への影響\n影響を受ける対象：\n• login.microsoftonline.com で始まる URL でブラウザーベースのサインイン エクスペリエンスを使用している組織。\n• Microsoft Entra External ID テナントへの影響はありません。\n\n発生すること：\n• Microsoft Entra サインイン ページに新しいコンテンツ セキュリティ ポリシー ヘッダーが追加されます。",
-      "sourceCharacterCount": 1000,
-      "sourceTruncated": true
     },
     {
       "id": "MC1192661",
@@ -1994,22 +1987,6 @@
       "validatedAt": "2026-10-22T13:58:57.5837574+00:00"
     },
     {
-      "id": "MC985483",
-      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
-      "japaneseFacts": {
-        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
-        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
-        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
-        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
-      "sourceCharacterCount": 1148,
-      "sourceTruncated": false,
-      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
-      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
       "id": "MC1520901",
       "japaneseTitle": "Insights Agent V2がFrontierで利用可能、フィードバック共有は既定オフ",
       "japaneseFacts": {
@@ -2056,6 +2033,38 @@
       "sourceTruncated": false,
       "sourceHash": "f02f96f617237063d29f7f7a4dacb052113885aa3bad824f4cb17c8ed6be52ee",
       "validatedAt": "2026-10-26T15:22:11.0141009+00:00"
+    },
+    {
+      "id": "MC985483",
+      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
+      "japaneseFacts": {
+        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
+        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
+        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
+        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
+      "sourceCharacterCount": 1148,
+      "sourceTruncated": false,
+      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
+      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1191924",
+      "japaneseTitle": "Entra IDサインインで外部スクリプト挿入をCSPでブロック",
+      "japaneseFacts": {
+        "change": "Entra IDサインインページにContent Security Policyヘッダーが追加され、Microsoft信頼CDNドメインのスクリプトのみ許可されます。",
+        "impact": "login.microsoftonline.comのブラウザサインインを使う組織が対象で、コードを挿入するブラウザ拡張やツールは動作しなくなります(サインインは可能)。External ID テナントは影響なしです。",
+        "timing": "2026年10月中旬に展開開始、10月下旬に完了予定です(本番/Worldwideのみ)。",
+        "action": "コード挿入ツールを使っていなければ不要です。使用中なら非挿入型の代替へ切り替え、展開前にサインインフローをテストしてください。"
+      },
+      "japaneseDetailedSummary": "Microsoftの Secure Future Initiative の一環として、Microsoft Entra IDサインイン体験のContent Security Policyが更新されます。認証中は信頼されたMicrosoftドメインのスクリプトのみ実行を許可し、XSSなどの外部・挿入コードをブロックします。対象はlogin.microsoftonline.comで始まるURLのブラウザサインインを使う組織で、Entra External IDテナントは影響を受けません。サインインページにCSPヘッダーが追加され、スクリプトは信頼されたMicrosoft CDNドメインから、インラインスクリプトは信頼されたMicrosoftソースからのみ許可されます。ページにコードを挿入するブラウザ拡張やツールは動作しなくなりますが、サインイン自体は可能です。展開は2026年10月中旬開始、10月下旬完了予定(本番/Worldwideのみ)。該当ツールを使わなければ対応不要で、使う場合は代替へ切り替え、事前にテストしてください。",
+      "japaneseBodyTranslation": "はじめに\nMicrosoftのSecure Future Initiativeの一環として、Microsoft Entra IDサインイン体験のContent Security Policyを更新します。この変更により、認証中は信頼されたMicrosoftドメインのスクリプトのみ実行を許可し、未承認または挿入された外部コードをブロックする保護が追加されます。この事前対策は、クロスサイトスクリプティング(XSS)などの脅威からユーザーを保護し、組織のセキュリティをさらに強化します。\n実施時期\n一般提供(本番/Worldwideのみ):\n• 2026年10月中旬に展開開始\n• 2026年10月下旬に完了予定\nリリースが近づいたら定期的に通知します。\n組織への影響\n影響を受ける対象:\n• login.microsoftonline.comで始まるURLのブラウザベースのサインインを使用する組織。\n• Microsoft Entra External IDテナントへの影響はありません。\n実施される内容:\n• Microsoft Entraサインインページに新しいContent Security Policyヘッダーが追加されます。\n• スクリプトはMicrosoftの信頼されたCDNドメインからのみ許可されます。\n• インラインスクリプトの実行は信頼されたMicrosoftソースからのみ許可されます。\n• サインインページにコードを挿入するブラウザ拡張やツールは動作しなくなりますが、ユーザーはサインインできます。\n準備のためにできること\n• サインイン体験にコードを挿入するツールや拡張機能を使用していない場合、対応は不要です。\n• そのようなツールを使用している場合は、コードを挿入しない代替手段に切り替えてください。\n• 展開前にサインインフローを十分にテストし、問題を早期に特定・解決してください。テスト手順はMicrosoft Entra IDのCSPガイドにあります。\n詳細情報:\n• Microsoft Entra IDのContent Security Policy概要\n• TechcommunityのMicrosoft Entra ID Content Security Policy公開ブログ\n• Microsoft Secure Future Initiative\n• CSP nonceガイド | CSPクイックリファレンスガイド\n• CSP script-srcディレクティブガイド | CSPクイックリファレンスガイド\n• なぜXSSは今も重要か:25年来の脅威に関するMSRCの見解 | Microsoftブログ\nコンプライアンス上の考慮事項\n特記すべきコンプライアンス上の考慮事項は確認されていません。組織に応じて確認してください。",
+      "sourceCharacterCount": 2195,
+      "sourceTruncated": false,
+      "sourceHash": "6ec6403f323f5096fb9518b3965ab4633cf0acd1de0f3109d17736bd761bc664",
+      "validatedAt": "2026-10-26T21:09:03.6630039+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-10-26T07:58:49.6232839+00:00",
