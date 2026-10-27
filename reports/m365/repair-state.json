@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "observedAt": "2026-10-26T21:05:37.7860593+00:00",
+  "observedAt": "2026-10-27T01:31:40.7333985+00:00",
   "snapshotGeneratedAt": "2026-10-26T00:24:32.3186601+00:00",
   "summary": {
     "status": "current",
     "reason": ""
   },
   "translations": {
-    "pending": 1,
-    "current": 88,
+    "pending": 0,
+    "current": 89,
     "total": 89
   },
   "attempts": {
@@ -24,8 +24,8 @@
     }
   },
   "action": {
-    "status": "dispatched",
-    "workflow": "m365-weekly-translations.lock.yml",
-    "lane": "translations"
+    "lane": null,
+    "workflow": null,
+    "status": "not_needed"
   }
 }
