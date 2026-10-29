@@ -1,20 +1,22 @@
 {
-  "generatedAt": "2026-10-26T21:09:03.6849422+00:00",
+  "generatedAt": "2026-10-29T02:01:28.4610229+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra認証・ブランディング変更とTargeted Release廃止、Office LTSC 2021サポート終了への対応が優先",
-  "executiveSummary": "今週の最優先はMicrosoft Entra関連のセキュリティ強化です。MC1325414ではSSPRが明示的に登録された認証方法を要求する方針で、タイトルに2026年11月9日開始と示されています。MC1506733では11月4日から既定ユーザーがエージェントブループリントを作成可能になるため、不要なら管理者による設定変更が必要です。MC1458474/MC1481309はサインインのカスタムCSS廃止とCSP強化で、独自ブランディングやスクリプトを使う組織が対象です。MC1490899はTargeted Releaseが2027年1月に廃止され、Frontier/Standard/Deferredへの設定見直しを求めています。MC1509797はOffice LTSC 2021等のサポートが2026年10月13日に終了済みで、セキュリティ更新が提供されません。なお、抜粋に含まれない詳細な対象範囲や手順は不明であり、各MC本文での確認が必要です。",
-  "thisWeek": "MC1325414: SSPR登録済み認証方法必須化(タイトル上は2026年11月9日開始)に向け、ユーザーの認証方法登録状況を確認する\nMC1506733: 11月4日開始前に「Users can create agent blueprints」を許可するか方針を決め、不要なら無効化する\nMC1458474: カスタムCSSのレイアウト/配置プロパティを使用中か確認する(2026年7月21日時点で未使用の組織は影響なしとされています)\nMC1509797: Office LTSC 2021、Visio/Project LTSC 2021等の利用端末を棚卸しし、サポート対象バージョンへの移行計画を立てる",
-  "thisMonth": "MC1490899: Targeted Release登録ユーザーを確認し、Microsoft 365管理センターでFrontier/Standard/Deferredの方針を設定する(2027年1月廃止)\nMC1481309: サインイン画面で外部スクリプトに依存するカスタマイズがないか確認する(ロールアウトは2026年10月中旬開始とされています)\nMC1474104: SMS第一要素サインインの利用状況を確認し、パスキー等のフィッシング耐性のある方式への移行を計画する",
-  "watch": "MC1474104: SMS第一要素サインイン廃止の次フェーズの詳細(抜粋では具体的な日付は未提示)\nMC1506733: 11月上旬から下旬にかけてのロールアウト進捗",
-  "customerQuestions": "SSPRで未登録の連絡先情報(携帯電話・代替メール)に依存しているユーザーはどれくらいいますか?\n一般ユーザーによるエージェントブループリント作成を許可する方針ですか?\nEntraサインイン画面でカスタムCSSや外部スクリプトを使っていますか?\nTargeted Release対象ユーザーをどのリリース設定(Frontier/Standard/Deferred)に移行しますか?\nOffice LTSC 2021等のサポート終了製品はどの程度残っていますか?",
+  "headline": "カナダ時間帯変更・eMudhra証明書失効・Entra認証/エージェント権限変更が今週の最優先",
+  "executiveSummary": "今週は期限が近い順に、(1) カナダ一部地域が2026年11月1日に時計を戻さない件でOutlook/Exchange予定やTeams Roomsに影響(MC1526468)、(2) eMudhra中間CA鍵の問題に伴いWindows/Edge/WebView2で該当CAがブロックされる信頼更新が10月下旬に展開(MC1529467)、(3) Targeted releaseが2027年1月に廃止され、11月にユーザー追加・変更ができなくなる(MC1490899)が重要です。Entraでは既定ユーザーによるエージェントblueprint作成が11月初旬から可能になり(MC1506733)、SSPRは登録済み認証方法必須化(MC1325414)、Microsoft提供SMS/音声認証は2027年2月1日から廃止(MC1528000)されます。Office LTSC 2021等のサポートは2026年10月13日に終了済みです(MC1509797)。なお抜粋に記載のない日程・要件は不明であり、「存在しない」ことを意味しません。",
+  "thisWeek": "MC1526468: 11月1日のカナダ(BC州・アルバータ州・マニトバ州等)の時間帯変更に向け、対象ユーザーのOutlook予定・定期会議とTeams Roomsの時刻表示を確認する(予定は自動移行されない)\nMC1529467: Windows/Edge/WebView2環境で、eMudhra階層に連なる証明書を利用していないか確認する(展開は10月下旬)\nMC1490899: Targeted release登録ユーザーを確認し、10月31日(アクション期限)までにFrontier/Standard/Deferredの方針を決めて設定する\nMC1506733: 既定ユーザーにエージェントblueprint作成を許可したくない場合、11月4日の開始前に「Users can create agent blueprints」の設定を確認する\nMC1325414: 11月6日期限に向け、SSPR利用ユーザーの認証方法登録状況を確認する\nMC1470871: User.ReadBasic.Allでアプリ役割割り当て/ライセンス詳細を読んでいるアプリがないか確認する(展開は10月30日までの予定)",
+  "thisMonth": "MC1528000: 2027年2月1日の廃止前に、SMS/音声利用ユーザーをパスキー等へ移行するか、顧客管理テレフォニープロバイダー(CYOT)を構成する計画を立てる\nMC1509797: Office LTSC 2021、Visio/Project LTSC 2021等の利用端末を棚卸しし、サポート対象バージョンへの移行計画を作る\nMC1528009: 11月下旬〜12月中旬に展開される一部Search Analytics(Summary、User/Query、Answer)の廃止に備え、現在のレポート利用有無を確認する",
+  "watch": "MC1529467: 抜粋では影響を受ける具体的な証明書の確認手順は全文未提示のため、展開後の影響報告を監視する\nMC1526468: Teams Rooms等の追加影響や更新投稿を継続して確認する\nMC1490899: 11月に管理者がTargeted releaseのユーザー設定を変更できなくなる点の進捗を監視する",
+  "customerQuestions": "カナダ(BC州・アルバータ州・マニトバ州・NWT・オンタリオ州北西部)に拠点、ユーザー、会議室デバイスはありますか。(MC1526468)\nWindows/Edge/WebView2上でeMudhra発行の証明書やコード署名を利用する業務アプリ・サイトはありますか。(MC1529467)\nTargeted releaseに登録されているユーザーは誰で、今後Frontier・Standard・Deferredのどれにしますか。(MC1490899)\n一般ユーザーにエージェントblueprint作成を許可してよいですか。(MC1506733)\nSMS/音声認証を使っているユーザー数と、パスキーまたはCYOTへの移行方針はどうなっていますか。(MC1528000)\nOffice LTSC 2021や関連製品はまだ稼働していますか。(MC1509797)",
   "referencedIds": [
     "MC1325414",
-    "MC1458474",
-    "MC1474104",
-    "MC1481309",
+    "MC1470871",
     "MC1490899",
     "MC1506733",
-    "MC1509797"
+    "MC1509797",
+    "MC1526468",
+    "MC1528000",
+    "MC1528009",
+    "MC1529467"
   ],
   "messageUpdates": [
     {
@@ -95,13 +97,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1238432",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1278920",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
@@ -175,13 +170,6 @@
       "id": "MC1422061",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2027年4月30日 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1423108",
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -322,13 +310,6 @@
       "id": "MC1462460",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1462914",
-      "japaneseTitle": "Microsoft 365 Copilot Chat、Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat、Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -634,6 +615,62 @@
       "learnUrls": []
     },
     {
+      "id": "MC1526468",
+      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ",
+      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 高 です。対応期限は 2026年11月1日 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1526661",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1526676",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1528000",
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2027年2月1日 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1528006",
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1528009",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1529467",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1529472",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
       "id": "MC985483",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
@@ -739,6 +776,22 @@
       "validatedAt": "2026-10-21T12:06:52.9262586+00:00"
     },
     {
+      "id": "MC1191924",
+      "japaneseTitle": "Entra IDサインインで外部スクリプト挿入をCSPでブロック",
+      "japaneseFacts": {
+        "change": "Entra IDサインインページにContent Security Policyヘッダーが追加され、Microsoft信頼CDNドメインのスクリプトのみ許可されます。",
+        "impact": "login.microsoftonline.comのブラウザサインインを使う組織が対象で、コードを挿入するブラウザ拡張やツールは動作しなくなります(サインインは可能)。External ID テナントは影響なしです。",
+        "timing": "2026年10月中旬に展開開始、10月下旬に完了予定です(本番/Worldwideのみ)。",
+        "action": "コード挿入ツールを使っていなければ不要です。使用中なら非挿入型の代替へ切り替え、展開前にサインインフローをテストしてください。"
+      },
+      "japaneseDetailedSummary": "Microsoftの Secure Future Initiative の一環として、Microsoft Entra IDサインイン体験のContent Security Policyが更新されます。認証中は信頼されたMicrosoftドメインのスクリプトのみ実行を許可し、XSSなどの外部・挿入コードをブロックします。対象はlogin.microsoftonline.comで始まるURLのブラウザサインインを使う組織で、Entra External IDテナントは影響を受けません。サインインページにCSPヘッダーが追加され、スクリプトは信頼されたMicrosoft CDNドメインから、インラインスクリプトは信頼されたMicrosoftソースからのみ許可されます。ページにコードを挿入するブラウザ拡張やツールは動作しなくなりますが、サインイン自体は可能です。展開は2026年10月中旬開始、10月下旬完了予定(本番/Worldwideのみ)。該当ツールを使わなければ対応不要で、使う場合は代替へ切り替え、事前にテストしてください。",
+      "japaneseBodyTranslation": "はじめに\nMicrosoftのSecure Future Initiativeの一環として、Microsoft Entra IDサインイン体験のContent Security Policyを更新します。この変更により、認証中は信頼されたMicrosoftドメインのスクリプトのみ実行を許可し、未承認または挿入された外部コードをブロックする保護が追加されます。この事前対策は、クロスサイトスクリプティング(XSS)などの脅威からユーザーを保護し、組織のセキュリティをさらに強化します。\n実施時期\n一般提供(本番/Worldwideのみ):\n• 2026年10月中旬に展開開始\n• 2026年10月下旬に完了予定\nリリースが近づいたら定期的に通知します。\n組織への影響\n影響を受ける対象:\n• login.microsoftonline.comで始まるURLのブラウザベースのサインインを使用する組織。\n• Microsoft Entra External IDテナントへの影響はありません。\n実施される内容:\n• Microsoft Entraサインインページに新しいContent Security Policyヘッダーが追加されます。\n• スクリプトはMicrosoftの信頼されたCDNドメインからのみ許可されます。\n• インラインスクリプトの実行は信頼されたMicrosoftソースからのみ許可されます。\n• サインインページにコードを挿入するブラウザ拡張やツールは動作しなくなりますが、ユーザーはサインインできます。\n準備のためにできること\n• サインイン体験にコードを挿入するツールや拡張機能を使用していない場合、対応は不要です。\n• そのようなツールを使用している場合は、コードを挿入しない代替手段に切り替えてください。\n• 展開前にサインインフローを十分にテストし、問題を早期に特定・解決してください。テスト手順はMicrosoft Entra IDのCSPガイドにあります。\n詳細情報:\n• Microsoft Entra IDのContent Security Policy概要\n• TechcommunityのMicrosoft Entra ID Content Security Policy公開ブログ\n• Microsoft Secure Future Initiative\n• CSP nonceガイド | CSPクイックリファレンスガイド\n• CSP script-srcディレクティブガイド | CSPクイックリファレンスガイド\n• なぜXSSは今も重要か:25年来の脅威に関するMSRCの見解 | Microsoftブログ\nコンプライアンス上の考慮事項\n特記すべきコンプライアンス上の考慮事項は確認されていません。組織に応じて確認してください。",
+      "sourceCharacterCount": 2195,
+      "sourceTruncated": false,
+      "sourceHash": "6ec6403f323f5096fb9518b3965ab4633cf0acd1de0f3109d17736bd761bc664",
+      "validatedAt": "2026-10-26T21:09:03.6630039+00:00"
+    },
+    {
       "id": "MC1192661",
       "japaneseTitle": "Edge ワークスペースを新アーキテクチャへ移行、共有機能は廃止",
       "japaneseFacts": {
@@ -801,22 +854,6 @@
       "sourceTruncated": true,
       "sourceHash": "5fa26ef79d052c24841d410927366e65ec91471d42f848dbccc3a7f3834ca756",
       "validatedAt": "2026-10-21T17:27:26.1221272+00:00"
-    },
-    {
-      "id": "MC1238432",
-      "japaneseTitle": "Microsoft 365 Copilotアプリにブランド フッターのカスタマイズが追加",
-      "japaneseFacts": {
-        "change": "Copilotアプリのチャット画面下部に、管理者が設定した組織ロゴとラベルのブランド フッターを表示可能になります。",
-        "impact": "Copilotアプリを使う全テナント。既定オフのため、管理者が有効化しない限りユーザーへの影響はありません。",
-        "timing": "Worldwide一般提供は2026年8月に開始(従来は7月中旬)、2026年9月中旬に完了予定(従来は7月末)。",
-        "action": "利用する場合のみ、管理センターの組織設定>カスタム テーマでロゴとフッター スタイルを設定します。"
-      },
-      "japaneseDetailedSummary": "Microsoft 365 Copilotアプリのチャット画面下部に、組織のロゴを表示するブランド フッター(共同ブランド)機能が導入されます。管理者はMicrosoft 365管理センターでロゴとラベル(Approved by/Provided by/Managed by/ラベルなし)を設定できます。ロゴは組織テーマで設定済みのものが使われ、他のテーマ設定は適用されません。既定はオフで管理者の設定が必要なため、有効化しない限りユーザーへの影響はありません。一般提供(Worldwide)は2026年8月に開始(従来は7月中旬)、2026年9月中旬に完了予定(従来は7月末)。対象はCopilotアプリを使う全テナント。現時点では全ユーザーに同一ロゴが適用され、グループ別ロゴは後日対応予定です。",
-      "japaneseBodyTranslation": "2026年9月17日更新:内容を更新しました。ご理解に感謝します。\n[はじめに]\nMicrosoft 365 Copilotアプリのチャット画面下部に、組織のブランド フッターを表示できる新しい共同ブランド機能を導入します。管理者は組織のロゴをユーザーのCopilotアプリに追加でき、ユーザーが信頼できる、組織管理のCopilot環境を使っていることを確認しやすくなります。\nこのメッセージはMicrosoft 365ロードマップID 555852に関連します。\n[実施時期]\n• 一般提供(Worldwide):2026年8月(以前は7月中旬)に展開を開始し、2026年9月中旬(以前は7月末)までに完了する予定です。\n[組織への影響]\n影響を受けるユーザー\n• Microsoft 365 Copilotアプリを使用するすべてのMicrosoft 365テナント。\n実施内容\n• 管理者はMicrosoft 365管理センターでロゴをアップロードし、Copilotアプリのフッターをカスタマイズできます。\n• フッターには、他のMicrosoft 365アプリ用に組織テーマで設定されたロゴと同じものが使われます。このリリースではロゴのみが使われ、その他のテーマ設定は適用されません。\n• 管理者はフッター ラベルとして「Approved by」「Provided by」「Managed by」を選択できます。「ラベルなし」を選ぶとラベルなしでロゴが表示されます。\n• この機能は既定でオフで、管理者の設定が必要です。\n• 管理者が有効にしない限り、ユーザーへの影響はありません。\n[準備のために]\nブランド フッターを有効にしたい場合を除き、対応は不要です。\n設定する管理者は次を行います:\n• Microsoft 365管理センターで[組織設定]>[カスタム テーマ]に移動し、既定のテーマを開きます。\n• [ロゴ]タブで組織のロゴが設定されていることを確認します。\n• [Copilot Chat]タブを開き、「Copilot Chatのフッター領域にブランドを追加する」を選択します。\n• [フッター スタイル]で「ラベルなし」「Approved by」「Provided by」「Managed by」から選びます。\n• 変更を保存すると、Copilotアプリのブランド フッターにロゴが表示されます。\n注:フッターは現在、組織の既定テーマを使い、全ユーザーに適用されます。特定のユーザー グループへ異なるロゴを割り当てることは、後の更新で対応予定です。\n構成ガイダンス:組織のテーマをカスタマイズする | Microsoft 365 | Microsoft Learn\n[コンプライアンスに関する考慮事項]\nコンプライアンス上の考慮事項は特定されて(以降は原文が途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "b946ae874224f05efadae5b38e7d9eb3ce7ca10bcf2de67933ad23c1ce26cc59",
-      "validatedAt": "2026-10-24T07:29:17.8221083+00:00"
     },
     {
       "id": "MC1278920",
@@ -993,22 +1030,6 @@
       "sourceTruncated": true,
       "sourceHash": "9921a40d31dc941469fabf9088e1e46364eded7362dc755b0a767d53f61146c1",
       "validatedAt": "2026-10-21T12:06:52.9204619+00:00"
-    },
-    {
-      "id": "MC1423108",
-      "japaneseTitle": "iOS版Authenticatorのパスキー復元体験を改善",
-      "japaneseFacts": {
-        "change": "iOS版Microsoft Authenticatorでデバイスバインドパスキーの復元フローが、より分かりやすいガイド付きUIに改善される。",
-        "impact": "パスキーを使うiOSユーザー、および新しいiOS端末でAuthenticatorを復元するユーザー。",
-        "timing": "一般提供(全世界)は2026年9月中旬(従来は8月)。",
-        "action": "対応は不要。ユーザーへの周知とヘルプデスク文書の更新を推奨。"
-      },
-      "japaneseDetailedSummary": "iOS版Microsoft Authenticatorで、デバイスバインドパスキーの復元体験が改善されます。新しい端末への移行時に、新規セットアップか既存からの復元かに応じたガイド付きUIが表示され、パスキーを使ったクロスデバイスサインインの説明も強化されます。対象はiOSのみで、Androidは後日対応です。iCloudとiCloudキーチェーンのバックアップが有効で、以前の端末にパスキーがあるユーザーが対象です。機能は既定で有効で、管理者設定やポリシーの変更はありません。一般提供は2026年9月中旬(従来は8月)。対応は不要ですが、ユーザーへの周知とヘルプデスク文書の更新が推奨されています。コンプライアンス上の懸念は特定されていません。",
-      "japaneseBodyTranslation": "2026年9月1日更新:タイムラインを更新しました。\n[概要と目的]\niOS版Microsoft Authenticatorアプリにおけるデバイスバインドパスキーの復元体験を改善します。ユーザーが新しいデバイスに移行する際に、より明確でガイド付きの復元フローを提供し、パスキーによるクロスデバイスサインインへの理解も高めます。強力なセキュリティ保護を維持しつつ、デバイス移行時の手間を減らす設計です。\n[展開スケジュール]\n一般提供(全世界):2026年9月中旬(従来は8月)\n[組織への影響]\n影響を受けるユーザー\n• Authenticatorでパスキーを使用するiOSユーザー\n• 新しいiOSデバイスでAuthenticatorを復元するユーザー\n対象プラットフォーム/サービス\n• iOS\n• Microsoft Authenticator\n• Microsoft Entra\n実施内容\n• 本変更はiOSデバイスのみが対象です。Androidは今回のリリースに含まれず、後日対応されます。\n• iCloudとiCloudキーチェーンのバックアップが有効で、以前のデバイスにパスキーが保存されているユーザーは、デバイス復元時に更新された体験を目にします。\n• 新しいデバイスでAuthenticatorを復元するユーザーには、更新された復元体験が表示されます。\n• 復元フローには以下が含まれます:新規セットアップか既存からの復元かに応じてユーザーを案内する新しいUI、Authenticatorパスキーとクロスデバイスサインインの利用に関する改善されたガイダンス。\n• 機能は既定で有効です。\n• 既存の管理者設定やポリシーに変更はありません。\n[必要な対応/推奨事項]\n対応は不要です。次の推奨事項を検討してください。\n• iOSでの復元体験の改善についてユーザーに周知する。\n• デバイス移行やAuthenticator復元に関するガイダンスを提供している場合、社内ヘルプデスク文書を更新する。\n[コンプライアンスの考慮事項]\nコンプライアンス上の考慮事項は特定されていません。組織に応じて確認してください。",
-      "sourceCharacterCount": 1929,
-      "sourceTruncated": false,
-      "sourceHash": "2c068a369bda2d2520580800bdd05f59e9e2b6d7367a0310b6cb870eeaeee4da",
-      "validatedAt": "2026-10-25T00:26:31.8766793+00:00"
     },
     {
       "id": "MC1426371",
@@ -1329,22 +1350,6 @@
       "sourceTruncated": true,
       "sourceHash": "59499884d89cc967db9f5007d8aa22e95db7bda2248d53666cb1584d4ef4bedc",
       "validatedAt": "2026-10-25T05:01:15.9763339+00:00"
-    },
-    {
-      "id": "MC1462914",
-      "japaneseTitle": "Agent 365にアクティブユーザーのエクスポート機能を追加",
-      "japaneseFacts": {
-        "change": "Microsoft 365管理センターのAgents > All Agents > Exportに、過去30日間にAgent 365レジストリのエージェントを利用したユーザーのCSVエクスポートが追加されます。",
-        "impact": "AI管理者とグローバル管理者が対象で、既にAgent 365にアクセスできる管理者には既定で有効です。",
-        "timing": "全世界で2026年8月下旬に展開開始・完了の予定です。",
-        "action": "準備作業は不要です。展開後、ライセンス判断担当者の権限確認や利用データの確認、エクスポートデータの取り扱いポリシー確認が推奨されています。"
-      },
-      "japaneseDetailedSummary": "Microsoft Agent 365に、AI管理者およびグローバル管理者が、テナントのAgent 365レジストリに登録されたエージェントを過去30日間に利用したユーザーの一覧をCSVでエクスポートできる機能が追加されます。出力にはUPN、利用エージェント総数、総セッション数、最終アクティビティ日が含まれます。読み取り専用のレポート機能で、既存エージェント、ユーザー権限、課金プロセスに変更はありません。既にAgent 365にアクセスできる管理者には既定で有効です。2026年8月下旬に全世界で展開される予定です。準備のための対応は不要ですが、ライセンス判断担当者のアクセス権の確認、利用状況の確認、UPNを含むエクスポートデータの閲覧・保管に関する社内ポリシーの確認が推奨されています。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Agent 365に新しいレポート機能を導入します。AI管理者とグローバル管理者は、テナントのAgent 365レジストリに登録されたエージェントを過去30日間に実際に利用したユーザーの一覧をエクスポートできます。\nこのレポートはエージェント利用の可視性を提供し、エージェントのライセンス確認や計画の策定を支援します。\n[展開スケジュール]\n• 一般提供(全世界):2026年8月下旬に展開を開始し、8月下旬に完了する予定です。\n[組織への影響]\n対象ユーザー\n• AI管理者\n• グローバル管理者\n対象のプラットフォームとサービス\n• Microsoft 365管理センター\n• Microsoft Agent 365\n実施される内容\nMicrosoft 365管理センター > Agents > All Agents > Export に、新しい「Active Users」エクスポートオプションが追加されます。\n権限のある管理者は、過去30日間にテナントのAgent 365レジストリにあるエージェントを利用したユーザーを含むCSVレポートを生成できます。\nレポートには以下が含まれます:\n• ユーザープリンシパル名(UPN)\n• 利用したエージェントの総数\n• 総セッション数\n• 最終アクティビティ日\nこれは読み取り専用のレポート機能です。\n以下に変更はありません:\n• 既存のエージェント\n• ユーザーのアクセス許可\n• 課金プロセス\nこの機能は、既にAgent 365にアクセスできるAI管理者とグローバル管理者に対して既定で有効になります。\n[必要な対応/推奨事項]\nこの変更に備えるための対応は不要です。\n展開後、次のことを検討できます:\n• エージェントのライセンス判断を担当する担当者を特定し、適切な管理アクセス権があることを確認する。\n• エクスポートした利用データを確認し、組織全体でのエージェントの採用状況を把握する。\n• レポートを社内のライセンス確認や計画の議論に活用する。\n[コンプライアンス上の考慮事項]\nこの機能は、エージェント活動に関する既存の利用情報を公開する新しい管理用レポート機能です。エクスポートにはユーザー識別子(UPN)と過去30日間の利用指標が含まれます。組織は、利用状況レポートへのアクセスおよびエクスポートしたレポートの保持に関する社内ポリシーを確認する必要があります。",
-      "sourceCharacterCount": 2118,
-      "sourceTruncated": false,
-      "sourceHash": "2515edcbf3e34a8e6abfdc7be9c30988fe6cfc8fc866f88829448fbaa3b420b0",
-      "validatedAt": "2026-10-25T05:01:15.9694978+00:00"
     },
     {
       "id": "MC1462915",
@@ -2049,25 +2054,9 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
-      "id": "MC1191924",
-      "japaneseTitle": "Entra IDサインインで外部スクリプト挿入をCSPでブロック",
-      "japaneseFacts": {
-        "change": "Entra IDサインインページにContent Security Policyヘッダーが追加され、Microsoft信頼CDNドメインのスクリプトのみ許可されます。",
-        "impact": "login.microsoftonline.comのブラウザサインインを使う組織が対象で、コードを挿入するブラウザ拡張やツールは動作しなくなります(サインインは可能)。External ID テナントは影響なしです。",
-        "timing": "2026年10月中旬に展開開始、10月下旬に完了予定です(本番/Worldwideのみ)。",
-        "action": "コード挿入ツールを使っていなければ不要です。使用中なら非挿入型の代替へ切り替え、展開前にサインインフローをテストしてください。"
-      },
-      "japaneseDetailedSummary": "Microsoftの Secure Future Initiative の一環として、Microsoft Entra IDサインイン体験のContent Security Policyが更新されます。認証中は信頼されたMicrosoftドメインのスクリプトのみ実行を許可し、XSSなどの外部・挿入コードをブロックします。対象はlogin.microsoftonline.comで始まるURLのブラウザサインインを使う組織で、Entra External IDテナントは影響を受けません。サインインページにCSPヘッダーが追加され、スクリプトは信頼されたMicrosoft CDNドメインから、インラインスクリプトは信頼されたMicrosoftソースからのみ許可されます。ページにコードを挿入するブラウザ拡張やツールは動作しなくなりますが、サインイン自体は可能です。展開は2026年10月中旬開始、10月下旬完了予定(本番/Worldwideのみ)。該当ツールを使わなければ対応不要で、使う場合は代替へ切り替え、事前にテストしてください。",
-      "japaneseBodyTranslation": "はじめに\nMicrosoftのSecure Future Initiativeの一環として、Microsoft Entra IDサインイン体験のContent Security Policyを更新します。この変更により、認証中は信頼されたMicrosoftドメインのスクリプトのみ実行を許可し、未承認または挿入された外部コードをブロックする保護が追加されます。この事前対策は、クロスサイトスクリプティング(XSS)などの脅威からユーザーを保護し、組織のセキュリティをさらに強化します。\n実施時期\n一般提供(本番/Worldwideのみ):\n• 2026年10月中旬に展開開始\n• 2026年10月下旬に完了予定\nリリースが近づいたら定期的に通知します。\n組織への影響\n影響を受ける対象:\n• login.microsoftonline.comで始まるURLのブラウザベースのサインインを使用する組織。\n• Microsoft Entra External IDテナントへの影響はありません。\n実施される内容:\n• Microsoft Entraサインインページに新しいContent Security Policyヘッダーが追加されます。\n• スクリプトはMicrosoftの信頼されたCDNドメインからのみ許可されます。\n• インラインスクリプトの実行は信頼されたMicrosoftソースからのみ許可されます。\n• サインインページにコードを挿入するブラウザ拡張やツールは動作しなくなりますが、ユーザーはサインインできます。\n準備のためにできること\n• サインイン体験にコードを挿入するツールや拡張機能を使用していない場合、対応は不要です。\n• そのようなツールを使用している場合は、コードを挿入しない代替手段に切り替えてください。\n• 展開前にサインインフローを十分にテストし、問題を早期に特定・解決してください。テスト手順はMicrosoft Entra IDのCSPガイドにあります。\n詳細情報:\n• Microsoft Entra IDのContent Security Policy概要\n• TechcommunityのMicrosoft Entra ID Content Security Policy公開ブログ\n• Microsoft Secure Future Initiative\n• CSP nonceガイド | CSPクイックリファレンスガイド\n• CSP script-srcディレクティブガイド | CSPクイックリファレンスガイド\n• なぜXSSは今も重要か:25年来の脅威に関するMSRCの見解 | Microsoftブログ\nコンプライアンス上の考慮事項\n特記すべきコンプライアンス上の考慮事項は確認されていません。組織に応じて確認してください。",
-      "sourceCharacterCount": 2195,
-      "sourceTruncated": false,
-      "sourceHash": "6ec6403f323f5096fb9518b3965ab4633cf0acd1de0f3109d17736bd761bc664",
-      "validatedAt": "2026-10-26T21:09:03.6630039+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-10-26T07:58:49.6232839+00:00",
-  "summarySourceHash": "13506b84bb9e105f3145e24ef95b819f1b72852daf9e17a2848c71a6e7d22fd5",
-  "sourceAgentRunId": "40288792060"
+  "summarySourceHash": "e3a3fdc390ac8334f8ada81927454995f2ceacaaa29f3bae3f511f8405d79603",
+  "summaryGeneratedAt": "2026-10-29T02:01:28.2382864+00:00",
+  "sourceAgentRunId": "40802791822"
 }
