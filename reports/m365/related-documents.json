@@ -4533,7 +4533,7 @@
         "bc5a78d7cd0ea6bf28ab1215181955b28ac2e45a1d79765278c8b81976a99812"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:04:34.665283+00:00",
+      "checkedAt": "2026-10-29T08:50:53.959074+00:00",
       "documents": [],
       "reviewHash": "3a9b31e9dfbcd067eaf3c39f909915e172cd975ba8c7277aea9662511d573258",
       "query": "Microsoft management",
@@ -4554,7 +4554,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:04:34.670206+00:00",
+      "nextAttemptAt": "2026-11-01T08:50:56.605399+00:00",
       "variants": {
         "84a33bdd4034c02f592738c05fbfd1a72e6791e66fa3a699d18ab63c5f12ea3b": {
           "sourceHashes": [
@@ -6318,7 +6318,7 @@
             "1d0a4729e1a08cfe54fcae61b31764e1c3acfa5facc075eab98565df699d22ee"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:34.744769+00:00",
+          "checkedAt": "2026-10-29T08:50:56.766899+00:00",
           "documents": [],
           "reviewHash": "780705b8ee21c22c74485ac69168dd1e45851eaf335771fa58d6b824f240e7af",
           "query": "Microsoft entra self service password authentication",
@@ -6339,14 +6339,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:37.542504+00:00"
+          "nextAttemptAt": "2026-11-01T08:50:59.927587+00:00"
         },
         "a2365e9101584f9017eaa0cbbf86fa4768d350669842e76bce7393b6933107d2": {
           "sourceHashes": [
             "a2365e9101584f9017eaa0cbbf86fa4768d350669842e76bce7393b6933107d2"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:37.682813+00:00",
+          "checkedAt": "2026-10-29T08:51:00.257735+00:00",
           "documents": [],
           "reviewHash": "780705b8ee21c22c74485ac69168dd1e45851eaf335771fa58d6b824f240e7af",
           "query": "Microsoft entra self service password authentication",
@@ -6367,14 +6367,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:37.686881+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:00.264517+00:00"
         },
         "2448f5e6b637839e48c248e36fd850a49d5b23e58f1b46ea2cd7880552e19bc0": {
           "sourceHashes": [
             "2448f5e6b637839e48c248e36fd850a49d5b23e58f1b46ea2cd7880552e19bc0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:37.611547+00:00",
+          "checkedAt": "2026-10-29T08:51:00.089408+00:00",
           "documents": [],
           "reviewHash": "780705b8ee21c22c74485ac69168dd1e45851eaf335771fa58d6b824f240e7af",
           "query": "Microsoft entra self service password authentication",
@@ -6395,7 +6395,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:37.615668+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:00.096134+00:00"
         }
       }
     },
@@ -6452,7 +6452,7 @@
         "fa0ca8f02b90e29519f3c929c58b06f23c7626818680fe9f55167b9bb0574ad3"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:04:40.570500+00:00",
+      "checkedAt": "2026-10-29T08:51:03.291455+00:00",
       "documents": [],
       "reviewHash": "5f9fd74282e9fb60e052dbea4aac6eabcc41723109615eea4830733ee3cab424",
       "query": "Microsoft conditional access windows hello business macos platform sso registration",
@@ -6473,14 +6473,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:04:40.575812+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:03.299890+00:00",
       "variants": {
         "772741a871d040e5885d5da24d09ef64e799b5273c1bbf1b1e9dc39a082dbecf": {
           "sourceHashes": [
             "772741a871d040e5885d5da24d09ef64e799b5273c1bbf1b1e9dc39a082dbecf"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:37.753368+00:00",
+          "checkedAt": "2026-10-29T08:51:00.426269+00:00",
           "documents": [],
           "reviewHash": "5f9fd74282e9fb60e052dbea4aac6eabcc41723109615eea4830733ee3cab424",
           "query": "Microsoft conditional access windows hello business macos platform sso registration",
@@ -6501,7 +6501,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:40.502451+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:03.126382+00:00"
         }
       }
     },
@@ -6904,7 +6904,7 @@
         "03d174ea37d198c731e7f6bc86d6ead8e84332f7d2a5b4e52f7420933eea6780"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:04:40.642456+00:00",
+      "checkedAt": "2026-10-29T08:51:03.460744+00:00",
       "documents": [],
       "reviewHash": "ec0174559db7653e46ff12dbb397e8cf86e5a0672486634afbee54fbf938d525",
       "query": "Microsoft organizational data custom attributes granular access policy",
@@ -6925,14 +6925,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:04:43.429002+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:06.233050+00:00",
       "variants": {
         "697071d0484b528320ca50703531ceca2d22e993129e1e8dbbd9d7941d27310d": {
           "sourceHashes": [
             "697071d0484b528320ca50703531ceca2d22e993129e1e8dbbd9d7941d27310d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:43.497371+00:00",
+          "checkedAt": "2026-10-29T08:51:06.405596+00:00",
           "documents": [],
           "reviewHash": "ec0174559db7653e46ff12dbb397e8cf86e5a0672486634afbee54fbf938d525",
           "query": "Microsoft organizational data custom attributes granular access policy",
@@ -6953,7 +6953,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:43.501421+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:06.412008+00:00"
         }
       }
     },
@@ -7872,7 +7872,7 @@
         "0975b62fe15dbd352d5065affaa1de0899d906c444bb94ca52745ffd2543b278"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:04:43.569267+00:00",
+      "checkedAt": "2026-10-29T08:51:06.573459+00:00",
       "documents": [],
       "reviewHash": "afa7e82d5f0d72cc579f2edcf0ce0fcb35b23092a3520341aa99f283aca2c065",
       "query": "Microsoft ecdn analytics data retention",
@@ -7893,14 +7893,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:04:46.463448+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:09.332911+00:00",
       "variants": {
         "c09507e9350548791e310d911be97ff4fb80317c32d506746dff3ef3af3a4181": {
           "sourceHashes": [
             "c09507e9350548791e310d911be97ff4fb80317c32d506746dff3ef3af3a4181"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:46.532117+00:00",
+          "checkedAt": "2026-10-29T08:51:09.495255+00:00",
           "documents": [],
           "reviewHash": "afa7e82d5f0d72cc579f2edcf0ce0fcb35b23092a3520341aa99f283aca2c065",
           "query": "Microsoft ecdn analytics data retention",
@@ -7921,7 +7921,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:46.538779+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:09.506876+00:00"
         }
       }
     },
@@ -7980,7 +7980,7 @@
         "ee5ae52e1f73ae0059cbe0f48a87c07815184987048f8cae16f7315655d00f46"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:04:50.092724+00:00",
+      "checkedAt": "2026-10-29T08:51:13.375924+00:00",
       "documents": [],
       "reviewHash": "c5b29d46e96d3f1f8629469a9d6be9f14a165bd981984726e1c0d0a72938f929",
       "query": "Microsoft entra partner tier support roles assignments",
@@ -8001,14 +8001,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:04:50.140575+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:13.465715+00:00",
       "variants": {
         "4285b2b12b6204a6abcdcda68dd58a272bd89d1ddb5064a4d9ae7e3fd6d20ac1": {
           "sourceHashes": [
             "4285b2b12b6204a6abcdcda68dd58a272bd89d1ddb5064a4d9ae7e3fd6d20ac1"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:46.607084+00:00",
+          "checkedAt": "2026-10-29T08:51:09.669446+00:00",
           "documents": [],
           "reviewHash": "c5b29d46e96d3f1f8629469a9d6be9f14a165bd981984726e1c0d0a72938f929",
           "query": "Microsoft entra partner tier support roles assignments",
@@ -8029,7 +8029,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:50.023808+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:13.215497+00:00"
         }
       }
     },
@@ -8738,7 +8738,7 @@
         "3a99e9bdcc997fc9a114c4cdf04d3841a6e8a95e4d1c3217f87ac3c59de3b469"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:04:50.208338+00:00",
+      "checkedAt": "2026-10-29T08:51:13.626977+00:00",
       "documents": [],
       "reviewHash": "15a2477ccb1410e8bdd4f93d2d31ea5f769985c54c26da268edd75f6147926c6",
       "query": "Microsoft copilot companion taskbar pinning",
@@ -8759,14 +8759,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:04:53.050481+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:16.651230+00:00",
       "variants": {
         "5219efa0855aae9366c6fd4b3d417f2383ead47509ed2483cb10f767e62e1fe0": {
           "sourceHashes": [
             "5219efa0855aae9366c6fd4b3d417f2383ead47509ed2483cb10f767e62e1fe0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:53.119905+00:00",
+          "checkedAt": "2026-10-29T08:51:16.813713+00:00",
           "documents": [],
           "reviewHash": "15a2477ccb1410e8bdd4f93d2d31ea5f769985c54c26da268edd75f6147926c6",
           "query": "Microsoft copilot companion taskbar pinning",
@@ -8787,7 +8787,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:53.122814+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:16.818902+00:00"
         }
       }
     },
@@ -8846,7 +8846,7 @@
         "5e4936310ab748db2905f7c5c9cbc872e532acf0c906d940e8c825ff8016aee5"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:04:56.476234+00:00",
+      "checkedAt": "2026-10-29T08:51:19.920029+00:00",
       "documents": [],
       "reviewHash": "11496b0507bc8a1914a151d73c0b6ae9a7a35008c53bec4f4c0bca1489663e0d",
       "query": "Microsoft backup recovery window",
@@ -8867,14 +8867,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:04:56.482328+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:19.931364+00:00",
       "variants": {
         "31d562988c1c416b6ab21b30680292f57d7cab26f21d9b86e89b6a3a7f1cecc1": {
           "sourceHashes": [
             "31d562988c1c416b6ab21b30680292f57d7cab26f21d9b86e89b6a3a7f1cecc1"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:53.191438+00:00",
+          "checkedAt": "2026-10-29T08:51:16.979499+00:00",
           "documents": [],
           "reviewHash": "11496b0507bc8a1914a151d73c0b6ae9a7a35008c53bec4f4c0bca1489663e0d",
           "query": "Microsoft backup recovery window",
@@ -8895,7 +8895,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:56.406064+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:19.758320+00:00"
         }
       }
     },
@@ -8904,7 +8904,7 @@
         "8388d4a3453f0152a5ad197333dac7de1c78c4873dae93ac8b8c5cd67fe2cead"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:04:56.550861+00:00",
+      "checkedAt": "2026-10-29T08:51:20.091238+00:00",
       "documents": [],
       "reviewHash": "b0b7d37325196b9de529c14f0871756d9532afcc7a29bf48e70f5c57b57af3fa",
       "query": "Microsoft copilot web content",
@@ -8925,14 +8925,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:04:59.616485+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:22.824926+00:00",
       "variants": {
         "b7cf067a18f96722d745ea027dc8bcc2c921fc6f6d004fba263bbbaf5225faef": {
           "sourceHashes": [
             "b7cf067a18f96722d745ea027dc8bcc2c921fc6f6d004fba263bbbaf5225faef"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:59.686555+00:00",
+          "checkedAt": "2026-10-29T08:51:22.988798+00:00",
           "documents": [],
           "reviewHash": "b0b7d37325196b9de529c14f0871756d9532afcc7a29bf48e70f5c57b57af3fa",
           "query": "Microsoft copilot web content",
@@ -8953,7 +8953,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:04:59.687728+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:22.990876+00:00"
         }
       }
     },
@@ -10092,7 +10092,7 @@
         "c8c5e5b2ac5725d6d2d799f5c0e620c52abd16e8aec38363942dc72d2f9ad64f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:05:03.522367+00:00",
+      "checkedAt": "2026-10-29T08:51:27.535566+00:00",
       "documents": [],
       "reviewHash": "a98d1db7e59f05d0721672a45c3ff274005a135ce9cc36af82c929548698f4e8",
       "query": "Microsoft powerpoint copilot web onedrive custom skills",
@@ -10113,14 +10113,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:05:03.611359+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:27.714886+00:00",
       "variants": {
         "c71b8c95deb3e69ac641e8996a42d3d73239d50554611b67cc19e1767c2318b6": {
           "sourceHashes": [
             "c71b8c95deb3e69ac641e8996a42d3d73239d50554611b67cc19e1767c2318b6"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:03.363974+00:00",
+          "checkedAt": "2026-10-29T08:51:27.193278+00:00",
           "documents": [],
           "reviewHash": "a98d1db7e59f05d0721672a45c3ff274005a135ce9cc36af82c929548698f4e8",
           "query": "Microsoft powerpoint copilot web onedrive custom skills",
@@ -10141,14 +10141,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:03.454532+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:27.374186+00:00"
         },
         "66db7adbd3b9bdad7fae4d374973e45b457037040fa4fbacc89c8d264e133ba5": {
           "sourceHashes": [
             "66db7adbd3b9bdad7fae4d374973e45b457037040fa4fbacc89c8d264e133ba5"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:04:59.753738+00:00",
+          "checkedAt": "2026-10-29T08:51:23.151738+00:00",
           "documents": [],
           "reviewHash": "a98d1db7e59f05d0721672a45c3ff274005a135ce9cc36af82c929548698f4e8",
           "query": "Microsoft powerpoint copilot web onedrive custom skills",
@@ -10169,7 +10169,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:03.298762+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:27.031168+00:00"
         }
       }
     },
@@ -11084,7 +11084,7 @@
         "b42368662aee9c03b67896d19a26d298262cb2148b5b5811504d030c9bf3ebc2"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:05:39.556480+00:00",
+      "checkedAt": "2026-10-29T08:52:08.126292+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft entra passwordless password signin",
@@ -11100,7 +11100,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:05:41.055191+00:00",
+      "nextAttemptAt": "2026-11-01T08:52:09.833060+00:00",
       "variants": {
         "c8bbb1658d6d5f70e106de360554692a3201e93966e5caada1c407c06bef5d4b": {
           "sourceHashes": [
@@ -11246,7 +11246,7 @@
             "c213dfbfff6304f2c2df573c4efc473ccb2fe8b2c2eef9f87a973b2c0eea9f6d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:39.472977+00:00",
+          "checkedAt": "2026-10-29T08:52:07.954475+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passwordless password signin",
@@ -11262,14 +11262,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:39.478106+00:00"
+          "nextAttemptAt": "2026-11-01T08:52:07.964304+00:00"
         },
         "3bb42fbb97b7b1ee8045981b2d9829c46b0ed794dd93a4b466f107b92be16c8b": {
           "sourceHashes": [
             "3bb42fbb97b7b1ee8045981b2d9829c46b0ed794dd93a4b466f107b92be16c8b"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:36.265573+00:00",
+          "checkedAt": "2026-10-29T08:52:04.709731+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passwordless password signin",
@@ -11285,7 +11285,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:39.384838+00:00"
+          "nextAttemptAt": "2026-11-01T08:52:07.791812+00:00"
         }
       }
     },
@@ -12404,7 +12404,7 @@
         "1f641089451a7cc5f876aaff598ac921750f6c13f66142df60ec006256ddb9ae"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:05:03.679344+00:00",
+      "checkedAt": "2026-10-29T08:51:27.878253+00:00",
       "documents": [],
       "reviewHash": "354d2520b17e1cdee8e614c7b42192f7dc073719050c805e5fe664a0df0828f4",
       "query": "Microsoft powerpoint copilot mac upload custom skills onedrive",
@@ -12425,14 +12425,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:05:05.266559+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:29.578761+00:00",
       "variants": {
         "f8eefd73b7eda74bee9585dfc08d47de98df87f2a996464b4950659df378d5de": {
           "sourceHashes": [
             "f8eefd73b7eda74bee9585dfc08d47de98df87f2a996464b4950659df378d5de"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:05.333439+00:00",
+          "checkedAt": "2026-10-29T08:51:29.742708+00:00",
           "documents": [],
           "reviewHash": "354d2520b17e1cdee8e614c7b42192f7dc073719050c805e5fe664a0df0828f4",
           "query": "Microsoft powerpoint copilot mac upload custom skills onedrive",
@@ -12453,7 +12453,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:05.422666+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:29.927067+00:00"
         }
       }
     },
@@ -12462,7 +12462,7 @@
         "ad05f7ba87838b83076d1e775ef90ab4ec0ccde75e712d891ed982b3e112499c"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:05:05.487039+00:00",
+      "checkedAt": "2026-10-29T08:51:30.090515+00:00",
       "documents": [],
       "reviewHash": "7745564eb50c1fd3d6c187e4e743227e3c11584af4c39d44064db9c8234058fc",
       "query": "Microsoft powerpoint copilot web upload custom skills",
@@ -12483,14 +12483,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:05:07.265062+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:31.836024+00:00",
       "variants": {
         "d120f0a97f93c02f4bff04fca1fc5afab14eeefd2307b56f2c6fa85d551c3ced": {
           "sourceHashes": [
             "d120f0a97f93c02f4bff04fca1fc5afab14eeefd2307b56f2c6fa85d551c3ced"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:07.336092+00:00",
+          "checkedAt": "2026-10-29T08:51:32.001878+00:00",
           "documents": [],
           "reviewHash": "7745564eb50c1fd3d6c187e4e743227e3c11584af4c39d44064db9c8234058fc",
           "query": "Microsoft powerpoint copilot web upload custom skills",
@@ -12511,7 +12511,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:07.426581+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:32.181953+00:00"
         }
       }
     },
@@ -13913,7 +13913,7 @@
             "f0dd577dfcb8cf942d346b537cc88f743938d5fefa9bf8473ecd4f59d7e0daca"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:10.424154+00:00",
+          "checkedAt": "2026-10-29T08:51:35.317070+00:00",
           "documents": [],
           "reviewHash": "f6e7193c4eae75037117ea0874beddfb8e3f6376fae0779b9628e2467e5dabd2",
           "query": "Microsoft entra windows hello business macos platform sso mfa",
@@ -13934,14 +13934,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:10.427948+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:35.324419+00:00"
         },
         "4ca1a4a267a9ec0cb586e79e5eebf2fea6ffb662423d764b00604b3c34c93810": {
           "sourceHashes": [
             "4ca1a4a267a9ec0cb586e79e5eebf2fea6ffb662423d764b00604b3c34c93810"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:07.492736+00:00",
+          "checkedAt": "2026-10-29T08:51:32.345801+00:00",
           "documents": [],
           "reviewHash": "f6e7193c4eae75037117ea0874beddfb8e3f6376fae0779b9628e2467e5dabd2",
           "query": "Microsoft entra windows hello business macos platform sso mfa",
@@ -13962,7 +13962,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:10.352500+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:35.157260+00:00"
         },
         "322551a8ed3108d867bf692fc5ca39b44f1db4ad35f6ae49fd64626234428b2a": {
           "sourceHashes": [
@@ -14305,7 +14305,7 @@
             "62bb1bb2966500bbf652c1d2797320825eaa8feabc73ec1c9062a568a47eccb2"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:10.497368+00:00",
+          "checkedAt": "2026-10-29T08:51:35.487909+00:00",
           "documents": [],
           "reviewHash": "7fd65a98dbb7a845b654909c8db5fe6eb1f58c211e9791d97828a414c6951c79",
           "query": "Microsoft copilot mobile chat access",
@@ -14326,7 +14326,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:15.067159+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:38.783712+00:00"
         }
       }
     },
@@ -14421,7 +14421,7 @@
             "2d1f1c325a277bed29fd239b0fcde9c3963f308d2e3b226aadff29a670a9ce49"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:36.194949+00:00",
+          "checkedAt": "2026-10-29T08:52:04.542639+00:00",
           "documents": [],
           "reviewHash": "604fbdcdc01b44e27bd1f902cd6284aa79e93e36d744f1b6c1aa7348b270f300",
           "query": "Microsoft edge copilot endpoint",
@@ -14442,7 +14442,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:36.198685+00:00"
+          "nextAttemptAt": "2026-11-01T08:52:04.549555+00:00"
         }
       }
     },
@@ -14550,7 +14550,7 @@
         "e318ed5ac0591043c24182c965fd94f0dee8a8d66ef1969dc3b7219094187fd5"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:05:15.148891+00:00",
+      "checkedAt": "2026-10-29T08:51:38.944732+00:00",
       "documents": [],
       "reviewHash": "21f7d057886cc400349a9f27a27981dc92e1fd7081ddcd7db1dbfe5f1493ec1d",
       "query": "Microsoft copilot people connectors executive assistant",
@@ -14571,7 +14571,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:05:17.951473+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:41.887050+00:00",
       "variants": {}
     },
     "MC1458474": {
@@ -14966,7 +14966,7 @@
             "70eb0cce01dfa93824db7d4dc6d1ffd01402f1502b32db1e46304fb069c70fec"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:20.918156+00:00",
+          "checkedAt": "2026-10-29T08:51:45.485251+00:00",
           "documents": [],
           "reviewHash": "05af67c6feb7f7cd69198275e65d3777e17cef7a6c7e8068e50905abcf41f06d",
           "query": "Microsoft edge management service security update",
@@ -14987,14 +14987,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:20.921224+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:45.490909+00:00"
         },
         "e397ee453636f48c53296ceaee04c8c6e20fbfea8ce3ed3deed9a51371104b1d": {
           "sourceHashes": [
             "e397ee453636f48c53296ceaee04c8c6e20fbfea8ce3ed3deed9a51371104b1d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:20.995640+00:00",
+          "checkedAt": "2026-10-29T08:51:45.654234+00:00",
           "documents": [],
           "reviewHash": "05af67c6feb7f7cd69198275e65d3777e17cef7a6c7e8068e50905abcf41f06d",
           "query": "Microsoft edge management service security update",
@@ -15015,14 +15015,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:20.998689+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:45.659872+00:00"
         },
         "5e6907a6763fb2a0581acbd0354f2e60f6315b831f2d7e3402175d0731d484a9": {
           "sourceHashes": [
             "5e6907a6763fb2a0581acbd0354f2e60f6315b831f2d7e3402175d0731d484a9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:18.036875+00:00",
+          "checkedAt": "2026-10-29T08:51:42.050615+00:00",
           "documents": [],
           "reviewHash": "05af67c6feb7f7cd69198275e65d3777e17cef7a6c7e8068e50905abcf41f06d",
           "query": "Microsoft edge management service security update",
@@ -15043,7 +15043,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:20.828665+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:45.323503+00:00"
         }
       }
     },
@@ -16280,7 +16280,7 @@
             "3dc112f000ad3dbd9f16ba76a84d0dfb3631300501f6f6c020188aa533e0bfa3"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:21.064233+00:00",
+          "checkedAt": "2026-10-29T08:51:45.821590+00:00",
           "documents": [],
           "reviewHash": "348bebe5b06a40845d04027f3007e8f89cb1b69f33071cd855c9758345968f03",
           "query": "Microsoft copilot studio cowork",
@@ -16301,7 +16301,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:23.981702+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:48.526961+00:00"
         }
       }
     },
@@ -16596,7 +16596,7 @@
             "a094e60b45b15f8243c5880cf1c35d5b483ca8a4cdc74e1816cd6fc311d38e09"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:41.123718+00:00",
+          "checkedAt": "2026-10-29T08:52:09.993494+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot email sender address",
@@ -16612,7 +16612,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:44.272491+00:00"
+          "nextAttemptAt": "2026-11-01T08:52:13.224179+00:00"
         }
       }
     },
@@ -17010,7 +17010,7 @@
             "484cc998695332ada8a19582dd4abcb30589f87c46bda91b3675982051634ec9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:24.094399+00:00",
+          "checkedAt": "2026-10-29T08:51:48.689475+00:00",
           "documents": [],
           "reviewHash": "66cf4886e10fec0032d00e2a38e9652f1058ae61c754d03dfe558b5e4f50e853",
           "query": "Microsoft office ltsc support",
@@ -17031,7 +17031,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:24.097702+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:51.521755+00:00"
         }
       }
     },
@@ -17156,7 +17156,7 @@
             "c6d96babe22cf32bf3d65b418b3916e45a08a8c2e4440492d1840b6e85dc75f0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:26.961791+00:00",
+          "checkedAt": "2026-10-29T08:51:54.528312+00:00",
           "documents": [],
           "reviewHash": "e9fe31201ac60626fe2074787389b0f7e3a03997068bfe4788431749511331e9",
           "query": "Microsoft edge internet explorer mode support",
@@ -17177,14 +17177,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:26.965418+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:54.534854+00:00"
         },
         "3ad1234f2b6e8ce2a014bc65a4f687f69b42d9a8748eb48bf1065b528e68c9ac": {
           "sourceHashes": [
             "3ad1234f2b6e8ce2a014bc65a4f687f69b42d9a8748eb48bf1065b528e68c9ac"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:24.174476+00:00",
+          "checkedAt": "2026-10-29T08:51:51.684756+00:00",
           "documents": [],
           "reviewHash": "e9fe31201ac60626fe2074787389b0f7e3a03997068bfe4788431749511331e9",
           "query": "Microsoft edge internet explorer mode support",
@@ -17205,7 +17205,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:26.875359+00:00"
+          "nextAttemptAt": "2026-11-01T08:51:54.366296+00:00"
         }
       }
     },
@@ -17983,7 +17983,7 @@
         "e89a124cc5426ec91cb22ac8e18a8d2d829664d45e44a9b9e37e94c8fbb50f0d"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T08:05:27.042345+00:00",
+      "checkedAt": "2026-10-29T08:51:54.696896+00:00",
       "documents": [],
       "reviewHash": "1e769ac552274ffd8754bb53944c69ce0210ae85e9e96ff012c809f8d6dd3eef",
       "query": "Microsoft agent setup",
@@ -18004,7 +18004,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T08:05:29.994293+00:00",
+      "nextAttemptAt": "2026-11-01T08:51:57.722475+00:00",
       "variants": {}
     },
     "MC1477996": {
@@ -18469,7 +18469,7 @@
             "b779859aa27361bbce5061dbfed6426d02b6414d8c597ce9d45f60aecd55da80"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:30.080949+00:00",
+          "checkedAt": "2026-10-29T08:51:57.885603+00:00",
           "documents": [],
           "reviewHash": "e124ec2b4eb907eb219d0c276423f16afe6e9535346fbefba0f228daba379e68",
           "query": "Microsoft profile card",
@@ -18490,7 +18490,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:32.948492+00:00"
+          "nextAttemptAt": "2026-11-01T08:52:00.879619+00:00"
         }
       }
     },
@@ -19049,7 +19049,7 @@
             "d2416ca9b1769e8a3445a95aa2a634fe151a5eaca5eec53ec83abc29a55fdd44"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:33.035816+00:00",
+          "checkedAt": "2026-10-29T08:52:01.041819+00:00",
           "documents": [],
           "reviewHash": "8a80e2abcfda80fc9d404c83d94bc89b04c3a107111ff9c8c2105ffa1a423ec7",
           "query": "Microsoft entra authentication external content security policy",
@@ -19070,7 +19070,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:33.039349+00:00"
+          "nextAttemptAt": "2026-11-01T08:52:01.048463+00:00"
         }
       }
     },
@@ -20097,7 +20097,7 @@
             "1fef45b9602ef8438dd60e7e595d710d4c922da05b268b9ebdd19960ceb50e7d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:33.116147+00:00",
+          "checkedAt": "2026-10-29T08:52:01.210495+00:00",
           "documents": [],
           "reviewHash": "1694e5762fa2a1ee51b6b3ec8d022a2a3123cc1c93a10e83078062e818ffca43",
           "query": "Microsoft graph default create api",
@@ -20118,14 +20118,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:36.039561+00:00"
+          "nextAttemptAt": "2026-11-01T08:52:04.164667+00:00"
         },
         "2f3480af7f8883fbd78f97f9360cc425282dfda18e02d6f9fce4f190868826aa": {
           "sourceHashes": [
             "2f3480af7f8883fbd78f97f9360cc425282dfda18e02d6f9fce4f190868826aa"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T08:05:36.108900+00:00",
+          "checkedAt": "2026-10-29T08:52:04.336174+00:00",
           "documents": [],
           "reviewHash": "1694e5762fa2a1ee51b6b3ec8d022a2a3123cc1c93a10e83078062e818ffca43",
           "query": "Microsoft graph default create api",
@@ -20146,7 +20146,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T08:05:36.126609+00:00"
+          "nextAttemptAt": "2026-11-01T08:52:04.379904+00:00"
         }
       }
     },
@@ -21428,7 +21428,7 @@
     "snapshots": 42,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-10-28T22:57:19+00:00",
-    "checkedAt": "2026-10-29T02:09:24.829766+00:00",
+    "checkedAt": "2026-10-29T08:52:13.504872+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 57,
@@ -21443,7 +21443,7 @@
     },
     "latestTotal": 94,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 46,
     "variantCounts": {
       "fetch_failed": 0,
       "no_verified_document": 150,
