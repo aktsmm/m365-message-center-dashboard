@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "observedAt": "2026-10-29T06:00:30.9718360+00:00",
+  "observedAt": "2026-10-29T13:20:22.2112799+00:00",
   "snapshotGeneratedAt": "2026-10-29T01:49:05.6990849+00:00",
   "summary": {
     "reason": "",
     "status": "current"
   },
   "translations": {
-    "current": 82,
     "total": 94,
-    "pending": 12
+    "current": 85,
+    "pending": 9
   },
   "attempts": {
     "translations": {
+      "requestedAt": "2026-10-29T13:20:22.2112799+00:00",
       "status": "dispatched",
-      "requestedAt": "2026-10-29T06:00:30.9718360+00:00",
       "workflow": "m365-weekly-translations.lock.yml"
     },
     "core": {
@@ -25,7 +25,7 @@
   },
   "action": {
     "status": "dispatched",
-    "workflow": "m365-weekly-translations.lock.yml",
-    "lane": "translations"
+    "lane": "translations",
+    "workflow": "m365-weekly-translations.lock.yml"
   }
 }
