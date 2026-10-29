@@ -3,16 +3,16 @@
   "messages": {
     "MC1069563": {
       "sourceHashes": [
-        "06db55136b3493c3117b00a888385dec9672183298453c4fab352d1a0df30113"
+        "e53b2fd27472a4411c2e1116d8e75f03ef42dddd9bcd393d3d4077b2e3c789b0"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T09:58:31.842147+00:00",
+      "checkedAt": "2026-10-29T01:51:22.459419+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits?view=o365-worldwide",
           "title": "Microsoft Copilot クレジット レポート",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T09:58:41.028286+00:00",
+          "checkedAt": "2026-10-29T01:51:30.941449+00:00",
           "bodySha256": "9f763cb5880f1834ef8c3fc6f0cc5a5c608201c40271a290fbbc59572a7ef538",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -42,7 +42,7 @@
             "articleExcerpt": "# Microsoft Copilot Credits report\r\n\r\nTip\r\n\r\nFor the most complete and up-to-date Copilot Credit licensing and billing information, see the [Copilot Credit Guide](https://go.microsoft.com/fwlink/p/?linkid=2368800).\r\n\r\nThe Microsoft Copilot Credits report helps you manage metered consumption costs for Microsoft Copilot Chat. This report gives you visibility into credits used for your Microsoft Copilot pay-as-you-go billing policies. It includes key metrics such as:\r\n\r\n- Total credits used\r\n- Cumulative and daily time series\r\n- Credits used per user, per agent, per billing policy, and per agent-user pair\r\n\r\nTo learn more about meters, see [Meters for Microsoft Copilot pay-as-you-go for IT admins](/en-us/microsoft-365/copilot/pay-as-you-go/meters).\r\n\r\nFor general information about usage reports in the Microsoft 365 admin center, and to see a list of all available reports, see [Microsoft 365 admin center usage reports overview](activity-reports?view=o365-worldwide).\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/message-consumption",
             "bodySha256": "edd7fdfa1acc00d33880901e2519d783d8d34ea2ac1066856df9661c25a1c43f",
-            "reviewedAt": "2026-10-16T09:58:41.028286+00:00"
+            "reviewedAt": "2026-10-29T01:51:30.941515+00:00"
           }
         }
       ],
@@ -73,7 +73,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T09:58:44.037252+00:00",
+      "nextAttemptAt": "2026-11-28T01:51:33.612099+00:00",
       "variants": {
         "ac9ad0022956b74126cb910d4145025e27e293a6be5b9c1f7360512d7079dedd": {
           "sourceHashes": [
@@ -275,6 +275,80 @@
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
           "nextAttemptAt": "2026-11-15T09:59:07.053730+00:00"
+        },
+        "06db55136b3493c3117b00a888385dec9672183298453c4fab352d1a0df30113": {
+          "sourceHashes": [
+            "06db55136b3493c3117b00a888385dec9672183298453c4fab352d1a0df30113"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T09:58:31.842147+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits?view=o365-worldwide",
+              "title": "Microsoft Copilot クレジット レポート",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T09:58:41.028286+00:00",
+              "bodySha256": "9f763cb5880f1834ef8c3fc6f0cc5a5c608201c40271a290fbbc59572a7ef538",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "copilot",
+                "matchedTerms": [
+                  "chat",
+                  "consumption",
+                  "cost",
+                  "metered",
+                  "report",
+                  "usage"
+                ],
+                "requiredFeatureTerms": [
+                  "chat",
+                  "consumption",
+                  "cost",
+                  "metered",
+                  "report",
+                  "usage"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "# Microsoft Copilot Credits report\r\n\r\nTip\r\n\r\nFor the most complete and up-to-date Copilot Credit licensing and billing information, see the [Copilot Credit Guide](https://go.microsoft.com/fwlink/p/?linkid=2368800).\r\n\r\nThe Microsoft Copilot Credits report helps you manage metered consumption costs for Microsoft Copilot Chat. This report gives you visibility into credits used for your Microsoft Copilot pay-as-you-go billing policies. It includes key metrics such as:\r\n\r\n- Total credits used\r\n- Cumulative and daily time series\r\n- Credits used per user, per agent, per billing policy, and per agent-user pair\r\n\r\nTo learn more about meters, see [Meters for Microsoft Copilot pay-as-you-go for IT admins](/en-us/microsoft-365/copilot/pay-as-you-go/meters).\r\n\r\nFor general information about usage reports in the Microsoft 365 admin center, and to see a list of all available reports, see [Microsoft 365 admin center usage reports overview](activity-reports?view=o365-worldwide).\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/message-consumption",
+                "bodySha256": "edd7fdfa1acc00d33880901e2519d783d8d34ea2ac1066856df9661c25a1c43f",
+                "reviewedAt": "2026-10-16T09:58:41.028286+00:00"
+              }
+            }
+          ],
+          "reviewHash": "75f5a5c0a891e4aa26a1a1ad0200494dbf77a3824262f0265629ee377d6f750c",
+          "query": "Microsoft copilot chat message consumption usage report",
+          "explicitUrls": [
+            "https://learn.microsoft.com/microsoft-365/admin/activity-reports/message-consumption"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/admin/activity-reports/message-consumption",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits?view=o365-worldwide",
+              "source": "reviewed_candidate",
+              "decision": "duplicate_after_official_redirect"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft copilot chat message consumption usage report",
+          "searchedQueries": [
+            "Microsoft copilot chat message consumption usage report"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T09:58:44.037252+00:00"
         }
       }
     },
@@ -283,7 +357,7 @@
         "9936804412a7b17d0ceb58d294c218a0f09a576babaaf83b9fc9bb27993c2a49"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:28:31.245852+00:00",
+      "checkedAt": "2026-10-29T01:55:44.955899+00:00",
       "documents": [],
       "reviewHash": "cdfbf21bc6b2823de91d97c9c0548929b8e57e8133b554f9051144f63885257f",
       "query": "Microsoft azure protection multifactor authentication",
@@ -304,7 +378,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:28:34.388250+00:00",
+      "nextAttemptAt": "2026-11-01T01:55:49.023765+00:00",
       "variants": {
         "e3d50645a6ddc3573a45880beda39c2daabed3199a1735b8327574d7134dd01a": {
           "sourceHashes": [
@@ -1500,7 +1574,7 @@
         "ceffd9a6d7e923e1b3e66b175a8d85f9da43fdbd8bdd6229c2f1529175ac0cac"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:08.325770+00:00",
+      "checkedAt": "2026-10-29T01:54:16.782095+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot chat session persistence",
@@ -1516,14 +1590,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:08.331101+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:16.789467+00:00",
       "variants": {
         "095859f9942823690ff09215b8af7e03325aa6db8af2dcf1a5af3a31194be0af": {
           "sourceHashes": [
             "095859f9942823690ff09215b8af7e03325aa6db8af2dcf1a5af3a31194be0af"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:04.188553+00:00",
+          "checkedAt": "2026-10-29T01:54:12.982785+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot chat session persistence",
@@ -1539,7 +1613,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:08.237065+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:16.617873+00:00"
         }
       }
     },
@@ -1822,7 +1896,7 @@
         "dc2ca0e6d1f35b4147313f90ef95d5e32670caddb179ad4daf5bafda215f6a66"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:11.329830+00:00",
+      "checkedAt": "2026-10-29T01:54:20.202534+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot read aloud voice",
@@ -1838,14 +1912,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:11.337540+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:20.212450+00:00",
       "variants": {
         "0b19cdf37900446da6368c2b3fd5f0ced13afead7eba05698c26ac05ef57eb74": {
           "sourceHashes": [
             "0b19cdf37900446da6368c2b3fd5f0ced13afead7eba05698c26ac05ef57eb74"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:08.419771+00:00",
+          "checkedAt": "2026-10-29T01:54:16.952972+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot read aloud voice",
@@ -1861,7 +1935,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:11.241879+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:20.038127+00:00"
         }
       }
     },
@@ -2791,7 +2865,7 @@
         "3b6321458888ff5440650dc89f5c3d8d385f513a234d10dd74ff4123c72cbb38"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:39.976556+00:00",
+      "checkedAt": "2026-10-29T01:53:46.353659+00:00",
       "documents": [],
       "reviewHash": "9d88c949c892d750c9df90aba5b72abc56952119727ccb644492284392e5fce9",
       "query": "Microsoft entra authentication external content security policy",
@@ -2812,14 +2886,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:39.981951+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:46.360377+00:00",
       "variants": {
         "251a331fc4e60310d51e710237c8bfe9e76f5266806789fdb0ac9a34b53a10af": {
           "sourceHashes": [
             "251a331fc4e60310d51e710237c8bfe9e76f5266806789fdb0ac9a34b53a10af"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:37.095708+00:00",
+          "checkedAt": "2026-10-29T01:53:42.915409+00:00",
           "documents": [],
           "reviewHash": "9d88c949c892d750c9df90aba5b72abc56952119727ccb644492284392e5fce9",
           "query": "Microsoft entra authentication external content security policy",
@@ -2840,7 +2914,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:39.887085+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:46.189576+00:00"
         }
       }
     },
@@ -2849,7 +2923,7 @@
         "543e8d9bcae3344978e16de5c2f2d59f37519f9de0acf2887bb14ade39c5cd11"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:14.429667+00:00",
+      "checkedAt": "2026-10-29T01:54:24.108159+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft excel insert data image retirement",
@@ -2865,14 +2939,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:14.433714+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:24.113424+00:00",
       "variants": {
         "06a2fa059db0c8eeeda27d6bafd1b76b41f6f5dbd5ccb297984f060f336af079": {
           "sourceHashes": [
             "06a2fa059db0c8eeeda27d6bafd1b76b41f6f5dbd5ccb297984f060f336af079"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:11.441819+00:00",
+          "checkedAt": "2026-10-29T01:54:20.374551+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft excel insert data image retirement",
@@ -2888,7 +2962,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:14.338483+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:23.945295+00:00"
         }
       }
     },
@@ -3411,7 +3485,7 @@
             "dd8a21018f9e7d4440904cafff9220b1b5484c45bc49722bed091920cdfb87aa"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:16.147045+00:00",
+          "checkedAt": "2026-10-29T01:53:18.295621+00:00",
           "documents": [],
           "reviewHash": "34bd26683dd9d26ae9c68c94feaabc5f8806cc12b952d418c87104dbcfb7ea67",
           "query": "Microsoft entra passkey fido2 migration",
@@ -3432,14 +3506,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:16.152646+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:18.302978+00:00"
         },
         "b2c89192c4585f88d95b691152c5edb6dc574313599a35cc18e710b5927bbb6d": {
           "sourceHashes": [
             "b2c89192c4585f88d95b691152c5edb6dc574313599a35cc18e710b5927bbb6d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:12.704055+00:00",
+          "checkedAt": "2026-10-29T01:53:15.367479+00:00",
           "documents": [],
           "reviewHash": "34bd26683dd9d26ae9c68c94feaabc5f8806cc12b952d418c87104dbcfb7ea67",
           "query": "Microsoft entra passkey fido2 migration",
@@ -3460,7 +3534,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:16.058815+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:18.130513+00:00"
         }
       }
     },
@@ -3785,7 +3859,7 @@
         "86213651975c86bc81fd3c40f1fce3ae94776d6943a3383705299aea376607df"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:14.522099+00:00",
+      "checkedAt": "2026-10-29T01:54:24.276230+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot chat entity inserts input",
@@ -3802,14 +3876,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:19.528467+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:28.700916+00:00",
       "variants": {
         "d91c0248111765f3bf2f7746164e01171b237a1b431475133de8a578f0d7c91c": {
           "sourceHashes": [
             "d91c0248111765f3bf2f7746164e01171b237a1b431475133de8a578f0d7c91c"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:19.616624+00:00",
+          "checkedAt": "2026-10-29T01:54:28.866077+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot chat entity inserts input",
@@ -3826,14 +3900,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:19.630747+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:28.884278+00:00"
         },
         "f74a9f99ab2eaac9368809991b11bc8ddc4397e6c90064fe98a6f7f5d919b583": {
           "sourceHashes": [
             "f74a9f99ab2eaac9368809991b11bc8ddc4397e6c90064fe98a6f7f5d919b583"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:19.723755+00:00",
+          "checkedAt": "2026-10-29T01:54:29.047481+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot chat entity inserts input",
@@ -3850,7 +3924,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:19.737694+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:29.065563+00:00"
         }
       }
     },
@@ -3859,7 +3933,7 @@
         "dcdb67f42e2d3ca403edeec94b2ef09db485a24a6ab688e106e33101e5fc7513"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:23.743847+00:00",
+      "checkedAt": "2026-10-29T01:53:26.864668+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot app branded footer customization",
@@ -3876,14 +3950,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:23.755824+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:26.880417+00:00",
       "variants": {
         "9e7765839f676496f0e9623d0099420e3ebd167e147488b0232fc676838d865e": {
           "sourceHashes": [
             "9e7765839f676496f0e9623d0099420e3ebd167e147488b0232fc676838d865e"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:23.609198+00:00",
+          "checkedAt": "2026-10-29T01:53:26.686215+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app branded footer customization",
@@ -3900,14 +3974,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:23.620991+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:26.702029+00:00"
         },
         "181d4db98232b493c69028330853ec32ea26b44eaa3fd348f19de59d83d18cfa": {
           "sourceHashes": [
             "181d4db98232b493c69028330853ec32ea26b44eaa3fd348f19de59d83d18cfa"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:23.508897+00:00",
+          "checkedAt": "2026-10-29T01:53:26.508026+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app branded footer customization",
@@ -3924,14 +3998,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:23.520765+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:26.523794+00:00"
         },
         "0f46dc86f93a01e77b4b097c78ea242d1206b789dc83a5c30297dd527fce2dbb": {
           "sourceHashes": [
             "0f46dc86f93a01e77b4b097c78ea242d1206b789dc83a5c30297dd527fce2dbb"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:19.198997+00:00",
+          "checkedAt": "2026-10-29T01:53:21.766216+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app branded footer customization",
@@ -3948,7 +4022,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:23.418745+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:26.341863+00:00"
         }
       }
     },
@@ -4089,7 +4163,7 @@
         "b68601baffd8353e22033a44ab6bc1cdd0d5592ae5b3e1bda5e42d69ba10f175"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:24.752447+00:00",
+      "checkedAt": "2026-10-29T01:54:33.856498+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot license request custom flow",
@@ -4106,14 +4180,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:24.762421+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:33.869119+00:00",
       "variants": {
         "9ab18ff24aeea9915baca6238161145254c11548b7c54dd34bfee75d03a21a81": {
           "sourceHashes": [
             "9ab18ff24aeea9915baca6238161145254c11548b7c54dd34bfee75d03a21a81"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:19.825737+00:00",
+          "checkedAt": "2026-10-29T01:54:29.230543+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot license request custom flow",
@@ -4130,7 +4204,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:24.664004+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:33.690281+00:00"
         }
       }
     },
@@ -4139,7 +4213,7 @@
         "6294818cd86667e713c6a5470dcfb54bbb9c17e10af8682112b4382ca8864a9f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:29.462365+00:00",
+      "checkedAt": "2026-10-29T01:54:38.347677+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot mobile app chat first design",
@@ -4156,14 +4230,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:29.475171+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:38.364993+00:00",
       "variants": {
         "061cc116018ae5e5252583a18f5842ecc7ea931ebdd89155e11a9542de54dbb6": {
           "sourceHashes": [
             "061cc116018ae5e5252583a18f5842ecc7ea931ebdd89155e11a9542de54dbb6"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:25.077604+00:00",
+          "checkedAt": "2026-10-29T01:54:34.032150+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot mobile app chat first design",
@@ -4180,7 +4254,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:29.372651+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:38.181029+00:00"
         }
       }
     },
@@ -4908,7 +4982,7 @@
         "38f619d944cb4eb296c496463bde8c5717a9a09aad431103c44c365a73136564"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:23.880541+00:00",
+      "checkedAt": "2026-10-29T01:53:27.043731+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot excel",
@@ -4924,14 +4998,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:26.895106+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:30.458302+00:00",
       "variants": {
         "ddfdd222dde50bed5e6785b528b18830a24e2fbbd72fea722e1201f16a9d89de": {
           "sourceHashes": [
             "ddfdd222dde50bed5e6785b528b18830a24e2fbbd72fea722e1201f16a9d89de"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:26.982778+00:00",
+          "checkedAt": "2026-10-29T01:53:30.620008+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot excel",
@@ -4947,7 +5021,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:26.990321+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:30.630573+00:00"
         }
       }
     },
@@ -5228,7 +5302,7 @@
         "3e6aa42f33925469f0301cdd4fb53e61e3e2dfdcfa859f9d2c5d229b67921aad"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:40.072497+00:00",
+      "checkedAt": "2026-10-29T01:53:46.523457+00:00",
       "documents": [],
       "reviewHash": "f0b4d878f78ffcf219d21198dc48bd749b9f5d2a881046b71bcc536de55ecb54",
       "query": "Microsoft esignature recipient groups",
@@ -5249,14 +5323,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:42.817698+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:49.420728+00:00",
       "variants": {
         "4e5cd51809af5e87fb6170bed31263ae10c6c81a3076fc7caa50a855ca337cf5": {
           "sourceHashes": [
             "4e5cd51809af5e87fb6170bed31263ae10c6c81a3076fc7caa50a855ca337cf5"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:42.908018+00:00",
+          "checkedAt": "2026-10-29T01:53:49.584826+00:00",
           "documents": [],
           "reviewHash": "f0b4d878f78ffcf219d21198dc48bd749b9f5d2a881046b71bcc536de55ecb54",
           "query": "Microsoft esignature recipient groups",
@@ -5277,14 +5351,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:42.913580+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:49.591783+00:00"
         },
         "dbb767f983b67b9da0a7a0f4f44a643046a3e2a9fa3073e525e002576555ff85": {
           "sourceHashes": [
             "dbb767f983b67b9da0a7a0f4f44a643046a3e2a9fa3073e525e002576555ff85"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:43.099609+00:00",
+          "checkedAt": "2026-10-29T01:53:49.926059+00:00",
           "documents": [],
           "reviewHash": "f0b4d878f78ffcf219d21198dc48bd749b9f5d2a881046b71bcc536de55ecb54",
           "query": "Microsoft esignature recipient groups",
@@ -5305,14 +5379,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:43.105207+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:49.932887+00:00"
         },
         "670b8d32ca1a35217b313b68cbd0e93f7a1bf57492e70683e8e92dd1303c0171": {
           "sourceHashes": [
             "670b8d32ca1a35217b313b68cbd0e93f7a1bf57492e70683e8e92dd1303c0171"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:43.004168+00:00",
+          "checkedAt": "2026-10-29T01:53:49.753447+00:00",
           "documents": [],
           "reviewHash": "f0b4d878f78ffcf219d21198dc48bd749b9f5d2a881046b71bcc536de55ecb54",
           "query": "Microsoft esignature recipient groups",
@@ -5333,7 +5407,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:43.009659+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:49.760392+00:00"
         }
       }
     },
@@ -5752,7 +5826,7 @@
         "e54ca80c582ce7e4683a1169e3354d16b212786b48de2a9e6c2d76fb46d6ee40"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:16.241268+00:00",
+      "checkedAt": "2026-10-29T01:53:18.466342+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft outlook windows copilot insights",
@@ -5768,14 +5842,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:19.110132+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:21.602916+00:00",
       "variants": {
         "a775ce0b3a1b80521f7c8216c66d415068b2507802cb568c4f783102eacb630f": {
           "sourceHashes": [
             "a775ce0b3a1b80521f7c8216c66d415068b2507802cb568c4f783102eacb630f"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:27.371550+00:00",
+          "checkedAt": "2026-10-29T01:53:31.311851+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft outlook windows copilot insights",
@@ -5791,14 +5865,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:27.380358+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:31.322589+00:00"
         },
         "a36a3c5aed5fd5f7a432062ef8524a12bdcd87e842034e888cac9c484d19b63c": {
           "sourceHashes": [
             "a36a3c5aed5fd5f7a432062ef8524a12bdcd87e842034e888cac9c484d19b63c"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:27.274090+00:00",
+          "checkedAt": "2026-10-29T01:53:31.136984+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft outlook windows copilot insights",
@@ -5814,14 +5888,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:27.282808+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:31.147798+00:00"
         },
         "70aaaf34b10741c26aa1a2e36104c8a6cad4f67df640b2bdac6b60552105c1a9": {
           "sourceHashes": [
             "70aaaf34b10741c26aa1a2e36104c8a6cad4f67df640b2bdac6b60552105c1a9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:27.176127+00:00",
+          "checkedAt": "2026-10-29T01:53:30.963818+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft outlook windows copilot insights",
@@ -5837,14 +5911,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:27.185013+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:30.974727+00:00"
         },
         "019f9b8336c944e3b490df0d609b32e5fb3f4e8cc8deacbc59940d8f0f7d5eee": {
           "sourceHashes": [
             "019f9b8336c944e3b490df0d609b32e5fb3f4e8cc8deacbc59940d8f0f7d5eee"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:27.078534+00:00",
+          "checkedAt": "2026-10-29T01:53:30.792105+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft outlook windows copilot insights",
@@ -5860,7 +5934,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:27.087445+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:30.802930+00:00"
         }
       }
     },
@@ -6007,7 +6081,7 @@
         "87722c99ad6f6406990061ba75c185b4d051b355a5b9be5cfcb02f0c165bc929"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:32.872120+00:00",
+      "checkedAt": "2026-10-29T01:54:41.625195+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot notebooks",
@@ -6023,14 +6097,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:32.883232+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:41.639139+00:00",
       "variants": {
         "7503e9d7da7deee5063546b116ba312af67a1ba50d8ac053a527d777b230053b": {
           "sourceHashes": [
             "7503e9d7da7deee5063546b116ba312af67a1ba50d8ac053a527d777b230053b"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:29.564803+00:00",
+          "checkedAt": "2026-10-29T01:54:38.528675+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot notebooks",
@@ -6046,7 +6120,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:32.783120+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:41.462823+00:00"
         }
       }
     },
@@ -6055,7 +6129,7 @@
         "0fa87f808babf1d30eb4581f51861754f52cced25828ef4721b4c44f2cfa4a4d"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:43.196727+00:00",
+      "checkedAt": "2026-10-29T01:53:50.099752+00:00",
       "documents": [],
       "reviewHash": "4345f5bf154bc2486573035a20b06e5fe129cef7bfdae83e90a7f0d14fdf8a3a",
       "query": "Microsoft teams meeting ai copilot",
@@ -6076,14 +6150,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:45.991173+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:52.886969+00:00",
       "variants": {
         "fac37a85400622c470730fc4f6537891c8ebbc085ea0b7384ec43f1584185c49": {
           "sourceHashes": [
             "fac37a85400622c470730fc4f6537891c8ebbc085ea0b7384ec43f1584185c49"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:46.272426+00:00",
+          "checkedAt": "2026-10-29T01:53:53.393018+00:00",
           "documents": [],
           "reviewHash": "4345f5bf154bc2486573035a20b06e5fe129cef7bfdae83e90a7f0d14fdf8a3a",
           "query": "Microsoft teams meeting ai copilot",
@@ -6104,14 +6178,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:46.277537+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:53.399738+00:00"
         },
         "5b4f43b3a06917830c5b1c32578759110a35990dffa5ecc7e61826c9deb6cfba": {
           "sourceHashes": [
             "5b4f43b3a06917830c5b1c32578759110a35990dffa5ecc7e61826c9deb6cfba"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:46.081772+00:00",
+          "checkedAt": "2026-10-29T01:53:53.051543+00:00",
           "documents": [],
           "reviewHash": "4345f5bf154bc2486573035a20b06e5fe129cef7bfdae83e90a7f0d14fdf8a3a",
           "query": "Microsoft teams meeting ai copilot",
@@ -6132,14 +6206,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:46.086942+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:53.058513+00:00"
         },
         "7e907442dcda38b7b7197022b2cfa8ce1279151f3a756f82390bf14a71641d70": {
           "sourceHashes": [
             "7e907442dcda38b7b7197022b2cfa8ce1279151f3a756f82390bf14a71641d70"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:46.177672+00:00",
+          "checkedAt": "2026-10-29T01:53:53.221101+00:00",
           "documents": [],
           "reviewHash": "4345f5bf154bc2486573035a20b06e5fe129cef7bfdae83e90a7f0d14fdf8a3a",
           "query": "Microsoft teams meeting ai copilot",
@@ -6160,7 +6234,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:46.182738+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:53.227890+00:00"
         }
       }
     },
@@ -6330,7 +6404,7 @@
         "6fb4fab30d43941553022ff458d31e9311b43265105efb7ad7a8588f2c0254ae"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:35.888392+00:00",
+      "checkedAt": "2026-10-29T01:54:45.002183+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot app chat",
@@ -6346,14 +6420,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:35.897105+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:45.013950+00:00",
       "variants": {
         "0b7f99a9d542479c1255bf6cc06b9ed6c96af4ec821bf3028b668e03fa1e27ea": {
           "sourceHashes": [
             "0b7f99a9d542479c1255bf6cc06b9ed6c96af4ec821bf3028b668e03fa1e27ea"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:32.971736+00:00",
+          "checkedAt": "2026-10-29T01:54:41.802594+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app chat",
@@ -6369,7 +6443,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:35.800187+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:44.838852+00:00"
         }
       }
     },
@@ -6436,7 +6510,7 @@
         "3f368f8892e2b2948fab30285be07ca995db8731853ee7af7431b82669ddccdc"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:35.985113+00:00",
+      "checkedAt": "2026-10-29T01:54:45.177420+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft admin center support retirement",
@@ -6452,14 +6526,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:38.821855+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:48.336273+00:00",
       "variants": {
         "71eae8ce0be198ef5735f3a4a736f5aed051d00758b2759da8ba2e9b2ce8c3a1": {
           "sourceHashes": [
             "71eae8ce0be198ef5735f3a4a736f5aed051d00758b2759da8ba2e9b2ce8c3a1"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:38.919750+00:00",
+          "checkedAt": "2026-10-29T01:54:48.501220+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft admin center support retirement",
@@ -6475,7 +6549,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:38.928564+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:48.512798+00:00"
         }
       }
     },
@@ -6780,7 +6854,7 @@
         "84e2c2c0f747ce0fe9f109049a5fa14de6ed14442fafaa94866cbd24a92c2b5b"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:39.113277+00:00",
+      "checkedAt": "2026-10-29T01:54:48.675741+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot chat basic users notebooks",
@@ -6797,14 +6871,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:43.799236+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:53.415746+00:00",
       "variants": {
         "aee8bd402999dc7d46ac4d5284467700d50bbf185f42e932314a14b9375142fc": {
           "sourceHashes": [
             "aee8bd402999dc7d46ac4d5284467700d50bbf185f42e932314a14b9375142fc"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:43.907682+00:00",
+          "checkedAt": "2026-10-29T01:54:53.577999+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot chat basic users notebooks",
@@ -6821,7 +6895,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:43.922614+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:53.597331+00:00"
         }
       }
     },
@@ -7856,7 +7930,7 @@
         "c78180a0486e7cbbefb13d1ba249f6a0bc221a21b39c7e4368dcce0997c44b57"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:48.904131+00:00",
+      "checkedAt": "2026-10-29T01:54:59.387074+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot release preferences group support",
@@ -7873,14 +7947,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:48.917946+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:59.405783+00:00",
       "variants": {
         "0bcf1f72619f932b016a11fc32bf5ed9f79e0f85ed936e8639d11c0e906bb0cf": {
           "sourceHashes": [
             "0bcf1f72619f932b016a11fc32bf5ed9f79e0f85ed936e8639d11c0e906bb0cf"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:44.023717+00:00",
+          "checkedAt": "2026-10-29T01:54:53.759740+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot release preferences group support",
@@ -7897,7 +7971,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:48.672873+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:59.219675+00:00"
         }
       }
     },
@@ -8488,7 +8562,7 @@
         "b6e513117d426d559b419aaeb0f07b2cf64436fb236e8191c87859257a745be3"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:52.280111+00:00",
+      "checkedAt": "2026-10-29T01:55:03.249765+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot studio agents roadmap",
@@ -8504,14 +8578,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:52.289321+00:00",
+      "nextAttemptAt": "2026-11-01T01:55:03.261623+00:00",
       "variants": {
         "9aed966117401fe102b79034fb7fc0f7ad56550748122ca00348bc21426e066e": {
           "sourceHashes": [
             "9aed966117401fe102b79034fb7fc0f7ad56550748122ca00348bc21426e066e"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:49.007701+00:00",
+          "checkedAt": "2026-10-29T01:54:59.568084+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot studio agents roadmap",
@@ -8527,7 +8601,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:52.046565+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:03.086827+00:00"
         }
       }
     },
@@ -8722,7 +8796,7 @@
         "d5a7223aaf7c027f84efdeef4fb8e998dcba57c14e5750d654efb17a4e0d1091"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:56.921845+00:00",
+      "checkedAt": "2026-10-29T01:55:09.618251+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft powerpoint web copilot",
@@ -8739,14 +8813,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:56.935797+00:00",
+      "nextAttemptAt": "2026-11-01T01:55:09.636726+00:00",
       "variants": {
         "792ce3719ff9ece4bfef79681f4fe39704dfed9ca04f7717df2d832dd2986acd": {
           "sourceHashes": [
             "792ce3719ff9ece4bfef79681f4fe39704dfed9ca04f7717df2d832dd2986acd"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:52.377753+00:00",
+          "checkedAt": "2026-10-29T01:55:03.426027+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft powerpoint web copilot",
@@ -8763,7 +8837,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:56.832815+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:09.453825+00:00"
         }
       }
     },
@@ -9380,7 +9454,7 @@
         "f88a56d2dfa30bc731a93c1099573c5209fb134eea6f0fbde4239fc074392635"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:28:01.238489+00:00",
+      "checkedAt": "2026-10-29T01:55:14.996263+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot usage report graph",
@@ -9397,14 +9471,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:28:01.251955+00:00",
+      "nextAttemptAt": "2026-11-01T01:55:15.014341+00:00",
       "variants": {
         "aef8142078b55f820637c65d9b93c2c87c92be824a92722fce951d560fa11869": {
           "sourceHashes": [
             "aef8142078b55f820637c65d9b93c2c87c92be824a92722fce951d560fa11869"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:57.024555+00:00",
+          "checkedAt": "2026-10-29T01:55:09.800230+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot usage report graph",
@@ -9421,7 +9495,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:01.150153+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:14.832497+00:00"
         }
       }
     },
@@ -9430,7 +9504,7 @@
         "1fdf79c2de50390c823d8f0a93a58e01fb91caff5a8db17ef12e9c4f29f1bf46"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:49.033480+00:00",
+      "checkedAt": "2026-10-29T01:53:56.393234+00:00",
       "documents": [],
       "reviewHash": "745324a1bdef87658c4cb8ce1d3d5741e42fbb30299848a963c9e9eb7b0f2fea",
       "query": "Microsoft authenticator passkeys ios restore",
@@ -9451,14 +9525,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:49.035432+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:56.396216+00:00",
       "variants": {
         "90059de0a99a2b6da996cba3fec896db955798363b6161cabd92c438bebdc40c": {
           "sourceHashes": [
             "90059de0a99a2b6da996cba3fec896db955798363b6161cabd92c438bebdc40c"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:49.124526+00:00",
+          "checkedAt": "2026-10-29T01:53:56.560539+00:00",
           "documents": [],
           "reviewHash": "745324a1bdef87658c4cb8ce1d3d5741e42fbb30299848a963c9e9eb7b0f2fea",
           "query": "Microsoft authenticator passkeys ios restore",
@@ -9479,14 +9553,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:49.126506+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:56.563453+00:00"
         },
         "18421f4d0f19dbde9f37b00a95004fac3cd161647d5fd642558ca32b21a01bbc": {
           "sourceHashes": [
             "18421f4d0f19dbde9f37b00a95004fac3cd161647d5fd642558ca32b21a01bbc"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:46.368741+00:00",
+          "checkedAt": "2026-10-29T01:53:53.563924+00:00",
           "documents": [],
           "reviewHash": "745324a1bdef87658c4cb8ce1d3d5741e42fbb30299848a963c9e9eb7b0f2fea",
           "query": "Microsoft authenticator passkeys ios restore",
@@ -9507,7 +9581,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:48.943899+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:56.229002+00:00"
         }
       }
     },
@@ -9970,7 +10044,7 @@
         "8d0608dbe1830323f3bf23433f8825cbe9cb0ebaab8404b952de86a2216bd92b"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:28:04.464621+00:00",
+      "checkedAt": "2026-10-29T01:55:19.207121+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot excel brand kit",
@@ -9986,14 +10060,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:28:04.472819+00:00",
+      "nextAttemptAt": "2026-11-01T01:55:19.217404+00:00",
       "variants": {
         "50acdc789f72f923d82752ab1a1c3495280c128e0d853453c8a409d7513dafe6": {
           "sourceHashes": [
             "50acdc789f72f923d82752ab1a1c3495280c128e0d853453c8a409d7513dafe6"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:01.339364+00:00",
+          "checkedAt": "2026-10-29T01:55:15.178567+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot excel brand kit",
@@ -10009,7 +10083,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:04.376457+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:19.043598+00:00"
         }
       }
     },
@@ -10986,7 +11060,7 @@
         "434dd18fb73361b2c526d049b7953304a5570887851de63d91d6294aefaa240f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:28:04.637128+00:00",
+      "checkedAt": "2026-10-29T01:55:19.380654+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft admin agent",
@@ -11002,7 +11076,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:28:07.588613+00:00",
+      "nextAttemptAt": "2026-11-01T01:55:22.218471+00:00",
       "variants": {}
     },
     "MC1437671": {
@@ -12446,7 +12520,7 @@
         "3cbadf9de3525b5a81f6ab2fce9b22a3d1390cda4ec119846030a506679d58b0"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:49.215637+00:00",
+      "checkedAt": "2026-10-29T01:53:56.727085+00:00",
       "documents": [],
       "reviewHash": "9c13e142f0adfef8b785892178178c562480f6d5e1140d36e3f1305ab0c77971",
       "query": "Microsoft all agents",
@@ -12467,7 +12541,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:51.941391+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:59.405320+00:00",
       "variants": {}
     },
     "MC1443523": {
@@ -13000,16 +13074,16 @@
     },
     "MC1450133": {
       "sourceHashes": [
-        "a169ab0028be5f2af239f49e585fa0cc7a1cabbe47e3fb004fc82db0498b477b"
+        "2605ee786354b5562183082b712873c8b6f3bee094b1e4963d8963a2d2865345"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T10:09:22.607176+00:00",
+      "checkedAt": "2026-10-29T01:51:42.692808+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-passkey",
           "title": "同期されたパスキー (FIDO2) を登録する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:09:29.641189+00:00",
+          "checkedAt": "2026-10-29T01:51:47.877576+00:00",
           "bodySha256": "ece373f8243ee9bdbbad0907d122033d9e47df51db5ab669abf05066192183a9",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -13018,14 +13092,14 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey",
             "bodySha256": "042eb7583268503c52f7f22f88504bff15c385d2ed69b10acf0d38d044d9b4bc",
-            "reviewedAt": "2026-10-16T10:09:29.641189+00:00"
+            "reviewedAt": "2026-10-29T01:51:47.877616+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
           "title": "Microsoft Entra ID で耐フィッシング パスワードレス認証の展開を計画する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:09:34.588855+00:00",
+          "checkedAt": "2026-10-29T01:51:53.061326+00:00",
           "bodySha256": "bdf903fb0f527795ce5ea504e29116bcc65fc750b0be0b66c0dc282056241069",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -13060,14 +13134,14 @@
             "articleExcerpt": "### Step 2: Bootstrap a portable credential\r\n\r\nTo bootstrap existing users to phishing-resistant passwordless credentials, first determine if your users are registered for traditional MFA already. Users with traditional MFA methods registered can be targeted with phishing-resistant passwordless registration policies. They can use their traditional MFA to register for their first portable phishing-resistant credential, and then move on to register for local credentials as needed. It's best practice to use the Microsoft Entra Verified ID integration in order to register a phishing-resistant authentication method using a Temporary Access Pass (TAP).\r\n\r\nFor new users or users without MFA, go through a process to issue users a TAP. You can issue a TAP the same way you give new users their first credential, or by using Microsoft Entra Verified ID integrations. Once users have a TAP, they're ready to bootstrap their first phishing-resistant credential.\r\n\r\nIt's important for the user’s first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using a device joined to Microsoft Entra ID and [Web sign-in for Windows](/en-us/windows/security/identity-protection/web-sign-in).\r\n\r\nThe following table lists recommended portable credentials for different personas:\r\n\r\n| User Persona | Recommended portable credential | Alternative portable credentials |\r\n| --- | --- | --- |\r\n| Admins and highly regulated users | FIDO2 security keys | Passkey for Microsoft Authenticator, Certificate-based authentication (Smart Card) |\r\n| Any other user | Synced passkey | FIDO2 security key, Passkeys for Microsoft Authenticator App |\r\n\r\nThe passkey authentication credential can be scoped to specific user groups using [passkey profiles](how-to-authentication-passkeys-fido2). A passkey profile should be set up for each persona with the recomm",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
             "bodySha256": "dbc24dd6c9ef9b16abe6904d4ec2e8e15937ff5e2363b472d48cfb446d2674cf",
-            "reviewedAt": "2026-10-16T10:09:34.589858+00:00"
+            "reviewedAt": "2026-10-29T01:51:53.061481+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-passkey-with-security-key",
           "title": "パスキーを FIDO2 セキュリティ キーに登録する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:09:38.854181+00:00",
+          "checkedAt": "2026-10-29T01:51:58.718427+00:00",
           "bodySha256": "4cc69a5f4379a8f06551ac922dc93fa36d531e2da69a04ea2865be2501c9290f",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -13101,7 +13175,7 @@
             "articleExcerpt": "## First-time registration\r\n\r\nTo register a passkey for the first time, open [Security info](https://mysignins.microsoft.com/security-info) in a web browser to complete the registration.\r\n\r\n1. Open a web browser and sign in to [Security info](https://mysignins.microsoft.com/security-info).\r\n2. Sign in with multifactor authentication (MFA).\r\n3. Tap **Add sign-in method** &gt; **Choose a method** &gt; **Passkey**.\r\n4. Tap **Next**.\r\n5. Select where you want to save your passkey (FIDO2).\r\n\r\n    Note\r\n\r\n    Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys (FIDO2), you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.\r\n6. (Optional) If you previously set up a passkey (FIDO2) on a mobile device and selected the option to remember that device for quicker sign-in, the device name might appear as a selectable option. In this case, do the following steps:\r\n\r\n    1. Choose **Security key**.\r\n    2. Follow the prompts to connect your security key and provide a PIN or biometric method.\r\n    3. After you complete these steps, you're redirected to the **My Security info** screen, where you can change the default name for the new sign-in method.\r\n    4. Select **Done** to finish registering the new method.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey-with-security-key",
             "bodySha256": "90d64ad703282366d1439c73d655f8dfc15b42cf216cfbde2c2956f6518462b1",
-            "reviewedAt": "2026-10-16T10:09:38.854181+00:00"
+            "reviewedAt": "2026-10-29T01:51:58.718466+00:00"
           }
         }
       ],
@@ -13138,7 +13212,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T10:09:38.854181+00:00",
+      "nextAttemptAt": "2026-11-28T01:51:58.718473+00:00",
       "variants": {
         "babf69a99e33aa715025f4153e118fe492e10e6be83bb3246a213bfe83a486c6": {
           "sourceHashes": [
@@ -13615,21 +13689,163 @@
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
           "nextAttemptAt": "2026-11-15T10:17:50.166158+00:00"
+        },
+        "a169ab0028be5f2af239f49e585fa0cc7a1cabbe47e3fb004fc82db0498b477b": {
+          "sourceHashes": [
+            "a169ab0028be5f2af239f49e585fa0cc7a1cabbe47e3fb004fc82db0498b477b"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T10:09:22.607176+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-passkey",
+              "title": "同期されたパスキー (FIDO2) を登録する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:09:29.641189+00:00",
+              "bodySha256": "ece373f8243ee9bdbbad0907d122033d9e47df51db5ab669abf05066192183a9",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey",
+                "bodySha256": "042eb7583268503c52f7f22f88504bff15c385d2ed69b10acf0d38d044d9b4bc",
+                "reviewedAt": "2026-10-16T10:09:29.641189+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
+              "title": "Microsoft Entra ID で耐フィッシング パスワードレス認証の展開を計画する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:09:34.588855+00:00",
+              "bodySha256": "bdf903fb0f527795ce5ea504e29116bcc65fc750b0be0b66c0dc282056241069",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "reviewed_candidate",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "authentication",
+                  "first",
+                  "method",
+                  "passkey",
+                  "passwordless",
+                  "register",
+                  "signin",
+                  "their"
+                ],
+                "requiredFeatureTerms": [
+                  "authentication",
+                  "first",
+                  "method",
+                  "multifactor",
+                  "passkey",
+                  "passwordless",
+                  "register",
+                  "signin",
+                  "their"
+                ],
+                "coverage": 0.889,
+                "platforms": [],
+                "score": 1.089,
+                "articleExcerpt": "### Step 2: Bootstrap a portable credential\r\n\r\nTo bootstrap existing users to phishing-resistant passwordless credentials, first determine if your users are registered for traditional MFA already. Users with traditional MFA methods registered can be targeted with phishing-resistant passwordless registration policies. They can use their traditional MFA to register for their first portable phishing-resistant credential, and then move on to register for local credentials as needed. It's best practice to use the Microsoft Entra Verified ID integration in order to register a phishing-resistant authentication method using a Temporary Access Pass (TAP).\r\n\r\nFor new users or users without MFA, go through a process to issue users a TAP. You can issue a TAP the same way you give new users their first credential, or by using Microsoft Entra Verified ID integrations. Once users have a TAP, they're ready to bootstrap their first phishing-resistant credential.\r\n\r\nIt's important for the user’s first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using a device joined to Microsoft Entra ID and [Web sign-in for Windows](/en-us/windows/security/identity-protection/web-sign-in).\r\n\r\nThe following table lists recommended portable credentials for different personas:\r\n\r\n| User Persona | Recommended portable credential | Alternative portable credentials |\r\n| --- | --- | --- |\r\n| Admins and highly regulated users | FIDO2 security keys | Passkey for Microsoft Authenticator, Certificate-based authentication (Smart Card) |\r\n| Any other user | Synced passkey | FIDO2 security key, Passkeys for Microsoft Authenticator App |\r\n\r\nThe passkey authentication credential can be scoped to specific user groups using [passkey profiles](how-to-authentication-passkeys-fido2). A passkey profile should be set up for each persona with the recomm",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
+                "bodySha256": "dbc24dd6c9ef9b16abe6904d4ec2e8e15937ff5e2363b472d48cfb446d2674cf",
+                "reviewedAt": "2026-10-16T10:09:34.589858+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-passkey-with-security-key",
+              "title": "パスキーを FIDO2 セキュリティ キーに登録する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:09:38.854181+00:00",
+              "bodySha256": "4cc69a5f4379a8f06551ac922dc93fa36d531e2da69a04ea2865be2501c9290f",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "automatic_learn_search",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "authentication",
+                  "first",
+                  "method",
+                  "multifactor",
+                  "passkey",
+                  "register",
+                  "signin"
+                ],
+                "requiredFeatureTerms": [
+                  "authentication",
+                  "first",
+                  "method",
+                  "multifactor",
+                  "passkey",
+                  "passwordless",
+                  "register",
+                  "signin",
+                  "their"
+                ],
+                "coverage": 0.778,
+                "platforms": [],
+                "score": 0.978,
+                "articleExcerpt": "## First-time registration\r\n\r\nTo register a passkey for the first time, open [Security info](https://mysignins.microsoft.com/security-info) in a web browser to complete the registration.\r\n\r\n1. Open a web browser and sign in to [Security info](https://mysignins.microsoft.com/security-info).\r\n2. Sign in with multifactor authentication (MFA).\r\n3. Tap **Add sign-in method** &gt; **Choose a method** &gt; **Passkey**.\r\n4. Tap **Next**.\r\n5. Select where you want to save your passkey (FIDO2).\r\n\r\n    Note\r\n\r\n    Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys (FIDO2), you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.\r\n6. (Optional) If you previously set up a passkey (FIDO2) on a mobile device and selected the option to remember that device for quicker sign-in, the device name might appear as a selectable option. In this case, do the following steps:\r\n\r\n    1. Choose **Security key**.\r\n    2. Follow the prompts to connect your security key and provide a PIN or biometric method.\r\n    3. After you complete these steps, you're redirected to the **My Security info** screen, where you can change the default name for the new sign-in method.\r\n    4. Select **Done** to finish registering the new method.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey-with-security-key",
+                "bodySha256": "90d64ad703282366d1439c73d655f8dfc15b42cf216cfbde2c2956f6518462b1",
+                "reviewedAt": "2026-10-16T10:09:38.854181+00:00"
+              }
+            }
+          ],
+          "reviewHash": "7b299bd50b94cb02b2707e6f139a149c4a95df56487f74ff9466176109ecceed",
+          "query": "Microsoft entra passkey passwordless first multifactor authentication registration",
+          "explicitUrls": [
+            "https://learn.microsoft.com/entra/identity/authentication/how-to-register-passkey"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-register-passkey",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
+              "source": "reviewed_candidate",
+              "decision": "adopted",
+              "score": 1.089
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-register-passkey-with-security-key",
+              "source": "automatic_learn_search",
+              "decision": "adopted",
+              "score": 0.978
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft entra passkey passwordless first multifactor authentication registration",
+          "searchedQueries": [
+            "Microsoft entra passkey passwordless first multifactor authentication registration"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T10:09:38.854181+00:00"
         }
       }
     },
     "MC1450134": {
       "sourceHashes": [
-        "322551a8ed3108d867bf692fc5ca39b44f1db4ad35f6ae49fd64626234428b2a"
+        "6e371e9e540bae9ce33e277ab744ef0181ca5ae178023871e93104789f66700f"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T10:09:39.120545+00:00",
+      "checkedAt": "2026-10-29T01:51:33.723752+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/windows/security/identity-protection/hello-for-business/deploy/",
           "title": "Windows Hello for Businessデプロイを計画する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:09:44.176318+00:00",
+          "checkedAt": "2026-10-29T01:51:38.279137+00:00",
           "bodySha256": "59bc6839a4be8718030325e1cf3ad8c504270b4055dd6e76c1c82a731c67e468",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -13638,14 +13854,14 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/",
             "bodySha256": "89547d5a98d381f9c60f881101f1ee82ee818aa190d2afe579f2b42b43fa6fa3",
-            "reviewedAt": "2026-10-16T10:09:44.176877+00:00"
+            "reviewedAt": "2026-10-29T01:51:38.279296+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/windows/security/identity-protection/hello-for-business/deploy/prepare-users",
           "title": "Windows Hello for Businessをプロビジョニングして使用するユーザーを準備する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:09:48.561094+00:00",
+          "checkedAt": "2026-10-29T01:51:42.556192+00:00",
           "bodySha256": "42134dfabdd94998d4000dba596bff1b81a7dfadf2e312aca0aec2deb23ac670",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -13654,7 +13870,7 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/prepare-users",
             "bodySha256": "39835d6771f9b537c0acefff142c67bc7eae189359453a6c70521c4e73826281",
-            "reviewedAt": "2026-10-16T10:09:48.561094+00:00"
+            "reviewedAt": "2026-10-29T01:51:42.556230+00:00"
           }
         }
       ],
@@ -13690,7 +13906,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T10:09:48.564090+00:00",
+      "nextAttemptAt": "2026-11-28T01:51:42.557603+00:00",
       "variants": {
         "f0dd577dfcb8cf942d346b537cc88f743938d5fefa9bf8473ecd4f59d7e0daca": {
           "sourceHashes": [
@@ -13747,6 +13963,80 @@
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
           "nextAttemptAt": "2026-10-29T08:05:10.352500+00:00"
+        },
+        "322551a8ed3108d867bf692fc5ca39b44f1db4ad35f6ae49fd64626234428b2a": {
+          "sourceHashes": [
+            "322551a8ed3108d867bf692fc5ca39b44f1db4ad35f6ae49fd64626234428b2a"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T10:09:39.120545+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/windows/security/identity-protection/hello-for-business/deploy/",
+              "title": "Windows Hello for Businessデプロイを計画する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:09:44.176318+00:00",
+              "bodySha256": "59bc6839a4be8718030325e1cf3ad8c504270b4055dd6e76c1c82a731c67e468",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/",
+                "bodySha256": "89547d5a98d381f9c60f881101f1ee82ee818aa190d2afe579f2b42b43fa6fa3",
+                "reviewedAt": "2026-10-16T10:09:44.176877+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/windows/security/identity-protection/hello-for-business/deploy/prepare-users",
+              "title": "Windows Hello for Businessをプロビジョニングして使用するユーザーを準備する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:09:48.561094+00:00",
+              "bodySha256": "42134dfabdd94998d4000dba596bff1b81a7dfadf2e312aca0aec2deb23ac670",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/prepare-users",
+                "bodySha256": "39835d6771f9b537c0acefff142c67bc7eae189359453a6c70521c4e73826281",
+                "reviewedAt": "2026-10-16T10:09:48.561094+00:00"
+              }
+            }
+          ],
+          "reviewHash": "f6e7193c4eae75037117ea0874beddfb8e3f6376fae0779b9628e2467e5dabd2",
+          "query": "Microsoft entra windows hello business macos platform sso mfa",
+          "explicitUrls": [
+            "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/",
+            "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/prepare-users"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/prepare-users",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/concept-authentication-platform-credential-for-macos",
+              "source": "reviewed_candidate",
+              "decision": "rejected_feature_or_platform_mismatch"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft entra windows hello business macos platform sso mfa",
+          "searchedQueries": [
+            "Microsoft entra windows hello business macos platform sso mfa"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T10:09:48.564090+00:00"
         }
       }
     },
@@ -13848,7 +14138,7 @@
             "1932d90772f1e949cd32733a01add582544c96f5e621a12c67e5a45b603d132b"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:07.719838+00:00",
+          "checkedAt": "2026-10-29T01:55:22.382115+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app access",
@@ -13864,7 +14154,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:11.699224+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:25.296554+00:00"
         }
       }
     },
@@ -13873,7 +14163,7 @@
         "727cc578f5843ac136bc6111658055e4b7fb952d5d41a9638b164dcd3e71a2ee"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:29.045845+00:00",
+      "checkedAt": "2026-10-29T01:53:33.291915+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft folder sharing",
@@ -13888,14 +14178,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:29.049608+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:33.296969+00:00",
       "variants": {
         "f27bd5b768c844d60549ffc39319426ec9b1c41a4dfa971d5116a7dcb1050653": {
           "sourceHashes": [
             "f27bd5b768c844d60549ffc39319426ec9b1c41a4dfa971d5116a7dcb1050653"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:29.230408+00:00",
+          "checkedAt": "2026-10-29T01:53:33.631390+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft folder sharing",
@@ -13910,14 +14200,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:29.234191+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:33.636280+00:00"
         },
         "19e5cc78e994e308646c4744a0fde7f1a114655b3de8bf7735186f9121038036": {
           "sourceHashes": [
             "19e5cc78e994e308646c4744a0fde7f1a114655b3de8bf7735186f9121038036"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:27.469546+00:00",
+          "checkedAt": "2026-10-29T01:53:31.486256+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft folder sharing",
@@ -13932,14 +14222,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:28.957657+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:33.128369+00:00"
         },
         "d89d6d1c74608787545db49414a6b89ec2bd982b13241b8086f683dfeeae16c6": {
           "sourceHashes": [
             "d89d6d1c74608787545db49414a6b89ec2bd982b13241b8086f683dfeeae16c6"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:29.138081+00:00",
+          "checkedAt": "2026-10-29T01:53:33.459073+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft folder sharing",
@@ -13954,7 +14244,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:29.141818+00:00"
+          "nextAttemptAt": "2026-11-01T01:53:33.464059+00:00"
         }
       }
     },
@@ -14045,7 +14335,7 @@
         "ce6b04826f79c85a6cbb182f1ee7ea0ca1be7237f43da27df4c37255f9e1e410"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:55.153758+00:00",
+      "checkedAt": "2026-10-29T01:54:02.560438+00:00",
       "documents": [],
       "reviewHash": "81cac350353bb7111abb0d9e66bdc8849f1dad4350311ba5691118e3396ff9b5",
       "query": "Microsoft exchange external recipient rate limit trial education quotas",
@@ -14066,14 +14356,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:55.168356+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:02.577722+00:00",
       "variants": {
         "927225e175fceb152a730786f0bcb0796ec96051d40dcb10b929b61339938371": {
           "sourceHashes": [
             "927225e175fceb152a730786f0bcb0796ec96051d40dcb10b929b61339938371"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:26:52.033331+00:00",
+          "checkedAt": "2026-10-29T01:53:59.569308+00:00",
           "documents": [],
           "reviewHash": "81cac350353bb7111abb0d9e66bdc8849f1dad4350311ba5691118e3396ff9b5",
           "query": "Microsoft exchange external recipient rate limit trial education quotas",
@@ -14094,7 +14384,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:26:55.058640+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:02.395873+00:00"
         }
       }
     },
@@ -14103,7 +14393,7 @@
         "c4a624b2a3bcbcd0bd5618edd980cd4578e6f8a7350ad643d2bfa7db90bed098"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:09.897048+00:00",
+      "checkedAt": "2026-10-29T01:53:12.590986+00:00",
       "documents": [],
       "reviewHash": "604fbdcdc01b44e27bd1f902cd6284aa79e93e36d744f1b6c1aa7348b270f300",
       "query": "Microsoft edge copilot endpoint",
@@ -14124,7 +14414,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:12.615699+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:15.203292+00:00",
       "variants": {
         "2d1f1c325a277bed29fd239b0fcde9c3963f308d2e3b226aadff29a670a9ce49": {
           "sourceHashes": [
@@ -15064,7 +15354,7 @@
             "100afcde810f1cb9897ec27a432040fdbe1fc77c3fc4f1601e428bbbd1124fb0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:11.805866+00:00",
+          "checkedAt": "2026-10-29T01:55:25.461304+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passkey b2b users",
@@ -15081,14 +15371,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:16.306952+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:30.137340+00:00"
         },
         "e20dfb87d80d81c8db32f65b23e024053eee640da1e58d84b34007fb570422ee": {
           "sourceHashes": [
             "e20dfb87d80d81c8db32f65b23e024053eee640da1e58d84b34007fb570422ee"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:16.543858+00:00",
+          "checkedAt": "2026-10-29T01:55:30.479725+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passkey b2b users",
@@ -15105,14 +15395,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:16.554760+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:30.493835+00:00"
         },
         "15e287a5c355ab9da460b056f32154ef8350c35bbc8b3c7a19317f353f0d1422": {
           "sourceHashes": [
             "15e287a5c355ab9da460b056f32154ef8350c35bbc8b3c7a19317f353f0d1422"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:16.439897+00:00",
+          "checkedAt": "2026-10-29T01:55:30.301089+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passkey b2b users",
@@ -15129,7 +15419,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:16.450666+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:30.315613+00:00"
         }
       }
     },
@@ -15138,7 +15428,7 @@
         "45d9581badcaba64ea2cd62772f163313e167a125bb9b2db32c2e25523238f79"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:29.322694+00:00",
+      "checkedAt": "2026-10-29T01:53:33.800337+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft admin center usage reports domains migration",
@@ -15155,7 +15445,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:33.918302+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:38.624288+00:00",
       "variants": {}
     },
     "MC1461528": {
@@ -15601,7 +15891,7 @@
             "b05039118c50fb236c898c237a0760121432030885db5b45b19c33cd15639475"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:20.126700+00:00",
+          "checkedAt": "2026-10-29T01:55:33.611874+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot endpoints",
@@ -15617,14 +15907,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:20.136314+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:33.624986+00:00"
         },
         "14b7683cf7c418c62a1310c9b4af038d7706f623016ec5867deb0b36d52080d4": {
           "sourceHashes": [
             "14b7683cf7c418c62a1310c9b4af038d7706f623016ec5867deb0b36d52080d4"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:16.645208+00:00",
+          "checkedAt": "2026-10-29T01:55:30.656597+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot endpoints",
@@ -15640,14 +15930,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:19.928693+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:33.447203+00:00"
         },
         "d156ab970347f837abafcba67b8a50e6aa835e12b76a4128690d93a15d7609ba": {
           "sourceHashes": [
             "d156ab970347f837abafcba67b8a50e6aa835e12b76a4128690d93a15d7609ba"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:20.225426+00:00",
+          "checkedAt": "2026-10-29T01:55:33.787208+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot endpoints",
@@ -15663,7 +15953,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:20.235132+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:33.804453+00:00"
         }
       }
     },
@@ -15720,7 +16010,7 @@
             "45e5c2322b4cb113f95215bb70abaa7613f42cb2414b569a8f5638fd5539ccba"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:20.324029+00:00",
+          "checkedAt": "2026-10-29T01:55:33.968910+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft admin app teams outlook retirement",
@@ -15736,7 +16026,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:23.189209+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:36.820494+00:00"
         }
       }
     },
@@ -15844,7 +16134,7 @@
         "5a0d46315b0d58b70ecbca5ff6ba72af097c014e591859977c518c5bfbe2fa51"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:34.009751+00:00",
+      "checkedAt": "2026-10-29T01:53:38.788095+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot chat",
@@ -15860,7 +16150,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:37.005830+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:42.750661+00:00",
       "variants": {}
     },
     "MC1467356": {
@@ -15868,7 +16158,7 @@
         "f16bb4f2827dcc6043351203c6955664506b2ce958e7e7a15ec3bb38bdb31aac"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:55.305856+00:00",
+      "checkedAt": "2026-10-29T01:54:02.740868+00:00",
       "documents": [],
       "reviewHash": "2f815c861200cfa190cb87d15ff2bfaac4222ca6dfb54810794da449e3a494cc",
       "query": "Microsoft edge manifest extensions",
@@ -15889,7 +16179,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:58.263474+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:06.109445+00:00",
       "variants": {}
     },
     "MC1469329": {
@@ -16396,7 +16686,7 @@
         "9f2dfcb440ce45aa0c3a37eb57069d544ac59f0721cba4f3536ce41b6bb49a7f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:58.353811+00:00",
+      "checkedAt": "2026-10-29T01:54:06.274784+00:00",
       "documents": [],
       "reviewHash": "31c4f5ffcf4e440d7ee160db974a90666a21d2dba196a5bb17cfc363cbb1a035",
       "query": "Microsoft graph readbasic all app role assignments license details",
@@ -16417,7 +16707,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:01.142001+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:09.111870+00:00",
       "variants": {}
     },
     "MC1470885": {
@@ -16495,7 +16785,7 @@
             "a168ee4ba67ae252e7703d7b9583e1fa708f6b2e6ff5742901742cd6754bb5d0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:23.279763+00:00",
+          "checkedAt": "2026-10-29T01:55:36.984079+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot word excel powerpoint prompts",
@@ -16511,22 +16801,22 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:26.678380+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:39.970863+00:00"
         }
       }
     },
     "MC1472028": {
       "sourceHashes": [
-        "c3cfed384bf35d58e292e1842baa823161924d12c1c603a4546d4f197d40fab4"
+        "3774e4af907d3387d3d602724dd7d68a0cec50dbdaa2b8615040e430717f43d6"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T10:14:10.881518+00:00",
+      "checkedAt": "2026-10-29T01:51:58.852969+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/graph/outlook-calendar-meeting-proposals",
           "title": "Outlook カレンダーで会議の新しい日時を提案する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:14:17.150535+00:00",
+          "checkedAt": "2026-10-29T01:52:04.209281+00:00",
           "bodySha256": "cf5f157b0306417ee5613e06cf8e4cc8faf542e47abc2089d9c03613baad40a5",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -16551,7 +16841,7 @@
             "articleExcerpt": "# Propose new meeting times in Outlook calendar\r\n\r\nIn Outlook, a meeting organizer can allow invitees to propose alternative meeting times, if they cannot meet at the original set date/time and accept tentatively or decline. The organizer can accept a proposal by adjusting the meeting time as appropriate.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/graph/outlook-calendar-meeting-proposals",
             "bodySha256": "b60524b5ec050e680f9a70849a960db720d7b9c62eebcdb4a8ee26f1977de366",
-            "reviewedAt": "2026-10-16T10:14:17.150535+00:00"
+            "reviewedAt": "2026-10-29T01:52:04.209345+00:00"
           }
         }
       ],
@@ -16575,8 +16865,71 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T10:14:17.150535+00:00",
-      "variants": {}
+      "nextAttemptAt": "2026-11-28T01:52:04.209352+00:00",
+      "variants": {
+        "c3cfed384bf35d58e292e1842baa823161924d12c1c603a4546d4f197d40fab4": {
+          "sourceHashes": [
+            "c3cfed384bf35d58e292e1842baa823161924d12c1c603a4546d4f197d40fab4"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T10:14:10.881518+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/graph/outlook-calendar-meeting-proposals",
+              "title": "Outlook カレンダーで会議の新しい日時を提案する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:14:17.150535+00:00",
+              "bodySha256": "cf5f157b0306417ee5613e06cf8e4cc8faf542e47abc2089d9c03613baad40a5",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "automatic_learn_search",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "microsoft365",
+                "matchedTerms": [
+                  "meeting",
+                  "organizer",
+                  "outlook"
+                ],
+                "requiredFeatureTerms": [
+                  "change",
+                  "meeting",
+                  "organizer",
+                  "outlook"
+                ],
+                "coverage": 0.75,
+                "platforms": [],
+                "score": 0.95,
+                "articleExcerpt": "# Propose new meeting times in Outlook calendar\r\n\r\nIn Outlook, a meeting organizer can allow invitees to propose alternative meeting times, if they cannot meet at the original set date/time and accept tentatively or decline. The organizer can accept a proposal by adjusting the meeting time as appropriate.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/graph/outlook-calendar-meeting-proposals",
+                "bodySha256": "b60524b5ec050e680f9a70849a960db720d7b9c62eebcdb4a8ee26f1977de366",
+                "reviewedAt": "2026-10-16T10:14:17.150535+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft outlook meeting organizer",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/graph/outlook-calendar-meeting-proposals",
+              "source": "automatic_learn_search",
+              "decision": "adopted",
+              "score": 0.95
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft outlook meeting organizer",
+          "searchedQueries": [
+            "Microsoft outlook meeting organizer"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T10:14:17.150535+00:00"
+        }
+      }
     },
     "MC1472429": {
       "sourceHashes": [
@@ -17572,7 +17925,7 @@
         "1fbf534a06409b391b01d7ef0ee96a49cf3fcf370b9d1d3e9824966111f0331f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:27:01.232707+00:00",
+      "checkedAt": "2026-10-29T01:54:09.275002+00:00",
       "documents": [],
       "reviewHash": "640719ea17cb6d20a5c6d974fe3e8a016461b0acaa05fbbd4b8ae9c6cd1e9592",
       "query": "Microsoft agent registry duplicate entries version history",
@@ -17593,14 +17946,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:27:04.000914+00:00",
+      "nextAttemptAt": "2026-11-01T01:54:12.640394+00:00",
       "variants": {
         "adb83fc6828343696499b8678737f2ba259c29fe04b3c33b7d29b1817420449e": {
           "sourceHashes": [
             "adb83fc6828343696499b8678737f2ba259c29fe04b3c33b7d29b1817420449e"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:27:04.089843+00:00",
+          "checkedAt": "2026-10-29T01:54:12.806480+00:00",
           "documents": [],
           "reviewHash": "640719ea17cb6d20a5c6d974fe3e8a016461b0acaa05fbbd4b8ae9c6cd1e9592",
           "query": "Microsoft agent registry duplicate entries version history",
@@ -17621,7 +17974,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:27:04.099788+00:00"
+          "nextAttemptAt": "2026-11-01T01:54:12.818714+00:00"
         }
       }
     },
@@ -17708,7 +18061,7 @@
             "0a6cb6cb8b1e46730a0e41c98bb99f2c5f50f8638391fc5d750a895e37b93c16"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-10-26T00:28:26.768347+00:00",
+          "checkedAt": "2026-10-29T01:55:40.134607+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft viva insights usage reports retirement",
@@ -17725,7 +18078,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-10-29T00:28:31.137210+00:00"
+          "nextAttemptAt": "2026-11-01T01:55:44.790662+00:00"
         }
       }
     },
@@ -18242,10 +18595,10 @@
     },
     "MC1478975": {
       "sourceHashes": [
-        "aa1eb7319057ba0b425114664bf910ebf1a5340224a1a3d4b65def90cedcd68f"
+        "e8c0dd0053f5b3ae4d7bd49dab7660502160cdc4cba412f2bedfb037be1d9844"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-22T18:46:34.923093+00:00",
+      "checkedAt": "2026-10-29T01:52:04.349844+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
@@ -18275,7 +18628,7 @@
             "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
             "bodySha256": "c0cfb94451816a8d5d403747eabb4e3ed42575ef570356469f034ebc5e4e2f70",
-            "reviewedAt": "2026-10-22T18:46:40.072096+00:00"
+            "reviewedAt": "2026-10-29T01:52:07.179902+00:00"
           }
         }
       ],
@@ -18299,7 +18652,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-21T18:46:40.072104+00:00",
+      "nextAttemptAt": "2026-11-28T01:52:07.179912+00:00",
       "variants": {
         "effee8532c30c4acf3b511ac6f7cf75a9e26b6cf19af553beeac2b2b7c9af13a": {
           "sourceHashes": [
@@ -18361,6 +18714,67 @@
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
           "nextAttemptAt": "2026-11-21T18:46:40.184172+00:00"
+        },
+        "aa1eb7319057ba0b425114664bf910ebf1a5340224a1a3d4b65def90cedcd68f": {
+          "sourceHashes": [
+            "aa1eb7319057ba0b425114664bf910ebf1a5340224a1a3d4b65def90cedcd68f"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-22T18:46:34.923093+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+              "title": "宣言型エージェントから他のエージェントに接続する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-22T18:46:40.072018+00:00",
+              "bodySha256": "78ea84fa0779914594d8b3f0eb23ed91847629eba4fdf04ba6a0ad326fa21b89",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "reviewed_candidate",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "agent365",
+                "matchedTerms": [
+                  "connected",
+                  "copilot",
+                  "declarative"
+                ],
+                "requiredFeatureTerms": [
+                  "connected",
+                  "copilot",
+                  "declarative"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+                "bodySha256": "c0cfb94451816a8d5d403747eabb4e3ed42575ef570356469f034ebc5e4e2f70",
+                "reviewedAt": "2026-10-22T18:46:40.072096+00:00"
+              }
+            }
+          ],
+          "reviewHash": "fcbcbc4fc097b3c2b64e6c14e67b6b57d6514094e506751f349dbfa4e3ce2e91",
+          "query": "Microsoft agent connected agents declarative",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+              "source": "reviewed_candidate",
+              "decision": "adopted",
+              "score": 1.0
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft agent connected agents declarative",
+          "searchedQueries": [
+            "Microsoft agent connected agents declarative"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-21T18:46:40.072104+00:00"
         }
       }
     },
@@ -19438,17 +19852,17 @@
     },
     "MC1492959": {
       "sourceHashes": [
-        "794b7e32ab4a1162162c5aa1e9552fa430cf6bfac7606b4fd725d061e937fe5e"
+        "bd1cef978f89c00eb41aa642ed7475257a1bb3e9f37c41efcac486dfe8394735"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T10:14:28.134641+00:00",
+      "checkedAt": "2026-10-29T01:52:07.316951+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/previous-year-release-notes",
           "title": "2025 Microsoft 365 Copilot リリース ノート",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:14:33.983762+00:00",
-          "bodySha256": "3b409cad22d2697f92ee1c66ebc0e6c01e5911c8062370a425f62a90d62dd45d",
+          "checkedAt": "2026-10-29T01:52:11.665130+00:00",
+          "bodySha256": "71dda2f368e299ec5d2f5c7c230dec86db27525499e4fd11f76c62cf7d6959bc",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "automatic_learn_search",
@@ -19469,15 +19883,15 @@
             "articleExcerpt": "### Microsoft 365 Copilot app\r\n\r\n- **Customize audio overviews for Copilot notebooks** [Web]\r\n\r\n    Personalize the content and tone of audio summaries from your Copilot notebooks by using natural language input.\r\n\r\n    **Roadmap ID:**[499150](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=499150)\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Notebook audio overviews are now creator-driven with prompt-based customization.\r\n\r\n    **Why:** Supports diverse use cases-like executive briefings or quick-learning sessions-without extra editing work.\r\n\r\n    **Try this:**\r\n\r\n    - Type: *\"Create an upbeat 2-minute audio summary focused on key sales drivers.\"*\r\n\r\n    **Why this matters:**\r\n\r\n    **Business Impact:** Enhances the value of notebooks for communication and leadership updates.\r\n\r\n    **Personal Impact:** Saves time creating engaging summaries without additional tools.\r\n\r\n    **Additional resources:**\r\n\r\n    **Support:**\r\n\r\n    [Get an audio overview of your notebook with Microsoft 365 Copilot Notebooks](https://support.microsoft.com/topic/get-an-audio-overview-of-your-notebook-with-microsoft-365-copilot-notebooks-a22df989-b9cd-47fb-abac-e888d8f10cd9)\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/previous-year-release-notes",
             "bodySha256": "bbd540814ec4ab775295480b4257e2247d5b5633c2a6f9bfef03930448852b28",
-            "reviewedAt": "2026-10-16T10:14:33.985889+00:00"
+            "reviewedAt": "2026-10-29T01:52:11.666847+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes",
           "title": "Microsoft 365 Copilot のリリース ノート",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:13:36.420673+00:00",
-          "bodySha256": "ccb21dabed86288f15e9df43e86936d0eec90bdcbc2284998ec43e05fa451ebb",
+          "checkedAt": "2026-10-29T01:52:15.356436+00:00",
+          "bodySha256": "74a42e36f920666d2a49ac9d74a33d6e7381c4f3eb757deab1bebde324a5c259",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "automatic_learn_search",
@@ -19498,7 +19912,7 @@
             "articleExcerpt": "### Word\r\n\r\n- **Real-time voice interactions with Audio Overview** [Web]\r\n\r\n    Today, audio overview help you absorb content on the go, but they're one-way—listeners can't clarify or explore without stopping. With real time voice interactions, you can ask questions verbally while listening and get answers instantly - all while staying in the audio experience. \r\n\r\n    **Roadmap ID:**[523206](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=523206)\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Audio Overview in Word now supports real-time voice interactions, allowing listeners to ask questions and receive immediate answers without pausing or switching apps. Previously, audio summaries were one-way experiences requiring manual searches to explore content further. This update maintains continuous listening while enabling dynamic, conversational engagement.\r\n\r\n    **Why:** This change removes interruptions caused by pausing and searching, helping users understand content faster and stay focused on the discussion. It transforms passive listening into an interactive experience that supports deeper comprehension.\r\n\r\n    **Try this:**\r\n\r\n    - Open a Word document in Web and generate an audio overview summary.\r\n    - While listening, unmute and ask a question related to the content.\r\n    - Hear instant answers without stopping the audio playback.\r\n\r\n    **Why this matters:** Users can explore and clarify information naturally during audio playback, improving comprehension without breaking their flow.\r\n\r\n    **Business impact:** Teams benefit from more efficient knowledge sharing and faster understanding of document content during meetings or commutes.\r\n\r\n    **Personal impact:** You save time by getting answers instantly while listening, reducing the need to pause and manually search for information.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
             "bodySha256": "89709154ac07456301ae6f22575e388d80649bcb77bfeda0f5c6ccb25879177c",
-            "reviewedAt": "2026-10-16T10:14:34.176387+00:00"
+            "reviewedAt": "2026-10-29T01:52:15.359327+00:00"
           }
         }
       ],
@@ -19528,8 +19942,103 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T10:14:34.176387+00:00",
-      "variants": {}
+      "nextAttemptAt": "2026-11-28T01:52:15.359339+00:00",
+      "variants": {
+        "794b7e32ab4a1162162c5aa1e9552fa430cf6bfac7606b4fd725d061e937fe5e": {
+          "sourceHashes": [
+            "794b7e32ab4a1162162c5aa1e9552fa430cf6bfac7606b4fd725d061e937fe5e"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T10:14:28.134641+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/previous-year-release-notes",
+              "title": "2025 Microsoft 365 Copilot リリース ノート",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:14:33.983762+00:00",
+              "bodySha256": "3b409cad22d2697f92ee1c66ebc0e6c01e5911c8062370a425f62a90d62dd45d",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "automatic_learn_search",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "microsoft365",
+                "matchedTerms": [
+                  "audio",
+                  "overview"
+                ],
+                "requiredFeatureTerms": [
+                  "audio",
+                  "overview"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "### Microsoft 365 Copilot app\r\n\r\n- **Customize audio overviews for Copilot notebooks** [Web]\r\n\r\n    Personalize the content and tone of audio summaries from your Copilot notebooks by using natural language input.\r\n\r\n    **Roadmap ID:**[499150](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=499150)\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Notebook audio overviews are now creator-driven with prompt-based customization.\r\n\r\n    **Why:** Supports diverse use cases-like executive briefings or quick-learning sessions-without extra editing work.\r\n\r\n    **Try this:**\r\n\r\n    - Type: *\"Create an upbeat 2-minute audio summary focused on key sales drivers.\"*\r\n\r\n    **Why this matters:**\r\n\r\n    **Business Impact:** Enhances the value of notebooks for communication and leadership updates.\r\n\r\n    **Personal Impact:** Saves time creating engaging summaries without additional tools.\r\n\r\n    **Additional resources:**\r\n\r\n    **Support:**\r\n\r\n    [Get an audio overview of your notebook with Microsoft 365 Copilot Notebooks](https://support.microsoft.com/topic/get-an-audio-overview-of-your-notebook-with-microsoft-365-copilot-notebooks-a22df989-b9cd-47fb-abac-e888d8f10cd9)\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/previous-year-release-notes",
+                "bodySha256": "bbd540814ec4ab775295480b4257e2247d5b5633c2a6f9bfef03930448852b28",
+                "reviewedAt": "2026-10-16T10:14:33.985889+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes",
+              "title": "Microsoft 365 Copilot のリリース ノート",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:13:36.420673+00:00",
+              "bodySha256": "ccb21dabed86288f15e9df43e86936d0eec90bdcbc2284998ec43e05fa451ebb",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "automatic_learn_search",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "microsoft365",
+                "matchedTerms": [
+                  "audio",
+                  "overview"
+                ],
+                "requiredFeatureTerms": [
+                  "audio",
+                  "overview"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "### Word\r\n\r\n- **Real-time voice interactions with Audio Overview** [Web]\r\n\r\n    Today, audio overview help you absorb content on the go, but they're one-way—listeners can't clarify or explore without stopping. With real time voice interactions, you can ask questions verbally while listening and get answers instantly - all while staying in the audio experience. \r\n\r\n    **Roadmap ID:**[523206](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=523206)\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Audio Overview in Word now supports real-time voice interactions, allowing listeners to ask questions and receive immediate answers without pausing or switching apps. Previously, audio summaries were one-way experiences requiring manual searches to explore content further. This update maintains continuous listening while enabling dynamic, conversational engagement.\r\n\r\n    **Why:** This change removes interruptions caused by pausing and searching, helping users understand content faster and stay focused on the discussion. It transforms passive listening into an interactive experience that supports deeper comprehension.\r\n\r\n    **Try this:**\r\n\r\n    - Open a Word document in Web and generate an audio overview summary.\r\n    - While listening, unmute and ask a question related to the content.\r\n    - Hear instant answers without stopping the audio playback.\r\n\r\n    **Why this matters:** Users can explore and clarify information naturally during audio playback, improving comprehension without breaking their flow.\r\n\r\n    **Business impact:** Teams benefit from more efficient knowledge sharing and faster understanding of document content during meetings or commutes.\r\n\r\n    **Personal impact:** You save time by getting answers instantly while listening, reducing the need to pause and manually search for information.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+                "bodySha256": "89709154ac07456301ae6f22575e388d80649bcb77bfeda0f5c6ccb25879177c",
+                "reviewedAt": "2026-10-16T10:14:34.176387+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft copilot notebooks audio overview",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/copilot/previous-year-release-notes",
+              "source": "automatic_learn_search",
+              "decision": "adopted",
+              "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/copilot/release-notes",
+              "source": "automatic_learn_search",
+              "decision": "adopted",
+              "score": 1.0
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft copilot notebooks audio overview",
+          "searchedQueries": [
+            "Microsoft copilot notebooks audio overview"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T10:14:34.176387+00:00"
+        }
+      }
     },
     "MC985483": {
       "sourceHashes": [
@@ -20037,52 +20546,76 @@
     },
     "MC1510951": {
       "sourceHashes": [
-        "345119ed983650c42ea15a9723c7ebfc8fb3ae92d10771e5f847119ceec0bc57"
+        "08b2107a4a89930bc49662596d366fdfef436d306227dc03d16de974f4504e25"
       ],
-      "status": "verified",
-      "checkedAt": "2026-10-19T00:14:24.934295+00:00",
-      "documents": [
-        {
-          "url": "https://learn.microsoft.com/ja-jp/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
-          "title": "夏時間のヘルプとサポート",
-          "locale": "ja-jp",
-          "checkedAt": "2026-10-19T00:14:31.880255+00:00",
-          "bodySha256": "bfa6c8b86af3f5c8619385275ea97562cb829e42680c0fe45a96135a86490f9b",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "explicit_message_link",
-          "rationale": "Explicit official article from this approved notification.",
-          "featureEvidence": {
-            "canonicalArticle": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
-            "bodySha256": "2749e898fb769c29f2bb88efd75b1e6e9bbb5d1a405b895443e0c6f29684e172",
-            "reviewedAt": "2026-10-19T00:14:31.880303+00:00"
-          }
-        }
-      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-29T01:52:15.511620+00:00",
+      "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft",
-      "explicitUrls": [
-        "https://learn.microsoft.com/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support"
-      ],
+      "explicitUrls": [],
       "searchProvider": "Microsoft Learn public MCP",
       "researchVersion": 4,
       "errors": [],
-      "candidates": [
-        {
-          "url": "https://learn.microsoft.com/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
-          "source": "explicit_message_link",
-          "decision": "adopted"
-        }
-      ],
+      "candidates": [],
       "searchEvidenceKey": "search:Microsoft",
       "searchedQueries": [
         "Microsoft",
         "microsoft windows"
       ],
       "searchSucceeded": true,
-      "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-18T00:14:31.880312+00:00",
-      "variants": {}
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-01T01:52:18.709932+00:00",
+      "variants": {
+        "345119ed983650c42ea15a9723c7ebfc8fb3ae92d10771e5f847119ceec0bc57": {
+          "sourceHashes": [
+            "345119ed983650c42ea15a9723c7ebfc8fb3ae92d10771e5f847119ceec0bc57"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-19T00:14:24.934295+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
+              "title": "夏時間のヘルプとサポート",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-19T00:14:31.880255+00:00",
+              "bodySha256": "bfa6c8b86af3f5c8619385275ea97562cb829e42680c0fe45a96135a86490f9b",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
+                "bodySha256": "2749e898fb769c29f2bb88efd75b1e6e9bbb5d1a405b895443e0c6f29684e172",
+                "reviewedAt": "2026-10-19T00:14:31.880303+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft",
+          "explicitUrls": [
+            "https://learn.microsoft.com/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft",
+          "searchedQueries": [
+            "Microsoft",
+            "microsoft windows"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-18T00:14:31.880312+00:00"
+        }
+      }
     },
     "MC1509797": {
       "sourceHashes": [
@@ -20452,7 +20985,7 @@
         "5f467f62070397114c0506884bae3f1b467e002f772fee3b340aacbbc68800df"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:05.261461+00:00",
+      "checkedAt": "2026-10-29T01:53:04.332959+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft authenticator ios android",
@@ -20468,63 +21001,457 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:08.288584+00:00",
+      "nextAttemptAt": "2026-11-01T01:53:07.243843+00:00",
       "variants": {}
     },
     "MC1520901": {
       "sourceHashes": [
         "bc47da8ce5dac08c9ad7e38b7d43e3819d95a36b3003ab755202a1be26ba8a69"
       ],
-      "status": "no_verified_document",
-      "checkedAt": "2026-10-26T00:26:08.377339+00:00",
-      "documents": [],
+      "status": "verified",
+      "checkedAt": "2026-10-29T01:53:07.408012+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/insights-agent-overview",
+          "title": "Microsoft 365 Insights エージェントの概要",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-29T01:53:12.429038+00:00",
+          "bodySha256": "444753a805e31c18975be43f3f3bec7281f14681ef659a8788fc821cbcb1ce05",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "automatic_learn_search",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "microsoft365",
+            "matchedTerms": [
+              "agent",
+              "frontier",
+              "insights"
+            ],
+            "requiredFeatureTerms": [
+              "agent",
+              "frontier",
+              "insights",
+              "v2"
+            ],
+            "coverage": 0.75,
+            "platforms": [],
+            "score": 0.95,
+            "articleExcerpt": "# Microsoft 365 Insights Agent overview\r\n\r\nThe Microsoft 365 Insights Agent is a Copilot agent that answers natural language questions about how the agents in your tenant are used. Ask about daily, weekly, and monthly active users, rolling retention, stickiness, adoption trends, or how one agent compares to another. The agent returns a grounded, aggregate answer right in chat.\r\n\r\nFeedback and Ratings is currently available in Frontier preview. Agent owners can ask for feedback submitted for agents they own, including thumbs-up and thumbs-down ratings and user-submitted verbatim comments. For details about the sharing control and how it relates to users submitting ratings and comments, see [Agent feedback sharing](/en-us/microsoft-365/admin/manage/agent-settings?view=o365-worldwide#agent-feedback-sharing).\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/insights-agent-overview",
+            "bodySha256": "792b39d10006227406e6e118ef76688efa525204c7613430cf1ad82169f3df25",
+            "reviewedAt": "2026-10-29T01:53:12.429112+00:00"
+          }
+        }
+      ],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft insights agent",
       "explicitUrls": [],
       "searchProvider": "Microsoft Learn public MCP",
       "researchVersion": 4,
       "errors": [],
-      "candidates": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/microsoft-365/copilot/extensibility/insights-agent-overview",
+          "source": "automatic_learn_search",
+          "decision": "adopted",
+          "score": 0.95
+        }
+      ],
       "searchEvidenceKey": "search:Microsoft insights agent",
       "searchedQueries": [
         "Microsoft insights agent"
       ],
       "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-11-28T01:53:12.429120+00:00",
+      "variants": {}
+    },
+    "MC1529472": {
+      "sourceHashes": [
+        "6d7644eaeab729b731aa1f9aa05ae7d165d84517d49b125587b57fa9118e1d76"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-10-29T01:52:18.853744+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/admin/manage/get-started-frontier?view=o365-worldwide",
+          "title": "Microsoft Frontier プログラムの使用を開始する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-29T01:52:28.312050+00:00",
+          "bodySha256": "8f6a3b9f796d44799449747a9cd8d8b1f5665f75235bf961118270a8b7a830c5",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier",
+            "bodySha256": "90ff9571b7929854931cc000808a3c607ba468ffd49ad36925c0b6465ac39de2",
+            "reviewedAt": "2026-10-29T01:52:28.312110+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft public previews teams outlook windows onedrive sharepoint",
+      "explicitUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/manage/get-started-frontier"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/microsoft-365/admin/manage/get-started-frontier",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft public previews teams outlook windows onedrive sharepoint",
+      "searchedQueries": [
+        "Microsoft public previews teams outlook windows onedrive sharepoint",
+        "teams outlook windows onedrive sharepoint",
+        "teams public previews outlook"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-11-28T01:52:28.312117+00:00",
+      "variants": {}
+    },
+    "MC1529467": {
+      "sourceHashes": [
+        "7e3055695914cd5d4b83970f7a57dbd65951cbfacb7f625052ee77d9c38091c5"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-10-29T01:52:28.464010+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
+          "title": "信頼されたルートおよび許可されない証明書を Windows で構成する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-29T01:52:34.016789+00:00",
+          "bodySha256": "00b70883c0d2ededc8dcfbd5c9882c7a025d9750ce3ea476cf6e1046d0641754",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
+            "bodySha256": "66f2494e4e0109117d1e714d4052148f233dca9254617576203558da4fc819d9",
+            "reviewedAt": "2026-10-29T01:52:34.016876+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft windows address",
+      "explicitUrls": [
+        "https://learn.microsoft.com/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft windows address",
+      "searchedQueries": [
+        "Microsoft windows address"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-11-28T01:52:34.016882+00:00",
+      "variants": {}
+    },
+    "MC1528009": {
+      "sourceHashes": [
+        "9c011769350feaa56c20c629c9268781ae56b6fa85aff607cecdfbde80b5caf9"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-29T01:52:34.167558+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft admin center retirement search analytics",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft admin center retirement search analytics",
+      "searchedQueries": [
+        "Microsoft admin center retirement search analytics",
+        "microsoft center retirement search analytics",
+        "microsoft admin center retirement search"
+      ],
+      "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-10-29T00:26:09.807948+00:00",
+      "nextAttemptAt": "2026-11-01T01:52:38.566053+00:00",
+      "variants": {}
+    },
+    "MC1528006": {
+      "sourceHashes": [
+        "cbef320952bdf4f1cc01f340c775ac01de51164d41f816abc32c2229dc1fa196"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-29T01:52:38.722042+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft authenticator backup restore android",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft authenticator backup restore android",
+      "searchedQueries": [
+        "Microsoft authenticator backup restore android",
+        "entra authenticator backup restore android"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-01T01:52:42.278001+00:00",
+      "variants": {}
+    },
+    "MC1528000": {
+      "sourceHashes": [
+        "38126ec7aec8d9cbfeeca98f824a7c61c77f5d626252fe38ac9bea6d20f64de0"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-10-29T01:52:42.437200+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-authentication-passkeys-fido2",
+          "title": "Microsoft Entra IDの認証メソッド - パスキー (FIDO2)",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-29T01:52:48.036312+00:00",
+          "bodySha256": "94f8ae1d0739f1cc3830053ff7340f920f1ab4bd1473d09b72fb26d66605fd3e",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2",
+            "bodySha256": "4a4a44dda49ab564b1f1693fe10c319ff26c40f00a73f41e80fbe25079e23582",
+            "reviewedAt": "2026-10-29T01:52:48.036363+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
+          "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-22T00:43:47.101706+00:00",
+          "bodySha256": "83ec253a56a82222dde9352b5982fb64c74264fbaf8d0ad1dfaf4bf39c850adc",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "authentication",
+              "id",
+              "provided",
+              "sms",
+              "voice"
+            ],
+            "requiredFeatureTerms": [
+              "authentication",
+              "id",
+              "migrate",
+              "provided",
+              "reminder",
+              "sms",
+              "voice"
+            ],
+            "coverage": 0.714,
+            "platforms": [],
+            "score": 0.914,
+            "articleExcerpt": "## How Choose Your Own Telephony Provider works\r\n\r\nYour selected telephony provider delivers the SMS messages or voice calls that users need to complete authentication. Microsoft Entra ID continues to enforce your authentication method policies and coordinates the authentication experience.\r\n\r\nYour organization is responsible for selecting a telephony provider, reviewing its regional coverage and terms, completing the provider agreement, configuring the provider for Microsoft Entra ID, and monitoring the service.\r\n\r\nFor the full transition schedule, see [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](concept-sms-voice-retirement).\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
+            "bodySha256": "142a1d683b21c28ff4bf67c052d3d6637317b0b5e28e476f12a5b0e34c7f3c39",
+            "reviewedAt": "2026-10-29T01:52:49.283561+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-authentication-phone-options",
+          "title": "Microsoft Entra ID の認証方法 - 音声通話",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-29T01:52:53.018945+00:00",
+          "bodySha256": "e2a5b81f04dc653eceeb79d239f6bd0d9e1ba204190fc129ccd146a07ee1ddc7",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "automatic_learn_search",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "authentication",
+              "id",
+              "provided",
+              "sms",
+              "voice"
+            ],
+            "requiredFeatureTerms": [
+              "authentication",
+              "id",
+              "migrate",
+              "provided",
+              "reminder",
+              "sms",
+              "voice"
+            ],
+            "coverage": 0.714,
+            "platforms": [],
+            "score": 0.914,
+            "articleExcerpt": "# Authentication methods in Microsoft Entra ID - Voice call\r\n\r\nMicrosoft recommends users move away from using text messages or voice calls for multifactor authentication. Modern authentication methods like [Microsoft Authenticator](concept-authentication-authenticator-app) are a recommended alternative. For more information, see [It's Time to Hang Up on Phone Transports for Authentication](https://aka.ms/hangup). Users can still verify themselves using a mobile phone or office phone as secondary form of authentication used for multifactor authentication or self-service password reset (SSPR).\r\n\r\nYou can [configure and enable users for SMS-based authentication](howto-authentication-sms-signin) for direct authentication using text message. Text messages are convenient for Frontline workers. With text messages, users don't need to know a username and password to access applications and services. The user instead enters their registered mobile phone number, receives a text message with a verification code, and enters that in the sign-in interface.\r\n\r\nNote\r\n\r\nPhone call verification isn't available for Microsoft Entra tenants with trial subscriptions. For example, if you sign up for a trial license Microsoft Enterprise Mobility and Security (EMS), phone call verification isn't available. Phone numbers must be provided in the format *+CountryCode PhoneNumber*, for example, *+1 4251234567*. There must be a space between the country/region code and the phone number.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-phone-options",
+            "bodySha256": "b2380c15f188a39b0c409025088e9db37d6d6f9ba1b6415d1ad3ffff93e6b5a2",
+            "reviewedAt": "2026-10-29T01:52:53.018999+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft entra sms voice authentication",
+      "explicitUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passkeys-fido2",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passkeys-fido2",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 0.914
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-authentication-phone-options",
+          "source": "automatic_learn_search",
+          "decision": "adopted",
+          "score": 0.914
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft entra sms voice authentication",
+      "searchedQueries": [
+        "Microsoft entra sms voice authentication"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-11-28T01:52:53.019007+00:00",
+      "variants": {}
+    },
+    "MC1526676": {
+      "sourceHashes": [
+        "6fcb87900da10a206fe47fd759a19b0e4af336f9e35780d7651799f1b0a8168c"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-29T01:52:53.180501+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft admin center manage copilot search",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft admin center manage copilot search",
+      "searchedQueries": [
+        "Microsoft admin center manage copilot search",
+        "copilot center manage search",
+        "copilot admin center manage"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-01T01:52:58.020862+00:00",
+      "variants": {}
+    },
+    "MC1526661": {
+      "sourceHashes": [
+        "cf4928cfb41306dd7d3f9726583913ffdcec6391744e49803cc09bde2575fc97"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-29T01:52:58.183550+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft update export",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft update export",
+      "searchedQueries": [
+        "Microsoft update export",
+        "office update export"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-01T01:53:01.828639+00:00",
+      "variants": {}
+    },
+    "MC1526468": {
+      "sourceHashes": [
+        "3db7782d7ca6b2328ef930d84c6fc4fb0266065ae3c105af1837dec834698000"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-10-29T01:53:01.990354+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft update admin",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft update admin",
+      "searchedQueries": [
+        "Microsoft update admin"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-01T01:53:04.168024+00:00",
       "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 153,
-    "snapshotOccurrences": 3359,
-    "snapshots": 41,
+    "uniqueMessages": 161,
+    "snapshotOccurrences": 3458,
+    "snapshots": 42,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-10-22T23:18:55+00:00",
-    "checkedAt": "2026-10-28T19:48:32.871669+00:00",
+    "publicationEnd": "2026-10-28T22:57:19+00:00",
+    "checkedAt": "2026-10-29T01:55:49.292143+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 52,
+      "no_verified_document": 57,
       "not_researched": 0,
-      "verified": 101
+      "verified": 104
     },
     "latestCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 21,
+      "no_verified_document": 24,
       "not_researched": 0,
-      "verified": 68
+      "verified": 70
     },
-    "latestTotal": 89,
-    "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "latestTotal": 94,
+    "pendingAttempts": 11,
+    "processedThisRun": 100,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 145,
+      "no_verified_document": 150,
       "not_researched": 0,
-      "verified": 187
+      "verified": 197
     },
     "retrievalErrors": 0,
-    "coverage": "complete",
+    "coverage": "partial",
     "researchVersion": 4
   }
 }
