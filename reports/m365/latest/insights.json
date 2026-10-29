@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T02:01:28.4610229+00:00",
+  "generatedAt": "2026-10-29T02:07:59.7101615+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "カナダ時間帯変更・eMudhra証明書失効・Entra認証/エージェント権限変更が今週の最優先",
   "executiveSummary": "今週は期限が近い順に、(1) カナダ一部地域が2026年11月1日に時計を戻さない件でOutlook/Exchange予定やTeams Roomsに影響(MC1526468)、(2) eMudhra中間CA鍵の問題に伴いWindows/Edge/WebView2で該当CAがブロックされる信頼更新が10月下旬に展開(MC1529467)、(3) Targeted releaseが2027年1月に廃止され、11月にユーザー追加・変更ができなくなる(MC1490899)が重要です。Entraでは既定ユーザーによるエージェントblueprint作成が11月初旬から可能になり(MC1506733)、SSPRは登録済み認証方法必須化(MC1325414)、Microsoft提供SMS/音声認証は2027年2月1日から廃止(MC1528000)されます。Office LTSC 2021等のサポートは2026年10月13日に終了済みです(MC1509797)。なお抜粋に記載のない日程・要件は不明であり、「存在しない」ことを意味しません。",
@@ -2054,9 +2054,57 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1528000",
+      "japaneseTitle": "Entra IDのMicrosoft提供SMS/音声認証が2027年2月に廃止",
+      "japaneseFacts": {
+        "change": "Microsoft Entra IDのMicrosoft提供SMS・音声認証が2027年2月1日から廃止されます(MC1426371、MC1434201の再通知)。",
+        "impact": "これらに依存する組織とユーザーが対象です。CYOTで構成した顧客管理の通信事業者は影響を受けません。",
+        "timing": "WorldwideとGCCで2027年2月1日から開始し、2月初旬に完了予定です。",
+        "action": "2027年2月1日前にパスキー等へ移行するかCYOTを構成し、ユーザーとヘルプデスクへ周知してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entra IDにおけるMicrosoft提供のSMS・音声認証が、2027年2月1日から廃止されます。先行通知MC1426371とMC1434201のリマインダーです。SMSと音声はフィッシングやSIMスワップに弱いため、パスキーなどへの移行が推奨されます。他の登録済み方法があるユーザーはその方法を使い、SMS・音声のみのユーザーは最後に一度だけ使って本人確認し、その後パスキー登録が必要です。CYOTによる顧客管理の通信事業者は影響を受けません。ロールアウト前に対象ユーザーの特定、移行、必要ならCYOT構成、ユーザーとヘルプデスクへの通知を行ってください。原文は途中で切れています。",
+      "japaneseBodyTranslation": "【内容と理由】\nこれは、MC1426371(2026年7月13日)およびMC1434201(GCC、2026年7月20日)で先に通知された、Microsoft Entra IDにおけるMicrosoft提供のSMS・音声認証の廃止に関するリマインダーです。\nMicrosoft提供のSMS・音声認証は2027年2月1日から廃止されます。ユーザーのサインインを中断させないよう、ロールアウト開始前に移行を完了してください。\nSMSと音声はフィッシングやSIMスワップ攻撃に脆弱です。Microsoftは、より強力でフィッシング耐性のあるパスキーを推奨します。他のサポート対象の認証方法へ移行するか、Microsoft Security Storeで顧客管理の通信事業者(CYOT)を構成してSMSと音声を維持することもできます。\n【展開スケジュール】\n• 廃止(WorldwideおよびGCC):2027年2月1日から開始し、2027年2月初旬に完了予定です。\n• ロールアウトがテナントに到達するのを待たず、2027年2月1日前に移行を完了するかCYOTを構成してください。\n【組織への影響】\n対象者\n• Microsoft提供のSMSまたは音声認証に依存する組織とユーザー\n• Microsoft Security Storeで構成した顧客管理の通信事業者は影響を受けません。\n対象のプラットフォームとサービス\n• Microsoft Entra ID認証\n発生すること\n• 他の登録済みサインイン方法があるユーザーは、その方法を使用します。継続のためにパスキー登録は必須ではありません。\n• SMSまたは音声が唯一の登録済み方法のユーザーは、最後に一度だけSMSまたは音声で本人確認できます。その後、サインインを続けるにはパスキーを登録する必要があります。\n【必要な対応と推奨事項】\nMicrosoft提供のSMSまたは音声を使用している場合、2027年2月1日前に次を実施してください。\n• 影響を受けるユーザーを特定する。特に他の登録済み方法がないユーザーを確認する。\n• 移行を完了する。ロールアップ開始前に、パスキーまたは他のサポート対象方法を登録し使用開始できるよう支援する。\n• SMSまたは音声を維持する必要がある場合はCYOTを構成する。開始前にMicrosoft Security Storeで構成する。\n• ユーザーとヘルプデスクに通知する。期限、必要な対応、SMS・音声のみのユーザーのパスキー登録要件を説明する。\nMicrosoft提供のSMSまたは音声を使用していない場合、この廃止に対する対応は不要です。\n詳細情報\n• 移行ガイダンス\n• Passkeys in Mic(原文はここで切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "def88c10e1a9050a725f59483d50c516747057eabfff95282849ed00b90d6d35",
+      "validatedAt": "2026-10-29T02:07:59.6976416+00:00"
+    },
+    {
+      "id": "MC1528009",
+      "japaneseTitle": "検索分析の一部機能(Summary/User/Query/Answer)を廃止",
+      "japaneseFacts": {
+        "change": "Microsoft 365管理センターの検索とインテリジェンス > インサイトで、一部の検索体験向けSummary、User/Query、Answer Analyticsが廃止されます。",
+        "impact": "これらのレポートを利用する管理者が対象です。SharePoint検索分析、コネクタ分析、ユーザーの検索機能は影響を受けません。",
+        "timing": "Worldwide、GCCで2026年11月下旬に開始し、2026年12月中旬に完了予定です。",
+        "action": "利用していなければ不要です。利用する場合は依存状況を確認し、廃止前にデータをエクスポートし、レポート運用や連携を更新してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365管理センターの「検索とインテリジェンス > インサイト」にある、Microsoft/Bing検索(Work Search含む)、Teams検索、Outlook/WXP検索、Windows検索の職場結果、Microsoft365.comに関するSummary、User/Query、Answer Analyticsが廃止されます。インサイト全体、SharePoint検索分析、コネクタ分析、ユーザーの検索機能は対象外です。展開はWorldwide・GCCで2026年11月下旬に始まり12月中旬に完了予定です。該当レポートを使う管理者は、利用状況の確認、必要データのエクスポートや保管、関連するレポート運用・連携の更新を行ってください。利用していない組織に必要な対応はありません。",
+      "japaneseBodyTranslation": "【内容と理由】\n次の検索体験について、一部の検索分析機能を廃止します。\n• Microsoft/Bing検索(Work Searchを含む)\n• Teams検索\n• Outlook/WXP検索(Word、Excel、PowerPointを含む)\n• Windows検索の職場結果\n• Microsoft365.com\nこの廃止は、Microsoft 365管理センターの「検索とインテリジェンス > インサイト」内で、これらの検索体験に関連するSummary、User/Query、Answer Analyticsに適用されます。変更は上記の分析機能に限定され、次には影響しません。\n• 検索とインテリジェンス > インサイト体験全体の廃止\n• SharePoint検索分析への影響\n• コネクタ分析への影響\n• 影響を受けるアプリでのユーザーの検索能力の変更\n【展開スケジュール】\n• Worldwide、GCC:2026年11月下旬に開始し、2026年12月中旬までに完了予定です。\n【組織への影響】\n対象者\n• 影響を受ける検索体験のSummary、User/Query、Answer Analyticsを使用する管理者\n対象のプラットフォームとサービス\n• Microsoft 365管理センター、検索とインテリジェンス > インサイト\n• Microsoft/Bing検索(Work Search含む)\n• Teams検索\n• Outlook/WXP検索(Word、Excel、PowerPoint含む)\n• Windows検索の職場結果\n• Microsoft365.com\n発生すること\n• 廃止がテナントに到達後、管理者は対象検索体験のSummary、User/Query、Answer Analyticsにアクセスできなくなります。\n• 本通知に記載のないその他の検索分析機能は対象外です。\n• SharePoint検索分析とコネクタ分析は影響を受けません。\n• 対象アプリでのユーザーの検索能力は変わりません。\n【必要な対応と推奨事項】\nこれらの分析機能を使用していない場合、対応は不要です。使用している場合は次を推奨します。\n• 影響を受けるSummary、User/Query、Answer Analyticsレポートに依存しているか確認する。\n• これらのレポート、フィルター、エクスポート、関連レポート連携を使用する管理者や関係者を特定する。\n• 確認された過去データの利用可否に従い、廃止前に必要な分析データをエクスポートまたは保持する。\n• 影響を受ける分析機能に依存するレポート作成プロセスや連携を更新する。",
+      "sourceCharacterCount": 2338,
+      "sourceTruncated": false,
+      "sourceHash": "2d446fc43c4468b3015536f84e591bc28b7a355c5ab0323fe0b5ff382b30c597",
+      "validatedAt": "2026-10-29T02:07:59.6923572+00:00"
+    },
+    {
+      "id": "MC1526468",
+      "japaneseTitle": "MC1510951更新:カナダ2026年タイムゾーン変更の影響と管理者対応",
+      "japaneseFacts": {
+        "change": "2026年11月1日にBC州、アルバータ州、マニトバ州などで時計を戻さず、UTC-07:00、-06:00、-05:00に留まります。",
+        "impact": "OutlookとExchange Onlineの予定表は新タイムゾーンへの移行が必要で、既存予定は自動移行されません。Teams Rooms on Windowsは時刻が1時間ずれる場合があります。",
+        "timing": "変更日は2026年11月1日です。Exchange Online PowerShellの修復コマンドレットは2026年10月28日が目標です。",
+        "action": "Windows更新、ユーザーへのタイムゾーン選択依頼、定期会議の確認、Edge/WebView2更新、11月1日前のテストを行ってください。"
+      },
+      "japaneseDetailedSummary": "MC1510951の更新です。2026年11月1日に、ブリティッシュコロンビア、アルバータ、マニトバの対象地域は時計を戻さず、それぞれUTC-07:00、UTC-06:00、UTC-05:00に留まります。ノースウエスト準州はアルバータ、オンタリオ北西部はマニトバに合わせます。確認済みの影響として、Outlook/Exchange Onlineの予定表では新タイムゾーンへの移行が必要で、既存予定は自動移行されず、定期会議は追加確認が必要です。Teams Rooms on WindowsはEdge/WebView2更新までWindowsより1時間遅れる場合があります。Teams、Outlookモバイル/Mac、Bookings、Shifts、SharePoint、OneDriveは検証中です。Windows更新、定期会議の確認、PowerShell修復コマンドレットの準備、各アプリ更新、事前テストが必要です。問題時は件名に#Canada Time-Zoneを含めてサポートケースを起票してください。",
+      "japaneseBodyTranslation": "本投稿はMC1510951((更新)2026年のカナダのタイムゾーン変更に対するWindows更新プログラムが利用可能、2026年10月16日投稿)を更新するものです。\n2026年11月1日、ブリティッシュコロンビア、アルバータ、マニトバの対象地域は時計を戻さず、それぞれUTC-07:00、UTC-06:00、UTC-05:00に留まります。ノースウエスト準州の対象地域(イエローナイフ、イヌヴィクを含む)はアルバータの変更に合わせ、オンタリオ北西部はマニトバの変更に合わせます。\nWindowsとマイクロソフト365サービスは、正しい予定設定と表示のために更新されたタイムゾーン定義に依存します。\n組織への影響\n確認済みの影響\n• OutlookとExchange Online(予定表):ユーザーは新しいタイムゾーンへ移行する必要があります。既存の予定は自動的には移行されません。定期的な会議は追加の確認が必要です。\n• Windows版Microsoft Teams Rooms:Edge/WebView2が更新されるまで、一部のデバイスでWindowsより1時間遅れた時刻が表示される場合があります。\n潜在的な影響(検証中)\n• Microsoft Teams(デスクトップ、Web、モバイル)およびその他のTeamsデバイス\n• iOS、Android、Mac版Outlook\n• Microsoft Bookings\n• Shifts\n• SharePoint Online\n• OneDrive\n必要な対応\n• 対象地域のWindowsデバイスに、2026年10月の更新を含む最新のWindows更新プログラムが適用されていることを確認する。\n• 対象地域のユーザーに、Outlookで新しいタイムゾーンを選択し、11月1日以降の会議、特に定期会議を確認するよう依頼する。\n• 非定期会議向けのExchange Online PowerShell修復コマンドレットは、リリース後に実行できるよう計画する(目標:2026年10月28日)。\n• Windows版Teams RoomsでEdgeとWebView2を更新し、会議室の時刻表示がWindowsと一致することを確認する。\n• Teams、Outlook(iOS/Android/Mac含む)、その他のMicrosoft 365アプリを最新に保つ。\n• 11月1日前に、定期会議、空き時間情報、Bookings予約、Shiftsスケジュール、SharePoint地域設定などの主要シナリオをテストする。\n• 問題が発生した場合は、Microsoft 365管理センターでサポートケースを開き、件名に#Canada Time-Zoneを含める。\n追加情報\n• ブリティッシュコロンビア、アルバータ、マニトバのOutlookタイムゾーン変更(Microsoftサポート)\n• 2026年ブリティッシュコロンビアのタイムゾーン変更に関する暫定ガイダンス(DSTブログ)\n• 2026年アルバータのタイムゾーン変更に関する暫定ガイダンス(DSTブログ)\n• マニトバ2026年タイムゾーン更新が利用可能(夏時間とタイムゾーンブログ)\n製品チームが影響を確認し、緩和策を公開し、追加ガイダンスをリリースするのに合わせて、この投稿を更新し続けます。",
+      "sourceCharacterCount": 2486,
+      "sourceTruncated": false,
+      "sourceHash": "8e436ade5b7e0becbadeaa1c6606cdff34445000f01145174b3e8f2e29968da9",
+      "validatedAt": "2026-10-29T02:07:59.7006549+00:00"
     }
   ],
-  "summarySourceHash": "e3a3fdc390ac8334f8ada81927454995f2ceacaaa29f3bae3f511f8405d79603",
   "summaryGeneratedAt": "2026-10-29T02:01:28.2382864+00:00",
+  "summarySourceHash": "e3a3fdc390ac8334f8ada81927454995f2ceacaaa29f3bae3f511f8405d79603",
   "sourceAgentRunId": "40802791822"
 }
