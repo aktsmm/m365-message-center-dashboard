@@ -1,34 +1,500 @@
 {
   "meta": {
-    "runId": "40249189743",
-    "generatedAt": "2026-10-26T00:24:32.3186601+00:00",
+    "runId": "40802652387",
+    "generatedAt": "2026-10-29T01:49:05.6990849+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 89,
-    "majorChanges": 23,
-    "highSeverity": 1,
-    "actionRequired": 10,
+    "total": 94,
+    "majorChanges": 25,
+    "highSeverity": 2,
+    "actionRequired": 12,
     "actionDueWithin30Days": 3,
-    "updatedLast7Days": 7
+    "updatedLast7Days": 18
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 50
+      "count": 55
     },
     {
       "name": "Microsoft Entra",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Microsoft 365 Copilot Chat",
-      "count": 17
+      "count": 15
     }
   ],
   "messages": [
+    {
+      "id": "MC1529472",
+      "title": "Frontier expands to include public previews in Microsoft Teams, new Outlook for Windows, OneDrive, and SharePoint",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-28T22:57:19.0000000+00:00",
+      "endDateTime": "2026-12-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-28T23:01:14.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nFrontier now covers more of Microsoft 365. Starting in November 2026, users enrolled in Frontier will start getting eligible public preview features in Microsoft Teams, new Outlook for Windows, OneDrive, and SharePoint, in addition to Copilot.\nInstead of looking in different places for previews, admins use one program and one setting to give the users they choose early access across Microsoft 365.\nFrontier is optional and controlled by your admins. It is separate from each user's Standard release or Deferred release preference, which still decides when users receive features once they're generally available. If you already have users enrolled in Frontier, they don't need to re-enroll.\nRelease options in the Microsoft 365 admin center:\n• Frontier (preview access): Opt in specific users and groups, or all users, to get eligible public preview features before general availability.\n• Standard release (general availability): Receive updates as soon as they're generally available. This is the default.\n• Deferred release (general availability): Receive eligible major updates approximately 30 days after Standard release begins, allowing more time for validation and readiness.\nLearn more: Get started with the Microsoft Frontier Program\n[Rollout Schedule:]\nNovember 2026: Users enrolled in Frontier will start getting eligible public preview features in Microsoft Teams, new Outlook for Windows, OneDrive, and SharePoint, in addition to Copilot.\n[Impact on Your Organization:]\nFrontier makes early access to Microsoft 365 previews simpler and more predictable. Instead of looking in different places for previews, your organization gets eligible public preview features for Microsoft Teams, new Outlook for Windows, OneDrive, SharePoint, and Copilot through one program, managed from one admin setting. Admins choose which users and groups take part, and everyone else stays on their Standard release or Deferred release schedule, so it's clear who gets what and when.\nIn November 2026, admins can also manage Frontier, Standard release, and Deferred release together in one place in the Microsoft 365 admin center. Early access gives you time to prepare guidance and support teams, and a way to share feedback before features are broadly released.\n[Action Required/Recommendations:]\n• Users enrolled in Frontier will start seeing eligible preview features in Microsoft Teams, new Outlook for Windows, OneDrive, and SharePoint, in addition to the Copilot preview features they get today.\n• If your Frontier setting is All users, every user with the right licenses will get these preview features.\n• Users not enrolled in Frontier see no change. They keep getting features based on their Standard release or Deferred release preference.\n• A Microsoft Copilot license is no longer required to enroll users in Frontier. Users need licenses for the products they want to preview. For example, to use Frontier features for Teams, users need a license that includes Microsoft Teams. Enrolled users without that license aren't shown that product's Frontier features.\n• Users in Targeted release aren't automatically enrolled in Frontier.\n• Preview features may change before general availability.\n• Future additions to Frontier will be announced in Message center.\nWe recommend that administrators:\n• Review your current Frontier enrollment. In the Microsoft 365 admin center, go to Copilot > Settings > View all > Copilot Frontier. You can choose No access (default), All users, or Specific users and groups.\n• If Frontier is set to All users, decide whether everyone should get preview features. If not, switch to Specific users and groups.\n• If you're new to Frontier, consider starting with a pilot group and expanding over time. A pilot group could be IT staff, an innovation team, or employees who want to test the latest features.\n• If you use Targeted release, enroll the users you want to get preview features in Frontier. Targeted release users aren't enrolled automatically, and Targeted release retires in January 2027.\n• Make sure enrolled users have licenses for the products they will preview.\n• If you use the Microsoft 365 Insider (for business) program to validate production builds, keep doing so. To try eligible preview features offered through Frontier, enroll the users who will participate.\n• Let your helpdesk, change management teams, and pilot groups know that enrolled users will start seeing preview features.\nUntil the unified release preferences experience is available, admins can continue to manage Frontier enrollment through Copilot settings in the Microsoft 365 admin center. In November 2026, you can manage Frontier, Standard release, and Deferred release together in the unified release preferences experience, or continue to manage Frontier through Copilot settings. For details, see MC1490899.\n[Compliance considerations:]\nDoes the change include an admin control?Yes. Admins manage Frontier enrollment (No access, All users, or Specific users and groups) through Copilot Settings in the Microsoft 365 admin center.\n[Additional Resources:]\n• Frontier expands to more Microsoft 365 public previews | Microsoft Community Hub\n• Get started with the Microsoft Frontier Program\n• Explore AI Early Access in Microsoft 365 | Microsoft Frontier",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting November 2026, Microsoft Frontier expands to offer public preview features in Teams, new Outlook for Windows, OneDrive, and SharePoint, alongside Copilot. Admins manage enrollment centrally, choosing users for early access, while others remain on Standard or Deferred release schedules. Frontier simplifies preview management and preparation."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/manage/get-started-frontier"
+      ]
+    },
+    {
+      "id": "MC1529467",
+      "title": "Microsoft Windows: Updates to address compromised eMudhra certificate authority keys",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-28T22:53:04.0000000+00:00",
+      "endDateTime": "2026-11-28T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-28T22:53:51.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft is responding to an issue involving eight eMudhra intermediate certificate authority (CA) private keys, six associated with TLS and two with code signing. Because these keys could be recovered, they could potentially be used to create certificates or sign content that appeared to come from a trusted CA. The issue arose in eMudhra's certificate hierarchy and was not a compromise of Microsoft systems.\nMicrosoft is updating certificate trust to block affected certificate authorities and remove certificates associated with the affected hierarchies.\n[Rollout schedule]\n• General Availability (Worldwide, GCC, GCC High, DoD): Beginning in late October 2026 and expected to complete by late October 2026\n[Impact on your organization]\nWho is affected\n• Organizations using Windows, Microsoft Edge, or WebView2, particularly organizations with certificates that chain to one of the eight certificates being removed\n• Organizations managing disconnected Windows devices or disconnected Azure devices may need to take additional action\nPlatforms and services\n• Windows\n• Microsoft Edge\n• WebView2\n• Azure virtual machines\nWhat will happen\n• Microsoft has published an update to the Windows Disallowed Certificate Trust List to block the affected certificate authorities.\n• Microsoft has deployed a separate CRLSet update for Microsoft Edge and WebView2 to block affected TLS certificates signed by the affected certificate authorities.\n• The Microsoft Edge and WebView2 update is delivered automatically through the component update mechanism. Customers do not need to install a new browser version.\n• Microsoft has released updates to Windows and Microsoft Edge to remove certificates associated with the affected hierarchies from their trust lists.\n• After these updates reach a device, the affected certificates will no longer be trusted by default through the respective trust lists.\n[Action required and recommendations]\n• Keep updates flowing. Allow automatic Windows certificate trust updates and Microsoft Edge component updates to reach your devices.\n• Check disconnected Windows devices. If you manage Windows devices that do not receive automatic updates, make sure your update process delivers the updated Disallowed Certificate Trust List and upcoming trust-list changes. See the Microsoft Learn guidance in Learn more for information about distributing certificate trust lists in disconnected environments.\n• Review disconnected Azure devices. Review disconnected Azure devices running on Virtual Machine Scale Sets (VMSS) or single-instance VMs. Updated images are available in Azure Marketplace, and customers can deploy them to protect against this vulnerability.\n• Replace dependent certificates. If any of your certificates chain to one of the seven certificates being removed, identify those dependencies and obtain replacement certificates or an alternative trusted chain before the changes reach your devices.\nLearn more\n• Microsoft’s response to compromised eMudhra certificate authority keys\n• Configure trusted roots and disallowed certificates in Windows | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft is updating Windows, Edge, and WebView2 to block eight compromised eMudhra certificate authority keys by late October 2026. Organizations must allow automatic updates, manage disconnected devices, and replace certificates chaining to these keys to maintain trust and security."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates"
+      ]
+    },
+    {
+      "id": "MC1069563",
+      "title": "Microsoft 365 admin center: Usage reports to manage metered consumption costs for Microsoft 365 Copilot Chat (preview)",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-05-07T23:47:17.0000000+00:00",
+      "endDateTime": "2027-07-05T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-28T18:20:34.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated October 28, 2026: We have updated the timeline below. Thank you for your patience.\nTo help you manage metered consumption costs for Microsoft 365 Copilot Chat, we will introduce a new Message consumption usage report in the Microsoft 365 admin center. The new report will give you visibility into billed messages associated with your Microsoft 365 Copilot pay-as-you-go billing policies and includes total messages consumed, cumulative and daily time series, and messages per user, per billing policy, per agent, and per agent-user pair. The new report will roll out in preview. During the preview stage, the report will display a maximum of 30 days of message consumption history. Usage information from prior to May 3, 2025, will not be available in the report.\nThis message refers to Microsoft Copilot in a pay-as-you-go model. A Microsoft Copilot license is not required.\nThis message is associated with Microsoft 365 Roadmap ID 490738.\n[When this will happen:]\nPublic Preview: Available now.\nGeneral Availability (Worldwide): We will begin rolling out in end of April 2027 (previously early January) and expect to complete by end of May 2027 (previously end of January).\n[How this will affect your organization:]\nAfter you have set up pay-as-you-go billing for Microsoft 365 Copilot, either in the Microsoft 365 admin center or the Microsoft Power Platform admin center, and you have enabled agent usage in your organization, you will see a new report including metrics for messages consumed at the levels of tenant, users, agents, and agent-user. To help you mitigate overspending, you will see alerts when users have consumed more than 2000 billed messages.\nThis new report will be on by default and will be available in the Microsoft admin center at Reporting > Usage > Microsoft 365 Copilot > Message consumption:\n[What you need to do to prepare:]\nThis rollout will happen automatically by the specified date with no admin action required before the rollout. You may want to notify any admins that manage agents on the integrated apps page about this feature.\nLearn more: Microsoft 365 reports in the admin center - Message consumption",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "490738"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 admin center introduces a preview usage report for managing metered costs of Microsoft 365 Copilot Chat pay-as-you-go billing. It shows message consumption by tenant, user, and agent, with alerts for over 2000 messages. Rollout starts end of April 2027, no admin action needed."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/activity-reports/message-consumption"
+      ]
+    },
+    {
+      "id": "MC1528009",
+      "title": "Microsoft 365 admin center: Retirement of selected Search Analytics capabilities",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-10-27T23:23:53.0000000+00:00",
+      "endDateTime": "2027-01-15T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-27T23:24:31.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "bodyText": "[What and why]\nWe are retiring selected Search Analytics capabilities for the following search experiences:\n• Microsoft/Bing Search, including Work Search\n• Teams Search\n• Outlook/WXP Search, including Word, Excel, and PowerPoint\n• Windows Search Work results\n• Microsoft365.com\nThis retirement applies to Summary, User/Query, and Answer Analytics associated with these search experiences within Search & intelligence > Insights in the Microsoft 365 admin center. This change is limited to the analytics capabilities listed above. It does not:\n• Retire the Search & intelligence > Insights experience as a whole\n• Affect SharePoint Search Analytics\n• Affect Connector Analytics\n• Change users' ability to search in any of the affected applications\n[Rollout schedule]\n• Worldwide, GCC: Rollout will begin in late November 2026 and is expected to complete by mid-December 2026.\n[Impact on your organization]\nWho is affected\n• Administrators who use Summary, User/Query, or Answer Analytics for the affected search experiences.\nPlatforms and services\n• Microsoft 365 admin center, Search & intelligence > Insights\n• Microsoft/Bing Search, including Work Search\n• Teams Search\n• Outlook/WXP Search, including Word, Excel, and PowerPoint\n• Windows Search Work results\n• Microsoft365.com\nWhat will happen\n• After the retirement reaches your tenant, administrators will no longer be able to access Summary, User/Query, or Answer Analytics for the affected search experiences.\n• Other Search Analytics capabilities not listed in this notice remain outside the scope of this retirement.\n• SharePoint Search Analytics and Connector Analytics are not affected.\n• Users' ability to search in the affected applications will not change.\n[Action required and recommendations]\nNo action is required if your organization does not use these analytics capabilities. Otherwise, we recommend that you:\n• Review whether your organization relies on the affected Summary, User/Query, or Answer Analytics reports.\n• Identify administrators or reporting stakeholders who use these reports, filters, exports, or related reporting integrations.\n• Export or retain any required analytics data before retirement, subject to the confirmed historical-data availability.\n• Update any reporting processes or integrations that depend on the affected analytics capabilities.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Selected Search Analytics capabilities for Microsoft/Bing, Teams, Outlook/WXP, Windows Search Work results, and Microsoft365.com will retire in late 2026. Summary, User/Query, and Answer Analytics in Microsoft 365 admin center will be removed, but search functions and other analytics remain unaffected. Administrators should review and export needed data."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1528006",
+      "title": "Microsoft Authenticator: Improved backup and restore experience for Android",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-27T23:21:34.0000000+00:00",
+      "endDateTime": "2027-02-18T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-27T23:21:50.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "[What and why]\nWe’re improving the backup and restore experience in Microsoft Authenticator for Android. When setting up Authenticator on a new device, users will receive guidance tailored to whether they still have access to their previous device. They will also receive guidance on using Authenticator passkeys for cross-device sign-in. This experience is already available on iOS.\nTo use backup and restore on a new Android device, users must enable Google One backup and screen lock.\n[Rollout schedule]\n• General Availability (Worldwide, GCC, GCC High, and DoD): Beginning in mid-January 2027 and expected to complete in mid-January 2027\n[Impact on your organization]\nWho is affected\n• Users of Microsoft Authenticator on Android\nPlatforms and services\n• Microsoft Authenticator for Android\nWhat will happen\n• When setting up Authenticator on a new Android device, users will see clearer guidance based on whether they still have access to their previous device.\n• Users will receive guidance for using Authenticator passkeys for cross-device sign-in.\n• Work or school accounts are not backed up. This is not changing.\n• Backup will continue to support TOTP credentials for Microsoft personal accounts and third-party accounts.\n• Users must enable Google One backup and screen lock to use this backup and restore experience.\n• Backup and restore is supported only when Microsoft Authenticator is installed in the Android personal profile. It is not supported when Authenticator is installed in an Android work profile.\n[Action required and recommendations]\nNo admin action is required.\nOrganizations may choose to inform users about the updated restore experience on Android devices.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Authenticator for Android will improve backup and restore with clearer setup guidance and support for passkeys starting mid-January 2027. Users must enable Google One backup and screen lock. Work/school accounts aren’t backed up, and backup works only in the Android personal profile. No admin action needed."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1528000",
+      "title": "Microsoft Entra ID: Reminder to migrate from Microsoft-provided SMS and voice authentication",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-10-27T23:16:44.0000000+00:00",
+      "endDateTime": "2027-03-03T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-27T23:17:02.0000000+00:00",
+      "actionRequiredByDateTime": "2027-02-01T08:00:00.0000000+00:00",
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2027年2月1日 です。",
+      "bodyText": "[What and why]\nThis is a reminder of the upcoming retirement of Microsoft-provided SMS and voice authentication in Microsoft Entra ID, previously announced in MC1426371 (July 13, 2026) and MC1434201 (GCC, July 20, 2026).\nMicrosoft-provided SMS and voice authentication will retire starting February 1, 2027. Complete your migration before rollout begins to avoid interrupting users' sign-in experience.\nSMS and voice are vulnerable to phishing and SIM-swap attacks. Microsoft recommends passkeys for stronger, phishing-resistant protection. You can also migrate to another supported authentication method or retain SMS and voice by configuring a customer-managed telecom provider (CYOT) through the Microsoft Security Store.\n[Rollout schedule]\n• Retirement (Worldwide and GCC): Beginning February 1, 2027, and expected to complete in early February 2027.\n• Complete migration or configure CYOT before February 1, 2027, rather than waiting for the rollout to reach your tenant.\n[Impact on your organization]\nWho is affected\n• Organizations and users that rely on Microsoft-provided SMS or voice authentication\n• Customer-managed telecom providers configured through the Microsoft Security Store are not affected.\nPlatforms and services\n• Microsoft Entra ID authentication\nWhat will happen\n• Users with another registered sign-in method will use that method. They will not be required to register a passkey to continue signing in.\n• Users whose only registered sign-in method is SMS or voice can use SMS or voice one final time to verify their identity. They must then register a passkey before continuing sign-in.\n[Action required and recommendations]\nIf your organization uses Microsoft-provided SMS or voice, complete these steps before February 1, 2027:\n• Identify affected users. Review who relies on SMS or voice, especially users with no other registered sign-in method.\n• Complete migration. Help affected users register and start using passkeys or another supported authentication method before rollout begins.\n• Configure CYOT if you need to retain SMS or voice. Configure a customer-managed telecom provider through the Microsoft Security Store before rollout begins.\n• Notify users and your helpdesk. Explain the deadline, required actions, and the passkey-registration requirement for users who only have SMS or voice registered.\nIf your organization does not use Microsoft-provided SMS or voice, no action is required for this retirement.\nLearn more\n• Migration guidance\n• Passkeys in Microsoft Entra ID\n• Choose a telephony provider for SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra ID will retire Microsoft-provided SMS and voice authentication starting February 1, 2027. Organizations must migrate users to passkeys or other methods, or configure a customer-managed telecom provider before then to avoid sign-in disruptions. SMS and voice are vulnerable to attacks; passkeys are recommended."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passkeys-fido2",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers"
+      ]
+    },
+    {
+      "id": "MC1450134",
+      "title": "(Updated) Microsoft Entra: Windows Hello for Business and macOS Platform SSO as standalone MFA factors",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-08-07T21:56:10.0000000+00:00",
+      "endDateTime": "2027-01-29T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-27T22:54:39.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 27, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft Entra will soon recognize Windows Hello for Business (WHfB) and macOS Platform Single Sign-On (PSSO) as standalone multifactor authentication (MFA) factors in supported authentication scenarios.\nToday, WHfB and macOS PSSO can satisfy MFA requirements during primary sign-in, but users may still be required to register and use an additional passkey or authentication method for certain step-up authentication prompts, Authentication Strength policies, and sign-in frequency checks.\nAfter this rollout, users who authenticate with WHfB or macOS PSSO will be able to satisfy supported MFA requirements without registering an additional passkey. This change helps organizations expand the use of phishing-resistant authentication methods and reduce reliance on less secure authentication methods. As part of this change, a user's WHfB and macOS PSSO credentials will be displayed in My Security Info as auto-registered passkeys.\n[Rollout schedule]\n• General Availability (Worldwide, GCC): Beginning in early November 2026 (previously early October) and expected to complete in late December 2026 (previously mid-December)\n[Impact on your organization]\nWho is affected\n• Organizations using Microsoft Entra ID\n• Users who authenticate with Windows Hello for Business\n• Users who authenticate with macOS Platform SSO\n• Organizations using Conditional Access Authentication Strength policies\nPlatforms and services\n• Microsoft Entra ID\n• Windows Hello for Business\n• macOS Platform SSO\n• Conditional Access\n• Authentication Strength policies\nWhat will happen\nAfter rollout:\n• Users signing in with WHfB or macOS PSSO can complete supported MFA challenges without requiring a separate passkey.\n• WHfB and macOS PSSO will satisfy supported MFA requirements for step-up authentication scenarios.\n• WHfB and macOS PSSO can be used during 2FA to satisfy supported Authentication Strength policy requirements.\n• WHfB and macOS PSSO can be used during 2FA to satisfy supported sign-in frequency challenge requirements.\n• Users whose only MFA method is WHfB or macOS PSSO will be considered MFA-capable.\n• Users who sign in with only a password will no longer be automatically prompted to register an additional MFA method if WHfB or macOS PSSO is their only registered MFA credential.\n• Users with WHfB or macOS PSSO credentials, will be able to see them listed in My Security Info as auto-registered passkeys.\n[Action required and recommendations]\nNo configuration changes are required.\nWe recommend reviewing user onboarding and MFA registration processes before rollout. Because WHfB and macOS PSSO credentials are device-bound, users may not be able to complete MFA challenges from devices where those credentials are not available.\nRecommended actions:\n• Update onboarding guidance to ensure users register at least one portable MFA method.\n• Consider requiring users to register a synced passkey or Microsoft Authenticator passkey in addition to WHfB or macOS PSSO.\n• Review custom Authentication Strength policies to confirm WHfB and macOS PSSO are allowed where appropriate.\n• Update user documentation because users with only WHfB or macOS PSSO registered will no longer be automatically guided to register an additional MFA method.\nLearn more (To be updated closer to GA rollout.)\n• Plan a Windows Hello for Business deployment | Security | Windows | Microsoft Learn\n• Prepare users to provision and use Windows Hello for Business | Security | Windows | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra will recognize Windows Hello for Business and macOS Platform SSO as standalone MFA factors starting early November 2026, allowing users to satisfy MFA without additional passkeys. No configuration changes are needed, but organizations should update onboarding and MFA registration guidance accordingly."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/",
+        "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/prepare-users"
+      ]
+    },
+    {
+      "id": "MC1510951",
+      "title": "(Updated) Windows updates are available for 2026 time zone changes in Canada",
+      "category": "preventOrFixIssue",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-10-16T19:15:07.0000000+00:00",
+      "endDateTime": "2027-10-16T19:15:07.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-27T21:03:37.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ（主要な変更）",
+      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "bodyText": "(Updated October 16, 2026: Added guidance for managing the Alberta and British Columbia time zone changes in Outlook Time Zone Changes for Alberta and British Columbia.)\n(Updated October 27, 2026: Included reference and link to more guidance published in the Message center post MC1526468.)\n[What and why:]\nWindows updates are now available to support the 2026 time zone changes in Manitoba, Alberta, and British Columbia. On November 1, 2026, clocks in affected regions will not be set back by one hour.\nManitoba will permanently stay on UTC-5, Alberta and affected locations will permanently stay on UTC-6, and most of British Columbia will permanently stay on UTC-7. The new Windows updates add region-specific time zones to support these changes.\n[Rollout schedule:]\n• September 22, 2026: The Alberta and British Columbia changes became available in the September 2026 non-security preview update for Windows 11, versions 25H2 and 24H2.\n• October 13, 2026: The Manitoba change became available for all supported versions of Windows. The Alberta and British Columbia changes became available for all other supported versions of Windows, including Windows Server. These changes are included in the October 2026 security update.\n• November 1, 2026: The time zone transitions take effect at 2:00 a.m. local time. Clocks in affected areas will not be set back by one hour.\n[Impact on your organization:]\nDevices in affected regions will display an incorrect local time after the November 1, 2026 transition if the applicable Windows update is not installed or the appropriate time zone is not selected. The updates add the following region-specific time zones:\n• (UTC-05:00) Manitoba\n• (UTC-06:00) Mountain Time (Alberta)\n• (UTC-07:00) Pacific Time (British Columbia)\nThe Alberta time zone change also applies to Yellowknife and Inuvik in the Northwest Territories and locations in southeastern British Columbia that align with Alberta.\nDevices configured to set the time zone automatically will select the appropriate new time zone. On other devices, the new region-specific time zone must be selected manually.\n[Action required/recommendations:]\n• Install the applicable Windows update on affected devices before November 1, 2026.\n• Confirm that affected devices use the appropriate region-specific time zone after installing the update.\n• If a device cannot receive the update before November 1, 2026, read and follow the interim guidance for each affected region detailed in the Daylight Saving Time & Time Zone Blog and move the device to the appropriate region-specific time zone as soon as possible.\nNote: To manage this change in Outlook, please follow the guidance in the article Outlook Time Zone Changes for Alberta and British Columbia. For guidance on how to manage Outlook and Exchange Online calendar events, Microsoft Teams Rooms on Windows, and other potentially impacted Microsoft 365 experiences, see MC1526468.\n[Compliance considerations:]\nNo compliance considerations are identified. Review as appropriate for your organization and region-specific time zone.\n[Additional information:]\n• Daylight Saving Time & Time Zone Blog\n• Alberta 2026 time zone update available now\n• British Columbia 2026 time zone update available now\n• Manitoba 2026 time zone update available now\n• Outlook Time Zone Changes for Alberta and British Columbia | Microsoft Support\n• Daylight saving time help and support",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Windows updates support 2026 time zone changes in Manitoba, Alberta, and British Columbia, effective November 1, 2026, when clocks won't be set back. Install updates before then and select the new region-specific time zones to ensure correct local time on devices. Guidance for Outlook and Microsoft 365 is provided."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1478975",
+      "title": "(Updated) Microsoft 365 Copilot: Use Microsoft Agent 365 agents as connected agents in declarative agents",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-09-25T00:04:12.0000000+00:00",
+      "endDateTime": "2026-12-31T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-27T16:14:02.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated October 27, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft is introducing support for Microsoft Agent 365 agents that implement the Agent2Agent (A2A) protocol, allowing them to be used as connected agents in declarative agents built with Microsoft 365 Agents Toolkit.\nThis enhancement expands the types of external agent services that declarative agents can connect to. In addition to existing support for OpenAPI and Model Context Protocol (MCP) servers, declarative agents can now connect to Agent2Agent-enabled agents, enabling natural language interactions and support for more complex workflows.\nThis feature gives developers greater flexibility when building declarative agents while providing administrators centralized management and governance through the Microsoft 365 admin center.\n[Rollout schedule]\n• General Availability (Worldwide): Began in late August 2026.\n[Impact on your organization]\nWho is affected\n• Microsoft 365 administrators who manage agents in the Microsoft 365 admin center\n• Developers building declarative agents with Microsoft 365 Agents Toolkit\n• Users who are assigned access to approved Microsoft Agent 365 agents\nPlatforms and services\n• Microsoft 365 Copilot\n• Microsoft 365 admin center\n• Microsoft 365 Agents Toolkit\n• Declarative agents\nWhat will happen\n• Administrators can install Microsoft Agent 365 agents that support the Agent2Agent protocol from the All agents page in the Microsoft 365 admin center.\n• Declarative agents can use approved Agent2Agent-enabled agents as connected agents.\n• Agent2Agent support is added alongside existing support for OpenAPI and MCP server connections.\n• Users cannot install Agent2Agent-enabled Microsoft Agent 365 agents themselves.\n• Administrators can review Agent2Agent-connected agents from the Connected agents tab in the declarative agent details page before approving their use.\n[Action required and recommendations]\nAction may be required.\nBefore rollout:\n• Review Microsoft Agent 365 agents available in the All agents page of the Microsoft 365 admin center.\n• Determine which Agent2Agent-enabled agents should be made available to users in your organization.\n• Review connected agents associated with declarative agents from the Connected agents tab before approving their use.\n• Update any internal governance, agent approval, or deployment processes as appropriate.\nConsider notifying administrators and developers in your organization about the availability of Agent2Agent-connected agents and the associated review and approval process.\n[Compliance considerations]\nCompliance considerationAnswer\nDoes this change introduce or significantly modify AI, machine learning, or agent capabilities that interact with or provide access to customer data?Yes. This update introduces support for Agent2Agent-enabled Microsoft Agent 365 agents as connected agents within declarative agents. Organizations should review how these connected agents interact with customer data before approving them for use.\nDoes this change provide end users with a new way to interact with generative AI?Yes. Users can interact with declarative agents that are connected to Agent2Agent-enabled agents, enabling new AI-powered experiences and workflows.\nDoes this change include an admin control?Yes. Administrators can install, review, and approve Agent2Agent-enabled Microsoft Agent 365 agents through the Microsoft 365 admin center before they are available for use.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "567670"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 now supports Microsoft Agent 365 agents using the Agent2Agent protocol as connected agents in declarative agents, expanding integration options. Administrators manage and approve these agents via the Microsoft 365 admin center. This update enables new AI interactions and requires review of data compliance and governance."
+        },
+        {
+          "name": "Platforms",
+          "value": "Android, Desktop, iOS, Web"
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1526676",
+      "title": "Microsoft 365 admin center: Manage authoritative sources for Microsoft 365 Copilot Search",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-26T23:02:01.0000000+00:00",
+      "endDateTime": "2026-12-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-26T23:02:38.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nThis new capability enables admins the capability to manage Authoritative sources within the Copilot Search experience in the Microsoft 365 Admin Center. As part of current change admins will be able manage SharePoint Online (SPO) sites that can be deemed as authoritative content per their organization.\n• Available only to Global admin and Global reader role.\n[Rollout Schedule:]\nPublic Preview (Worldwide): We will begin rolling out on late September 2026 and expect to complete by late September 2026.\nGeneral Availability (Worldwide): We will begin rolling out on late September 2026 and expect to complete by late September 2026.\n[Impact on Your Organization:]\nThis will help enhance relevance and ranking of these SharePoint sites.\nThe feature introduces a centralized governance layer in Copilot Control Systems, allowing admins to:\n• View, add, delete the authoritative SharePoint sites via the UX.\n• Will be able to bulk import or export these sources.\n• The admins can add only up to 100 sites as authoritative.\n[Action Required/Recommendations:]\nThis feature is available to Global admin and Global reader roles.\n[Compliance considerations:]\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. The feature uses AI/ML or agent capabilities with Microsoft 365 content, prompts, or service data as described in this message.\nDoes the change provide end users any new way of interacting with generative AI?Yes. The feature introduces or updates a user-facing AI or Copilot experience as described in this message.\nDoes the change include an admin control and, can it be controlled through Entra ID group membership?Yes. The feature includes or affects admin controls, policies, permissions, roles, authentication, or management settings as described in this message. Review the linked documentation or admin center controls for group-based configuration support.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "503553"
+        },
+        {
+          "name": "Summary",
+          "value": "Admins with Global admin or reader roles can manage up to 100 authoritative SharePoint Online sites in Microsoft 365 Copilot Search via the admin center, enhancing search relevance. This AI-driven feature rolls out worldwide in late September 2026 and includes centralized governance and bulk import/export capabilities."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1472028",
+      "title": "(Updated) Outlook: Change the organizer of meetings",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-09-14T23:20:31.0000000+00:00",
+      "endDateTime": "2027-02-01T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-26T22:51:48.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated October 26, 2026: We have updated the content and timeline. Thank you for your patience.\n[What and Why:]\nMicrosoft is introducing Change organizer for eligible Outlook meetings and recurring meeting series. Users can ask another person in their organization to become the organizer, and the selected person must accept before ownership changes. This supports personal and team productivity by maintaining meeting continuity during role changes, leave, and offboarding.\n[Rollout Schedule:]\nThis phase supports non-online meetings:\n• Worldwide: Early November through early December 2026\n• GCC: Late November through late December 2026\n• GCC High: Early December through late December 2026\n• DoD: Early December through late December 2026\nPhase 2 will add eligible online meetings. For Teams meetings, the transfer will generate a new Teams meeting link owned by the new organizer. Phase 2 will also be rolled out along with phase 1 with the same schedule.\nPhase 3 will add transfer support for eligible Teams meeting artifacts, including chat, meeting options, transcripts, recordings, agenda, notes, and attendance reports. Its timing will be announced separately.\n[Impact on Your Organization:]\nWho is affected:\n• Users who organize eligible meetings or recurring series.\n• Users selected to become a new organizer.\n• Delegates with permission to edit meetings on another user's primary calendar.\n• Help desk teams supporting meeting ownership transitions.\nPlatforms/Services:\n• Outlook on the web\n• New Outlook for Windows\n• Teams Microsoft 365 Calendar\n• Exchange Online\nClassic Outlook for Windows is not supported.\nWhat will happen:\n• The current organizer can select one person in the same organization or tenant and send an organizer change request.\n• The meeting remains with the current organizer until the selected person accepts.\n• The organizer or an authorized delegate can cancel a pending request.\n• For recurring series, future instances move to the new organizer's calendar. Earlier instances remain with the previous organizer.\n• Internal Exchange Online attendees receive a silent update and do not need to respond again. Their Reminder, Category, Show As, and Private settings are preserved.\n• External and on-premises attendees receive a cancellation and a new invitation, which requires a response.\n• The meeting body, attachments, and sensitivity labels are preserved. The new organizer might require separate access to OneDrive attachments or links.\n• If the meeting has a Teams meeting, a new Teams meeting link will be generated upon transfer which will be owned by the new organizer.\n• This feature is enabled by default and requires no tenant configuration. There is no admin setting to control the availability of this feature.\nThe meeting must be in the future, use a work or school account, and be stored on the organizer's primary calendar. Draft, canceled, encrypted, group calendar, group mailbox, and shared mailbox meetings are not eligible.\n[Action Required/Recommendations:]\nNo administrative action is required.\n• Review meeting ownership processes for role changes, leave, and offboarding.\n• Update internal meeting management and offboarding documentation.\n• Tell users that the new organizer must accept the request and that the previous organizer is not automatically retained as an attendee.\n• Advise users that external attendees must respond to a replacement invitation.\n• Ask users to confirm that the new organizer can access linked OneDrive content.\n• Review the Microsoft Support article, Change the organizer of a meeting in Outlook.\n[Compliance Considerations:]\nConsiderationImpactExplanation\nDoes the change alter how existing customer data is processed, stored, or accessed?YesFuture meeting instances move to the new organizer's calendar and can be managed by that organizer. Earlier recurring instances remain with the previous organizer. Meeting content is preserved, but linked OneDrive content might require separate access.\nDoes the change provide a new way of communicating between users, tenants, or subscriptions?YesThe feature adds organizer transfer requests within an organization. Internal attendees receive silent updates, while external and on-premises attendees receive a cancellation and replacement invitation.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft is enabling Outlook users to transfer meeting organizer roles within their organization, improving meeting continuity during role changes or leave. The rollout begins November 2026 for non-online meetings, with phased support for Teams meetings and artifacts. The feature requires acceptance by the new organizer and preserves meeting content."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1526661",
+      "title": "Microsoft 365 Apps: Cloud Update - Export Improvements",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-26T22:38:58.0000000+00:00",
+      "endDateTime": "2026-11-26T22:38:58.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-26T22:48:15.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Feature update",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nNew export improvements are coming to Cloud Update, making it easier for organizations to access and analyze device data. These enhancements will expand export capabilities across Inventory and Cloud Update device views, include additional device and update information, and allow admins to export filtered results so they can focus on the devices most relevant to their needs.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out on early November 2026 and expect to complete by late November 2026.\n[Impact on Your Organization:]\nWe are enhancing export capabilities in Inventory and Cloud Update to make it easier to get the device data you need for reporting, troubleshooting, and sharing with stakeholders. With this update:\n• Inventory export: Export from the Inventory > All devices view will include the Cloud Update Status column, which indicates whether each device is managed, onboarding, excluded, or not eligible for Cloud Update.\n• Cloud Update device export: You can export device data directly from the Current > Devices and Monthly Enterprise > Devices views. Exports include all table columns, such as rollout wave, update status, and errors.\n• Filtered export: You can apply filters to a device view and export only the matching results, such as devices that are not up to date.\nThis change does not affect which devices appear in Inventory or Cloud Update, or how those devices are managed.\n[Action Required/Recommendations:]\nNo preparation or configuration is required. Admins can begin using the new export capabilities as they become available.\n[Compliance considerations:]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Apps Cloud Update will enhance export capabilities in Inventory and Cloud Update views, adding more device and update details, filtered exports, and new columns like Cloud Update Status. Rollout starts November 2026. No action or compliance changes are needed."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1492959",
+      "title": "(Updated) Audio Overview Updates",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-09T20:43:49.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-26T22:18:21.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated October 26, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nMicrosoft is rolling out new capabilities in Audio Overview to make it easier to navigate longer content, support enterprise information protection, and create audio overviews from more types of content.\nEpisodes\nFor longer and more content-rich notebooks, Audio Overview can organize the discussion into topic-based episodes. This makes it easier for users to navigate the audio and focus on different parts of the content.\nSensitivity labels when saving to OneDrive\nAudio Overviews now support Microsoft Purview sensitivity labels when saved to OneDrive. If the source content includes sensitivity labels, the saved Audio Overview inherits the most restrictive label from its sources. Sensitivity labels apply to the saved file in OneDrive. Audio Overviews within the notebook are not yet sensitivity labeled.\nMore supported content types\nAudio Overview can now understand and ground its discussion in additional types of content added to a notebook, including:\n• OneNote pages\n• Loop pages\n• Plain text (.txt) files\n• Emails\n• Teams meetings\n• Teams chats\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in early November 2026 (previously late October) and expect to complete by late November 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Users who create and consume Audio Overviews.\n• Organizations that use Audio Overview with Microsoft 365 content stored or saved in OneDrive.\nPlatforms/Services:\n• Microsoft 365 Copilot\n• Audio Overview\n• OneDrive\n• Microsoft Purview sensitivity labels\nWhat will happen:\n• Users can navigate longer Audio Overviews through topic-based episodes.\n• Users can create Audio Overviews grounded in additional content types, including OneNote pages, Loop pages, .txt files, emails, Teams meetings, and Teams chats.\n• Audio Overviews saved to OneDrive from labeled source content will inherit the most restrictive sensitivity label from the sources.\n• This release does not introduce sensitivity labeling for Audio Overviews while they remain within the notebook.\n[Action Required/Recommendations:]\nNo admin action is required to prepare for this update. These Audio Overview improvements will roll out automatically to eligible users.\nFor sensitivity labels, when an Audio Overview is saved to OneDrive from labeled source content, the saved file will automatically inherit the most restrictive sensitivity label from its sources. No additional configuration is required as part of this feature rollout.\n[Compliance considerations:]\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Audio Overview uses AI capabilities to generate audio grounded in Microsoft 365 content, including additional supported content types.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and navigate Audio Overviews from more supported Microsoft 365 content sources.\nDoes the change modify, interrupt, or disable Purview capabilities such as Information Protection labels?Yes. Audio Overviews saved to OneDrive from labeled source content inherit the most restrictive sensitivity label from the sources.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft is enhancing Audio Overview with topic-based episodes for easier navigation, support for more content types (OneNote, Loop, emails, Teams chats/meetings, .txt files), and sensitivity label inheritance when saving to OneDrive. The update rolls out globally from early to late November 2026 with no admin action needed."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1450133",
+      "title": "Microsoft Entra: Users can register a passkey or passwordless sign-in as their first multifactor authentication method",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-08-07T21:55:44.0000000+00:00",
+      "endDateTime": "2027-03-29T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-26T20:51:35.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 26, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nUsers will soon be able to register a passkey as their first multifactor authentication method. Previously, people had to set up an alternate MFA method like SMS or Voice before they could add a passkey (FIDO2), Windows Hello for Business, macOS Platform SSO. That extra step pushed users toward weaker methods and slowed the move to phishing-resistant sign-in. Now password-only users can go straight to a passkey, making it easier to adopt strong authentication from day one. As part of this work, we will also be enabling Authenticator App passwordless sign-in to be a user's first registered MFA method.\n[Rollout schedule]\nThis feature will roll out in phases:\nPhase 1: Support for synced passkeys, Microsoft Entra passkeys on Windows, and FIDO2 security keys.\nGeneral Availability (Worldwide, GCC): We will begin rolling out in early November 2026 (previously late October) and expect to complete by early January 2027 (previously late November 2026).\nPhase 2: Support for Windows Hello for Business, macOS Platform SSO, Authenticator App passkey, and Authenticator App passwordless sign-in.\nGeneral Availability (Worldwide, GCC): We will begin rolling out in early January 2026 and expect to complete by late February 2027.\n[Impact on your organization]\nWho is affected\n• Users who have not yet registered a multifactor authentication method\n• Identity and security administrators responsible for authentication onboarding and registration policies\nPlatforms and services\n• Microsoft Entra ID\n• Passkeys (FIDO2)\n• Windows Hello for Business\n• macOS Platform SSO\n• Microsoft Authenticator passwordless sign-in\nWhat will happen\n• Password-only users will be able to register passkeys or passwordless sign-in as their first MFA method.\n• Users will no longer need to register a method such as SMS or voice before registering a passkey (FIDO2), Windows Hello for Business, macOS Platform SSO, or Authenticator passwordless sign-in.\n• Organizations may see reduced registration friction and increased adoption of phishing-resistant authentication methods.\n• Users who are enabled for passkeys will be prompted to register a passkey by default when completing applicable registration experiences, including those triggered by multifactor authentication (MFA) enforcement and Conditional Access authentication strengths. Security Defaults MFA registration prompts will adopt this experience in January–February 2027.\n[Action required and recommendations]\nNo action is required for this change.\nWe recommend that administrators:\n• Review Conditional Access policies related to security information registration.\n• Consider requiring MFA to register security information if additional verification is required by your organization.\n• Review your user onboarding and registration guidance and update it as needed to reflect that eligible users may be prompted to register a passkey by default.\nLearn more\n• (To be updated closer to rollout) Register a synced passkey (FIDO2) | Authentication | Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. Administrators can control which authentication methods users are allowed to register through existing Microsoft Entra authentication method policies and Conditional Access policies.\nDoes the change affect access or authentication controls?Yes. The update changes how users register multifactor authentication methods by allowing eligible users to register supported passkeys or passwordless authentication methods as their first MFA method.\nCan administrators govern the feature through existing Microsoft Entra controls?Yes. Administrators retain control over the feature through Microsoft Entra authentication method policies and Conditional Access configurations.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra will allow users to register passkeys or passwordless sign-in as their first multifactor authentication method, removing the prior requirement to set up alternate MFA methods first. The phased rollout begins November 2026, aiming to simplify strong authentication adoption and reduce registration friction."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-register-passkey"
+      ]
+    },
+    {
+      "id": "MC1526468",
+      "title": "Update to MC1510951: Canada 2026 time zone changes — Microsoft 365 impact and required admin actions",
+      "category": "preventOrFixIssue",
+      "severity": "high",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-26T19:32:58.0000000+00:00",
+      "endDateTime": "2027-01-31T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-26T20:00:31.0000000+00:00",
+      "actionRequiredByDateTime": "2026-11-01T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ",
+      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 高 です。対応期限は 2026年11月1日 です。",
+      "bodyText": "This post updates MC1510951 ((Updated) Windows updates are available for 2026 time zone changes in Canada, posted October 16, 2026).\nOn November 1, 2026, affected locations in British Columbia, Alberta, and Manitoba will not move clocks back and will remain on UTC-07:00, UTC-06:00, and UTC-05:00 respectively. Affected locations in the Northwest Territories (including Yellowknife and Inuvik) align with the Alberta change, and Northwestern Ontario aligns with the Manitoba change.\nWindows and Microsoft 365 services depend on updated time zone definitions for correct scheduling and display behavior.\nHow this affects your organization\nConfirmed impact\n• Outlook and Exchange Online (calendar): Users must move to the new time zone. Existing events do not migrate automatically. Recurring meetings require additional review.\n• Microsoft Teams Rooms on Windows: Some devices may display time one hour behind Windows until Edge/WebView2 is updated.\nPotential impact (under validation)\n• Microsoft Teams (desktop, web, mobile) and other Teams devices\n• Outlook for iOS, Android, and Mac\n• Microsoft Bookings\n• Shifts\n• SharePoint Online\n• OneDrive\nWhat you need to do\n• Ensure Windows devices in affected regions have the latest Windows updates (including October 2026 updates).\n• Ask users in affected regions to select the new time zone in Outlook and review meetings scheduled after November 1, especially recurring series.\n• Plan to run the Exchange Online PowerShell remediation cmdlet for non-recurring meetings once released (target: October 28, 2026).\n• Update Microsoft Edge and WebView2 on Teams Rooms on Windows and confirm room time display matches Windows.\n• Keep Teams, Outlook (including iOS/Android/Mac), and other Microsoft 365 apps current.\n• Test key scenarios before November 1: recurring meetings, free/busy, Bookings appointments, Shifts schedules, and SharePoint regional settings.\n• If issues occur, open a support case in the Microsoft 365 admin center and include #Canada Time-Zone in the title.\nAdditional information\n• Outlook Time Zone Changes for British Columbia, Alberta, and Manitoba (Microsoft Support)\n• Interim guidance for British Columbia time zone changes 2026 (DST Blog)\n• Interim guidance for Alberta time zone changes 2026 (DST Blog)\n• Manitoba 2026 time zone update available now (Daylight Saving Time and Time Zone Blog)\nWe will continue updating this post as product teams confirm impact, publish mitigations, and release additional guidance.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "On November 1, 2026, certain Canadian regions will not change clocks, affecting Microsoft 365 scheduling. Admins must update Windows, Outlook time zones, review meetings, update Teams Rooms, and keep apps current. Testing and support case submission with #Canada Time-Zone are advised."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
     {
       "id": "MC1521616",
       "title": "Microsoft Graph APIs for Copilot cost management",
@@ -246,35 +712,6 @@
       "officialDocumentUrls": []
     },
     {
-      "id": "MC1510951",
-      "title": "(Updated) Windows updates are available for 2026 time zone changes in Canada",
-      "category": "preventOrFixIssue",
-      "severity": "normal",
-      "isMajorChange": true,
-      "startDateTime": "2026-10-16T19:15:07.0000000+00:00",
-      "endDateTime": "2027-10-16T19:15:07.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-16T21:15:44.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ（主要な変更）",
-      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
-      "bodyText": "(Updated October 16, 2026: Added guidance for managing the Alberta and British Columbia time zone changes in Outlook Time Zone Changes for Alberta and British Columbia.)\nWhat and why\nWindows updates are now available to support the 2026 time zone changes in Manitoba, Alberta, and British Columbia. On November 1, 2026, clocks in affected regions will not be set back by one hour.\nManitoba will permanently stay on UTC-5, Alberta and affected locations will permanently stay on UTC-6, and most of British Columbia will permanently stay on UTC-7. The new Windows updates add region-specific time zones to support these changes.\nRollout schedule\n• September 22, 2026: The Alberta and British Columbia changes became available in the September 2026 non-security preview update for Windows 11, versions 25H2 and 24H2.\n• October 13, 2026: The Manitoba change became available for all supported versions of Windows. The Alberta and British Columbia changes became available for all other supported versions of Windows, including Windows Server. These changes are included in the October 2026 security update.\n• November 1, 2026: The time zone transitions take effect at 2:00 a.m. local time. Clocks in affected areas will not be set back by one hour.\nImpact on your organization\nDevices in affected regions will display an incorrect local time after the November 1, 2026 transition if the applicable Windows update is not installed or the appropriate time zone is not selected. The updates add the following region-specific time zones:\n• (UTC-05:00) Manitoba\n• (UTC-06:00) Mountain Time (Alberta)\n• (UTC-07:00) Pacific Time (British Columbia)\nThe Alberta time zone change also applies to Yellowknife and Inuvik in the Northwest Territories and locations in southeastern British Columbia that align with Alberta.\nDevices configured to set the time zone automatically will select the appropriate new time zone. On other devices, the new region-specific time zone must be selected manually.\nAction required/recommendations\n• Install the applicable Windows update on affected devices before November 1, 2026.\n• Confirm that affected devices use the appropriate region-specific time zone after installing the update.\n• If a device cannot receive the update before November 1, 2026, read and follow the interim guidance for each affected region detailed in the Daylight Saving Time & Time Zone Blog and move the device to the appropriate region-specific time zone as soon as possible.\nNote: To manage this change in Outlook, please follow the guidance in the article Outlook Time Zone Changes for Alberta and British Columbia.\nCompliance considerations\nNo compliance considerations are identified. Review as appropriate for your organization and region-specific time zone.\nAdditional information\n• Daylight Saving Time & Time Zone Blog\n• Alberta 2026 time zone update available now\n• British Columbia 2026 time zone update available now\n• Manitoba 2026 time zone update available now\n• Outlook Time Zone Changes for Alberta and British Columbia | Microsoft Support\n• Daylight saving time help and support",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Windows updates are available to support 2026 time zone changes in Manitoba, Alberta, and British Columbia, effective November 1, 2026. Devices must install updates and select new region-specific time zones to avoid incorrect local time. Guidance for Outlook and interim steps are provided."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support"
-      ]
-    },
-    {
       "id": "MC1509797",
       "title": "Support for Office LTSC 2021 and additional apps ended on October 13, 2026",
       "category": "planForChange",
@@ -332,39 +769,6 @@
         }
       ],
       "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1450134",
-      "title": "(Updated) Microsoft Entra: Windows Hello for Business and macOS Platform SSO as standalone MFA factors",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-07T21:56:10.0000000+00:00",
-      "endDateTime": "2027-01-29T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-13T23:51:25.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated October 13, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft Entra will soon recognize Windows Hello for Business (WHfB) and macOS Platform Single Sign-On (PSSO) as standalone multifactor authentication (MFA) factors in supported authentication scenarios.\nToday, WHfB and macOS PSSO can satisfy MFA requirements during primary sign-in, but users may still be required to register and use an additional passkey or authentication method for certain step-up authentication prompts, Authentication Strength policies, and sign-in frequency checks.\nAfter this rollout, users who authenticate with WHfB or macOS PSSO will be able to satisfy supported MFA requirements without registering an additional passkey. This change helps organizations expand the use of phishing-resistant authentication methods and reduce reliance on less secure authentication methods. As part of this change, a user's WHfB and macOS PSSO credentials will be displayed in My Security Info as auto-registered passkeys.\n[Rollout schedule]\n• General Availability (Worldwide, GCC): Beginning in early October 2026 and expected to complete in mid-December 2026 (previously late November)\n[Impact on your organization]\nWho is affected\n• Organizations using Microsoft Entra ID\n• Users who authenticate with Windows Hello for Business\n• Users who authenticate with macOS Platform SSO\n• Organizations using Conditional Access Authentication Strength policies\nPlatforms and services\n• Microsoft Entra ID\n• Windows Hello for Business\n• macOS Platform SSO\n• Conditional Access\n• Authentication Strength policies\nWhat will happen\nAfter rollout:\n• Users signing in with WHfB or macOS PSSO can complete supported MFA challenges without requiring a separate passkey.\n• WHfB and macOS PSSO will satisfy supported MFA requirements for step-up authentication scenarios.\n• WHfB and macOS PSSO can be used during 2FA to satisfy supported Authentication Strength policy requirements.\n• WHfB and macOS PSSO can be used during 2FA to satisfy supported sign-in frequency challenge requirements.\n• Users whose only MFA method is WHfB or macOS PSSO will be considered MFA-capable.\n• Users who sign in with only a password will no longer be automatically prompted to register an additional MFA method if WHfB or macOS PSSO is their only registered MFA credential.\n• Users with WHfB or macOS PSSO credentials, will be able to see them listed in My Security Info as auto-registered passkeys.\n[Action required and recommendations]\nNo configuration changes are required.\nWe recommend reviewing user onboarding and MFA registration processes before rollout. Because WHfB and macOS PSSO credentials are device-bound, users may not be able to complete MFA challenges from devices where those credentials are not available.\nRecommended actions:\n• Update onboarding guidance to ensure users register at least one portable MFA method.\n• Consider requiring users to register a synced passkey or Microsoft Authenticator passkey in addition to WHfB or macOS PSSO.\n• Review custom Authentication Strength policies to confirm WHfB and macOS PSSO are allowed where appropriate.\n• Update user documentation because users with only WHfB or macOS PSSO registered will no longer be automatically guided to register an additional MFA method.\nLearn more (To be updated closer to GA rollout.)\n• Plan a Windows Hello for Business deployment | Security | Windows | Microsoft Learn\n• Prepare users to provision and use Windows Hello for Business | Security | Windows | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra will recognize Windows Hello for Business and macOS Platform SSO as standalone MFA factors starting early October 2026, allowing users to meet MFA requirements without additional passkeys. No configuration changes are needed, but organizations should update onboarding and MFA registration guidance accordingly."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/",
-        "https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/deploy/prepare-users"
-      ]
     },
     {
       "id": "MC1506733",
@@ -604,34 +1008,6 @@
       ]
     },
     {
-      "id": "MC1492959",
-      "title": "Audio Overview Updates",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-09T20:43:49.0000000+00:00",
-      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-09T20:43:58.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nMicrosoft is rolling out new capabilities in Audio Overview to make it easier to navigate longer content, support enterprise information protection, and create audio overviews from more types of content.\nEpisodes\nFor longer and more content-rich notebooks, Audio Overview can organize the discussion into topic-based episodes. This makes it easier for users to navigate the audio and focus on different parts of the content.\nSensitivity labels when saving to OneDrive\nAudio Overviews now support Microsoft Purview sensitivity labels when saved to OneDrive. If the source content includes sensitivity labels, the saved Audio Overview inherits the most restrictive label from its sources. Sensitivity labels apply to the saved file in OneDrive. Audio Overviews within the notebook are not yet sensitivity labeled.\nMore supported content types\nAudio Overview can now understand and ground its discussion in additional types of content added to a notebook, including:\n• OneNote pages\n• Loop pages\n• Plain text (.txt) files\n• Emails\n• Teams meetings\n• Teams chats\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in late October 2026 and expect to complete by late November 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Users who create and consume Audio Overviews.\n• Organizations that use Audio Overview with Microsoft 365 content stored or saved in OneDrive.\nPlatforms/Services:\n• Microsoft 365 Copilot\n• Audio Overview\n• OneDrive\n• Microsoft Purview sensitivity labels\nWhat will happen:\n• Users can navigate longer Audio Overviews through topic-based episodes.\n• Users can create Audio Overviews grounded in additional content types, including OneNote pages, Loop pages, .txt files, emails, Teams meetings, and Teams chats.\n• Audio Overviews saved to OneDrive from labeled source content will inherit the most restrictive sensitivity label from the sources.\n• This release does not introduce sensitivity labeling for Audio Overviews while they remain within the notebook.\n[Action Required/Recommendations:]\nNo admin action is required to prepare for this update. These Audio Overview improvements will roll out automatically to eligible users.\nFor sensitivity labels, when an Audio Overview is saved to OneDrive from labeled source content, the saved file will automatically inherit the most restrictive sensitivity label from its sources. No additional configuration is required as part of this feature rollout.\n[Compliance considerations:]\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Audio Overview uses AI capabilities to generate audio grounded in Microsoft 365 content, including additional supported content types.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and navigate Audio Overviews from more supported Microsoft 365 content sources.\nDoes the change modify, interrupt, or disable Purview capabilities such as Information Protection labels?Yes. Audio Overviews saved to OneDrive from labeled source content inherit the most restrictive sensitivity label from the sources.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft is enhancing Audio Overview with topic-based episodes for easier navigation, support for sensitivity labels when saving to OneDrive, and expanded content types including OneNote, Loop pages, emails, and Teams chats. The update rolls out worldwide from late October to November 2026 with no admin action needed."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1462915",
       "title": "(Updated) Allow connections to copilot.cloud.microsoft before the Copilot URL redirect",
       "category": "planForChange",
@@ -692,38 +1068,6 @@
       ],
       "officialDocumentUrls": [
         "https://learn.microsoft.com/entra/external-id/user-properties"
-      ]
-    },
-    {
-      "id": "MC1450133",
-      "title": "Microsoft Entra: Users can register a passkey or passwordless sign-in as their first multifactor authentication method",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-07T21:55:44.0000000+00:00",
-      "endDateTime": "2027-03-29T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-08T16:10:44.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated October 8, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nUsers will soon be able to register a passkey as their first multifactor authentication method. Previously, people had to set up an alternate MFA method like SMS or Voice before they could add a passkey (FIDO2), Windows Hello for Business, macOS Platform SSO. That extra step pushed users toward weaker methods and slowed the move to phishing-resistant sign-in. Now password-only users can go straight to a passkey, making it easier to adopt strong authentication from day one. As part of this work, we will also be enabling Authenticator App passwordless sign-in to be a user's first registered MFA method.\n[Rollout schedule]\nThis feature will roll out in phases:\nPhase 1: Support for synced passkeys, Microsoft Entra passkeys on Windows, and FIDO2 security keys.\nGeneral Availability (Worldwide, GCC): We will begin rolling out in late October 2026 (previously early October) and expect to complete by late November 2026 (previously mid-November).\nPhase 2: Support for Windows Hello for Business, macOS Platform SSO, Authenticator App passkey, and Authenticator App passwordless sign-in.\nGeneral Availability (Worldwide, GCC): We will begin rolling out in early January 2026 and expect to complete by late February 2027.\n[Impact on your organization]\nWho is affected\n• Users who have not yet registered a multifactor authentication method\n• Identity and security administrators responsible for authentication onboarding and registration policies\nPlatforms and services\n• Microsoft Entra ID\n• Passkeys (FIDO2)\n• Windows Hello for Business\n• macOS Platform SSO\n• Microsoft Authenticator passwordless sign-in\nWhat will happen\n• Password-only users will be able to register passkeys or passwordless sign-in as their first MFA method.\n• Users will no longer need to register a method such as SMS or voice before registering a passkey (FIDO2), Windows Hello for Business, macOS Platform SSO, or Authenticator passwordless sign-in.\n• Organizations may see reduced registration friction and increased adoption of phishing-resistant authentication methods.\n[Action required and recommendations]\nNo action is required for this change.\nWe recommend that administrators:\n• Review Conditional Access policies related to security information registration.\n• Consider requiring MFA to register security information if additional verification is required by your organization.\n• Review onboarding and registration guidance so users know to set up a passkey as their preferred first method.\nLearn more\n• (To be updated closer to rollout) Register a synced passkey (FIDO2) | Authentication | Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes the change include an admin control?Yes. Administrators can control which authentication methods users are allowed to register through existing Microsoft Entra authentication method policies and Conditional Access policies.\nDoes the change affect access or authentication controls?Yes. The update changes how users register multifactor authentication methods by allowing eligible users to register supported passkeys or passwordless authentication methods as their first MFA method.\nCan administrators govern the feature through existing Microsoft Entra controls?Yes. Administrators retain control over the feature through Microsoft Entra authentication method policies and Conditional Access configurations.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra will allow users to register passkeys or passwordless sign-in as their first multifactor authentication method, removing the need to set up SMS or voice first. This phased rollout begins late October 2026, aiming to ease adoption of phishing-resistant authentication without requiring user action."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/entra/identity/authentication/how-to-register-passkey"
       ]
     },
     {
@@ -949,43 +1293,6 @@
         {
           "name": "Summary",
           "value": "Microsoft Edge's Copilot is updated with a new icon, simplified UX, and enhanced features like Voice and Vision. The rollout begins mid-October 2026, requires no admin action, and maintains existing security, compliance, and admin controls. Users with Copilot enabled will see these changes automatically."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1478975",
-      "title": "Microsoft 365 Copilot: Use Microsoft Agent 365 agents as connected agents in declarative agents",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-25T00:04:12.0000000+00:00",
-      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-29T19:48:26.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and why]\nMicrosoft is introducing support for Microsoft Agent 365 agents that implement the Agent2Agent (A2A) protocol, allowing them to be used as connected agents in declarative agents built with Microsoft 365 Agents Toolkit.\nThis enhancement expands the types of external agent services that declarative agents can connect to. In addition to existing support for OpenAPI and Model Context Protocol (MCP) servers, declarative agents can now connect to Agent2Agent-enabled agents, enabling natural language interactions and support for more complex workflows.\nThis feature gives developers greater flexibility when building declarative agents while providing administrators centralized management and governance through the Microsoft 365 admin center.\n[Rollout schedule]\n• General Availability (Worldwide): Began in late August 2026 and expected to complete by late September 2026\n[Impact on your organization]\nWho is affected\n• Microsoft 365 administrators who manage agents in the Microsoft 365 admin center\n• Developers building declarative agents with Microsoft 365 Agents Toolkit\n• Users who are assigned access to approved Microsoft Agent 365 agents\nPlatforms and services\n• Microsoft 365 Copilot\n• Microsoft 365 admin center\n• Microsoft 365 Agents Toolkit\n• Declarative agents\nWhat will happen\n• Administrators can install Microsoft Agent 365 agents that support the Agent2Agent protocol from the All agents page in the Microsoft 365 admin center.\n• Declarative agents can use approved Agent2Agent-enabled agents as connected agents.\n• Agent2Agent support is added alongside existing support for OpenAPI and MCP server connections.\n• Users cannot install Agent2Agent-enabled Microsoft Agent 365 agents themselves.\n• Administrators can review Agent2Agent-connected agents from the Connected agents tab in the declarative agent details page before approving their use.\n[Action required and recommendations]\nAction may be required.\nBefore rollout:\n• Review Microsoft Agent 365 agents available in the All agents page of the Microsoft 365 admin center.\n• Determine which Agent2Agent-enabled agents should be made available to users in your organization.\n• Review connected agents associated with declarative agents from the Connected agents tab before approving their use.\n• Update any internal governance, agent approval, or deployment processes as appropriate.\nConsider notifying administrators and developers in your organization about the availability of Agent2Agent-connected agents and the associated review and approval process.\n[Compliance considerations]\nCompliance considerationAnswer\nDoes this change introduce or significantly modify AI, machine learning, or agent capabilities that interact with or provide access to customer data?Yes. This update introduces support for Agent2Agent-enabled Microsoft Agent 365 agents as connected agents within declarative agents. Organizations should review how these connected agents interact with customer data before approving them for use.\nDoes this change provide end users with a new way to interact with generative AI?Yes. Users can interact with declarative agents that are connected to Agent2Agent-enabled agents, enabling new AI-powered experiences and workflows.\nDoes this change include an admin control?Yes. Administrators can install, review, and approve Agent2Agent-enabled Microsoft Agent 365 agents through the Microsoft 365 admin center before they are available for use.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "567670"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 now supports Microsoft Agent 365 agents using the Agent2Agent protocol as connected agents in declarative agents, expanding integration options. Administrators manage and approve these agents via the Microsoft 365 admin center. Rollout began late August 2026, enabling enhanced AI interactions and workflows."
-        },
-        {
-          "name": "Platforms",
-          "value": "Android, Desktop, iOS, Web"
         }
       ],
       "officialDocumentUrls": []
@@ -1376,44 +1683,6 @@
       ]
     },
     {
-      "id": "MC1238432",
-      "title": "(Updated) Microsoft 365 Copilot app: Branded footer customization",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-02-25T01:16:32.0000000+00:00",
-      "endDateTime": "2026-10-26T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-17T21:10:50.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated September 17, 2026: We have updated the content. Thank you for your patience.\n[Introduction]\nWe’re introducing a new co-branding capability that will allow organizations to display a branded footer at the bottom of the Chat screen in the Microsoft 365 Copilot app. This update will enable admins to add their organization’s logo to their users’ Microsoft 365 Copilot app, helping users confirm they are using their trusted, work-managed Copilot experience.\nThis message is associated with Microsoft 365 Roadmap ID 555852.\n[When this will happen]\n• General Availability (Worldwide): We will begin rolling out August 2026 (previously mid-July) and is expected to complete by mid-September 2026 (previously end of July).\n[How this will affect your organization]\nWho is affected\n• All Microsoft 365 tenants using the Microsoft 365 Copilot app.\nWhat will happen\n• Admins will be able to upload a logo in the Microsoft 365 admin center to customize the footer in the Microsoft 365 Copilot app.\n• The footer will use the same logo configured in your organization’s theme for other Microsoft 365 apps. Only the logo will be used; other theme settings will not apply in this release.\n• Admins can choose a footer label: Approved by, Provided by, or Managed by. Selecting No label will display the logo without a label.\n• This feature will be off by default and will require admin configuration.\n• There will be no user impact unless an admin enables the footer.\n[What you can do to prepare]\nNo action will be required unless you want to enable the branded footer.\nAdmins who want to configure this feature should:\n• In the Microsoft 365 admin center, go to Org settings > Custom theme and open your default theme.\n• Confirm that your organization’s logo is configured in the Logos tab. This is the same logo used for your organization’s branding in other Microsoft 365 apps.\n• Open the Copilot Chat tab and select Add your brand to Copilot Chat footer area.\n• In the Footer style dropdown, choose No label, Approved by, Provided by, or Managed by.\n• Save your changes to display your logo in the branded footer in the Microsoft 365 Copilot app.\nPlease note: The footer currently uses your organization's default theme and applies to all users. Targeting different logos to specific user groups will be supported in a later update.\nFor configuration guidance: Customize the theme for your organization | Microsoft 365 | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "555852"
-        },
-        {
-          "name": "Summary",
-          "value": "Starting August 2026, Microsoft 365 Copilot app admins can add a branded footer with their organization's logo and a label (Approved by, Provided by, Managed by, or none) via the Microsoft 365 admin center. This feature is off by default and affects all users once enabled."
-        },
-        {
-          "name": "Platforms",
-          "value": "Android, Desktop, iOS, Mac, Web"
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1473151",
       "title": "Microsoft Edge: IE mode is supported through at least the end of 2029, plan your migration",
       "category": "planForChange",
@@ -1574,34 +1843,6 @@
         "https://learn.microsoft.com/en-us/lifecycle/faq/fixed-policy",
         "https://learn.microsoft.com/en-us/lifecycle/faq/modern-policy"
       ]
-    },
-    {
-      "id": "MC1472028",
-      "title": "Outlook: Change the organizer of meetings",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-14T23:20:31.0000000+00:00",
-      "endDateTime": "2027-01-25T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-14T23:24:08.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nMicrosoft is introducing Change organizer for eligible Outlook meetings and recurring meeting series. Users can ask another person in their organization to become the organizer, and the selected person must accept before ownership changes. This supports personal and team productivity by maintaining meeting continuity during role changes, leave, and offboarding.\n[Rollout Schedule:]\nPhase 1 supports eligible non-online meetings:\n• Worldwide: Late September through late October 2026\n• GCC: Early October through late October 2026\n• GCC High: Early November through late November 2026\n• DoD: Early November through late November 2026\nPhase 2 will add eligible online meetings. For Teams meetings, the transfer will generate a new Teams meeting link owned by the new organizer. Phase 3 will add transfer support for eligible Teams meeting artifacts, including chat, meeting options, transcripts, recordings, agenda, notes, and attendance reports. Phase 2 and Phase 3 timing will be announced separately.\n[Impact on Your Organization:]\nWho is affected:\n• Users who organize eligible meetings or recurring series.\n• Users selected to become a new organizer.\n• Delegates with permission to edit meetings on another user's primary calendar.\n• Help desk teams supporting meeting ownership transitions.\nPlatforms/Services:\n• Outlook on the web\n• New Outlook for Windows\n• Teams Microsoft 365 Calendar\n• Exchange Online\nClassic Outlook for Windows is not supported.\nWhat will happen:\n• The current organizer can select one person in the same organization or tenant and send an organizer change request.\n• The meeting remains with the current organizer until the selected person accepts.\n• The organizer or an authorized delegate can cancel a pending request.\n• For recurring series, future instances move to the new organizer's calendar. Earlier instances remain with the previous organizer.\n• The previous organizer is not automatically added as an attendee.\n• Internal Exchange Online attendees receive a silent update and do not need to respond again. Their Reminder, Category, Show As, and Private settings are preserved.\n• External and on-premises attendees receive a cancellation and a new invitation, which requires a response.\n• The meeting body, attachments, and sensitivity labels are preserved. The new organizer might require separate access to OneDrive attachments or links.\n• Phase 1 does not support online or Teams meetings.\n• This feature is enabled by default and requires no tenant configuration.\nThe meeting must be in the future, use a work or school account, and be stored on the organizer's primary calendar. Draft, canceled, encrypted, group calendar, group mailbox, and shared mailbox meetings are not eligible.\n[Action Required/Recommendations:]\nNo administrative action is required.\n• Review meeting ownership processes for role changes, leave, and offboarding.\n• Inform help desk teams that Phase 1 supports only eligible non-online meetings.\n• Update internal meeting management and offboarding documentation.\n• Tell users that the new organizer must accept the request and that the previous organizer is not automatically retained as an attendee.\n• Advise users that external attendees must respond to a replacement invitation.\n• Ask users to confirm that the new organizer can access linked OneDrive content.\n• Prepare users for a new Teams meeting link when online meeting transfers become available.\n• Review the Microsoft Support article, Change the organizer of a meeting in Outlook.\n[Compliance Considerations:]\nDoes the change alter how existing customer data is processed, stored, or accessed?Future meeting instances move to the new organizer's calendar and can be managed by that organizer. Earlier recurring instances remain with the previous organizer. Meeting content is preserved, but linked OneDrive content might require separate access.\nDoes the change provide a new way of communicating between users, tenants, or subscriptions?The feature adds organizer transfer requests within an organization. Internal attendees receive silent updates, while external and on-premises attendees receive a cancellation and replacement invitation.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft is introducing a feature to change the organizer of eligible Outlook meetings, allowing transfer of meeting ownership within an organization. Phase 1 (late 2026) supports non-online meetings; later phases will add online and Teams meetings. The new organizer must accept the transfer, preserving meeting content and attendee settings."
-        }
-      ],
-      "officialDocumentUrls": []
     },
     {
       "id": "MC1470885",
@@ -1896,71 +2137,6 @@
       ]
     },
     {
-      "id": "MC1069563",
-      "title": "Microsoft 365 admin center: Usage reports to manage metered consumption costs for Microsoft 365 Copilot Chat (preview)",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-05-07T23:47:17.0000000+00:00",
-      "endDateTime": "2027-03-01T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-01T20:28:19.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated September 1, 2026: We have updated the timeline below. Thank you for your patience.\nTo help you manage metered consumption costs for Microsoft 365 Copilot Chat, we will introduce a new Message consumption usage report in the Microsoft 365 admin center. The new report will give you visibility into billed messages associated with your Microsoft 365 Copilot pay-as-you-go billing policies and includes total messages consumed, cumulative and daily time series, and messages per user, per billing policy, per agent, and per agent-user pair. The new report will roll out in preview. During the preview stage, the report will display a maximum of 30 days of message consumption history. Usage information from prior to May 3, 2025, will not be available in the report.\nThis message refers to Microsoft Copilot in a pay-as-you-go model. A Microsoft Copilot license is not required.\nThis message is associated with Microsoft 365 Roadmap ID 490738.\n[When this will happen:]\nPublic Preview: Available now.\nGeneral Availability (Worldwide): We will begin rolling out in early January 2027 (previously September 2026) and expect to complete by end of January 2027 (previously end of September 2026).\n[How this will affect your organization:]\nAfter you have set up pay-as-you-go billing for Microsoft 365 Copilot, either in the Microsoft 365 admin center or the Microsoft Power Platform admin center, and you have enabled agent usage in your organization, you will see a new report including metrics for messages consumed at the levels of tenant, users, agents, and agent-user. To help you mitigate overspending, you will see alerts when users have consumed more than 2000 billed messages.\nThis new report will be on by default and will be available in the Microsoft admin center at Reporting > Usage > Microsoft 365 Copilot > Message consumption:\n[What you need to do to prepare:]\nThis rollout will happen automatically by the specified date with no admin action required before the rollout. You may want to notify any admins that manage agents on the integrated apps page about this feature.\nLearn more: Microsoft 365 reports in the admin center - Message consumption",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "490738"
-        },
-        {
-          "name": "Summary",
-          "value": "A new Message consumption usage report for Microsoft 365 Copilot Chat pay-as-you-go billing is now in preview, showing message usage by tenant, user, agent, and billing policy. It alerts when users exceed 2000 billed messages. General availability begins January 2027 with automatic rollout."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/microsoft-365/admin/activity-reports/message-consumption"
-      ]
-    },
-    {
-      "id": "MC1423108",
-      "title": "(Updated) Microsoft Entra: Improved restore experience for Authenticator passkeys on iOS",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-10T22:48:20.0000000+00:00",
-      "endDateTime": "2026-10-26T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-01T20:06:13.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated September 1, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why]\nWe are improving the restore experience for device-bound passkeys in the Microsoft Authenticator app on iOS. This update provides a clearer and more guided restore flow when users move to a new device. It also improves user understanding of cross-device sign-in with passkeys. This update is designed to reduce friction during device migration while maintaining strong security protections.\n[Rollout Schedule]\nGeneral Availability (Worldwide): Mid-September 2026 (previously August)\n[Impact on Your Organization]\nWho is affected\n• Users with iOS devices who use Microsoft Authenticator with passkeys\n• Users restoring Authenticator on a new iOS device\nPlatforms/Services\n• iOS\n• Microsoft Authenticator\n• Microsoft Entra\nWhat will happen\n• This change applies to iOS devices only. Android is not included in this release and will be supported later.\n• Users with iCloud and iCloud Keychain backup enabled, and passkeys stored on their previous device, will see the updated experience during device restore.\n• Users restoring Authenticator on a new device will see an updated restore experience.\n• The restore flow will include:• A new user interface that guides users based on whether they are setting up a new device or restoring from an existing one\n• Improved guidance for using Authenticator passkeys with cross-device sign-in\n• The feature is enabled by default.\n• No changes to existing admin configurations or policies.\n[Action Required/Recommendations]\nNo action is required.\nConsider the following recommendations:\n• Inform users about the improved restore experience on iOS devices.\n• Update internal helpdesk documentation if you provide guidance for device migration or Authenticator restore scenarios.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra improves the iOS Microsoft Authenticator app's passkey restore experience with a clearer, guided flow for device migration, launching worldwide mid-September 2026. It affects iOS users with iCloud backup, requires no action, and includes updated user guidance without policy changes."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1158329",
       "title": "(Updated) Microsoft 365 Copilot: Updates to memory and personalization",
       "category": "stayInformed",
@@ -2030,35 +2206,6 @@
       "officialDocumentUrls": [
         "https://learn.microsoft.com/en-gb/microsoft-365/copilot/copilot-ai-admin-agent"
       ]
-    },
-    {
-      "id": "MC1462914",
-      "title": "Microsoft Agent 365: Active Users export for agent usage reporting",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-27T22:03:31.0000000+00:00",
-      "endDateTime": "2026-10-26T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-08-27T22:03:52.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat",
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat、Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat、Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nWe're introducing a new reporting capability in Microsoft Agent 365 that enables AI Admins and Global Admins to export an inventory of users who have actively used agents registered in their tenant's Agent 365 Registry during the previous 30 days.\nThis report provides visibility into agent usage and can help organizations support agent licensing reviews and planning activities.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rolling out in late August 2026 and expected to complete by late August 2026.\n[Impact on Your Organization:]\nWho is affected\n• AI Admins\n• Global Admins\nPlatforms and services\n• Microsoft 365 admin center\n• Microsoft Agent 365\nWhat will happen\nA new Active Users export option will be available in:\nMicrosoft 365 admin center > Agents > All Agents > Export\nAuthorized administrators will be able to generate a CSV report containing users who have used an agent represented in the tenant's Agent 365 Registry during the previous 30 days.\nThe report includes:\n• User Principal Name (UPN)\n• Total Agents Used\n• Total Sessions\n• Last Activity Date\nThis is a read-only reporting capability.\nThere are no changes to:\n• Existing agents\n• User permissions\n• Billing processes\nThe feature will be enabled by default for AI Admins and Global Admins who already have access to Agent 365.\n[Action Required / Recommendations:]\nNo action is required to prepare for this change.\nAfter rollout, you may want to:\n• Identify the individuals responsible for agent licensing decisions and ensure they have the appropriate administrative access.\n• Review exported usage data to better understand agent adoption across your organization.\n• Use the report to support internal licensing reviews and planning discussions.\n[Compliance Considerations:]\nThe feature introduces a new administrative reporting capability that exposes existing usage information for agent activity. The export includes user identifiers (UPN) and usage metrics for the previous 30 days. Organizations should review their internal policies regarding access to usage reporting data and retention of exported reports.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Agent 365 will add an Active Users export in the Microsoft 365 admin center, allowing AI and Global Admins to generate a CSV report of users who used agents in the past 30 days. This read-only feature aids licensing reviews and requires no preparation."
-        }
-      ],
-      "officialDocumentUrls": []
     },
     {
       "id": "MC1462460",
