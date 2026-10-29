@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T02:07:59.7101615+00:00",
+  "generatedAt": "2026-10-29T06:04:39.8770566+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "カナダ時間帯変更・eMudhra証明書失効・Entra認証/エージェント権限変更が今週の最優先",
   "executiveSummary": "今週は期限が近い順に、(1) カナダ一部地域が2026年11月1日に時計を戻さない件でOutlook/Exchange予定やTeams Roomsに影響(MC1526468)、(2) eMudhra中間CA鍵の問題に伴いWindows/Edge/WebView2で該当CAがブロックされる信頼更新が10月下旬に展開(MC1529467)、(3) Targeted releaseが2027年1月に廃止され、11月にユーザー追加・変更ができなくなる(MC1490899)が重要です。Entraでは既定ユーザーによるエージェントblueprint作成が11月初旬から可能になり(MC1506733)、SSPRは登録済み認証方法必須化(MC1325414)、Microsoft提供SMS/音声認証は2027年2月1日から廃止(MC1528000)されます。Office LTSC 2021等のサポートは2026年10月13日に終了済みです(MC1509797)。なお抜粋に記載のない日程・要件は不明であり、「存在しない」ことを意味しません。",
@@ -1928,22 +1928,6 @@
       "validatedAt": "2026-10-19T00:23:50.069548+00:00"
     },
     {
-      "id": "MC1510951",
-      "japaneseTitle": "カナダ2026年タイムゾーン変更に対応するWindows更新プログラムを提供",
-      "japaneseFacts": {
-        "change": "マニトバ、アルバータ、ブリティッシュコロンビア向けの地域別タイムゾーンを追加するWindows更新プログラムが提供されました。",
-        "impact": "更新プログラム未適用または適切なタイムゾーン未選択の場合、2026年11月1日以降に端末の現地時刻が誤表示されます。",
-        "timing": "2026年11月1日午前2時に切り替わり、時計は1時間戻されません。更新は9月22日と10月13日に提供済みです。",
-        "action": "11月1日前に更新プログラムを適用し、地域別タイムゾーンを確認してください。適用できない場合は暫定ガイダンスに従ってください。"
-      },
-      "japaneseDetailedSummary": "マニトバ州、アルバータ州、ブリティッシュコロンビア州の2026年タイムゾーン変更に対応するWindows更新プログラムが提供されました。2026年11月1日に対象地域では時計が1時間戻されず、マニトバはUTC-5、アルバータ等はUTC-6、BC州の大部分はUTC-7に固定されます。9月22日にWindows 11 25H2/24H2向けプレビュー更新で、10月13日に全サポート対象バージョン向けセキュリティ更新で提供されました。未適用または適切なタイムゾーン未選択の端末は現地時刻が誤表示されます。自動設定の端末は新タイムゾーンを自動選択しますが、それ以外は手動選択が必要です。11月1日前の更新適用とタイムゾーン確認が推奨されます。原文は途中で切れており、続きは供給されていません。",
-      "japaneseBodyTranslation": "(2026年10月16日更新:OutlookにおけるアルバータおよびBCのタイムゾーン変更の管理ガイダンスを追加。)\n概要と理由\n2026年のマニトバ、アルバータ、ブリティッシュコロンビアのタイムゾーン変更に対応するWindows更新プログラムが利用可能になりました。2026年11月1日、対象地域では時計が1時間戻されません。\nマニトバは恒久的にUTC-5、アルバータおよび対象地域は恒久的にUTC-6、BC州の大部分は恒久的にUTC-7となります。新しい更新プログラムにより地域別タイムゾーンが追加されます。\n展開スケジュール\n• 2026年9月22日:アルバータとBCの変更が、Windows 11 25H2および24H2の9月の非セキュリティプレビュー更新で提供されました。\n• 2026年10月13日:マニトバの変更が全てのサポート対象Windowsで提供され、アルバータとBCの変更もWindows Serverを含む他のサポート対象バージョンで提供されました。10月のセキュリティ更新に含まれます。\n• 2026年11月1日:現地時間午前2時にタイムゾーン移行が発効し、対象地域の時計は1時間戻されません。\n組織への影響\n該当する更新プログラムが未適用、または適切なタイムゾーンが未選択の場合、11月1日以降、対象地域の端末は誤った現地時刻を表示します。追加されるタイムゾーン:\n• (UTC-05:00) マニトバ\n• (UTC-06:00) 山岳部時間(アルバータ)\n• (UTC-07:00) 太平洋時間(ブリティッシュコロンビア)\nアルバータの変更はノースウェスト準州のイエローナイフとイヌヴィク、およびアルバータに合わせるBC州南東部にも適用されます。\nタイムゾーン自動設定の端末は新しいタイムゾーンを自動選択します。その他の端末では手動選択が必要です。\n必要なアクション/推奨事項\n• 2026年11月1日までに、対象端末へ該当するWindows更新プログラムをインストールする。\n• 更新後、対象端末が適切な地域別タイムゾーンを使用しているか確認する。\n• 11月1日までに更新できない場合は、Daylight Saving Time & Time Zone Blogの各地域向け暫定ガイダンスに従い、できるだけ早く適切なタイムゾーンへ変更する。\n注:この変更を管理するには(以降は原文が途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "61480dcf7a201c14c189747bad4d70520a6f932cb6308da57f7a952be4a5a272",
-      "validatedAt": "2026-10-19T00:23:50.0651922+00:00"
-    },
-    {
       "id": "MC1515930",
       "japaneseTitle": "Copilot 設定の「Cowork」パネルが「Browser use」に名称変更",
       "japaneseFacts": {
@@ -2040,20 +2024,20 @@
       "validatedAt": "2026-10-26T15:22:11.0141009+00:00"
     },
     {
-      "id": "MC985483",
-      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
+      "id": "MC1526468",
+      "japaneseTitle": "MC1510951更新:カナダ2026年タイムゾーン変更の影響と管理者対応",
       "japaneseFacts": {
-        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
-        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
-        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
-        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
+        "change": "2026年11月1日にBC州、アルバータ州、マニトバ州などで時計を戻さず、UTC-07:00、-06:00、-05:00に留まります。",
+        "impact": "OutlookとExchange Onlineの予定表は新タイムゾーンへの移行が必要で、既存予定は自動移行されません。Teams Rooms on Windowsは時刻が1時間ずれる場合があります。",
+        "timing": "変更日は2026年11月1日です。Exchange Online PowerShellの修復コマンドレットは2026年10月28日が目標です。",
+        "action": "Windows更新、ユーザーへのタイムゾーン選択依頼、定期会議の確認、Edge/WebView2更新、11月1日前のテストを行ってください。"
       },
-      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
-      "sourceCharacterCount": 1148,
+      "japaneseDetailedSummary": "MC1510951の更新です。2026年11月1日に、ブリティッシュコロンビア、アルバータ、マニトバの対象地域は時計を戻さず、それぞれUTC-07:00、UTC-06:00、UTC-05:00に留まります。ノースウエスト準州はアルバータ、オンタリオ北西部はマニトバに合わせます。確認済みの影響として、Outlook/Exchange Onlineの予定表では新タイムゾーンへの移行が必要で、既存予定は自動移行されず、定期会議は追加確認が必要です。Teams Rooms on WindowsはEdge/WebView2更新までWindowsより1時間遅れる場合があります。Teams、Outlookモバイル/Mac、Bookings、Shifts、SharePoint、OneDriveは検証中です。Windows更新、定期会議の確認、PowerShell修復コマンドレットの準備、各アプリ更新、事前テストが必要です。問題時は件名に#Canada Time-Zoneを含めてサポートケースを起票してください。",
+      "japaneseBodyTranslation": "本投稿はMC1510951((更新)2026年のカナダのタイムゾーン変更に対するWindows更新プログラムが利用可能、2026年10月16日投稿)を更新するものです。\n2026年11月1日、ブリティッシュコロンビア、アルバータ、マニトバの対象地域は時計を戻さず、それぞれUTC-07:00、UTC-06:00、UTC-05:00に留まります。ノースウエスト準州の対象地域(イエローナイフ、イヌヴィクを含む)はアルバータの変更に合わせ、オンタリオ北西部はマニトバの変更に合わせます。\nWindowsとマイクロソフト365サービスは、正しい予定設定と表示のために更新されたタイムゾーン定義に依存します。\n組織への影響\n確認済みの影響\n• OutlookとExchange Online(予定表):ユーザーは新しいタイムゾーンへ移行する必要があります。既存の予定は自動的には移行されません。定期的な会議は追加の確認が必要です。\n• Windows版Microsoft Teams Rooms:Edge/WebView2が更新されるまで、一部のデバイスでWindowsより1時間遅れた時刻が表示される場合があります。\n潜在的な影響(検証中)\n• Microsoft Teams(デスクトップ、Web、モバイル)およびその他のTeamsデバイス\n• iOS、Android、Mac版Outlook\n• Microsoft Bookings\n• Shifts\n• SharePoint Online\n• OneDrive\n必要な対応\n• 対象地域のWindowsデバイスに、2026年10月の更新を含む最新のWindows更新プログラムが適用されていることを確認する。\n• 対象地域のユーザーに、Outlookで新しいタイムゾーンを選択し、11月1日以降の会議、特に定期会議を確認するよう依頼する。\n• 非定期会議向けのExchange Online PowerShell修復コマンドレットは、リリース後に実行できるよう計画する(目標:2026年10月28日)。\n• Windows版Teams RoomsでEdgeとWebView2を更新し、会議室の時刻表示がWindowsと一致することを確認する。\n• Teams、Outlook(iOS/Android/Mac含む)、その他のMicrosoft 365アプリを最新に保つ。\n• 11月1日前に、定期会議、空き時間情報、Bookings予約、Shiftsスケジュール、SharePoint地域設定などの主要シナリオをテストする。\n• 問題が発生した場合は、Microsoft 365管理センターでサポートケースを開き、件名に#Canada Time-Zoneを含める。\n追加情報\n• ブリティッシュコロンビア、アルバータ、マニトバのOutlookタイムゾーン変更(Microsoftサポート)\n• 2026年ブリティッシュコロンビアのタイムゾーン変更に関する暫定ガイダンス(DSTブログ)\n• 2026年アルバータのタイムゾーン変更に関する暫定ガイダンス(DSTブログ)\n• マニトバ2026年タイムゾーン更新が利用可能(夏時間とタイムゾーンブログ)\n製品チームが影響を確認し、緩和策を公開し、追加ガイダンスをリリースするのに合わせて、この投稿を更新し続けます。",
+      "sourceCharacterCount": 2486,
       "sourceTruncated": false,
-      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
-      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+      "sourceHash": "8e436ade5b7e0becbadeaa1c6606cdff34445000f01145174b3e8f2e29968da9",
+      "validatedAt": "2026-10-29T02:07:59.7006549+00:00"
     },
     {
       "id": "MC1528000",
@@ -2088,20 +2072,68 @@
       "validatedAt": "2026-10-29T02:07:59.6923572+00:00"
     },
     {
-      "id": "MC1526468",
-      "japaneseTitle": "MC1510951更新:カナダ2026年タイムゾーン変更の影響と管理者対応",
+      "id": "MC985483",
+      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
       "japaneseFacts": {
-        "change": "2026年11月1日にBC州、アルバータ州、マニトバ州などで時計を戻さず、UTC-07:00、-06:00、-05:00に留まります。",
-        "impact": "OutlookとExchange Onlineの予定表は新タイムゾーンへの移行が必要で、既存予定は自動移行されません。Teams Rooms on Windowsは時刻が1時間ずれる場合があります。",
-        "timing": "変更日は2026年11月1日です。Exchange Online PowerShellの修復コマンドレットは2026年10月28日が目標です。",
-        "action": "Windows更新、ユーザーへのタイムゾーン選択依頼、定期会議の確認、Edge/WebView2更新、11月1日前のテストを行ってください。"
+        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
+        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
+        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
+        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
       },
-      "japaneseDetailedSummary": "MC1510951の更新です。2026年11月1日に、ブリティッシュコロンビア、アルバータ、マニトバの対象地域は時計を戻さず、それぞれUTC-07:00、UTC-06:00、UTC-05:00に留まります。ノースウエスト準州はアルバータ、オンタリオ北西部はマニトバに合わせます。確認済みの影響として、Outlook/Exchange Onlineの予定表では新タイムゾーンへの移行が必要で、既存予定は自動移行されず、定期会議は追加確認が必要です。Teams Rooms on WindowsはEdge/WebView2更新までWindowsより1時間遅れる場合があります。Teams、Outlookモバイル/Mac、Bookings、Shifts、SharePoint、OneDriveは検証中です。Windows更新、定期会議の確認、PowerShell修復コマンドレットの準備、各アプリ更新、事前テストが必要です。問題時は件名に#Canada Time-Zoneを含めてサポートケースを起票してください。",
-      "japaneseBodyTranslation": "本投稿はMC1510951((更新)2026年のカナダのタイムゾーン変更に対するWindows更新プログラムが利用可能、2026年10月16日投稿)を更新するものです。\n2026年11月1日、ブリティッシュコロンビア、アルバータ、マニトバの対象地域は時計を戻さず、それぞれUTC-07:00、UTC-06:00、UTC-05:00に留まります。ノースウエスト準州の対象地域(イエローナイフ、イヌヴィクを含む)はアルバータの変更に合わせ、オンタリオ北西部はマニトバの変更に合わせます。\nWindowsとマイクロソフト365サービスは、正しい予定設定と表示のために更新されたタイムゾーン定義に依存します。\n組織への影響\n確認済みの影響\n• OutlookとExchange Online(予定表):ユーザーは新しいタイムゾーンへ移行する必要があります。既存の予定は自動的には移行されません。定期的な会議は追加の確認が必要です。\n• Windows版Microsoft Teams Rooms:Edge/WebView2が更新されるまで、一部のデバイスでWindowsより1時間遅れた時刻が表示される場合があります。\n潜在的な影響(検証中)\n• Microsoft Teams(デスクトップ、Web、モバイル)およびその他のTeamsデバイス\n• iOS、Android、Mac版Outlook\n• Microsoft Bookings\n• Shifts\n• SharePoint Online\n• OneDrive\n必要な対応\n• 対象地域のWindowsデバイスに、2026年10月の更新を含む最新のWindows更新プログラムが適用されていることを確認する。\n• 対象地域のユーザーに、Outlookで新しいタイムゾーンを選択し、11月1日以降の会議、特に定期会議を確認するよう依頼する。\n• 非定期会議向けのExchange Online PowerShell修復コマンドレットは、リリース後に実行できるよう計画する(目標:2026年10月28日)。\n• Windows版Teams RoomsでEdgeとWebView2を更新し、会議室の時刻表示がWindowsと一致することを確認する。\n• Teams、Outlook(iOS/Android/Mac含む)、その他のMicrosoft 365アプリを最新に保つ。\n• 11月1日前に、定期会議、空き時間情報、Bookings予約、Shiftsスケジュール、SharePoint地域設定などの主要シナリオをテストする。\n• 問題が発生した場合は、Microsoft 365管理センターでサポートケースを開き、件名に#Canada Time-Zoneを含める。\n追加情報\n• ブリティッシュコロンビア、アルバータ、マニトバのOutlookタイムゾーン変更(Microsoftサポート)\n• 2026年ブリティッシュコロンビアのタイムゾーン変更に関する暫定ガイダンス(DSTブログ)\n• 2026年アルバータのタイムゾーン変更に関する暫定ガイダンス(DSTブログ)\n• マニトバ2026年タイムゾーン更新が利用可能(夏時間とタイムゾーンブログ)\n製品チームが影響を確認し、緩和策を公開し、追加ガイダンスをリリースするのに合わせて、この投稿を更新し続けます。",
-      "sourceCharacterCount": 2486,
+      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
+      "sourceCharacterCount": 1148,
       "sourceTruncated": false,
-      "sourceHash": "8e436ade5b7e0becbadeaa1c6606cdff34445000f01145174b3e8f2e29968da9",
-      "validatedAt": "2026-10-29T02:07:59.7006549+00:00"
+      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
+      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1529467",
+      "japaneseTitle": "eMudhra CA鍵漏えい対応でWindows等の証明書信頼を更新",
+      "japaneseFacts": {
+        "change": "eMudhra中間CAの秘密鍵8件の問題を受け、Windowsの失効信頼リスト更新とEdge/WebView2のCRLSet更新で対象CAをブロックし、関連証明書を信頼リストから削除します。",
+        "impact": "Windows、Edge、WebView2利用組織が対象で、特に該当証明書にチェーンする組織や切断環境の端末は追加対応が必要な場合があります。",
+        "timing": "全環境で2026年10月下旬に開始し、同月下旬に完了予定です。",
+        "action": "自動更新を継続させ、切断環境のWindows端末とAzureデバイスで信頼リスト更新が届くか確認します。"
+      },
+      "japaneseDetailedSummary": "eMudhraの中間CA秘密鍵8件(TLS用6件、コード署名用2件)が復元可能であったため、信頼されたCAを装った証明書や署名が作られるおそれがあります。問題はeMudhra側の証明書階層で発生し、Microsoftのシステムの侵害ではありません。Microsoftは、Windowsの失効信頼リストの更新、Edge/WebView2向けCRLSet更新、および影響階層の証明書を信頼リストから削除する更新を公開しました。Edge/WebView2の更新はコンポーネント更新で自動配信され、新バージョンのインストールは不要です。提供はWorldwide、GCC、GCC High、DoDで2026年10月下旬の開始・完了予定です。管理者は自動更新を妨げず、更新を受け取らない切断環境のWindowsや切断Azureデバイスで、信頼リストの更新が配布されるか確認してください。本文は途中で切れており、Azure側の詳細は不明です。",
+      "japaneseBodyTranslation": "[概要と理由]\nMicrosoftは、eMudhraの中間認証局(CA)秘密鍵8件(TLS関連6件、コード署名関連2件)に関する問題に対応しています。これらの鍵は復元され得るため、信頼されたCAから発行されたように見える証明書の作成やコンテンツへの署名に悪用される可能性があります。この問題はeMudhraの証明書階層で発生したもので、Microsoftのシステムの侵害ではありません。\nMicrosoftは、証明書の信頼を更新して影響を受けるCAをブロックし、影響を受ける階層に関連する証明書を削除します。\n[ロールアウト予定]\n• 一般提供(Worldwide、GCC、GCC High、DoD):2026年10月下旬に開始し、2026年10月下旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• Windows、Microsoft Edge、WebView2を使用する組織。特に削除される8件の証明書のいずれかにチェーンする証明書を持つ組織\n• 切断されたWindowsデバイスや切断されたAzureデバイスを管理する組織は、追加対応が必要な場合があります\nプラットフォームとサービス\n• Windows\n• Microsoft Edge\n• WebView2\n• Azure仮想マシン\n実施される内容\n• 影響を受けるCAをブロックするため、Windows Disallowed Certificate Trust Listの更新を公開しました。\n• 影響を受けるCAが署名したTLS証明書をブロックするため、Edge/WebView2向けに別のCRLSet更新を展開しました。\n• Edge/WebView2の更新はコンポーネント更新の仕組みで自動配信されます。新しいブラウザーバージョンのインストールは不要です。\n• 影響を受ける階層に関連する証明書を信頼リストから削除するWindowsとEdgeの更新を公開しました。\n• これらの更新が届いたデバイスでは、影響を受ける証明書は各信頼リストで既定では信頼されなくなります。\n[必要な対応と推奨事項]\n• 更新を継続して届ける。Windowsの証明書信頼の自動更新とEdgeのコンポーネント更新がデバイスに届くようにする。\n• 切断されたWindowsデバイスを確認する。自動更新を受け取らない場合、更新済みのDisallowed Certificate Trust Listと今後の信頼リスト変更が配布されるようにする。切断環境での配布はMicrosoft Learnのガイダンスを参照。\n• 切断されたAzureデバイスを確認する(以降は原文が途中で切れています)。",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "8ab510df2db20855cc2f92472d33625c0421670dd9923c6c7ead8347a9c52218",
+      "validatedAt": "2026-10-29T06:04:39.8704987+00:00"
+    },
+    {
+      "id": "MC1510951",
+      "japaneseTitle": "カナダ2026年タイムゾーン変更に対応するWindows更新プログラム",
+      "japaneseFacts": {
+        "change": "マニトバ、アルバータ、ブリティッシュコロンビアの時刻変更に対応する地域別タイムゾーンがWindows更新で追加されました。",
+        "impact": "更新未適用またはタイムゾーン未選択の場合、2026年11月1日以降に端末の現地時刻が誤表示されます。",
+        "timing": "9月22日と10月13日に提供済みで、11月1日午前2時に切り替わります。",
+        "action": "11月1日前に更新を適用し、地域別タイムゾーンを確認します。更新できない場合は暫定ガイダンスに従います。"
+      },
+      "japaneseDetailedSummary": "2026年11月1日に時計を1時間戻さないカナダの3地域(マニトバはUTC-5、アルバータはUTC-6、ブリティッシュコロンビア大部分はUTC-7に固定)に対応するため、Windows更新プログラムが提供され、地域別タイムゾーンが追加されました。アルバータ・BC変更は9月22日にWindows 11 25H2/24H2の非セキュリティプレビュー更新で、10月13日にはマニトバと他の対応バージョン(Windows Serverを含む)に提供されました。更新未適用や手動選択の漏れがあると、11月1日以降に時刻が誤表示されます。自動設定の端末は新タイムゾーンが自動選択されますが、それ以外は手動選択が必要です。管理者は11月1日前に更新を適用し、設定を確認してください。更新できない場合は地域ごとの暫定ガイダンスに従います。本文は途中で切れています。",
+      "japaneseBodyTranslation": "(2026年10月16日更新:Outlookのアルバータ州およびブリティッシュコロンビア州のタイムゾーン変更に関するガイダンスを追加。)\n(2026年10月27日更新:メッセージセンター投稿MC1526468に公開された追加ガイダンスへの参照とリンクを追加。)\n[概要と理由]\nマニトバ、アルバータ、ブリティッシュコロンビアの2026年のタイムゾーン変更に対応するWindows更新プログラムが利用可能になりました。2026年11月1日、対象地域では時計を1時間戻しません。\nマニトバはUTC-5、アルバータおよび対象地域はUTC-6、ブリティッシュコロンビアの大部分はUTC-7に恒久的に留まります。新しいWindows更新で地域別タイムゾーンが追加されます。\n[ロールアウト予定]\n• 2026年9月22日:アルバータとBCの変更が、Windows 11 25H2および24H2の2026年9月の非セキュリティプレビュー更新で利用可能になりました。\n• 2026年10月13日:マニトバの変更がサポート対象の全Windowsで利用可能になりました。アルバータとBCの変更も、Windows Serverを含むその他のサポート対象Windowsで利用可能になりました。これらは2026年10月のセキュリティ更新に含まれます。\n• 2026年11月1日:現地時間午前2時にタイムゾーン移行が発効します。対象地域では時計を1時間戻しません。\n[組織への影響]\n該当更新が未適用、または適切なタイムゾーンが未選択の場合、2026年11月1日の移行後に対象地域のデバイスで現地時刻が誤って表示されます。追加されるタイムゾーン:\n• (UTC-05:00) Manitoba\n• (UTC-06:00) Mountain Time (Alberta)\n• (UTC-07:00) Pacific Time (British Columbia)\nアルバータの変更は、ノースウエスト準州のイエローナイフとイヌヴィク、およびアルバータと同じ時間の南東BCの地域にも適用されます。\nタイムゾーン自動設定のデバイスは新タイムゾーンを自動選択します。その他のデバイスでは手動選択が必要です。\n[必要な対応/推奨事項]\n• 2026年11月1日前に、対象デバイスに該当Windows更新を適用する。\n• 更新後、対象デバイスが適切な地域別タイムゾーンを使用していることを確認する。\n• 2026年11月1日前に更新を受け取れないデバイスは、各地域の暫定ガイダンスに従う(以降は原文が途中で切れています)。",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "f02314bc5620ef8a7cf4bb8891971b1d51946f7ae4ea0182f81a1c1ed54ff4ab",
+      "validatedAt": "2026-10-29T06:04:39.8647220+00:00"
+    },
+    {
+      "id": "MC1529472",
+      "japaneseTitle": "FrontierがTeams・新Outlook・OneDrive・SharePointに拡大",
+      "japaneseFacts": {
+        "change": "FrontierでTeams、新しいOutlook for Windows、OneDrive、SharePointの対象パブリックプレビュー機能も提供されます。",
+        "impact": "Frontierに登録されたユーザーが対象で、登録済みユーザーの再登録は不要です。",
+        "timing": "2026年11月からです。",
+        "action": "管理者が参加ユーザー/グループを選び、管理センターで設定を管理し、サポート向けガイダンスを準備します。"
+      },
+      "japaneseDetailedSummary": "Frontierの対象がCopilotに加え、Microsoft Teams、新しいOutlook for Windows、OneDrive、SharePointの対象パブリックプレビュー機能にも拡大します。2026年11月から、Frontierに登録したユーザーに提供が始まります。管理者は1つのプログラムと設定で、特定のユーザーやグループ、または全ユーザーに早期アクセスを付与できます。FrontierはオプトインでStandardリリースやDeferredリリースの設定とは別であり、一般提供後の受け取り時期は引き続きそれらが決めます。既存の登録ユーザーは再登録不要です。11月には管理センターでFrontier、Standard、Deferredをまとめて管理できるようになります。早期アクセスを活用して案内やサポート体制を準備し、フィードバックを共有できます。本文は途中で切れており、以降の対応詳細は不明です。",
+      "japaneseBodyTranslation": "[概要と理由]\nFrontierの対象がMicrosoft 365の広い範囲に拡大します。2026年11月から、Frontierに登録したユーザーは、Copilotに加えて、Microsoft Teams、新しいOutlook for Windows、OneDrive、SharePointの対象パブリックプレビュー機能を受け取れるようになります。\nプレビューを別々の場所で探す代わりに、管理者は1つのプログラムと1つの設定で、選択したユーザーにMicrosoft 365全体の早期アクセスを付与できます。\nFrontierは任意であり、管理者が制御します。Standardリリース/Deferredリリースの設定とは別で、それらは一般提供後に機能を受け取る時期を引き続き決定します。すでにFrontierに登録済みのユーザーは再登録不要です。\nMicrosoft 365管理センターのリリースオプション:\n• Frontier(プレビューアクセス):特定のユーザーやグループ、または全ユーザーをオプトインし、一般提供前に対象パブリックプレビュー機能を取得。\n• Standardリリース(一般提供):一般提供されしだい更新を受け取る。既定。\n• Deferredリリース(一般提供):Standardリリース開始の約30日後に対象の主要更新を受け取り、検証と準備の時間を確保。\n詳細:Microsoft Frontierプログラムの概要\n[ロールアウト予定]\n2026年11月:Frontier登録ユーザーが、Copilotに加えTeams、新しいOutlook for Windows、OneDrive、SharePointの対象プレビュー機能を受け取り始めます。\n[組織への影響]\nFrontierにより、Microsoft 365のプレビューへの早期アクセスがより簡単で予測しやすくなります。1つのプログラムと1つの管理設定で、Teams、新しいOutlook for Windows、OneDrive、SharePoint、Copilotの対象プレビュー機能が提供されます。管理者が参加ユーザーとグループを選び、それ以外はStandardまたはDeferredのスケジュールのままです。\n2026年11月には、管理者はMicrosoft 365管理センターでFrontier、Standard、Deferredを一か所で管理できます。早期アクセスにより、ガイダンスやサポートチームの準備時間と、広く展開される前にフィードバックを共有する機会が得られます。\n[必要な対応/推奨事項]\n• Frontier登録ユーザーは、Copilotのプレビュー機能に加え、Teams、新しいOutlook for Windows、OneDrive、SharePointの対象プレビュー機能が表示されるようになります(以降は原文が途中で切れています)。",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "1135c15da86a6119679419cfb8d58cde33b68dd04d148647087a11dd99b2f1d0",
+      "validatedAt": "2026-10-29T06:04:39.8688075+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-10-29T02:01:28.2382864+00:00",
