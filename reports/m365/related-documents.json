@@ -21424,11 +21424,11 @@
   },
   "audit": {
     "uniqueMessages": 161,
-    "snapshotOccurrences": 3458,
-    "snapshots": 42,
+    "snapshotOccurrences": 3552,
+    "snapshots": 43,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-10-28T22:57:19+00:00",
-    "checkedAt": "2026-10-29T19:48:25.443376+00:00",
+    "checkedAt": "2026-10-30T08:54:34.818685+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 57,
