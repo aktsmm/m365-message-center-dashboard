@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "observedAt": "2026-10-31T12:47:43.6331733+00:00",
+  "observedAt": "2026-10-31T18:39:03.8219407+00:00",
   "snapshotGeneratedAt": "2026-10-29T01:49:05.6990849+00:00",
   "summary": {
-    "reason": "",
-    "status": "current"
+    "status": "current",
+    "reason": ""
   },
   "translations": {
-    "total": 94,
     "pending": 0,
+    "total": 94,
     "current": 94
   },
   "attempts": {
