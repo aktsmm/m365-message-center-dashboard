@@ -2185,16 +2185,16 @@
     },
     "MC1187682": {
       "sourceHashes": [
-        "ab9b55cbbcdb9567ec9ab4da3a7b56ec495738771e5ff1ef9700841fcdb1e284"
+        "3688587c473ea4e52c398ab7ee5421818dc04242b5f108a2a1f704c004a5f57a"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T09:58:23.827496+00:00",
+      "checkedAt": "2026-11-02T01:33:51.360600+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/DeployEdge/edge-learnmore-copilot-page-summary-results",
           "title": "Edge でのMicrosoft 365 Copilot Chatとページ コンテンツへのアクセス",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T09:44:33.590867+00:00",
+          "checkedAt": "2026-11-02T01:33:56.371210+00:00",
           "bodySha256": "51e24a8a1d99272e57b974b1e311a7612af859efb68bf45017e081889ad2bb2c",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -2220,30 +2220,30 @@
             "articleExcerpt": "# Microsoft 365 Copilot Chat in Edge and Access to Page Content\r\n\r\nThe charts below illustrate scenarios in which Copilot in Edge for Business may access page content across different document types. This information will be updated when support for summarization increases. This chart covers the behavior of Microsoft 365 Copilot Chat in Edge for Business which is accessible in the sidepane.\r\n\r\nNote\r\n\r\nContextual grounding in Copilot in Edge: This is the ability to ground a chat conversation in the current webpage context. It applies to prompts such as \"Summarize this document\" or \"What does this page say about…\" in reference to the tab currently being viewed by the user in the main Edge window. Contextual grounding only applies to instances of chat when using Copilot in the Edge sidebar, because desktop/full-screen instances do not allow for simultaneous web context.\r\n\r\n| Document type | Copilot access to page content |\r\n| --- | --- |\r\n| Microsoft 365 Copilot Chat | Copilot access to page content is supported |\r\n| Intranet Sites such as SharePoint | Copilot access to page content is supported *Embedded Office docs in SharePoint aren't supported* |\r\n| Public Sites such as Wikipedia | Copilot access to page content is supported |\r\n| Outlook Web App | Copilot access to page content is supported |\r\n| PDFs | Copilot access to page content is supported |\r\n| Office Documents | Copilot access to page content isn't supported |\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/DeployEdge/edge-learnmore-copilot-page-summary-results",
             "bodySha256": "933bf7fba388d9666a928cb6752a0f3c9ba83ec7ae1a265023088fb62c3a2413",
-            "reviewedAt": "2026-10-16T09:58:25.470494+00:00"
+            "reviewedAt": "2026-11-02T01:33:56.371245+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/deployedge/microsoft-edge-policies",
           "title": "Microsoft Edge - ポリシー",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T09:49:26.897619+00:00",
-          "bodySha256": "00db3b3f04dfc1682c8b983a1a3b65f328dd82a30f701b1b77df07c607d2f196",
+          "checkedAt": "2026-11-02T01:34:00.236740+00:00",
+          "bodySha256": "b143631f94be79030cbc6496eec72e992cecf14dd97615a7a2450eb01b90c5a3",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "explicit_message_link",
           "rationale": "Explicit official article from this approved notification.",
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies",
-            "bodySha256": "25446f82e72b47a9de3ac1ef1cbab3688f68eb6e26fbd3175166997f8f08a306",
-            "reviewedAt": "2026-10-16T09:58:25.563562+00:00"
+            "bodySha256": "3a65d452c0a6bc1ae90aaa34b5b02e31a912d7e185b2dd8667a7394c5dd148d6",
+            "reviewedAt": "2026-11-02T01:34:00.237056+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/deployedge/edge-learnmore-copilot-page-summary-results",
           "title": "Edge でのMicrosoft 365 Copilot Chatとページ コンテンツへのアクセス",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T09:58:31.284291+00:00",
+          "checkedAt": "2026-11-02T01:34:03.518953+00:00",
           "bodySha256": "51e24a8a1d99272e57b974b1e311a7612af859efb68bf45017e081889ad2bb2c",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -2269,7 +2269,7 @@
             "articleExcerpt": "# Microsoft 365 Copilot Chat in Edge and Access to Page Content\r\n\r\nThe charts below illustrate scenarios in which Copilot in Edge for Business may access page content across different document types. This information will be updated when support for summarization increases. This chart covers the behavior of Microsoft 365 Copilot Chat in Edge for Business which is accessible in the sidepane.\r\n\r\nNote\r\n\r\nContextual grounding in Copilot in Edge: This is the ability to ground a chat conversation in the current webpage context. It applies to prompts such as \"Summarize this document\" or \"What does this page say about…\" in reference to the tab currently being viewed by the user in the main Edge window. Contextual grounding only applies to instances of chat when using Copilot in the Edge sidebar, because desktop/full-screen instances do not allow for simultaneous web context.\r\n\r\n| Document type | Copilot access to page content |\r\n| --- | --- |\r\n| Microsoft 365 Copilot Chat | Copilot access to page content is supported |\r\n| Intranet Sites such as SharePoint | Copilot access to page content is supported *Embedded Office docs in SharePoint aren't supported* |\r\n| Public Sites such as Wikipedia | Copilot access to page content is supported |\r\n| Outlook Web App | Copilot access to page content is supported |\r\n| PDFs | Copilot access to page content is supported |\r\n| Office Documents | Copilot access to page content isn't supported |\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/deployedge/edge-learnmore-copilot-page-summary-results",
             "bodySha256": "933bf7fba388d9666a928cb6752a0f3c9ba83ec7ae1a265023088fb62c3a2413",
-            "reviewedAt": "2026-10-16T09:58:31.285292+00:00"
+            "reviewedAt": "2026-11-02T01:34:03.518991+00:00"
           }
         }
       ],
@@ -2307,7 +2307,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T09:58:31.285292+00:00",
+      "nextAttemptAt": "2026-12-02T01:34:03.518998+00:00",
       "variants": {
         "752669e90eeb3c782103852577ed05ec0038db9a1c1f7483c172d6dc26f5ef81": {
           "sourceHashes": [
@@ -2623,6 +2623,132 @@
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
           "nextAttemptAt": "2026-11-15T09:59:08.920768+00:00"
+        },
+        "ab9b55cbbcdb9567ec9ab4da3a7b56ec495738771e5ff1ef9700841fcdb1e284": {
+          "sourceHashes": [
+            "ab9b55cbbcdb9567ec9ab4da3a7b56ec495738771e5ff1ef9700841fcdb1e284"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T09:58:23.827496+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/DeployEdge/edge-learnmore-copilot-page-summary-results",
+              "title": "Edge でのMicrosoft 365 Copilot Chatとページ コンテンツへのアクセス",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T09:44:33.590867+00:00",
+              "bodySha256": "51e24a8a1d99272e57b974b1e311a7612af859efb68bf45017e081889ad2bb2c",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "edge",
+                "matchedTerms": [
+                  "contextual",
+                  "copilot",
+                  "grounding",
+                  "summarization"
+                ],
+                "requiredFeatureTerms": [
+                  "contextual",
+                  "copilot",
+                  "grounding",
+                  "summarization"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "# Microsoft 365 Copilot Chat in Edge and Access to Page Content\r\n\r\nThe charts below illustrate scenarios in which Copilot in Edge for Business may access page content across different document types. This information will be updated when support for summarization increases. This chart covers the behavior of Microsoft 365 Copilot Chat in Edge for Business which is accessible in the sidepane.\r\n\r\nNote\r\n\r\nContextual grounding in Copilot in Edge: This is the ability to ground a chat conversation in the current webpage context. It applies to prompts such as \"Summarize this document\" or \"What does this page say about…\" in reference to the tab currently being viewed by the user in the main Edge window. Contextual grounding only applies to instances of chat when using Copilot in the Edge sidebar, because desktop/full-screen instances do not allow for simultaneous web context.\r\n\r\n| Document type | Copilot access to page content |\r\n| --- | --- |\r\n| Microsoft 365 Copilot Chat | Copilot access to page content is supported |\r\n| Intranet Sites such as SharePoint | Copilot access to page content is supported *Embedded Office docs in SharePoint aren't supported* |\r\n| Public Sites such as Wikipedia | Copilot access to page content is supported |\r\n| Outlook Web App | Copilot access to page content is supported |\r\n| PDFs | Copilot access to page content is supported |\r\n| Office Documents | Copilot access to page content isn't supported |\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/DeployEdge/edge-learnmore-copilot-page-summary-results",
+                "bodySha256": "933bf7fba388d9666a928cb6752a0f3c9ba83ec7ae1a265023088fb62c3a2413",
+                "reviewedAt": "2026-10-16T09:58:25.470494+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/deployedge/microsoft-edge-policies",
+              "title": "Microsoft Edge - ポリシー",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T09:49:26.897619+00:00",
+              "bodySha256": "00db3b3f04dfc1682c8b983a1a3b65f328dd82a30f701b1b77df07c607d2f196",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies",
+                "bodySha256": "25446f82e72b47a9de3ac1ef1cbab3688f68eb6e26fbd3175166997f8f08a306",
+                "reviewedAt": "2026-10-16T09:58:25.563562+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/deployedge/edge-learnmore-copilot-page-summary-results",
+              "title": "Edge でのMicrosoft 365 Copilot Chatとページ コンテンツへのアクセス",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T09:58:31.284291+00:00",
+              "bodySha256": "51e24a8a1d99272e57b974b1e311a7612af859efb68bf45017e081889ad2bb2c",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "reviewed_candidate",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "edge",
+                "matchedTerms": [
+                  "contextual",
+                  "copilot",
+                  "grounding",
+                  "summarization"
+                ],
+                "requiredFeatureTerms": [
+                  "contextual",
+                  "copilot",
+                  "grounding",
+                  "summarization"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "# Microsoft 365 Copilot Chat in Edge and Access to Page Content\r\n\r\nThe charts below illustrate scenarios in which Copilot in Edge for Business may access page content across different document types. This information will be updated when support for summarization increases. This chart covers the behavior of Microsoft 365 Copilot Chat in Edge for Business which is accessible in the sidepane.\r\n\r\nNote\r\n\r\nContextual grounding in Copilot in Edge: This is the ability to ground a chat conversation in the current webpage context. It applies to prompts such as \"Summarize this document\" or \"What does this page say about…\" in reference to the tab currently being viewed by the user in the main Edge window. Contextual grounding only applies to instances of chat when using Copilot in the Edge sidebar, because desktop/full-screen instances do not allow for simultaneous web context.\r\n\r\n| Document type | Copilot access to page content |\r\n| --- | --- |\r\n| Microsoft 365 Copilot Chat | Copilot access to page content is supported |\r\n| Intranet Sites such as SharePoint | Copilot access to page content is supported *Embedded Office docs in SharePoint aren't supported* |\r\n| Public Sites such as Wikipedia | Copilot access to page content is supported |\r\n| Outlook Web App | Copilot access to page content is supported |\r\n| PDFs | Copilot access to page content is supported |\r\n| Office Documents | Copilot access to page content isn't supported |\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/deployedge/edge-learnmore-copilot-page-summary-results",
+                "bodySha256": "933bf7fba388d9666a928cb6752a0f3c9ba83ec7ae1a265023088fb62c3a2413",
+                "reviewedAt": "2026-10-16T09:58:31.285292+00:00"
+              }
+            }
+          ],
+          "reviewHash": "b585000f413497064f5fa2abd5d4df717eda03f6f24268727587b05ff13d750a",
+          "query": "Microsoft edge copilot grounding",
+          "explicitUrls": [
+            "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
+            "https://learn.microsoft.com/deployedge/microsoft-edge-policies"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/deployedge/microsoft-edge-policies",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/deployedge/edge-learnmore-copilot-page-summary-results",
+              "source": "reviewed_candidate",
+              "decision": "adopted",
+              "score": 1.0
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft edge copilot grounding",
+          "searchedQueries": [
+            "Microsoft edge copilot grounding"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T09:58:31.285292+00:00"
         }
       }
     },
@@ -3396,16 +3522,16 @@
     },
     "MC1221452": {
       "sourceHashes": [
-        "d7e9c514b24d15614cc4e2cb2ce9f3e9355ba2d23d70d15a3c9b6c13dc78f83c"
+        "ab6773efa0312ecd1317aa8e758589b11023ecd2ee678bdbce7131493174de30"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T09:58:02.652926+00:00",
+      "checkedAt": "2026-11-02T01:33:24.113911+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-authentication-passkeys-fido2",
           "title": "Microsoft Entra IDでFIDO2パスキーを有効にする方法",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T09:58:07.149581+00:00",
+          "checkedAt": "2026-11-02T01:33:28.579100+00:00",
           "bodySha256": "67fab985b37935e8b915fe09ea3089ee73012e634870abca4fa1fcaf54b4da6b",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -3414,14 +3540,14 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkey-profiles",
             "bodySha256": "905d8080b3527f2b5b77471bed8047b15c3f85ffc4ded47b5544219316516d69",
-            "reviewedAt": "2026-10-16T09:58:07.149581+00:00"
+            "reviewedAt": "2026-11-02T01:33:28.579206+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/passkey-faq",
           "title": "パスキーに関してよく寄せられる質問",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T09:58:23.306484+00:00",
+          "checkedAt": "2026-11-02T01:33:39.403900+00:00",
           "bodySha256": "fef789b2865b0aa7d2034c512c155fc10589dd12772db5e8a82a28417cfa1669",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -3430,7 +3556,7 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/synced-passkey-faq",
             "bodySha256": "977dd427abbaa3f9860586d04211e0c79ea961f860c0c2bc67603e8717fc0f9c",
-            "reviewedAt": "2026-10-16T09:58:23.306994+00:00"
+            "reviewedAt": "2026-11-02T01:33:39.403960+00:00"
           }
         }
       ],
@@ -3478,7 +3604,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T09:58:23.315208+00:00",
+      "nextAttemptAt": "2026-12-02T01:33:39.407900+00:00",
       "variants": {
         "dd8a21018f9e7d4440904cafff9220b1b5484c45bc49722bed091920cdfb87aa": {
           "sourceHashes": [
@@ -3535,6 +3661,92 @@
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
           "nextAttemptAt": "2026-11-04T07:57:49.882291+00:00"
+        },
+        "d7e9c514b24d15614cc4e2cb2ce9f3e9355ba2d23d70d15a3c9b6c13dc78f83c": {
+          "sourceHashes": [
+            "d7e9c514b24d15614cc4e2cb2ce9f3e9355ba2d23d70d15a3c9b6c13dc78f83c"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T09:58:02.652926+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+              "title": "Microsoft Entra IDでFIDO2パスキーを有効にする方法",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T09:58:07.149581+00:00",
+              "bodySha256": "67fab985b37935e8b915fe09ea3089ee73012e634870abca4fa1fcaf54b4da6b",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-passkey-profiles",
+                "bodySha256": "905d8080b3527f2b5b77471bed8047b15c3f85ffc4ded47b5544219316516d69",
+                "reviewedAt": "2026-10-16T09:58:07.149581+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/passkey-faq",
+              "title": "パスキーに関してよく寄せられる質問",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T09:58:23.306484+00:00",
+              "bodySha256": "fef789b2865b0aa7d2034c512c155fc10589dd12772db5e8a82a28417cfa1669",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/synced-passkey-faq",
+                "bodySha256": "977dd427abbaa3f9860586d04211e0c79ea961f860c0c2bc67603e8717fc0f9c",
+                "reviewedAt": "2026-10-16T09:58:23.306994+00:00"
+              }
+            }
+          ],
+          "reviewHash": "34bd26683dd9d26ae9c68c94feaabc5f8806cc12b952d418c87104dbcfb7ea67",
+          "query": "Microsoft entra passkey fido2 migration",
+          "explicitUrls": [
+            "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles",
+            "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys",
+            "https://learn.microsoft.com/entra/identity/authentication/how-to-enable-passkey-fido2",
+            "https://learn.microsoft.com/entra/identity/authentication/synced-passkey-faq"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys",
+              "source": "explicit_message_link",
+              "decision": "duplicate_after_official_redirect"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-enable-passkey-fido2",
+              "source": "explicit_message_link",
+              "decision": "duplicate_after_official_redirect"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/synced-passkey-faq",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkeys-fido2",
+              "source": "reviewed_candidate",
+              "decision": "rejected_feature_or_platform_mismatch"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft entra passkey fido2 migration",
+          "searchedQueries": [
+            "Microsoft entra passkey fido2 migration"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T09:58:23.315208+00:00"
         }
       }
     },
@@ -4588,16 +4800,16 @@
     },
     "MC1282568": {
       "sourceHashes": [
-        "2afbf61edb84c733b2d91cda27f79cd0a1659cf4c798dd9131b77a3782ac4a90"
+        "c0e9b391ac4d76363647e7edee08ca72bc3059c042002345a30abe8b5965d27e"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T10:06:50.382126+00:00",
+      "checkedAt": "2026-11-02T01:33:39.576530+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows",
           "title": "Windows で Microsoft Entra パスキーを有効にする",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:06:56.393230+00:00",
+          "checkedAt": "2026-11-02T01:33:44.357502+00:00",
           "bodySha256": "bae9547522aad3459da893998e06e29a6c40d8f2355f625dc5626bb10c407fba",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -4619,14 +4831,14 @@
             "articleExcerpt": "# Enable Microsoft Entra passkey on Windows\r\n\r\nThis article describes Microsoft Entra passkey on Windows, how it works, and how it differs from Windows Hello for Business.\r\n\r\nTo configure passkey profiles that allow Windows Hello as a FIDO2 passkey provider, see Configure a profile for Microsoft Entra passkey on Windows.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows",
             "bodySha256": "9a39b23451c25ebbd1ab3e20c85159e749ca66187b762d3df048113c9e0033bd",
-            "reviewedAt": "2026-10-16T10:06:56.393230+00:00"
+            "reviewedAt": "2026-11-02T01:33:44.357562+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-entra-passkey-windows",
           "title": "WindowsにMicrosoft Entraパスキーを登録する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:07:00.706515+00:00",
+          "checkedAt": "2026-11-02T01:33:47.696269+00:00",
           "bodySha256": "9f8d4001823adb1c06be14bd466477016ce9e1b9c22efa74bdd7426ab81dde3a",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -4648,14 +4860,14 @@
             "articleExcerpt": "# Register a Microsoft Entra passkey on Windows\r\n\r\nThis article shows how to register a Microsoft Entra passkey on Windows. A Microsoft Entra passkey on Windows is a device-bound passkey stored in the local Windows Hello container. Unlike synced passkeys, a passkey on Windows doesn't sync across devices — each device requires a separate passkey registration. This approach enables phishing-resistant sign-in with a Windows Hello biometric or PIN, without requiring the device to be Microsoft Entra joined or registered.\r\n\r\nFor an overview of Microsoft Entra passkey on Windows and how it compares with Windows Hello for Business, see [Microsoft Entra passkey on Windows](how-to-authentication-entra-passkeys-on-windows).\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-entra-passkey-windows",
             "bodySha256": "3e1e98c3215f22b01482149967c64c579b79ce3734941725d479bc5c7dda35d7",
-            "reviewedAt": "2026-10-16T10:07:00.706515+00:00"
+            "reviewedAt": "2026-11-02T01:33:47.696343+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/fundamentals/whats-new",
           "title": "Microsoft Entraリリースとアナウンス",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:07:05.340501+00:00",
+          "checkedAt": "2026-11-02T01:33:51.192521+00:00",
           "bodySha256": "b92692d38a484411764f83946f8893b6937809101c2c08f458322ac85420ffb7",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -4677,7 +4889,7 @@
             "articleExcerpt": "### Public Preview - Microsoft Entra passkeys on Windows\r\n\r\n**Type:** Public Preview**Service category:** Authentications (Logins)**Product capability:** User Authentication\r\n\r\nMicrosoft Entra passkeys on Windows are now available in public preview. This feature allows users to register device‑bound passkeys directly in the local Windows Hello container and use them to sign in to Microsoft Entra ID with Windows Hello biometrics or PIN.\r\n\r\nEntra passkeys on Windows behave as standard FIDO2 credentials and can be used for Entra authentication flows without requiring the device to be Microsoft Entra joined or registered. During public preview, the feature is opt‑in and requires explicit configuration through passkey profiles to allow Windows Hello as a passkey provider. For more information, see: [How to enable passkeys (FIDO2) in Microsoft Entra ID](../identity/authentication/how-to-authentication-passkeys-fido2)\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new",
             "bodySha256": "6e2e77d210c81072ee7a561747d88b21d62d72b14beade66c10426f890cf005f",
-            "reviewedAt": "2026-10-16T10:07:05.341502+00:00"
+            "reviewedAt": "2026-11-02T01:33:51.192836+00:00"
           }
         }
       ],
@@ -4715,7 +4927,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T10:07:05.341502+00:00",
+      "nextAttemptAt": "2026-12-02T01:33:51.192845+00:00",
       "variants": {
         "5ac6d4b996ed3d004bea166554f5a9c698d2825d018a1e6ed164e2ceb99bdb3e": {
           "sourceHashes": [
@@ -4974,6 +5186,137 @@
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
           "nextAttemptAt": "2026-11-15T10:15:33.852346+00:00"
+        },
+        "2afbf61edb84c733b2d91cda27f79cd0a1659cf4c798dd9131b77a3782ac4a90": {
+          "sourceHashes": [
+            "2afbf61edb84c733b2d91cda27f79cd0a1659cf4c798dd9131b77a3782ac4a90"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T10:06:50.382126+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows",
+              "title": "Windows で Microsoft Entra パスキーを有効にする",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:06:56.393230+00:00",
+              "bodySha256": "bae9547522aad3459da893998e06e29a6c40d8f2355f625dc5626bb10c407fba",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "passkey"
+                ],
+                "requiredFeatureTerms": [
+                  "passkey"
+                ],
+                "coverage": 1.0,
+                "platforms": [
+                  "windows"
+                ],
+                "score": 1.2,
+                "articleExcerpt": "# Enable Microsoft Entra passkey on Windows\r\n\r\nThis article describes Microsoft Entra passkey on Windows, how it works, and how it differs from Windows Hello for Business.\r\n\r\nTo configure passkey profiles that allow Windows Hello as a FIDO2 passkey provider, see Configure a profile for Microsoft Entra passkey on Windows.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows",
+                "bodySha256": "9a39b23451c25ebbd1ab3e20c85159e749ca66187b762d3df048113c9e0033bd",
+                "reviewedAt": "2026-10-16T10:06:56.393230+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-entra-passkey-windows",
+              "title": "WindowsにMicrosoft Entraパスキーを登録する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:07:00.706515+00:00",
+              "bodySha256": "9f8d4001823adb1c06be14bd466477016ce9e1b9c22efa74bdd7426ab81dde3a",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "reviewed_candidate",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "passkey"
+                ],
+                "requiredFeatureTerms": [
+                  "passkey"
+                ],
+                "coverage": 1.0,
+                "platforms": [
+                  "windows"
+                ],
+                "score": 1.2,
+                "articleExcerpt": "# Register a Microsoft Entra passkey on Windows\r\n\r\nThis article shows how to register a Microsoft Entra passkey on Windows. A Microsoft Entra passkey on Windows is a device-bound passkey stored in the local Windows Hello container. Unlike synced passkeys, a passkey on Windows doesn't sync across devices — each device requires a separate passkey registration. This approach enables phishing-resistant sign-in with a Windows Hello biometric or PIN, without requiring the device to be Microsoft Entra joined or registered.\r\n\r\nFor an overview of Microsoft Entra passkey on Windows and how it compares with Windows Hello for Business, see [Microsoft Entra passkey on Windows](how-to-authentication-entra-passkeys-on-windows).\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-entra-passkey-windows",
+                "bodySha256": "3e1e98c3215f22b01482149967c64c579b79ce3734941725d479bc5c7dda35d7",
+                "reviewedAt": "2026-10-16T10:07:00.706515+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/fundamentals/whats-new",
+              "title": "Microsoft Entraリリースとアナウンス",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:07:05.340501+00:00",
+              "bodySha256": "b92692d38a484411764f83946f8893b6937809101c2c08f458322ac85420ffb7",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "automatic_learn_search",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "passkey"
+                ],
+                "requiredFeatureTerms": [
+                  "passkey"
+                ],
+                "coverage": 1.0,
+                "platforms": [
+                  "windows"
+                ],
+                "score": 1.0,
+                "articleExcerpt": "### Public Preview - Microsoft Entra passkeys on Windows\r\n\r\n**Type:** Public Preview**Service category:** Authentications (Logins)**Product capability:** User Authentication\r\n\r\nMicrosoft Entra passkeys on Windows are now available in public preview. This feature allows users to register device‑bound passkeys directly in the local Windows Hello container and use them to sign in to Microsoft Entra ID with Windows Hello biometrics or PIN.\r\n\r\nEntra passkeys on Windows behave as standard FIDO2 credentials and can be used for Entra authentication flows without requiring the device to be Microsoft Entra joined or registered. During public preview, the feature is opt‑in and requires explicit configuration through passkey profiles to allow Windows Hello as a passkey provider. For more information, see: [How to enable passkeys (FIDO2) in Microsoft Entra ID](../identity/authentication/how-to-authentication-passkeys-fido2)\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/fundamentals/whats-new",
+                "bodySha256": "6e2e77d210c81072ee7a561747d88b21d62d72b14beade66c10426f890cf005f",
+                "reviewedAt": "2026-10-16T10:07:05.341502+00:00"
+              }
+            }
+          ],
+          "reviewHash": "fdf4f061ae0f8cc45991048e77ae283fdda3f5268107f5aa6f201f73cb163ce1",
+          "query": "Microsoft entra passkeys windows general availability",
+          "explicitUrls": [
+            "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 1.2
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-register-entra-passkey-windows",
+              "source": "reviewed_candidate",
+              "decision": "adopted",
+              "score": 1.2
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/fundamentals/whats-new",
+              "source": "automatic_learn_search",
+              "decision": "adopted",
+              "score": 1.0
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft entra passkeys windows general availability",
+          "searchedQueries": [
+            "Microsoft entra passkeys windows general availability"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T10:07:05.341502+00:00"
         }
       }
     },
@@ -20692,11 +21035,61 @@
     },
     "MC1519855": {
       "sourceHashes": [
-        "6a23494141a6da24e3aef7b32ef51813299280c8b7a4abde31f715898bfb0d76"
+        "4dc836693caae4d97da86db67ae735a17536cc7e4de06b7e3c7605cef7eb264c"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-22T00:43:41.838074+00:00",
+      "checkedAt": "2026-11-02T01:34:03.689959+00:00",
       "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+          "title": "自社の通信事業者を利用して電話詐欺を防ぐ",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-02T01:34:08.630103+00:00",
+          "bodySha256": "2498c4a36b240a114d28f2323c427d3fd3a29c8fec8210f9818d12470f79944e",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "choose",
+              "own",
+              "provider",
+              "telephony"
+            ],
+            "requiredFeatureTerms": [
+              "choose",
+              "generally",
+              "own",
+              "provider",
+              "telephony"
+            ],
+            "coverage": 0.8,
+            "platforms": [],
+            "score": 1.0,
+            "articleExcerpt": "# Protect against telephony fraud with your own telecom provider\r\n\r\nWith Choose Your Own Telephony Provider (CYOT), SMS and voice traffic runs through your own telecom provider account. You control the fraud protections, allowed destinations, and spending limits that match your organization's traffic and risk profile.\r\n\r\nImportant\r\n\r\nSet up your provider's fraud and spending controls before you move production traffic to CYOT.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+            "bodySha256": "a84875b053f5a0009740b9c8b7b1b2632f6d9d013c48939b62924b35b54642ea",
+            "reviewedAt": "2026-11-02T01:34:08.630136+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/choose-your-own-telephony-reliability",
+          "title": "回復性と高可用性を計画する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-02T01:34:12.096104+00:00",
+          "bodySha256": "c00233bc3655853fc2467705bb31313dd133e467d31a52d1eb5f6ea58cc0aeff",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability",
+            "bodySha256": "3f4015fdcd33e7b885e348823bf4d8203f2ad1c438d2059275648744d0a24798",
+            "reviewedAt": "2026-11-02T01:34:12.096147+00:00"
+          }
+        },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
           "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
@@ -20710,92 +21103,38 @@
           "featureEvidence": {
             "product": "entra",
             "matchedTerms": [
-              "authentication",
               "choose",
               "own",
               "provider",
-              "sms",
-              "telephony",
-              "voice"
+              "telephony"
             ],
             "requiredFeatureTerms": [
-              "authentication",
               "choose",
+              "generally",
               "own",
               "provider",
-              "sms",
-              "telephony",
-              "voice"
+              "telephony"
             ],
-            "coverage": 1.0,
+            "coverage": 0.8,
             "platforms": [],
-            "score": 1.2,
-            "articleExcerpt": "# Choose a telephony provider for SMS and voice authentication\r\n\r\nMicrosoft Entra ID will support Choose Your Own Telephony Provider, which lets organizations continue using SMS or voice authentication with a supported telephony provider. You select a telephony provider through the Microsoft Security Store and manage the provider relationship for your organization.\r\n\r\nMicrosoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\r\n\r\nImportant\r\n\r\nChoose Your Own Telephony Provider isn't available to configure yet. Information about the providers participating in the private preview is available now. The configuration experience becomes available beginning October 30, 2026.\r\n\r\n",
+            "score": 1.0,
+            "articleExcerpt": "# Choose your own telephony provider for SMS and voice authentication\r\n\r\nChoose Your Own Telephony Provider (CYOT) lets your organization use a supported telecom provider to deliver SMS and voice authentication for Microsoft Entra ID.\r\n\r\nWith CYOT, Microsoft Entra continues to manage the authentication experience, including one-time passcode (OTP) generation and validation, while SMS messages and voice calls are delivered through the telecom provider that your organization selects and configures.\r\n\r\nCYOT gives your organization more control over telecom provider selection, geographic coverage, pricing, and telecom delivery.\r\n\r\nImportant\r\n\r\nMicrosoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
-            "bodySha256": "142a1d683b21c28ff4bf67c052d3d6637317b0b5e28e476f12a5b0e34c7f3c39",
-            "reviewedAt": "2026-10-22T00:43:47.101745+00:00"
-          }
-        },
-        {
-          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sms-voice-retirement",
-          "title": "既定でのパスキーと、Microsoftが提供する SMS および音声認証の廃止",
-          "locale": "ja-jp",
-          "checkedAt": "2026-10-22T00:43:51.140481+00:00",
-          "bodySha256": "065e40588dae2ff7ec7f6dd578d03180d34e4c6e384f459b3bc2d7385849e5b9",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "explicit_message_link",
-          "rationale": "Explicit official article from this approved notification.",
-          "featureEvidence": {
-            "product": "entra",
-            "matchedTerms": [
-              "authentication",
-              "choose",
-              "provider",
-              "sms",
-              "telephony",
-              "voice"
-            ],
-            "requiredFeatureTerms": [
-              "authentication",
-              "choose",
-              "own",
-              "provider",
-              "sms",
-              "telephony",
-              "voice"
-            ],
-            "coverage": 0.857,
-            "platforms": [],
-            "score": 1.057,
-            "articleExcerpt": "# Passkeys by default and retirement of Microsoft-provided SMS and voice authentication\r\n\r\nTo help enterprises adopt AI at scale, it is imperative for users to use secure authentication and move from phishable authentication methods to phishing-resistant authentication methods like [passkeys](concept-authentication-passkeys-fido2). Therefore, Microsoft Entra ID is making passkeys the default sign-in experience, so every organization gets phishing-resistant security by default. SMS and voice are no longer positioned as secure authentication methods and will no longer be provided natively in Entra ID.\r\n\r\nStarting September 1, 2026, passkeys become the default authentication experience and will be automatically enabled for users enabled for SMS or voice. From February 1, 2027, Microsoft-provided telephony delivery for SMS and voice will be retired for all users except Global Administrators and external users. For Global Administrators and external users, Microsoft-provided SMS and voice authentication will be retired on July 1, 2027. Customers who still require these methods should configure a telephony provider through Microsoft Security Store. Soprano and Telesign are the initial providers available during the private preview, and more providers will become available by general availability. For provider and offer information, see [Choose a telephony provider for SMS and voice authentication](concept-phone-providers).\r\n\r\nUsers who already sign in with passkeys, Windows Hello for Business, or another phishing-resistant method can continue using those methods. However, users who remain enabled for SMS or voice might still receive prompts to register passkeys on eligible devices. The July 1, 2027 retirement date applies to Global Administrators and external users. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. To check who in your tenant still uses SMS or Voice, see Find active SMS or Voice users in your tenant.\r\n\r\n",
-            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
-            "bodySha256": "d7df995ad5f4b8f334445ecea4cfc66a0301c17a0d165e62701b75933b44b658",
-            "reviewedAt": "2026-10-22T00:43:51.140593+00:00"
-          }
-        },
-        {
-          "url": "https://learn.microsoft.com/ja-jp/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
-          "title": "SaaS ソリューションを購入し、リンクされたソリューションをデプロイする",
-          "locale": "ja-jp",
-          "checkedAt": "2026-10-22T00:43:55.171419+00:00",
-          "bodySha256": "1d1825f5c9add28cbf22e18e9b5e9e9580ea6ef573b4fec493e1966aca4b9529",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "explicit_message_link",
-          "rationale": "Explicit official article from this approved notification.",
-          "featureEvidence": {
-            "canonicalArticle": "https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
-            "bodySha256": "7442a4e1f94b64e451f17ecfd1c74a465cb4536afd38ed8c54023bfbcff2c816",
-            "reviewedAt": "2026-10-22T00:43:55.171466+00:00"
+            "bodySha256": "89b3a55618121f3acdff945ec1fc51f2202e520ab824324910063d70ca79f802",
+            "reviewedAt": "2026-11-02T01:34:13.183437+00:00"
           }
         }
       ],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
-      "query": "Microsoft entra sms voice authentication",
+      "query": "Microsoft entra",
       "explicitUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
         "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
         "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-set-up-sms-voice-api",
+        "https://learn.microsoft.com/entra/identity/authentication/phone-providers-faq",
+        "https://learn.microsoft.com/entra/identity/authentication/troubleshoot-voice-call-sms",
         "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
       ],
       "searchProvider": "Microsoft Learn public MCP",
@@ -20803,31 +21142,170 @@
       "errors": [],
       "candidates": [
         {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 1.0
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
           "url": "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
           "source": "explicit_message_link",
           "decision": "adopted",
-          "score": 1.2
-        },
-        {
-          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
-          "source": "explicit_message_link",
-          "decision": "adopted",
-          "score": 1.057
-        },
-        {
-          "url": "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
-          "source": "explicit_message_link",
-          "decision": "adopted"
+          "score": 1.0
         }
       ],
-      "searchEvidenceKey": "search:Microsoft entra sms voice authentication",
+      "searchEvidenceKey": "search:Microsoft entra",
       "searchedQueries": [
-        "Microsoft entra sms voice authentication"
+        "Microsoft entra"
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-21T00:43:55.171474+00:00",
-      "variants": {}
+      "nextAttemptAt": "2026-12-02T01:34:13.183445+00:00",
+      "variants": {
+        "6a23494141a6da24e3aef7b32ef51813299280c8b7a4abde31f715898bfb0d76": {
+          "sourceHashes": [
+            "6a23494141a6da24e3aef7b32ef51813299280c8b7a4abde31f715898bfb0d76"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-22T00:43:41.838074+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
+              "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-22T00:43:47.101706+00:00",
+              "bodySha256": "83ec253a56a82222dde9352b5982fb64c74264fbaf8d0ad1dfaf4bf39c850adc",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "authentication",
+                  "choose",
+                  "own",
+                  "provider",
+                  "sms",
+                  "telephony",
+                  "voice"
+                ],
+                "requiredFeatureTerms": [
+                  "authentication",
+                  "choose",
+                  "own",
+                  "provider",
+                  "sms",
+                  "telephony",
+                  "voice"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.2,
+                "articleExcerpt": "# Choose a telephony provider for SMS and voice authentication\r\n\r\nMicrosoft Entra ID will support Choose Your Own Telephony Provider, which lets organizations continue using SMS or voice authentication with a supported telephony provider. You select a telephony provider through the Microsoft Security Store and manage the provider relationship for your organization.\r\n\r\nMicrosoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\r\n\r\nImportant\r\n\r\nChoose Your Own Telephony Provider isn't available to configure yet. Information about the providers participating in the private preview is available now. The configuration experience becomes available beginning October 30, 2026.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
+                "bodySha256": "142a1d683b21c28ff4bf67c052d3d6637317b0b5e28e476f12a5b0e34c7f3c39",
+                "reviewedAt": "2026-10-22T00:43:47.101745+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sms-voice-retirement",
+              "title": "既定でのパスキーと、Microsoftが提供する SMS および音声認証の廃止",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-22T00:43:51.140481+00:00",
+              "bodySha256": "065e40588dae2ff7ec7f6dd578d03180d34e4c6e384f459b3bc2d7385849e5b9",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "authentication",
+                  "choose",
+                  "provider",
+                  "sms",
+                  "telephony",
+                  "voice"
+                ],
+                "requiredFeatureTerms": [
+                  "authentication",
+                  "choose",
+                  "own",
+                  "provider",
+                  "sms",
+                  "telephony",
+                  "voice"
+                ],
+                "coverage": 0.857,
+                "platforms": [],
+                "score": 1.057,
+                "articleExcerpt": "# Passkeys by default and retirement of Microsoft-provided SMS and voice authentication\r\n\r\nTo help enterprises adopt AI at scale, it is imperative for users to use secure authentication and move from phishable authentication methods to phishing-resistant authentication methods like [passkeys](concept-authentication-passkeys-fido2). Therefore, Microsoft Entra ID is making passkeys the default sign-in experience, so every organization gets phishing-resistant security by default. SMS and voice are no longer positioned as secure authentication methods and will no longer be provided natively in Entra ID.\r\n\r\nStarting September 1, 2026, passkeys become the default authentication experience and will be automatically enabled for users enabled for SMS or voice. From February 1, 2027, Microsoft-provided telephony delivery for SMS and voice will be retired for all users except Global Administrators and external users. For Global Administrators and external users, Microsoft-provided SMS and voice authentication will be retired on July 1, 2027. Customers who still require these methods should configure a telephony provider through Microsoft Security Store. Soprano and Telesign are the initial providers available during the private preview, and more providers will become available by general availability. For provider and offer information, see [Choose a telephony provider for SMS and voice authentication](concept-phone-providers).\r\n\r\nUsers who already sign in with passkeys, Windows Hello for Business, or another phishing-resistant method can continue using those methods. However, users who remain enabled for SMS or voice might still receive prompts to register passkeys on eligible devices. The July 1, 2027 retirement date applies to Global Administrators and external users. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. To check who in your tenant still uses SMS or Voice, see Find active SMS or Voice users in your tenant.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
+                "bodySha256": "d7df995ad5f4b8f334445ecea4cfc66a0301c17a0d165e62701b75933b44b658",
+                "reviewedAt": "2026-10-22T00:43:51.140593+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
+              "title": "SaaS ソリューションを購入し、リンクされたソリューションをデプロイする",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-22T00:43:55.171419+00:00",
+              "bodySha256": "1d1825f5c9add28cbf22e18e9b5e9e9580ea6ef573b4fec493e1966aca4b9529",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
+                "bodySha256": "7442a4e1f94b64e451f17ecfd1c74a465cb4536afd38ed8c54023bfbcff2c816",
+                "reviewedAt": "2026-10-22T00:43:55.171466+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft entra sms voice authentication",
+          "explicitUrls": [
+            "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+            "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+            "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 1.2
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 1.057
+            },
+            {
+              "url": "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft entra sms voice authentication",
+          "searchedQueries": [
+            "Microsoft entra sms voice authentication"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-21T00:43:55.171474+00:00"
+        }
+      }
     },
     "MC1518032": {
       "sourceHashes": [
@@ -20982,10 +21460,10 @@
     },
     "MC1521604": {
       "sourceHashes": [
-        "5f467f62070397114c0506884bae3f1b467e002f772fee3b340aacbbc68800df"
+        "6341620e11a8d20ddbd58ae39301901c68de24a86c3fb9388bfd85c470de4e51"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-01T07:57:41.505784+00:00",
+      "checkedAt": "2026-11-02T01:34:13.354558+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft authenticator ios android",
@@ -21001,8 +21479,32 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-04T07:57:44.393834+00:00",
-      "variants": {}
+      "nextAttemptAt": "2026-11-05T01:34:13.366653+00:00",
+      "variants": {
+        "5f467f62070397114c0506884bae3f1b467e002f772fee3b340aacbbc68800df": {
+          "sourceHashes": [
+            "5f467f62070397114c0506884bae3f1b467e002f772fee3b340aacbbc68800df"
+          ],
+          "status": "no_verified_document",
+          "checkedAt": "2026-11-01T07:57:41.505784+00:00",
+          "documents": [],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft authenticator ios android",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [],
+          "searchEvidenceKey": "search:Microsoft authenticator ios android",
+          "searchedQueries": [
+            "Microsoft authenticator ios android",
+            "entra authenticator ios android"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+          "nextAttemptAt": "2026-11-04T07:57:44.393834+00:00"
+        }
+      }
     },
     "MC1520901": {
       "sourceHashes": [
@@ -21420,35 +21922,206 @@
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
       "nextAttemptAt": "2026-11-04T07:57:41.368800+00:00",
       "variants": {}
+    },
+    "MC1530611": {
+      "sourceHashes": [
+        "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-02T01:34:13.537510+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft office copilot power app",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft office copilot power app",
+      "searchedQueries": [
+        "Microsoft office copilot power app",
+        "copilot office power app"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-05T01:34:17.072439+00:00",
+      "variants": {}
+    },
+    "MC1530595": {
+      "sourceHashes": [
+        "2e8e761824425b04bf2fd798e0385a8cb5d81b175928ff110bebe710bbb361de"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-02T01:34:17.245257+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft copilot update",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft copilot update",
+      "searchedQueries": [
+        "Microsoft copilot update",
+        "copilot update"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-05T01:34:20.244801+00:00",
+      "variants": {}
+    },
+    "MC1518029": {
+      "sourceHashes": [
+        "e398e57790da1961feb9e3abf6206a65b460cbbd82b96f572eb3344f03dae686"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-11-02T01:34:20.418167+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-mfa-telephony-fraud",
+          "title": "テレフォニー詐欺について",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-02T01:34:28.221573+00:00",
+          "bodySha256": "055a21fe86c7d8d48a4cb06bd6a5a98e9691926db6f82bf9002e1b2ac6b39154",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-telephony-fraud",
+            "bodySha256": "9187c8c049c8d1a2e827da9d5a1e8c9b3337e2636f2d45fc3aa272aac8012321",
+            "reviewedAt": "2026-11-02T01:34:28.221607+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sms-voice-retirement",
+          "title": "既定でのパスキーと、Microsoftが提供する SMS および音声認証の廃止",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-22T00:43:51.140481+00:00",
+          "bodySha256": "065e40588dae2ff7ec7f6dd578d03180d34e4c6e384f459b3bc2d7385849e5b9",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
+            "bodySha256": "d7df995ad5f4b8f334445ecea4cfc66a0301c17a0d165e62701b75933b44b658",
+            "reviewedAt": "2026-11-02T01:34:29.302504+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-telephony-risk-based-captcha",
+          "title": "電話ベースのサインイン向けのリスクベースのボット対策認証 (CAPTCHA)",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-02T01:34:32.546319+00:00",
+          "bodySha256": "201b5dc3a14db062872a911e8a28a5a6d503b8696eedf9a12b49bbab1591ae2f",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "anti",
+              "based",
+              "bot",
+              "captcha",
+              "id",
+              "risk",
+              "sms",
+              "verification",
+              "voice"
+            ],
+            "requiredFeatureTerms": [
+              "anti",
+              "authentication",
+              "based",
+              "bot",
+              "captcha",
+              "id",
+              "risk",
+              "sms",
+              "verification",
+              "voice"
+            ],
+            "coverage": 0.9,
+            "platforms": [],
+            "score": 1.1,
+            "articleExcerpt": "# Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in\r\n\r\nMicrosoft Entra ID uses safeguards to help reduce automated abuse of telephony-based sign-in. In some cases, users might be asked to complete a risk-based anti-bot verification step, such as a CAPTCHA, before Microsoft sends an SMS message or places a voice call for sign-in. This safeguard helps protect against telephony fraud, such as International Revenue Share Fraud (IRSF).\r\n\r\nFor more information about telephony fraud and how Microsoft helps limit the impact of fraudulent activity, see [Understanding telephony fraud risk](concept-mfa-telephony-fraud).\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-telephony-risk-based-captcha",
+            "bodySha256": "4e8e7711f28de6239500ebf486958bb7e12db7c31d50738f58f7d9ce3fa4476b",
+            "reviewedAt": "2026-11-02T01:34:32.546358+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft entra captcha sms voice authentication",
+      "explicitUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-telephony-fraud",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-telephony-risk-based-captcha"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-telephony-fraud",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-telephony-risk-based-captcha",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 1.1
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft entra captcha sms voice authentication",
+      "searchedQueries": [
+        "Microsoft entra captcha sms voice authentication",
+        "entra captcha sms voice authentication",
+        "entra captcha sms voice"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-02T01:34:32.546367+00:00",
+      "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 161,
-    "snapshotOccurrences": 3552,
-    "snapshots": 43,
+    "uniqueMessages": 164,
+    "snapshotOccurrences": 3638,
+    "snapshots": 44,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-10-28T22:57:19+00:00",
-    "checkedAt": "2026-11-01T19:06:50.899195+00:00",
+    "publicationEnd": "2026-10-29T18:32:57+00:00",
+    "checkedAt": "2026-11-02T01:34:32.872130+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 57,
+      "no_verified_document": 59,
       "not_researched": 0,
-      "verified": 104
+      "verified": 105
     },
     "latestCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 24,
+      "no_verified_document": 23,
       "not_researched": 0,
-      "verified": 70
+      "verified": 67
     },
-    "latestTotal": 94,
+    "latestTotal": 90,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 8,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 150,
+      "no_verified_document": 153,
       "not_researched": 0,
-      "verified": 197
+      "verified": 202
     },
     "retrievalErrors": 0,
     "coverage": "complete",
