@@ -1,22 +1,25 @@
 {
-  "generatedAt": "2026-10-30T00:03:23.7186448+00:00",
+  "generatedAt": "2026-11-02T01:38:50.7104944+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "カナダ時間帯変更・eMudhra証明書失効・Entra認証/エージェント権限変更が今週の最優先",
-  "executiveSummary": "今週は期限が近い順に、(1) カナダ一部地域が2026年11月1日に時計を戻さない件でOutlook/Exchange予定やTeams Roomsに影響(MC1526468)、(2) eMudhra中間CA鍵の問題に伴いWindows/Edge/WebView2で該当CAがブロックされる信頼更新が10月下旬に展開(MC1529467)、(3) Targeted releaseが2027年1月に廃止され、11月にユーザー追加・変更ができなくなる(MC1490899)が重要です。Entraでは既定ユーザーによるエージェントblueprint作成が11月初旬から可能になり(MC1506733)、SSPRは登録済み認証方法必須化(MC1325414)、Microsoft提供SMS/音声認証は2027年2月1日から廃止(MC1528000)されます。Office LTSC 2021等のサポートは2026年10月13日に終了済みです(MC1509797)。なお抜粋に記載のない日程・要件は不明であり、「存在しない」ことを意味しません。",
-  "thisWeek": "MC1526468: 11月1日のカナダ(BC州・アルバータ州・マニトバ州等)の時間帯変更に向け、対象ユーザーのOutlook予定・定期会議とTeams Roomsの時刻表示を確認する(予定は自動移行されない)\nMC1529467: Windows/Edge/WebView2環境で、eMudhra階層に連なる証明書を利用していないか確認する(展開は10月下旬)\nMC1490899: Targeted release登録ユーザーを確認し、10月31日(アクション期限)までにFrontier/Standard/Deferredの方針を決めて設定する\nMC1506733: 既定ユーザーにエージェントblueprint作成を許可したくない場合、11月4日の開始前に「Users can create agent blueprints」の設定を確認する\nMC1325414: 11月6日期限に向け、SSPR利用ユーザーの認証方法登録状況を確認する\nMC1470871: User.ReadBasic.Allでアプリ役割割り当て/ライセンス詳細を読んでいるアプリがないか確認する(展開は10月30日までの予定)",
-  "thisMonth": "MC1528000: 2027年2月1日の廃止前に、SMS/音声利用ユーザーをパスキー等へ移行するか、顧客管理テレフォニープロバイダー(CYOT)を構成する計画を立てる\nMC1509797: Office LTSC 2021、Visio/Project LTSC 2021等の利用端末を棚卸しし、サポート対象バージョンへの移行計画を作る\nMC1528009: 11月下旬〜12月中旬に展開される一部Search Analytics(Summary、User/Query、Answer)の廃止に備え、現在のレポート利用有無を確認する",
-  "watch": "MC1529467: 抜粋では影響を受ける具体的な証明書の確認手順は全文未提示のため、展開後の影響報告を監視する\nMC1526468: Teams Rooms等の追加影響や更新投稿を継続して確認する\nMC1490899: 11月に管理者がTargeted releaseのユーザー設定を変更できなくなる点の進捗を監視する",
-  "customerQuestions": "カナダ(BC州・アルバータ州・マニトバ州・NWT・オンタリオ州北西部)に拠点、ユーザー、会議室デバイスはありますか。(MC1526468)\nWindows/Edge/WebView2上でeMudhra発行の証明書やコード署名を利用する業務アプリ・サイトはありますか。(MC1529467)\nTargeted releaseに登録されているユーザーは誰で、今後Frontier・Standard・Deferredのどれにしますか。(MC1490899)\n一般ユーザーにエージェントblueprint作成を許可してよいですか。(MC1506733)\nSMS/音声認証を使っているユーザー数と、パスキーまたはCYOTへの移行方針はどうなっていますか。(MC1528000)\nOffice LTSC 2021や関連製品はまだ稼働していますか。(MC1509797)",
+  "headline": "Entra認証方式の移行(SMS/音声廃止・SSPR・パスキー)とカナダ時間帯変更への対応が今週の最優先",
+  "executiveSummary": "今週は認証関連の変更が中心です。Microsoft提供のSMS・音声認証は2027年2月1日から廃止が始まり、CYOT(独自テレフォニープロバイダー)が一般提供となりました(MC1528000, MC1519855)。SSPRは登録済み認証方式のみを検証に使う方式へ移行し、2026年11月9日開始と案内されています(MC1325414)。パスキープロファイルは、未オプトインのテナントが自動移行される対象で、スケジュールが更新されました(MC1221452)。カナダの2026年タイムゾーン変更は11月1日に発効し、Outlook/Exchange Onlineの既存予定は自動移行されません(MC1526468, MC1510951)。Windows/Edge/WebView2では、eMudhra認証局キーの侵害に伴う信頼ブロックが10月下旬に展開されます(MC1529467)。Targeted releaseは2026年11月に登録変更ができなくなり、2027年1月に廃止されます(MC1490899)。抜粋に含まれない詳細な日付や要件は不明であり、断定していません。",
+  "thisWeek": "MC1526468: カナダ(BC・アルバータ・マニトバ等)の拠点・ユーザーを特定し、Outlook/Exchange Onlineの定期会議の見直しとTeams Roomsの時刻表示を確認する(MC1510951も参照)。\nMC1325414: SSPR登録キャンペーンの対象ユーザーを確認し、SSPRが登録済み認証方式のみを要求する前提で、ディレクトリ属性(携帯電話等)のみに依存しているユーザーを洗い出す。\nMC1529467: eMudhra認証局の証明書にチェーンする証明書や、切断環境のWindowsデバイスがないか確認する。\nMC1490899: Targeted release登録ユーザーを確認し、Frontier/Standard/Deferredのどれにするか決める。",
+  "thisMonth": "MC1528000, MC1519855: SMS・音声認証を使うユーザーを特定し、2027年2月1日より前にパスキー等へ移行するかCYOTを設定する計画を立てる。\nMC1221452: Passkeys (FIDO2) 有効テナントは、自動移行前にパスキープロファイルへオプトインするか判断する。更新されたスケジュールで移行時期を確認する。\nMC1521604: Authenticatorが11月上旬から下旬に更新されるため、ヘルプデスクとユーザーへ案内する。AndroidのPush/パスワードレスの復元改善は2027年1月に予定されている。\nMC1529472: Frontierの対象拡大(Teams、新Outlook、OneDrive、SharePoint)を踏まえ、対象ユーザーの方針を検討する。",
+  "watch": "MC1518029: SMS/音声の一次認証でリスクベースのCAPTCHAが表示される展開が進行中。サインインに関する問い合わせの増加を監視する。\nMC1282568: Windows向けEntraパスキーのGAタイムラインが更新された。GCC High/DoDを含む対象環境の時期を継続確認する。\nMC1526468: Teams関連の影響は検証中と記載されており、続報を監視する。",
+  "customerQuestions": "SMS・音声認証を一次認証・MFA・SSPRで利用しているユーザーは何人で、2027年2月1日までにパスキーやCYOTへ移行する計画はありますか?\nSSPRで、登録済みでないディレクトリ属性(携帯電話・代替メール)に依存しているユーザーはいますか?\nカナダ(BC・アルバータ・マニトバ・NWT・オンタリオ北西部)に拠点やユーザー、Teams Roomsはありますか?\nPasskeys (FIDO2) を有効化済みですか?パスキープロファイルへのオプトインか自動移行かのどちらを選びますか?\nTargeted release登録ユーザーの移行先(Frontier/Standard/Deferred)は決まっていますか?",
   "referencedIds": [
+    "MC1221452",
+    "MC1282568",
     "MC1325414",
-    "MC1470871",
     "MC1490899",
-    "MC1506733",
-    "MC1509797",
+    "MC1510951",
+    "MC1518029",
+    "MC1519855",
+    "MC1521604",
     "MC1526468",
     "MC1528000",
-    "MC1528009",
-    "MC1529467"
+    "MC1529467",
+    "MC1529472"
   ],
   "messageUpdates": [
     {
@@ -118,13 +121,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1287370",
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1290821",
       "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
@@ -139,13 +135,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1319216",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1325414",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2026年11月6日 です。",
@@ -156,13 +145,6 @@
       "id": "MC1387526",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1411574",
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -195,23 +177,9 @@
       "learnUrls": []
     },
     {
-      "id": "MC1437679",
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1440972",
       "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1443510",
-      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ",
-      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。対応期限は 2026年8月20日 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -363,13 +331,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1470871",
-      "japaneseTitle": "Microsoft Entra の問題の予防または修正に関するお知らせ",
-      "japaneseSummary": "問題の予防または修正: Microsoft Entra。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1470885",
       "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
@@ -482,13 +443,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1484007",
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1485054",
       "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
@@ -580,6 +534,13 @@
       "learnUrls": []
     },
     {
+      "id": "MC1518029",
+      "japaneseTitle": "Microsoft Entra の問題の予防または修正に関するお知らせ",
+      "japaneseSummary": "問題の予防または修正: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
       "id": "MC1518032",
       "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
@@ -667,6 +628,20 @@
       "id": "MC1529472",
       "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1530595",
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1530611",
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -904,22 +879,6 @@
       "validatedAt": "2026-10-25T21:02:23.5737128+00:00"
     },
     {
-      "id": "MC1287370",
-      "japaneseTitle": "共有予定表をMAPIからREST方式へ自動アップグレード(時期更新)",
-      "japaneseFacts": {
-        "change": "共有予定表がMAPIモデルからRESTモデルへサーバー側で自動アップグレードされます。",
-        "impact": "Exchange Onlineで共有予定表に編集者以上の権限を持つユーザーや代理人が対象で、6つを超えて管理する場合は対象外です。",
-        "timing": "GCC High/DoDは2026年8月開始、9月下旬完了。Worldwideは既に有効です。",
-        "action": "ユーザー・管理者の操作は不要です。"
-      },
-      "japaneseDetailedSummary": "OutlookおよびExchange Onlineの共有予定表を、従来のMAPIモデルから新しいRESTモデルへサーバー側で自動アップグレードします。同期の信頼性・性能・一貫性が向上し、ユーザーや管理者の操作は不要です。2026年7月20日にタイムラインが更新され、GCC High/DoDでは2026年8月開始、9月下旬完了(従来は6月末開始、7月下旬完了)となりました。Worldwideでは既に全テナントで有効です。対象はExchange Onlineを使うテナントで、共有予定表に編集者以上の権限を持つユーザーや代理人です。新しい予定表フォルダーは非表示で作成され、同期の完了と検証後に表示されます。1年より古い予定は初回同期から除外されますが、期間内以降に該当する定期的な予定は含まれます。権限や共有関係は維持され、データ損失は想定されません。当初は代理人/プリンシパルごとに最大4つ、将来的に6つまで対象で、6つを超える場合は対象外です。",
-      "japaneseBodyTranslation": "2026年7月20日更新:タイムラインを更新しました。\n[はじめに]\nMicrosoftは、OutlookとExchange Onlineの共有予定表を、従来のMAPIベースのモデルから最新のRESTベースのモデルへ自動アップグレードします。このサーバー側アップグレードにより、共有予定表にアクセスする代理人やユーザーの同期の信頼性、パフォーマンス、一貫性が向上します。変更はシームレスに行われ、ユーザーや管理者の操作は不要です。\n[いつ行われるか]\n一般提供(Worldwide):現時点でWWの全テナントで有効かつ利用可能です。現在、より上位のリングへ拡大しています。\nGCC High/DoD:2026年8月に展開開始(従来は6月末)、2026年9月下旬に完了(従来は7月下旬)。\n注:展開は段階的で、テナントによりタイミングが異なる場合があります。\n[組織への影響]\n対象:\n• Exchange Onlineを使用するMicrosoft 365テナント\n• ユーザーまたは共有メールボックスの共有予定表に対して編集者以上の権限を持つユーザー\n• Outlookで共有予定表にアクセスする代理人およびユーザー\n実施内容:\n• 共有予定表はMAPIモデルからRESTモデルへ自動アップグレードされます。\n• 新しい予定表フォルダーは非表示状態で作成され、完全な同期が正常に完了し検証された後にユーザーに表示されます。\n• 移行はシームレスで、通常のワークフローは中断されない見込みです。\n• 1年より古い予定は初回同期から除外されます。ただし、1年の期間内またはそれ以降に該当するインスタンスを持つ定期的な予定は同期に含まれます。\n• 既存の権限と共有関係は維持され、再共有や権限のリセットは不要です。\n• アップグレードは完全自動で、Outlookの再起動やプロファイル再作成などの手動手順は不要です。\n• この変更によるデータ損失は想定されていません。\n• 当初は代理人またはプリンシパルあたり最大4つの共有予定表が自動アップグレード対象で、時間とともに6つまで拡大します。6つを超える共有予定表を管理する場合は対象外で、現在の設定に変更はありません。\nクラシックOutlookの設定「共有予定表の改善を有効にする」への影響:\n• 移行後、クラシックOutlookは引き続き...(原文はここで途切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "72a3c4bc777689ff0a157024639a83067e56b20a40cc01658cb1cbc94b2f10f3",
-      "validatedAt": "2026-10-25T21:02:23.5666949+00:00"
-    },
-    {
       "id": "MC1290821",
       "japaneseTitle": "eSignature:受信者グループの提供時期を更新",
       "japaneseFacts": {
@@ -952,22 +911,6 @@
       "validatedAt": "2026-10-24T21:01:59.0855012+00:00"
     },
     {
-      "id": "MC1319216",
-      "japaneseTitle": "Teams会議中にMeeting AIをオン/オフ切替可能に(時期更新)",
-      "japaneseFacts": {
-        "change": "会議中に主催者・プレゼンターがMeeting AI(Copilot/Facilitator)をオン/オフでき、オフ時は録画・文字起こしも停止します。",
-        "impact": "Meeting AIが有効なテナントのライセンス保有の主催者とプレゼンターが対象で、ポリシーで無効なら表示されません。",
-        "timing": "Targeted Releaseは2026年9月中旬〜下旬、一般提供(全世界)も9月中旬〜下旬の予定です。",
-        "action": "提供された本文の範囲では具体的な対応は原文に記載なし。"
-      },
-      "japaneseDetailedSummary": "2026年8月26日更新で内容と時期が変更されました。Teamsでライセンスを持つ会議の主催者とプレゼンターが、ライブ会議中にMeeting AI(CopilotやFacilitator)をオン/オフできる新コントロールが追加されます。オフにするとRecordingとTranscriptionも停止します。対象はポリシーと会議オプションでMeeting AIが有効なテナントです。ポリシーで無効の場合はトグルは表示されません。オフ時はCopilot/Facilitatorの応答やノートは生成されず、既存の成果物は保持ポリシーに従い残ります。Targeted Releaseは2026年9月中旬開始・9月下旬完了、一般提供(全世界)も9月中旬開始・9月下旬完了予定です。文字起こしとMeeting AIは連動します。本文は途中で切れており、以降は不明です。",
-      "japaneseBodyTranslation": "2026年8月26日更新:内容とタイムラインを更新しました。\n[概要と理由]\nMicrosoft Teamsに、ライセンスを持つ会議の主催者とプレゼンターがライブ会議中にMeeting AI(CopilotおよびFacilitatorを含む)をオン/オフできる新しいコントロールが導入されます。既存のMeeting AIの動作を拡張し、AIがいつ有効かをリアルタイムで制御できます。\n議論が有益なときは洞察を取得し、機微な話題になったらAIをオフにできます。AIが成果物にアクセスしないよう、録画と文字起こしもオフになります。\n[展開スケジュール]\n• Targeted Release:2026年9月中旬(以前は8月中旬)に開始、9月下旬(以前は8月下旬)に完了予定。\n• 一般提供(全世界):2026年9月中旬(以前は8月下旬)に開始、9月下旬(以前は9月上旬)に完了予定。\n[組織への影響]\n対象:ポリシーおよび会議オプションでMeeting AI(Copilot/Facilitator)が有効なすべてのMicrosoft 365テナント、Teams会議のライセンスを持つ主催者とプレゼンター。\nプラットフォーム:Teams(デスクトップ、Web、モバイル)、Microsoft 365 Copilot(Meeting AI、Facilitator)。\n動作:\n• スケジュール会議のTeamsツールバーに新コントロールが表示されます。\n• 主催者とプレゼンターは会議中にMeeting AIをオン/オフできます。\n• トグルはポリシーでMeeting AIが許可されている場合のみ表示されます。\n• AIステータスインジケーターで参加者にMeeting AIの稼働状況が表示されます。\n既存のテナントポリシーと会議オプションは尊重されます。ポリシーで無効の場合、トグルは表示されません。\nMeeting AIをオフにした場合:\n• Copilot、Facilitatorの応答、ノートは生成されなくなります。\n• 既に生成された成果物は利用可能で、保持ポリシーに従います。\n• 文字起こしなしでAIを使用した場合、音声テキスト化データは停止し、Recapは生成されません。\n重要:文字起こしの依存関係\n• AIを文字起こしと併用する場合、両者は連動します。\n• Meeting AIをオンにすると文字起こしが自動でオンになり、Recapが生成されます。\n• 文字起こしを開始するとMeeting AIとRecapが自動で有効になります。\n• Meeting AIの使用を防ぐには、文字起こしとMeetin(以降は原文が途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "5819644d468f8f791ec666ce7c5975a11302b0e3303b680a28a1ca6ca91221dc",
-      "validatedAt": "2026-10-25T11:50:23.6920161+00:00"
-    },
-    {
       "id": "MC1325414",
       "japaneseTitle": "Entra SSPR:登録済み認証方法が必須に(11月)",
       "japaneseFacts": {
@@ -998,22 +941,6 @@
       "sourceTruncated": true,
       "sourceHash": "33ed7c57dd620859d6f3bb7c06a3e0dce4806fee28f57f18d7a411592c0f2049",
       "validatedAt": "2026-10-19T20:46:24.8089458+00:00"
-    },
-    {
-      "id": "MC1411574",
-      "japaneseTitle": "Entraのシステム優先認証が第1要素認証にも適用(時期更新)",
-      "japaneseFacts": {
-        "change": "Microsoft管理状態のシステム優先認証が第1要素にも適用され、最も安全な登録済み方法が促されます。",
-        "impact": "Microsoft管理状態のテナントが対象で、有効または無効の設定では第1要素の動作は変わりません。",
-        "timing": "一般提供(全世界)は2026年6月下旬開始、9月下旬完了予定(以前は7月下旬)です。",
-        "action": "提供された本文の範囲では具体的な対応は原文に記載なし。"
-      },
-      "japaneseDetailedSummary": "2026年8月24日にタイムラインが更新されました。Microsoft Entra IDのシステム優先認証が、Microsoft管理状態の場合に第1要素と第2要素の両方に適用されます。登録済みの資格情報から最も安全な方法が選ばれ、例えばパスワードとパスキーがあればパスキーが促される場合があります。ユーザーはキャンセルして別の方法を選べます。設定が「有効」の場合は第2要素のみ、「無効」の場合は適用されず、第1要素の挙動は変わりません。一般提供(全世界)は2026年6月下旬に開始、完了は9月下旬予定(以前は7月下旬)です。このプロンプトはMFAを求めるものではありません。本文は途中で切れており、以降は不明です。",
-      "japaneseBodyTranslation": "2026年8月24日更新:タイムラインを更新しました。\n[概要と理由]\nWhat's New(6月版)で案内したとおり、Microsoft管理状態で第1要素のシステム優先認証を展開しています。\nMicrosoft Entra IDのシステム優先認証は、設定がMicrosoft管理状態の場合、第1要素と第2要素の両方の認証に適用されます。\nシステムはユーザーに登録された資格情報を評価し、各認証ステップで最も順位の高い方法を選択して、利用可能な最も安全な方法でのサインインを促します。\n[展開スケジュール]\n• 一般提供(全世界):2026年6月下旬に開始、9月下旬(以前は7月下旬)に完了予定\n[組織への影響]\n対象\n• システム優先認証の設定がMicrosoft管理状態の組織\n• 設定が有効または無効の場合、第1要素のサインイン動作は変わらず、影響はありません。\nプラットフォームとサービス\n• Microsoft Entra ID\n• システム優先認証\n• ユーザーのサインイン体験\n発生すること\n• Microsoft管理状態のテナントでは、資格情報の順位付けが第1要素と第2要素の両方に適用されます。\n• サインイン時、登録済みの認証方法を確認し、システム定義の順序で最も安全な方法を促します。\n• 方法の順序は動的で、パスキーなどより安全な方法の登録や、Microsoftによる順位の更新で変わることがあります。例えばパスワードとパスキーが登録されている場合、次回の第1要素サインインでパスワードの代わりにパスキーを促すことがあります。\n• 別の方法でサインインするには、キャンセルして他の利用可能な方法を選べます。\n設定状態別の動作:\n• Microsoft管理:第1要素と第2要素の両方に順位付けを適用。\n• 有効:第2要素のみに適用。第1要素の動作は変わりません。\n• 無効:システム優先認証は適用されません。\n注:このプロンプトは、MFAが不要な場合にMFAを求めているという意味ではありません。この更新により、Microsoft Entraは...(本文は途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "0fce4bd84a0e4069cdda2204578c976ed2018854f8303c95d207164180feeeb2",
-      "validatedAt": "2026-10-25T11:50:23.7021024+00:00"
     },
     {
       "id": "MC1422061",
@@ -1080,22 +1007,6 @@
       "validatedAt": "2026-10-19T20:46:24.7858265+00:00"
     },
     {
-      "id": "MC1437679",
-      "japaneseTitle": "Copilotモバイルアプリに音声メモ「Record」機能が追加",
-      "japaneseFacts": {
-        "change": "Copilotモバイルアプリに録音、文字起こし、AI要約を行う「Record」機能が追加されます。",
-        "impact": "Copilotライセンス保有ユーザー、iOS/Androidアプリ利用者、管理者。既定で有効で、音声はOneDrive for Businessに保存されます。",
-        "timing": "Frontierは2026年7月下旬、一般提供は2026年8月下旬開始で9月下旬完了予定です。",
-        "action": "有効化のための対応は不要です。推奨事項は原文に記載なし(抜粋が途中で切れています)。"
-      },
-      "japaneseDetailedSummary": "Microsoft 365 Copilot モバイルアプリ(iOS/Android)に「Record」機能が追加されます。対面の会話や音声メモを録音すると、録音終了後にCopilot Chatで AI 生成の文字起こしと要約が得られます。Copilotライセンスを持つユーザーでは既定で有効です。録音は停止後にOneDrive for Businessへアップロードされ、1回最大120分、バックグラウンドでも継続できます。録音・文字起こし・要約は既存のOneDrive権限、保持ポリシー、秘密度ラベル、DLP、eDiscoveryを継承します。顧客の録音等はMicrosoftの基盤AIモデルの学習に使われません。Frontierは2026年7月下旬、一般提供は2026年8月下旬から9月下旬に完了予定です。有効化のための対応は不要です。推奨事項は抜粋が途中で切れており不明です。",
-      "japaneseBodyTranslation": "【内容と理由】Microsoft 365 Copilot モバイルアプリに「Record」を導入します。対面の会話や音声メモを録音し、録音終了後にCopilot Chatで AI 生成の文字起こしと要約を受け取れます。Microsoft 365 のエンタープライズ級のセキュリティ、コンプライアンス、管理機能に基づき、録音および生成コンテンツはユーザーの Microsoft 365 データと同じ制御で保護されます。本メッセージは Microsoft 365 ロードマップ ID 498640 に関連します。\n【ロールアウト】\n• Frontierプレビュー:2026年7月下旬からFrontier顧客に提供\n• 一般提供(全世界):2026年8月下旬に開始し、9月下旬までに完了予定\n【組織への影響】\n対象:Microsoft 365 Copilot ライセンスを持つユーザー、iOS/Android の Copilot モバイルアプリ利用者、Microsoft 365 生産性アプリを管理する管理者。\n関連サービス:Copilotモバイルアプリ、Copilot Chat、OneDrive for Business、Microsoft Purview、Microsoft Intune。\n今後の動作:\n• アプリに新しい Record オプションが表示されます。\n• Copilot Chat のプロンプトボックスのプラス(+)メニューから、写真やファイルなどの添付オプションと並んで利用できます。\n• Copilotライセンスを持つユーザーで既定で有効です。\n• 録音停止後、音声はOneDrive for Businessにアップロードされます。\n• 1回の録音は最大120分です。\n• アプリがバックグラウンドでも録音を継続できます。\n• 録音、文字起こし、要約は既存のOneDrive for Business権限とガバナンス設定を継承します。\n• 既存の保持ポリシー、秘密度ラベル、DLP、eDiscovery制御が引き続き適用されます。\n• Microsoftは顧客の録音、文字起こし、要約を基盤AIモデル、大規模言語モデル、音声認識モデルの学習に使用しません。\n【必要な対応と推奨事項】\nこの機能を有効にするための対応は不要です。推奨事項は...(原文はここで途切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "f5cfc7131cd539f603c8f6a764e922bfb0943e13407c788331677efeffc19f19",
-      "validatedAt": "2026-10-21T17:27:26.1115494+00:00"
-    },
-    {
       "id": "MC1440972",
       "japaneseTitle": "Edgeの新しいCopilot新規タブページ、展開時期を更新",
       "japaneseFacts": {
@@ -1110,22 +1021,6 @@
       "sourceTruncated": true,
       "sourceHash": "44f608bd855b4f895607883cbda5c9c68d11c0a1a878b95b0dcb73634fd975e3",
       "validatedAt": "2026-10-19T08:57:06.610384+00:00"
-    },
-    {
-      "id": "MC1443510",
-      "japaneseTitle": "All Agentsの6月1日以前の保留中リクエストを一括削除",
-      "japaneseFacts": {
-        "change": "All Agentsで、2026年6月1日より前に作成された保留中リクエストを1回限りのクリーンアップで完全に削除する。",
-        "impact": "All Agentsのリクエストを確認・管理する管理者。承認・却下済みや6月1日以降の保留中リクエストは対象外。",
-        "timing": "2026年8月20日開始、8月下旬に完了予定(Worldwide)。",
-        "action": "8月20日前にAll Agents > Requestsで該当リクエストを確認し、残すものは承認または却下する。"
-      },
-      "japaneseDetailedSummary": "All Agentsのリクエスト管理で、長期間保留されている古いリクエストを削除する1回限りのクリーンアップが実施されます。2026年8月20日から、2026年6月1日より前に作成された保留中のリクエストは、クリーンアップ開始前に確認・処理されない限り完全に削除されます。すでに承認または却下されたリクエストと、6月1日以降に作成された保留中リクエストは影響を受けません。定期的な削除プロセスは導入されません。対象はAll Agentsでリクエストを管理する管理者です。ロールアウトはWorldwideで8月20日に開始し8月下旬に完了予定です。8月20日より前にAll Agents > Requestsで該当する保留中リクエストを確認し、保持したいものは承認または却下してください。コンプライアンス上の考慮事項は特に特定されていません。",
-      "japaneseBodyTranslation": "[概要と理由]\nAll Agentsのリクエスト管理エクスペリエンスで、期限切れに近い保留中リクエストの1回限りのクリーンアップを実施します。このクリーンアップは、長期間保留されたままの古いリクエストを削除し、リクエストキューをより最新で管理しやすい状態に保つことを目的としています。\n2026年8月20日から、2026年6月1日より前に作成された保留中リクエストは、クリーンアップ開始前に確認・処理されない限り完全に削除されます。\nすでに承認または却下されたリクエストは影響を受けません。\n\n[ロールアウトスケジュール]\n• Worldwide:2026年8月20日開始、8月下旬に完了予定\n\n[組織への影響]\n影響を受ける対象\n• All Agentsでリクエストの確認・管理を担当する管理者\nプラットフォームとサービス\n• Microsoft 365\n• All Agents\n今後の動作\n• 2026年6月1日より前の日付の保留中リクエストは、この1回限りのクリーンアップで削除されます。\n• すでに承認または却下されたリクエストは変更されません。\n• 2026年6月1日以降に作成された保留中リクエストは影響を受けません。\n• これは1回限りの作業であり、定期的な削除プロセスは導入されません。\n\n[必要なアクションと推奨事項]\n2026年6月1日より前に作成された保留中リクエストを確認し、保持すべきかどうかを判断してください。\n2026年8月20日より前に:\n• All Agents > Requests に移動します。\n• 2026年6月1日より前に作成された保留中リクエストを確認します。\n• 保持したいリクエストは承認または却下します。\nクリーンアップ開始前に承認または却下されたリクエストは削除されません。クリーンアップ開始時に保留中のままのリクエストは完全に削除されます。\n\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
-      "sourceCharacterCount": 1741,
-      "sourceTruncated": false,
-      "sourceHash": "4cf266e0cc49db3ce90d61956adb92762c1a7ea22bc65ad2457161b7fa063215",
-      "validatedAt": "2026-10-25T16:38:59.2231678+00:00"
     },
     {
       "id": "MC1443523",
@@ -1158,6 +1053,22 @@
       "sourceTruncated": true,
       "sourceHash": "ac2e5109d65ee45fcd76d0510c246d1fb0d34d981364cfaf1cc5c320871bcbac",
       "validatedAt": "2026-10-21T05:05:26.384277+00:00"
+    },
+    {
+      "id": "MC1450133",
+      "japaneseTitle": "パスキー等を最初のMFA方法として登録可能に(時期更新)",
+      "japaneseFacts": {
+        "change": "パスワードのみのユーザーが、SMSや音声を先に登録せず、パスキーやパスワードレスサインインを最初のMFA方法として登録できる。",
+        "impact": "MFA未登録のユーザー、認証オンボーディングや登録ポリシーを担当するID・セキュリティ管理者。",
+        "timing": "フェーズ1は2026年11月上旬開始、2027年1月上旬完了予定。フェーズ2は原文では2026年1月上旬開始、2027年2月下旬完了予定。",
+        "action": "原文に記載なし(提供範囲では管理者の必須対応は不明)。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entraで、パスワードのみのユーザーがSMSや音声などの代替MFAを先に登録せずに、パスキー(FIDO2)、Windows Hello for Business、macOS Platform SSO、Authenticatorパスワードレスサインインを最初のMFA方法として登録できるようになります。フェーズ1は同期パスキー、Windows上のMicrosoft Entraパスキー、FIDO2セキュリティキーが対象で、全世界・GCCで2026年11月上旬(従来は10月下旬)に開始し、2027年1月上旬(従来は2026年11月下旬)に完了予定です。フェーズ2はWHfB、macOS PSSO、Authenticatorアプリのパスキー等が対象で、原文では2026年1月上旬開始、2027年2月下旬完了とされています。パスキーが有効なユーザーには登録時にパスキー登録が既定で促されます。提供範囲は途中までで、以降の詳細や必要な対応は不明です。",
+      "japaneseBodyTranslation": "2026年10月26日更新:タイムラインを更新しました。ご理解に感謝します。\n[概要と理由]\nユーザーはまもなく、パスキーを最初の多要素認証方法として登録できるようになります。これまでは、パスキー(FIDO2)、Windows Hello for Business、macOS Platform SSOを追加する前に、SMSや音声などの代替MFA方法を設定する必要がありました。この追加手順により、ユーザーはより弱い方法に誘導され、フィッシング耐性のあるサインインへの移行が遅れていました。今後は、パスワードのみのユーザーが直接パスキーを登録でき、初日から強力な認証を導入しやすくなります。この作業の一環として、Authenticatorアプリのパスワードレスサインインもユーザーの最初のMFA方法として登録できるようにします。\n[ロールアウトスケジュール]\nこの機能は段階的に展開されます。\nフェーズ1:同期パスキー、Windows上のMicrosoft Entraパスキー、FIDO2セキュリティキーのサポート。\n一般提供(全世界、GCC):2026年11月上旬(以前は10月下旬)に展開を開始し、2027年1月上旬(以前は2026年11月下旬)に完了予定です。\nフェーズ2:Windows Hello for Business、macOS Platform SSO、Authenticatorアプリのパスキー、Authenticatorアプリのパスワードレスサインインのサポート。\n一般提供(全世界、GCC):2026年1月上旬に展開を開始し、2027年2月下旬に完了予定です。\n[組織への影響]\n影響を受ける対象\n• まだ多要素認証方法を登録していないユーザー\n• 認証のオンボーディングおよび登録ポリシーを担当するIDおよびセキュリティ管理者\nプラットフォームとサービス\n• Microsoft Entra ID\n• パスキー(FIDO2)\n• Windows Hello for Business\n• macOS Platform SSO\n• Microsoft Authenticatorパスワードレスサインイン\n何が起こるか\n• パスワードのみのユーザーは、パスキーまたはパスワードレスサインインを最初のMFA方法として登録できます。\n• ユーザーは、パスキー(FIDO2)、Windows Hello for Business、macOS Platform SSO、またはAuthenticatorパスワードレスサインインを登録する前に、SMSや音声などの方法を登録する必要がなくなります。\n• 組織では、登録時の手間が減り、フィッシング耐性のある認証方法の採用が増える可能性があります。\n• パスキーが有効なユーザーは、多要素認証(MFA)の強制や条件付きアクセスの認証強度によって開始されるものを含む該当する登録エクスペリエンスの完了時に、既定でパスキーの登録を促されます。セキュリティの既定値のMFA登録プロンプトは1月にこの体験を採用します。\n(以降の原文は提供範囲外のため省略されています。)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "116b2ffdf81d7decd9ca28779febeae46fbc77d65e50bfd269c8a9cc0ba13531",
+      "validatedAt": "2026-10-30T00:03:23.7063435+00:00"
     },
     {
       "id": "MC1450134",
@@ -1448,22 +1359,6 @@
       "validatedAt": "2026-10-24T17:34:07.1946225+00:00"
     },
     {
-      "id": "MC1470871",
-      "japaneseTitle": "Graph: User.ReadBasic.Allでアプリロール割当・ライセンス詳細が読めなくなる",
-      "japaneseFacts": {
-        "change": "セキュリティ脆弱性対応として、User.ReadBasic.Allによるユーザーのアプリロール割り当てとライセンス詳細の読み取りが削除されます。",
-        "impact": "この権限でそれらを読んでいるアプリが失敗や権限エラーになる可能性があります。基本プロパティのみ利用するアプリは影響なしです。",
-        "timing": "全世界GAで2026年9月中旬に開始し、2026年9月下旬に完了予定です。",
-        "action": "Entra管理センターで該当権限のアプリを確認し、最小特権の適切な権限へ更新します(原文は途中で終了)。"
-      },
-      "japaneseDetailedSummary": "Microsoft Graphの委任およびアプリ専用権限User.ReadBasic.Allは本来基本的なユーザープロファイル情報のみ対象ですが、現状ではアプリロール割り当てとライセンス詳細も読めます。セキュリティ脆弱性対応としてこの挙動が修正されます。基本情報(表示名、メール、部署など)のみ使うアプリは影響を受けません。一方、この権限だけで割り当てやライセンス詳細を読むアプリは権限エラーなどで動作しなくなる可能性があります。展開は2026年9月中旬から下旬です。管理者はEntra管理センターの「エンタープライズアプリケーション > アクセス許可」等で該当アプリを洗い出し、適切な最小特権の権限へ更新してください。本文は途中で切れています。",
-      "japaneseBodyTranslation": "[概要と理由]\nMicrosoft Graphの委任およびアプリ専用権限User.ReadBasic.Allの動作を修正します。この権限は限定的な基本ユーザープロファイルプロパティのみへのアクセスを意図していますが、現在はユーザーのアプリロール割り当てやライセンス詳細へのアクセスも可能です。\nセキュリティ脆弱性に対処するため、User.ReadBasic.Allからこれらへのアクセスを削除し、本来の範囲に合わせます。基本プロファイル情報のためだけに使うアプリには互換性を損なう変更ではありません。\nこの意図しないアクセスに依存するアプリは、展開完了前に適切な最小特権の権限へ更新してください。\n[展開スケジュール]\n• 一般提供(全世界):2026年9月中旬に開始し、2026年9月下旬に完了予定\n[組織への影響]\n対象:User.ReadBasic.Allで以下を読み取るアプリを持つ組織。\n• ユーザーのアプリロール割り当て\n• ユーザーのライセンス詳細\n開発者、アプリ所有者、Entra IDでアプリ権限を管理する管理者は確認してください。\n対象:Microsoft Graph、Microsoft Entra ID、Graph権限を使うアプリ。\n今後の動作\n• User.ReadBasic.Allのみ付与されたアプリは、アプリロール割り当てやライセンス詳細を読めなくなります。\n• 表示名、メール、部署などの基本プロパティのみのアプリは変更なしで動作します。\n• 影響を受けるアプリで失敗や権限エラーが発生する可能性があります。\n• 該当アプリを使うユーザーに中断が生じる可能性があります。\n[必要な対応と推奨事項]\nアプリロール割り当てやライセンス詳細の取得にUser.ReadBasic.Allを使うアプリがある場合は対応が必要です。\n推奨:\n• Entra管理センターの「エンタープライズアプリケーション > アクセス許可」または社内アプリカタログでUser.ReadBasic.Allを付与されたアプリを確認する。\n• 割り当てやライセンス詳細の読み取りに使うアプリを特定する。\n• 該当アプリを適切な権限へ更新する。(以下、原文は途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "8dd7c6a513ed9c060a63ca128b95cfe08284f441cf2009e90eeeda8a7c2b593d",
-      "validatedAt": "2026-10-20T18:38:05.5892946+00:00"
-    },
-    {
       "id": "MC1470885",
       "japaneseTitle": "Word/Excel/PowerPointのCopilotボタンに直接プロンプト入力が追加",
       "japaneseFacts": {
@@ -1720,22 +1615,6 @@
       "validatedAt": "2026-10-23T21:34:15.8974888+00:00"
     },
     {
-      "id": "MC1484007",
-      "japaneseTitle": "Edge の Copilot が新アイコンと簡素な UX に更新",
-      "japaneseFacts": {
-        "change": "Edge の Copilot で新アイコン、簡素化されたサイドペイン、Voice や Vision などの機能強化が提供されます。",
-        "impact": "Edge で Copilot を有効にしているすべてのユーザーが対象で、既存ポリシーは引き続き利用できます。",
-        "timing": "一般提供(全世界)は2026年10月中旬に開始し、同月中旬に完了予定です。",
-        "action": "事前の管理者対応は不要です。構成確認、ユーザー通知、ドキュメント更新が推奨されます。"
-      },
-      "japaneseDetailedSummary": "Microsoft Edge の Copilot が更新され、すべての Copilot エントリポイントで新しいアイコンが採用され、サイドペインは簡素化された UX になります。Copilot Voice や Vision などの機能強化も含まれます。セキュリティ、コンプライアンス、プライバシー、エンタープライズ制御は変わりません。一般提供(全世界)は 2026年10月中旬に開始し、同月中旬に完了予定です。Edge で Copilot を有効にしているすべてのユーザーが対象で、既存ポリシーは引き続き利用できます。管理者の事前対応は不要ですが、現在の構成を確認し、ユーザーへの通知やドキュメント更新を検討することが推奨されます。Copilot URL リダイレクトについては MC1462915 も参照するよう案内されています。AI の新しい対話手段と管理コントロールに関するコンプライアンス上の注記があります。",
-      "japaneseBodyTranslation": "【内容と理由】Copilot 体験を簡素化する取り組みの一環として、今後数週間で Microsoft Edge の Copilot の更新を開始します。Edge 内のすべての Copilot エントリポイントで新しいアイコンを採用し、Copilot サイドペインは簡素化された UX になります。Copilot Voice や Vision など、機能も強化されます。セキュリティ、コンプライアンス、プライバシー、エンタープライズ制御は変わりません。\n【展開スケジュール】一般提供(全世界):2026年10月中旬に開始し、10月中旬に完了予定。\n【組織への影響】Edge で Copilot を有効にしているすべてのユーザーにこの更新が表示されます。既存のポリシーは管理者が引き続き利用できます。\n【必要な対応/推奨事項】展開は指定日までに自動的に行われ、事前の管理者対応は不要です。現在の構成を確認して組織への影響を判断してください。ユーザーへの通知や関連ドキュメントの更新も検討してください。Copilot URL リダイレクトの詳細は、MC1462915「Allow connections to copilot.cloud.microsoft before the Copilot URL redirect」を参照してください。\n【コンプライアンス上の考慮事項】この変更は、本メッセージの説明どおり、Microsoft 365 のコンテンツ、プロンプト、サービスデータを用いた AI/ML またはエージェント機能を使用します。ユーザー向けの AI/Copilot 体験を導入または更新します。管理コントロール、ポリシー、権限、認証、管理設定に関わります。グループベースの構成に対応するかは、リンク先ドキュメントや管理センターの設定を確認してください。",
-      "sourceCharacterCount": 2066,
-      "sourceTruncated": false,
-      "sourceHash": "575e7c50e2cbf7259fbd9a56e9c6eb3eb0797e42ac55749883458214170b6f96",
-      "validatedAt": "2026-10-23T11:54:13.7956942+00:00"
-    },
-    {
       "id": "MC1485054",
       "japaneseTitle": "Entra アプリギャラリーに新規アプリのセルフサービス登録",
       "japaneseFacts": {
@@ -1798,6 +1677,22 @@
       "sourceTruncated": true,
       "sourceHash": "1b0e30bac893418918d1928aa37f0ab8aa14d7c319f9673803450cc050264b2e",
       "validatedAt": "2026-10-20T07:48:03.1068015+00:00"
+    },
+    {
+      "id": "MC1492959",
+      "japaneseTitle": "Audio Overviewにエピソード分割や秘密度ラベル対応が追加",
+      "japaneseFacts": {
+        "change": "Audio Overviewにトピック別エピソード、OneDrive保存時の秘密度ラベル継承、OneNote・Loop・txt・メール・Teams会議/チャット対応が追加される。",
+        "impact": "Audio Overviewを作成・利用するユーザーと、OneDriveで利用する組織。",
+        "timing": "全世界でGAとして2026年11月上旬(従来は10月下旬)に開始、11月下旬に完了予定。",
+        "action": "管理者の事前対応は不要で、対象ユーザーに自動展開される。"
+      },
+      "japaneseDetailedSummary": "Audio Overviewの新機能が展開されます。長いノートブックはトピック別エピソードに整理され、移動しやすくなります。OneDriveに保存する際はPurview秘密度ラベルに対応し、元コンテンツのラベルのうち最も制限の厳しいものが保存ファイルに継承されます。ノートブック内のAudio Overviewにはまだラベルは付きません。OneNoteページ、Loopページ、.txtファイル、メール、Teams会議、Teamsチャットも対象コンテンツとして利用可能になります。全世界で2026年11月上旬(従来は10月下旬)から下旬にかけて展開予定です。管理者の準備作業は不要で、対象ユーザーに自動で提供されます。提供された原文は途中までのため、以降の内容は不明です。",
+      "japaneseBodyTranslation": "2026年10月26日更新:タイムラインを更新しました。ご理解に感謝します。\n[概要と理由]\nMicrosoftは、長いコンテンツのナビゲーションを容易にし、企業の情報保護をサポートし、より多くの種類のコンテンツからオーディオ概要を作成できるよう、Audio Overviewの新機能を展開します。\nエピソード\n長くコンテンツの多いノートブックでは、Audio Overviewがトピックごとのエピソードに議論を整理できます。これによりユーザーは音声内を移動しやすく、コンテンツの各部分に集中できます。\nOneDriveへの保存時の秘密度ラベル\nAudio Overviewは、OneDriveに保存する際にMicrosoft Purviewの秘密度ラベルをサポートします。ソースコンテンツに秘密度ラベルがある場合、保存されたAudio Overviewはソースの中で最も制限の厳しいラベルを継承します。秘密度ラベルはOneDrive内の保存ファイルに適用されます。ノートブック内のAudio Overviewにはまだ秘密度ラベルは付きません。\nサポートされるコンテンツタイプの追加\nAudio Overviewは、ノートブックに追加された次のような追加コンテンツタイプを理解し、それに基づいて議論できるようになりました:\n• OneNoteページ\n• Loopページ\n• プレーンテキスト(.txt)ファイル\n• メール\n• Teams会議\n• Teamsチャット\n[ロールアウトスケジュール]\n一般提供(全世界):2026年11月上旬(以前は10月下旬)に展開を開始し、11月下旬に完了予定です。\n[組織への影響]\n影響を受ける対象:\n• Audio Overviewを作成・利用するユーザー。\n• OneDriveに保存または格納されたMicrosoft 365コンテンツでAudio Overviewを使用する組織。\nプラットフォーム/サービス:\n• Microsoft 365 Copilot\n• Audio Overview\n• OneDrive\n• Microsoft Purview秘密度ラベル\n何が起こるか:\n• ユーザーはトピックベースのエピソードで長いAudio Overviewを移動できます。\n• ユーザーはOneNoteページ、Loopページ、.txtファイル、メール、Teams会議、Teamsチャットなど追加のコンテンツタイプに基づいてAudio Overviewを作成できます。\n• ラベル付きソースコンテンツからOneDriveに保存されたAudio Overviewは、ソースの中で最も制限の厳しい秘密度ラベルを継承します。\n• このリリースでは、ノートブック内にある間のAudio Overviewへの秘密度ラベル付けは導入されません。\n[必要なアクション/推奨事項]\nこの更新に備えて管理者の操作は不要です。これらのAudio Overviewの改善は対象ユーザーに自動的に展開されます。\n秘密度ラベルについては、ラベル付きソースコンテンツからAudio OverviewがOneDriveに保存されると、保存ファイルはソースの中で最も制限の厳しい秘密度ラベルを自動的に継承します。\n(以降の原文は提供範囲外のため省略されています。)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "9884970fc4c9786a2dfc0b67875b9e8e9553fc06851c6a9bc66d5b7e7196cc1e",
+      "validatedAt": "2026-10-30T00:03:23.702234+00:00"
     },
     {
       "id": "MC1505610",
@@ -2024,6 +1919,22 @@
       "validatedAt": "2026-10-29T02:07:59.7006549+00:00"
     },
     {
+      "id": "MC1526661",
+      "japaneseTitle": "Cloud Updateのデバイスエクスポート機能が強化されます",
+      "japaneseFacts": {
+        "change": "InventoryおよびCloud Updateのデバイスビューで、Cloud Update Status列の追加、全列のエクスポート、フィルター結果のエクスポートが可能になる。",
+        "impact": "Cloud UpdateやInventoryを利用する管理者。表示されるデバイスや管理方法には影響しない。",
+        "timing": "全世界でGAとして2026年11月上旬に展開開始、11月下旬に完了予定。",
+        "action": "事前準備や設定は不要。提供開始後に新しいエクスポート機能を利用できる。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365 AppsのCloud Updateでエクスポート機能が改善されます。Inventory > All devicesのエクスポートにはCloud Update Status列(managed、onboarding、excluded、not eligible)が含まれます。Current > DevicesおよびMonthly Enterprise > Devicesビューから、ロールアウトウェーブ、更新状態、エラーなど全列を直接エクスポートでき、フィルターを適用して該当デバイス(例:未更新のデバイス)のみ出力することも可能です。Inventoryやキャッシュ更新に表示されるデバイスや管理方法は変わりません。全世界で2026年11月上旬から下旬にかけて展開され、準備や設定は不要です。コンプライアンス上の特記事項は識別されていません。",
+      "japaneseBodyTranslation": "[概要と理由]\nCloud Updateにエクスポート機能の改善が追加され、組織がデバイスデータにアクセスし分析しやすくなります。InventoryとCloud Updateのデバイスビュー全体でエクスポート機能が拡張され、追加のデバイス情報・更新情報が含まれ、管理者はフィルター結果をエクスポートして必要なデバイスに集中できます。\n\n[ロールアウトスケジュール]\n一般提供(全世界):2026年11月上旬に展開を開始し、11月下旬に完了予定です。\n\n[組織への影響]\nレポート作成、トラブルシューティング、関係者との共有に必要なデバイスデータを取得しやすくするため、InventoryとCloud Updateのエクスポート機能を強化します。\n• Inventoryのエクスポート:Inventory > All devicesビューからのエクスポートに、Cloud Update Status列が含まれます。この列は各デバイスがmanaged、onboarding、excluded、またはCloud Update対象外のいずれかを示します。\n• Cloud Updateデバイスのエクスポート:Current > DevicesおよびMonthly Enterprise > Devicesビューからデバイスデータを直接エクスポートできます。エクスポートにはロールアウトウェーブ、更新状態、エラーなど、テーブルのすべての列が含まれます。\n• フィルター付きエクスポート:デバイスビューにフィルターを適用し、更新が最新でないデバイスなど、一致する結果のみをエクスポートできます。\nこの変更は、InventoryやCloud Updateに表示されるデバイス、またはそれらの管理方法には影響しません。\n\n[必要なアクション/推奨事項]\n準備や構成は不要です。新しいエクスポート機能が利用可能になり次第、管理者は使用を開始できます。\n\n[コンプライアンスに関する考慮事項]\nコンプライアンス上の考慮事項は特定されていません。必要に応じて組織で確認してください。",
+      "sourceCharacterCount": 1724,
+      "sourceTruncated": false,
+      "sourceHash": "3c5a42f9967d5a744581c973b96ee85626e788bb94fa443a3860d4e939aafc1b",
+      "validatedAt": "2026-10-30T00:03:23.6958309+00:00"
+    },
+    {
       "id": "MC1526676",
       "japaneseTitle": "Copilot検索の権威あるSharePointサイトを管理センターで管理可能に",
       "japaneseFacts": {
@@ -2134,57 +2045,9 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
-      "id": "MC1526661",
-      "japaneseTitle": "Cloud Updateのデバイスエクスポート機能が強化されます",
-      "japaneseFacts": {
-        "change": "InventoryおよびCloud Updateのデバイスビューで、Cloud Update Status列の追加、全列のエクスポート、フィルター結果のエクスポートが可能になる。",
-        "impact": "Cloud UpdateやInventoryを利用する管理者。表示されるデバイスや管理方法には影響しない。",
-        "timing": "全世界でGAとして2026年11月上旬に展開開始、11月下旬に完了予定。",
-        "action": "事前準備や設定は不要。提供開始後に新しいエクスポート機能を利用できる。"
-      },
-      "japaneseDetailedSummary": "Microsoft 365 AppsのCloud Updateでエクスポート機能が改善されます。Inventory > All devicesのエクスポートにはCloud Update Status列(managed、onboarding、excluded、not eligible)が含まれます。Current > DevicesおよびMonthly Enterprise > Devicesビューから、ロールアウトウェーブ、更新状態、エラーなど全列を直接エクスポートでき、フィルターを適用して該当デバイス(例:未更新のデバイス)のみ出力することも可能です。Inventoryやキャッシュ更新に表示されるデバイスや管理方法は変わりません。全世界で2026年11月上旬から下旬にかけて展開され、準備や設定は不要です。コンプライアンス上の特記事項は識別されていません。",
-      "japaneseBodyTranslation": "[概要と理由]\nCloud Updateにエクスポート機能の改善が追加され、組織がデバイスデータにアクセスし分析しやすくなります。InventoryとCloud Updateのデバイスビュー全体でエクスポート機能が拡張され、追加のデバイス情報・更新情報が含まれ、管理者はフィルター結果をエクスポートして必要なデバイスに集中できます。\n\n[ロールアウトスケジュール]\n一般提供(全世界):2026年11月上旬に展開を開始し、11月下旬に完了予定です。\n\n[組織への影響]\nレポート作成、トラブルシューティング、関係者との共有に必要なデバイスデータを取得しやすくするため、InventoryとCloud Updateのエクスポート機能を強化します。\n• Inventoryのエクスポート:Inventory > All devicesビューからのエクスポートに、Cloud Update Status列が含まれます。この列は各デバイスがmanaged、onboarding、excluded、またはCloud Update対象外のいずれかを示します。\n• Cloud Updateデバイスのエクスポート:Current > DevicesおよびMonthly Enterprise > Devicesビューからデバイスデータを直接エクスポートできます。エクスポートにはロールアウトウェーブ、更新状態、エラーなど、テーブルのすべての列が含まれます。\n• フィルター付きエクスポート:デバイスビューにフィルターを適用し、更新が最新でないデバイスなど、一致する結果のみをエクスポートできます。\nこの変更は、InventoryやCloud Updateに表示されるデバイス、またはそれらの管理方法には影響しません。\n\n[必要なアクション/推奨事項]\n準備や構成は不要です。新しいエクスポート機能が利用可能になり次第、管理者は使用を開始できます。\n\n[コンプライアンスに関する考慮事項]\nコンプライアンス上の考慮事項は特定されていません。必要に応じて組織で確認してください。",
-      "sourceCharacterCount": 1724,
-      "sourceTruncated": false,
-      "sourceHash": "3c5a42f9967d5a744581c973b96ee85626e788bb94fa443a3860d4e939aafc1b",
-      "validatedAt": "2026-10-30T00:03:23.6958309+00:00"
-    },
-    {
-      "id": "MC1492959",
-      "japaneseTitle": "Audio Overviewにエピソード分割や秘密度ラベル対応が追加",
-      "japaneseFacts": {
-        "change": "Audio Overviewにトピック別エピソード、OneDrive保存時の秘密度ラベル継承、OneNote・Loop・txt・メール・Teams会議/チャット対応が追加される。",
-        "impact": "Audio Overviewを作成・利用するユーザーと、OneDriveで利用する組織。",
-        "timing": "全世界でGAとして2026年11月上旬(従来は10月下旬)に開始、11月下旬に完了予定。",
-        "action": "管理者の事前対応は不要で、対象ユーザーに自動展開される。"
-      },
-      "japaneseDetailedSummary": "Audio Overviewの新機能が展開されます。長いノートブックはトピック別エピソードに整理され、移動しやすくなります。OneDriveに保存する際はPurview秘密度ラベルに対応し、元コンテンツのラベルのうち最も制限の厳しいものが保存ファイルに継承されます。ノートブック内のAudio Overviewにはまだラベルは付きません。OneNoteページ、Loopページ、.txtファイル、メール、Teams会議、Teamsチャットも対象コンテンツとして利用可能になります。全世界で2026年11月上旬(従来は10月下旬)から下旬にかけて展開予定です。管理者の準備作業は不要で、対象ユーザーに自動で提供されます。提供された原文は途中までのため、以降の内容は不明です。",
-      "japaneseBodyTranslation": "2026年10月26日更新:タイムラインを更新しました。ご理解に感謝します。\n[概要と理由]\nMicrosoftは、長いコンテンツのナビゲーションを容易にし、企業の情報保護をサポートし、より多くの種類のコンテンツからオーディオ概要を作成できるよう、Audio Overviewの新機能を展開します。\nエピソード\n長くコンテンツの多いノートブックでは、Audio Overviewがトピックごとのエピソードに議論を整理できます。これによりユーザーは音声内を移動しやすく、コンテンツの各部分に集中できます。\nOneDriveへの保存時の秘密度ラベル\nAudio Overviewは、OneDriveに保存する際にMicrosoft Purviewの秘密度ラベルをサポートします。ソースコンテンツに秘密度ラベルがある場合、保存されたAudio Overviewはソースの中で最も制限の厳しいラベルを継承します。秘密度ラベルはOneDrive内の保存ファイルに適用されます。ノートブック内のAudio Overviewにはまだ秘密度ラベルは付きません。\nサポートされるコンテンツタイプの追加\nAudio Overviewは、ノートブックに追加された次のような追加コンテンツタイプを理解し、それに基づいて議論できるようになりました:\n• OneNoteページ\n• Loopページ\n• プレーンテキスト(.txt)ファイル\n• メール\n• Teams会議\n• Teamsチャット\n[ロールアウトスケジュール]\n一般提供(全世界):2026年11月上旬(以前は10月下旬)に展開を開始し、11月下旬に完了予定です。\n[組織への影響]\n影響を受ける対象:\n• Audio Overviewを作成・利用するユーザー。\n• OneDriveに保存または格納されたMicrosoft 365コンテンツでAudio Overviewを使用する組織。\nプラットフォーム/サービス:\n• Microsoft 365 Copilot\n• Audio Overview\n• OneDrive\n• Microsoft Purview秘密度ラベル\n何が起こるか:\n• ユーザーはトピックベースのエピソードで長いAudio Overviewを移動できます。\n• ユーザーはOneNoteページ、Loopページ、.txtファイル、メール、Teams会議、Teamsチャットなど追加のコンテンツタイプに基づいてAudio Overviewを作成できます。\n• ラベル付きソースコンテンツからOneDriveに保存されたAudio Overviewは、ソースの中で最も制限の厳しい秘密度ラベルを継承します。\n• このリリースでは、ノートブック内にある間のAudio Overviewへの秘密度ラベル付けは導入されません。\n[必要なアクション/推奨事項]\nこの更新に備えて管理者の操作は不要です。これらのAudio Overviewの改善は対象ユーザーに自動的に展開されます。\n秘密度ラベルについては、ラベル付きソースコンテンツからAudio OverviewがOneDriveに保存されると、保存ファイルはソースの中で最も制限の厳しい秘密度ラベルを自動的に継承します。\n(以降の原文は提供範囲外のため省略されています。)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "9884970fc4c9786a2dfc0b67875b9e8e9553fc06851c6a9bc66d5b7e7196cc1e",
-      "validatedAt": "2026-10-30T00:03:23.7022340+00:00"
-    },
-    {
-      "id": "MC1450133",
-      "japaneseTitle": "パスキー等を最初のMFA方法として登録可能に(時期更新)",
-      "japaneseFacts": {
-        "change": "パスワードのみのユーザーが、SMSや音声を先に登録せず、パスキーやパスワードレスサインインを最初のMFA方法として登録できる。",
-        "impact": "MFA未登録のユーザー、認証オンボーディングや登録ポリシーを担当するID・セキュリティ管理者。",
-        "timing": "フェーズ1は2026年11月上旬開始、2027年1月上旬完了予定。フェーズ2は原文では2026年1月上旬開始、2027年2月下旬完了予定。",
-        "action": "原文に記載なし(提供範囲では管理者の必須対応は不明)。"
-      },
-      "japaneseDetailedSummary": "Microsoft Entraで、パスワードのみのユーザーがSMSや音声などの代替MFAを先に登録せずに、パスキー(FIDO2)、Windows Hello for Business、macOS Platform SSO、Authenticatorパスワードレスサインインを最初のMFA方法として登録できるようになります。フェーズ1は同期パスキー、Windows上のMicrosoft Entraパスキー、FIDO2セキュリティキーが対象で、全世界・GCCで2026年11月上旬(従来は10月下旬)に開始し、2027年1月上旬(従来は2026年11月下旬)に完了予定です。フェーズ2はWHfB、macOS PSSO、Authenticatorアプリのパスキー等が対象で、原文では2026年1月上旬開始、2027年2月下旬完了とされています。パスキーが有効なユーザーには登録時にパスキー登録が既定で促されます。提供範囲は途中までで、以降の詳細や必要な対応は不明です。",
-      "japaneseBodyTranslation": "2026年10月26日更新:タイムラインを更新しました。ご理解に感謝します。\n[概要と理由]\nユーザーはまもなく、パスキーを最初の多要素認証方法として登録できるようになります。これまでは、パスキー(FIDO2)、Windows Hello for Business、macOS Platform SSOを追加する前に、SMSや音声などの代替MFA方法を設定する必要がありました。この追加手順により、ユーザーはより弱い方法に誘導され、フィッシング耐性のあるサインインへの移行が遅れていました。今後は、パスワードのみのユーザーが直接パスキーを登録でき、初日から強力な認証を導入しやすくなります。この作業の一環として、Authenticatorアプリのパスワードレスサインインもユーザーの最初のMFA方法として登録できるようにします。\n[ロールアウトスケジュール]\nこの機能は段階的に展開されます。\nフェーズ1:同期パスキー、Windows上のMicrosoft Entraパスキー、FIDO2セキュリティキーのサポート。\n一般提供(全世界、GCC):2026年11月上旬(以前は10月下旬)に展開を開始し、2027年1月上旬(以前は2026年11月下旬)に完了予定です。\nフェーズ2:Windows Hello for Business、macOS Platform SSO、Authenticatorアプリのパスキー、Authenticatorアプリのパスワードレスサインインのサポート。\n一般提供(全世界、GCC):2026年1月上旬に展開を開始し、2027年2月下旬に完了予定です。\n[組織への影響]\n影響を受ける対象\n• まだ多要素認証方法を登録していないユーザー\n• 認証のオンボーディングおよび登録ポリシーを担当するIDおよびセキュリティ管理者\nプラットフォームとサービス\n• Microsoft Entra ID\n• パスキー(FIDO2)\n• Windows Hello for Business\n• macOS Platform SSO\n• Microsoft Authenticatorパスワードレスサインイン\n何が起こるか\n• パスワードのみのユーザーは、パスキーまたはパスワードレスサインインを最初のMFA方法として登録できます。\n• ユーザーは、パスキー(FIDO2)、Windows Hello for Business、macOS Platform SSO、またはAuthenticatorパスワードレスサインインを登録する前に、SMSや音声などの方法を登録する必要がなくなります。\n• 組織では、登録時の手間が減り、フィッシング耐性のある認証方法の採用が増える可能性があります。\n• パスキーが有効なユーザーは、多要素認証(MFA)の強制や条件付きアクセスの認証強度によって開始されるものを含む該当する登録エクスペリエンスの完了時に、既定でパスキーの登録を促されます。セキュリティの既定値のMFA登録プロンプトは1月にこの体験を採用します。\n(以降の原文は提供範囲外のため省略されています。)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "116b2ffdf81d7decd9ca28779febeae46fbc77d65e50bfd269c8a9cc0ba13531",
-      "validatedAt": "2026-10-30T00:03:23.7063435+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-10-29T02:01:28.2382864+00:00",
-  "summarySourceHash": "e3a3fdc390ac8334f8ada81927454995f2ceacaaa29f3bae3f511f8405d79603",
-  "sourceAgentRunId": "40802791822"
+  "summarySourceHash": "8dd387aa3a31337ada24f5cc682694879b9949ab32376905c9f5c1691e9a816b",
+  "summaryGeneratedAt": "2026-11-02T01:38:50.4930758+00:00",
+  "sourceAgentRunId": "41373016748"
 }
