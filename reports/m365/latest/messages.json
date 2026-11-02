@@ -1,34 +1,300 @@
 {
   "meta": {
-    "runId": "40802652387",
-    "generatedAt": "2026-10-29T01:49:05.6990849+00:00",
+    "runId": "41372895834",
+    "generatedAt": "2026-11-02T01:31:25.9876387+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 94,
-    "majorChanges": 25,
+    "total": 90,
+    "majorChanges": 24,
     "highSeverity": 2,
-    "actionRequired": 12,
-    "actionDueWithin30Days": 3,
-    "updatedLast7Days": 18
+    "actionRequired": 11,
+    "actionDueWithin30Days": 1,
+    "updatedLast7Days": 23
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 55
+      "count": 51
     },
     {
       "name": "Microsoft Entra",
-      "count": 26
+      "count": 25
     },
     {
       "name": "Microsoft 365 Copilot Chat",
-      "count": 15
+      "count": 16
     }
   ],
   "messages": [
+    {
+      "id": "MC1282568",
+      "title": "(Updated) General Availability: Microsoft Entra passkeys on Windows",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-04-16T21:19:09.0000000+00:00",
+      "endDateTime": "2027-07-02T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-30T23:22:34.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 30, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction]\nMicrosoft Entra passkeys on Windows will soon be Generally Available, enabling phishing‑resistant, passwordless sign‑in to Microsoft Entra‑protected resources from Windows devices.\nThe Public Preview of this capability was previously announced in MC1247893.\nUsers can create device‑bound passkeys stored in the Windows Hello container and authenticate using Windows Hello methods (face, fingerprint, or PIN). This expands passwordless authentication support to Windows devices that aren’t Microsoft Entra‑joined or registered, helping organizations strengthen security and reduce reliance on passwords across corporate‑managed, personal, and shared device scenarios.\n[When this will happen:]\n• General Availability (Worldwide, GCC): We will begin rolling out in late April 2026 and expect to complete by mid‑June 2026.\n• General Availability (GCC High, DoD): We will begin rolling out in early February 2027 (previously early October 2026) and expect to complete by late February 2027 (previously late October 2026)\n• For Airgap: We will begin rolling out in early May 2027 and expect to complete by late May 2027.\nHow this affects your organization:\nWho is affected:\nOrganizations using Microsoft Entra ID with passkeys enabled in the Authentication Methods policy whose users sign in from Windows devices, including:\n• Corporate‑managed PCs\n• Personal devices\n• Shared devices\nWhat will happen:\nWith this General Availability release:\n• Microsoft Entra passkeys on Windows will no longer require explicit opt‑in through Windows Hello AAGUID allow‑listing in a passkey (FIDO2) profile.\n• This represents a change from Public Preview behavior, where administrators were required to explicitly allow Windows Hello AAGUIDs in a passkey profile for Microsoft Entra passkeys on Windows to function.\n• If your passkey profile allows device‑bound, non‑attested passkeys:• Users scoped to that profile will now be able to register and use Microsoft Entra passkeys on Windows by default without additional administrator configuration.\n• As a result:• Users in scope of passkey profiles that allow device‑bound, non‑attested passkeys may begin registering and using passkeys on Windows devices.\n• If Conditional Access policies allow:• Passkeys can be created and used on Windows devices that are not Microsoft Entra‑joined or registered, including personal or shared PCs.\n• Each Windows device requires separate passkey registration per Entra account.\n• Windows Hello for Business remains recommended for managed, Microsoft Entra‑joined or registered devices.\n• Passkeys on Windows supplement unmanaged or shared device scenarios and do not support device sign‑in.\n• Attestation is not currently supported for Microsoft Entra passkeys on Windows but is planned for a future update.\n•\nWhat you can do to prepare:\n•\nNo action is required for most organizations.\nIf you do not want users to register or use Microsoft Entra passkeys on Windows:\n• Update the relevant passkey (FIDO2) profile to block Windows Hello AAGUIDs.\n• Review existing passkey profiles that allow device‑bound, non‑attested passkeys.\n• Add Windows Hello AAGUIDs to the block list in passkey profiles where passkey usage on Windows devices should not be permitted.\n•\nLearn more: Enable Microsoft Entra passkey on Windows | Microsoft Learn (will be updated before GA rollout)\n[Compliance considerations:]\nCompliance areaExplanation\nDoes the change modify, interrupt, or disable Conditional Access policies?Existing Conditional Access policies continue to govern whether passkeys can be created or used on unmanaged Windows devices.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Admins can control passkey availability through Authentication Methods policies and FIDO2 passkey profiles scoped to Microsoft Entra ID groups.\nDoes the change allow a user to enable and disable the feature themselves?Users may register Microsoft Entra passkeys on Windows devices if permitted by administrator policy configuration.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra passkeys on Windows will be generally available from late April 2026, enabling passwordless, phishing-resistant sign-in on Windows devices without requiring explicit admin allow-listing. It supports corporate, personal, and shared devices, with control via Authentication Methods policies and Conditional Access. No action is needed unless blocking is desired."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows"
+      ]
+    },
+    {
+      "id": "MC1221452",
+      "title": "(Update)Microsoft Entra ID: General Availability of passkey profiles and migration for existing Passkeys (FIDO2) tenants",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-01-23T00:54:46.0000000+00:00",
+      "endDateTime": "2027-07-02T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-30T23:17:03.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。",
+      "bodyText": "Updated October 30, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction]\nStarting in March 2026, Microsoft Entra ID will introduce passkey profiles and synced passkeys to General Availability (GA). This update allows administrators to opt in to a new passkey profiles experience that supports group-based passkey configurations and introduces a new passkeyType property.\nImportant: Only tenants that already have Passkeys (FIDO2) enabled are affected by this update.\nThe passkeyType property enables admins to configure:\n• Device-bound passkeys\n• Synced passkeys\n• Both\nIf your tenant already has Passkeys (FIDO2) enabled and you do not opt in to passkey profiles during the initial rollout window, your tenant will be automatically migrated to the passkey profiles schema at the date range specified below. When this occurs:\n• Existing Passkey (FIDO2) authentication method configurations will be moved into a Default passkey profile.\n• The passkeyType value will be set based on the tenant’s current attestation settings. Synced passkeys will be enabled for tenants with attestation enforcement disabled.\n• No new authentication methods are enabled as part of this migration.\n• This migration also impacts Authentication methods registration campaign set to “Microsoft managed” state, which uses passkey configuration settings to determine which registration prompts are shown to users.\nAuthentication Methods Registration Campaign changes (Microsoft-Managed Only)\nTenants are impacted when all the following conditions are met:\n• The Passkeys (FIDO2) authentication method policy is Enabled\n• Authentication methods registration campaign is set to “Microsoft managed” state\n• Allow self-service setup is Enabled\n• Target specific AAGUIDs is not selected (no AAGUID restrictions configured)\n• The Authentication Methods Registration Campaign state is set to Microsoft-managed\n• The tenant has at least one user enabled for both synced passkeys and device‑bound passkeys• Only users who are enabled for both synced passkeys and device‑bound passkeys, with no passkey profile restrictions configured (i.e. attestation enforcement, AAGUID restrictions), will receive a passkey registration nudge during sign‑in.\nFor these tenants, Microsoft-managed registration campaign settings will be updated after passkey profile automatic migration is complete. We will roll out changes incrementally to in-scope tenants according to the timeline outlined below.\n[When this will happen]\nPasskey profile and Synced passkeys General Availability\n• Public cloud Worldwide, GCC: Rollout begins in early March 2026 and is expected to complete by late March 2026\n• GCC High, DoD clouds: Rollout begins in early May 2026 and is expected to complete by late May 2026\n• USNat, USSec: Rollout begins in early April 2027 (previously early October 2026) and is expected to complete by late April 2027 (previously late October 2026)\nAutomatic migration for existing passkeys (FIDO2) enabled tenants\n• Public cloud Worldwide, GCC: Rollout begins in early May 2026 and is expected to complete by late June 2026\n• GCC High, DoD clouds: Rollout begins in early February 2027 (previously early October 2026) and is expected to complete by late February 2027 (previously late October 2026)\n• USNat, USSec: Rollout begins in early May 2027 (previously early October 2026) and is expected to complete by late May 2027 (previously late October 2026)\nAuthentication Methods registration campaign changes in Microsoft-Managed state (for in-scope tenants):\n• Public cloud Worldwide, GCC: Rollout begins in early May 2026 and is expected to complete by late June 2026\n[How this affects your organization]\nAutomatic migration for existing passkeys (FIDO2) enabled tenants\nWhat will happen:\nIf you have not opted in to passkey profiles by your automatic enablement period, your tenant will be migrated to passkey profiles.\n• Your existing Passkey (FIDO2) configurations will be migrated into a Default passkey profile\n• New passkeyType property will be auto-populated• If enforce attestation is enabled, then device-bound allowed\n• If enforce attestation is disabled, then device-bound and synced allowed\n• Any existing key restrictions will remain intact\n• Any existing user targets will be assigned to the Default passkey profile\nAuthentication Methods registration campaign changes in Microsoft-Managed state (for in-scope tenants)\nWhat will happen:\nMicrosoft-managed registration campaign settings will be updated:\n• \"Targeted authentication method” will change from Microsoft Authenticator to “passkeys (FIDO2)”.\n• “Days allowed to snooze” setting will change from 3days to “1 day”. This setting will no longer be configurable.\n• “Limited number of snoozes” setting will change from Enabled to \"Disabled”. This setting will no longer be configurable.\n• The default user targeting will be updated from voice call or text message users to all multifactor authentication (MFA) capable users.\nWhat is the end user impact:\nOnce the above changes have taken effect, users targeted in the registration campaign will begin to receive passkey registration nudges during sign-in flows after they have completed multifactor authentication.\n•\n[What you can do to prepare]\nIf you want a configuration different from the migration defaults, review the timeline above and opt in to passkey profiles before your tenant’s automatic enablement window begins. Then configure the Default passkey profile’s passkeyType to your preferred values.\nWe also recommend:\n• Review your registration campaign configuration, especially if its set to Microsoft-managed. If you do not want registration campaign to target passkeys, you can:• Switch the registration campaign state to Enabled and continue targeting Microsoft Authenticator, or\n• Set the registration campaign state to Disabled.\n• Update runbooks and help content so your help desk and end users understand any changes in passkey availability or behavior.\nLearn more:\n• Enable passkeys for your organization - Microsoft Entra ID | Microsoft Learn\n• How to Enable Passkey (FIDO2) Profiles in Microsoft Entra ID (preview) - Microsoft Entra ID | Microsoft Learn\n• How to Enable Synced Passkeys (FIDO2) in Microsoft Entra ID (preview) - Microsoft Entra ID | Microsoft Learn\n• Synced passkeys FAQ - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting March 2026, Microsoft Entra ID will GA passkey profiles and synced passkeys for tenants with Passkeys (FIDO2) enabled. Existing tenants will be auto-migrated to a default passkey profile with configurable passkeyType. Registration campaign settings and rollout timelines vary by cloud region."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-enable-passkey-fido2",
+        "https://learn.microsoft.com/entra/identity/authentication/synced-passkey-faq"
+      ]
+    },
+    {
+      "id": "MC1187682",
+      "title": "(Updated) Microsoft Edge: Microsoft 365 Copilot will support summarization and contextual grounding",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-11-18T16:21:30.0000000+00:00",
+      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-30T20:15:28.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated October 30, 2026: We have updated the content. Thank you for your patience.\n[Introduction:]\nMicrosoft Edge for Business will soon support summarization and contextual grounding with Microsoft 365 Copilot Chat. This enhancement enables users to ask Copilot questions about multiple open browser tabs, and YouTube videos directly from the Edge side pane.\nThis message is associated with Microsoft 365 Roadmap ID 496364, 499423, and 499424.\n[When this will happen:]\n• General Availability (Multiple browser tabs and YouTube videos): Currently Available\n[How this affects your organization:]\nWho is affected: Users signed in to Microsoft Edge for Business with their Entra ID and who have access to Microsoft 365 Copilot.\nWhat will happen:\n• Users will be able to ask Copilot questions about open browser tabs, and YouTube videos.\n• The feature will be off by default.\n• If Copilot is restricted from accessing page content via Data Loss Prevention (DLP) or the EdgeEntraCopilotPageContext policy, it will be suppressed to maintain DLP integrity.\n• Existing DLP and policy configurations will be respected.\n[What you can do to prepare:]\n• This rollout will happen automatically by the specified date; no admin action is required before rollout.\n• Ensure users who need this capability have access to Microsoft 365 Copilot.\n• Ensure your tenant is configured to support Microsoft 365 Copilot and that eligible users meet all licensing prerequisites, including Entra ID sign-in and applicable Microsoft 365 service plans.\n• Review your current DLP and Edge policy configurations to determine potential impact.\n• Notify users about this upcoming capability.\n• Update internal documentation if needed.\nLearn more:\n• Microsoft 365 Copilot Chat in Edge and Access to Page Content | Microsoft Edge | Microsoft Learn\n• Microsoft Edge - Policies | Microsoft Edge | Microsoft Learn\n[Compliance considerations:]\nQuestionAnswer\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Microsoft 365 Copilot introduces contextual grounding and summarization using generative AI across browser tabs, and YouTube videos.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can now ask Copilot questions about open browser tabs and documents directly from the Edge sidepane, enabling real-time summarization and contextual responses.\nDoes the change modify Data Loss Prevention (DLP) policies or enforcement?Yes. If DLP or the EdgeEntraCopilotPageContext policy restricts access, Copilot will be suppressed from accessing page content to maintain DLP integrity.\nDoes the change include an admin control, and can it be controlled through Entra ID group membership?Yes. Admins can manage access to Copilot’s contextual grounding capabilities via DLP settings and Edge policy configurations, which can be scoped using Entra ID group membership.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "496364,499423,499424"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft Edge for Business now supports Microsoft 365 Copilot Chat to summarize and provide context from multiple open tabs and YouTube videos. The feature is off by default, respects existing Data Loss Prevention (DLP) policies, requires Entra ID sign-in, and is managed via Edge and DLP policies."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
+        "https://learn.microsoft.com/deployedge/microsoft-edge-policies"
+      ]
+    },
+    {
+      "id": "MC1519855",
+      "title": "(Updated) Microsoft Entra: Choose your own telephony provider now generally available",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-21T23:24:44.0000000+00:00",
+      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-30T19:34:52.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 30, 2026: We have updated this post with additional information as the feature is now generally available. Thank you for your patience.\n[What and why]\nChoose Your Own Telephony Provider (CYOT) is now generally available in Microsoft Entra ID. With CYOT, your organization can deliver SMS and voice authentication through a supported telecom provider of its choice. You purchase the provider's offer in Microsoft Security Store and manage the commercial relationship directly with the provider.\nMicrosoft-provided SMS and voice authentication begins retiring on February 1, 2027. To keep SMS and voice authentication available for users who need it, set up CYOT before that date.\nMicrosoft recommends phishing-resistant authentication methods, such as passkeys, instead of SMS or voice. Use telephony-based authentication only for users who have a business, regulatory, or technical need for it.\n[What you need to do]\nIf your organization plans to use CYOT:\n• Identify users who need SMS or voice. Confirm which users have a requirement that phishing-resistant methods can't meet.\n• Choose a provider. Compare the supported telecom providers on coverage, channels, pricing, support, and compliance.\n• Check purchasing requirements. Confirm that you have a paid Azure subscription that is eligible for Security Store purchases, and that you have the Owner role, or Contributor plus Role Based Access Control Administrator.\n• Estimate costs. Review provider pricing and Azure hosting costs.\n• Set up and roll out. Follow Set up SMS and voice. Start in evaluation mode, then increase traffic to your provider in stages.\n• Complete your transition before February 1, 2027. Review the guidance for the retirement of Microsoft-provided SMS and voice authentication.\nLearn more\n• Choose your own telephony provider for SMS and voice authentication\n• Set up SMS and voice with your own telecom provider\n• Troubleshoot SMS and voice\n• Protect against telephony fraud\n• Plan for resiliency and high availability\n• Frequently asked questions\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra ID now generally supports Choose Your Own Telephony Provider (CYOT) for SMS and voice authentication, retiring Microsoft-provided services by February 1, 2027. Organizations must select a provider, set up CYOT, and transition before that date, while Microsoft recommends phishing-resistant methods like passkeys."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-set-up-sms-voice-api",
+        "https://learn.microsoft.com/entra/identity/authentication/phone-providers-faq",
+        "https://learn.microsoft.com/entra/identity/authentication/troubleshoot-voice-call-sms",
+        "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
+      ]
+    },
+    {
+      "id": "MC1521604",
+      "title": "(Updated) Microsoft Authenticator: Usability improvements for iOS and Android",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-22T23:11:01.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-29T20:51:10.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 29, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nWe’re updating Microsoft Authenticator with several usability improvements across iOS and Android. These updates include a refreshed home experience, clearer guidance for accounts that need to be restored, improvements to restoration and sign-in flows, and additional prompts designed to help keep Authenticator working reliably. Availability and timing vary by platform.\n[Rollout schedule]\n• General Availability (Worldwide, GCC, GCC High, and DoD): Beginning in early November 2026 (previously October) and expected to complete in late November 2026\n• The improved restoration experience for push notifications and passwordless sign-in will be available on iOS first, with Android planned to follow in January 2027.\n[Impact on your organization]\nWho is affected\n• Users of Microsoft Authenticator on iOS and Android\nPlatforms and services\n• Microsoft Authenticator for iOS and Android\nWhat will happen\n• Improved Authenticator home experience, iOS and Android: The Authenticator home page is being updated to improve the experience when users view and manage their accounts. On Android, this update will be available in November 2026.\niOs:\nAndroid:\n• Clearer notification for accounts that haven’t been restored, iOS and Android: Users with accounts that have not yet been restored will see a banner informing them that those accounts require attention\n.\n• Improved first-run guidance for account restoration, iOS and Android: The first-run experience will more clearly show which accounts need to be restored, giving users additional context during Authenticator setup.\n• App rating prompt during sign-in, iOS only: Users may see an option to rate Microsoft Authenticator as part of the sign-in experience, giving them an opportunity to provide feedback about the app.\n• Improved restoration experience for push notifications and passwordless sign-in: The restoration flow is being improved for users who use push notifications and passwordless sign-in. This improvement will be available on iOS first, with Android planned for January 2027.\n• Prompt to exclude Authenticator from battery optimization, Android only: After successfully completing an interactive authentication, users may see a non-blocking prompt to exclude Authenticator from Android battery optimization. Excluding the app from battery optimization helps users stay signed in and continue receiving work or school notifications. The prompt will not block authentication.\n[Action required and recommendations]\nNo configuration action is specified in this request.\n• Inform your help desk and security operations teams about the updated Authenticator experiences.\n• Update internal user guidance and screenshots that show the previous Authenticator experiences.\n[Compliance considerations]\nNo compliance considerations identified.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Authenticator for iOS and Android will receive usability updates starting November 2026, including a refreshed home experience, clearer account restoration guidance, improved sign-in flows, and platform-specific prompts. Android improvements for restoration and battery optimization prompts will follow in January 2027. No action required."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1530611",
+      "title": "Office in Copilot brings the full power of Office into the Microsoft Copilot app",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-29T18:32:57.0000000+00:00",
+      "endDateTime": "2026-11-29T18:32:57.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-29T18:33:16.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nNow users have the full power of Office in Microsoft Copilot app, so users can create, edit and collaborate on Word, Excel and PowerPoint files, without leaving the app.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 and expect to complete by mid-November 2026.\n[Impact on Your Organization:]\nNow with the full value of Office in Copilot, Word, Excel, and PowerPoint is brought in directly into the Copilot experience, allowing users to create, review, edit, and collaborate on Office files without leaving their flow of work. This reduces context switching and makes it easier to move from an idea or conversation to a finished, shareable Office artifact.\n[Action Required/Recommendations:]\nNo admin action is required. Admins may want to inform users about the new experience and review their existing Microsoft 365 Copilot configuration and policies.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change alter how existing customer data is processed, stored, or accessed?Yes. Users can now access and edit Office file content through the Copilot experience, with changes synced back to the regular Office apps.\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Copilot gains expanded capability to read and edit Office document content as part of this feature.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and edit Word, Excel, and PowerPoint content directly within the Copilot app.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This feature is subject to existing Microsoft 365 Copilot configuration and policies, which admins can manage via Entra ID group-based assignment.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Office in Copilot integrates Word, Excel, and PowerPoint into the Microsoft Copilot app, enabling users to create, edit, and collaborate on files without leaving the app. Rolling out worldwide in mid-November 2026, it requires no admin action but is managed via existing Copilot policies and Entra ID controls."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1530595",
+      "title": "Microsoft Copilot Feedback UX update",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-29T18:13:33.0000000+00:00",
+      "endDateTime": "2026-12-28T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-29T18:13:56.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nWe’re updating the thumbs-down feedback experience in Microsoft Copilot to make it easier for users to provide specific, actionable feedback. Today, many thumbs-down responses are submitted without comments, providing sentiment but limited information about the issue. When users select thumbs down, they’ll be able to select one or more feedback categories and optionally provide additional comments, giving each categorized response a signal that can be routed to the appropriate team or issue type.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in late October 2026 and expect to complete by late October 2026.\n[Impact on Your Organization:]\nUsers who can submit feedback in supported Microsoft Copilot experiences may see the updated thumbs-down feedback form. The planned audience includes users signed in with Microsoft Entra ID organizational accounts, users signed in with consumer Microsoft accounts, and users in Education tenants. The feature isn’t currently planned for Mobile, GCC, GCC High, DoD, or other sovereign cloud environments.\nThe updated feedback experience is planned for Microsoft Copilot, Copilot in Microsoft Edge, Copilot in Microsoft Outlook, and Copilot in Microsoft Teams, across web browsers, Windows, and macOS. The WXPN/Catalyst experience isn’t currently included.\nWhen a user selects thumbs down on a Copilot response, they may see selectable categories describing the issue, can select more than one category, and can optionally enter additional feedback in a free-text field. The thumbs-up feedback experience isn’t changing. This update applies only to the existing “Allow users to submit feedback to Microsoft” admin policy; all other feedback policy experiences remain unchanged. During the controlled rollout, some users will continue to see the existing feedback experience.\n[Action Required/Recommendations:]\nNo admin action is required for this change. It will be visible to users who are already allowed to submit feedback under the existing policy.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change store new customer data?Yes. When a user chooses to submit thumbs-down feedback, the selected categories, optional free-text comment, and optional screenshot are new data captured as part of that submission.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This UX change applies to the existing \"Allow users to submit feedback to Microsoft\" admin policy; all other feedback policy experiences remain unchanged.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Copilot is updating the thumbs-down feedback to include selectable issue categories and optional comments for more actionable input. Rolling out worldwide in late October 2026, it applies to organizational, consumer, and education accounts on supported platforms, with no admin action required. New data is collected with feedback."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1518029",
+      "title": "Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice authentication",
+      "category": "preventOrFixIssue",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-20T22:57:53.0000000+00:00",
+      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-10-29T16:27:01.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の問題の予防または修正に関するお知らせ",
+      "japaneseSummary": "問題の予防または修正: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated October 26, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft Entra ID is adding safeguards to reduce automated abuse of telephony-based authentication. SMS and voice authentication options are not being removed. Some users who use SMS or voice for first-factor sign-in may be asked to complete a risk-based anti-bot verification step (CAPTCHA) before a code is sent.\n[Rollout schedule]\n• Rollout began in mid-October 2026 and is ongoing.\n• Users may see an anti-bot verification step for first-factor telephony-based authentications.\n[Impact on your organization]\nWho is affected\n• Some users who use SMS or voice as a first-factor sign-in method\nPlatforms and services\n• Microsoft Entra ID telephony-based authentication using SMS or voice for first-factor sign-in\nWhat will happen\n• Some users might see an additional risk-based anti-bot verification step (CAPTCHA) before Microsoft sends the telephony code.\n• The experience is determined based on client behaviors, so not every user or sign-in attempt will be affected.\n• If the verification experience does not load because of restrictive network or firewall settings, affected users might not be able to complete the flow until required endpoints are allowed. Endpoint guidance is included in the linked documentation below.\n[Action required and recommendations]\n• Prepare your help desk and user communications for the possibility of an anti-bot verification step before a telephony code is sent.\n• Review the linked documentation for network-readiness guidance, including any approved endpoint or allowlist requirements.\n• Continue moving users to phishing-resistant authentication methods, such as passkeys, where possible.\nLearn more\n• Understanding telephony fraud risk for Microsoft Entra multifactor authentication - Microsoft Entra ID | Microsoft Learn\n• Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in - Microsoft Entra ID | Microsoft Learn\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra ID is adding risk-based CAPTCHA verification for SMS and voice first-factor sign-ins to reduce automated abuse. Rollout began mid-October 2026. Some users may encounter this step based on behavior. Organizations should prepare help desks, review network requirements, and encourage phishing-resistant methods like passkeys."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-telephony-fraud",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-telephony-risk-based-captcha"
+      ]
+    },
     {
       "id": "MC1529472",
       "title": "Frontier expands to include public previews in Microsoft Teams, new Outlook for Windows, OneDrive, and SharePoint",
@@ -525,35 +791,6 @@
       ]
     },
     {
-      "id": "MC1521604",
-      "title": "Microsoft Authenticator: Usability improvements for iOS and Android",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-22T23:11:01.0000000+00:00",
-      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-22T23:11:18.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "[What and why]\nWe’re updating Microsoft Authenticator with several usability improvements across iOS and Android. These updates include a refreshed home experience, clearer guidance for accounts that need to be restored, improvements to restoration and sign-in flows, and additional prompts designed to help keep Authenticator working reliably. Availability and timing vary by platform.\n[Rollout schedule]\n• General Availability (Worldwide, GCC, GCC High, and DoD): Beginning in October 2026 and expected to complete in November 2026\n• The improved restoration experience for push notifications and passwordless sign-in will be available on iOS first, with Android planned to follow in January 2027.\n[Impact on your organization]\nWho is affected\n• Users of Microsoft Authenticator on iOS and Android\nPlatforms and services\n• Microsoft Authenticator for iOS and Android\nWhat will happen\n• Improved Authenticator home experience, iOS and Android: The Authenticator home page is being updated to improve the experience when users view and manage their accounts. On Android, this update will be available in November 2026.\niOs:\nAndroid:\n• Clearer notification for accounts that haven’t been restored, iOS and Android: Users with accounts that have not yet been restored will see a banner informing them that those accounts require attention\n.\n• Improved first-run guidance for account restoration, iOS and Android: The first-run experience will more clearly show which accounts need to be restored, giving users additional context during Authenticator setup.\n• App rating prompt during sign-in, iOS only: Users may see an option to rate Microsoft Authenticator as part of the sign-in experience, giving them an opportunity to provide feedback about the app.\n• Improved restoration experience for push notifications and passwordless sign-in: The restoration flow is being improved for users who use push notifications and passwordless sign-in. This improvement will be available on iOS first, with Android planned for January 2027.\n• Prompt to exclude Authenticator from battery optimization, Android only: After successfully completing an interactive authentication, users may see a non-blocking prompt to exclude Authenticator from Android battery optimization. Excluding the app from battery optimization helps users stay signed in and continue receiving work or school notifications. The prompt will not block authentication.\n[Action required and recommendations]\nNo configuration action is specified in this request.\n• Inform your help desk and security operations teams about the updated Authenticator experiences.\n• Update internal user guidance and screenshots that show the previous Authenticator experiences.\n[Compliance considerations]\nNo compliance considerations identified.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Authenticator will receive usability improvements on iOS and Android starting October 2026, including a refreshed home experience, clearer account restoration guidance, enhanced restoration flows, and platform-specific prompts. Android updates follow in November 2026 and January 2027. No action is required from organizations."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1520901",
       "title": "Insights Agent V2 Frontier",
       "category": "planForChange",
@@ -580,39 +817,6 @@
         }
       ],
       "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1519855",
-      "title": "Microsoft Entra: Choose your own telephony provider for SMS and voice authentication",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-21T23:24:44.0000000+00:00",
-      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-21T23:24:58.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "[What and why]\nStarting October 30, 2026, Microsoft Entra ID will make Choose Your Own Telephony Provider (CYOT) generally available. CYOT enables organizations to use a supported third-party telecommunications provider for SMS and voice authentication. Organizations select a supported provider through Microsoft Security Store and manage their commercial relationship directly with the provider.\nMicrosoft recommends phishing-resistant authentication methods, such as passkeys, instead of SMS or voice authentication. Organizations should use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning October 30, 2026\n[Impact on your organization]\nWho is affected\n• Organizations with users who require SMS or voice authentication for business, regulatory, or technical reasons\nPlatforms and services\n• Microsoft Entra ID\n• Microsoft Security Store\nWhat will happen\n• Starting October 30, 2026, organizations can choose to configure a supported telephony provider for SMS and voice authentication.\n• Your selected provider will deliver the SMS messages or voice calls users need to complete authentication.\n• Microsoft Entra ID will continue to enforce authentication method policies and coordinate the authentication experience.\n• Your organization will manage its commercial relationship with the selected provider.\n• Microsoft-provided SMS and voice authentication is scheduled to be retired on February 1, 2027, for all users except Global Administrators and external users. The retirement date for Global Administrators and external users is July 1, 2027. Internal guest users remain subject to the February 1, 2027 retirement date.\n• After the applicable retirement date, users whose only available MFA method is SMS or voice must register a passkey during sign-in unless the organization has configured a supported telephony provider. This registration prompt is blocking.\n[Action required and recommendations]\nIf your organization plans to adopt CYOT:\n• Identify affected users. Determine which users have a documented business, regulatory, or technical requirement for SMS or voice authentication.\n• Evaluate phishing-resistant alternatives. Confirm that a phishing-resistant authentication method does not meet the requirements for those users.\n• Review supported telephony providers. Compare providers based on geographic coverage, supported delivery channels, pricing, support, security, and compliance capabilities.\n• Review organizational requirements. Work with the appropriate teams to review procurement, privacy, and regulatory requirements before selecting a provider.\n• Plan your transition. Review Passkeys by default and retirement of Microsoft-provided SMS and voice authentication and plan your transition based on the retirement date applicable to each user population.\n• Validate purchasing requirements. Review Purchase a SaaS solution and deploy a linked solution. Purchasing through Security Store requires an Azure billing subscription and resource group, plus the appropriate Azure subscription role.\n• Estimate costs. Review provider pricing and expected Azure infrastructure charges before deployment.\nLearn more\n• Choose a telephony provider for SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n• Estimate telephony provider and Azure hosting costs: ExternalPhoneProvider-AzureFunction-Sample/docs/COST-CALCULATOR.md at main · Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n• Purchase and deploy a SaaS solution from Security Store - Microsoft Security Store | Microsoft Learn\n[Compliance considerations]\nQuestionAnswer\nDoes the change add any integration to third-party software products, and if so, what?Yes. The change enables organizations to use a supported third-party telephony provider for SMS and voice authentication. Organizations select a provider through Microsoft Security Store, and the selected provider delivers the SMS messages or voice calls used for authentication.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Starting October 30, 2026, Microsoft Entra ID allows organizations to choose a supported third-party telephony provider for SMS and voice authentication via Microsoft Security Store. Microsoft-provided SMS/voice authentication retires by February 1, 2027, except for some users until July 1, 2027. Organizations manage provider relationships directly."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
-        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
-        "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
-      ]
     },
     {
       "id": "MC1518032",
@@ -1270,34 +1474,6 @@
       ]
     },
     {
-      "id": "MC1484007",
-      "title": "Updated Copilot in Microsoft Edge Experience",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-30T22:55:23.0000000+00:00",
-      "endDateTime": "2026-10-30T22:55:23.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-30T22:57:29.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nAs part of our ongoing efforts to simplify the Copilot experience for customers, we are beginning to roll out updates to Copilot in Microsoft Edge in the coming weeks. As part of this update, we will adopt an updated icon across all Copilot entry points within Edge and the Copilot sidepane will adopt a simplified UX. Also, included is upgraded functionality and features, like Copilot Voice and Vision. Security, compliance, privacy, and enterprise controls remain unchanged.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out on mid-October 2026 and expect to complete by mid-October 2026.\n[Impact on Your Organization:]\nAll users who have Copilot turned on in Edge will see these updates. Existing policies remain available to admins.\n[Action Required/Recommendations:]\nThis rollout will happen automatically by the specified date with no admin action required before the rollout. Review your current configuration to determine the impact for your organization. You may want to notify your users about this change and update any relevant documentation.\nFor more information about the Copilot URL redirect, review MC1462915, Allow connections to copilot.cloud.microsoft before the Copilot URL redirect.\n[Compliance considerations:]\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?The feature uses AI/ML or agent capabilities with Microsoft 365 content, prompts, or service data as described in this message.\nDoes the change provide end users any new way of interacting with generative AI?The feature introduces or updates a user-facing AI or Copilot experience as described in this message.\nDoes the change include an admin control and, can it be controlled through Entra ID group membership?The feature includes or affects admin controls, policies, permissions, roles, authentication, or management settings as described in this message. Review the linked documentation or admin center controls for group-based configuration support.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Edge's Copilot is updated with a new icon, simplified UX, and enhanced features like Voice and Vision. The rollout begins mid-October 2026, requires no admin action, and maintains existing security, compliance, and admin controls. Users with Copilot enabled will see these changes automatically."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1477184",
       "title": "(Updated) Microsoft 365 admin center: Agent Registry consolidates duplicate agent entries and adds version history",
       "category": "preventOrFixIssue",
@@ -1386,47 +1562,6 @@
       ],
       "officialDocumentUrls": [
         "https://learn.microsoft.com/entra/identity-platform/content-security-policy"
-      ]
-    },
-    {
-      "id": "MC1187682",
-      "title": "(Updated) Microsoft Edge: Microsoft 365 Copilot will support summarization and contextual grounding",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-11-18T16:21:30.0000000+00:00",
-      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-25T20:42:37.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated September 25, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction:]\nMicrosoft Edge for Business will soon support summarization and contextual grounding with Microsoft 365 Copilot Chat. This enhancement enables users to ask Copilot questions about multiple open browser tabs, Microsoft 365 documents (such as Word, Excel, PowerPoint), and YouTube videos directly from the Edge side pane.\nThis message is associated with Microsoft 365 Roadmap ID 496364, 499423, and 499424.\n[When this will happen:]\n• General Availability (Multiple browser tabs and YouTube videos): Currently Available\n• General Availability (Microsoft 365 documents): Rollout is expected to begin mid-October 2026 (previously mid-September)\n[How this affects your organization:]\nWho is affected: Users signed in to Microsoft Edge for Business with their Entra ID and who have access to Microsoft 365 Copilot.\nWhat will happen:\n• Users will be able to ask Copilot questions about open browser tabs, Microsoft 365 documents, and YouTube videos.\n• The feature will be off by default.\n• If Copilot is restricted from accessing page content via Data Loss Prevention (DLP) or the EdgeEntraCopilotPageContext policy, it will be suppressed to maintain DLP integrity.\n• Existing DLP and policy configurations will be respected.\n[What you can do to prepare:]\n• This rollout will happen automatically by the specified date; no admin action is required before rollout.\n• Ensure users who need this capability have access to Microsoft 365 Copilot.\n• Ensure your tenant is configured to support Microsoft 365 Copilot and that eligible users meet all licensing prerequisites, including Entra ID sign-in and applicable Microsoft 365 service plans.\n• Review your current DLP and Edge policy configurations to determine potential impact.\n• Notify users about this upcoming capability.\n• Update internal documentation if needed.\nLearn more:\n• Microsoft 365 Copilot Chat in Edge and Access to Page Content | Microsoft Edge | Microsoft Learn\n• Microsoft Edge - Policies | Microsoft Edge | Microsoft Learn\n[Compliance considerations:]\nQuestionAnswer\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Microsoft 365 Copilot introduces contextual grounding and summarization using generative AI across browser tabs, Microsoft 365 documents, and YouTube videos.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can now ask Copilot questions about open browser tabs and documents directly from the Edge sidepane, enabling real-time summarization and contextual responses.\nDoes the change modify Data Loss Prevention (DLP) policies or enforcement?Yes. If DLP or the EdgeEntraCopilotPageContext policy restricts access, Copilot will be suppressed from accessing page content to maintain DLP integrity.\nDoes the change include an admin control, and can it be controlled through Entra ID group membership?Yes. Admins can manage access to Copilot’s contextual grounding capabilities via DLP settings and Edge policy configurations, which can be scoped using Entra ID group membership.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "496364,499423,499424"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft Edge for Business now supports Microsoft 365 Copilot Chat for summarizing and contextualizing multiple browser tabs, YouTube videos (available), and Microsoft 365 documents (rolling out mid-October 2026). The feature is off by default, respects DLP and policy settings, and requires Entra ID sign-in and proper licensing."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
-        "https://learn.microsoft.com/deployedge/microsoft-edge-policies"
       ]
     },
     {
@@ -1876,34 +2011,6 @@
       ]
     },
     {
-      "id": "MC1470871",
-      "title": "Microsoft Graph: User.ReadBasic.All will no longer allow reading user app role assignments and license details",
-      "category": "preventOrFixIssue",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-11T23:08:21.0000000+00:00",
-      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-11T23:08:45.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の問題の予防または修正に関するお知らせ",
-      "japaneseSummary": "問題の予防または修正: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "[What and why]\nWe are correcting the behavior of the Microsoft Graph delegated and app-only permission User.ReadBasic.All. This permission is intended to provide access only to a limited set of basic user profile properties. However, it currently also allows access to user app role assignments and license details.\nTo address a security vulnerability, we are removing access to user app role assignments and license details from User.ReadBasic.All and aligning the permission with its intended scope. This is not a breaking change for applications that use User.ReadBasic.All only for its intended purpose of accessing basic user profile information.\nApplications that rely on this unintended access should be updated with the appropriate least-privileged permissions before rollout is complete.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning in mid-September 2026 and expected to complete by late September 2026\n[Impact on your organization]\nWho is affected\nOrganizations are affected if their applications use the Microsoft Graph delegated or app-only permission User.ReadBasic.All to read:\n• User app role assignments\n• User license details\nDevelopers, application owners, and administrators responsible for managing application permissions in Microsoft Entra ID should review this change.\nPlatforms and services\n• Microsoft Graph\n• Microsoft Entra ID\n• Applications using Microsoft Graph permissions\nWhat will happen\n• Applications granted only User.ReadBasic.All will no longer be able to read user app role assignments or user license details.\n• Applications that access only basic user properties, such as display name, email address, and department, will continue to function without changes.\n• Affected applications may experience failures or permission-related errors after the change is applied.\n• Users may experience application disruptions if an application has only User.ReadBasic.All but attempts to access user app role assignments or license details.\n[Action required and recommendations]\nAction is required if you have applications that use User.ReadBasic.All to access user app role assignments or license details.\nRecommended actions:\n• Review applications granted User.ReadBasic.All in the Microsoft Entra admin center under Enterprise applications > Permissions or in your internal application catalog.\n• Identify applications that use this permission to read user app role assignments or user license details.\n• Update affected applications to use the appropriate least-privileged permissions:• To read user app role assignments: User.Read.All\n• To read user license details: LicenseAssignment.Read.All\n• To read both: User.Read.All\n• Obtain administrator consent for the new permissions, update application configurations, redeploy affected applications, and test impacted scenarios.\n• Notify developers and application owners of the upcoming permission changes and rollout schedule.\n• Monitor application logs and Microsoft Graph API responses for permission-related errors after rollout.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "User.ReadBasic.All will no longer provide access to user app role assignments and license details starting mid-September 2026 to fix a security issue. Applications needing this data must switch to User.Read.All or LicenseAssignment.Read.All permissions and update accordingly to avoid disruptions."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1470425",
       "title": "Microsoft Copilot Cost Management: September Updates",
       "category": "stayInformed",
@@ -2269,36 +2376,6 @@
       ]
     },
     {
-      "id": "MC1319216",
-      "title": "(Updated) Microsoft Teams: In‑meeting toggle to turn Meeting AI on or off",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-05-22T22:24:13.0000000+00:00",
-      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-08-26T16:07:14.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated August 26, 2026: We have updated the content and timeline. Thank you for your patience.\n[What and Why]\nMicrosoft Teams will introduce a new control that allows licensed meeting organizers and presenters to turn Meeting AI (including Copilot and Facilitator) on or off during a live meeting. This change builds on existing Meeting AI behavior and provides real-time flexibility to control when AI is active.\nLicensed organizers and presenters can capture insights when discussions are valuable and turn off AI when conversations shift to sensitive topics. To protect AI from accessing any artifacts, Recording and Transcription will also be turned off.\n[Rollout Schedule]\n• Targeted Release: We will begin rolling out mid-September 2026 (previously mid-August) and expect to complete by late September 2026 (previously late August).\n• General Availability (Worldwide): We will begin rolling out mid-September 2026 (previously late August) and expect to complete by late September (previously early September).\n[Impact on Your Organization]\nWho is affected\n• All Microsoft 365 tenants with Meeting AI (Copilot and/or Facilitator) enabled by policy and in Meeting Options\n• Licensed organizers and presenters in Teams Meetings\nPlatforms / Services\n• Microsoft Teams (Desktop, Web, and Mobile)\n• Microsoft 365 Copilot (Meeting AI, Facilitator)\nWhat will happen\n• A new control will appear in the Teams meeting toolbar for scheduled meetings:\nScreenshot 1 - Copilot and Facilitator toggles set to off\n• Licensed organizers and presenters can turn Meeting AI on or off during meetings:\nScreenshot 2 - Copilot and Facilitator toggles set to on\n• Toggles are shown only when Meeting AI is allowed by policy.\n• An AI status indicator will show participants whether Meeting AI is active.\nExisting tenant policies and meeting options are respected:\n• If Meeting AI is disabled by policy, the toggles will not appear.\nWhen Meeting AI is turned off:\n• Copilot, Facilitator responses, and Notes will no longer be generated.\n• Previously generated artifacts remain available and governed by retention policies.\n• If AI is used without transcription, speech-to-text data stops and Recap is not generated.\nImportant: Transcription Dependency\n• When AI is used with transcription, they remain coupled:\n• Turning on Meeting AI automatically turns on transcription and generates a recap.\n• Starting transcription automatically enables Meeting AI and recap.\n• To prevent Meeting AI usage, transcription and Meeting AI must remain off.\nNo changes to\n• Meeting options configured before meetings\n• Recording, transcription, and sensitivity labels behavior\n• Retention and compliance policies\n• Licensing requirements for Copilot and Meeting AI\n[Action Required / Recommendations]No action is required for this rollout.\nRecommended actions:\n• Update internal training and documentation to explain:\n• Where the Meeting AI toggle appears\n• Who can use the toggle (licensed organizers and presenters)\n• Communicate to end users:\n• Starting transcription automatically enables Meeting AI and recap\n• Meetings that must avoid AI should not use transcription\n• Prepare helpdesk teams to support user questions about:\n• Controlling Meeting AI during meetings\n• Understanding transcription-related behavior\n[Compliance Considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Teams will add a toggle for licensed organizers and presenters to turn Meeting AI (Copilot and Facilitator) on or off during meetings, starting mid-September 2026. Turning off AI disables recording and transcription. The feature respects existing policies, requires no action, and aims to enhance control over AI use in meetings."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1461528",
       "title": "Microsoft 365 Roadmap is becoming the AI at Work Roadmap",
       "category": "stayInformed",
@@ -2327,39 +2404,6 @@
       ],
       "officialDocumentUrls": [
         "https://learn.microsoft.com/microsoft-365/admin/manage/mrc-mcp"
-      ]
-    },
-    {
-      "id": "MC1411574",
-      "title": "(Updated) Microsoft Entra: System-preferred authentication now applies to first-factor authentication",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-01T18:32:23.0000000+00:00",
-      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-08-24T16:51:38.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated August 24, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why]\nAs announced in the What's New (June Edition), we have been rolling out first-factor system-preferred authentication in the Microsoft-managed state.\nSystem-preferred authentication in Microsoft Entra ID now applies to both first-factor and second-factor authentication when the setting is in the Microsoft managed state.\nThe system evaluates which credentials are registered for the user and selects the highest-ranked method for each authentication step, prompting the user to sign in with the most secure available method.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning late June 2026 and expected to complete by late September 2026 (previously late July)\n[Impact on your organization]\nWho is affected\n• Organizations whose system-preferred authentication setting is in the Microsoft managed state.\n• If your setting is in the Enabled or Disabled state, first-factor sign-in behavior remains unchanged and there is no impact from this update.\nPlatforms and services\n• Microsoft Entra ID\n• System-preferred authentication\n• User sign-in experiences\nWhat will happen\n• For tenants in the Microsoft managed state, the system applies credential ranking to both first-factor and second-factor authentication.\n• When a user signs in, the authentication process checks which authentication methods are registered and prompts the user with the most secure method according to the system-defined order.\n• The method order is dynamic and can update when users register more secure authentication methods, such as a passkey, or as Microsoft updates credential rankings based on evolving security guidance. For example, if a user has both a password and a passkey registered, Microsoft Entra may prompt the user to use the passkey at their next first-factor sign-in instead of the password.\n• To sign in using a different option, users can always cancel and choose another available sign-in method.\nBehavior by setting state:\n• Microsoft managed: The system applies credential ranking to both first-factor and second-factor authentication.\n• Enabled: Credential ranking applies only to second-factor authentication. First-factor sign-in behavior remains unchanged.\n• Disabled: System-preferred authentication is not applied.\nNote: This prompt does not mean the user is being asked to complete multifactor authentication (MFA) when MFA is not required. With this update, Microsoft Entra can prompt users to use their most secure available credential at first-factor sign-in instead of defaulting to a password. Some methods, such as passkeys, certificate-based authentication, or Microsoft Authenticator, can satisfy first-factor sign-in requirements and may also satisfy MFA requirements when MFA is required. The goal is to use the strongest available credential consistently, not to add an extra MFA prompt.\n[What you need to do to prepare:]\nReview whether you want system-preferred authentication to apply to first-factor authentication in your tenant:\n• If you want the credential ranking applied to both first-factor and second-factor authentication, leave the setting in the Microsoft managed state. No action is required.\n• If you do not want system-preferred authentication to apply to first-factor authentication, change the setting from Microsoft managed to Enabled. The Enabled state applies system-preferred logic only to second-factor authentication and leaves first-factor sign-in behavior unchanged.\n• Consider notifying users that they may be prompted with a different, more secure sign-in method at first-factor sign-in and remind them that they can always cancel and choose another available sign-in method.\n• Update internal sign-in documentation and support guidance accordingly.\nLearn more\n• General Availability - System-preferred authentication expanded to first-factor in Microsoft Entra ID - What's New (June 2026 Microsoft Entra Blog) | Microsoft Entra releases and announcements | Microsoft Learn\n• System-preferred authentication | Authentication | Microsoft Entra ID | Microsoft Entra | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified, review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra now applies system-preferred authentication to first-factor sign-ins for tenants in the Microsoft managed state, selecting the most secure registered method. Rollout is from late June to late September 2026. Tenants can keep or change this setting and should update user guidance accordingly."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/entra/fundamentals/whats-new",
-        "https://learn.microsoft.com/entra/identity/authentication/concept-system-preferred-authentication"
       ]
     },
     {
@@ -2554,163 +2598,6 @@
         "https://learn.microsoft.com/entra/fundamentals/how-to-customize-branding",
         "https://learn.microsoft.com/entra/fundamentals/how-to-customize-branding-themes-apps",
         "https://learn.microsoft.com/entra/fundamentals/reference-company-branding-css-template"
-      ]
-    },
-    {
-      "id": "MC1443510",
-      "title": "Microsoft 365: One-time cleanup of aged pending requests in All Agents",
-      "category": "preventOrFixIssue",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-07-31T00:22:28.0000000+00:00",
-      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-31T00:22:51.0000000+00:00",
-      "actionRequiredByDateTime": "2026-08-20T07:00:00.0000000+00:00",
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Retirement",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ",
-      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。対応期限は 2026年8月20日 です。",
-      "bodyText": "[What and why]\nWe're performing a one-time cleanup of aged pending requests in the All Agents request management experience. This cleanup is intended to remove stale requests that have remained pending for an extended period and help maintain a more current and manageable request queue.\nBeginning August 20, 2026, pending requests created before June 1, 2026 will be permanently removed unless they are reviewed and actioned before the cleanup begins.\nRequests that have already been approved or rejected are not affected.\n[Rollout schedule]\n• Worldwide: Beginning August 20, 2026 and expected to complete in late August 2026\n[Impact on your organization]\nWho is affected\n• Administrators responsible for reviewing and managing requests in All Agents\nPlatforms and services\n• Microsoft 365\n• All Agents\nWhat will happen\n• Pending requests dated before June 1, 2026 will be removed as part of this one-time cleanup.\n• Requests that have already been approved or rejected will remain unchanged.\n• Pending requests created on or after June 1, 2026 are not affected.\n• This is a one-time cleanup activity. No recurring deletion process is being introduced.\n[Action required and recommendations]\nReview any pending requests created before June 1, 2026 and determine whether they should be retained.\nBefore August 20, 2026:\n• Go to All Agents > Requests.\n• Review pending requests created before June 1, 2026.\n• Approve or reject any requests you want to preserve.\nRequests that are approved or rejected before the cleanup begins will not be removed. Requests that remain pending when the cleanup begins will be permanently removed.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1437679",
-      "title": "Microsoft 365 Copilot: Capture voice notes in the Microsoft 365 Copilot mobile app",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": true,
-      "startDateTime": "2026-07-23T22:43:54.0000000+00:00",
-      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-23T22:44:17.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
-      "bodyText": "[What and why]\nWe're introducing Record in the Microsoft 365 Copilot mobile app. This feature enables users to capture in-person conversations or record voice notes and receive an AI-generated transcript and summary in Copilot Chat after recording ends.\nRecord helps users capture important information wherever work happens and quickly transform spoken content into actionable summaries. Built on Microsoft 365's enterprise-grade security, compliance, and manageability capabilities, recordings and generated content remain governed by the same controls that protect users' Microsoft 365 data.\nThis message is associated with Microsoft 365 Roadmap ID 498640.\n[Rollout schedule]\n• Frontier preview: Available to Frontier customers beginning in late July 2026\n• General Availability (Worldwide): Beginning in late August 2026 and is expected to be complete by late September 2026\n[Impact on your organization]\nWho is affected\n• Users with a Microsoft 365 Copilot license\n• Users of the Microsoft 365 Copilot mobile app on iOS or Android\n• Admins managing Microsoft 365 productivity apps\nPlatforms and services\n• Microsoft 365 Copilot mobile app\n• Copilot Chat\n• OneDrive for Business\n• Microsoft Purview compliance solutions\n• Microsoft Intune\nWhat will happen\n• Users will see a new Record option in the Microsoft 365 Copilot mobile app.\n• Record is available from the plus (+) menu in the Copilot Chat prompt box alongside attachment options such as photos and files.\n• The feature is enabled by default for users with a Microsoft 365 Copilot license.\n• Users can record in-person conversations or voice notes and receive an AI-generated transcript and summary in Copilot Chat after recording ends.\n• Audio recordings are uploaded to the user's OneDrive for Business after recording is stopped.\n• Individual recordings can be up to 120 minutes in length.\n• Recording can continue while the app runs in the background and the user switches between applications.\n• The recording, transcript, and summary inherit existing OneDrive for Business permissions and governance settings.\n• Existing retention policies, sensitivity labels, Data Loss Prevention (DLP) policies, and eDiscovery controls continue to apply to recorded content.\n• Microsoft does not use customer recordings, transcripts, or summaries to train Microsoft's foundation AI models, large language models, or speech recognition models.\n[Action required and recommendations]\nNo action is required to enable this feature.\nWe recommend that admins:\n• Review whether Record aligns with your organization's recording and consent requirements.\n• Communicate the upcoming feature to users, especially those who may record in-person meetings or conversations.\n• Remind users that they are responsible for obtaining any required consent before recording conversations. Recording laws and organizational policies vary by location, and Microsoft 365 Copilot does not notify other participants when a user starts recording.\n• Review mobile app governance requirements and determine whether the feature should remain enabled for your organization.\n• If you want to disable Record, deploy an App Configuration Policy in Microsoft Intune and set com.microsoft.office.officemobile.Dictation.IsAllowed = false.\n• Record content is automatically in scope for your existing Microsoft Purview eDiscovery, sensitivity labels, DLP, and retention policies. No additional configuration is required.\n• Update internal user guidance and help desk documentation as appropriate.\nLearn more\n• Get started with Frontier | Microsoft Frontier\n[Compliance considerations]\nReview as appropriate for your organization's recording, retention, eDiscovery, and consent requirements.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "498640"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Copilot mobile app introduces a Record feature to capture voice notes and conversations, providing AI-generated transcripts and summaries in Copilot Chat. Available from late August 2026, recordings are stored in OneDrive with enterprise-grade security and compliance, governed by existing Microsoft 365 policies."
-        },
-        {
-          "name": "Platforms",
-          "value": "Android, iOS"
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1287370",
-      "title": "(Updated) Auto upgrade of shared calendars from legacy MAPI model to modern REST model",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-04-21T22:51:16.0000000+00:00",
-      "endDateTime": "2026-10-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-21T16:23:41.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated July 20, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction]\nMicrosoft is introducing an automatic upgrade for shared calendars in Outlook and Exchange Online, transitioning from the legacy MAPI-based model to the modern REST-based model. This server-side upgrade will improve calendar sync reliability, performance, and consistency for delegates and users who access shared calendars. The change is designed to be seamless and will not require any action from users or administrators.\n[When this will happen]\nGeneral Availability (Worldwide):\nTill WW it is enabled and available to all WW tenants. Now we are expanding it to higher rings:\nGCC High /DoD:\nRollout starting August 2026 (previously end of June) and completing by late September 2026 (previously late July)\nNote: Rollout will be progressive and timing may vary by tenant.\n[How this affects your organization]\nWho is affected\n• Microsoft 365 tenants using Exchange Online\n• Users who have Editor or higher permissions on shared calendars in user or shared mailboxes\n• Delegates and users who access shared calendars in Outlook\nWhat will happen\n• Shared calendars will be automatically upgraded from the legacy MAPI-based model to the modern REST-based model.\n• A new calendar folder will be created in a hidden state and will only become visible to the user once the full sync is successfully completed and validated, ensuring a seamless rollover to the new model.\n• The transition is expected to appear seamless, with no interruption to normal user workflows.\n• Events older than one year will be excluded from the initial sync window. However, recurring events with instances falling within or after the one-year threshold will still be included in the sync.\n• Existing permissions and sharing relationships will be preserved; no re-sharing or permission reset will be required.\n• The upgrade process is fully automatic and requires no action from the user — no Outlook restart, profile recreation, or any other manual steps.\n• No data loss is expected as a result of this change.\n• The rollout will initially support auto-upgrade for up to four shared calendars per delegate or principal, scaling up to six over time. Those managing more than six shared calendars will be excluded from the auto-upgrade and will experience no change to their current setup.\nHow does it effect the Classic Outlook setting 'Turn on shared calendar improvements'?\n• After migration, Classic Outlook will continue to honour the existing setting. Although shared calendars are upgraded to the REST model at the service level, Classic Outlook will follow the setting and use MAPI-based model if the setting is turned off. This behaviour is limited to Classic Outlook; all other endpoints (Outlook Web, Mobile, Mac, New Outlook) will use REST.\n[What you can do to prepare]\nNo action is required.\nWe recommend that administrators:\n• During migration, a hidden shared calendar folder may be visible to tenant admins and support teams via the Get-MailboxFolderStatistics cmdlet. This is expected and has no impact on end users.\n• Monitor for persistent issues, such as missing meetings after the migration window or duplicate calendar folders, and contact Microsoft support if observed.\n• If a manual rollback is required after the calendar becomes visible, open a support request through standard Microsoft support channels.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft is auto-upgrading shared calendars in Outlook and Exchange Online from the legacy MAPI model to a modern REST model, improving sync reliability and performance. The seamless, server-side rollout begins August 2026 for GCC High/DoD tenants, requires no user action, preserves permissions, and excludes events older than one year."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1221452",
-      "title": "(Update)Microsoft Entra ID: General Availability of passkey profiles and migration for existing Passkeys (FIDO2) tenants",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": true,
-      "startDateTime": "2026-01-23T00:54:46.0000000+00:00",
-      "endDateTime": "2026-11-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-20T18:35:44.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
-      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。",
-      "bodyText": "Updated July 20, 2026: We have updated the content. Thank you for your patience.\n[Introduction]\nStarting in March 2026, Microsoft Entra ID will introduce passkey profiles and synced passkeys to General Availability (GA). This update allows administrators to opt in to a new passkey profiles experience that supports group-based passkey configurations and introduces a new passkeyType property.\nImportant: Only tenants that already have Passkeys (FIDO2) enabled are affected by this update.\nThe passkeyType property enables admins to configure:\n• Device-bound passkeys\n• Synced passkeys\n• Both\nIf your tenant already has Passkeys (FIDO2) enabled and you do not opt in to passkey profiles during the initial rollout window, your tenant will be automatically migrated to the passkey profiles schema at the date range specified below. When this occurs:\n• Existing Passkey (FIDO2) authentication method configurations will be moved into a Default passkey profile.\n• The passkeyType value will be set based on the tenant’s current attestation settings. Synced passkeys will be enabled for tenants with attestation enforcement disabled.\n• No new authentication methods are enabled as part of this migration.\n• This migration also impacts Authentication methods registration campaign set to “Microsoft managed” state, which uses passkey configuration settings to determine which registration prompts are shown to users.\nAuthentication Methods Registration Campaign changes (Microsoft-Managed Only)\nTenants are impacted when all the following conditions are met:\n• The Passkeys (FIDO2) authentication method policy is Enabled\n• Authentication methods registration campaign is set to “Microsoft managed” state\n• Allow self-service setup is Enabled\n• Target specific AAGUIDs is not selected (no AAGUID restrictions configured)\n• The Authentication Methods Registration Campaign state is set to Microsoft-managed\n• The tenant has at least one user enabled for both synced passkeys and device‑bound passkeys\n• Only users who are enabled for both synced passkeys and device‑bound passkeys, with no passkey profile restrictions configured (i.e. attestation enforcement, AAGUID restrictions), will receive a passkey registration nudge during sign‑in.\nFor these tenants, Microsoft-managed registration campaign settings will be updated after passkey profile automatic migration is complete. We will roll out changes incrementally to in-scope tenants according to the timeline outlined below.\n[When this will happen]\nPasskey profile and Synced passkeys General Availability\n• Public cloud Worldwide, GCC: Rollout begins in early March 2026 and is expected to complete by late March 2026\n• GCC High, DoD clouds: Rollout begins in early May 2026 and is expected to complete by late May 2026\n• USNat, USSec: Rollout begins in early October 2026 (previously early July) and is expected to complete by late October 2026 (previously late July)\nAutomatic migration for existing passkeys (FIDO2) enabled tenants\n• Public cloud Worldwide, GCC: Rollout begins in early May 2026 and is expected to complete by late June 2026\n• GCC High, DoD clouds: Rollout begins in early October 2026 (previously early August) and is expected to complete by late October 2026 (previously late August)\n• USNat, USSec: Rollout begins in early October 2026 (previously early August) and is expected to complete by late October 2026 (previously late August)\nAuthentication Methods registration campaign changes in Microsoft-Managed state (for in-scope tenants):\n• Public cloud Worldwide, GCC: Rollout begins in early May 2026 and is expected to complete by late June 2026\n[How this affects your organization]\nAutomatic migration for existing passkeys (FIDO2) enabled tenants\nWhat will happen:\nIf you have not opted in to passkey profiles by your automatic enablement period, your tenant will be migrated to passkey profiles.\n• Your existing Passkey (FIDO2) configurations will be migrated into a Default passkey profile\n• New passkeyType property will be auto-populated\n• If enforce attestation is enabled, then device-bound allowed\n• If enforce attestation is disabled, then device-bound and synced allowed\n• Any existing key restrictions will remain intact\n• Any existing user targets will be assigned to the Default passkey profile\nAuthentication Methods registration campaign changes in Microsoft-Managed state (for in-scope tenants)\nWhat will happen:\nMicrosoft-managed registration campaign settings will be updated:\n• \"Targeted authentication method” will change from Microsoft Authenticator to “passkeys (FIDO2)”.\n• “Days allowed to snooze” setting will change from 3days to “1 day”. This setting will no longer be configurable.\n• “Limited number of snoozes” setting will change from Enabled to \"Disabled”. This setting will no longer be configurable.\n• The default user targeting will be updated from voice call or text message users to all multifactor authentication (MFA) capable users.\nWhat is the end user impact:\nOnce the above changes have taken effect, users targeted in the registration campaign will begin to receive passkey registration nudges during sign-in flows after they have completed multifactor authentication.\n•\n[What you can do to prepare]\nIf you want a configuration different from the migration defaults, review the timeline above and opt in to passkey profiles before your tenant’s automatic enablement window begins. Then configure the Default passkey profile’s passkeyType to your preferred values.\nWe also recommend:\n• Review your registration campaign configuration, especially if its set to Microsoft-managed. If you do not want registration campaign to target passkeys, you can:\n• Switch the registration campaign state to Enabled and continue targeting Microsoft Authenticator, or\n• Set the registration campaign state to Disabled.\n• Update runbooks and help content so your help desk and end users understand any changes in passkey availability or behavior.\nLearn more:\n• Enable passkeys for your organization - Microsoft Entra ID | Microsoft Learn\n• How to Enable Passkey (FIDO2) Profiles in Microsoft Entra ID (preview) - Microsoft Entra ID | Microsoft Learn\n• How to Enable Synced Passkeys (FIDO2) in Microsoft Entra ID (preview) - Microsoft Entra ID | Microsoft Learn\n• Synced passkeys FAQ - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Starting March 2026, Microsoft Entra ID will GA passkey profiles and synced passkeys for tenants with Passkeys (FIDO2) enabled. Existing configurations migrate to a Default passkey profile with a new passkeyType property. Automatic migration and registration campaign updates roll out regionally through October 2026."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-passkey-profiles",
-        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-synced-passkeys",
-        "https://learn.microsoft.com/entra/identity/authentication/how-to-enable-passkey-fido2",
-        "https://learn.microsoft.com/entra/identity/authentication/synced-passkey-faq"
-      ]
-    },
-    {
-      "id": "MC1282568",
-      "title": "(Updated) General Availability: Microsoft Entra passkeys on Windows",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-04-16T21:19:09.0000000+00:00",
-      "endDateTime": "2026-11-30T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-07-20T18:28:33.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated July 20, 2026: We have updated the timeline. Thank you for your patience.\n[Introduction]\nMicrosoft Entra passkeys on Windows will soon be Generally Available, enabling phishing‑resistant, passwordless sign‑in to Microsoft Entra‑protected resources from Windows devices.\nThe Public Preview of this capability was previously announced in MC1247893.\nUsers can create device‑bound passkeys stored in the Windows Hello container and authenticate using Windows Hello methods (face, fingerprint, or PIN). This expands passwordless authentication support to Windows devices that aren’t Microsoft Entra‑joined or registered, helping organizations strengthen security and reduce reliance on passwords across corporate‑managed, personal, and shared device scenarios.\n[When this will happen:]\n• General Availability (Worldwide, GCC): We will begin rolling out in late April 2026 and expect to complete by mid‑June 2026.\n• General Availability (GCC High, DoD): We will begin rolling out in early October 2026 (previously early September 2026) and expect to complete by late October 2026 (previously late September).\nHow this affects your organization:\nWho is affected:\nOrganizations using Microsoft Entra ID with passkeys enabled in the Authentication Methods policy whose users sign in from Windows devices, including:\n• Corporate‑managed PCs\n• Personal devices\n• Shared devices\nWhat will happen:\nWith this General Availability release:\n• Microsoft Entra passkeys on Windows will no longer require explicit opt‑in through Windows Hello AAGUID allow‑listing in a passkey (FIDO2) profile.\n• This represents a change from Public Preview behavior, where administrators were required to explicitly allow Windows Hello AAGUIDs in a passkey profile for Microsoft Entra passkeys on Windows to function.\n• If your passkey profile allows device‑bound, non‑attested passkeys:\n• Users scoped to that profile will now be able to register and use Microsoft Entra passkeys on Windows by default without additional administrator configuration.\n• As a result:\n• Users in scope of passkey profiles that allow device‑bound, non‑attested passkeys may begin registering and using passkeys on Windows devices.\n• If Conditional Access policies allow:\n• Passkeys can be created and used on Windows devices that are not Microsoft Entra‑joined or registered, including personal or shared PCs.\n• Each Windows device requires separate passkey registration per Entra account.\n• Windows Hello for Business remains recommended for managed, Microsoft Entra‑joined or registered devices.\n• Passkeys on Windows supplement unmanaged or shared device scenarios and do not support device sign‑in.\n• Attestation is not currently supported for Microsoft Entra passkeys on Windows but is planned for a future update.\n•\nWhat you can do to prepare:\n•\nNo action is required for most organizations.\nIf you do not want users to register or use Microsoft Entra passkeys on Windows:\n• Update the relevant passkey (FIDO2) profile to block Windows Hello AAGUIDs.\n• Review existing passkey profiles that allow device‑bound, non‑attested passkeys.\n• Add Windows Hello AAGUIDs to the block list in passkey profiles where passkey usage on Windows devices should not be permitted.\n•\nLearn more: Enable Microsoft Entra passkey on Windows | Microsoft Learn (will be updated before GA rollout)\n[Compliance considerations:]\nCompliance areaExplanation\nDoes the change modify, interrupt, or disable Conditional Access policies?Existing Conditional Access policies continue to govern whether passkeys can be created or used on unmanaged Windows devices.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Admins can control passkey availability through Authentication Methods policies and FIDO2 passkey profiles scoped to Microsoft Entra ID groups.\nDoes the change allow a user to enable and disable the feature themselves?Users may register Microsoft Entra passkeys on Windows devices if permitted by administrator policy configuration.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra passkeys on Windows will be generally available from late April 2026, enabling phishing-resistant, passwordless sign-in on Windows devices without explicit opt-in. This supports corporate, personal, and shared devices, with admin controls via Authentication Methods policies and Conditional Access. No action is needed unless blocking is desired."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/entra/identity/authentication/how-to-authentication-entra-passkeys-on-windows"
       ]
     },
     {
