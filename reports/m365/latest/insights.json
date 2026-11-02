@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T06:30:35.2174622+00:00",
+  "generatedAt": "2026-11-02T16:28:18.3780016+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証方式の移行(SMS/音声廃止・SSPR・パスキー)とカナダ時間帯変更への対応が今週の最優先",
   "executiveSummary": "今週は認証関連の変更が中心です。Microsoft提供のSMS・音声認証は2027年2月1日から廃止が始まり、CYOT(独自テレフォニープロバイダー)が一般提供となりました(MC1528000, MC1519855)。SSPRは登録済み認証方式のみを検証に使う方式へ移行し、2026年11月9日開始と案内されています(MC1325414)。パスキープロファイルは、未オプトインのテナントが自動移行される対象で、スケジュールが更新されました(MC1221452)。カナダの2026年タイムゾーン変更は11月1日に発効し、Outlook/Exchange Onlineの既存予定は自動移行されません(MC1526468, MC1510951)。Windows/Edge/WebView2では、eMudhra認証局キーの侵害に伴う信頼ブロックが10月下旬に展開されます(MC1529467)。Targeted releaseは2026年11月に登録変更ができなくなり、2027年1月に廃止されます(MC1490899)。抜粋に含まれない詳細な日付や要件は不明であり、断定していません。",
@@ -1839,6 +1839,22 @@
       "validatedAt": "2026-10-22T18:43:11.1929533+00:00"
     },
     {
+      "id": "MC1519855",
+      "japaneseTitle": "Entra:独自の通信事業者を選べるCYOTが一般提供開始",
+      "japaneseFacts": {
+        "change": "Microsoft Entra IDでChoose Your Own Telephony Provider(CYOT)が一般提供となり、SMS・音声認証を任意の対応通信事業者経由で提供できます。",
+        "impact": "SMSや音声認証を必要とするユーザーがいる組織が対象です。Microsoft提供のSMS・音声認証は廃止が始まります。",
+        "timing": "Microsoft提供のSMS・音声認証は2027年2月1日に廃止が始まります。",
+        "action": "CYOTを使う場合、対象ユーザーの特定、事業者選定、購入要件と費用の確認、段階的な展開を2027年2月1日前に完了します。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entra IDのChoose Your Own Telephony Provider(CYOT)が一般提供になりました。組織はSecurity Storeで通信事業者のサービスを購入し、SMS・音声認証をその事業者経由で提供できます。商取引上の関係は事業者と直接管理します。Microsoft提供のSMS・音声認証は2027年2月1日に廃止が始まるため、利用継続が必要なユーザーがいる場合はそれまでにCYOTを設定する必要があります。MicrosoftはパスキーなどのフィッシングWに強い方式を推奨しており、電話ベースの認証は業務上・規制上・技術上の必要があるユーザーに限定することを勧めています。準備として、対象ユーザーの特定、事業者比較、Azureサブスクリプションと権限の確認、コスト見積り、評価モードから段階的に展開することが示されています。",
+      "japaneseBodyTranslation": "2026年10月30日更新:機能が一般提供になったため、追加情報とともに投稿を更新しました。\n[内容と理由]\nChoose Your Own Telephony Provider(CYOT)がMicrosoft Entra IDで一般提供になりました。CYOTにより、組織は任意の対応通信事業者を通じてSMSおよび音声認証を提供できます。事業者のオファーはMicrosoft Security Storeで購入し、商取引上の関係は事業者と直接管理します。\nMicrosoft提供のSMS・音声認証は2027年2月1日に廃止が始まります。SMS・音声認証をユーザーが引き続き使えるよう、その日までにCYOTを設定してください。\nMicrosoftは、SMSや音声の代わりにパスキーなどのフィッシング耐性のある認証方式を推奨します。電話ベースの認証は、業務、規制、技術上の必要があるユーザーにのみ使用してください。\n[必要な対応]\nCYOTを使用する予定の場合:\n• SMSまたは音声が必要なユーザーを特定します。フィッシング耐性のある方式では満たせない要件を持つユーザーを確認します。\n• 事業者を選びます。対応する通信事業者を、カバレッジ、チャネル、価格、サポート、コンプライアンスで比較します。\n• 購入要件を確認します。Security Storeでの購入に対応する有料Azureサブスクリプションと、Owner、またはContributorとRole Based Access Control Administratorのロールがあることを確認します。\n• コストを見積もります。事業者の価格とAzureホスティング費用を確認します。\n• 設定と展開。SMSと音声の設定手順に従います。評価モードで開始し、事業者へのトラフィックを段階的に増やします。\n• 2027年2月1日までに移行を完了します。Microsoft提供のSMS・音声認証の廃止に関するガイダンスを確認してください。\n詳細\n• SMS・音声認証用に独自の通信事業者を選択する\n• 独自の通信事業者でSMSと音声を設定する\n• SMSと音声のトラブルシューティング\n• 通信詐欺からの保護\n• 回復性と高可用性の計画\n• よくある質問\n• パスキーの既定化とMicrosoft提供のSMS・音声認証の廃止",
+      "sourceCharacterCount": 2133,
+      "sourceTruncated": false,
+      "sourceHash": "a7fce04e06c3cb73d8523cfa0ef0c96237b688c7abcd4977154135e90b26197c",
+      "validatedAt": "2026-11-02T06:30:35.1969213+00:00"
+    },
+    {
       "id": "MC1520901",
       "japaneseTitle": "Insights Agent V2がFrontierで利用可能、フィードバック共有は既定オフ",
       "japaneseFacts": {
@@ -1853,6 +1869,22 @@
       "sourceTruncated": false,
       "sourceHash": "11642f983d51ee0758b0eee3e2f39c2833f29f3e03d79ec4cb30d1f31f0c08bd",
       "validatedAt": "2026-10-26T15:22:11.0242614+00:00"
+    },
+    {
+      "id": "MC1521604",
+      "japaneseTitle": "Authenticator:iOS/Androidの使い勝手改善を11月に展開",
+      "japaneseFacts": {
+        "change": "Microsoft AuthenticatorのiOS/Androidで、ホーム画面刷新、復元案内の改善、評価プロンプト、バッテリー最適化除外の案内などが追加されます。",
+        "impact": "iOSおよびAndroid版Microsoft Authenticatorのユーザーが対象です。",
+        "timing": "全クラウドで2026年11月上旬に開始し11月下旬に完了予定です。Androidの復元改善は2027年1月予定です。",
+        "action": "管理者対応の記載は提供された本文にありません(原文に記載なし)。"
+      },
+      "japaneseDetailedSummary": "Microsoft AuthenticatorのiOSとAndroid向けに複数の使い勝手改善が提供されます。ホーム画面の刷新、復元が必要なアカウントを知らせるバナー、初回起動時の復元ガイダンスの改善、プッシュ通知とパスワードレスサインインの復元フロー改善が含まれます。iOSのみサインイン時のアプリ評価プロンプト、Androidのみ認証後にバッテリー最適化から除外する案内が表示される場合があります。一般提供はWorldwide、GCC、GCC High、DoDで2026年11月上旬開始(従来は10月)、11月下旬完了予定です。復元改善はiOSが先行し、Androidは2027年1月予定です。提供された本文は途中で切れており、管理者の必須対応は記載がありません。",
+      "japaneseBodyTranslation": "2026年10月29日更新:タイムラインを更新しました。\n[内容と理由]\nMicrosoft AuthenticatorをiOSとAndroidで複数の使い勝手の面から更新します。刷新されたホーム体験、復元が必要なアカウントに関するより明確な案内、復元とサインインフローの改善、Authenticatorが確実に動作し続けるための追加プロンプトが含まれます。提供状況とタイミングはプラットフォームごとに異なります。\n[ロールアウトスケジュール]\n• 一般提供(Worldwide、GCC、GCC High、DoD):2026年11月上旬に開始(従来は10月)、2026年11月下旬に完了予定。\n• プッシュ通知とパスワードレスサインインの復元体験の改善は、まずiOSで提供され、Androidは2027年1月を予定しています。\n[組織への影響]\n影響を受ける対象\n• iOSおよびAndroidのMicrosoft Authenticatorユーザー\nプラットフォームとサービス\n• iOSおよびAndroid向けMicrosoft Authenticator\n実施される内容\n• 改善されたAuthenticatorホーム体験(iOS、Android):ユーザーがアカウントを表示・管理する際の体験を改善するため、ホームページを更新します。Androidでは2026年11月に提供されます。\n• 未復元アカウントのより明確な通知(iOS、Android):まだ復元されていないアカウントがあるユーザーには、対応が必要であることを知らせるバナーが表示されます。\n• アカウント復元の初回ガイダンスの改善(iOS、Android):復元が必要なアカウントがより明確に表示され、Authenticatorのセットアップ時に追加の情報が得られます。\n• サインイン中のアプリ評価プロンプト(iOSのみ):サインイン体験の一部として、Microsoft Authenticatorを評価するオプションが表示される場合があります。\n• プッシュ通知とパスワードレスサインインの復元体験の改善:これらを使うユーザーの復元フローを改善します。iOSで先に提供され、Androidは2027年1月を予定しています。\n• バッテリー最適化から除外するプロンプト(Androidのみ):対話型認証の完了後、Authenticatorをバッテリー最適化から除外するよう促すブロックしない表示が出る場合があります。除外すると、サインイン状態の維持や仕事・学校の通知の受信に役立ちます。",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "cebb2c10a138e900719826877439de022d7a43865c8e68d7debe86396270bf38",
+      "validatedAt": "2026-11-02T06:30:35.2032464+00:00"
     },
     {
       "id": "MC1521616",
@@ -1999,6 +2031,22 @@
       "validatedAt": "2026-10-29T06:04:39.8688075+00:00"
     },
     {
+      "id": "MC1530611",
+      "japaneseTitle": "Copilotアプリ内でWord・Excel・PowerPointを作成・編集可能に",
+      "japaneseFacts": {
+        "change": "Microsoft Copilotアプリ内で、Word、Excel、PowerPointファイルの作成、編集、共同作業ができるようになります。",
+        "impact": "Copilotを利用するユーザーが対象で、Copilotが文書内容を読み取り編集する機能が拡張されます。",
+        "timing": "Worldwideで2026年11月中旬に展開を開始し、同じく11月中旬に完了予定です。",
+        "action": "管理者の対応は不要です。ユーザーへの周知と既存のMicrosoft 365 Copilot設定・ポリシーの確認が推奨されます。"
+      },
+      "japaneseDetailedSummary": "Microsoft Copilotアプリ内でOfficeの機能が利用可能になり、Word、Excel、PowerPointファイルをアプリを離れずに作成、確認、編集、共同作業できます。コンテキストの切り替えが減り、アイデアや会話から共有可能なOffice成果物へ移行しやすくなります。一般提供はWorldwideで2026年11月中旬に開始し、同月中旬に完了予定です。管理者の対応は不要ですが、ユーザーへの周知と既存のMicrosoft 365 Copilot設定・ポリシーの確認が推奨されています。コンプライアンス面では、Office文書内容へのアクセスと編集がCopilot経由で可能になり、変更は通常のOfficeアプリに同期されます。Copilotが文書内容を読み取り編集する機能が拡張され、管理は既存のCopilot設定とEntra IDグループ割り当てで行えます。",
+      "japaneseBodyTranslation": "[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの全機能を利用できるようになり、アプリを離れずにWord、Excel、PowerPointファイルを作成、編集、共同作業できます。\n[ロールアウトスケジュール]\n一般提供(Worldwide):2026年11月中旬に展開を開始し、2026年11月中旬に完了予定です。\n[組織への影響]\nCopilotに組み込まれたOfficeの価値により、Word、Excel、PowerPointがCopilot体験に直接取り込まれ、ユーザーは作業の流れを離れずにOfficeファイルを作成、レビュー、編集、共同作業できます。これによりコンテキストの切り替えが減り、アイデアや会話から共有可能な完成したOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、新しい体験についてユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認するとよいでしょう。\n[コンプライアンス上の考慮事項]\n質問と回答\nこの変更は既存の顧客データの処理、保存、アクセス方法を変えますか?はい。ユーザーはCopilot体験を通じてOfficeファイルの内容にアクセスして編集でき、変更は通常のOfficeアプリに同期されます。\nこの変更は、顧客データにアクセスする、またはアクセスを提供するAI/MLやエージェント機能を導入または大きく変更しますか?はい。この機能の一部として、CopilotはOfficeドキュメントの内容を読み取り編集する機能が拡張されます。\nこの変更により、エンドユーザーに生成AIとの新しい対話方法が提供されますか?はい。ユーザーはCopilotアプリ内でWord、Excel、PowerPointのコンテンツを直接作成、編集できます。\nこの変更には管理コントロールがあり、Entra IDグループメンバーシップで制御できますか?はい。この機能は既存のMicrosoft 365 Copilotの構成とポリシーの対象で、管理者はEntra IDのグループベースの割り当てで管理できます。",
+      "sourceCharacterCount": 1859,
+      "sourceTruncated": false,
+      "sourceHash": "4ef0f135021e8616abfbd2e0266768d563db68b6c5d1c71aa600214734cbf983",
+      "validatedAt": "2026-11-02T06:30:35.2075713+00:00"
+    },
+    {
       "id": "MC985483",
       "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
       "japaneseFacts": {
@@ -2015,52 +2063,36 @@
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     },
     {
-      "id": "MC1521604",
-      "japaneseTitle": "Authenticator:iOS/Androidの使い勝手改善を11月に展開",
+      "id": "MC1518029",
+      "japaneseTitle": "Entra IDのSMS/音声認証にリスクベースのCAPTCHAを追加",
       "japaneseFacts": {
-        "change": "Microsoft AuthenticatorのiOS/Androidで、ホーム画面刷新、復元案内の改善、評価プロンプト、バッテリー最適化除外の案内などが追加されます。",
-        "impact": "iOSおよびAndroid版Microsoft Authenticatorのユーザーが対象です。",
-        "timing": "全クラウドで2026年11月上旬に開始し11月下旬に完了予定です。Androidの復元改善は2027年1月予定です。",
-        "action": "管理者対応の記載は提供された本文にありません(原文に記載なし)。"
+        "change": "SMS・音声認証の不正な自動利用を抑えるため、コード送信前にリスクベースのボット対策検証(CAPTCHA)が表示される場合があります。",
+        "impact": "SMSまたは音声を第一要素のサインインに使う一部のユーザーが対象で、クライアントの挙動で判断されます。制限的なネットワークやファイアウォールでは検証が読み込めず完了できない可能性があります。",
+        "timing": "2026年10月中旬に展開が始まり、現在も継続中です。",
+        "action": "ヘルプデスクとユーザー向け案内を準備し、ドキュメントでエンドポイント許可要件を確認し、パスキー等への移行を継続してください。"
       },
-      "japaneseDetailedSummary": "Microsoft AuthenticatorのiOSとAndroid向けに複数の使い勝手改善が提供されます。ホーム画面の刷新、復元が必要なアカウントを知らせるバナー、初回起動時の復元ガイダンスの改善、プッシュ通知とパスワードレスサインインの復元フロー改善が含まれます。iOSのみサインイン時のアプリ評価プロンプト、Androidのみ認証後にバッテリー最適化から除外する案内が表示される場合があります。一般提供はWorldwide、GCC、GCC High、DoDで2026年11月上旬開始(従来は10月)、11月下旬完了予定です。復元改善はiOSが先行し、Androidは2027年1月予定です。提供された本文は途中で切れており、管理者の必須対応は記載がありません。",
-      "japaneseBodyTranslation": "2026年10月29日更新:タイムラインを更新しました。\n[内容と理由]\nMicrosoft AuthenticatorをiOSとAndroidで複数の使い勝手の面から更新します。刷新されたホーム体験、復元が必要なアカウントに関するより明確な案内、復元とサインインフローの改善、Authenticatorが確実に動作し続けるための追加プロンプトが含まれます。提供状況とタイミングはプラットフォームごとに異なります。\n[ロールアウトスケジュール]\n• 一般提供(Worldwide、GCC、GCC High、DoD):2026年11月上旬に開始(従来は10月)、2026年11月下旬に完了予定。\n• プッシュ通知とパスワードレスサインインの復元体験の改善は、まずiOSで提供され、Androidは2027年1月を予定しています。\n[組織への影響]\n影響を受ける対象\n• iOSおよびAndroidのMicrosoft Authenticatorユーザー\nプラットフォームとサービス\n• iOSおよびAndroid向けMicrosoft Authenticator\n実施される内容\n• 改善されたAuthenticatorホーム体験(iOS、Android):ユーザーがアカウントを表示・管理する際の体験を改善するため、ホームページを更新します。Androidでは2026年11月に提供されます。\n• 未復元アカウントのより明確な通知(iOS、Android):まだ復元されていないアカウントがあるユーザーには、対応が必要であることを知らせるバナーが表示されます。\n• アカウント復元の初回ガイダンスの改善(iOS、Android):復元が必要なアカウントがより明確に表示され、Authenticatorのセットアップ時に追加の情報が得られます。\n• サインイン中のアプリ評価プロンプト(iOSのみ):サインイン体験の一部として、Microsoft Authenticatorを評価するオプションが表示される場合があります。\n• プッシュ通知とパスワードレスサインインの復元体験の改善:これらを使うユーザーの復元フローを改善します。iOSで先に提供され、Androidは2027年1月を予定しています。\n• バッテリー最適化から除外するプロンプト(Androidのみ):対話型認証の完了後、Authenticatorをバッテリー最適化から除外するよう促すブロックしない表示が出る場合があります。除外すると、サインイン状態の維持や仕事・学校の通知の受信に役立ちます。",
+      "japaneseDetailedSummary": "Microsoft Entra IDは、テレフォニーベース認証の自動化された悪用を減らすための保護策を追加します。SMSおよび音声認証オプションが削除されるわけではありませんが、第一要素のサインインでSMSまたは音声を使う一部のユーザーは、コード送信前にリスクベースのCAPTCHAを求められる場合があります。表示はクライアントの挙動に基づくため、全ユーザー・全サインインに表示されるわけではありません。制限的なネットワーク設定やファイアウォールにより検証画面が読み込めない場合、必要なエンドポイントが許可されるまでサインインを完了できない可能性があります。展開は2026年10月中旬に始まり継続中です。推奨対応は、ヘルプデスクとユーザー向け連絡の準備、リンク先ドキュメントのネットワーク準備ガイダンス(許可エンドポイント等)の確認、パスキーなど耐フィッシング性のある認証方式への移行継続です。コンプライアンス上の考慮事項は特定されていません。",
+      "japaneseBodyTranslation": "2026年10月26日更新:タイムラインを更新しました。ご理解ありがとうございます。\n[概要と背景]\nMicrosoft Entra IDは、テレフォニーベース認証の自動化された悪用を減らすための保護策を追加します。SMSおよび音声認証オプションは削除されません。第一要素のサインインでSMSまたは音声を使う一部のユーザーは、コードが送信される前にリスクベースのボット対策検証(CAPTCHA)を完了するよう求められる場合があります。\n[展開スケジュール]\n• 展開は2026年10月中旬に開始され、現在も進行中です。\n• ユーザーは、第一要素のテレフォニーベース認証でボット対策検証の手順が表示される場合があります。\n[組織への影響]\n影響を受けるユーザー\n• SMSまたは音声を第一要素のサインイン方法として使う一部のユーザー\n対象のプラットフォームとサービス\n• 第一要素サインインでSMSまたは音声を使用するMicrosoft Entra IDのテレフォニーベース認証\n何が起こるか\n• 一部のユーザーには、Microsoftがテレフォニーコードを送信する前に、追加のリスクベースのボット対策検証(CAPTCHA)手順が表示される場合があります。\n• この体験はクライアントの挙動に基づいて決定されるため、すべてのユーザーやサインイン試行が影響を受けるわけではありません。\n• 制限的なネットワークまたはファイアウォール設定により検証体験が読み込まれない場合、必要なエンドポイントが許可されるまで、影響を受けるユーザーはフローを完了できない可能性があります。エンドポイントのガイダンスは下記のリンク先ドキュメントに記載されています。\n[必要なアクションと推奨事項]\n• コード送信前にボット対策検証手順が表示される可能性に備えて、ヘルプデスクとユーザー向けコミュニケーションを準備してください。\n• 承認済みエンドポイントや許可リスト要件を含むネットワーク準備のガイダンスについて、リンク先ドキュメントを確認してください。\n• 可能な限り、パスキーなどの耐フィッシング性のある認証方法へのユーザーの移行を継続してください。\n詳細情報\n• Understanding telephony fraud risk for Microsoft Entra multifactor authentication - Microsoft Entra ID | Microsoft Learn\n• Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in - Microsoft Entra ID | Microsoft Learn\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 2218,
+      "sourceTruncated": false,
+      "sourceHash": "77c45399401cac70cfff4175ead7e5bee368a6324863d02b2194d9b50d4848ab",
+      "validatedAt": "2026-11-02T16:28:18.3689422+00:00"
+    },
+    {
+      "id": "MC1530595",
+      "japaneseTitle": "Microsoft Copilotのサムズダウン フィードバック画面を刷新",
+      "japaneseFacts": {
+        "change": "Copilotのサムズダウン選択時に、複数のカテゴリ選択と任意コメントを入力できる新しいフィードバック画面になります。",
+        "impact": "既存ポリシー「Allow users to submit feedback to Microsoft」でフィードバック送信が許可されているユーザーに表示されます。モバイル、GCC、GCC High、DoD等は現時点で対象外です。",
+        "timing": "全世界で2026年10月下旬に展開開始、同月下旬に完了予定です。段階展開中は従来画面のユーザーも残ります。",
+        "action": "管理者の対応は不要です。送信時に選択カテゴリ、コメント、任意のスクリーンショットが新たに保存されます。"
+      },
+      "japaneseDetailedSummary": "Microsoft Copilotのサムズダウン(低評価)フィードバックが、より具体的で有用な情報を得られるよう刷新されます。ユーザーは1つ以上のカテゴリを選択し、任意で自由記述コメントを追加でき、カテゴリ別に適切なチームへ振り分け可能になります。対象はEntra IDの組織アカウント、個人のMicrosoftアカウント、教育機関テナントのユーザーで、Copilot、Edge、Outlook、TeamsのWeb、Windows、macOSが対象です。モバイル、GCC、GCC High、DoD、その他ソブリンクラウドは現時点で計画外で、WXPN/Catalystも含まれません。サムズアップは変更なし、既存の「Allow users to submit feedback to Microsoft」ポリシーのみが対象です。展開は2026年10月下旬の全世界GAで、管理者の対応は不要です。送信時にカテゴリ、コメント、任意のスクリーンショットが新規データとして保存されます。",
+      "japaneseBodyTranslation": "[概要と背景]\nMicrosoft Copilotのサムズダウンのフィードバック体験を更新し、ユーザーが具体的で実用的なフィードバックを提供しやすくします。現在、多くのサムズダウンはコメントなしで送信され、感情は分かるものの問題に関する情報が限られています。サムズダウンを選択すると、1つ以上のフィードバックカテゴリを選択し、任意で追加コメントを入力できるようになり、カテゴリ付きの各応答は適切なチームや問題の種類へ振り分けるシグナルとなります。\n[展開スケジュール]\n一般提供(全世界):2026年10月下旬に展開を開始し、2026年10月下旬に完了する予定です。\n[組織への影響]\n対応するMicrosoft Copilot体験でフィードバックを送信できるユーザーに、更新されたサムズダウンのフィードバックフォームが表示される場合があります。対象はMicrosoft Entra IDの組織アカウントでサインインしたユーザー、個人のMicrosoftアカウントのユーザー、教育機関テナントのユーザーです。この機能は現時点でモバイル、GCC、GCC High、DoD、その他のソブリンクラウド環境には計画されていません。\n更新されたフィードバック体験は、Microsoft Copilot、Microsoft EdgeのCopilot、Microsoft OutlookのCopilot、Microsoft TeamsのCopilotで、Webブラウザー、Windows、macOS上で計画されています。WXPN/Catalystの体験は現時点で含まれません。\nユーザーがCopilotの応答でサムズダウンを選択すると、問題を説明する選択可能なカテゴリが表示される場合があり、複数選択でき、任意で自由記述欄に追加のフィードバックを入力できます。サムズアップの体験は変更されません。この更新は既存の「Allow users to submit feedback to Microsoft」管理ポリシーにのみ適用され、その他のフィードバックポリシーの体験は変わりません。段階的な展開中は、一部のユーザーには従来のフィードバック体験が引き続き表示されます。\n[必要なアクション/推奨事項]\nこの変更に管理者の対応は不要です。既存ポリシーでフィードバック送信が許可されているユーザーに表示されます。\n[コンプライアンス上の考慮事項]\nこの変更で新しい顧客データは保存されますか?はい。ユーザーがサムズダウンのフィードバックを送信する際、選択したカテゴリ、任意の自由記述コメント、任意のスクリーンショットが送信の一部として新たに取得されます。\n管理コントロールはありますか、Entra IDのグループメンバーシップで制御できますか?はい。このUX変更は既存の「Allow users to submit feedback to Microso(原文はここで途切れています)",
       "sourceCharacterCount": 2500,
       "sourceTruncated": true,
-      "sourceHash": "cebb2c10a138e900719826877439de022d7a43865c8e68d7debe86396270bf38",
-      "validatedAt": "2026-11-02T06:30:35.2032464+00:00"
-    },
-    {
-      "id": "MC1519855",
-      "japaneseTitle": "Entra:独自の通信事業者を選べるCYOTが一般提供開始",
-      "japaneseFacts": {
-        "change": "Microsoft Entra IDでChoose Your Own Telephony Provider(CYOT)が一般提供となり、SMS・音声認証を任意の対応通信事業者経由で提供できます。",
-        "impact": "SMSや音声認証を必要とするユーザーがいる組織が対象です。Microsoft提供のSMS・音声認証は廃止が始まります。",
-        "timing": "Microsoft提供のSMS・音声認証は2027年2月1日に廃止が始まります。",
-        "action": "CYOTを使う場合、対象ユーザーの特定、事業者選定、購入要件と費用の確認、段階的な展開を2027年2月1日前に完了します。"
-      },
-      "japaneseDetailedSummary": "Microsoft Entra IDのChoose Your Own Telephony Provider(CYOT)が一般提供になりました。組織はSecurity Storeで通信事業者のサービスを購入し、SMS・音声認証をその事業者経由で提供できます。商取引上の関係は事業者と直接管理します。Microsoft提供のSMS・音声認証は2027年2月1日に廃止が始まるため、利用継続が必要なユーザーがいる場合はそれまでにCYOTを設定する必要があります。MicrosoftはパスキーなどのフィッシングWに強い方式を推奨しており、電話ベースの認証は業務上・規制上・技術上の必要があるユーザーに限定することを勧めています。準備として、対象ユーザーの特定、事業者比較、Azureサブスクリプションと権限の確認、コスト見積り、評価モードから段階的に展開することが示されています。",
-      "japaneseBodyTranslation": "2026年10月30日更新:機能が一般提供になったため、追加情報とともに投稿を更新しました。\n[内容と理由]\nChoose Your Own Telephony Provider(CYOT)がMicrosoft Entra IDで一般提供になりました。CYOTにより、組織は任意の対応通信事業者を通じてSMSおよび音声認証を提供できます。事業者のオファーはMicrosoft Security Storeで購入し、商取引上の関係は事業者と直接管理します。\nMicrosoft提供のSMS・音声認証は2027年2月1日に廃止が始まります。SMS・音声認証をユーザーが引き続き使えるよう、その日までにCYOTを設定してください。\nMicrosoftは、SMSや音声の代わりにパスキーなどのフィッシング耐性のある認証方式を推奨します。電話ベースの認証は、業務、規制、技術上の必要があるユーザーにのみ使用してください。\n[必要な対応]\nCYOTを使用する予定の場合:\n• SMSまたは音声が必要なユーザーを特定します。フィッシング耐性のある方式では満たせない要件を持つユーザーを確認します。\n• 事業者を選びます。対応する通信事業者を、カバレッジ、チャネル、価格、サポート、コンプライアンスで比較します。\n• 購入要件を確認します。Security Storeでの購入に対応する有料Azureサブスクリプションと、Owner、またはContributorとRole Based Access Control Administratorのロールがあることを確認します。\n• コストを見積もります。事業者の価格とAzureホスティング費用を確認します。\n• 設定と展開。SMSと音声の設定手順に従います。評価モードで開始し、事業者へのトラフィックを段階的に増やします。\n• 2027年2月1日までに移行を完了します。Microsoft提供のSMS・音声認証の廃止に関するガイダンスを確認してください。\n詳細\n• SMS・音声認証用に独自の通信事業者を選択する\n• 独自の通信事業者でSMSと音声を設定する\n• SMSと音声のトラブルシューティング\n• 通信詐欺からの保護\n• 回復性と高可用性の計画\n• よくある質問\n• パスキーの既定化とMicrosoft提供のSMS・音声認証の廃止",
-      "sourceCharacterCount": 2133,
-      "sourceTruncated": false,
-      "sourceHash": "a7fce04e06c3cb73d8523cfa0ef0c96237b688c7abcd4977154135e90b26197c",
-      "validatedAt": "2026-11-02T06:30:35.1969213+00:00"
-    },
-    {
-      "id": "MC1530611",
-      "japaneseTitle": "Copilotアプリ内でWord・Excel・PowerPointを作成・編集可能に",
-      "japaneseFacts": {
-        "change": "Microsoft Copilotアプリ内で、Word、Excel、PowerPointファイルの作成、編集、共同作業ができるようになります。",
-        "impact": "Copilotを利用するユーザーが対象で、Copilotが文書内容を読み取り編集する機能が拡張されます。",
-        "timing": "Worldwideで2026年11月中旬に展開を開始し、同じく11月中旬に完了予定です。",
-        "action": "管理者の対応は不要です。ユーザーへの周知と既存のMicrosoft 365 Copilot設定・ポリシーの確認が推奨されます。"
-      },
-      "japaneseDetailedSummary": "Microsoft Copilotアプリ内でOfficeの機能が利用可能になり、Word、Excel、PowerPointファイルをアプリを離れずに作成、確認、編集、共同作業できます。コンテキストの切り替えが減り、アイデアや会話から共有可能なOffice成果物へ移行しやすくなります。一般提供はWorldwideで2026年11月中旬に開始し、同月中旬に完了予定です。管理者の対応は不要ですが、ユーザーへの周知と既存のMicrosoft 365 Copilot設定・ポリシーの確認が推奨されています。コンプライアンス面では、Office文書内容へのアクセスと編集がCopilot経由で可能になり、変更は通常のOfficeアプリに同期されます。Copilotが文書内容を読み取り編集する機能が拡張され、管理は既存のCopilot設定とEntra IDグループ割り当てで行えます。",
-      "japaneseBodyTranslation": "[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの全機能を利用できるようになり、アプリを離れずにWord、Excel、PowerPointファイルを作成、編集、共同作業できます。\n[ロールアウトスケジュール]\n一般提供(Worldwide):2026年11月中旬に展開を開始し、2026年11月中旬に完了予定です。\n[組織への影響]\nCopilotに組み込まれたOfficeの価値により、Word、Excel、PowerPointがCopilot体験に直接取り込まれ、ユーザーは作業の流れを離れずにOfficeファイルを作成、レビュー、編集、共同作業できます。これによりコンテキストの切り替えが減り、アイデアや会話から共有可能な完成したOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、新しい体験についてユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認するとよいでしょう。\n[コンプライアンス上の考慮事項]\n質問と回答\nこの変更は既存の顧客データの処理、保存、アクセス方法を変えますか?はい。ユーザーはCopilot体験を通じてOfficeファイルの内容にアクセスして編集でき、変更は通常のOfficeアプリに同期されます。\nこの変更は、顧客データにアクセスする、またはアクセスを提供するAI/MLやエージェント機能を導入または大きく変更しますか?はい。この機能の一部として、CopilotはOfficeドキュメントの内容を読み取り編集する機能が拡張されます。\nこの変更により、エンドユーザーに生成AIとの新しい対話方法が提供されますか?はい。ユーザーはCopilotアプリ内でWord、Excel、PowerPointのコンテンツを直接作成、編集できます。\nこの変更には管理コントロールがあり、Entra IDグループメンバーシップで制御できますか?はい。この機能は既存のMicrosoft 365 Copilotの構成とポリシーの対象で、管理者はEntra IDのグループベースの割り当てで管理できます。",
-      "sourceCharacterCount": 1859,
-      "sourceTruncated": false,
-      "sourceHash": "4ef0f135021e8616abfbd2e0266768d563db68b6c5d1c71aa600214734cbf983",
-      "validatedAt": "2026-11-02T06:30:35.2075713+00:00"
+      "sourceHash": "8f7b6031acda625b6796e9d4ee328c6150dd2a97219d897dd4969e2de84420de",
+      "validatedAt": "2026-11-02T16:28:18.3631836+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-11-02T01:38:50.4930758+00:00",
