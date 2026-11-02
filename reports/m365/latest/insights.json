@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T01:44:54.4972482+00:00",
+  "generatedAt": "2026-11-02T06:30:35.2174622+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証方式の移行(SMS/音声廃止・SSPR・パスキー)とカナダ時間帯変更への対応が今週の最優先",
   "executiveSummary": "今週は認証関連の変更が中心です。Microsoft提供のSMS・音声認証は2027年2月1日から廃止が始まり、CYOT(独自テレフォニープロバイダー)が一般提供となりました(MC1528000, MC1519855)。SSPRは登録済み認証方式のみを検証に使う方式へ移行し、2026年11月9日開始と案内されています(MC1325414)。パスキープロファイルは、未オプトインのテナントが自動移行される対象で、スケジュールが更新されました(MC1221452)。カナダの2026年タイムゾーン変更は11月1日に発効し、Outlook/Exchange Onlineの既存予定は自動移行されません(MC1526468, MC1510951)。Windows/Edge/WebView2では、eMudhra認証局キーの侵害に伴う信頼ブロックが10月下旬に展開されます(MC1529467)。Targeted releaseは2026年11月に登録変更ができなくなり、2027年1月に廃止されます(MC1490899)。抜粋に含まれない詳細な日付や要件は不明であり、断定していません。",
@@ -719,6 +719,22 @@
       "validatedAt": "2026-10-22T13:58:57.5595318+00:00"
     },
     {
+      "id": "MC1187682",
+      "japaneseTitle": "Edge側ペインのCopilotが複数タブとYouTubeの要約に対応",
+      "japaneseFacts": {
+        "change": "Edge for BusinessのサイドペインでMicrosoft 365 Copilot Chatが複数タブとYouTube動画に関する質問・要約に対応する。",
+        "impact": "Entra IDでEdge for Businessにサインインし、Microsoft 365 Copilotにアクセスできるユーザー。既定ではオフ。",
+        "timing": "複数タブとYouTube動画のGAは現在利用可能と記載。",
+        "action": "事前の管理者対応は不要。Copilot利用権限、ライセンス要件、DLPとEdgeポリシーの確認、ユーザーへの周知が推奨される。"
+      },
+      "japaneseDetailedSummary": "2026年10月30日に内容が更新された。Microsoft Edge for Businessで、Edgeのサイドペインから開いている複数のブラウザータブやYouTube動画についてMicrosoft 365 Copilot Chatに質問でき、要約や文脈に基づく回答が得られる。Roadmap IDは496364、499423、499424。対象はEntra IDでEdge for Businessにサインインし、Microsoft 365 Copilotにアクセスできるユーザー。機能は既定でオフで、DLPまたはEdgeEntraCopilotPageContextポリシーでCopilotのページ内容アクセスが制限されている場合は抑止され、既存のDLPとポリシー設定が尊重される。展開は自動で、事前の管理者対応は不要。ライセンス前提条件の確認、DLP/Edgeポリシーの影響確認、ユーザーへの周知、社内文書の更新が推奨される。生成AIがユーザーデータに関わる点でコンプライアンス上の考慮事項がある。抜粋は途中で切れている。",
+      "japaneseBodyTranslation": "2026年10月30日更新:内容を更新しました。\n[はじめに:]\nMicrosoft Edge for Businessは、まもなくMicrosoft 365 Copilot Chatによる要約と文脈に基づく回答(コンテキスト グラウンディング)に対応します。ユーザーはEdgeのサイドペインから、開いている複数のブラウザータブやYouTube動画についてCopilotに質問できます。\nこのメッセージはMicrosoft 365ロードマップID 496364、499423、499424に関連します。\n[いつ実施されるか:]\n• GA(複数のブラウザータブとYouTube動画):現在利用可能\n[組織への影響:]\n影響を受ける対象:Entra IDでMicrosoft Edge for Businessにサインインし、Microsoft 365 Copilotにアクセスできるユーザー。\n実施内容:\n• ユーザーは開いているブラウザータブやYouTube動画についてCopilotに質問できます。\n• この機能は既定でオフです。\n• DLPまたはEdgeEntraCopilotPageContextポリシーによりCopilotのページ内容アクセスが制限されている場合、DLPの整合性を保つため機能は抑止されます。\n• 既存のDLPとポリシー構成は尊重されます。\n[準備として可能なこと:]\n• 本ロールアウトは指定日までに自動で行われ、ロールアウト前の管理者対応は不要です。\n• この機能が必要なユーザーがMicrosoft 365 Copilotにアクセスできることを確認してください。\n• テナントがMicrosoft 365 Copilotをサポートするよう構成され、対象ユーザーがEntra IDサインインや該当するMicrosoft 365サービスプランを含むライセンス前提条件を満たすことを確認してください。\n• 現在のDLPとEdgeポリシー構成を確認し、影響の可能性を判断してください。\n• ユーザーに今後の機能を通知してください。\n• 必要に応じて社内文書を更新してください。\n詳細:\n• EdgeでのMicrosoft 365 Copilot Chatとページ内容へのアクセス | Microsoft Learn\n• Microsoft Edge ポリシー | Microsoft Learn\n[コンプライアンス上の考慮事項:]\n質問と回答\nこの変更は、顧客データにアクセスまたは提供するAI/MLやエージェント機能を新たに導入、または大きく変更しますか?はい。Microsoft 365 Copilotは生成AIを用いて、ブラウザータブとYouTube動画にまたがる文脈に基づく回答と要約を導入します。\nこの変更は、エンドユーザーに生成AIとの新しい対話方法を提供しますか?はい。ユーザーはEdgeのサイドペインから開いているブラウザータブやドキュメントについてCopilotに質問でき、リアルタイムの要約と文脈に基づく回答が得られます。\nこの変更はデータ損失防止(DLP)ポリシーを変更しますか?(以降は抜粋が途中で終了)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "599327cd5738bcafa214d839360b0d4f77057931cab45e3968d9a20aec357619",
+      "validatedAt": "2026-11-02T01:44:54.4906542+00:00"
+    },
+    {
       "id": "MC1188230",
       "japaneseTitle": "FIDO2ポリシーの重複プロパティ2件を2027年10月に廃止",
       "japaneseFacts": {
@@ -783,6 +799,22 @@
       "validatedAt": "2026-10-21T21:54:34.8571461+00:00"
     },
     {
+      "id": "MC1221452",
+      "japaneseTitle": "Entra IDのパスキープロファイルがGA、既存FIDO2テナントは自動移行",
+      "japaneseFacts": {
+        "change": "Entra IDでパスキープロファイルと同期パスキーがGAとなり、passkeyTypeプロパティで端末バインド/同期/両方を設定可能になる。",
+        "impact": "Passkeys (FIDO2) が有効な既存テナントのみ対象。オプトインしない場合、既存設定はDefaultプロファイルへ自動移行され、Microsoft管理の登録キャンペーンにも影響する。",
+        "timing": "2026年3月開始と記載。更新で日程が変更されたが、具体的な移行期間は抜粋に含まれず原文に記載なし。",
+        "action": "オプトインするか自動移行に備えて認証方法設定と登録キャンペーン設定を確認する。詳細な手順は原文に記載なし。"
+      },
+      "japaneseDetailedSummary": "2026年10月30日にタイムラインが更新された。Microsoft Entra IDでパスキープロファイルと同期パスキーが一般提供となり、グループベースのパスキー構成と新しいpasskeyTypeプロパティ(端末バインド、同期、両方)が使えるようになる。対象はPasskeys (FIDO2) が既に有効なテナントのみ。初期ロールアウト期間中にオプトインしない場合、指定期間に自動でパスキープロファイルのスキーマへ移行され、既存設定はDefaultプロファイルに移され、passkeyTypeは現在のアテステーション設定に基づき設定される(アテステーション強制が無効なら同期パスキーが有効化)。新しい認証方法は有効化されない。Microsoft管理の登録キャンペーンも、特定条件を満たすテナントで移行完了後に設定が更新される。具体的な日程は抜粋が途中で切れているため不明。",
+      "japaneseBodyTranslation": "2026年10月30日更新:タイムラインを更新しました。\n[はじめに]\n2026年3月から、Microsoft Entra IDはパスキープロファイルと同期パスキーを一般提供(GA)します。管理者は、グループベースのパスキー構成をサポートし、新しいpasskeyTypeプロパティを導入する新しいパスキープロファイル体験にオプトインできます。\n重要:既にPasskeys (FIDO2) が有効なテナントのみが影響を受けます。\npasskeyTypeプロパティにより、次を構成できます:\n• 端末バインドパスキー\n• 同期パスキー\n• 両方\nテナントでPasskeys (FIDO2) が有効で、初期ロールアウト期間中にパスキープロファイルへオプトインしない場合、下記の日付範囲でパスキープロファイルのスキーマへ自動移行されます。その場合:\n• 既存のPasskey (FIDO2) 認証方法の構成はDefaultパスキープロファイルに移動されます。\n• passkeyTypeの値はテナントの現在のアテステーション設定に基づき設定されます。アテステーション強制が無効なテナントでは同期パスキーが有効になります。\n• 移行により新しい認証方法が有効化されることはありません。\n• この移行は、「Microsoft管理」状態の認証方法登録キャンペーンにも影響します。これはパスキー構成設定を用いてユーザーに表示する登録プロンプトを決定します。\n認証方法登録キャンペーンの変更(Microsoft管理のみ)\n次の条件をすべて満たすテナントが影響を受けます:\n• Passkeys (FIDO2) 認証方法ポリシーが有効\n• 認証方法登録キャンペーンが「Microsoft管理」状態\n• セルフサービス設定を許可が有効\n• 特定のAAGUIDを対象にするが未選択(AAGUID制限なし)\n• テナントに、同期パスキーと端末バインドパスキーの両方が有効なユーザーが少なくとも1人いる\n• 両方が有効で、パスキープロファイル制限(アテステーション強制、AAGUID制限)がないユーザーのみが、サインイン時にパスキー登録の案内を受けます。\nこれらのテナントでは、パスキープロファイルの自動移行完了後にMicrosoft管理の登録キャンペーン設定が更新されます。下記のタイムラインに従い、対象テナントへ段階的に展開します。\n[いつ実施されるか(以降は抜粋が途中で終了)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "20cb08367a23641fb1fafdcc36ffc9633817cdbec8d334f5398aaacf23e628c3",
+      "validatedAt": "2026-11-02T01:44:54.4841501+00:00"
+    },
+    {
       "id": "MC1225192",
       "japaneseTitle": "Entraゲスト ガバナンス継続にAzureサブスクリプション必須",
       "japaneseFacts": {
@@ -813,6 +845,22 @@
       "sourceTruncated": false,
       "sourceHash": "f158ecdd3d8c598ef9d8bc121a2e42b84fc715afe2d70c781d24689ac2d9a511",
       "validatedAt": "2026-10-21T21:54:34.8504664+00:00"
+    },
+    {
+      "id": "MC1282568",
+      "japaneseTitle": "WindowsのEntraパスキーがGA、AAGUID許可リスト不要に",
+      "japaneseFacts": {
+        "change": "WindowsでのMicrosoft EntraパスキーがGAとなり、Windows HelloのAAGUID許可リストへの明示的オプトインが不要になる。",
+        "impact": "パスキーを有効化済みで、Windowsから接続する組織が対象。端末バインド・非アテステーションを許可するプロファイルのユーザーは既定で登録・利用可能になる。",
+        "timing": "Worldwide/GCCは2026年4月下旬〜6月中旬。GCC High/DoDは2027年2月上旬〜下旬(従来は2026年10月)。Airgapは2027年5月。",
+        "action": "管理者の必須対応は抜粋に明記なし。パスキープロファイルとConditional Accessの設定確認が有用だが、詳細は原文に記載なし。"
+      },
+      "japaneseDetailedSummary": "2026年10月30日にタイムラインが更新された。WindowsでのMicrosoft Entraパスキーが一般提供となり、Windows Hello(顔、指紋、PIN)で保護された端末バインドパスキーにより、フィッシング耐性のあるパスワードレスサインインが可能になる。Entra参加/登録されていないWindows端末にも対応する。パブリックプレビュー(MC1247893)ではWindows HelloのAAGUIDをパスキープロファイルで明示的に許可する必要があったが、GAでは不要となる。端末バインドで非アテステーションのパスキーを許可するプロファイルのユーザーは、追加設定なしでWindows上でパスキーを登録・利用できるようになり、Conditional Accessが許可すれば個人・共有PCでも作成・利用できる。展開はWorldwide/GCCが2026年4月下旬〜6月中旬、GCC High/DoDが2027年2月上旬〜下旬、Airgapが2027年5月。抜粋は途中で切れている。",
+      "japaneseBodyTranslation": "2026年10月30日更新:タイムラインを更新しました。\n[はじめに]\nWindowsでのMicrosoft Entraパスキーがまもなく一般提供(GA)となり、Windows端末からMicrosoft Entraで保護されたリソースへ、フィッシング耐性のあるパスワードレスサインインが可能になります。\nこの機能のパブリックプレビューは以前MC1247893で案内されました。\nユーザーはWindows Helloコンテナーに保存される端末バインドパスキーを作成し、Windows Hello(顔、指紋、PIN)で認証できます。これによりEntra参加・登録されていないWindows端末にもパスワードレス認証が拡大し、企業管理、個人、共有デバイスの各シナリオでセキュリティ強化とパスワード依存の低減に役立ちます。\n[いつ実施されるか:]\n• GA(Worldwide、GCC):2026年4月下旬に展開開始、2026年6月中旬に完了予定。\n• GA(GCC High、DoD):2027年2月上旬に開始(以前は2026年10月上旬)、2027年2月下旬に完了予定(以前は2026年10月下旬)。\n• Airgap:2027年5月上旬に開始、2027年5月下旬に完了予定。\n組織への影響:\n影響を受ける対象:\n認証方法ポリシーでパスキーを有効にしたMicrosoft Entra IDを使用し、Windows端末からサインインするユーザーがいる組織(企業管理PC、個人デバイス、共有デバイス)。\n実施内容:\nこのGAリリースにより:\n• WindowsでのMicrosoft Entraパスキーは、パスキー(FIDO2)プロファイルでのWindows Hello AAGUID許可リストによる明示的オプトインが不要になります。\n• これはパブリックプレビューの動作からの変更で、プレビューでは管理者がWindows Hello AAGUIDをパスキープロファイルで明示的に許可する必要がありました。\n• パスキープロファイルが端末バインドで非アテステーションのパスキーを許可する場合:対象ユーザーは管理者の追加設定なしに、既定でWindows上のMicrosoft Entraパスキーを登録・利用できます。\n• その結果、そのようなプロファイルの対象ユーザーはWindows端末でパスキーの登録・利用を開始する可能性があります。\n• Conditional Accessが許可する場合:Entra参加・登録されていない個人PCや共有PCを含むWindows端末でパスキーを作成・利用できます。\n• 各Windows端末には別途(以降は抜粋が途中で終了)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "9ccc76c030dc0419d5b91c44aaf61ce2a024b6d334ecfb76afd55ec99ec1135a",
+      "validatedAt": "2026-11-02T01:44:54.4883406+00:00"
     },
     {
       "id": "MC1282571",
@@ -1791,22 +1839,6 @@
       "validatedAt": "2026-10-22T18:43:11.1929533+00:00"
     },
     {
-      "id": "MC1519855",
-      "japaneseTitle": "Entra で SMS/音声認証の通信事業者を選択可能に(CYOT)",
-      "japaneseFacts": {
-        "change": "Entra ID の Choose Your Own Telephony Provider (CYOT) が一般提供され、SMS・音声認証に対応サードパーティ事業者を選べます。",
-        "impact": "業務・規制・技術上の理由で SMS や音声認証が必要なユーザーを持つ組織が対象です。",
-        "timing": "2026年10月30日から世界規模で GA、Microsoft 提供の SMS/音声認証は 2027年2月1日(Global Administrator と外部ユーザーは 2027年7月1日)に廃止予定です。",
-        "action": "CYOT 採用時は対象ユーザーの特定、フィッシング耐性のある代替手段の評価、対応プロバイダーの比較を行います。以降の推奨事項は原文に記載なし(切り詰め)。"
-      },
-      "japaneseDetailedSummary": "2026年10月30日から、Microsoft Entra ID で Choose Your Own Telephony Provider (CYOT) が一般提供(世界規模)されます。組織は Microsoft Security Store を通じて対応するサードパーティ通信事業者を選び、SMS・音声認証に利用でき、事業者との商契約は組織が直接管理します。Microsoft はパスキーなどフィッシング耐性のある方式を推奨しており、通信事業者の利用は業務・規制・技術上の要件があるユーザーに限るべきとしています。Microsoft 提供の SMS・音声認証は 2027年2月1日に廃止予定(Global Administrator と外部ユーザーは 2027年7月1日、内部ゲストは 2月1日)です。廃止後、SMS や音声のみが MFA 方式のユーザーは、対応プロバイダー未設定の場合サインイン時にパスキー登録が必須となります。原文は途中で切れています。",
-      "japaneseBodyTranslation": "[内容と理由]\n2026年10月30日から、Microsoft Entra ID は Choose Your Own Telephony Provider (CYOT) を一般提供します。CYOT により、組織は SMS および音声認証にサポート対象のサードパーティ通信事業者を利用できます。組織は Microsoft Security Store からサポート対象のプロバイダーを選択し、プロバイダーとの商契約を直接管理します。\nMicrosoft は SMS や音声認証ではなく、パスキーなどのフィッシング耐性のある認証方式を推奨しています。通信事業者は、業務上、規制上、または技術上、電話ベースの認証が必要なユーザー層にのみ利用してください。\n[展開スケジュール]\n• 一般提供(全世界):2026年10月30日開始\n[組織への影響]\n対象\n• 業務、規制、技術上の理由で SMS や音声認証が必要なユーザーがいる組織\nプラットフォームとサービス\n• Microsoft Entra ID\n• Microsoft Security Store\n発生すること\n• 2026年10月30日以降、組織は SMS および音声認証用にサポート対象の通信事業者を構成できます。\n• 選択したプロバイダーが、認証に必要な SMS メッセージや音声通話を配信します。\n• Microsoft Entra ID は引き続き認証方法ポリシーを適用し、認証体験を調整します。\n• 組織は選択したプロバイダーとの商契約を管理します。\n• Microsoft 提供の SMS・音声認証は、Global Administrator と外部ユーザーを除くすべてのユーザーについて 2027年2月1日に廃止予定です。Global Administrator と外部ユーザーの廃止日は 2027年7月1日です。内部ゲストユーザーは 2027年2月1日の廃止日が適用されます。\n• 該当する廃止日以降、利用可能な MFA 方式が SMS または音声のみのユーザーは、組織がサポート対象の通信事業者を構成していない限り、サインイン時にパスキーを登録する必要があります。この登録プロンプトはブロッキングです。\n[必要な対応と推奨事項]\nCYOT の採用を予定する場合:\n• 影響を受けるユーザーを特定する。SMS や音声認証に文書化された業務、規制、技術上の要件があるユーザーを確認します。\n• フィッシング耐性のある代替手段を評価する。それらのユーザーの要件を満たさないことを確認します。\n• サポート対象の通信事業者を確認する。地理的カバレッジ、サポート(以降は原文が途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "f1a2c68605c0cfdcdf6dce2d1fdd53d02558b6c94d2facb5c86ba4c9bb9f28b0",
-      "validatedAt": "2026-10-22T13:58:57.5837574+00:00"
-    },
-    {
       "id": "MC1520901",
       "japaneseTitle": "Insights Agent V2がFrontierで利用可能、フィードバック共有は既定オフ",
       "japaneseFacts": {
@@ -1821,22 +1853,6 @@
       "sourceTruncated": false,
       "sourceHash": "11642f983d51ee0758b0eee3e2f39c2833f29f3e03d79ec4cb30d1f31f0c08bd",
       "validatedAt": "2026-10-26T15:22:11.0242614+00:00"
-    },
-    {
-      "id": "MC1521604",
-      "japaneseTitle": "Authenticatorのホーム画面と復元フローをiOS/Androidで改善",
-      "japaneseFacts": {
-        "change": "AuthenticatorのホームUI、未復元アカウント通知、復元・サインインフローがiOS/Androidで改善されます。",
-        "impact": "iOSおよびAndroidのAuthenticatorユーザーが対象です。",
-        "timing": "GAは2026年10月開始・11月完了予定で、Androidの復元改善は2027年1月予定です。",
-        "action": "構成上の対応は本文が途中で切れているため原文に記載なし(不明)です。"
-      },
-      "japaneseDetailedSummary": "Microsoft Authenticatorで、iOSとAndroid向けに使い勝手の改善が行われます。ホーム画面の刷新、未復元アカウントのバナー通知、初回起動時の復元ガイダンス改善、プッシュ通知とパスワードレス サインインの復元体験の改善が含まれます。iOSのみサインイン中のアプリ評価プロンプト、Androidのみバッテリー最適化除外の案内が表示される場合があります。GAは全世界・GCC・GCC High・DoDで2026年10月に開始し11月に完了予定です。復元改善はiOSが先で、Androidは2027年1月予定です。対象はAuthenticatorユーザーです。構成上の対応は、提供された本文が途中で切れているため不明です。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft AuthenticatorにiOSとAndroid共通でいくつかの使い勝手の改善を行います。刷新されたホーム体験、復元が必要なアカウントへのより明確なガイダンス、復元とサインインフローの改善、Authenticatorを確実に動作させるための追加プロンプトが含まれます。提供状況とタイミングはプラットフォームによって異なります。\n[展開スケジュール]\n• 一般提供(全世界、GCC、GCC High、DoD):2026年10月開始、2026年11月に完了予定\n• プッシュ通知とパスワードレス サインインの復元体験の改善はiOSで先行提供され、Androidは2027年1月に提供予定です。\n[組織への影響]\n影響を受ける対象\n• iOSおよびAndroidのMicrosoft Authenticatorのユーザー\nプラットフォームとサービス\n• iOSおよびAndroid向けMicrosoft Authenticator\n何が起こるか\n• Authenticatorホーム体験の改善(iOS/Android):ユーザーがアカウントを表示・管理する際の体験を改善するため、ホーム画面が更新されます。Androidでは2026年11月に提供されます。\n• 未復元アカウントのより明確な通知(iOS/Android):未復元のアカウントがあるユーザーには、そのアカウントの対応が必要であることを知らせるバナーが表示されます。\n• アカウント復元の初回ガイダンス改善(iOS/Android):対応が必要なアカウントがより明確に表示され、Authenticatorのセットアップ中に追加の情報が提供されます。\n• サインイン中のアプリ評価プロンプト(iOSのみ):サインイン体験の一部として、アプリを評価するオプションが表示される場合があります。\n• プッシュ通知とパスワードレス サインインの復元体験の改善:対象ユーザーの復元フローが改善されます。iOSが先で、Androidは2027年1月予定です。\n• バッテリー最適化からAuthenticatorを除外するプロンプト(Androidのみ):対話型認証の成功後、Androidのバッテリー最適化から除外するよう促す非ブロッキングのプロンプトが表示される場合があります。これによりサインイン状態の維持と職場・学校の通知の受信に役立ちます。認証はブロックされません。\n[必要な対応と推奨事項]\n構成上の対応は指定されて(以降は原文が切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "ec123dbd08c3cf0e2fc8403b2b720fc71b3c9e622f47330cb2803ea40aa79200",
-      "validatedAt": "2026-10-26T15:22:11.0203973+00:00"
     },
     {
       "id": "MC1521616",
@@ -1999,52 +2015,52 @@
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     },
     {
-      "id": "MC1187682",
-      "japaneseTitle": "Edge側ペインのCopilotが複数タブとYouTubeの要約に対応",
+      "id": "MC1521604",
+      "japaneseTitle": "Authenticator:iOS/Androidの使い勝手改善を11月に展開",
       "japaneseFacts": {
-        "change": "Edge for BusinessのサイドペインでMicrosoft 365 Copilot Chatが複数タブとYouTube動画に関する質問・要約に対応する。",
-        "impact": "Entra IDでEdge for Businessにサインインし、Microsoft 365 Copilotにアクセスできるユーザー。既定ではオフ。",
-        "timing": "複数タブとYouTube動画のGAは現在利用可能と記載。",
-        "action": "事前の管理者対応は不要。Copilot利用権限、ライセンス要件、DLPとEdgeポリシーの確認、ユーザーへの周知が推奨される。"
+        "change": "Microsoft AuthenticatorのiOS/Androidで、ホーム画面刷新、復元案内の改善、評価プロンプト、バッテリー最適化除外の案内などが追加されます。",
+        "impact": "iOSおよびAndroid版Microsoft Authenticatorのユーザーが対象です。",
+        "timing": "全クラウドで2026年11月上旬に開始し11月下旬に完了予定です。Androidの復元改善は2027年1月予定です。",
+        "action": "管理者対応の記載は提供された本文にありません(原文に記載なし)。"
       },
-      "japaneseDetailedSummary": "2026年10月30日に内容が更新された。Microsoft Edge for Businessで、Edgeのサイドペインから開いている複数のブラウザータブやYouTube動画についてMicrosoft 365 Copilot Chatに質問でき、要約や文脈に基づく回答が得られる。Roadmap IDは496364、499423、499424。対象はEntra IDでEdge for Businessにサインインし、Microsoft 365 Copilotにアクセスできるユーザー。機能は既定でオフで、DLPまたはEdgeEntraCopilotPageContextポリシーでCopilotのページ内容アクセスが制限されている場合は抑止され、既存のDLPとポリシー設定が尊重される。展開は自動で、事前の管理者対応は不要。ライセンス前提条件の確認、DLP/Edgeポリシーの影響確認、ユーザーへの周知、社内文書の更新が推奨される。生成AIがユーザーデータに関わる点でコンプライアンス上の考慮事項がある。抜粋は途中で切れている。",
-      "japaneseBodyTranslation": "2026年10月30日更新:内容を更新しました。\n[はじめに:]\nMicrosoft Edge for Businessは、まもなくMicrosoft 365 Copilot Chatによる要約と文脈に基づく回答(コンテキスト グラウンディング)に対応します。ユーザーはEdgeのサイドペインから、開いている複数のブラウザータブやYouTube動画についてCopilotに質問できます。\nこのメッセージはMicrosoft 365ロードマップID 496364、499423、499424に関連します。\n[いつ実施されるか:]\n• GA(複数のブラウザータブとYouTube動画):現在利用可能\n[組織への影響:]\n影響を受ける対象:Entra IDでMicrosoft Edge for Businessにサインインし、Microsoft 365 Copilotにアクセスできるユーザー。\n実施内容:\n• ユーザーは開いているブラウザータブやYouTube動画についてCopilotに質問できます。\n• この機能は既定でオフです。\n• DLPまたはEdgeEntraCopilotPageContextポリシーによりCopilotのページ内容アクセスが制限されている場合、DLPの整合性を保つため機能は抑止されます。\n• 既存のDLPとポリシー構成は尊重されます。\n[準備として可能なこと:]\n• 本ロールアウトは指定日までに自動で行われ、ロールアウト前の管理者対応は不要です。\n• この機能が必要なユーザーがMicrosoft 365 Copilotにアクセスできることを確認してください。\n• テナントがMicrosoft 365 Copilotをサポートするよう構成され、対象ユーザーがEntra IDサインインや該当するMicrosoft 365サービスプランを含むライセンス前提条件を満たすことを確認してください。\n• 現在のDLPとEdgeポリシー構成を確認し、影響の可能性を判断してください。\n• ユーザーに今後の機能を通知してください。\n• 必要に応じて社内文書を更新してください。\n詳細:\n• EdgeでのMicrosoft 365 Copilot Chatとページ内容へのアクセス | Microsoft Learn\n• Microsoft Edge ポリシー | Microsoft Learn\n[コンプライアンス上の考慮事項:]\n質問と回答\nこの変更は、顧客データにアクセスまたは提供するAI/MLやエージェント機能を新たに導入、または大きく変更しますか?はい。Microsoft 365 Copilotは生成AIを用いて、ブラウザータブとYouTube動画にまたがる文脈に基づく回答と要約を導入します。\nこの変更は、エンドユーザーに生成AIとの新しい対話方法を提供しますか?はい。ユーザーはEdgeのサイドペインから開いているブラウザータブやドキュメントについてCopilotに質問でき、リアルタイムの要約と文脈に基づく回答が得られます。\nこの変更はデータ損失防止(DLP)ポリシーを変更しますか?(以降は抜粋が途中で終了)",
+      "japaneseDetailedSummary": "Microsoft AuthenticatorのiOSとAndroid向けに複数の使い勝手改善が提供されます。ホーム画面の刷新、復元が必要なアカウントを知らせるバナー、初回起動時の復元ガイダンスの改善、プッシュ通知とパスワードレスサインインの復元フロー改善が含まれます。iOSのみサインイン時のアプリ評価プロンプト、Androidのみ認証後にバッテリー最適化から除外する案内が表示される場合があります。一般提供はWorldwide、GCC、GCC High、DoDで2026年11月上旬開始(従来は10月)、11月下旬完了予定です。復元改善はiOSが先行し、Androidは2027年1月予定です。提供された本文は途中で切れており、管理者の必須対応は記載がありません。",
+      "japaneseBodyTranslation": "2026年10月29日更新:タイムラインを更新しました。\n[内容と理由]\nMicrosoft AuthenticatorをiOSとAndroidで複数の使い勝手の面から更新します。刷新されたホーム体験、復元が必要なアカウントに関するより明確な案内、復元とサインインフローの改善、Authenticatorが確実に動作し続けるための追加プロンプトが含まれます。提供状況とタイミングはプラットフォームごとに異なります。\n[ロールアウトスケジュール]\n• 一般提供(Worldwide、GCC、GCC High、DoD):2026年11月上旬に開始(従来は10月)、2026年11月下旬に完了予定。\n• プッシュ通知とパスワードレスサインインの復元体験の改善は、まずiOSで提供され、Androidは2027年1月を予定しています。\n[組織への影響]\n影響を受ける対象\n• iOSおよびAndroidのMicrosoft Authenticatorユーザー\nプラットフォームとサービス\n• iOSおよびAndroid向けMicrosoft Authenticator\n実施される内容\n• 改善されたAuthenticatorホーム体験(iOS、Android):ユーザーがアカウントを表示・管理する際の体験を改善するため、ホームページを更新します。Androidでは2026年11月に提供されます。\n• 未復元アカウントのより明確な通知(iOS、Android):まだ復元されていないアカウントがあるユーザーには、対応が必要であることを知らせるバナーが表示されます。\n• アカウント復元の初回ガイダンスの改善(iOS、Android):復元が必要なアカウントがより明確に表示され、Authenticatorのセットアップ時に追加の情報が得られます。\n• サインイン中のアプリ評価プロンプト(iOSのみ):サインイン体験の一部として、Microsoft Authenticatorを評価するオプションが表示される場合があります。\n• プッシュ通知とパスワードレスサインインの復元体験の改善:これらを使うユーザーの復元フローを改善します。iOSで先に提供され、Androidは2027年1月を予定しています。\n• バッテリー最適化から除外するプロンプト(Androidのみ):対話型認証の完了後、Authenticatorをバッテリー最適化から除外するよう促すブロックしない表示が出る場合があります。除外すると、サインイン状態の維持や仕事・学校の通知の受信に役立ちます。",
       "sourceCharacterCount": 2500,
       "sourceTruncated": true,
-      "sourceHash": "599327cd5738bcafa214d839360b0d4f77057931cab45e3968d9a20aec357619",
-      "validatedAt": "2026-11-02T01:44:54.4906542+00:00"
+      "sourceHash": "cebb2c10a138e900719826877439de022d7a43865c8e68d7debe86396270bf38",
+      "validatedAt": "2026-11-02T06:30:35.2032464+00:00"
     },
     {
-      "id": "MC1221452",
-      "japaneseTitle": "Entra IDのパスキープロファイルがGA、既存FIDO2テナントは自動移行",
+      "id": "MC1519855",
+      "japaneseTitle": "Entra:独自の通信事業者を選べるCYOTが一般提供開始",
       "japaneseFacts": {
-        "change": "Entra IDでパスキープロファイルと同期パスキーがGAとなり、passkeyTypeプロパティで端末バインド/同期/両方を設定可能になる。",
-        "impact": "Passkeys (FIDO2) が有効な既存テナントのみ対象。オプトインしない場合、既存設定はDefaultプロファイルへ自動移行され、Microsoft管理の登録キャンペーンにも影響する。",
-        "timing": "2026年3月開始と記載。更新で日程が変更されたが、具体的な移行期間は抜粋に含まれず原文に記載なし。",
-        "action": "オプトインするか自動移行に備えて認証方法設定と登録キャンペーン設定を確認する。詳細な手順は原文に記載なし。"
+        "change": "Microsoft Entra IDでChoose Your Own Telephony Provider(CYOT)が一般提供となり、SMS・音声認証を任意の対応通信事業者経由で提供できます。",
+        "impact": "SMSや音声認証を必要とするユーザーがいる組織が対象です。Microsoft提供のSMS・音声認証は廃止が始まります。",
+        "timing": "Microsoft提供のSMS・音声認証は2027年2月1日に廃止が始まります。",
+        "action": "CYOTを使う場合、対象ユーザーの特定、事業者選定、購入要件と費用の確認、段階的な展開を2027年2月1日前に完了します。"
       },
-      "japaneseDetailedSummary": "2026年10月30日にタイムラインが更新された。Microsoft Entra IDでパスキープロファイルと同期パスキーが一般提供となり、グループベースのパスキー構成と新しいpasskeyTypeプロパティ(端末バインド、同期、両方)が使えるようになる。対象はPasskeys (FIDO2) が既に有効なテナントのみ。初期ロールアウト期間中にオプトインしない場合、指定期間に自動でパスキープロファイルのスキーマへ移行され、既存設定はDefaultプロファイルに移され、passkeyTypeは現在のアテステーション設定に基づき設定される(アテステーション強制が無効なら同期パスキーが有効化)。新しい認証方法は有効化されない。Microsoft管理の登録キャンペーンも、特定条件を満たすテナントで移行完了後に設定が更新される。具体的な日程は抜粋が途中で切れているため不明。",
-      "japaneseBodyTranslation": "2026年10月30日更新:タイムラインを更新しました。\n[はじめに]\n2026年3月から、Microsoft Entra IDはパスキープロファイルと同期パスキーを一般提供(GA)します。管理者は、グループベースのパスキー構成をサポートし、新しいpasskeyTypeプロパティを導入する新しいパスキープロファイル体験にオプトインできます。\n重要:既にPasskeys (FIDO2) が有効なテナントのみが影響を受けます。\npasskeyTypeプロパティにより、次を構成できます:\n• 端末バインドパスキー\n• 同期パスキー\n• 両方\nテナントでPasskeys (FIDO2) が有効で、初期ロールアウト期間中にパスキープロファイルへオプトインしない場合、下記の日付範囲でパスキープロファイルのスキーマへ自動移行されます。その場合:\n• 既存のPasskey (FIDO2) 認証方法の構成はDefaultパスキープロファイルに移動されます。\n• passkeyTypeの値はテナントの現在のアテステーション設定に基づき設定されます。アテステーション強制が無効なテナントでは同期パスキーが有効になります。\n• 移行により新しい認証方法が有効化されることはありません。\n• この移行は、「Microsoft管理」状態の認証方法登録キャンペーンにも影響します。これはパスキー構成設定を用いてユーザーに表示する登録プロンプトを決定します。\n認証方法登録キャンペーンの変更(Microsoft管理のみ)\n次の条件をすべて満たすテナントが影響を受けます:\n• Passkeys (FIDO2) 認証方法ポリシーが有効\n• 認証方法登録キャンペーンが「Microsoft管理」状態\n• セルフサービス設定を許可が有効\n• 特定のAAGUIDを対象にするが未選択(AAGUID制限なし)\n• テナントに、同期パスキーと端末バインドパスキーの両方が有効なユーザーが少なくとも1人いる\n• 両方が有効で、パスキープロファイル制限(アテステーション強制、AAGUID制限)がないユーザーのみが、サインイン時にパスキー登録の案内を受けます。\nこれらのテナントでは、パスキープロファイルの自動移行完了後にMicrosoft管理の登録キャンペーン設定が更新されます。下記のタイムラインに従い、対象テナントへ段階的に展開します。\n[いつ実施されるか(以降は抜粋が途中で終了)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "20cb08367a23641fb1fafdcc36ffc9633817cdbec8d334f5398aaacf23e628c3",
-      "validatedAt": "2026-11-02T01:44:54.4841501+00:00"
+      "japaneseDetailedSummary": "Microsoft Entra IDのChoose Your Own Telephony Provider(CYOT)が一般提供になりました。組織はSecurity Storeで通信事業者のサービスを購入し、SMS・音声認証をその事業者経由で提供できます。商取引上の関係は事業者と直接管理します。Microsoft提供のSMS・音声認証は2027年2月1日に廃止が始まるため、利用継続が必要なユーザーがいる場合はそれまでにCYOTを設定する必要があります。MicrosoftはパスキーなどのフィッシングWに強い方式を推奨しており、電話ベースの認証は業務上・規制上・技術上の必要があるユーザーに限定することを勧めています。準備として、対象ユーザーの特定、事業者比較、Azureサブスクリプションと権限の確認、コスト見積り、評価モードから段階的に展開することが示されています。",
+      "japaneseBodyTranslation": "2026年10月30日更新:機能が一般提供になったため、追加情報とともに投稿を更新しました。\n[内容と理由]\nChoose Your Own Telephony Provider(CYOT)がMicrosoft Entra IDで一般提供になりました。CYOTにより、組織は任意の対応通信事業者を通じてSMSおよび音声認証を提供できます。事業者のオファーはMicrosoft Security Storeで購入し、商取引上の関係は事業者と直接管理します。\nMicrosoft提供のSMS・音声認証は2027年2月1日に廃止が始まります。SMS・音声認証をユーザーが引き続き使えるよう、その日までにCYOTを設定してください。\nMicrosoftは、SMSや音声の代わりにパスキーなどのフィッシング耐性のある認証方式を推奨します。電話ベースの認証は、業務、規制、技術上の必要があるユーザーにのみ使用してください。\n[必要な対応]\nCYOTを使用する予定の場合:\n• SMSまたは音声が必要なユーザーを特定します。フィッシング耐性のある方式では満たせない要件を持つユーザーを確認します。\n• 事業者を選びます。対応する通信事業者を、カバレッジ、チャネル、価格、サポート、コンプライアンスで比較します。\n• 購入要件を確認します。Security Storeでの購入に対応する有料Azureサブスクリプションと、Owner、またはContributorとRole Based Access Control Administratorのロールがあることを確認します。\n• コストを見積もります。事業者の価格とAzureホスティング費用を確認します。\n• 設定と展開。SMSと音声の設定手順に従います。評価モードで開始し、事業者へのトラフィックを段階的に増やします。\n• 2027年2月1日までに移行を完了します。Microsoft提供のSMS・音声認証の廃止に関するガイダンスを確認してください。\n詳細\n• SMS・音声認証用に独自の通信事業者を選択する\n• 独自の通信事業者でSMSと音声を設定する\n• SMSと音声のトラブルシューティング\n• 通信詐欺からの保護\n• 回復性と高可用性の計画\n• よくある質問\n• パスキーの既定化とMicrosoft提供のSMS・音声認証の廃止",
+      "sourceCharacterCount": 2133,
+      "sourceTruncated": false,
+      "sourceHash": "a7fce04e06c3cb73d8523cfa0ef0c96237b688c7abcd4977154135e90b26197c",
+      "validatedAt": "2026-11-02T06:30:35.1969213+00:00"
     },
     {
-      "id": "MC1282568",
-      "japaneseTitle": "WindowsのEntraパスキーがGA、AAGUID許可リスト不要に",
+      "id": "MC1530611",
+      "japaneseTitle": "Copilotアプリ内でWord・Excel・PowerPointを作成・編集可能に",
       "japaneseFacts": {
-        "change": "WindowsでのMicrosoft EntraパスキーがGAとなり、Windows HelloのAAGUID許可リストへの明示的オプトインが不要になる。",
-        "impact": "パスキーを有効化済みで、Windowsから接続する組織が対象。端末バインド・非アテステーションを許可するプロファイルのユーザーは既定で登録・利用可能になる。",
-        "timing": "Worldwide/GCCは2026年4月下旬〜6月中旬。GCC High/DoDは2027年2月上旬〜下旬(従来は2026年10月)。Airgapは2027年5月。",
-        "action": "管理者の必須対応は抜粋に明記なし。パスキープロファイルとConditional Accessの設定確認が有用だが、詳細は原文に記載なし。"
+        "change": "Microsoft Copilotアプリ内で、Word、Excel、PowerPointファイルの作成、編集、共同作業ができるようになります。",
+        "impact": "Copilotを利用するユーザーが対象で、Copilotが文書内容を読み取り編集する機能が拡張されます。",
+        "timing": "Worldwideで2026年11月中旬に展開を開始し、同じく11月中旬に完了予定です。",
+        "action": "管理者の対応は不要です。ユーザーへの周知と既存のMicrosoft 365 Copilot設定・ポリシーの確認が推奨されます。"
       },
-      "japaneseDetailedSummary": "2026年10月30日にタイムラインが更新された。WindowsでのMicrosoft Entraパスキーが一般提供となり、Windows Hello(顔、指紋、PIN)で保護された端末バインドパスキーにより、フィッシング耐性のあるパスワードレスサインインが可能になる。Entra参加/登録されていないWindows端末にも対応する。パブリックプレビュー(MC1247893)ではWindows HelloのAAGUIDをパスキープロファイルで明示的に許可する必要があったが、GAでは不要となる。端末バインドで非アテステーションのパスキーを許可するプロファイルのユーザーは、追加設定なしでWindows上でパスキーを登録・利用できるようになり、Conditional Accessが許可すれば個人・共有PCでも作成・利用できる。展開はWorldwide/GCCが2026年4月下旬〜6月中旬、GCC High/DoDが2027年2月上旬〜下旬、Airgapが2027年5月。抜粋は途中で切れている。",
-      "japaneseBodyTranslation": "2026年10月30日更新:タイムラインを更新しました。\n[はじめに]\nWindowsでのMicrosoft Entraパスキーがまもなく一般提供(GA)となり、Windows端末からMicrosoft Entraで保護されたリソースへ、フィッシング耐性のあるパスワードレスサインインが可能になります。\nこの機能のパブリックプレビューは以前MC1247893で案内されました。\nユーザーはWindows Helloコンテナーに保存される端末バインドパスキーを作成し、Windows Hello(顔、指紋、PIN)で認証できます。これによりEntra参加・登録されていないWindows端末にもパスワードレス認証が拡大し、企業管理、個人、共有デバイスの各シナリオでセキュリティ強化とパスワード依存の低減に役立ちます。\n[いつ実施されるか:]\n• GA(Worldwide、GCC):2026年4月下旬に展開開始、2026年6月中旬に完了予定。\n• GA(GCC High、DoD):2027年2月上旬に開始(以前は2026年10月上旬)、2027年2月下旬に完了予定(以前は2026年10月下旬)。\n• Airgap:2027年5月上旬に開始、2027年5月下旬に完了予定。\n組織への影響:\n影響を受ける対象:\n認証方法ポリシーでパスキーを有効にしたMicrosoft Entra IDを使用し、Windows端末からサインインするユーザーがいる組織(企業管理PC、個人デバイス、共有デバイス)。\n実施内容:\nこのGAリリースにより:\n• WindowsでのMicrosoft Entraパスキーは、パスキー(FIDO2)プロファイルでのWindows Hello AAGUID許可リストによる明示的オプトインが不要になります。\n• これはパブリックプレビューの動作からの変更で、プレビューでは管理者がWindows Hello AAGUIDをパスキープロファイルで明示的に許可する必要がありました。\n• パスキープロファイルが端末バインドで非アテステーションのパスキーを許可する場合:対象ユーザーは管理者の追加設定なしに、既定でWindows上のMicrosoft Entraパスキーを登録・利用できます。\n• その結果、そのようなプロファイルの対象ユーザーはWindows端末でパスキーの登録・利用を開始する可能性があります。\n• Conditional Accessが許可する場合:Entra参加・登録されていない個人PCや共有PCを含むWindows端末でパスキーを作成・利用できます。\n• 各Windows端末には別途(以降は抜粋が途中で終了)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "9ccc76c030dc0419d5b91c44aaf61ce2a024b6d334ecfb76afd55ec99ec1135a",
-      "validatedAt": "2026-11-02T01:44:54.4883406+00:00"
+      "japaneseDetailedSummary": "Microsoft Copilotアプリ内でOfficeの機能が利用可能になり、Word、Excel、PowerPointファイルをアプリを離れずに作成、確認、編集、共同作業できます。コンテキストの切り替えが減り、アイデアや会話から共有可能なOffice成果物へ移行しやすくなります。一般提供はWorldwideで2026年11月中旬に開始し、同月中旬に完了予定です。管理者の対応は不要ですが、ユーザーへの周知と既存のMicrosoft 365 Copilot設定・ポリシーの確認が推奨されています。コンプライアンス面では、Office文書内容へのアクセスと編集がCopilot経由で可能になり、変更は通常のOfficeアプリに同期されます。Copilotが文書内容を読み取り編集する機能が拡張され、管理は既存のCopilot設定とEntra IDグループ割り当てで行えます。",
+      "japaneseBodyTranslation": "[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの全機能を利用できるようになり、アプリを離れずにWord、Excel、PowerPointファイルを作成、編集、共同作業できます。\n[ロールアウトスケジュール]\n一般提供(Worldwide):2026年11月中旬に展開を開始し、2026年11月中旬に完了予定です。\n[組織への影響]\nCopilotに組み込まれたOfficeの価値により、Word、Excel、PowerPointがCopilot体験に直接取り込まれ、ユーザーは作業の流れを離れずにOfficeファイルを作成、レビュー、編集、共同作業できます。これによりコンテキストの切り替えが減り、アイデアや会話から共有可能な完成したOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、新しい体験についてユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認するとよいでしょう。\n[コンプライアンス上の考慮事項]\n質問と回答\nこの変更は既存の顧客データの処理、保存、アクセス方法を変えますか?はい。ユーザーはCopilot体験を通じてOfficeファイルの内容にアクセスして編集でき、変更は通常のOfficeアプリに同期されます。\nこの変更は、顧客データにアクセスする、またはアクセスを提供するAI/MLやエージェント機能を導入または大きく変更しますか?はい。この機能の一部として、CopilotはOfficeドキュメントの内容を読み取り編集する機能が拡張されます。\nこの変更により、エンドユーザーに生成AIとの新しい対話方法が提供されますか?はい。ユーザーはCopilotアプリ内でWord、Excel、PowerPointのコンテンツを直接作成、編集できます。\nこの変更には管理コントロールがあり、Entra IDグループメンバーシップで制御できますか?はい。この機能は既存のMicrosoft 365 Copilotの構成とポリシーの対象で、管理者はEntra IDのグループベースの割り当てで管理できます。",
+      "sourceCharacterCount": 1859,
+      "sourceTruncated": false,
+      "sourceHash": "4ef0f135021e8616abfbd2e0266768d563db68b6c5d1c71aa600214734cbf983",
+      "validatedAt": "2026-11-02T06:30:35.2075713+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-11-02T01:38:50.4930758+00:00",
