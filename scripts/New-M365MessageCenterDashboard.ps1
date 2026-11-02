@@ -160,7 +160,7 @@ $html = @'
       --cp-accent-fg: #ffffff;
       --cp-success: #2f7b55;
       --cp-danger: #b63f36;
-      --cp-warning: #a45a10;
+      --cp-warning: #8f4a08;
       --cp-link: #94412f;
       --cp-shadow: 0 18px 48px rgba(45, 40, 34, 0.12);
       --cp-overlay: rgba(255, 255, 255, 0.82);
@@ -435,6 +435,8 @@ $html = @'
     .chip { padding: 4px 9px; color: var(--cp-text-muted); background: var(--cp-surface-soft); border-radius: 999px; font-size: 0.75rem; }
     .chip.major { color: var(--cp-accent); background: var(--cp-accent-soft); font-weight: 700; }
     .chip.high { color: var(--cp-danger); font-weight: 700; }
+    .skip-link { position: absolute; left: 8px; top: -48px; z-index: 100; padding: 10px 16px; border-radius: 0.5rem; background: var(--cp-accent); color: #fff; font-weight: 700; text-decoration: none; }
+    .skip-link:focus { top: 8px; outline: 3px solid var(--cp-text); outline-offset: 2px; }
     .chip.due { color: var(--cp-warning); font-weight: 700; }
     .empty { padding: 32px; color: var(--cp-text-muted); text-align: center; }
     .empty p { margin: 0 0 14px; }
@@ -464,8 +466,9 @@ $html = @'
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#messages-title">通知一覧へスキップ</a>
   <div class="aurora" aria-hidden="true"></div>
-  <main class="shell">
+  <main class="shell" id="main">
     <nav class="nav" aria-label="Demo navigation">
       <div class="brand"><span class="brand-mark">M</span><span>Microsoft 365 Change Radar</span></div>
       <div class="demo-links">
