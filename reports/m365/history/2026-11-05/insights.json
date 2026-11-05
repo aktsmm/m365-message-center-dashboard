@@ -1,25 +1,26 @@
 {
-  "generatedAt": "2026-11-02T16:28:18.3780016+00:00",
+  "generatedAt": "2026-11-05T02:35:52.8750190+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra認証方式の移行(SMS/音声廃止・SSPR・パスキー)とカナダ時間帯変更への対応が今週の最優先",
-  "executiveSummary": "今週は認証関連の変更が中心です。Microsoft提供のSMS・音声認証は2027年2月1日から廃止が始まり、CYOT(独自テレフォニープロバイダー)が一般提供となりました(MC1528000, MC1519855)。SSPRは登録済み認証方式のみを検証に使う方式へ移行し、2026年11月9日開始と案内されています(MC1325414)。パスキープロファイルは、未オプトインのテナントが自動移行される対象で、スケジュールが更新されました(MC1221452)。カナダの2026年タイムゾーン変更は11月1日に発効し、Outlook/Exchange Onlineの既存予定は自動移行されません(MC1526468, MC1510951)。Windows/Edge/WebView2では、eMudhra認証局キーの侵害に伴う信頼ブロックが10月下旬に展開されます(MC1529467)。Targeted releaseは2026年11月に登録変更ができなくなり、2027年1月に廃止されます(MC1490899)。抜粋に含まれない詳細な日付や要件は不明であり、断定していません。",
-  "thisWeek": "MC1526468: カナダ(BC・アルバータ・マニトバ等)の拠点・ユーザーを特定し、Outlook/Exchange Onlineの定期会議の見直しとTeams Roomsの時刻表示を確認する(MC1510951も参照)。\nMC1325414: SSPR登録キャンペーンの対象ユーザーを確認し、SSPRが登録済み認証方式のみを要求する前提で、ディレクトリ属性(携帯電話等)のみに依存しているユーザーを洗い出す。\nMC1529467: eMudhra認証局の証明書にチェーンする証明書や、切断環境のWindowsデバイスがないか確認する。\nMC1490899: Targeted release登録ユーザーを確認し、Frontier/Standard/Deferredのどれにするか決める。",
-  "thisMonth": "MC1528000, MC1519855: SMS・音声認証を使うユーザーを特定し、2027年2月1日より前にパスキー等へ移行するかCYOTを設定する計画を立てる。\nMC1221452: Passkeys (FIDO2) 有効テナントは、自動移行前にパスキープロファイルへオプトインするか判断する。更新されたスケジュールで移行時期を確認する。\nMC1521604: Authenticatorが11月上旬から下旬に更新されるため、ヘルプデスクとユーザーへ案内する。AndroidのPush/パスワードレスの復元改善は2027年1月に予定されている。\nMC1529472: Frontierの対象拡大(Teams、新Outlook、OneDrive、SharePoint)を踏まえ、対象ユーザーの方針を検討する。",
-  "watch": "MC1518029: SMS/音声の一次認証でリスクベースのCAPTCHAが表示される展開が進行中。サインインに関する問い合わせの増加を監視する。\nMC1282568: Windows向けEntraパスキーのGAタイムラインが更新された。GCC High/DoDを含む対象環境の時期を継続確認する。\nMC1526468: Teams関連の影響は検証中と記載されており、続報を監視する。",
-  "customerQuestions": "SMS・音声認証を一次認証・MFA・SSPRで利用しているユーザーは何人で、2027年2月1日までにパスキーやCYOTへ移行する計画はありますか?\nSSPRで、登録済みでないディレクトリ属性(携帯電話・代替メール)に依存しているユーザーはいますか?\nカナダ(BC・アルバータ・マニトバ・NWT・オンタリオ北西部)に拠点やユーザー、Teams Roomsはありますか?\nPasskeys (FIDO2) を有効化済みですか?パスキープロファイルへのオプトインか自動移行かのどちらを選びますか?\nTargeted release登録ユーザーの移行先(Frontier/Standard/Deferred)は決まっていますか?",
+  "headline": "Entra のSMS/音声認証廃止とSSPR変更、Canada タイムゾーン、Targeted Release 廃止が最優先",
+  "executiveSummary": "今週の Message Center 92件のうち、認証基盤の変更が最重要です。Microsoft 提供の SMS/音声認証は 2027年2月1日から廃止開始(MC1528000)、SSPR でも利用不可となり、各ロールアウト到達後50日で移行が終了します(MC1536049)。SSPR は登録済み認証方法を必須とする変更も進行中です(MC1325414)。また、カナダの2026年タイムゾーン変更により Outlook/Exchange の予定や Teams Rooms への影響が確認されています(MC1526468, MC1510951)。Targeted Release は2027年1月に廃止され、Frontier/Standard/Deferred へ移行します(MC1490899)。Conditional Access のカスタム コントロールは2027年5月に完全廃止です(MC1422061)。なお、抜粋は一部省略されており、記載のない日程や要件は不明であり、存在しないことを意味しません。",
+  "thisWeek": "MC1528000: SMS/音声認証の利用ユーザーを特定し、パスキー等への移行または CYOT(カスタマー管理テレコム プロバイダー)の構成を計画する。\nMC1536049: SSPR の回復手段として SMS/音声のみを登録しているユーザーを洗い出す。\nMC1325414: SSPR 登録済み認証方法必須化の登録キャンペーン状況と対象ユーザーを確認する。\nMC1526468: 2026年11月1日に変更となったカナダ(BC/AB/MB 等)の拠点ユーザーの Outlook 予定、定期会議、Teams Rooms の時刻表示を確認する。\nMC1529467: Windows/Edge/WebView2 環境で eMudhra 認証局に連なる証明書の利用有無を確認する。",
+  "thisMonth": "MC1490899: Targeted Release 登録ユーザーを棚卸しし、Frontier/Standard/Deferred のどれにするか決める(2026年11月に追加・削除・変更ができなくなる旨の記載あり)。\nMC1422061: Conditional Access のカスタム コントロールの利用箇所を確認し、External MFA への移行を計画する。\nMC1528009: 検索分析(Summary/User/Query/Answer)を運用で利用している場合、2026年11月下旬開始の廃止に備える。\nMC1490911: Windows 上の Edge で、旧サインイン実装の廃止(Edge 157 以降)による影響を確認する。\nMC1538999: Copilot コネクタを Work IQ API で利用する構成を検討する(2026年11月下旬開始)。",
+  "watch": "MC1536049: 自組織へのロールアウト到達時期と SSPR 移行期間(50日)の終了日を継続監視する。\nMC1426371: SMS/音声認証廃止に関する過去通知の更新を継続監視する。\nMC1510951: カナダのタイムゾーン変更に関する Windows 更新と追加情報を継続監視する。\nMC1530595: Copilot フィードバック UX の展開が2026年11月中旬に延期された点を監視する。",
+  "customerQuestions": "Microsoft 提供の SMS/音声認証に依存しているユーザーや業務(管理者、外部ユーザー含む)はどれくらいありますか?\nSSPR の回復手段として、SMS/音声以外の認証方法を登録しているユーザーの割合はどの程度ですか?\nカナダ(BC、AB、MB 等)に拠点、ユーザー、会議室デバイスはありますか?タイムゾーン更新の適用状況は確認済みですか?\nTargeted Release に登録しているユーザーは誰で、移行後のリリース設定(Frontier/Standard/Deferred)の方針はありますか?\nConditional Access のカスタム コントロールや、サードパーティ MFA を利用していますか?",
   "referencedIds": [
-    "MC1221452",
-    "MC1282568",
     "MC1325414",
+    "MC1422061",
+    "MC1426371",
     "MC1490899",
+    "MC1490911",
     "MC1510951",
-    "MC1518029",
-    "MC1519855",
-    "MC1521604",
     "MC1526468",
     "MC1528000",
+    "MC1528009",
     "MC1529467",
-    "MC1529472"
+    "MC1530595",
+    "MC1536049",
+    "MC1538999"
   ],
   "messageUpdates": [
     {
@@ -261,13 +262,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1459136",
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1461528",
       "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
@@ -292,13 +286,6 @@
       "id": "MC1462922",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1466760",
-      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -642,6 +629,34 @@
       "id": "MC1530611",
       "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
       "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1536049",
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2027年3月22日 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1536057",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1537495",
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1538999",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -1199,22 +1214,6 @@
       "validatedAt": "2026-10-22T23:31:54.4340566+00:00"
     },
     {
-      "id": "MC1459136",
-      "japaneseTitle": "M365管理センターの使用状況レポートが新ドメインへ移行",
-      "japaneseFacts": {
-        "change": "使用状況レポートが新ドメイン(例:商用はusage-reports.core.microsoft)で解決され始める。画面・データ・権限の変更はなくドメインのみ変更。",
-        "impact": "ファイアウォール、プロキシ許可リスト、条件付きアクセス、ハードコードされたエンドポイントのスクリプトで旧ドメインを指定している組織はレポートが読み込めなくなる可能性がある。",
-        "timing": "ロールアウトは2026年8月中旬〜9月上旬(環境別)。リダイレクトは2026年9月17日以降で別途告知。",
-        "action": "ネットワーク構成に新ドメインを表示どおり追加する(必須)。"
-      },
-      "japaneseDetailedSummary": "Microsoftのドメイン統合の一環として、Microsoft 365管理センターの使用状況レポートが新ドメインで解決され始めます。現行ドメインと新ドメインは本投稿から最低30日間並行稼働します。旧ドメインから新ドメインへのリダイレクトは2026年9月17日より前には行われず、時期は別のメッセージセンター投稿で告知されます。旧ドメインはその後に廃止予定です。レポートの体験・データ・権限に変更はありません。商用はusage-reports.core.microsoft、GCC Moderateはgcc.usage-reports.core.microsoft、GCC Highはusage-reports.usgovcloud-core.microsoft、DoDはdod.usage-reports.usgovcloud-core.microsoftです。ファイアウォール規則やプロキシ許可リスト等で旧ドメインを指定している場合、新ドメインの追加が必要です。なお原文は途中で切れており、以降の内容は不明です。",
-      "japaneseBodyTranslation": "[概要と理由]\nMicrosoftのドメイン統合の取り組みの一環として、Microsoft 365管理センターの使用状況レポートは新しいドメインで解決され始めます。現行ドメインと新ドメインは、本投稿から最低30日間並行して有効なため、ネットワーク構成を更新している間も使用状況レポートは現行ドメインで引き続き読み込まれます。\n\n現行ドメインから新ドメインへのリダイレクトは現時点で予定されていません。リダイレクトは、検証と承認を経て、早くても2026年9月17日以降に行われ、実施前に別のメッセージセンター投稿でタイミングを告知します。現行ドメインはリダイレクト後の後日に廃止され、そのタイミングも別途連絡します。そのため、新ドメインをネットワーク構成に追加することは任意ではなく必須です。使用状況レポートの体験、データ、権限に変更はなく、ドメインの変更のみです。\n\n[ロールアウトスケジュール]\n• Worldwide:2026年8月中旬に開始し、8月中旬に完了予定。\n• GCC:2026年8月中旬に開始し、8月下旬に完了予定。\n• GCC High:2026年8月下旬に開始し、8月下旬に完了予定。\n• DoD:2026年8月下旬に開始し、9月上旬に完了予定。\n\n[組織への影響]\nMicrosoft 365管理センターの使用状況レポートは、クラウド環境ごとに次の新ドメインで解決され始めます。\n環境/現行ドメイン/新ドメイン\n商用(Worldwide):reports.office.com → usage-reports.core.microsoft\nGCC Moderate:reports.office.com(商用と共有)→ gcc.usage-reports.core.microsoft\nGCC High:reports.office365.us → usage-reports.usgovcloud-core.microsoft\nDoD:reports.apps.mil → dod.usage-reports.usgovcloud-core.microsoft\nネットワーク構成の更新時は、新ドメインを表示どおり正確に入力してください。\n\n上記の使用状況レポートのドメインを参照するファイアウォール規則、プロキシ許可リスト、条件付きアクセスポリシーを使用している場合、トラフィックが新ドメインへ移ると使用状況レポートが読み込めなくなる可能性があります。エンドポイントをハードコードしたカスタムスクリプトやツールも同様です。並行期間中は両方のドメインが有効なため、今後の投稿でリダイレクト日が告知されるまでアクセスが中断されることはありません。\n\n(原文はここで途中切れ:「If you rely on poader Microsoft-managed to allow rules, service tags, or wildcard-based network con...」)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "846ff545eb9d5005637f407e0be1ae96f8cb4b2d869d1c7e4249d1373d136a2d",
-      "validatedAt": "2026-10-25T16:38:59.2144585+00:00"
-    },
-    {
       "id": "MC1461528",
       "japaneseTitle": "Microsoft 365 RoadmapがAI at Work Roadmapに名称変更",
       "japaneseFacts": {
@@ -1277,22 +1276,6 @@
       "sourceTruncated": false,
       "sourceHash": "22faf0ea7bd40d0e65a452236070d700fb290e1495dcb8a73e39287a39e93f48",
       "validatedAt": "2026-10-20T23:17:53.2970148+00:00"
-    },
-    {
-      "id": "MC1466760",
-      "japaneseTitle": "Copilot Pages:既存Pagesを「/」メニューから参照可能に",
-      "japaneseFacts": {
-        "change": "既存PagesはLibraryタブとプロンプトボックスの「/」メニューから参照でき、Edit in Pagesメニューは新規Pages作成専用になる。",
-        "impact": "Copilot Chatのユーザー。既存のPages、コンテンツ、共有権限には影響しない。",
-        "timing": "2026年8月下旬に展開開始、2026年9月上旬に完了予定(全世界GA)。",
-        "action": "対応は不要。展開に伴い自動的に利用可能になる。"
-      },
-      "japaneseDetailedSummary": "2026年9月以降、ユーザーは既存PagesをLibraryタブで確認でき、Copilotのプロンプトボックスの「/」メニューからチャットに追加・参照できます。Copilotの「Edit in Pages」メニューは、会話から新規Pagesを作成する用途に特化します。既存のPages、コンテンツ、共有権限は変更されません。全世界GAの展開は2026年8月下旬に始まり、9月上旬に完了する見込みです。管理者による対応は不要で、展開が組織に到達すると自動的に反映されます。",
-      "japaneseBodyTranslation": "[内容と理由]\n2026年9月より、ユーザーはLibraryタブで既存のPagesにアクセスできます。また、Copilotのプロンプトボックスの「/」メニューから既存のPagesを参照でき、チャット内でPagesを見つけて参照する手順が効率化されます。この更新に伴い、Copilotの「Edit in Pages」メニューは、チャット体験と並行して新規Pagesを作成することに重点を置きます。これにより、最も一般的なユーザーのワークフローに沿った体験となり、Pagesの作成と参照が簡素化されます。\n[展開スケジュール]\n一般提供(全世界):2026年8月下旬に展開を開始し、2026年9月上旬に完了する予定です。\n[組織への影響]\nユーザーは引き続き、プロンプトボックスの「/」メニューから選択することで、Copilotチャットで既存のPagesを参照できます。\n• 既存のPagesは「/」メニューからチャットに追加できます。\n• 「Edit in Pages」メニューは、Copilotの会話から新規Pagesを作成する専用になります。\n• 既存のPages、コンテンツ、共有権限には影響しません。\n[必要なアクション/推奨事項]\n対応は不要です。展開が組織に到達すると、更新された体験が自動的に利用可能になります。",
-      "sourceCharacterCount": 1189,
-      "sourceTruncated": false,
-      "sourceHash": "736732081f1105e57418b07d341ce9e4f6f3ca914636ef914d80262b4010f7e3",
-      "validatedAt": "2026-10-24T21:01:59.0739351+00:00"
     },
     {
       "id": "MC1467356",
@@ -1823,6 +1806,22 @@
       "validatedAt": "2026-10-22T18:43:11.2148929+00:00"
     },
     {
+      "id": "MC1518029",
+      "japaneseTitle": "Entra IDのSMS/音声認証にリスクベースのCAPTCHAを追加",
+      "japaneseFacts": {
+        "change": "SMS・音声認証の不正な自動利用を抑えるため、コード送信前にリスクベースのボット対策検証(CAPTCHA)が表示される場合があります。",
+        "impact": "SMSまたは音声を第一要素のサインインに使う一部のユーザーが対象で、クライアントの挙動で判断されます。制限的なネットワークやファイアウォールでは検証が読み込めず完了できない可能性があります。",
+        "timing": "2026年10月中旬に展開が始まり、現在も継続中です。",
+        "action": "ヘルプデスクとユーザー向け案内を準備し、ドキュメントでエンドポイント許可要件を確認し、パスキー等への移行を継続してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entra IDは、テレフォニーベース認証の自動化された悪用を減らすための保護策を追加します。SMSおよび音声認証オプションが削除されるわけではありませんが、第一要素のサインインでSMSまたは音声を使う一部のユーザーは、コード送信前にリスクベースのCAPTCHAを求められる場合があります。表示はクライアントの挙動に基づくため、全ユーザー・全サインインに表示されるわけではありません。制限的なネットワーク設定やファイアウォールにより検証画面が読み込めない場合、必要なエンドポイントが許可されるまでサインインを完了できない可能性があります。展開は2026年10月中旬に始まり継続中です。推奨対応は、ヘルプデスクとユーザー向け連絡の準備、リンク先ドキュメントのネットワーク準備ガイダンス(許可エンドポイント等)の確認、パスキーなど耐フィッシング性のある認証方式への移行継続です。コンプライアンス上の考慮事項は特定されていません。",
+      "japaneseBodyTranslation": "2026年10月26日更新:タイムラインを更新しました。ご理解ありがとうございます。\n[概要と背景]\nMicrosoft Entra IDは、テレフォニーベース認証の自動化された悪用を減らすための保護策を追加します。SMSおよび音声認証オプションは削除されません。第一要素のサインインでSMSまたは音声を使う一部のユーザーは、コードが送信される前にリスクベースのボット対策検証(CAPTCHA)を完了するよう求められる場合があります。\n[展開スケジュール]\n• 展開は2026年10月中旬に開始され、現在も進行中です。\n• ユーザーは、第一要素のテレフォニーベース認証でボット対策検証の手順が表示される場合があります。\n[組織への影響]\n影響を受けるユーザー\n• SMSまたは音声を第一要素のサインイン方法として使う一部のユーザー\n対象のプラットフォームとサービス\n• 第一要素サインインでSMSまたは音声を使用するMicrosoft Entra IDのテレフォニーベース認証\n何が起こるか\n• 一部のユーザーには、Microsoftがテレフォニーコードを送信する前に、追加のリスクベースのボット対策検証(CAPTCHA)手順が表示される場合があります。\n• この体験はクライアントの挙動に基づいて決定されるため、すべてのユーザーやサインイン試行が影響を受けるわけではありません。\n• 制限的なネットワークまたはファイアウォール設定により検証体験が読み込まれない場合、必要なエンドポイントが許可されるまで、影響を受けるユーザーはフローを完了できない可能性があります。エンドポイントのガイダンスは下記のリンク先ドキュメントに記載されています。\n[必要なアクションと推奨事項]\n• コード送信前にボット対策検証手順が表示される可能性に備えて、ヘルプデスクとユーザー向けコミュニケーションを準備してください。\n• 承認済みエンドポイントや許可リスト要件を含むネットワーク準備のガイダンスについて、リンク先ドキュメントを確認してください。\n• 可能な限り、パスキーなどの耐フィッシング性のある認証方法へのユーザーの移行を継続してください。\n詳細情報\n• Understanding telephony fraud risk for Microsoft Entra multifactor authentication - Microsoft Entra ID | Microsoft Learn\n• Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in - Microsoft Entra ID | Microsoft Learn\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 2218,
+      "sourceTruncated": false,
+      "sourceHash": "77c45399401cac70cfff4175ead7e5bee368a6324863d02b2194d9b50d4848ab",
+      "validatedAt": "2026-11-02T16:28:18.3689422+00:00"
+    },
+    {
       "id": "MC1518032",
       "japaneseTitle": "インベントリに Update Repair を追加、Microsoft 365 アプリの更新問題を修復",
       "japaneseFacts": {
@@ -2031,6 +2030,22 @@
       "validatedAt": "2026-10-29T06:04:39.8688075+00:00"
     },
     {
+      "id": "MC1530595",
+      "japaneseTitle": "Microsoft Copilotのサムズダウン フィードバック画面を刷新",
+      "japaneseFacts": {
+        "change": "Copilotのサムズダウン選択時に、複数のカテゴリ選択と任意コメントを入力できる新しいフィードバック画面になります。",
+        "impact": "既存ポリシー「Allow users to submit feedback to Microsoft」でフィードバック送信が許可されているユーザーに表示されます。モバイル、GCC、GCC High、DoD等は現時点で対象外です。",
+        "timing": "全世界で2026年10月下旬に展開開始、同月下旬に完了予定です。段階展開中は従来画面のユーザーも残ります。",
+        "action": "管理者の対応は不要です。送信時に選択カテゴリ、コメント、任意のスクリーンショットが新たに保存されます。"
+      },
+      "japaneseDetailedSummary": "Microsoft Copilotのサムズダウン(低評価)フィードバックが、より具体的で有用な情報を得られるよう刷新されます。ユーザーは1つ以上のカテゴリを選択し、任意で自由記述コメントを追加でき、カテゴリ別に適切なチームへ振り分け可能になります。対象はEntra IDの組織アカウント、個人のMicrosoftアカウント、教育機関テナントのユーザーで、Copilot、Edge、Outlook、TeamsのWeb、Windows、macOSが対象です。モバイル、GCC、GCC High、DoD、その他ソブリンクラウドは現時点で計画外で、WXPN/Catalystも含まれません。サムズアップは変更なし、既存の「Allow users to submit feedback to Microsoft」ポリシーのみが対象です。展開は2026年10月下旬の全世界GAで、管理者の対応は不要です。送信時にカテゴリ、コメント、任意のスクリーンショットが新規データとして保存されます。",
+      "japaneseBodyTranslation": "[概要と背景]\nMicrosoft Copilotのサムズダウンのフィードバック体験を更新し、ユーザーが具体的で実用的なフィードバックを提供しやすくします。現在、多くのサムズダウンはコメントなしで送信され、感情は分かるものの問題に関する情報が限られています。サムズダウンを選択すると、1つ以上のフィードバックカテゴリを選択し、任意で追加コメントを入力できるようになり、カテゴリ付きの各応答は適切なチームや問題の種類へ振り分けるシグナルとなります。\n[展開スケジュール]\n一般提供(全世界):2026年10月下旬に展開を開始し、2026年10月下旬に完了する予定です。\n[組織への影響]\n対応するMicrosoft Copilot体験でフィードバックを送信できるユーザーに、更新されたサムズダウンのフィードバックフォームが表示される場合があります。対象はMicrosoft Entra IDの組織アカウントでサインインしたユーザー、個人のMicrosoftアカウントのユーザー、教育機関テナントのユーザーです。この機能は現時点でモバイル、GCC、GCC High、DoD、その他のソブリンクラウド環境には計画されていません。\n更新されたフィードバック体験は、Microsoft Copilot、Microsoft EdgeのCopilot、Microsoft OutlookのCopilot、Microsoft TeamsのCopilotで、Webブラウザー、Windows、macOS上で計画されています。WXPN/Catalystの体験は現時点で含まれません。\nユーザーがCopilotの応答でサムズダウンを選択すると、問題を説明する選択可能なカテゴリが表示される場合があり、複数選択でき、任意で自由記述欄に追加のフィードバックを入力できます。サムズアップの体験は変更されません。この更新は既存の「Allow users to submit feedback to Microsoft」管理ポリシーにのみ適用され、その他のフィードバックポリシーの体験は変わりません。段階的な展開中は、一部のユーザーには従来のフィードバック体験が引き続き表示されます。\n[必要なアクション/推奨事項]\nこの変更に管理者の対応は不要です。既存ポリシーでフィードバック送信が許可されているユーザーに表示されます。\n[コンプライアンス上の考慮事項]\nこの変更で新しい顧客データは保存されますか?はい。ユーザーがサムズダウンのフィードバックを送信する際、選択したカテゴリ、任意の自由記述コメント、任意のスクリーンショットが送信の一部として新たに取得されます。\n管理コントロールはありますか、Entra IDのグループメンバーシップで制御できますか?はい。このUX変更は既存の「Allow users to submit feedback to Microso(原文はここで途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "8f7b6031acda625b6796e9d4ee328c6150dd2a97219d897dd4969e2de84420de",
+      "validatedAt": "2026-11-02T16:28:18.3631836+00:00"
+    },
+    {
       "id": "MC1530611",
       "japaneseTitle": "Copilotアプリ内でWord・Excel・PowerPointを作成・編集可能に",
       "japaneseFacts": {
@@ -2061,41 +2076,9 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
-      "id": "MC1518029",
-      "japaneseTitle": "Entra IDのSMS/音声認証にリスクベースのCAPTCHAを追加",
-      "japaneseFacts": {
-        "change": "SMS・音声認証の不正な自動利用を抑えるため、コード送信前にリスクベースのボット対策検証(CAPTCHA)が表示される場合があります。",
-        "impact": "SMSまたは音声を第一要素のサインインに使う一部のユーザーが対象で、クライアントの挙動で判断されます。制限的なネットワークやファイアウォールでは検証が読み込めず完了できない可能性があります。",
-        "timing": "2026年10月中旬に展開が始まり、現在も継続中です。",
-        "action": "ヘルプデスクとユーザー向け案内を準備し、ドキュメントでエンドポイント許可要件を確認し、パスキー等への移行を継続してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft Entra IDは、テレフォニーベース認証の自動化された悪用を減らすための保護策を追加します。SMSおよび音声認証オプションが削除されるわけではありませんが、第一要素のサインインでSMSまたは音声を使う一部のユーザーは、コード送信前にリスクベースのCAPTCHAを求められる場合があります。表示はクライアントの挙動に基づくため、全ユーザー・全サインインに表示されるわけではありません。制限的なネットワーク設定やファイアウォールにより検証画面が読み込めない場合、必要なエンドポイントが許可されるまでサインインを完了できない可能性があります。展開は2026年10月中旬に始まり継続中です。推奨対応は、ヘルプデスクとユーザー向け連絡の準備、リンク先ドキュメントのネットワーク準備ガイダンス(許可エンドポイント等)の確認、パスキーなど耐フィッシング性のある認証方式への移行継続です。コンプライアンス上の考慮事項は特定されていません。",
-      "japaneseBodyTranslation": "2026年10月26日更新:タイムラインを更新しました。ご理解ありがとうございます。\n[概要と背景]\nMicrosoft Entra IDは、テレフォニーベース認証の自動化された悪用を減らすための保護策を追加します。SMSおよび音声認証オプションは削除されません。第一要素のサインインでSMSまたは音声を使う一部のユーザーは、コードが送信される前にリスクベースのボット対策検証(CAPTCHA)を完了するよう求められる場合があります。\n[展開スケジュール]\n• 展開は2026年10月中旬に開始され、現在も進行中です。\n• ユーザーは、第一要素のテレフォニーベース認証でボット対策検証の手順が表示される場合があります。\n[組織への影響]\n影響を受けるユーザー\n• SMSまたは音声を第一要素のサインイン方法として使う一部のユーザー\n対象のプラットフォームとサービス\n• 第一要素サインインでSMSまたは音声を使用するMicrosoft Entra IDのテレフォニーベース認証\n何が起こるか\n• 一部のユーザーには、Microsoftがテレフォニーコードを送信する前に、追加のリスクベースのボット対策検証(CAPTCHA)手順が表示される場合があります。\n• この体験はクライアントの挙動に基づいて決定されるため、すべてのユーザーやサインイン試行が影響を受けるわけではありません。\n• 制限的なネットワークまたはファイアウォール設定により検証体験が読み込まれない場合、必要なエンドポイントが許可されるまで、影響を受けるユーザーはフローを完了できない可能性があります。エンドポイントのガイダンスは下記のリンク先ドキュメントに記載されています。\n[必要なアクションと推奨事項]\n• コード送信前にボット対策検証手順が表示される可能性に備えて、ヘルプデスクとユーザー向けコミュニケーションを準備してください。\n• 承認済みエンドポイントや許可リスト要件を含むネットワーク準備のガイダンスについて、リンク先ドキュメントを確認してください。\n• 可能な限り、パスキーなどの耐フィッシング性のある認証方法へのユーザーの移行を継続してください。\n詳細情報\n• Understanding telephony fraud risk for Microsoft Entra multifactor authentication - Microsoft Entra ID | Microsoft Learn\n• Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in - Microsoft Entra ID | Microsoft Learn\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
-      "sourceCharacterCount": 2218,
-      "sourceTruncated": false,
-      "sourceHash": "77c45399401cac70cfff4175ead7e5bee368a6324863d02b2194d9b50d4848ab",
-      "validatedAt": "2026-11-02T16:28:18.3689422+00:00"
-    },
-    {
-      "id": "MC1530595",
-      "japaneseTitle": "Microsoft Copilotのサムズダウン フィードバック画面を刷新",
-      "japaneseFacts": {
-        "change": "Copilotのサムズダウン選択時に、複数のカテゴリ選択と任意コメントを入力できる新しいフィードバック画面になります。",
-        "impact": "既存ポリシー「Allow users to submit feedback to Microsoft」でフィードバック送信が許可されているユーザーに表示されます。モバイル、GCC、GCC High、DoD等は現時点で対象外です。",
-        "timing": "全世界で2026年10月下旬に展開開始、同月下旬に完了予定です。段階展開中は従来画面のユーザーも残ります。",
-        "action": "管理者の対応は不要です。送信時に選択カテゴリ、コメント、任意のスクリーンショットが新たに保存されます。"
-      },
-      "japaneseDetailedSummary": "Microsoft Copilotのサムズダウン(低評価)フィードバックが、より具体的で有用な情報を得られるよう刷新されます。ユーザーは1つ以上のカテゴリを選択し、任意で自由記述コメントを追加でき、カテゴリ別に適切なチームへ振り分け可能になります。対象はEntra IDの組織アカウント、個人のMicrosoftアカウント、教育機関テナントのユーザーで、Copilot、Edge、Outlook、TeamsのWeb、Windows、macOSが対象です。モバイル、GCC、GCC High、DoD、その他ソブリンクラウドは現時点で計画外で、WXPN/Catalystも含まれません。サムズアップは変更なし、既存の「Allow users to submit feedback to Microsoft」ポリシーのみが対象です。展開は2026年10月下旬の全世界GAで、管理者の対応は不要です。送信時にカテゴリ、コメント、任意のスクリーンショットが新規データとして保存されます。",
-      "japaneseBodyTranslation": "[概要と背景]\nMicrosoft Copilotのサムズダウンのフィードバック体験を更新し、ユーザーが具体的で実用的なフィードバックを提供しやすくします。現在、多くのサムズダウンはコメントなしで送信され、感情は分かるものの問題に関する情報が限られています。サムズダウンを選択すると、1つ以上のフィードバックカテゴリを選択し、任意で追加コメントを入力できるようになり、カテゴリ付きの各応答は適切なチームや問題の種類へ振り分けるシグナルとなります。\n[展開スケジュール]\n一般提供(全世界):2026年10月下旬に展開を開始し、2026年10月下旬に完了する予定です。\n[組織への影響]\n対応するMicrosoft Copilot体験でフィードバックを送信できるユーザーに、更新されたサムズダウンのフィードバックフォームが表示される場合があります。対象はMicrosoft Entra IDの組織アカウントでサインインしたユーザー、個人のMicrosoftアカウントのユーザー、教育機関テナントのユーザーです。この機能は現時点でモバイル、GCC、GCC High、DoD、その他のソブリンクラウド環境には計画されていません。\n更新されたフィードバック体験は、Microsoft Copilot、Microsoft EdgeのCopilot、Microsoft OutlookのCopilot、Microsoft TeamsのCopilotで、Webブラウザー、Windows、macOS上で計画されています。WXPN/Catalystの体験は現時点で含まれません。\nユーザーがCopilotの応答でサムズダウンを選択すると、問題を説明する選択可能なカテゴリが表示される場合があり、複数選択でき、任意で自由記述欄に追加のフィードバックを入力できます。サムズアップの体験は変更されません。この更新は既存の「Allow users to submit feedback to Microsoft」管理ポリシーにのみ適用され、その他のフィードバックポリシーの体験は変わりません。段階的な展開中は、一部のユーザーには従来のフィードバック体験が引き続き表示されます。\n[必要なアクション/推奨事項]\nこの変更に管理者の対応は不要です。既存ポリシーでフィードバック送信が許可されているユーザーに表示されます。\n[コンプライアンス上の考慮事項]\nこの変更で新しい顧客データは保存されますか?はい。ユーザーがサムズダウンのフィードバックを送信する際、選択したカテゴリ、任意の自由記述コメント、任意のスクリーンショットが送信の一部として新たに取得されます。\n管理コントロールはありますか、Entra IDのグループメンバーシップで制御できますか?はい。このUX変更は既存の「Allow users to submit feedback to Microso(原文はここで途切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "8f7b6031acda625b6796e9d4ee328c6150dd2a97219d897dd4969e2de84420de",
-      "validatedAt": "2026-11-02T16:28:18.3631836+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-11-02T01:38:50.4930758+00:00",
-  "summarySourceHash": "8dd387aa3a31337ada24f5cc682694879b9949ab32376905c9f5c1691e9a816b",
-  "sourceAgentRunId": "41373016748"
+  "summarySourceHash": "a93dd6753fdf1e806efcacb625b3d96110b756c834e342148abbde3475f140af",
+  "summaryGeneratedAt": "2026-11-05T02:35:52.7450372+00:00",
+  "sourceAgentRunId": "41955574913"
 }
