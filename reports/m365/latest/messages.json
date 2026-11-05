@@ -1,27 +1,27 @@
 {
   "meta": {
-    "runId": "41372895834",
-    "generatedAt": "2026-11-02T01:31:25.9876387+00:00",
+    "runId": "41955451735",
+    "generatedAt": "2026-11-05T02:29:10.8888428+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 90,
-    "majorChanges": 24,
+    "total": 92,
+    "majorChanges": 25,
     "highSeverity": 2,
-    "actionRequired": 11,
+    "actionRequired": 12,
     "actionDueWithin30Days": 1,
-    "updatedLast7Days": 23
+    "updatedLast7Days": 12
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 51
+      "count": 52
     },
     {
       "name": "Microsoft Entra",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Microsoft 365 Copilot Chat",
@@ -29,6 +29,184 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1538999",
+      "title": "Microsoft 365 Copilot: Copilot connectors in Work IQ APIs",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-05T00:08:04.0000000+00:00",
+      "endDateTime": "2027-01-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-05T00:08:30.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nCopilot connectors will extend Work IQ beyond Microsoft 365 by making data and tools from connected enterprise systems available to AI agents through Work IQ APIs. Organizations can use their existing Copilot connector investments to build richer, more context-aware agentic experiences across Microsoft 365 and enterprise systems without requiring separate connector setup or management.\nExisting administrator controls, permissions, and governance policies for Copilot connectors will continue to apply.\n[Rollout schedule]\n• General Availability (Worldwide): We will begin rolling out in late November 2026 and expect to complete by late December 2026\n[Impact on your organization]\nWho is affected\n• Organizations using Work IQ APIs and Copilot connectors\nPlatforms and services\n• Microsoft 365 Copilot, Work IQ APIs, and Copilot connectors\nWhat will happen\n• Work IQ APIs will be able to use data and tools from connected enterprise systems through Copilot connectors.\n• Organizations can use existing Copilot connector investments without separate connector setup or management.\n• Existing administrator controls, permissions, and governance policies for Copilot connectors will continue to apply.\n[Action required and recommendations]\nNo additional administrator action is required.\nData sources already connected by users in Copilot Chat will automatically become available through Work IQ APIs, subject to existing permissions and administrator controls.\nLearn more\n• Microsoft Work IQ API | Microsoft Learn\n[Compliance considerations]\nThis change introduces or modifies AI or agent capabilities that can access customer data through Work IQ APIs using Copilot connectors to access connected enterprise systems. Existing permissions and governance controls continue to apply.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Copilot will extend Work IQ APIs to use data and tools from connected enterprise systems via Copilot connectors, enabling richer AI experiences without extra setup. Rollout starts late November 2026. Existing permissions, controls, and governance remain unchanged; no admin action is needed."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/copilot/extensibility/work-iq/api-overview"
+      ]
+    },
+    {
+      "id": "MC1537495",
+      "title": "Microsoft 365 Copilot: Discover featured AI Skills Navigator playlists in Learning Agent",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-03T23:04:09.0000000+00:00",
+      "endDateTime": "2026-12-16T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-03T23:04:12.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft is bringing featured playlists from AI Skills Navigator into Learning Agent in Microsoft 365 Copilot. Featured playlists bring related learning resources together around a role, product, or skill. Users can discover these structured collections through natural language conversations in Learning Agent, helping them spend less time searching individual learning resources and more time building practical AI skills.\nUsers can discover featured playlists with prompts such as:\n• What playlists can help me build AI skills for sales?\n• Find a playlist that helps me create better marketing campaigns with AI.\n• Recommend some playlists to help me do code reviews faster using AI.\n• Find me some playlists that help me manage my company's AI costs better.\n• Show me some playlists on how I can get more done at work using agents.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning in mid-November 2026 and expected to complete by mid-November 2026\n[Impact on your organization]\nWho is affected\n• Users in organizations where AI Skills Navigator is enabled\nPlatforms and services\n• Microsoft 365 Copilot\n• Copilot Chat\n• Learning Agent\n• AI Skills Navigator\nWhat will happen\n• Users can ask Learning Agent for featured playlist recommendations through natural language conversations:\n• Featured playlists provide curated sequences of related learning content aligned with a role, product, or skill\n• Featured playlists are included in Learning Agent when AI Skills Navigator is enabled for your organization\n• Playlist recommendations won't appear if either Credentials or Microsoft YouTube videos is turned off in your AI Skills Navigator settings\n[Action required and recommendations]\nNo action is required.\nIf your organization uses AI Skills Navigator, review your AI Skills Navigator settings. Playlist recommendations won't appear if either Credentials or Microsoft YouTube videos is turned off.\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Copilot's Learning Agent will feature AI Skills Navigator playlists, offering curated learning resources via natural language queries. Rolling out worldwide in mid-November 2026, this enhances skill-building for users where AI Skills Navigator is enabled, with no action required but settings review recommended."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1530595",
+      "title": "(Updated) Microsoft Copilot Feedback UX update",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-29T18:13:33.0000000+00:00",
+      "endDateTime": "2026-12-28T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-03T17:09:47.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated November 3, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nWe’re updating the thumbs-down feedback experience in Microsoft Copilot to make it easier for users to provide specific, actionable feedback. Today, many thumbs-down responses are submitted without comments, providing sentiment but limited information about the issue. When users select thumbs down, they’ll be able to select one or more feedback categories and optionally provide additional comments, giving each categorized response a signal that can be routed to the appropriate team or issue type.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 (previously late October) and expect to complete by mid-November 2026 (previously late October).\n[Impact on Your Organization:]\nUsers who can submit feedback in supported Microsoft Copilot experiences may see the updated thumbs-down feedback form. The planned audience includes users signed in with Microsoft Entra ID organizational accounts, users signed in with consumer Microsoft accounts, and users in Education tenants. The feature isn’t currently planned for Mobile, GCC, GCC High, DoD, or other sovereign cloud environments.\nThe updated feedback experience is planned for Microsoft Copilot, Copilot in Microsoft Edge, Copilot in Microsoft Outlook, and Copilot in Microsoft Teams, across web browsers, Windows, and macOS. The WXPN/Catalyst experience isn’t currently included.\nWhen a user selects thumbs down on a Copilot response, they may see selectable categories describing the issue, can select more than one category, and can optionally enter additional feedback in a free-text field. The thumbs-up feedback experience isn’t changing. This update applies only to the existing “Allow users to submit feedback to Microsoft” admin policy; all other feedback policy experiences remain unchanged. During the controlled rollout, some users will continue to see the existing feedback experience.\n[Action Required/Recommendations:]\nNo admin action is required for this change. It will be visible to users who are already allowed to submit feedback under the existing policy.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change store new customer data?Yes. When a user chooses to submit thumbs-down feedback, the selected categories, optional free-text comment, and optional screenshot are new data captured as part of that submission.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This UX change applies to the existing \"Allow users to submit feedback to Microsoft\" admin policy; all other feedback policy experiences remain unchanged.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Copilot is updating the thumbs-down feedback to include selectable categories and optional comments for more actionable input. The rollout begins mid-November 2026 worldwide, affecting organizational, consumer, and education accounts on web, Windows, and macOS. No admin action is needed; data is stored per existing feedback policies."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1530611",
+      "title": "Office in Copilot brings the full power of Office into the Microsoft Copilot app",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-29T18:32:57.0000000+00:00",
+      "endDateTime": "2027-01-29T18:32:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-03T01:38:44.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nNow users have the full power of Office in Microsoft Copilot app, so users can create, edit and collaborate on Word, Excel and PowerPoint files, without leaving the app.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 and expect to complete by mid-November 2026.\n[Impact on Your Organization:]\nNow with the full value of Office in Copilot, Word, Excel, and PowerPoint is brought in directly into the Copilot experience, allowing users to create, review, edit, and collaborate on Office files without leaving their flow of work. This reduces context switching and makes it easier to move from an idea or conversation to a finished, shareable Office artifact.\n[Action Required/Recommendations:]\nNo admin action is required. Admins may want to inform users about the new experience and review their existing Microsoft 365 Copilot configuration and policies.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change alter how existing customer data is processed, stored, or accessed?Yes. Users can now access and edit Office file content through the Copilot experience, with changes synced back to the regular Office apps.\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Copilot gains expanded capability to read and edit Office document content as part of this feature.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and edit Word, Excel, and PowerPoint content directly within the Copilot app.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This feature is subject to existing Microsoft 365 Copilot configuration and policies, which admins can manage via Entra ID group-based assignment.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Office in Copilot integrates Word, Excel, and PowerPoint into the Microsoft Copilot app, enabling users to create, edit, and collaborate on files without leaving the app. Rolling out worldwide in mid-November 2026, it requires no admin action but is managed via existing Copilot policies and Entra ID controls."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1536057",
+      "title": "Increasing user exception limit to 10,000 for Standard-Deferred release preferences",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-03T00:10:55.0000000+00:00",
+      "endDateTime": "2026-12-20T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-03T00:11:07.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nWe heard your feedback that the 100-user exception limit was too small to support meaningful pilot and validation audiences, particularly in larger organizations. We previously introduced Microsoft Entra ID group support to simplify audience management. We are now increasing the exception limit from 100 to 10,000 users per tenant, giving administrators more flexibility to manage release readiness at scale.\nThis update lets you assign a larger audience to a release preference different from your tenant-wide selection - for example, keeping a larger validation group on Standard release while the rest of your organization uses Deferred release.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in late October 2026 and expect to complete by mid-November 2026.\n[Impact on Your Organization:]\nWho is affected: Administrators managing Standard and Deferred release preferences in the Microsoft 365 admin center.\nWhat is changing:\n• The maximum exception audience increases to 10,000 users per tenant, counting users assigned individually and members of assigned groups together. This is not a per-group allowance or a limit on your organization total users.\n• You can continue using Microsoft Entra ID security groups to manage exceptions. Nested groups remain unsupported.\n• If your tenant uses Deferred release, you can assign a larger group of IT staff, help desk personnel, and business representatives to Standard release to evaluate eligible updates earlier.\n• If your tenant uses Standard release, you can assign a larger audience to Deferred release when those users need additional preparation time.\n• If a customer adds a group with more than 10,000 users, they will receive a message, during addition, notifying them of the limit.\n• If they add a group that later exceeds the limit, only the first 10,000 users will be included. The Release preferences in MAC will display a message asking them to remove the users who exceed the limit.\nWhat is not changing: This update increases audience capacity; it does not change which features are eligible for Deferred release or how the deferred period works. Deferred release continues to delay eligible major features by approximately 30 days after their rollout to Standard release begins, not after rollout completes or after an individual pilot user receives the feature.\n[Action Required/Recommendations:]\nNo action is required unless you want to expand your exception audience.\nOnce the increased limit is available in your tenant, review your pilot and validation needs and update your assignments in the Microsoft 365 admin center under: Copilot > Settings > View all > Copilot Release Preferences: General Availability.\nKeep the combined exception audience within 10,000 users, review group membership regularly, and update your internal rollout and readiness documentation as needed.\n[Compliance considerations:]\nWhen expanding your exception audience, review its membership against your organization change-management, validation, and governance requirements.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "The user exception limit for Standard-Deferred release preferences is increasing from 100 to 10,000 users per tenant to support larger pilot groups. This change rolls out worldwide from late October to mid-November 2026, allowing more flexible audience management using Microsoft Entra ID groups. No action is required unless expanding exceptions."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1536049",
+      "title": "Microsoft Entra ID: Microsoft-provided SMS and voice authentication to retire for self-service password reset (SSPR)",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-11-03T00:05:11.0000000+00:00",
+      "endDateTime": "2027-03-03T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-03T00:07:14.0000000+00:00",
+      "actionRequiredByDateTime": "2027-03-22T07:00:00.0000000+00:00",
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2027年3月22日 です。",
+      "bodyText": "[What and why]\nAs Microsoft-provided SMS and voice authentication retire in Microsoft Entra ID, these methods will also become unavailable for SSPR. Organizations have 50 days after the applicable sign-in retirement rollout reaches their tenant to prepare alternative recovery methods. Users may still be able to sign in but lose the ability to reset forgotten passwords. Passkeys and other sign-in methods don't automatically satisfy SSPR requirements. Admins should identify affected users and ensure they have enough eligible recovery methods to prevent disruptions and increased helpdesk requests.\n[Rollout schedule]\n• General Availability (Worldwide, GCC): We expect rollout to begin and complete in February 2027\nUser populationSign-in retirement rollout beginsSSPR transition ends\nUsers other than Global Administrators and external usersFebruary 1, 202750 days after this rollout reaches your tenant\nGlobal Administrators and external usersJuly 1, 202750 days after this separate rollout reaches your tenant\nThese are phased rollout start dates, not a single SSPR cutoff for every organization. Each population's 50-day period begins when its applicable rollout reaches your tenant.\n[Impact on your organization]\nWho is affected\n• Organizations with users who rely on Microsoft-provided SMS/voice to meet their password-reset verification requirements. This includes users who have another sign-in method but still depend on SMS/voice for password recovery.\nPlatforms and services\n• Microsoft Entra ID SSPR\nWhat will happen\nWhen the applicable sign-in retirement rollout reaches your tenant:\n• 50-day transition: Existing SMS and voice registrations remain usable for SSPR under your current recovery policy.\n• Registration changes: SMS/voice SSPR registration and refresh prompts stop, but prompts for other eligible methods continue.\n• My Sign-Ins: Users can no longer add SMS/voice methods or edit authentication phone numbers. Existing phone registrations appear disabled, even while usable for SSPR during the transition.\n• Customer-managed telephony (CYOT): Recovery through supported providers remains available.\nAfter the 50-day transition period:\nMicrosoft-provided SMS and voice are no longer available as SSPR recovery options.\nUser's remaining eligible recovery methodsPassword-reset experience\nEnough methods to meet the applicable SSPR requirementUser can continue resetting their password with those methods\nNot enough methods to meet the applicable SSPR requirementUser cannot complete SSPR and is directed to contact their administrator\nThe applicable one/two method requirement still applies. To retain SMS/voice for recovery, your organization must configure a supported CYOT.\nMicrosoft will not automatically change your SSPR policy or enable Allow password change after secure sign-in for your tenant.\n[Action required and recommendations]\nPrepare affected users before their applicable 50-day transition period ends:\n• Identify affected users. Find users relying on SMS/voice for SSPR, even if they have other sign-in methods registered. Use the SMS and voice retirement and migration guidance.\n• Prepare alternative recovery methods. Ensure users have enough eligible methods to meet SSPR policy requirements without Microsoft-provided SMS/voice. Passkeys alone don't satisfy SSPR requirements. If phone recovery is needed, configure and test a supported telephony provider before the transition ends.\n• Test and communicate. Verify password recovery works with your SSPR policies and Conditional Access settings. Inform users and helpdesk staff about deadlines, registration steps, and support options.\nRecommended: Let passkey users change a forgotten password\n• Where available, administrators can enable Allow password change after secure sign-in for eligible users. Users can then sign in with their passkey and change their password in My Sign-Ins without knowing/entering their current password.\nLearn more\n• SMS and voice retirement and migration guidance\n• How Microsoft Entra self-service password reset works\n• Choose a telephony provider for SMS and voice authentication\n[Compliance considerations]\nIf your organization needs phone-based recovery for regulatory or operational reasons, plan and validate a supported customer-managed provider before the applicable SSPR cutoff.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra ID will retire Microsoft-provided SMS and voice authentication for self-service password reset (SSPR) starting February 2027, with a 50-day transition per user group. Organizations must prepare alternative recovery methods, as SMS/voice will no longer be available for SSPR after the transition."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sspr-howitworks"
+      ]
+    },
     {
       "id": "MC1282568",
       "title": "(Updated) General Availability: Microsoft Entra passkeys on Windows",
@@ -202,62 +380,6 @@
         {
           "name": "Summary",
           "value": "Microsoft Authenticator for iOS and Android will receive usability updates starting November 2026, including a refreshed home experience, clearer account restoration guidance, improved sign-in flows, and platform-specific prompts. Android improvements for restoration and battery optimization prompts will follow in January 2027. No action required."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1530611",
-      "title": "Office in Copilot brings the full power of Office into the Microsoft Copilot app",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-29T18:32:57.0000000+00:00",
-      "endDateTime": "2026-11-29T18:32:57.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-29T18:33:16.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nNow users have the full power of Office in Microsoft Copilot app, so users can create, edit and collaborate on Word, Excel and PowerPoint files, without leaving the app.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 and expect to complete by mid-November 2026.\n[Impact on Your Organization:]\nNow with the full value of Office in Copilot, Word, Excel, and PowerPoint is brought in directly into the Copilot experience, allowing users to create, review, edit, and collaborate on Office files without leaving their flow of work. This reduces context switching and makes it easier to move from an idea or conversation to a finished, shareable Office artifact.\n[Action Required/Recommendations:]\nNo admin action is required. Admins may want to inform users about the new experience and review their existing Microsoft 365 Copilot configuration and policies.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change alter how existing customer data is processed, stored, or accessed?Yes. Users can now access and edit Office file content through the Copilot experience, with changes synced back to the regular Office apps.\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Copilot gains expanded capability to read and edit Office document content as part of this feature.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and edit Word, Excel, and PowerPoint content directly within the Copilot app.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This feature is subject to existing Microsoft 365 Copilot configuration and policies, which admins can manage via Entra ID group-based assignment.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Office in Copilot integrates Word, Excel, and PowerPoint into the Microsoft Copilot app, enabling users to create, edit, and collaborate on files without leaving the app. Rolling out worldwide in mid-November 2026, it requires no admin action but is managed via existing Copilot policies and Entra ID controls."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1530595",
-      "title": "Microsoft Copilot Feedback UX update",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-29T18:13:33.0000000+00:00",
-      "endDateTime": "2026-12-28T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-29T18:13:56.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nWe’re updating the thumbs-down feedback experience in Microsoft Copilot to make it easier for users to provide specific, actionable feedback. Today, many thumbs-down responses are submitted without comments, providing sentiment but limited information about the issue. When users select thumbs down, they’ll be able to select one or more feedback categories and optionally provide additional comments, giving each categorized response a signal that can be routed to the appropriate team or issue type.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in late October 2026 and expect to complete by late October 2026.\n[Impact on Your Organization:]\nUsers who can submit feedback in supported Microsoft Copilot experiences may see the updated thumbs-down feedback form. The planned audience includes users signed in with Microsoft Entra ID organizational accounts, users signed in with consumer Microsoft accounts, and users in Education tenants. The feature isn’t currently planned for Mobile, GCC, GCC High, DoD, or other sovereign cloud environments.\nThe updated feedback experience is planned for Microsoft Copilot, Copilot in Microsoft Edge, Copilot in Microsoft Outlook, and Copilot in Microsoft Teams, across web browsers, Windows, and macOS. The WXPN/Catalyst experience isn’t currently included.\nWhen a user selects thumbs down on a Copilot response, they may see selectable categories describing the issue, can select more than one category, and can optionally enter additional feedback in a free-text field. The thumbs-up feedback experience isn’t changing. This update applies only to the existing “Allow users to submit feedback to Microsoft” admin policy; all other feedback policy experiences remain unchanged. During the controlled rollout, some users will continue to see the existing feedback experience.\n[Action Required/Recommendations:]\nNo admin action is required for this change. It will be visible to users who are already allowed to submit feedback under the existing policy.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change store new customer data?Yes. When a user chooses to submit thumbs-down feedback, the selected categories, optional free-text comment, and optional screenshot are new data captured as part of that submission.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This UX change applies to the existing \"Allow users to submit feedback to Microsoft\" admin policy; all other feedback policy experiences remain unchanged.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Copilot is updating the thumbs-down feedback to include selectable issue categories and optional comments for more actionable input. Rolling out worldwide in late October 2026, it applies to organizational, consumer, and education accounts on supported platforms, with no admin action required. New data is collected with feedback."
         }
       ],
       "officialDocumentUrls": []
@@ -2141,34 +2263,6 @@
       "officialDocumentUrls": []
     },
     {
-      "id": "MC1466760",
-      "title": "Microsoft Copilot Pages: Access existing Pages from the \"/\" menu in chat",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-03T23:00:28.0000000+00:00",
-      "endDateTime": "2026-11-02T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-03T23:01:00.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Feature update",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and why:]\nStarting in September 2026, users will access existing Pages in the Library tab. They can also reference existing Pages from the Copilot prompt box using the \"/\" menu, providing a streamlined way to find and reference Pages in chat.\nAs part of this update, the Edit in Pages menu in Copilot will focus on creating new Pages alongside your chat experience. This aligns the experience with the most common user workflow and simplifies how Pages are created and referenced in Copilot.\n[Rollout schedule:\nGeneral Availability (Worldwide): We will begin rolling out in late August 2026 and expect to complete by early September 2026.\n[Impact on your organization:]\nUsers will continue to be able to reference existing Pages in Copilot chats by selecting them from the \"/\" menu in the prompt box.\n• Existing Pages can be added to a chat through the \"/\" menu.\n• The Edit in Pages menu will be dedicated to creating new Pages from Copilot conversations.\n• No existing Pages, content, or sharing permissions will be affected.\n[Action required / Recommendations:]\nNo action is required. The updated experience will be available automatically as the rollout reaches your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Starting late August 2026, users can access existing Pages via the \"/\" menu in Copilot chat, while the \"Edit in Pages\" menu will focus on creating new Pages. This update streamlines referencing Pages without affecting existing content or permissions. No action is required."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1454108",
       "title": "(Updated) Microsoft 365 Copilot app update: Simpler Copilot access",
       "category": "planForChange",
@@ -2405,34 +2499,6 @@
       "officialDocumentUrls": [
         "https://learn.microsoft.com/microsoft-365/admin/manage/mrc-mcp"
       ]
-    },
-    {
-      "id": "MC1459136",
-      "title": "Microsoft 365 admin center: Usage reports migrating to new domains",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-21T22:39:08.0000000+00:00",
-      "endDateTime": "2026-11-02T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-08-21T22:39:14.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and why:]\nAs part of Microsoft's domain consolidation initiative, Microsoft 365 admin center Usage reports will begin resolving new domains. Both the current and the new domains will remain active in parallel for a minimum of 30 days following this post, so Usage reports will continue to load on the current domains while you update your network configuration.\nRedirection of the current domains to the new domains is not scheduled at this time. Any redirect will occur no earlier than September 17, 2026, subject to validation and approval, and we will announce the timing in a separate Message center post before it takes effect. The current domains will be retired at a later date following the redirect, and we will communicate that timing separately as well, so adding the new domains to your network configuration is required rather than optional. There is no change to the Usage reports experience, data, or permissions — this is a domain change only.\n[Rollout schedule:]\n• Worldwide: We will begin rolling out on mid-August 2026 and expect to complete by mid-August 2026.\n• GCC: We will begin rolling out on mid-August 2026 and expect to complete by late August 2026.\n• GCC High: We will begin rolling out on late August 2026 and expect to complete by late August 2026.\n• DoD: We will begin rolling out on late August 2026 and expect to complete by early September 2026.\n[Impact on your organization:]\nUsage reports in the Microsoft 365 admin center will begin resolving to new domains, per cloud environment:\nEnvironment\nCurrent domain\nNew domain\nCommercial (Worldwide)\nreports.office.com\nusage-reports.core.microsoft\nGCC Moderate\nreports.office.com (shared with commercial)\ngcc.usage-reports.core.microsoft\nGCC High\nreports.office365.us\nusage-reports.usgovcloud-core.microsoft\nDoD\nreports.apps.mil\ndod.usage-reports.usgovcloud-core.microsoft\nEnter the new domains exactly as shown when you update your network configuration.\nIf your organization uses firewall rules, proxy allowlists, or conditional access policies that reference the specific Usage reports domains listed above, Usage reports may fail to load once traffic moves to the new domains. The same applies if you use custom scripts or tooling with hardcoded endpoints. Because both domain sets remain active during the parallel period, this will not interrupt access before the redirect date is announced in a future post.\nIf you rely on poader Microsoft-managed to allow rules, service tags, or wildcard-based network configurations, you may need fewer changes or none, depending on your current network policy.\n[Action required / Recommendations:]\nReview your firewall, proxy, and conditional access configurations for references to the current Usage reports domains and add the corresponding new domains before your cloud environment rollout window closes.\n• Check any custom scripts, automation, or integrations that call Usage reports at endpoints directly, and update hardcoded domains.\n• Keep the current domains allowlisted alongside the new ones until the redirect timing is announced, so that access is maintained throughout the parallel period.\n• Government and sovereign cloud tenants should validate the new domains against their network boundary and compliance requirements.\n• If your network policy does not explicitly allowlist these domains, no action is required.\nWe will publish a reminder before the parallel period ends, and we will communicate via Message center if there are any additional changes to this rollout.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 admin center Usage reports domains will change starting mid-August 2026, with current and new domains active in parallel for at least 30 days. Organizations must update firewall, proxy, and scripts to include new domains to avoid access issues. Redirects and domain retirements will be announced later."
-        }
-      ],
-      "officialDocumentUrls": []
     },
     {
       "id": "MC1458474",
