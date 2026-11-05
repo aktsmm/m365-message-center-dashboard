@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T02:35:52.8750190+00:00",
+  "generatedAt": "2026-11-05T02:41:49.5579321+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra のSMS/音声認証廃止とSSPR変更、Canada タイムゾーン、Targeted Release 廃止が最優先",
   "executiveSummary": "今週の Message Center 92件のうち、認証基盤の変更が最重要です。Microsoft 提供の SMS/音声認証は 2027年2月1日から廃止開始(MC1528000)、SSPR でも利用不可となり、各ロールアウト到達後50日で移行が終了します(MC1536049)。SSPR は登録済み認証方法を必須とする変更も進行中です(MC1325414)。また、カナダの2026年タイムゾーン変更により Outlook/Exchange の予定や Teams Rooms への影響が確認されています(MC1526468, MC1510951)。Targeted Release は2027年1月に廃止され、Frontier/Standard/Deferred へ移行します(MC1490899)。Conditional Access のカスタム コントロールは2027年5月に完全廃止です(MC1422061)。なお、抜粋は一部省略されており、記載のない日程や要件は不明であり、存在しないことを意味しません。",
@@ -2076,9 +2076,57 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1538999",
+      "japaneseTitle": "Work IQ APIでCopilotコネクタのデータ・ツールが利用可能に",
+      "japaneseFacts": {
+        "change": "Work IQ APIでCopilotコネクタ経由の企業システムのデータ・ツールを利用可能になります。",
+        "impact": "Work IQ APIとCopilotコネクタを使用する組織で、既存の権限とガバナンスが適用されます。",
+        "timing": "一般提供(Worldwide)は2026年11月下旬に開始し、2026年12月下旬に完了予定です。",
+        "action": "追加の管理者アクションは不要です。"
+      },
+      "japaneseDetailedSummary": "Copilotコネクタにより、Work IQ APIを通じて接続済みの企業システムのデータやツールをAIエージェントが利用できるようになります。既存のコネクタ投資を活用でき、別途のコネクタ設定や管理は不要です。既存の管理者コントロール、権限、ガバナンスポリシーは引き続き適用されます。一般提供(Worldwide)は2026年11月下旬に開始し、12月下旬に完了予定です。追加の管理者操作は不要で、Copilot Chatでユーザーが接続済みのデータソースは、既存の権限と管理者コントロールの範囲でWork IQ API経由でも自動的に利用可能になります。",
+      "japaneseBodyTranslation": "[内容と理由]\nCopilotコネクタは、接続済みの企業システムのデータとツールをWork IQ APIを通じてAIエージェントが利用できるようにし、Work IQをMicrosoft 365の外へ拡張します。組織は既存のCopilotコネクタへの投資を活用して、別途のコネクタ設定や管理なしに、Microsoft 365と企業システムにまたがる、より豊かで文脈を理解したエージェント体験を構築できます。\nCopilotコネクタの既存の管理者コントロール、権限、ガバナンスポリシーは引き続き適用されます。\n[ロールアウトスケジュール]\n• 一般提供(Worldwide):2026年11月下旬に開始し、2026年12月下旬に完了予定\n[組織への影響]\n影響を受ける対象\n• Work IQ APIとCopilotコネクタを使用している組織\nプラットフォームとサービス\n• Microsoft 365 Copilot、Work IQ API、Copilotコネクタ\n発生すること\n• Work IQ APIが、Copilotコネクタ経由で接続済み企業システムのデータとツールを利用できるようになります。\n• 組織は別途のコネクタ設定や管理なしに既存のCopilotコネクタ投資を利用できます。\n• Copilotコネクタの既存の管理者コントロール、権限、ガバナンスポリシーは引き続き適用されます。\n[必要なアクションと推奨事項]\n追加の管理者アクションは不要です。\nCopilot Chatでユーザーが既に接続したデータソースは、既存の権限と管理者コントロールの範囲で、Work IQ API経由でも自動的に利用可能になります。\n詳細\n• Microsoft Work IQ API | Microsoft Learn\n[コンプライアンス上の考慮事項]\nこの変更は、Work IQ APIがCopilotコネクタ経由で接続済み企業システムにアクセスし、顧客データにアクセスし得るAI/エージェント機能を導入または変更します。既存の権限とガバナンスコントロールは引き続き適用されます。",
+      "sourceCharacterCount": 1797,
+      "sourceTruncated": false,
+      "sourceHash": "1b4b5b60107e18abcd7120cb8dffff678978dac846226e3354fae673898d6e75",
+      "validatedAt": "2026-11-05T02:41:49.5417873+00:00"
+    },
+    {
+      "id": "MC1537495",
+      "japaneseTitle": "Learning AgentでAI Skills Navigatorの注目プレイリストを発見可能に",
+      "japaneseFacts": {
+        "change": "Learning AgentでAI Skills Navigatorの注目プレイリストを会話で探せるようになります。",
+        "impact": "AI Skills Navigatorが有効な組織のユーザーが対象です。",
+        "timing": "一般提供(Worldwide)は2026年11月中旬に開始し、同月中旬に完了予定です。",
+        "action": "アクションは不要です。CredentialsとMicrosoft YouTube videosの設定を確認してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365 CopilotのLearning Agentに、AI Skills Navigatorの注目プレイリストが追加されます。ロール、製品、スキルに沿った学習リソースの集まりを、自然言語の会話で探せます。対象はAI Skills Navigatorが有効な組織のユーザーです。一般提供(Worldwide)は2026年11月中旬に開始し、同月中旬に完了予定です。アクションは不要ですが、AI Skills Navigatorを使う組織は設定を確認してください。CredentialsまたはMicrosoft YouTube videosのどちらかがオフの場合、プレイリストの推奨は表示されません。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoftはAI Skills Navigatorの注目プレイリストをMicrosoft 365 CopilotのLearning Agentに導入します。注目プレイリストは、ロール、製品、スキルに関連する学習リソースをまとめたものです。ユーザーはLearning Agentでの自然言語の会話を通じてこれらの構造化されたコレクションを見つけられ、個別の学習リソースを探す時間を減らし、実践的なAIスキルの習得に時間を使えます。\n次のようなプロンプトで注目プレイリストを探せます:\n• 営業向けのAIスキルを身につけるのに役立つプレイリストは?\n• AIでより良いマーケティングキャンペーンを作るのに役立つプレイリストを探して。\n• AIでコードレビューを速くするためのプレイリストを勧めて。\n• 会社のAIコストをうまく管理するのに役立つプレイリストを探して。\n• エージェントを使って仕事をもっと進める方法のプレイリストを見せて。\n[ロールアウトスケジュール]\n• 一般提供(Worldwide):2026年11月中旬に開始し、2026年11月中旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• AI Skills Navigatorが有効な組織のユーザー\nプラットフォームとサービス\n• Microsoft 365 Copilot、Copilot Chat、Learning Agent、AI Skills Navigator\n発生すること\n• ユーザーは自然言語の会話でLearning Agentに注目プレイリストの推奨を依頼できます。\n• 注目プレイリストは、ロール、製品、スキルに沿って関連する学習コンテンツを順に並べた厳選コレクションです。\n• 組織でAI Skills Navigatorが有効な場合、注目プレイリストはLearning Agentに含まれます。\n• AI Skills Navigatorの設定でCredentialsまたはMicrosoft YouTube videosのどちらかがオフの場合、プレイリストの推奨は表示されません。\n[必要なアクションと推奨事項]\nアクションは不要です。\n組織でAI Skills Navigatorを使用している場合は設定を確認してください。CredentialsまたはMicrosoft YouTube videosのどちらかがオフだとプレイリストの推奨は表示されません。\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 2050,
+      "sourceTruncated": false,
+      "sourceHash": "dc5f9ea5b81011b9c219a41195d43af163415638b6a78065c864ba8fcf270be0",
+      "validatedAt": "2026-11-05T02:41:49.5471636+00:00"
+    },
+    {
+      "id": "MC1536049",
+      "japaneseTitle": "Entra ID SSPRでMicrosoft提供のSMS・音声認証が廃止",
+      "japaneseFacts": {
+        "change": "SSPRでMicrosoft提供のSMS/音声認証が利用できなくなり、移行期間は50日です。",
+        "impact": "SSPRでSMS/音声に依存するユーザーを持つ組織で、回復方法が不足するとパスワードをリセットできなくなります。",
+        "timing": "Global Admin・外部ユーザー以外は2027年2月1日、Global Adminと外部ユーザーは2027年7月1日にロールアウト開始です。",
+        "action": "影響ユーザーを特定し、十分な代替回復方法を確保してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entra IDでMicrosoft提供のSMS/音声認証が廃止されるのに伴い、セルフサービスパスワードリセット(SSPR)でもこれらの方法が使えなくなります。該当するサインイン廃止のロールアウトがテナントに到達してから50日間が移行期間です。Global Administratorと外部ユーザー以外は2027年2月1日、Global Administratorと外部ユーザーは2027年7月1日にロールアウトが始まります。移行期間中は既存のSMS/音声登録がSSPRで使えますが、新規登録や電話番号の編集はできません。期間後、他の回復方法が不足するユーザーはパスワードをリセットできなくなります。管理者は影響ユーザーを特定し、十分な回復方法を確保する必要があります。パスキー等は自動的にSSPR要件を満たしません。本文は途中で切れています。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entra IDでMicrosoft提供のSMSおよび音声認証が廃止されるため、SSPRでもこれらの方法は利用できなくなります。該当するサインイン廃止のロールアウトがテナントに到達してから50日間、代替の回復方法を準備できます。ユーザーはサインインできても、忘れたパスワードをリセットできなくなる可能性があります。パスキーなどのサインイン方法は自動的にSSPR要件を満たしません。管理者は影響を受けるユーザーを特定し、運用の混乱やヘルプデスク問い合わせの増加を防ぐため、十分な適格回復方法を確保してください。\n[ロールアウトスケジュール]\n• 一般提供(Worldwide、GCC):2027年2月にロールアウトが開始され完了する見込み\nGlobal Administratorと外部ユーザー以外:サインイン廃止のロールアウト開始 2027年2月1日、SSPR移行終了 このロールアウトがテナントに到達してから50日後\nGlobal Administratorと外部ユーザー:開始 2027年7月1日、SSPR移行終了 この別のロールアウトがテナントに到達してから50日後\nこれらは段階的ロールアウトの開始日であり、全組織共通のSSPR終了日ではありません。各対象グループの50日間は、該当ロールアウトがテナントに到達した時点から始まります。\n[組織への影響]\n影響を受ける対象\n• パスワードリセット確認にMicrosoft提供のSMS/音声を使用しているユーザーがいる組織。他のサインイン方法があってもパスワード回復でSMS/音声に依存するユーザーを含みます。\nプラットフォームとサービス\n• Microsoft Entra ID SSPR\n発生すること\n該当するサインイン廃止のロールアウトがテナントに到達した時点で:\n• 50日間の移行:既存のSMSおよび音声の登録は、現在の回復ポリシーの下でSSPRに引き続き使用できます。\n• 登録の変更:SMS/音声のSSPR登録および更新のプロンプトは停止しますが、他の適格な方法のプロンプトは継続します。\n• My Sign-Ins:ユーザーはSMS/音声方法の追加や認証用電話番号の編集ができなくなります。既存の電話登録は、移行中にSSPRで使用可能でも無効と表示されます。\n• お客様管理のテレフォニー(CYOT):対応プロバイダー経由の回復は引き続き利用できます。\n50日間の移行期間後:\nMicrosoft提供のSMSおよび音声はSSPRの回復オプションとして利用できなくなります。\n残りの適格な回復方法が適用されるSSPR要件を満たすのに十分なユーザー:それらの方法で引き続きパスワードをリセットできます。\n十分でないユーザー:リセットできません(原文はここで途切れています)。",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "b02bec9028188b0b1b683494f484a811db15ae5b404cc3b7979b4588ec5f2fd0",
+      "validatedAt": "2026-11-05T02:41:49.5352364+00:00"
     }
   ],
-  "summarySourceHash": "a93dd6753fdf1e806efcacb625b3d96110b756c834e342148abbde3475f140af",
   "summaryGeneratedAt": "2026-11-05T02:35:52.7450372+00:00",
+  "summarySourceHash": "a93dd6753fdf1e806efcacb625b3d96110b756c834e342148abbde3475f140af",
   "sourceAgentRunId": "41955574913"
 }
