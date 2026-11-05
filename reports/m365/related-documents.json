@@ -21463,7 +21463,7 @@
         "6341620e11a8d20ddbd58ae39301901c68de24a86c3fb9388bfd85c470de4e51"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-02T01:34:13.354558+00:00",
+      "checkedAt": "2026-11-05T02:31:18.426264+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft authenticator ios android",
@@ -21479,7 +21479,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-05T01:34:13.366653+00:00",
+      "nextAttemptAt": "2026-11-08T02:31:18.435378+00:00",
       "variants": {
         "5f467f62070397114c0506884bae3f1b467e002f772fee3b340aacbbc68800df": {
           "sourceHashes": [
@@ -21928,7 +21928,7 @@
         "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-02T01:34:13.537510+00:00",
+      "checkedAt": "2026-11-05T02:31:18.603930+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft office copilot power app",
@@ -21944,15 +21944,15 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-05T01:34:17.072439+00:00",
+      "nextAttemptAt": "2026-11-08T02:31:21.677214+00:00",
       "variants": {}
     },
     "MC1530595": {
       "sourceHashes": [
-        "2e8e761824425b04bf2fd798e0385a8cb5d81b175928ff110bebe710bbb361de"
+        "83a59287f810d825c5c8f29b619944e5b5a62f0f38593905b2a4b92047d8751d"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-02T01:34:17.245257+00:00",
+      "checkedAt": "2026-11-05T02:30:51.739525+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot update",
@@ -21968,8 +21968,32 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-05T01:34:20.244801+00:00",
-      "variants": {}
+      "nextAttemptAt": "2026-11-08T02:30:55.497404+00:00",
+      "variants": {
+        "2e8e761824425b04bf2fd798e0385a8cb5d81b175928ff110bebe710bbb361de": {
+          "sourceHashes": [
+            "2e8e761824425b04bf2fd798e0385a8cb5d81b175928ff110bebe710bbb361de"
+          ],
+          "status": "no_verified_document",
+          "checkedAt": "2026-11-05T02:31:21.825872+00:00",
+          "documents": [],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft copilot update",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [],
+          "searchEvidenceKey": "search:Microsoft copilot update",
+          "searchedQueries": [
+            "Microsoft copilot update",
+            "copilot update"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+          "nextAttemptAt": "2026-11-08T02:31:21.834192+00:00"
+        }
+      }
     },
     "MC1518029": {
       "sourceHashes": [
@@ -22093,35 +22117,314 @@
       "rationale": "Articles verified against this snapshot version.",
       "nextAttemptAt": "2026-12-02T01:34:32.546367+00:00",
       "variants": {}
+    },
+    "MC1538999": {
+      "sourceHashes": [
+        "452e70125350147d6b1083ca1d01b5459fb69dc7f181448d538785d7231f930d"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-11-05T02:30:55.689405+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/work-iq/api-overview",
+          "title": "Work IQ API の概要",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-05T02:31:03.938376+00:00",
+          "bodySha256": "1e4a50822ac825900174ddc00e53cff6d78ed3ad729cc44dc49c3ac1f42ed04d",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "copilot",
+            "matchedTerms": [
+              "apis",
+              "iq",
+              "work"
+            ],
+            "requiredFeatureTerms": [
+              "apis",
+              "connectors",
+              "iq",
+              "work"
+            ],
+            "coverage": 0.75,
+            "platforms": [],
+            "score": 0.95,
+            "articleExcerpt": "# Work IQ API overview\r\n\r\nThe Work IQ API enables developers to build agentic and AI-powered applications that securely reason over Microsoft 365 data while preserving existing permissions, compliance, and governance controls.\r\n\r\nWork IQ provides multiple protocols to interact with agents - Agent-to-Agent (A2A), Model Context Protocol (MCP), and REST - so you can choose the protocol that best fits your application or agent architecture.\r\n\r\nBy accessing or using the Microsoft Work IQ APIs, you're agreeing to the [Microsoft Work IQ APIs Terms of Use](/en-us/legal/work-iq-apis/terms-of-use?context=/microsoft-365/copilot/extensibility/context).\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/api-overview",
+            "bodySha256": "9997d54eddff6dde657aaf6a38d21f80bd98b00bb0d449c8da11efc2189728ba",
+            "reviewedAt": "2026-11-05T02:31:03.938430+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft copilot connectors",
+      "explicitUrls": [
+        "https://learn.microsoft.com/microsoft-365/copilot/extensibility/work-iq/api-overview"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/microsoft-365/copilot/extensibility/work-iq/api-overview",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 0.95
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft copilot connectors",
+      "searchedQueries": [
+        "Microsoft copilot connectors",
+        "copilot connectors"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-05T02:31:03.938437+00:00",
+      "variants": {}
+    },
+    "MC1537495": {
+      "sourceHashes": [
+        "49b67adcce417ef53828bd4106ea57a654b821ea0dda311d9e39969feffe0a52"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-11-05T02:31:04.085864+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/viva/learning/manage-ai-skills-navigator",
+          "title": "AI スキル ナビゲーターの管理",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-05T02:31:09.403739+00:00",
+          "bodySha256": "bf573032f33edebc76a7b13928dcb73ebe8fccd62708b20318c3e8e802ae2ce3",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "automatic_learn_search",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "copilot",
+            "matchedTerms": [
+              "agent",
+              "ai",
+              "discover",
+              "learning",
+              "navigator",
+              "skill"
+            ],
+            "requiredFeatureTerms": [
+              "agent",
+              "ai",
+              "discover",
+              "featured",
+              "learning",
+              "navigator",
+              "playlists",
+              "skill"
+            ],
+            "coverage": 0.75,
+            "platforms": [],
+            "score": 0.95,
+            "articleExcerpt": "## Overview\r\n\r\nAI Skills Navigator brings Microsoft's curated AI and Copilot learning content into Learning Agent. Learners can discover Microsoft Learn courses, videos, skilling sessions, and credentials alongside your organization's learning content.\r\n\r\nAI Skills Navigator is enabled by default when you set up Learning Agent. Administrators can choose whether credentials and Microsoft YouTube videos appear, or turn off AI Skills Navigator for the organization.\r\n\r\nThis article explains how to manage these settings.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/viva/learning/manage-ai-skills-navigator",
+            "bodySha256": "b1e7922fc56ce3ff5863ce930b72c4497bf597d18c531bad46b4074bae030923",
+            "reviewedAt": "2026-11-05T02:31:09.403808+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft copilot ai skills agent",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/viva/learning/manage-ai-skills-navigator",
+          "source": "automatic_learn_search",
+          "decision": "adopted",
+          "score": 0.95
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft copilot ai skills agent",
+      "searchedQueries": [
+        "Microsoft copilot ai skills agent"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-05T02:31:09.403815+00:00",
+      "variants": {}
+    },
+    "MC1536057": {
+      "sourceHashes": [
+        "80cda25b574b480a15aaddd3af72f76e7b26a5abdbdbe90dc50f95759b860d34"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-05T02:31:09.552937+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft limit release preferences",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft limit release preferences",
+      "searchedQueries": [
+        "Microsoft limit release preferences"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-08T02:31:11.125892+00:00",
+      "variants": {}
+    },
+    "MC1536049": {
+      "sourceHashes": [
+        "1e6502effddf834a38b5b0e5ae248a7f751cb613e8c0c2de1c32685df9669cb5"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-11-05T02:31:11.272898+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
+          "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-22T00:43:47.101706+00:00",
+          "bodySha256": "83ec253a56a82222dde9352b5982fb64c74264fbaf8d0ad1dfaf4bf39c850adc",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
+            "bodySha256": "026ac67e0d0c2c322a42a2bade197511c496d906c7edee06ddcd7e17a54e462c",
+            "reviewedAt": "2026-11-05T02:31:14.140432+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sms-voice-retirement",
+          "title": "既定でのパスキーと、Microsoftが提供する SMS および音声認証の廃止",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-22T00:43:51.140481+00:00",
+          "bodySha256": "065e40588dae2ff7ec7f6dd578d03180d34e4c6e384f459b3bc2d7385849e5b9",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
+            "bodySha256": "d7df995ad5f4b8f334445ecea4cfc66a0301c17a0d165e62701b75933b44b658",
+            "reviewedAt": "2026-11-05T02:31:15.325558+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sspr-howitworks",
+          "title": "しくみ: Microsoft Entra のセルフサービス パスワード リセット",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-05T02:31:18.274803+00:00",
+          "bodySha256": "448816d98fdecffd3a20a2e114a1d33bf1a1e40c3095c255bbd579bc999dbaae",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "authentication",
+              "id",
+              "password",
+              "reset",
+              "service",
+              "sms",
+              "sspr",
+              "voice"
+            ],
+            "requiredFeatureTerms": [
+              "authentication",
+              "id",
+              "password",
+              "provided",
+              "reset",
+              "self",
+              "service",
+              "sms",
+              "sspr",
+              "voice"
+            ],
+            "coverage": 0.8,
+            "platforms": [],
+            "score": 1.0,
+            "articleExcerpt": "## Authentication methods\r\n\r\nWhen a user is enabled for SSPR, they must register at least one authentication method. We highly recommend that you choose two or more authentication methods so that your users have more flexibility in case they're unable to access one method when they need it. For more information, see [What are authentication methods?](overview-authentication).\r\n\r\nThe following authentication methods are available for SSPR:\r\n\r\n- [Microsoft Authenticator push notifications](concept-authentication-authenticator-app#mfa-via-notifications-through-mobile-app)\r\n- [Hardware OATH tokens (preview)](concept-authentication-oath-tokens#hardware-oath-tokens-preview)\r\n- [Software OATH tokens](concept-authentication-oath-tokens#software-oath-tokens)\r\n- [Short Message Service (SMS) sign-in](howto-authentication-sms-signin)\r\n- [Voice call](concept-authentication-phone-options)\r\n- Email OTP\r\n\r\nUsers can only reset their password if they register an authentication method that the administrator has enabled.\r\n\r\nWarning\r\n\r\nAccounts assigned Azure *administrator* roles are required to use methods as defined in the section [Administrator reset policy differences](concept-sspr-policy#administrator-reset-policy-differences).\r\n\r\n![Screenshot of the Authentication methods policy for Microsoft Entra ID.](media/concept-sspr-howitworks/authentication-methods.png)\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+            "bodySha256": "b525ede002a51f75da3209a990959199dff4f6e0c9a97c5b2c2f331efacf9491",
+            "reviewedAt": "2026-11-05T02:31:18.274884+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft entra sms voice authentication self service password sspr",
+      "explicitUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-sspr-howitworks",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 1.0
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft entra sms voice authentication self service password sspr",
+      "searchedQueries": [
+        "Microsoft entra sms voice authentication self service password sspr"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-05T02:31:18.274891+00:00",
+      "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 164,
-    "snapshotOccurrences": 3638,
-    "snapshots": 44,
+    "uniqueMessages": 168,
+    "snapshotOccurrences": 3732,
+    "snapshots": 45,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-10-29T18:32:57+00:00",
-    "checkedAt": "2026-11-04T20:56:20.317640+00:00",
+    "publicationEnd": "2026-11-05T00:08:04+00:00",
+    "checkedAt": "2026-11-05T02:31:22.108001+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 59,
+      "no_verified_document": 60,
       "not_researched": 0,
-      "verified": 105
+      "verified": 108
     },
     "latestCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 23,
+      "no_verified_document": 22,
       "not_researched": 0,
-      "verified": 67
+      "verified": 70
     },
-    "latestTotal": 90,
+    "latestTotal": 92,
     "pendingAttempts": 0,
-    "processedThisRun": 47,
+    "processedThisRun": 8,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 153,
+      "no_verified_document": 155,
       "not_researched": 0,
-      "verified": 202
+      "verified": 205
     },
     "retrievalErrors": 0,
     "coverage": "complete",
