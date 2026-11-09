@@ -21925,10 +21925,10 @@
     },
     "MC1530611": {
       "sourceHashes": [
-        "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2"
+        "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-08T09:27:01.244195+00:00",
+      "checkedAt": "2026-11-09T01:46:09.944814+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft office copilot power app",
@@ -21944,8 +21944,32 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-11T09:27:04.770117+00:00",
-      "variants": {}
+      "nextAttemptAt": "2026-11-12T01:46:09.955303+00:00",
+      "variants": {
+        "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2": {
+          "sourceHashes": [
+            "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2"
+          ],
+          "status": "no_verified_document",
+          "checkedAt": "2026-11-08T09:27:01.244195+00:00",
+          "documents": [],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft office copilot power app",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [],
+          "searchEvidenceKey": "search:Microsoft office copilot power app",
+          "searchedQueries": [
+            "Microsoft office copilot power app",
+            "copilot office power app"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+          "nextAttemptAt": "2026-11-11T09:27:04.770117+00:00"
+        }
+      }
     },
     "MC1530595": {
       "sourceHashes": [
@@ -22396,35 +22420,145 @@
       "rationale": "Articles verified against this snapshot version.",
       "nextAttemptAt": "2026-12-05T02:31:18.274891+00:00",
       "variants": {}
+    },
+    "MC1542066": {
+      "sourceHashes": [
+        "1366c9a23127ac467864457e5236720bf759a2326fff09c951e01870bcf94e9a"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-11-09T01:46:10.193801+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365-apps/org-data-service/import/import-orgdata",
+          "title": ".csv ファイルを使用して組織データをインポートして管理する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-09T01:46:17.002300+00:00",
+          "bodySha256": "eab78cd4f2c54a1c6aeec35ac1daff112a0b03d4829c07a4e93496d2f11552ef",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365-apps/org-data-service/import/import-orgdata",
+            "bodySha256": "034618fb782de87f7af5830422903862266e9e4db95979ac424fab1afa97b12d",
+            "reviewedAt": "2026-11-09T01:46:17.002383+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365-apps/org-data-service/organizational-data",
+          "title": "Microsoft 365 組織データ サービスの概要",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-09T01:46:21.179847+00:00",
+          "bodySha256": "1486c2c25745153a82859f5540ef90d008bd881376bb14bc3762c89367610a44",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365-apps/org-data-service/organizational-data",
+            "bodySha256": "01d2397112676fdc3f0bb338a3bb22c95bd51645edfc6eb06e18b972ec13fa2d",
+            "reviewedAt": "2026-11-09T01:46:21.179891+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/copilot/manage/workforce-insights-agent",
+          "title": "Workforce Insights エージェント",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-09T01:46:26.282729+00:00",
+          "bodySha256": "6e0ef285427dd61aa60a3816d18b0e9c7e956e26aa6ae796f2d1e1f712291131",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "copilot",
+            "matchedTerms": [
+              "custom",
+              "insights",
+              "workforce"
+            ],
+            "requiredFeatureTerms": [
+              "custom",
+              "insights",
+              "mods",
+              "workforce"
+            ],
+            "coverage": 0.75,
+            "platforms": [],
+            "score": 0.95,
+            "articleExcerpt": "# Workforce Insights agent\r\n\r\nImportant\r\n\r\nThe Workforce Insights agent is in the Microsoft Frontier program and subject to change. For more information, see [Get started with the Microsoft Frontier program](/en-us/microsoft-365/admin/manage/get-started-frontier).\r\n\r\nThe Workforce Insights agent helps organizational leaders and their specified delegates:\r\n\r\n- Understand organization composition and landscape of users of key attributes within their organizations.\r\n- Perform and summarize guidance and best practices for workforce planning based on skills.\r\n- Identify skills and suggest improvements to organizational structure.\r\n- Find team members in your organization and filter by attributes such as level, location, title, etc.\r\n\r\nThe Workforce Insights agent uses information from:\r\n\r\n- [Organizational Data](/en-us/viva/organizational-data)\r\n    - Organizational data describes the users in your organization.\r\n- Custom attributes sent to Workforce Insights\r\n- [People Skills data](people-skills-overview)\r\n\r\nImportant\r\n\r\nYou can only search for information that's available to you about your team. Responses are based on your role, and policies set by your admin and organization.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/workforce-insights-agent",
+            "bodySha256": "cce2a80a7e87b1d9ea2c4deb0e09f00f5be7c6178fa585611f9d39f2cdbb2276",
+            "reviewedAt": "2026-11-09T01:46:26.282862+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft copilot custom organizational data insights",
+      "explicitUrls": [
+        "https://learn.microsoft.com/microsoft-365-apps/org-data-service/import/import-orgdata",
+        "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
+        "https://learn.microsoft.com/microsoft-365/copilot/workforce-insights-agent"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/microsoft-365-apps/org-data-service/import/import-orgdata",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/microsoft-365/copilot/workforce-insights-agent",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 0.95
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft copilot custom organizational data insights",
+      "searchedQueries": [
+        "Microsoft copilot custom organizational data insights",
+        "copilot custom organizational data insights"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-09T01:46:26.282870+00:00",
+      "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 168,
-    "snapshotOccurrences": 3732,
-    "snapshots": 45,
+    "uniqueMessages": 169,
+    "snapshotOccurrences": 3826,
+    "snapshots": 46,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-11-05T00:08:04+00:00",
-    "checkedAt": "2026-11-08T19:00:16.200141+00:00",
+    "publicationEnd": "2026-11-06T21:34:13+00:00",
+    "checkedAt": "2026-11-09T01:46:26.606725+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 60,
       "not_researched": 0,
-      "verified": 108
+      "verified": 109
     },
     "latestCounts": {
       "fetch_failed": 0,
       "no_verified_document": 22,
       "not_researched": 0,
-      "verified": 70
+      "verified": 71
     },
-    "latestTotal": 92,
+    "latestTotal": 93,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 2,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 155,
+      "no_verified_document": 156,
       "not_researched": 0,
-      "verified": 205
+      "verified": 206
     },
     "retrievalErrors": 0,
     "coverage": "complete",
