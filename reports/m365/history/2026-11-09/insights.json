@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T09:59:35.3483029+00:00",
+  "generatedAt": "2026-11-09T20:55:00.1063524+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証方式の変更(SSPR・SMS/音声廃止)とリリース設定変更が最優先、Copilot関連の展開も進行",
   "executiveSummary": "今週は認証・リリース管理・Copilot関連の変更が中心です。MC1325414は、SSPRがディレクトリ属性ではなく明示的に登録された認証方式を要求するようになる変更で、抜粋上のタイトルでは2026年11月9日開始です。MC1528000とMC1536049によると、MicrosoftマネージドのSMS/音声認証は2027年2月1日から廃止が始まります。SSPRでは、サインイン廃止の展開が到達してから50日の移行期間が設けられます。MC1490899は、2027年1月のTargeted release廃止に向けて2026年11月にユーザーの追加・削除・変更ができなくなるとしています。MC1536057は例外ユーザー上限が100から10,000に拡大される内容です。MC1542066は、Workforce Insightsエンドポイントが2026年11月18日からMODSで廃止され、Microsoft 365プロファイルエンドポイントに移行する内容です。MC1526468では、カナダの一部地域が2026年11月1日に時計を戻さず、Outlook/Exchangeの予定への影響が確認されています。Copilot関連(MC1530611、MC1538999)は展開が進行中で、管理者の必須作業は抜粋では示されていません。",
@@ -2050,22 +2050,6 @@
       "validatedAt": "2026-11-05T09:42:28.3528752+00:00"
     },
     {
-      "id": "MC1530611",
-      "japaneseTitle": "Copilotアプリ内でWord・Excel・PowerPointを作成・編集可能に",
-      "japaneseFacts": {
-        "change": "Microsoft Copilotアプリ内で、Word、Excel、PowerPointファイルの作成、編集、共同作業ができるようになります。",
-        "impact": "Copilotを利用するユーザーが対象で、Copilotが文書内容を読み取り編集する機能が拡張されます。",
-        "timing": "Worldwideで2026年11月中旬に展開を開始し、同じく11月中旬に完了予定です。",
-        "action": "管理者の対応は不要です。ユーザーへの周知と既存のMicrosoft 365 Copilot設定・ポリシーの確認が推奨されます。"
-      },
-      "japaneseDetailedSummary": "Microsoft Copilotアプリ内でOfficeの機能が利用可能になり、Word、Excel、PowerPointファイルをアプリを離れずに作成、確認、編集、共同作業できます。コンテキストの切り替えが減り、アイデアや会話から共有可能なOffice成果物へ移行しやすくなります。一般提供はWorldwideで2026年11月中旬に開始し、同月中旬に完了予定です。管理者の対応は不要ですが、ユーザーへの周知と既存のMicrosoft 365 Copilot設定・ポリシーの確認が推奨されています。コンプライアンス面では、Office文書内容へのアクセスと編集がCopilot経由で可能になり、変更は通常のOfficeアプリに同期されます。Copilotが文書内容を読み取り編集する機能が拡張され、管理は既存のCopilot設定とEntra IDグループ割り当てで行えます。",
-      "japaneseBodyTranslation": "[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの全機能を利用できるようになり、アプリを離れずにWord、Excel、PowerPointファイルを作成、編集、共同作業できます。\n[ロールアウトスケジュール]\n一般提供(Worldwide):2026年11月中旬に展開を開始し、2026年11月中旬に完了予定です。\n[組織への影響]\nCopilotに組み込まれたOfficeの価値により、Word、Excel、PowerPointがCopilot体験に直接取り込まれ、ユーザーは作業の流れを離れずにOfficeファイルを作成、レビュー、編集、共同作業できます。これによりコンテキストの切り替えが減り、アイデアや会話から共有可能な完成したOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、新しい体験についてユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認するとよいでしょう。\n[コンプライアンス上の考慮事項]\n質問と回答\nこの変更は既存の顧客データの処理、保存、アクセス方法を変えますか?はい。ユーザーはCopilot体験を通じてOfficeファイルの内容にアクセスして編集でき、変更は通常のOfficeアプリに同期されます。\nこの変更は、顧客データにアクセスする、またはアクセスを提供するAI/MLやエージェント機能を導入または大きく変更しますか?はい。この機能の一部として、CopilotはOfficeドキュメントの内容を読み取り編集する機能が拡張されます。\nこの変更により、エンドユーザーに生成AIとの新しい対話方法が提供されますか?はい。ユーザーはCopilotアプリ内でWord、Excel、PowerPointのコンテンツを直接作成、編集できます。\nこの変更には管理コントロールがあり、Entra IDグループメンバーシップで制御できますか?はい。この機能は既存のMicrosoft 365 Copilotの構成とポリシーの対象で、管理者はEntra IDのグループベースの割り当てで管理できます。",
-      "sourceCharacterCount": 1859,
-      "sourceTruncated": false,
-      "sourceHash": "4ef0f135021e8616abfbd2e0266768d563db68b6c5d1c71aa600214734cbf983",
-      "validatedAt": "2026-11-02T06:30:35.2075713+00:00"
-    },
-    {
       "id": "MC1536049",
       "japaneseTitle": "Entra ID SSPRでMicrosoft提供のSMS・音声認証が廃止",
       "japaneseFacts": {
@@ -2144,9 +2128,41 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1530611",
+      "japaneseTitle": "Copilotアプリ内でWord・Excel・PowerPointの作成と編集が可能に",
+      "japaneseFacts": {
+        "change": "Copilotアプリ内でWord、Excel、PowerPointファイルを作成、編集、共同作業できるようになります。",
+        "impact": "Copilot経由でOfficeファイルの内容にアクセス・編集でき、変更は通常のOfficeアプリに同期されます。",
+        "timing": "全世界GAは展開を開始済みで、2026年11月中旬までに完了予定です。",
+        "action": "管理者の対応は不要で、ユーザーへの周知と既存のCopilot構成・ポリシーの確認が推奨されます。"
+      },
+      "japaneseDetailedSummary": "Microsoft Copilotアプリ内で、Word、Excel、PowerPointファイルの作成、編集、共同作業ができるようになります。2026年11月5日にタイムラインが更新され、全世界向けGAは既に展開を開始しており、2026年11月中旬までに完了する予定です。コンテキスト切り替えが減り、会話やアイデアから共有可能なOffice成果物へ移行しやすくなります。管理者の対応は不要ですが、新しい体験をユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認することが推奨されます。コンプライアンス面では、ユーザーがCopilot経由でOfficeファイルの内容にアクセス・編集でき、変更は通常のOfficeアプリに同期されます。本機能は既存のCopilot構成とポリシーの対象で、Entra IDグループによる割り当てで管理できます。",
+      "japaneseBodyTranslation": "2026年11月5日更新:タイムラインを更新しました。ご理解に感謝いたします。\n[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの機能をフルに利用でき、アプリを離れることなくWord、Excel、PowerPointファイルを作成、編集、共同作業できます。\n[ロールアウトスケジュール]\n一般提供(全世界):展開を開始しており、2026年11月中旬までに完了する予定です。\n[組織への影響]\nCopilot内でOfficeの機能をフルに利用できるようになり、Word、Excel、PowerPointがCopilotエクスペリエンスに直接統合されます。ユーザーは作業の流れを離れることなくOfficeファイルを作成、レビュー、編集、共同作業できます。これによりコンテキスト切り替えが減り、アイデアや会話から共有可能な完成したOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、新しいエクスペリエンスをユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認するとよいでしょう。\n[コンプライアンス上の考慮事項]\n質問:この変更により、既存の顧客データの処理、保存、アクセス方法は変わりますか?\n回答:はい。ユーザーはCopilotエクスペリエンス経由でOfficeファイルの内容にアクセスして編集でき、変更は通常のOfficeアプリに同期されます。\n質問:この変更は、顧客データとやり取りする、またはそれへのアクセスを提供するAI/MLやエージェント機能を新たに導入または大幅に変更しますか?\n回答:はい。この機能の一部として、CopilotはOfficeドキュメントの内容を読み取り、編集する機能が拡張されます。\n質問:この変更により、エンドユーザーに生成AIとの新しいやり取りの方法が提供されますか?\n回答:はい。ユーザーはCopilotアプリ内で直接、Word、Excel、PowerPointのコンテンツを作成、編集できます。\n質問:この変更には管理者コントロールが含まれ、Entra IDグループのメンバーシップで制御できますか?\n回答:はい。この機能は既存のMicrosoft 365 Copilotの構成とポリシーの対象であり、管理者はEntra IDグループベースの割り当てで管理できます。",
+      "sourceCharacterCount": 1923,
+      "sourceTruncated": false,
+      "sourceHash": "41b9f33788255d55e7d70e6309f4c12750c8c4e271c13ab6828739eae75ecd22",
+      "validatedAt": "2026-11-09T20:55:00.0973440+00:00"
+    },
+    {
+      "id": "MC1542066",
+      "japaneseTitle": "Workforce Insights専用MODSエンドポイントが廃止、M365プロファイルへ移行",
+      "japaneseFacts": {
+        "change": "MODSのWorkforce Insights専用エンドポイントが廃止され、組織データはMicrosoft 365プロファイルエンドポイント経由になります。",
+        "impact": "このエンドポイントへカスタム属性を送信するOrganizational Data Source管理者や、Copilotでカスタム属性を使う予定の組織が対象です。",
+        "timing": "2026年11月18日から廃止が始まります。",
+        "action": "現在カスタム非公開属性を送信している場合は11月18日までに対応し、プライベートプレビュー参加とMicrosoft 365プロファイルエンドポイントの明示的な選択が必要です。"
+      },
+      "japaneseDetailedSummary": "Workforce Insightsエージェント(Frontierプログラムのプレビュー)がMicrosoft 365 Organizational Data Service(MODS)からカスタム組織データを受け取る方法が変わります。MODS内の専用Workforce Insightsエンドポイントは2026年11月18日から廃止され、今後はMicrosoft 365プロファイルエンドポイント経由になります。カスタム公開属性のMicrosoft 365プロファイル経由の取り込みは既にGAです。職位などのカスタム非公開属性を使う場合はプライベートプレビューへの参加が必要です。現在のエンドポイント選択は引き継がれず、Microsoft 365プロファイルを明示的に選択する必要があります。既にアップロード済みのデータは更新されないまま残り、以後は廃止エンドポイントへアップロードできません。対象はこのエンドポイントへカスタム属性を送信しているOrganizational Data Source管理者です。",
+      "japaneseBodyTranslation": "[内容と理由]\nWorkforce Insightsエージェントが、Microsoft 365 Organizational Data Service(MODS)からカスタム組織データを受け取る方法を変更します。MODS内の個別のWorkforce Insightsエンドポイントは廃止されます。今後、組織データはMicrosoft 365プロファイルエンドポイント経由でWorkforce Insightsエージェントに届きます。Workforce InsightsエージェントはMicrosoft Frontierプログラムの一部で、現在プレビュー中です。\nMicrosoft 365プロファイル経由のカスタム公開属性の取り込みは既に一般提供されています。カスタム非公開属性については、現在MODSのWorkforce Insightsエンドポイントを使用している、または初めて有効化したいお客様は、プライベートプレビューに参加する必要があります。\n[ロールアウトスケジュール]\n• MODSにおけるWorkforce Insightsエンドポイントの廃止(Frontierプレビュー):2026年11月18日開始\n[組織への影響]\n影響を受ける対象\n• MODSのWorkforce Insightsエンドポイントにカスタム属性を送信している組織のOrganizational Data Source管理者\n• CopilotエクスペリエンスおよびWorkforce Insightsエージェントでカスタム属性の利用を計画している組織\n• 現在Workforce Insightsエンドポイントにカスタム属性を送信していない場合、直ちに必要な対応はありません\nプラットフォームとサービス\n• Microsoft 365 Organizational Data Service\n• Microsoft 365プロファイル\n• Microsoft 365 Copilot\n• Workforce Insightsエージェント\n発生すること\n• 2026年11月18日以降、Workforce InsightsエンドポイントはMODSの宛先として利用できなくなります。カスタム公開属性を取り込むには、MODSのMicrosoft 365プロファイルエンドポイントを使用してください。\n• 職位などのカスタム非公開属性をCopilotエクスペリエンスとWorkforce Insightsエージェントに取り込むには、プライベートプレビューへの参加が必要です。\n• 現在のWorkforce Insightsエンドポイントの選択は引き継がれません。MODSでMicrosoft 365プロファイルエンドポイントを明示的に選択する必要があります。\n• Workforce Insightsエンドポイントに以前アップロードしたデータは更新されないまま残り、Workforce InsightsエージェントおよびCopilotでの組織に関するクエリに引き続き使用されます。廃止後は、そのエンドポイントに追加データをアップロードできません。詳細は下記の「詳細情報」にあるMODSのデータ管理ドキュメントを参照してください。\n[必要な対応と推奨事項]\n現在MODSのWorkforce Insightsエンドポイントにカスタム非公開属性を送信している場合は、2026年11月18日までに次の対応を完了してください。\n• Workforce Insig(原文はここで切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "602496055a71f37f79dbd4a918bdb73e418395752ebb36c28ef9b21810ea6ff8",
+      "validatedAt": "2026-11-09T20:55:00.0913615+00:00"
     }
   ],
-  "summarySourceHash": "91f98cfa23121ddea9e1456b4dbb0b354999ad856e1ddfe2a36312dc84168d1b",
   "summaryGeneratedAt": "2026-11-09T09:59:35.1295107+00:00",
+  "summarySourceHash": "91f98cfa23121ddea9e1456b4dbb0b354999ad856e1ddfe2a36312dc84168d1b",
   "sourceAgentRunId": "42597187945"
 }
