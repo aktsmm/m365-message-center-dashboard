@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "observedAt": "2026-11-11T01:59:17.5676394+00:00",
+  "observedAt": "2026-11-11T09:35:41.4243765+00:00",
   "snapshotGeneratedAt": "2026-11-09T01:44:51.934539+00:00",
   "summary": {
     "reason": "",
     "status": "current"
   },
   "translations": {
-    "total": 93,
     "pending": 0,
+    "total": 93,
     "current": 93
   },
   "attempts": {
@@ -24,8 +24,8 @@
     }
   },
   "action": {
-    "lane": null,
     "workflow": null,
+    "lane": null,
     "status": "not_needed"
   }
 }
