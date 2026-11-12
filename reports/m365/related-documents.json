@@ -23024,7 +23024,7 @@
     "snapshots": 47,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-10T00:04:06+00:00",
-    "checkedAt": "2026-11-12T03:04:20.543958+00:00",
+    "checkedAt": "2026-11-12T10:10:40.970650+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 61,
@@ -23039,7 +23039,7 @@
     },
     "latestTotal": 96,
     "pendingAttempts": 0,
-    "processedThisRun": 9,
+    "processedThisRun": 0,
     "variantCounts": {
       "fetch_failed": 0,
       "no_verified_document": 158,
