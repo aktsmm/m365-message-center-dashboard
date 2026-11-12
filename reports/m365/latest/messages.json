@@ -1,34 +1,320 @@
 {
   "meta": {
-    "runId": "42547147858",
-    "generatedAt": "2026-11-09T01:44:51.9345390+00:00",
+    "runId": "43145364569",
+    "generatedAt": "2026-11-12T03:01:46.9594541+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 93,
+    "total": 96,
     "majorChanges": 26,
     "highSeverity": 2,
     "actionRequired": 13,
     "actionDueWithin30Days": 1,
-    "updatedLast7Days": 7
+    "updatedLast7Days": 10
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 53
+      "count": 54
     },
     {
       "name": "Microsoft Entra",
-      "count": 26
+      "count": 27
     },
     {
       "name": "Microsoft 365 Copilot Chat",
-      "count": 16
+      "count": 17
     }
   ],
   "messages": [
+    {
+      "id": "MC1470885",
+      "title": "(Updated) M365 Copilot: Tell Copilot what you need directly from the Copilot button in Word, Excel, and PowerPoint",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-09-11T23:17:58.0000000+00:00",
+      "endDateTime": "2027-02-22T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-11T21:51:22.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated November 11, 2026: We have updated the content. Thank you for your patience.\n[What and Why:]\nMicrosoft is making Copilot more accessible within Word, Excel, and PowerPoint by adding a new prompt input directly to the Copilot button and providing contextual prompt experiences when users select content. This update helps users engage with Microsoft 365 Copilot without leaving their workflow, enabling faster content creation, editing, and task completion. This change supports personal and team productivity by bringing Copilot assistance directly into the document experience.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout begins September 2026 and is expected to complete by the end of December 2026.\n• Available in Word, Excel, and PowerPoint on Windows desktop, macOS, and web.\n• Rollout may occur on different platforms at different times.\n[Impact on Your Organization:]\nWho is affected:\n• Microsoft 365 users eligible for Microsoft 365 Copilot using Word, Excel, or PowerPoint on Windows desktop, macOS, or web.\nPlatforms/Services:\n• Microsoft 365 Copilot\n• Word\n• Excel\n• PowerPoint\n• Windows desktop\n• macOS desktop\n• Web\nWhat will happen:\n• Users will see a new button and prompt in the top right (by default).\n•\n• Users can type or dictate prompts without opening the Copilot pane.\n• Users can reference Microsoft 365 content directly from the prompt input experience.\n• When content is selected in Word or PowerPoint, a contextual Copilot input will appear.\n• Suggested actions such as Rewrite and Shorten will be shown when appropriate.\n•\n• Windows shortcut: Alt + C.\n• Mac shortcut: Command + Control + I.\n• The feature is enabled by default for eligible users.\n• Existing Copilot administration controls continue to apply.\n• No separate admin control is available for the prompt input experience.\n[Action Required / Recommendations:]\nNo admin action is required.\n• Update user training and adoption materials.\n• Update help desk documentation.\n• Review the Pin Microsoft 365 Copilot Chat setting.\n• Communicate the change to end users.\n• Review Manage Microsoft 365 Copilot Chat documentation.\n• Review Pin Microsoft 365 Copilot Chat in Microsoft 365 apps documentation.\n• Review The Copilot Dynamic Action Button in Word, Excel, and PowerPoint documentation.\n[Compliance Considerations:]\n• New generative AI interaction entry points are introduced.\n• The update expands how users invoke existing Copilot capabilities.\n• Existing admin controls remain available through the Pin Microsoft 365 Copilot Chat setting.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Copilot now features a prompt input directly on the Copilot button in Word, Excel, and PowerPoint, enabling faster, contextual content creation without leaving the workflow. Rolling out worldwide from September to December 2026 on Windows, macOS, and web, it requires no admin action but updates to training and documentation."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/copilot/manage",
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/pin-copilot-chat-navbar"
+      ]
+    },
+    {
+      "id": "MC1529467",
+      "title": "(Updated) Microsoft Windows: Updates to address compromised eMudhra certificate authority keys",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-28T22:53:04.0000000+00:00",
+      "endDateTime": "2026-11-28T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-11T18:41:32.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated November 11, 2026: On November 16, 2026, an update will be released for Microsoft Edge and WebView2, delivered via the PKI Metadata component, which will fully remove default trust for the remaining roots (emSign Root CA - G1, emSign Root CA - C1, emSign ECC Root CA, and emSign Root TLS CA - G1). Devices check for PKI Metadata updates every 10 hours and shortly after each new app launch.\nFor more information, see Microsoft Response to eMudhra Certificate Authority Key Compromise.\n[What and why]\nMicrosoft is responding to an issue involving eight eMudhra intermediate certificate authority (CA) private keys, six associated with TLS and two with code signing. Because these keys could be recovered, they could potentially be used to create certificates or sign content that appeared to come from a trusted CA. The issue arose in eMudhra's certificate hierarchy and was not a compromise of Microsoft systems.\nMicrosoft is updating certificate trust to block affected certificate authorities and remove certificates associated with the affected hierarchies.\n[Rollout schedule]\n• General Availability (Worldwide, GCC, GCC High, DoD): Beginning in late October 2026 and expected to complete by late October 2026\n[Impact on your organization]\nWho is affected\n• Organizations using Windows, Microsoft Edge, or WebView2, particularly organizations with certificates that chain to one of the eight certificates being removed\n• Organizations managing disconnected Windows devices or disconnected Azure devices may need to take additional action\nPlatforms and services\n• Windows\n• Microsoft Edge\n• WebView2\n• Azure virtual machines\nWhat will happen\n• Microsoft has published an update to the Windows Disallowed Certificate Trust List to block the affected certificate authorities.\n• Microsoft has deployed a separate CRLSet update for Microsoft Edge and WebView2 to block affected TLS certificates signed by the affected certificate authorities.\n• The Microsoft Edge and WebView2 update is delivered automatically through the component update mechanism. Customers do not need to install a new browser version.\n• Microsoft has released updates to Windows and Microsoft Edge to remove certificates associated with the affected hierarchies from their trust lists.\n• After these updates reach a device, the affected certificates will no longer be trusted by default through the respective trust lists.\n[Action required and recommendations]\n• Keep updates flowing. Allow automatic Windows certificate trust updates and Microsoft Edge component updates to reach your devices.\n• Check disconnected Windows devices. If you manage Windows devices that do not receive automatic updates, make sure your update process delivers the updated Disallowed Certificate Trust List and upcoming trust-list changes. See the Microsoft Learn guidance in Learn more for information about distributing certificate trust lists in disconnected environments.\n• Review disconnected Azure devices. Review disconnected Azure devices running on Virtual Machine Scale Sets (VMSS) or single-instance VMs. Updated images are available in Azure Marketplace, and customers can deploy them to protect against this vulnerability.\n• Replace dependent certificates. If any of your certificates chain to one of the seven certificates being removed, identify those dependencies and obtain replacement certificates or an alternative trusted chain before the changes reach your devices.\nLearn more\n• Microsoft’s response to compromised eMudhra certificate authority keys\n• Configure trusted roots and disallowed certificates in Windows | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft will release updates by November 16, 2026, to remove trust for compromised eMudhra certificate authorities in Windows, Edge, and WebView2. Organizations must allow automatic updates, manage disconnected devices, and replace affected certificates to maintain security. Updates block affected CAs and remove related certificates from trust lists."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates"
+      ]
+    },
+    {
+      "id": "MC1530611",
+      "title": "(Updated) Office in Copilot brings the full power of Office into the Microsoft Copilot app",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-29T18:32:57.0000000+00:00",
+      "endDateTime": "2027-01-29T18:32:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-10T19:22:14.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Deferred feature",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated November 10, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nNow users have the full power of Office in Microsoft Copilot app, so users can create, edit and collaborate on Word, Excel and PowerPoint files, without leaving the app.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We have begun rolling out and expect to complete by mid-November 2026.\n• Deferred release will start early December 2026\n[Impact on Your Organization:]\nNow with the full value of Office in Copilot, Word, Excel, and PowerPoint is brought in directly into the Copilot experience, allowing users to create, review, edit, and collaborate on Office files without leaving their flow of work. This reduces context switching and makes it easier to move from an idea or conversation to a finished, shareable Office artifact.\n[Action Required/Recommendations:]\nNo admin action is required. Admins may want to inform users about the new experience and review their existing Microsoft 365 Copilot configuration and policies.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change alter how existing customer data is processed, stored, or accessed?Yes. Users can now access and edit Office file content through the Copilot experience, with changes synced back to the regular Office apps.\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Copilot gains expanded capability to read and edit Office document content as part of this feature.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and edit Word, Excel, and PowerPoint content directly within the Copilot app.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This feature is subject to existing Microsoft 365 Copilot configuration and policies, which admins can manage via Entra ID group-based assignment.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Office in Copilot now integrates full Word, Excel, and PowerPoint capabilities within the Microsoft Copilot app, enabling creation, editing, and collaboration without leaving the app. Rollout completes by mid-November 2026. No admin action is required, but admins should inform users and review policies. Data access and AI capabilities are expanded."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1546411",
+      "title": "Retirement of Viva Insights (personal insights) and Viva Learning usage reports",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-10T00:04:06.0000000+00:00",
+      "endDateTime": "2027-01-11T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-10T00:04:10.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Retirement"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nThe Viva Learning usage report and The Viva Insights personal insights active-user trend chart will be retired from the Microsoft 365 admin center. For Viva Learning, admins can continue to access usage metrics in the Viva Learning app directly.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out on early November 2026 and expect to complete by mid-November 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Microsoft 365 tenant administrators\n• Organizations using Microsoft Viva Insights, or Viva Learning usage reports\nPlatforms/Services:\n• Microsoft 365 admin center\n• Viva Insights\n• Viva Learning\nWhat will happen:\n• The Viva Insights personal insights active-user trend chart will be retired.\n• The Viva Learning usage report will be removed from the Microsoft 365 admin center\n• Viva Learning analytics will continue through the Viva Learning reporting experience.\n[Action Required/Recommendations:]\n• Update documentation referencing retired Viva reports.\n• Communicate the reporting location change to reporting administrators.\n• Use Viva Learning reporting within Viva Learning going forward\n[Compliance considerations:]\nDoes the change include an admin control and, can it be controlled through Entra ID group membership?Yes. The feature includes or affects admin controls, policies, permissions, roles, authentication, or management settings as described in this message. Review the linked documentation or admin center controls for group-based configuration support.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Viva Insights personal insights and Viva Learning usage reports will be retired from the Microsoft 365 admin center by mid-November 2026. Viva Learning analytics remain accessible within the Viva Learning app. Admins should update documentation and inform reporting administrators of this change."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/en-us/viva/learning/reports"
+      ]
+    },
+    {
+      "id": "MC1478975",
+      "title": "(Updated) Microsoft 365 Copilot: Use Microsoft Agent 365 agents as connected agents in declarative agents",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-09-25T00:04:12.0000000+00:00",
+      "endDateTime": "2027-02-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-09T17:50:16.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated November 9, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft is introducing support for Microsoft Agent 365 agents that implement the Agent2Agent (A2A) protocol, allowing them to be used as connected agents in declarative agents built with Microsoft 365 Agents Toolkit.\nThis enhancement expands the types of external agent services that declarative agents can connect to. In addition to existing support for OpenAPI and Model Context Protocol (MCP) servers, declarative agents can now connect to Agent2Agent-enabled agents, enabling natural language interactions and support for more complex workflows.\nThis feature gives developers greater flexibility when building declarative agents while providing administrators centralized management and governance through the Microsoft 365 admin center.\n[Rollout schedule]\n• General Availability (Worldwide): Began in late August 2026 and is expected to complete by end of December 2026.\n[Impact on your organization]\nWho is affected\n• Microsoft 365 administrators who manage agents in the Microsoft 365 admin center\n• Developers building declarative agents with Microsoft 365 Agents Toolkit\n• Users who are assigned access to approved Microsoft Agent 365 agents\nPlatforms and services\n• Microsoft 365 Copilot\n• Microsoft 365 admin center\n• Microsoft 365 Agents Toolkit\n• Declarative agents\nWhat will happen\n• Administrators can install Microsoft Agent 365 agents that support the Agent2Agent protocol from the All agents page in the Microsoft 365 admin center.\n• Declarative agents can use approved Agent2Agent-enabled agents as connected agents.\n• Agent2Agent support is added alongside existing support for OpenAPI and MCP server connections.\n• Users cannot install Agent2Agent-enabled Microsoft Agent 365 agents themselves.\n• Administrators can review Agent2Agent-connected agents from the Connected agents tab in the declarative agent details page before approving their use.\n[Action required and recommendations]\nAction may be required.\nBefore rollout:\n• Review Microsoft Agent 365 agents available in the All agents page of the Microsoft 365 admin center.\n• Determine which Agent2Agent-enabled agents should be made available to users in your organization.\n• Review connected agents associated with declarative agents from the Connected agents tab before approving their use.\n• Update any internal governance, agent approval, or deployment processes as appropriate.\nConsider notifying administrators and developers in your organization about the availability of Agent2Agent-connected agents and the associated review and approval process.\n[Compliance considerations]\nCompliance considerationAnswer\nDoes this change introduce or significantly modify AI, machine learning, or agent capabilities that interact with or provide access to customer data?Yes. This update introduces support for Agent2Agent-enabled Microsoft Agent 365 agents as connected agents within declarative agents. Organizations should review how these connected agents interact with customer data before approving them for use.\nDoes this change provide end users with a new way to interact with generative AI?Yes. Users can interact with declarative agents that are connected to Agent2Agent-enabled agents, enabling new AI-powered experiences and workflows.\nDoes this change include an admin control?Yes. Administrators can install, review, and approve Agent2Agent-enabled Microsoft Agent 365 agents through the Microsoft 365 admin center before they are available for use.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "567670"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 now supports Microsoft Agent 365 agents using the Agent2Agent protocol as connected agents in declarative agents, expanding integration options. Administrators manage and approve these agents via the Microsoft 365 admin center. Rollout began in August 2026 and completes by December 2026, enabling enhanced AI interactions and workflows."
+        },
+        {
+          "name": "Platforms",
+          "value": "Android, Desktop, iOS, Web"
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1530595",
+      "title": "(Updated) Microsoft Copilot Feedback UX update",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-29T18:13:33.0000000+00:00",
+      "endDateTime": "2026-12-28T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-09T17:41:45.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated November 3, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nWe’re updating the thumbs-down feedback experience in Microsoft Copilot to make it easier for users to provide specific, actionable feedback. Today, many thumbs-down responses are submitted without comments, providing sentiment but limited information about the issue. When users select thumbs down, they’ll be able to select one or more feedback categories and optionally provide additional comments, giving each categorized response a signal that can be routed to the appropriate team or issue type.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 (previously late October) and expect to complete by mid-November 2026 (previously late October).\n[Impact on Your Organization:]\nUsers who can submit feedback in supported Microsoft Copilot experiences may see the updated thumbs-down feedback form. The planned audience includes users signed in with Microsoft Entra ID organizational accounts, users signed in with consumer Microsoft accounts, and users in Education tenants. The feature isn’t currently planned for Mobile, GCC, GCC High, DoD, or other sovereign cloud environments.\nThe updated feedback experience is planned for Microsoft Copilot, Copilot in Microsoft Edge, Copilot in Microsoft Outlook, and Copilot in Microsoft Teams, across web browsers, Windows, and macOS. The WXPN/Catalyst experience isn’t currently included.\nWhen a user selects thumbs down on a Copilot response, they may see selectable categories describing the issue, can select more than one category, and can optionally enter additional feedback in a free-text field. The thumbs-up feedback experience isn’t changing. This update applies only to the existing “Allow users to submit feedback to Microsoft” admin policy; all other feedback policy experiences remain unchanged. During the controlled rollout, some users will continue to see the existing feedback experience.\n[Action Required/Recommendations:]\nNo admin action is required for this change. It will be visible to users who are already allowed to submit feedback under the existing policy.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change store new customer data?Yes. When a user chooses to submit thumbs-down feedback, the selected categories, optional free-text comment, and optional screenshot are new data captured as part of that submission.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This UX change applies to the existing \"Allow users to submit feedback to Microsoft\" admin policy; all other feedback policy experiences remain unchanged.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Copilot is updating the thumbs-down feedback to include selectable categories and optional comments for more actionable input. The rollout begins mid-November 2026 worldwide, affecting organizational, consumer, and education accounts on web, Windows, and macOS. No admin action is needed; data is stored per existing feedback policies."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1146821",
+      "title": "(Updated) Rewrite with Microsoft 365 Copilot Chat coming soon to Edge for Business users",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2025-09-02T23:22:03.0000000+00:00",
+      "endDateTime": "2027-03-05T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-09T17:27:07.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated November 9, 2026: We have updated the timeline. Thank you for your patience.\nIntroduction\nMicrosoft Edge for Business will soon support Writing Assistance, a new feature powered by Microsoft 365 Copilot Chat. This capability helps users draft and rephrase editable text directly within Edge, enhancing productivity and writing quality. Users can access Writing Assistance by highlighting editable text and right-clicking to open the context menu.\nThis message is associated with Microsoft 365 Roadmap ID 420335.\nWhen this will happen\nGeneral Availability (Worldwide): We will begin rolling late January 2027 (previously end of October 2026) and expect to complete rollout by late January 2027 (previously late October).\nHow this affects your organization\n• Writing Assistance will be enabled by default for Edge for Business users.\n• Users can access Writing Assistance by highlighting editable text and right-clicking to open the context menu.\n•\n• If Microsoft 365 Copilot is restricted from accessing page content due to Data Loss Prevention (DLP) policies, Writing Assistance will not function on that content.\n• Admins can manage this feature using the InlineComposeEnabled policy setting.\nWhat you can do to prepare\nNo admin action is required before rollout.\nWe recommend:\n• Reviewing your current DLP configurations to understand how they may impact Writing Assistance functionality.\n• Notifying users about this new capability.\n• Updating internal documentation to reflect this change.\nLearn more about how DLP affects Copilot access to page content: Microsoft 365 Copilot Chat in Edge and Access to Page Content | Microsoft Edge | Microsoft Learn\nCompliance considerations\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. This change introduces a new generative AI capability through Microsoft 365 Copilot Chat, allowing users to rewrite or draft text directly in Edge for Business.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can interact with Copilot Chat by highlighting editable text and using the right-click context menu to access Writing Assistance, enabling AI-assisted drafting and rephrasing.\nDoes the change modify Data Loss Prevention (DLP) policies or enforcement?Yes. If DLP policies restrict Copilot from accessing page content, the Writing Assistance feature will not function on that content.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. Admins can manage the availability of this feature using the InlineComposeEnabled policy setting.\nDoes the change allow a user to enable and disable the feature themselves?Yes. Users can choose to use the Writing Assistance feature by manually invoking it through the right-click context menu in Edge.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "420335"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Copilot Chat’s Writing Assistance will roll out in Edge for Business by late January 2027, enabled by default. Users can access it via right-click on editable text. Admins can control it with the InlineComposeEnabled policy. DLP policies may restrict its functionality on certain content."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
+        "https://learn.microsoft.com/deployedge/microsoft-edge-browser-policies/composeinlineenabled"
+      ]
+    },
+    {
+      "id": "MC1545695",
+      "title": "App Blocks in M365 Copilot",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-09T14:41:25.0000000+00:00",
+      "endDateTime": "2026-12-07T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-09T14:41:17.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nApp Blocks enables M365 Copilot Chat users to turn their requests and data into rich, interactive experiences directly within the conversation, including calculators, dashboards, forms, planners, visualizations, simulations, comparison tools, and other interactive apps. It helps users move beyond static responses to explore data, adjust inputs, visualize outcomes, and simulate workflows in place, while supporting grounded scenarios where current information can be retrieved and then rendered into an interactive experience.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in late October 2026 and expect to complete by early November 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Users of Microsoft 365 Copilot (Premium) and Copilot Chat (Basic).\nPlatforms/Services:\n• Microsoft 365 Copilot Chat\nWhat will happen:\n• App Blocks will render directly within Copilot conversations.\n• Users can preview apps without opening a separate app canvas.\n• The update streamlines the Copilot experience by keeping generated content and previews within the conversation flow.\n• Existing Copilot workflows and prompts continue to work as expected.\n[Action Required/Recommendations:]\nNo action is required. You may want to notify your users about this experience update and update any internal training or adoption materials that reference the side-by-side app canvas experience.\n[Compliance considerations:]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "App Blocks in M365 Copilot enables interactive apps like calculators and dashboards within Copilot Chat conversations, enhancing user experience without leaving the chat. It rolls out worldwide from late October to early November 2026, affecting Microsoft 365 Copilot users, with no action or compliance issues required."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1545694",
+      "title": "Microsoft Entra: Updated passkey registration experience in My Sign-ins",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-09T14:40:53.0000000+00:00",
+      "endDateTime": "2027-12-12T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-09T14:40:47.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Feature update",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "[What and why]\nWe’re updating the passkey registration experience in My Sign-ins for users registering a passkey in Microsoft Authenticator. Users will see an additional checkbox and updated link text, along with steps to guide users to open Microsoft Authenticator and select the + button to begin registration. If users can’t complete registration directly in Authenticator, the updated link text will help them find the WebAuthn registration flow.\n[Rollout schedule]\n• General Availability (Worldwide): Beginning in mid-November 2026 and expected to complete by end-November 2027\n[Impact on your organization]\nWho is affected\n• Users who are guided through My Sign-ins to register a passkey in Microsoft Authenticator\nPlatforms and services\n• Microsoft Entra My Sign-ins and Microsoft Authenticator\nWhat will happen\n• Users will see an additional checkbox and updated link text during passkey registration.\n• Users will see steps to open Microsoft Authenticator and select the + button to begin registration:\n• If users can’t complete registration directly in Authenticator, the updated link text will help them find the WebAuthn registration flow.\n[Action required and recommendations]\n• Inform users about the updated UI and update your internal user guidance to reflect these changes.\n[Compliance considerations]\nNo compliance considerations were identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra updates the passkey registration in My Sign-ins for Microsoft Authenticator users, adding a checkbox, updated link text, and guided steps to start registration. If direct registration fails, users are directed to WebAuthn flow. Rollout is mid-November 2026 to end-November 2027. Inform users accordingly."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
     {
       "id": "MC1542066",
       "title": "Microsoft 365 Copilot: Changes to custom organizational data in MODS for Workforce Insights",
@@ -60,35 +346,6 @@
         "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
         "https://learn.microsoft.com/microsoft-365/copilot/workforce-insights-agent"
       ]
-    },
-    {
-      "id": "MC1530611",
-      "title": "(Updated) Office in Copilot brings the full power of Office into the Microsoft Copilot app",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-29T18:32:57.0000000+00:00",
-      "endDateTime": "2027-01-29T18:32:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-11-05T17:32:51.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated November 5, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nNow users have the full power of Office in Microsoft Copilot app, so users can create, edit and collaborate on Word, Excel and PowerPoint files, without leaving the app.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We have begun rolling out and expect to complete by mid-November 2026.\n[Impact on Your Organization:]\nNow with the full value of Office in Copilot, Word, Excel, and PowerPoint is brought in directly into the Copilot experience, allowing users to create, review, edit, and collaborate on Office files without leaving their flow of work. This reduces context switching and makes it easier to move from an idea or conversation to a finished, shareable Office artifact.\n[Action Required/Recommendations:]\nNo admin action is required. Admins may want to inform users about the new experience and review their existing Microsoft 365 Copilot configuration and policies.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change alter how existing customer data is processed, stored, or accessed?Yes. Users can now access and edit Office file content through the Copilot experience, with changes synced back to the regular Office apps.\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Copilot gains expanded capability to read and edit Office document content as part of this feature.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and edit Word, Excel, and PowerPoint content directly within the Copilot app.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This feature is subject to existing Microsoft 365 Copilot configuration and policies, which admins can manage via Entra ID group-based assignment.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Copilot now fully integrates Office apps, enabling users to create, edit, and collaborate on Word, Excel, and PowerPoint files within the Copilot app. The rollout completes by mid-November 2026. No admin action is required, but admins should inform users and review policies. Data processing and AI capabilities are expanded accordingly."
-        }
-      ],
-      "officialDocumentUrls": []
     },
     {
       "id": "MC1538999",
@@ -146,35 +403,6 @@
         {
           "name": "Summary",
           "value": "Microsoft 365 Copilot's Learning Agent will feature AI Skills Navigator playlists, offering curated learning resources via natural language queries. Rolling out worldwide in mid-November 2026, this enhances skill-building for users where AI Skills Navigator is enabled, with no action required but settings review recommended."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1530595",
-      "title": "(Updated) Microsoft Copilot Feedback UX update",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-29T18:13:33.0000000+00:00",
-      "endDateTime": "2026-12-28T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-11-03T17:09:47.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated November 3, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nWe’re updating the thumbs-down feedback experience in Microsoft Copilot to make it easier for users to provide specific, actionable feedback. Today, many thumbs-down responses are submitted without comments, providing sentiment but limited information about the issue. When users select thumbs down, they’ll be able to select one or more feedback categories and optionally provide additional comments, giving each categorized response a signal that can be routed to the appropriate team or issue type.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 (previously late October) and expect to complete by mid-November 2026 (previously late October).\n[Impact on Your Organization:]\nUsers who can submit feedback in supported Microsoft Copilot experiences may see the updated thumbs-down feedback form. The planned audience includes users signed in with Microsoft Entra ID organizational accounts, users signed in with consumer Microsoft accounts, and users in Education tenants. The feature isn’t currently planned for Mobile, GCC, GCC High, DoD, or other sovereign cloud environments.\nThe updated feedback experience is planned for Microsoft Copilot, Copilot in Microsoft Edge, Copilot in Microsoft Outlook, and Copilot in Microsoft Teams, across web browsers, Windows, and macOS. The WXPN/Catalyst experience isn’t currently included.\nWhen a user selects thumbs down on a Copilot response, they may see selectable categories describing the issue, can select more than one category, and can optionally enter additional feedback in a free-text field. The thumbs-up feedback experience isn’t changing. This update applies only to the existing “Allow users to submit feedback to Microsoft” admin policy; all other feedback policy experiences remain unchanged. During the controlled rollout, some users will continue to see the existing feedback experience.\n[Action Required/Recommendations:]\nNo admin action is required for this change. It will be visible to users who are already allowed to submit feedback under the existing policy.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change store new customer data?Yes. When a user chooses to submit thumbs-down feedback, the selected categories, optional free-text comment, and optional screenshot are new data captured as part of that submission.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This UX change applies to the existing \"Allow users to submit feedback to Microsoft\" admin policy; all other feedback policy experiences remain unchanged.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Copilot is updating the thumbs-down feedback to include selectable categories and optional comments for more actionable input. The rollout begins mid-November 2026 worldwide, affecting organizational, consumer, and education accounts on web, Windows, and macOS. No admin action is needed; data is stored per existing feedback policies."
         }
       ],
       "officialDocumentUrls": []
@@ -482,36 +710,6 @@
       ]
     },
     {
-      "id": "MC1529467",
-      "title": "Microsoft Windows: Updates to address compromised eMudhra certificate authority keys",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-28T22:53:04.0000000+00:00",
-      "endDateTime": "2026-11-28T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-28T22:53:51.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and why]\nMicrosoft is responding to an issue involving eight eMudhra intermediate certificate authority (CA) private keys, six associated with TLS and two with code signing. Because these keys could be recovered, they could potentially be used to create certificates or sign content that appeared to come from a trusted CA. The issue arose in eMudhra's certificate hierarchy and was not a compromise of Microsoft systems.\nMicrosoft is updating certificate trust to block affected certificate authorities and remove certificates associated with the affected hierarchies.\n[Rollout schedule]\n• General Availability (Worldwide, GCC, GCC High, DoD): Beginning in late October 2026 and expected to complete by late October 2026\n[Impact on your organization]\nWho is affected\n• Organizations using Windows, Microsoft Edge, or WebView2, particularly organizations with certificates that chain to one of the eight certificates being removed\n• Organizations managing disconnected Windows devices or disconnected Azure devices may need to take additional action\nPlatforms and services\n• Windows\n• Microsoft Edge\n• WebView2\n• Azure virtual machines\nWhat will happen\n• Microsoft has published an update to the Windows Disallowed Certificate Trust List to block the affected certificate authorities.\n• Microsoft has deployed a separate CRLSet update for Microsoft Edge and WebView2 to block affected TLS certificates signed by the affected certificate authorities.\n• The Microsoft Edge and WebView2 update is delivered automatically through the component update mechanism. Customers do not need to install a new browser version.\n• Microsoft has released updates to Windows and Microsoft Edge to remove certificates associated with the affected hierarchies from their trust lists.\n• After these updates reach a device, the affected certificates will no longer be trusted by default through the respective trust lists.\n[Action required and recommendations]\n• Keep updates flowing. Allow automatic Windows certificate trust updates and Microsoft Edge component updates to reach your devices.\n• Check disconnected Windows devices. If you manage Windows devices that do not receive automatic updates, make sure your update process delivers the updated Disallowed Certificate Trust List and upcoming trust-list changes. See the Microsoft Learn guidance in Learn more for information about distributing certificate trust lists in disconnected environments.\n• Review disconnected Azure devices. Review disconnected Azure devices running on Virtual Machine Scale Sets (VMSS) or single-instance VMs. Updated images are available in Azure Marketplace, and customers can deploy them to protect against this vulnerability.\n• Replace dependent certificates. If any of your certificates chain to one of the seven certificates being removed, identify those dependencies and obtain replacement certificates or an alternative trusted chain before the changes reach your devices.\nLearn more\n• Microsoft’s response to compromised eMudhra certificate authority keys\n• Configure trusted roots and disallowed certificates in Windows | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft is updating Windows, Edge, and WebView2 to block eight compromised eMudhra certificate authority keys by late October 2026. Organizations must allow automatic updates, manage disconnected devices, and replace certificates chaining to these keys to maintain trust and security."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates"
-      ]
-    },
-    {
       "id": "MC1069563",
       "title": "Microsoft 365 admin center: Usage reports to manage metered consumption costs for Microsoft 365 Copilot Chat (preview)",
       "category": "stayInformed",
@@ -691,44 +889,6 @@
         {
           "name": "Summary",
           "value": "Windows updates support 2026 time zone changes in Manitoba, Alberta, and British Columbia, effective November 1, 2026, when clocks won't be set back. Install updates before then and select the new region-specific time zones to ensure correct local time on devices. Guidance for Outlook and Microsoft 365 is provided."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1478975",
-      "title": "(Updated) Microsoft 365 Copilot: Use Microsoft Agent 365 agents as connected agents in declarative agents",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-25T00:04:12.0000000+00:00",
-      "endDateTime": "2026-12-31T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-27T16:14:02.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated October 27, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nMicrosoft is introducing support for Microsoft Agent 365 agents that implement the Agent2Agent (A2A) protocol, allowing them to be used as connected agents in declarative agents built with Microsoft 365 Agents Toolkit.\nThis enhancement expands the types of external agent services that declarative agents can connect to. In addition to existing support for OpenAPI and Model Context Protocol (MCP) servers, declarative agents can now connect to Agent2Agent-enabled agents, enabling natural language interactions and support for more complex workflows.\nThis feature gives developers greater flexibility when building declarative agents while providing administrators centralized management and governance through the Microsoft 365 admin center.\n[Rollout schedule]\n• General Availability (Worldwide): Began in late August 2026.\n[Impact on your organization]\nWho is affected\n• Microsoft 365 administrators who manage agents in the Microsoft 365 admin center\n• Developers building declarative agents with Microsoft 365 Agents Toolkit\n• Users who are assigned access to approved Microsoft Agent 365 agents\nPlatforms and services\n• Microsoft 365 Copilot\n• Microsoft 365 admin center\n• Microsoft 365 Agents Toolkit\n• Declarative agents\nWhat will happen\n• Administrators can install Microsoft Agent 365 agents that support the Agent2Agent protocol from the All agents page in the Microsoft 365 admin center.\n• Declarative agents can use approved Agent2Agent-enabled agents as connected agents.\n• Agent2Agent support is added alongside existing support for OpenAPI and MCP server connections.\n• Users cannot install Agent2Agent-enabled Microsoft Agent 365 agents themselves.\n• Administrators can review Agent2Agent-connected agents from the Connected agents tab in the declarative agent details page before approving their use.\n[Action required and recommendations]\nAction may be required.\nBefore rollout:\n• Review Microsoft Agent 365 agents available in the All agents page of the Microsoft 365 admin center.\n• Determine which Agent2Agent-enabled agents should be made available to users in your organization.\n• Review connected agents associated with declarative agents from the Connected agents tab before approving their use.\n• Update any internal governance, agent approval, or deployment processes as appropriate.\nConsider notifying administrators and developers in your organization about the availability of Agent2Agent-connected agents and the associated review and approval process.\n[Compliance considerations]\nCompliance considerationAnswer\nDoes this change introduce or significantly modify AI, machine learning, or agent capabilities that interact with or provide access to customer data?Yes. This update introduces support for Agent2Agent-enabled Microsoft Agent 365 agents as connected agents within declarative agents. Organizations should review how these connected agents interact with customer data before approving them for use.\nDoes this change provide end users with a new way to interact with generative AI?Yes. Users can interact with declarative agents that are connected to Agent2Agent-enabled agents, enabling new AI-powered experiences and workflows.\nDoes this change include an admin control?Yes. Administrators can install, review, and approve Agent2Agent-enabled Microsoft Agent 365 agents through the Microsoft 365 admin center before they are available for use.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "567670"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 now supports Microsoft Agent 365 agents using the Agent2Agent protocol as connected agents in declarative agents, expanding integration options. Administrators manage and approve these agents via the Microsoft 365 admin center. This update enables new AI interactions and requires review of data compliance and governance."
-        },
-        {
-          "name": "Platforms",
-          "value": "Android, Desktop, iOS, Web"
         }
       ],
       "officialDocumentUrls": []
@@ -2135,37 +2295,6 @@
       ]
     },
     {
-      "id": "MC1470885",
-      "title": "M365 Copilot: Tell Copilot what you need directly from the Copilot button in Word, Excel, and PowerPoint",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-11T23:17:58.0000000+00:00",
-      "endDateTime": "2027-02-22T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-11T23:18:22.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nMicrosoft is making Copilot more accessible within Word, Excel, and PowerPoint by adding a new prompt input directly to the Copilot button and providing contextual prompt experiences when users select content. This update helps users engage with Microsoft 365 Copilot without leaving their workflow, enabling faster content creation, editing, and task completion. This change supports personal and team productivity by bringing Copilot assistance directly into the document experience.\n[Rollout Schedule:]\n• General Availability (Worldwide): Rollout begins September 2026 and is expected to complete by the end of December 2026.\n• Available in Word, Excel, and PowerPoint on Windows desktop, macOS, and web.\n• Rollout may occur on different platforms at different times.\n[Impact on Your Organization:]\nWho is affected:\n• Microsoft 365 users eligible for Microsoft 365 Copilot using Word, Excel, or PowerPoint on Windows desktop, macOS, or web.\nPlatforms/Services:\n• Microsoft 365 Copilot\n• Word\n• Excel\n• PowerPoint\n• Windows desktop\n• macOS desktop\n• Web\nWhat will happen:\n• Users will see a new prompt input attached to the Copilot button.\n•\n• Users can type or dictate prompts without opening the Copilot pane.\n• Users can reference Microsoft 365 content directly from the prompt input experience.\n• When content is selected in Word or PowerPoint, a contextual Copilot input will appear.\n• Suggested actions such as Rewrite and Shorten will be shown when appropriate.\n•\n• Windows shortcut: Alt + C.\n• Mac shortcut: Command + Control + I.\n• The feature is enabled by default for eligible users.\n• Existing Copilot administration controls continue to apply.\n• No separate admin control is available for the prompt input experience.\n[Action Required / Recommendations:]\nNo admin action is required.\n• Update user training and adoption materials.\n• Update help desk documentation.\n• Review the Pin Microsoft 365 Copilot Chat setting.\n• Communicate the change to end users.\n• Review Manage Microsoft 365 Copilot Chat documentation.\n• Review Pin Microsoft 365 Copilot Chat in Microsoft 365 apps documentation.\n• Review The Copilot Dynamic Action Button in Word, Excel, and PowerPoint documentation.\n[Compliance Considerations:]\n• New generative AI interaction entry points are introduced.\n• The update expands how users invoke existing Copilot capabilities.\n• Existing admin controls remain available through the Pin Microsoft 365 Copilot Chat setting.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Copilot adds a new prompt input directly on the Copilot button in Word, Excel, and PowerPoint for faster, contextual content creation. Rolling out worldwide from September to December 2026 on Windows, macOS, and web, it requires no admin action but updates to training and documentation."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/en-us/copilot/manage",
-        "https://learn.microsoft.com/en-us/microsoft-365/copilot/pin-copilot-chat-navbar"
-      ]
-    },
-    {
       "id": "MC1470425",
       "title": "Microsoft Copilot Cost Management: September Updates",
       "category": "stayInformed",
@@ -2223,47 +2352,6 @@
       ],
       "officialDocumentUrls": [
         "https://learn.microsoft.com/defender-office-365/tenant-allow-block-list-email-spoof-configure"
-      ]
-    },
-    {
-      "id": "MC1146821",
-      "title": "(Updated) Rewrite with Microsoft 365 Copilot Chat coming soon to Edge for Business users",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-09-02T23:22:03.0000000+00:00",
-      "endDateTime": "2026-11-23T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-09T17:00:20.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated September 9, 2026: We have updated the timeline. Thank you for your patience.\nIntroduction\nMicrosoft Edge for Business will soon support Rewrite, a new feature powered by Microsoft 365 Copilot Chat. This capability helps users draft and rephrase editable text directly within Edge, enhancing productivity and writing quality. Users can access Rewrite by highlighting editable text and right-clicking to open the context menu.\nThis message is associated with Microsoft 365 Roadmap ID 420335.\nWhen this will happen\nGeneral Availability (Worldwide): We will begin rolling end of September 2026 (previously late August) and expect to complete rollout by late October 2026.\nHow this affects your organization\n• Rewrite will be enabled by default for Edge for Business users.\n• Users can access Rewrite by highlighting editable text and right-clicking to open the context menu.\n• If Microsoft 365 Copilot is restricted from accessing page content due to Data Loss Prevention (DLP) policies, Rewrite will not function on that content.\n• Admins can manage this feature using the InlineComposeEnabled policy setting.\nWhat you can do to prepare\nNo admin action is required before rollout.\nWe recommend:\n• Reviewing your current DLP configurations to understand how they may impact Rewrite functionality.\n• Notifying users about this new capability.\n• Updating internal documentation to reflect this change.\nLearn more about how DLP affects Copilot access to page content: Microsoft 365 Copilot Chat in Edge and Access to Page Content | Microsoft Edge | Microsoft Learn\nCompliance considerations\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. This change introduces a new generative AI capability through Microsoft 365 Copilot Chat, allowing users to rewrite or draft text directly in Edge for Business.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can interact with Copilot Chat by highlighting editable text and using the right-click context menu to access Rewrite, enabling AI-assisted drafting and rephrasing.\nDoes the change modify Data Loss Prevention (DLP) policies or enforcement?Yes. If DLP policies restrict Copilot from accessing page content, the Rewrite feature will not function on that content.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. Admins can manage the availability of this feature using the InlineComposeEnabled policy setting.\nDoes the change allow a user to enable and disable the feature themselves?Yes. Users can choose to use the Rewrite feature by manually invoking it through the right-click context menu in Edge.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "420335"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft Edge for Business will roll out the Microsoft 365 Copilot Chat-powered Rewrite feature by late October 2026, enabling users to draft and rephrase text via right-click. It’s enabled by default, respects DLP policies, and can be managed by admins through the InlineComposeEnabled policy."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
-        "https://learn.microsoft.com/deployedge/microsoft-edge-browser-policies/composeinlineenabled"
       ]
     },
     {
