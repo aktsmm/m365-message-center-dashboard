@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T10:01:40.8723793+00:00",
+  "generatedAt": "2026-11-12T18:29:15.5009336+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証方式の廃止準備、eMudhra証明書失効、Targeted Release廃止、Entra Agent Blueprint既定変更が優先事項",
   "executiveSummary": "今週は認証・信頼基盤に関する変更が中心です。MC1529467では、2026年11月16日にEdge/WebView2向けPKI Metadata更新で、eMudhraの残るルートの既定信頼が完全に削除されると記載されています。MC1528000では、Microsoft提供のSMS/音声認証が2027年2月1日から廃止されます。MC1536049では、これに伴いSSPRでも利用できなくなり、サインイン廃止展開後50日の移行期間があります。MC1506733では、2026年11月上旬から下旬にかけて、既定ユーザーがエージェントブループリントを作成可能になります(管理者が設定を無効化しない場合)。MC1490899ではTargeted Releaseが2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります。MC1542066はFrontier preview中のWorkforce Insights向けMODSエンドポイントが2026年11月18日から廃止されます。各メッセージの抜粋は上限があり、抜粋にない日付・要件は不明として扱い、原文確認が必要です。",
@@ -1368,22 +1368,6 @@
       "validatedAt": "2026-10-24T17:34:07.1946225+00:00"
     },
     {
-      "id": "MC1470885",
-      "japaneseTitle": "Word/Excel/PowerPointのCopilotボタンに直接プロンプト入力が追加",
-      "japaneseFacts": {
-        "change": "Word、Excel、PowerPointのCopilotボタンにプロンプト入力欄が追加され、Word/PowerPointでは選択時に文脈に応じたCopilot入力と提案アクションが表示されます。",
-        "impact": "Windows、Mac、WebでこれらのアプリのMicrosoft 365 Copilotを利用できるユーザー。既定で有効で、この機能専用の管理者制御はありません。",
-        "timing": "全世界で2026年9月に展開開始、2026年12月末までに完了予定。プラットフォームごとに時期が異なる場合があります。",
-        "action": "管理者の対応は不要。ユーザー教育資料とヘルプデスク文書の更新、ユーザーへの周知、Pin Microsoft 365 Copilot Chat設定の確認が推奨されます。"
-      },
-      "japaneseDetailedSummary": "Microsoftは、Word、Excel、PowerPointでCopilotをより使いやすくするため、Copilotボタンに直接プロンプト入力欄を追加し、コンテンツ選択時には文脈に応じたプロンプト体験を提供します。ユーザーはCopilotペインを開かずに入力または音声でプロンプトを送れ、Microsoft 365コンテンツを参照できます。Word/PowerPointでは選択時に文脈入力欄が表示され、書き換えや短縮などの提案も表示されます。ショートカットはWindowsがAlt+C、MacがCommand+Control+Iです。一般提供は全世界で2026年9月に開始し、12月末までに完了予定で、Windows、Mac、Webが対象ですがプラットフォームごとに時期が異なる場合があります。既定で有効で、既存のCopilot管理制御が引き続き適用され、この機能専用の管理制御はありません。管理者の対応は不要で、教育資料やヘルプデスク文書の更新、周知が推奨されます。生成AIの新しい入口が追加される点がコンプライアンス上の考慮事項です。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoftは、Word、Excel、PowerPointでCopilotにアクセスしやすくするため、Copilotボタンに新しいプロンプト入力を直接追加し、ユーザーがコンテンツを選択したときに文脈に応じたプロンプト体験を提供します。この更新により、ユーザーは作業の流れを離れずにMicrosoft 365 Copilotを利用でき、コンテンツ作成、編集、タスク完了が速くなります。ドキュメント体験内にCopilotの支援を直接取り込むことで、個人とチームの生産性を支援します。\n[展開スケジュール]\n• 一般提供(全世界):2026年9月に展開を開始し、2026年12月末までに完了する見込みです。\n• Windowsデスクトップ、macOS、Webの Word、Excel、PowerPointで利用できます。\n• プラットフォームによって展開時期が異なる場合があります。\n[組織への影響]\n影響を受ける対象:\n• Windowsデスクトップ、macOS、WebでWord、Excel、PowerPointを使用する、Microsoft 365 Copilotの対象ユーザー。\nプラットフォーム/サービス:\n• Microsoft 365 Copilot\n• Word\n• Excel\n• PowerPoint\n• Windowsデスクトップ\n• macOSデスクトップ\n• Web\n今後起こること:\n• Copilotボタンに新しいプロンプト入力が表示されます。\n• ユーザーはCopilotペインを開かずに、プロンプトを入力または音声入力できます。\n• ユーザーはプロンプト入力から直接Microsoft 365コンテンツを参照できます。\n• WordまたはPowerPointでコンテンツを選択すると、文脈に応じたCopilot入力が表示されます。\n• 適切な場合、「書き換え」や「短縮」などの提案アクションが表示されます。\n• Windowsのショートカット:Alt + C。\n• Macのショートカット:Command + Control + I。\n• 対象ユーザーには既定で有効です。\n• 既存のCopilot管理制御が引き続き適用されます。\n• プロンプト入力体験に対する個別の管理制御はありません。\n[必要な対応/推奨事項]\n管理者の対応は不要です。\n• ユーザー向けトレーニングと導入資料を更新する。\n• ヘルプデスク文書を更新する。\n• 「Microsoft 365 Copilot Chatをピン留めする」設定を確認する。\n• 変更をエンドユーザーに周知する。\n• Microsoft 365 Copilot Chatの管理に関するドキュメントを確認する。\n• Microsoft 365アプリでのMicrosoft 365 Copilot Chatのピン留めに関するドキュメントを確認する。\n• Word、Excel、PowerPointのCopilot動的アクションボタンに関するドキュメントを確認する。\n[コンプライアンス上の考慮事項]\n• 新しい生成AIとのやり取りの入口が導入されます。\n• 既存のCopilot機能を呼び出す方法が拡張されます。\n• 既存の管理制御は「Microsoft 365 Copilot Chatをピン留めする」設定を通じて引き続き利用できます。",
-      "sourceCharacterCount": 2465,
-      "sourceTruncated": false,
-      "sourceHash": "797208c3fcd31f6a7bc5f21730b59f20a4f0f323b83d4833220adf6b73d0cf2c",
-      "validatedAt": "2026-10-24T12:50:44.3309474+00:00"
-    },
-    {
       "id": "MC1472028",
       "japaneseTitle": "Outlookで会議の主催者を変更できる機能を段階的に提供",
       "japaneseFacts": {
@@ -2024,22 +2008,6 @@
       "validatedAt": "2026-10-29T02:07:59.6923572+00:00"
     },
     {
-      "id": "MC1529467",
-      "japaneseTitle": "eMudhra CA鍵漏えい対応でWindows等の証明書信頼を更新",
-      "japaneseFacts": {
-        "change": "eMudhra中間CAの秘密鍵8件の問題を受け、Windowsの失効信頼リスト更新とEdge/WebView2のCRLSet更新で対象CAをブロックし、関連証明書を信頼リストから削除します。",
-        "impact": "Windows、Edge、WebView2利用組織が対象で、特に該当証明書にチェーンする組織や切断環境の端末は追加対応が必要な場合があります。",
-        "timing": "全環境で2026年10月下旬に開始し、同月下旬に完了予定です。",
-        "action": "自動更新を継続させ、切断環境のWindows端末とAzureデバイスで信頼リスト更新が届くか確認します。"
-      },
-      "japaneseDetailedSummary": "eMudhraの中間CA秘密鍵8件(TLS用6件、コード署名用2件)が復元可能であったため、信頼されたCAを装った証明書や署名が作られるおそれがあります。問題はeMudhra側の証明書階層で発生し、Microsoftのシステムの侵害ではありません。Microsoftは、Windowsの失効信頼リストの更新、Edge/WebView2向けCRLSet更新、および影響階層の証明書を信頼リストから削除する更新を公開しました。Edge/WebView2の更新はコンポーネント更新で自動配信され、新バージョンのインストールは不要です。提供はWorldwide、GCC、GCC High、DoDで2026年10月下旬の開始・完了予定です。管理者は自動更新を妨げず、更新を受け取らない切断環境のWindowsや切断Azureデバイスで、信頼リストの更新が配布されるか確認してください。本文は途中で切れており、Azure側の詳細は不明です。",
-      "japaneseBodyTranslation": "[概要と理由]\nMicrosoftは、eMudhraの中間認証局(CA)秘密鍵8件(TLS関連6件、コード署名関連2件)に関する問題に対応しています。これらの鍵は復元され得るため、信頼されたCAから発行されたように見える証明書の作成やコンテンツへの署名に悪用される可能性があります。この問題はeMudhraの証明書階層で発生したもので、Microsoftのシステムの侵害ではありません。\nMicrosoftは、証明書の信頼を更新して影響を受けるCAをブロックし、影響を受ける階層に関連する証明書を削除します。\n[ロールアウト予定]\n• 一般提供(Worldwide、GCC、GCC High、DoD):2026年10月下旬に開始し、2026年10月下旬までに完了予定\n[組織への影響]\n影響を受ける対象\n• Windows、Microsoft Edge、WebView2を使用する組織。特に削除される8件の証明書のいずれかにチェーンする証明書を持つ組織\n• 切断されたWindowsデバイスや切断されたAzureデバイスを管理する組織は、追加対応が必要な場合があります\nプラットフォームとサービス\n• Windows\n• Microsoft Edge\n• WebView2\n• Azure仮想マシン\n実施される内容\n• 影響を受けるCAをブロックするため、Windows Disallowed Certificate Trust Listの更新を公開しました。\n• 影響を受けるCAが署名したTLS証明書をブロックするため、Edge/WebView2向けに別のCRLSet更新を展開しました。\n• Edge/WebView2の更新はコンポーネント更新の仕組みで自動配信されます。新しいブラウザーバージョンのインストールは不要です。\n• 影響を受ける階層に関連する証明書を信頼リストから削除するWindowsとEdgeの更新を公開しました。\n• これらの更新が届いたデバイスでは、影響を受ける証明書は各信頼リストで既定では信頼されなくなります。\n[必要な対応と推奨事項]\n• 更新を継続して届ける。Windowsの証明書信頼の自動更新とEdgeのコンポーネント更新がデバイスに届くようにする。\n• 切断されたWindowsデバイスを確認する。自動更新を受け取らない場合、更新済みのDisallowed Certificate Trust Listと今後の信頼リスト変更が配布されるようにする。切断環境での配布はMicrosoft Learnのガイダンスを参照。\n• 切断されたAzureデバイスを確認する(以降は原文が途中で切れています)。",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "8ab510df2db20855cc2f92472d33625c0421670dd9923c6c7ead8347a9c52218",
-      "validatedAt": "2026-10-29T06:04:39.8704987+00:00"
-    },
-    {
       "id": "MC1529472",
       "japaneseTitle": "FrontierがTeams・新Outlook・OneDrive・SharePointに拡大",
       "japaneseFacts": {
@@ -2182,9 +2150,57 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1546411",
+      "japaneseTitle": "Viva Learning使用状況レポートとViva Insights傾向グラフの廃止",
+      "japaneseFacts": {
+        "change": "Microsoft 365管理センターからViva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフが廃止されます。",
+        "impact": "Microsoft 365テナント管理者、およびViva InsightsやViva Learningの使用状況レポートを利用する組織が対象です。",
+        "timing": "2026年11月上旬に展開開始、2026年11月中旬に完了予定です。",
+        "action": "廃止されたレポートを参照する文書の更新、レポート管理者への場所変更の周知、今後はViva Learning内のレポートを使用してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365管理センターから、Viva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフが廃止されます。Viva Learningの分析はViva Learningアプリ内のレポート機能で引き続き利用できます。対象はテナント管理者およびこれらのレポートを利用する組織です。ワールドワイドで2026年11月上旬から中旬にかけて展開されます。管理者は関連文書の更新、レポート管理者への周知、Viva Learning内のレポート利用への切り替えが推奨されます。管理コントロールに関連する変更を含むとされています。",
+      "japaneseBodyTranslation": "[内容と理由:]\nViva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフは、Microsoft 365管理センターから廃止されます。Viva Learningについては、管理者はViva Learningアプリで引き続き使用状況メトリックにアクセスできます。\n[展開スケジュール:]\n一般提供(ワールドワイド):2026年11月上旬に展開を開始し、2026年11月中旬までに完了する予定です。\n[組織への影響:]\n影響を受ける対象:\n• Microsoft 365テナント管理者\n• Microsoft Viva Insights、またはViva Learning使用状況レポートを利用する組織\nプラットフォーム/サービス:\n• Microsoft 365管理センター\n• Viva Insights\n• Viva Learning\n発生すること:\n• Viva Insightsパーソナルインサイトのアクティブユーザー傾向グラフは廃止されます。\n• Viva Learning使用状況レポートはMicrosoft 365管理センターから削除されます。\n• Viva Learningの分析は、Viva Learningのレポート機能で引き続き利用できます。\n[必要な対応/推奨事項:]\n• 廃止されたVivaレポートを参照する文書を更新する。\n• レポート管理者にレポートの場所の変更を周知する。\n• 今後はViva Learning内のレポートを使用する。\n[コンプライアンス上の考慮事項:]\nこの変更に管理コントロールがあり、Entra IDグループで制御できるか?はい。この機能は、本メッセージに記載のとおり、管理コントロール、ポリシー、権限、ロール、認証、管理設定を含むか影響します。グループベースの構成のサポートについては、リンク先のドキュメントまたは管理センターのコントロールを確認してください。",
+      "sourceCharacterCount": 1532,
+      "sourceTruncated": false,
+      "sourceHash": "09f94ae9607697b04f558cd51e0e5d2346ed24e04a86cc681799943e199219c3",
+      "validatedAt": "2026-11-12T18:29:15.4900734+00:00"
+    },
+    {
+      "id": "MC1529467",
+      "japaneseTitle": "eMudhra CA鍵侵害に対応するWindows/Edgeの信頼ルート削除",
+      "japaneseFacts": {
+        "change": "eMudhraの中間CA秘密鍵8つ(TLS用6、コード署名用2)の侵害に対応し、Windowsの信頼リスト更新とEdge/WebView2のCRLSet更新で該当CAを信頼から外します。",
+        "impact": "Windows、Edge、WebView2を使う組織、特に該当8証明書にチェーンする証明書を持つ組織が対象で、切断状態のWindows/Azureデバイスは追加対応が必要な場合があります。",
+        "timing": "2026年10月下旬に展開(Worldwide、GCC、GCC High、DoD)。2026年11月16日にEdge/WebView2のPKI Metadata更新で残りのルートの既定の信頼が完全に削除されます。",
+        "action": "更新が流れるよう自動の証明書信頼更新を許可することが推奨されます。以降の詳細な対応は原文が切れており不明です。"
+      },
+      "japaneseDetailedSummary": "MicrosoftはeMudhraの証明書階層で中間CA秘密鍵8つ(TLS用6、コード署名用2)が復元され得る問題に対応し、Windows、Edge、WebView2で該当CAの信頼をブロック・削除します。Microsoftのシステムが侵害されたわけではありません。Windowsの許可されない証明書信頼リストとEdge/WebView2のCRLSetが更新済みで、Edge/WebView2は新しいブラウザーバージョンのインストール不要でコンポーネント更新により自動配信されます。2026年11月16日にはPKI Metadataコンポーネントの更新で、emSign Root CA - G1、C1、ECC Root CA、Root TLS CA - G1の既定の信頼が完全に削除されます。対象はWindows、Edge、WebView2、Azure仮想マシンを利用する組織で、切断状態のデバイスは追加対応が必要な場合があります。更新が届くよう自動更新を許可することが推奨されます。(原文は途中で切れています。)",
+      "japaneseBodyTranslation": "2026年11月11日更新:2026年11月16日に、Microsoft EdgeおよびWebView2向けの更新がPKI Metadataコンポーネント経由でリリースされ、残りのルート(emSign Root CA - G1、emSign Root CA - C1、emSign ECC Root CA、emSign Root TLS CA - G1)の既定の信頼が完全に削除されます。デバイスは10時間ごと、および新しいアプリ起動の直後にPKI Metadataの更新を確認します。\n詳細は「eMudhra認証機関の鍵侵害に対するMicrosoftの対応」を参照してください。\n[内容と理由]\nMicrosoftは、eMudhraの中間認証機関(CA)秘密鍵8つ(6つはTLS関連、2つはコード署名関連)に関する問題に対応しています。これらの鍵は復元される可能性があるため、信頼されたCAから発行されたように見える証明書の作成やコンテンツへの署名に悪用される可能性があります。この問題はeMudhraの証明書階層で発生したもので、Microsoftのシステムが侵害されたものではありません。\nMicrosoftは、影響を受ける認証機関をブロックし、影響を受ける階層に関連する証明書を削除するよう、証明書の信頼を更新しています。\n[展開スケジュール]\n• 一般提供(ワールドワイド、GCC、GCC High、DoD):2026年10月下旬に開始し、2026年10月下旬に完了する予定です。\n[組織への影響]\n影響を受ける対象\n• Windows、Microsoft Edge、WebView2を使用する組織、特に削除される8つの証明書のいずれかにチェーンする証明書を持つ組織\n• 切断されたWindowsデバイスや切断されたAzureデバイスを管理する組織は、追加の対応が必要になる場合があります\nプラットフォームとサービス\n• Windows\n• Microsoft Edge\n• WebView2\n• Azure仮想マシン\n発生すること\n• Microsoftは、影響を受ける認証機関をブロックするため、Windowsの許可されない証明書信頼リストの更新を公開しました。\n• Microsoftは、影響を受ける認証機関が署名したTLS証明書をブロックするため、Microsoft EdgeおよびWebView2向けに別のCRLSet更新を展開しました。\n• Microsoft EdgeおよびWebView2の更新はコンポーネント更新メカニズムにより自動的に配信されます。新しいブラウザーバージョンをインストールする必要はありません。\n• Microsoftは、影響を受ける階層に関連する証明書を信頼リストから削除するWindowsおよびMicrosoft Edgeの更新をリリースしました。\n• これらの更新がデバイスに到達すると、影響を受ける証明書は、それぞれの信頼リストにより既定では信頼されなくなります。\n[必要な対応と推奨事項]\n• 更新が流れるようにしてください。Windowsの証明書信頼の自動更新を許可してください。(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "ab57d8f22f7c7f25bc3ac9c790c7b569679e551eb85ca5f00693be929616a682",
+      "validatedAt": "2026-11-12T18:29:15.4949619+00:00"
+    },
+    {
+      "id": "MC1470885",
+      "japaneseTitle": "Word/Excel/PowerPointのCopilotボタンに直接プロンプト入力が追加",
+      "japaneseFacts": {
+        "change": "Word、Excel、PowerPointのCopilotボタンに新しいプロンプト入力と、選択時の文脈に応じたCopilot入力が追加されます。",
+        "impact": "Windows、macOS、WebでWord/Excel/PowerPointを使うMicrosoft 365 Copilot対象ユーザーが対象で、既定で有効です。",
+        "timing": "2026年9月に展開開始、2026年12月末までに完了予定です。プラットフォームごとに時期が異なる場合があります。",
+        "action": "管理者の対応は不要です。ユーザー教育資料・ヘルプデスク文書の更新、ユーザーへの周知、Copilot Chatのピン留め設定の確認が推奨されます。"
+      },
+      "japaneseDetailedSummary": "Word、Excel、PowerPointのCopilotボタンに新しいプロンプト入力が追加され、Copilotペインを開かずにプロンプトの入力や音声入力ができるようになります。Word/PowerPointでコンテンツを選択すると文脈に応じたCopilot入力が表示され、必要に応じて「書き換え」「短縮」などの提案アクションも表示されます。Windowsのショートカットは Alt+C、Macは Command+Control+I です。対象はWindows、macOS、WebのCopilot利用資格ユーザーで、既定で有効です。このプロンプト入力専用の管理コントロールはなく、既存のCopilot管理コントロールが引き続き適用されます。展開は2026年9月開始、12月末完了予定です。管理者の対応は不要ですが、教育資料やヘルプデスク文書の更新、ユーザーへの周知が推奨されます。(原文は途中で切れています。)",
+      "japaneseBodyTranslation": "2026年11月11日更新:内容を更新しました。ご理解のほどお願いいたします。\n[内容と理由:]\nMicrosoftは、Copilotボタンに新しいプロンプト入力を直接追加し、ユーザーがコンテンツを選択した際に文脈に応じたプロンプト体験を提供することで、Word、Excel、PowerPoint内でCopilotをより利用しやすくします。この更新により、ユーザーは作業の流れを離れることなくMicrosoft 365 Copilotを利用でき、コンテンツ作成、編集、タスク完了をより速く行えます。ドキュメント体験内にCopilotの支援を直接取り込むことで、個人とチームの生産性を支援します。\n[展開スケジュール:]\n• 一般提供(ワールドワイド):2026年9月に展開を開始し、2026年12月末までに完了する予定です。\n• Windowsデスクトップ、macOS、Web上のWord、Excel、PowerPointで利用できます。\n• プラットフォームごとに展開時期が異なる場合があります。\n[組織への影響:]\n影響を受ける対象:\n• Windowsデスクトップ、macOS、WebでWord、Excel、PowerPointを使用する、Microsoft 365 Copilotの利用資格があるMicrosoft 365ユーザー。\nプラットフォーム/サービス:\n• Microsoft 365 Copilot\n• Word\n• Excel\n• PowerPoint\n• Windowsデスクトップ\n• macOSデスクトップ\n• Web\n発生すること:\n• 既定で右上に新しいボタンとプロンプトが表示されます。\n• ユーザーはCopilotペインを開かずに、プロンプトを入力または音声入力できます。\n• ユーザーはプロンプト入力から直接Microsoft 365コンテンツを参照できます。\n• WordまたはPowerPointでコンテンツを選択すると、文脈に応じたCopilot入力が表示されます。\n• 適切な場合、「書き換え」や「短縮」などの提案アクションが表示されます。\n• Windowsのショートカット:Alt + C。\n• Macのショートカット:Command + Control + I。\n• この機能は、対象ユーザーに対して既定で有効です。\n• 既存のCopilot管理コントロールは引き続き適用されます。\n• プロンプト入力体験に対する個別の管理コントロールはありません。\n[必要な対応/推奨事項:]\n管理者の対応は不要です。\n• ユーザー教育・導入促進資料を更新する。\n• ヘルプデスク文書を更新する。\n• 「Microsoft 365 Copilot Chatをピン留めする」設定を確認する。\n• 変更をエンドユーザーに周知する。\n• 「Microsoft 365 Copilot Chatの管理」ドキュメントを確認する。\n• 「Microsoft 365アプリでのMicrosoft 365 Copilot Chatのピン留め」ドキュメントを確認する。\n• 「Word、Excel、PowerPointのCopilot動的アクションボタン」ドキュメントを確認する。\n[コンプライアンス上の考慮事項:]\n• 新しい生成AIとのやり取りの入口が導入されます。\n• この更新により、既存のCopilot機能をユーザーが呼び出す方法が拡張されます。\n• 既存の管理コントロールは引き続き利用可能です。(以降は原文が途中で切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "6b80d082523aef66e2f7b7ba4f0f30d6a4d4ccf20807e0be4fdb766cf53a8af5",
+      "validatedAt": "2026-11-12T18:29:15.4935760+00:00"
     }
   ],
-  "summarySourceHash": "a8318096215af3901dd1cc1e6236b75f4766b24cf319015dbfd206cb50036ca5",
   "summaryGeneratedAt": "2026-11-12T10:01:40.6676019+00:00",
+  "summarySourceHash": "a8318096215af3901dd1cc1e6236b75f4766b24cf319015dbfd206cb50036ca5",
   "sourceAgentRunId": "43196023190"
 }
