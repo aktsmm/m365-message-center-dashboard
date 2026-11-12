@@ -1,23 +1,24 @@
 {
-  "generatedAt": "2026-11-09T20:55:00.1063524+00:00",
+  "generatedAt": "2026-11-12T10:01:40.8723793+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra認証方式の変更(SSPR・SMS/音声廃止)とリリース設定変更が最優先、Copilot関連の展開も進行",
-  "executiveSummary": "今週は認証・リリース管理・Copilot関連の変更が中心です。MC1325414は、SSPRがディレクトリ属性ではなく明示的に登録された認証方式を要求するようになる変更で、抜粋上のタイトルでは2026年11月9日開始です。MC1528000とMC1536049によると、MicrosoftマネージドのSMS/音声認証は2027年2月1日から廃止が始まります。SSPRでは、サインイン廃止の展開が到達してから50日の移行期間が設けられます。MC1490899は、2027年1月のTargeted release廃止に向けて2026年11月にユーザーの追加・削除・変更ができなくなるとしています。MC1536057は例外ユーザー上限が100から10,000に拡大される内容です。MC1542066は、Workforce Insightsエンドポイントが2026年11月18日からMODSで廃止され、Microsoft 365プロファイルエンドポイントに移行する内容です。MC1526468では、カナダの一部地域が2026年11月1日に時計を戻さず、Outlook/Exchangeの予定への影響が確認されています。Copilot関連(MC1530611、MC1538999)は展開が進行中で、管理者の必須作業は抜粋では示されていません。",
-  "thisWeek": "MC1325414: SSPRが明示的に登録された認証方式を要求する変更の展開状況を確認し、未登録ユーザーを特定する\nMC1542066: Workforce Insightsエンドポイントを使うカスタム属性連携の有無を確認する(対応期限は2026年11月18日)\nMC1526468: カナダ対象地域のユーザーについて、Outlook/Exchangeの予定と定期会議のタイムゾーン影響を確認する\nMC1490899: Targeted release登録ユーザーを確認し、Standard/Deferred/Frontierのリリース設定を決める",
-  "thisMonth": "MC1528000: 2027年2月1日のSMS/音声廃止に備え、パスキーなど代替方式への移行またはCYOT構成を計画する\nMC1536049: SSPRで有効な復旧方式を持たないユーザーを特定し、ヘルプデスク負荷への対応を準備する\nMC1536057: Standard/Deferredの検証グループ設計を見直す(例外上限は10,000に拡大)",
-  "watch": "MC1422061: 条件付きアクセスのカスタムコントロールは2027年5月に完全廃止予定のため、External MFAへの移行状況を監視する\nMC1530611: Office in Copilotは2026年11月中旬の完了予定。管理者の必須作業は不要とされているが、ユーザー周知とポリシー確認を検討する\nMC1538999: Work IQ APIのCopilotコネクタ対応は2026年11月下旬から12月下旬にかけて展開予定",
-  "customerQuestions": "SSPRで、ディレクトリ属性(携帯電話・代替メール等)に依存して本人確認しているユーザーはどの程度いますか。(MC1325414)\nSMS/音声を主要な認証・復旧手段としているユーザーはどの程度いますか。パスキーへの移行またはCYOTの利用を検討していますか。(MC1528000, MC1536049)\nTargeted releaseに登録済みのユーザーはどの程度いますか。移行先のリリース設定は決まっていますか。(MC1490899)\nWorkforce InsightsエージェントにMODS経由でカスタム属性を送っていますか。(MC1542066)\nカナダ(BC州・アルバータ州・マニトバ州等)に拠点やTeams Roomsはありますか。(MC1526468)",
+  "headline": "Entra認証方式の廃止準備、eMudhra証明書失効、Targeted Release廃止、Entra Agent Blueprint既定変更が優先事項",
+  "executiveSummary": "今週は認証・信頼基盤に関する変更が中心です。MC1529467では、2026年11月16日にEdge/WebView2向けPKI Metadata更新で、eMudhraの残るルートの既定信頼が完全に削除されると記載されています。MC1528000では、Microsoft提供のSMS/音声認証が2027年2月1日から廃止されます。MC1536049では、これに伴いSSPRでも利用できなくなり、サインイン廃止展開後50日の移行期間があります。MC1506733では、2026年11月上旬から下旬にかけて、既定ユーザーがエージェントブループリントを作成可能になります(管理者が設定を無効化しない場合)。MC1490899ではTargeted Releaseが2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります。MC1542066はFrontier preview中のWorkforce Insights向けMODSエンドポイントが2026年11月18日から廃止されます。各メッセージの抜粋は上限があり、抜粋にない日付・要件は不明として扱い、原文確認が必要です。",
+  "thisWeek": "MC1529467: 11月16日のEdge/WebView2 PKI Metadata更新でemSignルートの既定信頼が削除されるため、eMudhra発行証明書に依存する業務・サイトがないか確認する。\nMC1506733: 既定ユーザーによるエージェントブループリント作成を許可するか判断し、望まない場合は「Users can create agent blueprints」を無効化する。\nMC1542066: Workforce Insightsへカスタム属性を送る組織は、11月18日のMODSエンドポイント廃止前にMicrosoft 365 profile経由へ移行できるか確認する(非公開属性はprivate preview参加が必要)。\nMC1490899: Targeted Release登録ユーザーを棚卸しし、2026年11月の登録変更不可になる前にFrontier/Standard/Deferredの方針を決める。",
+  "thisMonth": "MC1528000: 2027年2月1日までに、SMS/音声利用ユーザーをパスキーなど他の方式へ移行するか、CYOT(顧客管理テレコムプロバイダー)の構成を検討する。\nMC1536049: SSPRの回復方法として十分な適格方式を持たないユーザーを特定し、ヘルプデスク影響に備える。\nMC1546411: Viva Learning利用状況レポートとViva Insights個人インサイトのアクティブユーザー推移グラフが管理センターから廃止されるため、関連手順書を更新し、Viva Learningは同アプリ内のメトリクスを案内する。\nMC1470885: Word/Excel/PowerPointのCopilotボタン新プロンプト入力が2026年12月末までに展開されるため、ユーザー向け案内を準備する。",
+  "watch": "MC1526468: カナダ2026年タイムゾーン変更の影響のうち、Teams関連の一部は検証中と記載されており、続報を監視する。\nMC1530611: Office in Copilotは2026年11月中旬までの展開、Deferred releaseは12月初旬開始のため進捗を監視する。\nMC1146821: Edge for BusinessのWriting Assistanceは2027年1月下旬への延期が示されており、変更を監視する。",
+  "customerQuestions": "eMudhra発行の証明書やコード署名に依存するシステム、アプリ、社内サイトはありますか。(MC1529467)\nSMS・音声認証を利用しているユーザー数と、パスキー等への移行計画・CYOT利用の要否は決まっていますか。(MC1528000, MC1536049)\nエージェントブループリントの作成を一般ユーザーに許可する方針ですか。(MC1506733)\nTargeted Releaseの登録ユーザーは誰で、移行先はFrontier、Standard、Deferredのどれにしますか。(MC1490899)\nWorkforce Insightsにカスタム属性をMODS経由で送信していますか。(MC1542066)",
   "referencedIds": [
-    "MC1325414",
-    "MC1422061",
+    "MC1146821",
+    "MC1470885",
     "MC1490899",
+    "MC1506733",
     "MC1526468",
     "MC1528000",
+    "MC1529467",
     "MC1530611",
     "MC1536049",
-    "MC1536057",
-    "MC1538999",
-    "MC1542066"
+    "MC1542066",
+    "MC1546411"
   ],
   "messageUpdates": [
     {
@@ -661,6 +662,27 @@
       "id": "MC1542066",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。対応期限は 2026年11月18日 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1545694",
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1545695",
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1546411",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -2050,6 +2072,22 @@
       "validatedAt": "2026-11-05T09:42:28.3528752+00:00"
     },
     {
+      "id": "MC1530611",
+      "japaneseTitle": "Copilotアプリ内でWord・Excel・PowerPointの作成と編集が可能に",
+      "japaneseFacts": {
+        "change": "Copilotアプリ内でWord、Excel、PowerPointファイルを作成、編集、共同作業できるようになります。",
+        "impact": "Copilot経由でOfficeファイルの内容にアクセス・編集でき、変更は通常のOfficeアプリに同期されます。",
+        "timing": "全世界GAは展開を開始済みで、2026年11月中旬までに完了予定です。",
+        "action": "管理者の対応は不要で、ユーザーへの周知と既存のCopilot構成・ポリシーの確認が推奨されます。"
+      },
+      "japaneseDetailedSummary": "Microsoft Copilotアプリ内で、Word、Excel、PowerPointファイルの作成、編集、共同作業ができるようになります。2026年11月5日にタイムラインが更新され、全世界向けGAは既に展開を開始しており、2026年11月中旬までに完了する予定です。コンテキスト切り替えが減り、会話やアイデアから共有可能なOffice成果物へ移行しやすくなります。管理者の対応は不要ですが、新しい体験をユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認することが推奨されます。コンプライアンス面では、ユーザーがCopilot経由でOfficeファイルの内容にアクセス・編集でき、変更は通常のOfficeアプリに同期されます。本機能は既存のCopilot構成とポリシーの対象で、Entra IDグループによる割り当てで管理できます。",
+      "japaneseBodyTranslation": "2026年11月5日更新:タイムラインを更新しました。ご理解に感謝いたします。\n[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの機能をフルに利用でき、アプリを離れることなくWord、Excel、PowerPointファイルを作成、編集、共同作業できます。\n[ロールアウトスケジュール]\n一般提供(全世界):展開を開始しており、2026年11月中旬までに完了する予定です。\n[組織への影響]\nCopilot内でOfficeの機能をフルに利用できるようになり、Word、Excel、PowerPointがCopilotエクスペリエンスに直接統合されます。ユーザーは作業の流れを離れることなくOfficeファイルを作成、レビュー、編集、共同作業できます。これによりコンテキスト切り替えが減り、アイデアや会話から共有可能な完成したOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、新しいエクスペリエンスをユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認するとよいでしょう。\n[コンプライアンス上の考慮事項]\n質問:この変更により、既存の顧客データの処理、保存、アクセス方法は変わりますか?\n回答:はい。ユーザーはCopilotエクスペリエンス経由でOfficeファイルの内容にアクセスして編集でき、変更は通常のOfficeアプリに同期されます。\n質問:この変更は、顧客データとやり取りする、またはそれへのアクセスを提供するAI/MLやエージェント機能を新たに導入または大幅に変更しますか?\n回答:はい。この機能の一部として、CopilotはOfficeドキュメントの内容を読み取り、編集する機能が拡張されます。\n質問:この変更により、エンドユーザーに生成AIとの新しいやり取りの方法が提供されますか?\n回答:はい。ユーザーはCopilotアプリ内で直接、Word、Excel、PowerPointのコンテンツを作成、編集できます。\n質問:この変更には管理者コントロールが含まれ、Entra IDグループのメンバーシップで制御できますか?\n回答:はい。この機能は既存のMicrosoft 365 Copilotの構成とポリシーの対象であり、管理者はEntra IDグループベースの割り当てで管理できます。",
+      "sourceCharacterCount": 1923,
+      "sourceTruncated": false,
+      "sourceHash": "41b9f33788255d55e7d70e6309f4c12750c8c4e271c13ab6828739eae75ecd22",
+      "validatedAt": "2026-11-09T20:55:00.097344+00:00"
+    },
+    {
       "id": "MC1536049",
       "japaneseTitle": "Entra ID SSPRでMicrosoft提供のSMS・音声認証が廃止",
       "japaneseFacts": {
@@ -2114,38 +2152,6 @@
       "validatedAt": "2026-11-05T02:41:49.5417873+00:00"
     },
     {
-      "id": "MC985483",
-      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
-      "japaneseFacts": {
-        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
-        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
-        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
-        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
-      "sourceCharacterCount": 1148,
-      "sourceTruncated": false,
-      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
-      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
-      "id": "MC1530611",
-      "japaneseTitle": "Copilotアプリ内でWord・Excel・PowerPointの作成と編集が可能に",
-      "japaneseFacts": {
-        "change": "Copilotアプリ内でWord、Excel、PowerPointファイルを作成、編集、共同作業できるようになります。",
-        "impact": "Copilot経由でOfficeファイルの内容にアクセス・編集でき、変更は通常のOfficeアプリに同期されます。",
-        "timing": "全世界GAは展開を開始済みで、2026年11月中旬までに完了予定です。",
-        "action": "管理者の対応は不要で、ユーザーへの周知と既存のCopilot構成・ポリシーの確認が推奨されます。"
-      },
-      "japaneseDetailedSummary": "Microsoft Copilotアプリ内で、Word、Excel、PowerPointファイルの作成、編集、共同作業ができるようになります。2026年11月5日にタイムラインが更新され、全世界向けGAは既に展開を開始しており、2026年11月中旬までに完了する予定です。コンテキスト切り替えが減り、会話やアイデアから共有可能なOffice成果物へ移行しやすくなります。管理者の対応は不要ですが、新しい体験をユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認することが推奨されます。コンプライアンス面では、ユーザーがCopilot経由でOfficeファイルの内容にアクセス・編集でき、変更は通常のOfficeアプリに同期されます。本機能は既存のCopilot構成とポリシーの対象で、Entra IDグループによる割り当てで管理できます。",
-      "japaneseBodyTranslation": "2026年11月5日更新:タイムラインを更新しました。ご理解に感謝いたします。\n[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの機能をフルに利用でき、アプリを離れることなくWord、Excel、PowerPointファイルを作成、編集、共同作業できます。\n[ロールアウトスケジュール]\n一般提供(全世界):展開を開始しており、2026年11月中旬までに完了する予定です。\n[組織への影響]\nCopilot内でOfficeの機能をフルに利用できるようになり、Word、Excel、PowerPointがCopilotエクスペリエンスに直接統合されます。ユーザーは作業の流れを離れることなくOfficeファイルを作成、レビュー、編集、共同作業できます。これによりコンテキスト切り替えが減り、アイデアや会話から共有可能な完成したOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、新しいエクスペリエンスをユーザーに周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認するとよいでしょう。\n[コンプライアンス上の考慮事項]\n質問:この変更により、既存の顧客データの処理、保存、アクセス方法は変わりますか?\n回答:はい。ユーザーはCopilotエクスペリエンス経由でOfficeファイルの内容にアクセスして編集でき、変更は通常のOfficeアプリに同期されます。\n質問:この変更は、顧客データとやり取りする、またはそれへのアクセスを提供するAI/MLやエージェント機能を新たに導入または大幅に変更しますか?\n回答:はい。この機能の一部として、CopilotはOfficeドキュメントの内容を読み取り、編集する機能が拡張されます。\n質問:この変更により、エンドユーザーに生成AIとの新しいやり取りの方法が提供されますか?\n回答:はい。ユーザーはCopilotアプリ内で直接、Word、Excel、PowerPointのコンテンツを作成、編集できます。\n質問:この変更には管理者コントロールが含まれ、Entra IDグループのメンバーシップで制御できますか?\n回答:はい。この機能は既存のMicrosoft 365 Copilotの構成とポリシーの対象であり、管理者はEntra IDグループベースの割り当てで管理できます。",
-      "sourceCharacterCount": 1923,
-      "sourceTruncated": false,
-      "sourceHash": "41b9f33788255d55e7d70e6309f4c12750c8c4e271c13ab6828739eae75ecd22",
-      "validatedAt": "2026-11-09T20:55:00.0973440+00:00"
-    },
-    {
       "id": "MC1542066",
       "japaneseTitle": "Workforce Insights専用MODSエンドポイントが廃止、M365プロファイルへ移行",
       "japaneseFacts": {
@@ -2160,9 +2166,25 @@
       "sourceTruncated": true,
       "sourceHash": "602496055a71f37f79dbd4a918bdb73e418395752ebb36c28ef9b21810ea6ff8",
       "validatedAt": "2026-11-09T20:55:00.0913615+00:00"
+    },
+    {
+      "id": "MC985483",
+      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
+      "japaneseFacts": {
+        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
+        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
+        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
+        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
+      "sourceCharacterCount": 1148,
+      "sourceTruncated": false,
+      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
+      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-11-09T09:59:35.1295107+00:00",
-  "summarySourceHash": "91f98cfa23121ddea9e1456b4dbb0b354999ad856e1ddfe2a36312dc84168d1b",
-  "sourceAgentRunId": "42597187945"
+  "summarySourceHash": "a8318096215af3901dd1cc1e6236b75f4766b24cf319015dbfd206cb50036ca5",
+  "summaryGeneratedAt": "2026-11-12T10:01:40.6676019+00:00",
+  "sourceAgentRunId": "43196023190"
 }
