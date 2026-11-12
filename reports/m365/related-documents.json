@@ -412,16 +412,16 @@
     },
     "MC1146821": {
       "sourceHashes": [
-        "af566812b2882e8bc3a46b98d82ec143a520a36e8d32dbe71af0e4701c2fbfa0"
+        "86adb28938cf07a05b19214b6164fc0dc878c7f2a779b99255dc205c4b07a232"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T10:07:14.776512+00:00",
+      "checkedAt": "2026-11-12T03:03:14.025318+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/DeployEdge/edge-learnmore-copilot-page-summary-results",
           "title": "Edge でのMicrosoft 365 Copilot Chatとページ コンテンツへのアクセス",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:07:19.713330+00:00",
+          "checkedAt": "2026-11-02T01:33:56.371210+00:00",
           "bodySha256": "51e24a8a1d99272e57b974b1e311a7612af859efb68bf45017e081889ad2bb2c",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -430,14 +430,14 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/DeployEdge/edge-learnmore-copilot-page-summary-results",
             "bodySha256": "933bf7fba388d9666a928cb6752a0f3c9ba83ec7ae1a265023088fb62c3a2413",
-            "reviewedAt": "2026-10-16T10:07:19.713330+00:00"
+            "reviewedAt": "2026-11-12T03:03:15.751791+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/deployedge/microsoft-edge-policies/ComposeInlineEnabled",
           "title": "ComposeInlineEnabled",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:07:26.756241+00:00",
+          "checkedAt": "2026-11-12T03:03:23.892462+00:00",
           "bodySha256": "e7f08582527012c0be0f3bba133f39b09f9f6e5027ba7d9325b54309fa6a2137",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -446,7 +446,7 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/composeinlineenabled",
             "bodySha256": "daa999ebce22f89297da85dc436820342b7edd3206014edf3115df3e1f25f2e7",
-            "reviewedAt": "2026-10-16T10:07:26.756241+00:00"
+            "reviewedAt": "2026-11-12T03:03:23.892500+00:00"
           }
         }
       ],
@@ -482,7 +482,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T10:07:26.757240+00:00",
+      "nextAttemptAt": "2026-12-12T03:03:23.893807+00:00",
       "variants": {
         "3c26394f3efde25181991affc1f696b2692a146cca34c6fb78486ad6ec6f20a6": {
           "sourceHashes": [
@@ -567,6 +567,80 @@
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
           "nextAttemptAt": "2026-11-13T21:01:43.924802+00:00"
+        },
+        "af566812b2882e8bc3a46b98d82ec143a520a36e8d32dbe71af0e4701c2fbfa0": {
+          "sourceHashes": [
+            "af566812b2882e8bc3a46b98d82ec143a520a36e8d32dbe71af0e4701c2fbfa0"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T10:07:14.776512+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/DeployEdge/edge-learnmore-copilot-page-summary-results",
+              "title": "Edge でのMicrosoft 365 Copilot Chatとページ コンテンツへのアクセス",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:07:19.713330+00:00",
+              "bodySha256": "51e24a8a1d99272e57b974b1e311a7612af859efb68bf45017e081889ad2bb2c",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/DeployEdge/edge-learnmore-copilot-page-summary-results",
+                "bodySha256": "933bf7fba388d9666a928cb6752a0f3c9ba83ec7ae1a265023088fb62c3a2413",
+                "reviewedAt": "2026-10-16T10:07:19.713330+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/deployedge/microsoft-edge-policies/ComposeInlineEnabled",
+              "title": "ComposeInlineEnabled",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:07:26.756241+00:00",
+              "bodySha256": "e7f08582527012c0be0f3bba133f39b09f9f6e5027ba7d9325b54309fa6a2137",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/composeinlineenabled",
+                "bodySha256": "daa999ebce22f89297da85dc436820342b7edd3206014edf3115df3e1f25f2e7",
+                "reviewedAt": "2026-10-16T10:07:26.756241+00:00"
+              }
+            }
+          ],
+          "reviewHash": "b2ba9aacd0cf88cda3c40224d400e7ecf3cdc6eb4ef9512227879521be8178a5",
+          "query": "Microsoft edge business copilot",
+          "explicitUrls": [
+            "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
+            "https://learn.microsoft.com/deployedge/microsoft-edge-browser-policies/composeinlineenabled"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/deployedge/microsoft-edge-browser-policies/composeinlineenabled",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/copilot/edge",
+              "source": "reviewed_candidate",
+              "decision": "rejected_feature_or_platform_mismatch"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft edge business copilot",
+          "searchedQueries": [
+            "Microsoft edge business copilot"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T10:07:26.757240+00:00"
         }
       }
     },
@@ -17055,16 +17129,16 @@
     },
     "MC1470885": {
       "sourceHashes": [
-        "3b11ed138c05e7f7210856270d9789459f081b4f594a2c4fd70711fb7baecc7f"
+        "3fc072cf183a69941eebd6d907c5acd344fd15e97c2e3a200c34400e15b34680"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-16T10:11:51.893024+00:00",
+      "checkedAt": "2026-11-12T03:03:24.008707+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/copilot/manage",
           "title": "Microsoft Copilot Chatの管理",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:10:09.479871+00:00",
+          "checkedAt": "2026-10-22T18:48:15.653187+00:00",
           "bodySha256": "215f0a0894b3f18fe17a58ab26f15ea71356e97ba7a6796d497d56862369e4f4",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -17072,24 +17146,24 @@
           "rationale": "Explicit official article from this approved notification.",
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/copilot/manage",
-            "bodySha256": "b4f96bb498f9d20849bd74c488cd9a63dd8d5a600c0c0be604396bd561658fd4",
-            "reviewedAt": "2026-10-16T10:11:51.945858+00:00"
+            "bodySha256": "5ca1508ff22196d73d139c25f80003899ab4a3613d619f44b4a3d6b55798e81b",
+            "reviewedAt": "2026-11-12T03:03:29.568485+00:00"
           }
         },
         {
-          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/pin-copilot-chat-navbar",
+          "url": "https://learn.microsoft.com/ja-jp/copilot/implement/pin-copilot-chat-navbar",
           "title": "Microsoft 365 アプリでMicrosoft Copilot Chatをピン留めする",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-16T10:11:57.851523+00:00",
-          "bodySha256": "306e891e303dd1ea8ce625edd7a57c748000c60f78ac3911aa247df3abf82693",
+          "checkedAt": "2026-11-12T03:03:37.892993+00:00",
+          "bodySha256": "78faf70aebc1d88178bfb543b9c296dfb2cbed0dd8ded75f9d230c46df2d905c",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "explicit_message_link",
           "rationale": "Explicit official article from this approved notification.",
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/pin-copilot-chat-navbar",
-            "bodySha256": "29eb908e42bd4ea30be0bce3f1af537152dc9f495e8338de78c8983b3cf87a25",
-            "reviewedAt": "2026-10-16T10:11:57.851523+00:00"
+            "bodySha256": "88ae1bf91f2c7a22a27dd76e75f5d1b52a26cf2c0919e274667eb667680472c9",
+            "reviewedAt": "2026-11-12T03:03:37.893034+00:00"
           }
         }
       ],
@@ -17121,7 +17195,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-15T10:11:57.851523+00:00",
+      "nextAttemptAt": "2026-12-12T03:03:37.893039+00:00",
       "variants": {
         "a168ee4ba67ae252e7703d7b9583e1fa708f6b2e6ff5742901742cd6754bb5d0": {
           "sourceHashes": [
@@ -17145,6 +17219,76 @@
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
           "nextAttemptAt": "2026-11-13T21:01:31.733955+00:00"
+        },
+        "3b11ed138c05e7f7210856270d9789459f081b4f594a2c4fd70711fb7baecc7f": {
+          "sourceHashes": [
+            "3b11ed138c05e7f7210856270d9789459f081b4f594a2c4fd70711fb7baecc7f"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-16T10:11:51.893024+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/copilot/manage",
+              "title": "Microsoft Copilot Chatの管理",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:10:09.479871+00:00",
+              "bodySha256": "215f0a0894b3f18fe17a58ab26f15ea71356e97ba7a6796d497d56862369e4f4",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/copilot/manage",
+                "bodySha256": "b4f96bb498f9d20849bd74c488cd9a63dd8d5a600c0c0be604396bd561658fd4",
+                "reviewedAt": "2026-10-16T10:11:51.945858+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/pin-copilot-chat-navbar",
+              "title": "Microsoft 365 アプリでMicrosoft Copilot Chatをピン留めする",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-16T10:11:57.851523+00:00",
+              "bodySha256": "306e891e303dd1ea8ce625edd7a57c748000c60f78ac3911aa247df3abf82693",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/pin-copilot-chat-navbar",
+                "bodySha256": "29eb908e42bd4ea30be0bce3f1af537152dc9f495e8338de78c8983b3cf87a25",
+                "reviewedAt": "2026-10-16T10:11:57.851523+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft copilot word excel powerpoint prompts",
+          "explicitUrls": [
+            "https://learn.microsoft.com/copilot/manage",
+            "https://learn.microsoft.com/microsoft-365/copilot/pin-copilot-chat-navbar"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/copilot/manage",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/copilot/pin-copilot-chat-navbar",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft copilot word excel powerpoint prompts",
+          "searchedQueries": [
+            "Microsoft copilot word excel powerpoint prompts",
+            "copilot word excel powerpoint"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-15T10:11:57.851523+00:00"
         }
       }
     },
@@ -18938,10 +19082,10 @@
     },
     "MC1478975": {
       "sourceHashes": [
-        "e8c0dd0053f5b3ae4d7bd49dab7660502160cdc4cba412f2bedfb037be1d9844"
+        "4bab4642ecdeac0506e8c6359134f1b551d60e0674cd7afa1249f08441c4330e"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:52:04.349844+00:00",
+      "checkedAt": "2026-11-12T03:03:38.005133+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
@@ -18971,7 +19115,7 @@
             "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
             "bodySha256": "c0cfb94451816a8d5d403747eabb4e3ed42575ef570356469f034ebc5e4e2f70",
-            "reviewedAt": "2026-10-29T01:52:07.179902+00:00"
+            "reviewedAt": "2026-11-12T03:03:42.192070+00:00"
           }
         }
       ],
@@ -18995,7 +19139,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:52:07.179912+00:00",
+      "nextAttemptAt": "2026-12-12T03:03:42.192077+00:00",
       "variants": {
         "effee8532c30c4acf3b511ac6f7cf75a9e26b6cf19af553beeac2b2b7c9af13a": {
           "sourceHashes": [
@@ -19118,6 +19262,67 @@
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
           "nextAttemptAt": "2026-11-21T18:46:40.072104+00:00"
+        },
+        "e8c0dd0053f5b3ae4d7bd49dab7660502160cdc4cba412f2bedfb037be1d9844": {
+          "sourceHashes": [
+            "e8c0dd0053f5b3ae4d7bd49dab7660502160cdc4cba412f2bedfb037be1d9844"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-29T01:52:04.349844+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+              "title": "宣言型エージェントから他のエージェントに接続する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-22T18:46:40.072018+00:00",
+              "bodySha256": "78ea84fa0779914594d8b3f0eb23ed91847629eba4fdf04ba6a0ad326fa21b89",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "reviewed_candidate",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "agent365",
+                "matchedTerms": [
+                  "connected",
+                  "copilot",
+                  "declarative"
+                ],
+                "requiredFeatureTerms": [
+                  "connected",
+                  "copilot",
+                  "declarative"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+                "bodySha256": "c0cfb94451816a8d5d403747eabb4e3ed42575ef570356469f034ebc5e4e2f70",
+                "reviewedAt": "2026-10-29T01:52:07.179902+00:00"
+              }
+            }
+          ],
+          "reviewHash": "fcbcbc4fc097b3c2b64e6c14e67b6b57d6514094e506751f349dbfa4e3ce2e91",
+          "query": "Microsoft agent connected agents declarative",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+              "source": "reviewed_candidate",
+              "decision": "adopted",
+              "score": 1.0
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft agent connected agents declarative",
+          "searchedQueries": [
+            "Microsoft agent connected agents declarative"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-28T01:52:07.179912+00:00"
         }
       }
     },
@@ -21621,10 +21826,10 @@
     },
     "MC1529467": {
       "sourceHashes": [
-        "7e3055695914cd5d4b83970f7a57dbd65951cbfacb7f625052ee77d9c38091c5"
+        "bf967ba76761e05f3244121dfa0d0fe88971225d876ff33365243d280654507d"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:52:28.464010+00:00",
+      "checkedAt": "2026-11-12T03:03:42.308543+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
@@ -21639,7 +21844,7 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
             "bodySha256": "66f2494e4e0109117d1e714d4052148f233dca9254617576203558da4fc819d9",
-            "reviewedAt": "2026-10-29T01:52:34.016876+00:00"
+            "reviewedAt": "2026-11-12T03:03:46.331056+00:00"
           }
         }
       ],
@@ -21664,8 +21869,56 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:52:34.016882+00:00",
-      "variants": {}
+      "nextAttemptAt": "2026-12-12T03:03:46.331062+00:00",
+      "variants": {
+        "7e3055695914cd5d4b83970f7a57dbd65951cbfacb7f625052ee77d9c38091c5": {
+          "sourceHashes": [
+            "7e3055695914cd5d4b83970f7a57dbd65951cbfacb7f625052ee77d9c38091c5"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-10-29T01:52:28.464010+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
+              "title": "信頼されたルートおよび許可されない証明書を Windows で構成する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-29T01:52:34.016789+00:00",
+              "bodySha256": "00b70883c0d2ededc8dcfbd5c9882c7a025d9750ce3ea476cf6e1046d0641754",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
+                "bodySha256": "66f2494e4e0109117d1e714d4052148f233dca9254617576203558da4fc819d9",
+                "reviewedAt": "2026-10-29T01:52:34.016876+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft windows address",
+          "explicitUrls": [
+            "https://learn.microsoft.com/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft windows address",
+          "searchedQueries": [
+            "Microsoft windows address"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-11-28T01:52:34.016882+00:00"
+        }
+      }
     },
     "MC1528009": {
       "sourceHashes": [
@@ -21925,10 +22178,10 @@
     },
     "MC1530611": {
       "sourceHashes": [
-        "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9"
+        "958f0cd093d7806fc5d43d5ba90ad2ea46bb81002b2f5f794fdc508267a3a9f4"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-09T01:46:09.944814+00:00",
+      "checkedAt": "2026-11-12T03:03:46.446764+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft office copilot power app",
@@ -21944,7 +22197,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-12T01:46:09.955303+00:00",
+      "nextAttemptAt": "2026-11-15T03:03:46.452269+00:00",
       "variants": {
         "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2": {
           "sourceHashes": [
@@ -21968,6 +22221,29 @@
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
           "nextAttemptAt": "2026-11-14T09:49:02.551659+00:00"
+        },
+        "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9": {
+          "sourceHashes": [
+            "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9"
+          ],
+          "status": "no_verified_document",
+          "checkedAt": "2026-11-12T03:04:20.233512+00:00",
+          "documents": [],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft office copilot power app",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [],
+          "searchEvidenceKey": "search:Microsoft office copilot power app",
+          "searchedQueries": [
+            "Microsoft office copilot power app",
+            "copilot office power app"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+          "nextAttemptAt": "2026-11-15T03:04:20.238927+00:00"
         }
       }
     },
@@ -22530,35 +22806,245 @@
       "rationale": "Articles verified against this snapshot version.",
       "nextAttemptAt": "2026-12-09T01:46:26.282870+00:00",
       "variants": {}
+    },
+    "MC1546411": {
+      "sourceHashes": [
+        "4254c262a7156b700283883479224a11068516bc315236a9e6cc430155150516"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-11-12T03:03:46.571487+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/viva/learning/reports",
+          "title": "Viva Learningのレポートの概要",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-12T03:04:02.238961+00:00",
+          "bodySha256": "ba768f4e1c3b479dc593b23b81c0879162096a4b8ef81bd7538b080018f82540",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/viva/learning/reports",
+            "bodySha256": "7bd7f4f96df834d40723cd14a653147f0f998c620c3a259be9d8d7dfc0ac1825",
+            "reviewedAt": "2026-11-12T03:04:02.239007+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft retirement viva insights usage reports",
+      "explicitUrls": [
+        "https://learn.microsoft.com/viva/learning/reports"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/viva/learning/reports",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft retirement viva insights usage reports",
+      "searchedQueries": [
+        "Microsoft retirement viva insights usage reports",
+        "microsoft viva insights usage reports",
+        "microsoft retirement viva insights usage"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-12T03:04:02.239012+00:00",
+      "variants": {}
+    },
+    "MC1545695": {
+      "sourceHashes": [
+        "26e68837374044b3dec25ade97ebe4c3e5e7110bd9202d8e5df819aec5505410"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-12T03:04:02.359314+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft app copilot",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft app copilot",
+      "searchedQueries": [
+        "Microsoft app copilot",
+        "copilot app"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-15T03:04:05.869295+00:00",
+      "variants": {}
+    },
+    "MC1545694": {
+      "sourceHashes": [
+        "21188736afd5fbf9c84cc7fca9f1ce840149cff314ce8737397e349f89b76f46"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-11-12T03:04:05.982182+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-entra-passkey-windows",
+          "title": "WindowsにMicrosoft Entraパスキーを登録する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-02T01:33:47.696269+00:00",
+          "bodySha256": "9f8d4001823adb1c06be14bd466477016ce9e1b9c22efa74bdd7426ab81dde3a",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "automatic_learn_search",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "passkey",
+              "registration",
+              "signin"
+            ],
+            "requiredFeatureTerms": [
+              "passkey",
+              "registration",
+              "signin"
+            ],
+            "coverage": 1.0,
+            "platforms": [],
+            "score": 1.0,
+            "articleExcerpt": "# Register a Microsoft Entra passkey on Windows\r\n\r\nThis article shows how to register a Microsoft Entra passkey on Windows. A Microsoft Entra passkey on Windows is a device-bound passkey stored in the local Windows Hello container. Unlike synced passkeys, a passkey on Windows doesn't sync across devices — each device requires a separate passkey registration. This approach enables phishing-resistant sign-in with a Windows Hello biometric or PIN, without requiring the device to be Microsoft Entra joined or registered.\r\n\r\nFor an overview of Microsoft Entra passkey on Windows and how it compares with Windows Hello for Business, see [Microsoft Entra passkey on Windows](how-to-authentication-entra-passkeys-on-windows).\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-entra-passkey-windows",
+            "bodySha256": "3e1e98c3215f22b01482149967c64c579b79ce3734941725d479bc5c7dda35d7",
+            "reviewedAt": "2026-11-12T03:04:10.165567+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/how-to-connect-passwordless-authentication",
+          "title": "パスワードレス認証を使用して Microsoft Entra Connect Sync にサインインする",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-12T03:04:14.351669+00:00",
+          "bodySha256": "f30fe0c97ebef3497d4f7dac631f0162f40515e24211ea04b46b09baa734707f",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "automatic_learn_search",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "passkey",
+              "registration",
+              "signin"
+            ],
+            "requiredFeatureTerms": [
+              "passkey",
+              "registration",
+              "signin"
+            ],
+            "coverage": 1.0,
+            "platforms": [],
+            "score": 1.0,
+            "articleExcerpt": "### Register a passkey\r\n\r\nRegister a passkey that's stored on your device or password manager:\r\n\r\n1. Go to [Security info](https://mysignins.microsoft.com/security-info) and sign in with your administrator account.\r\n2. Select **Add sign-in method**.\r\n3. Select **Passkey**.\r\n4. Follow the prompts to create the passkey with your device, such as Windows Hello, Face ID, Touch ID, or a synced password manager.\r\n\r\nAfter registration finishes, the new passkey appears under your registered sign-in methods.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-passwordless-authentication",
+            "bodySha256": "4e64b4f35b4b58da76c44dd77bc343c36dca5b3de96c8e8ba5672c2ff3da1abe",
+            "reviewedAt": "2026-11-12T03:04:14.351708+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-mfa-registration-campaign",
+          "title": "登録キャンペーンを実行してパスキーまたはMicrosoft Authenticatorを設定する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-12T03:04:20.089787+00:00",
+          "bodySha256": "2b30c526296fa2c74adfafeac49c5c9f104823a7d4cbfcdd5c29b24e169d8ea8",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "automatic_learn_search",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "passkey",
+              "registration",
+              "signin"
+            ],
+            "requiredFeatureTerms": [
+              "passkey",
+              "registration",
+              "signin"
+            ],
+            "coverage": 1.0,
+            "platforms": [],
+            "score": 1.2,
+            "articleExcerpt": "# Run a registration campaign to set up a passkey or Microsoft Authenticator\r\n\r\nThe registration campaign allows you to nudge users to set up a passkey or Microsoft Authenticator during sign-in. When a user performs an interactive sign-in with multifactor authentication (MFA), they can be prompted to set up the targeted authentication method. You can include or exclude users or groups to control who gets nudged and create targeted campaigns that move users from less secure authentication methods to passkeys or Authenticator.\r\n\r\nThe registration campaign supports two authentication methods:\r\n\r\n- **Passkey (FIDO2)**: Nudges users to register a passkey.\r\n- **Authenticator**: Nudges users to download and set up Authenticator for push notifications.\r\n\r\nThe registration campaign can target one authentication method at a time.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-registration-campaign",
+            "bodySha256": "77d8ac07c887c1da73eecaf8a2328cf034b613fcea2f56dd5aa54528b8dfba11",
+            "reviewedAt": "2026-11-12T03:04:20.089908+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft entra passkey registration signin",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-register-entra-passkey-windows",
+          "source": "automatic_learn_search",
+          "decision": "adopted",
+          "score": 1.0
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-passwordless-authentication",
+          "source": "automatic_learn_search",
+          "decision": "adopted",
+          "score": 1.0
+        },
+        {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-mfa-registration-campaign",
+          "source": "automatic_learn_search",
+          "decision": "adopted",
+          "score": 1.2
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft entra passkey registration signin",
+      "searchedQueries": [
+        "Microsoft entra passkey registration signin"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-12T03:04:20.089914+00:00",
+      "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 169,
-    "snapshotOccurrences": 3826,
-    "snapshots": 46,
+    "uniqueMessages": 172,
+    "snapshotOccurrences": 3925,
+    "snapshots": 47,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-11-06T21:34:13+00:00",
-    "checkedAt": "2026-11-11T21:30:45.636343+00:00",
+    "publicationEnd": "2026-11-10T00:04:06+00:00",
+    "checkedAt": "2026-11-12T03:04:20.543958+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 60,
+      "no_verified_document": 61,
       "not_researched": 0,
-      "verified": 109
+      "verified": 111
     },
     "latestCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 22,
+      "no_verified_document": 23,
       "not_researched": 0,
-      "verified": 71
+      "verified": 73
     },
-    "latestTotal": 93,
+    "latestTotal": 96,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 9,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 156,
+      "no_verified_document": 158,
       "not_researched": 0,
-      "verified": 206
+      "verified": 212
     },
     "retrievalErrors": 0,
     "coverage": "complete",
