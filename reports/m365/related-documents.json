@@ -20934,7 +20934,7 @@
         "0c8b9963eab9fbc24b03abe9c52e1c20f5119cbf8d7850934a7032ba89f8d400"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T10:18:09.807146+00:00",
+      "checkedAt": "2026-11-13T20:58:22.389828+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft agent access usage activity insights admin center",
@@ -20951,7 +20951,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T10:18:14.564020+00:00",
+      "nextAttemptAt": "2026-11-16T20:58:26.845416+00:00",
       "variants": {
         "11e4b1bca4e3d674fe7ff6e1db6d8b735a57aefe5b7844a4086186dae6c85574": {
           "sourceHashes": [
@@ -21219,7 +21219,7 @@
         "8c13e90ad20aba061b61b991405154900a3f060622f642a5fff7eeb5fbd6f232"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T10:18:18.083431+00:00",
+      "checkedAt": "2026-11-13T20:58:30.317426+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft edge browser default",
@@ -21235,7 +21235,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T10:18:20.915152+00:00",
+      "nextAttemptAt": "2026-11-16T20:58:33.448628+00:00",
       "variants": {}
     },
     "MC1519855": {
@@ -21580,7 +21580,7 @@
         "e8307b121ffa6e2bba1a552c989fe0f237819876df8e1b914de45f24468a05e9"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T10:18:14.731407+00:00",
+      "checkedAt": "2026-11-13T20:58:27.002493+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft cowork browser copilot",
@@ -21596,7 +21596,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T10:18:17.918901+00:00",
+      "nextAttemptAt": "2026-11-16T20:58:30.111957+00:00",
       "variants": {}
     },
     "MC1521616": {
@@ -23024,7 +23024,7 @@
     "snapshots": 48,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-10T00:04:06+00:00",
-    "checkedAt": "2026-11-13T09:54:39.222039+00:00",
+    "checkedAt": "2026-11-13T20:58:33.672406+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 61,
@@ -23039,7 +23039,7 @@
     },
     "latestTotal": 96,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 3,
     "variantCounts": {
       "fetch_failed": 0,
       "no_verified_document": 158,
