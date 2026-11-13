@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T23:46:49.5917673+00:00",
+  "generatedAt": "2026-11-13T07:01:10.3089579+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra認証方式の廃止準備、eMudhra証明書失効、Targeted Release廃止、Entra Agent Blueprint既定変更が優先事項",
   "executiveSummary": "今週は認証・信頼基盤に関する変更が中心です。MC1529467では、2026年11月16日にEdge/WebView2向けPKI Metadata更新で、eMudhraの残るルートの既定信頼が完全に削除されると記載されています。MC1528000では、Microsoft提供のSMS/音声認証が2027年2月1日から廃止されます。MC1536049では、これに伴いSSPRでも利用できなくなり、サインイン廃止展開後50日の移行期間があります。MC1506733では、2026年11月上旬から下旬にかけて、既定ユーザーがエージェントブループリントを作成可能になります(管理者が設定を無効化しない場合)。MC1490899ではTargeted Releaseが2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります。MC1542066はFrontier preview中のWorkforce Insights向けMODSエンドポイントが2026年11月18日から廃止されます。各メッセージの抜粋は上限があり、抜粋にない日付・要件は不明として扱い、原文確認が必要です。",
@@ -710,6 +710,22 @@
       "sourceTruncated": false,
       "sourceHash": "fa59b71c29d9c1066e17dc45d1e957977353d584c293a8f5054474a347df0e63",
       "validatedAt": "2026-10-29T13:24:46.2319048+00:00"
+    },
+    {
+      "id": "MC1146821",
+      "japaneseTitle": "Edge for BusinessにCopilotの文章作成支援が追加(時期変更)",
+      "japaneseFacts": {
+        "change": "Edge for BusinessにMicrosoft 365 Copilot Chatによる文章作成支援(Writing Assistance)が追加され、既定で有効になります。",
+        "impact": "Edge for Businessユーザーが対象。DLPでCopilotのページ内容アクセスが制限されている場合、その内容では機能しません。",
+        "timing": "全世界GAは2027年1月下旬に開始し同月下旬に完了予定(従来は2026年10月末/下旬)。",
+        "action": "事前の管理者対応は不要。DLP構成の確認、ユーザーへの周知、社内ドキュメント更新を推奨。InlineComposeEnabledポリシーで管理可能。"
+      },
+      "japaneseDetailedSummary": "2026年11月9日更新でタイムラインが変更されました。Microsoft Edge for Businessに、Microsoft 365 Copilot Chatを利用したWriting Assistanceが追加されます。編集可能なテキストを選択して右クリックのコンテキストメニューから、文章の下書きや言い換えができます。Microsoft 365ロードマップID 420335に関連します。全世界GAは2027年1月下旬に展開開始・完了予定で、従来の2026年10月末から延期されました。既定で有効になり、管理者はInlineComposeEnabledポリシーで管理できます。DLPポリシーによりCopilotがページ内容にアクセスできない場合は機能しません。事前の管理者対応は不要ですが、DLP構成の確認、ユーザーへの周知、社内ドキュメント更新が推奨されます。原文は途中で切れており、以降は不明です。",
+      "japaneseBodyTranslation": "2026年11月9日更新:タイムラインを更新しました。ご理解に感謝します。\nはじめに\nMicrosoft Edge for Businessは、まもなくMicrosoft 365 Copilot Chatを利用した新機能Writing Assistanceをサポートします。この機能は、Edge内で編集可能なテキストの下書きや言い換えを支援し、生産性と文章品質を高めます。ユーザーは編集可能なテキストを選択して右クリックし、コンテキストメニューからWriting Assistanceにアクセスできます。\nこのメッセージはMicrosoft 365ロードマップID 420335に関連しています。\n実施時期\n一般提供(全世界):2027年1月下旬に展開を開始し(従来は2026年10月末)、2027年1月下旬までに展開を完了する予定です(従来は10月下旬)。\n組織への影響\n• Writing AssistanceはEdge for Businessユーザーに対して既定で有効になります。\n• ユーザーは編集可能なテキストを選択し、右クリックのコンテキストメニューからWriting Assistanceにアクセスできます。\n• Microsoft 365 Copilotがデータ損失防止(DLP)ポリシーによりページ内容へのアクセスを制限されている場合、そのコンテンツではWriting Assistanceは機能しません。\n• 管理者はInlineComposeEnabledポリシー設定でこの機能を管理できます。\n準備のためにできること\n展開前に管理者の対応は不要です。\n推奨事項:\n• 現在のDLP構成を確認し、Writing Assistanceの機能への影響を把握する。\n• 新機能についてユーザーに通知する。\n• 社内ドキュメントをこの変更に合わせて更新する。\nDLPがCopilotのページ内容アクセスに与える影響の詳細:Edgeでの Microsoft 365 Copilot Chat とページ内容へのアクセス | Microsoft Edge | Microsoft Learn\nコンプライアンスに関する考慮事項\n顧客データにアクセスするAI/MLやエージェント機能を新たに導入または大幅に変更しますか?はい。Microsoft 365 Copilot Chatによる新しい生成AI機能が導入され、Edge for Businessで直接テキストの書き換えや下書きができます。\nエンドユーザーに生成AIとの新しい対話方法を提供しますか?はい。編集可能なテキストを選択して右クリックメニューからWriting Assistanceを使い、AIによる下書きや言い換えができます。\nDLPポリシーまたはその適用を変更しますか?はい。DLPポリシーでCopilotのページ内容アクセスが制限されている場合、そのコンテンツではWriting Assistanceは機能しません。\n(以降は原文が途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "c4184b467aefc3d7559c21795d8799f698a96a16f5a1c923363d00632721e285",
+      "validatedAt": "2026-11-12T23:46:49.5840177+00:00"
     },
     {
       "id": "MC1158329",
@@ -1560,6 +1576,22 @@
       "validatedAt": "2026-10-20T07:48:03.1174421+00:00"
     },
     {
+      "id": "MC1478975",
+      "japaneseTitle": "Agent 365のA2Aエージェントを宣言型エージェントの接続先に利用可能",
+      "japaneseFacts": {
+        "change": "Agent2Agent(A2A)対応のMicrosoft Agent 365エージェントを、宣言型エージェントの接続エージェントとして使用できるようになります。",
+        "impact": "Microsoft 365管理者、Agents Toolkitで宣言型エージェントを構築する開発者、承認済みエージェントへのアクセスを割り当てられたユーザーが対象です。",
+        "timing": "全世界GAは2026年8月下旬に開始し、2026年12月末までに完了予定。",
+        "action": "管理者センターのAll agentsページで利用可能エージェントを確認し、公開対象の決定、Connected agentsタブの確認、ガバナンス/承認プロセスの更新を行います。"
+      },
+      "japaneseDetailedSummary": "2026年11月9日更新でタイムラインが変更されました。Microsoft 365 Agents Toolkitで構築する宣言型エージェントが、Agent2Agent(A2A)プロトコルを実装したMicrosoft Agent 365エージェントを接続エージェントとして利用できるようになります。既存のOpenAPIおよびMCPサーバー対応に加わります。管理者はMicrosoft 365管理センターのAll agentsページからA2A対応エージェントをインストールでき、ユーザー自身はインストールできません。Connected agentsタブで承認前に確認できます。全世界GAは2026年8月下旬に開始し12月末までに完了予定です。対応が必要な場合があり、展開前に利用可能エージェントの確認、提供対象の決定、ガバナンスや承認プロセスの更新が推奨されます。原文は途中で切れており、以降の内容は不明です。",
+      "japaneseBodyTranslation": "2026年11月9日更新:タイムラインを更新しました。ご理解に感謝します。\n[内容と理由]\nMicrosoftは、Agent2Agent(A2A)プロトコルを実装したMicrosoft Agent 365エージェントを、Microsoft 365 Agents Toolkitで構築した宣言型エージェントの接続エージェントとして使用できるようにします。\nこの機能強化により、宣言型エージェントが接続できる外部エージェントサービスの種類が拡大します。既存のOpenAPIおよびModel Context Protocol(MCP)サーバーのサポートに加え、Agent2Agent対応エージェントに接続でき、自然言語での対話やより複雑なワークフローが可能になります。\nこの機能により、開発者は宣言型エージェント構築の柔軟性が高まり、管理者はMicrosoft 365管理センターで一元的な管理とガバナンスを行えます。\n[展開スケジュール]\n• 一般提供(全世界):2026年8月下旬に開始し、2026年12月末までに完了する見込みです。\n[組織への影響]\n影響を受ける対象\n• Microsoft 365管理センターでエージェントを管理する管理者\n• Microsoft 365 Agents Toolkitで宣言型エージェントを構築する開発者\n• 承認済みMicrosoft Agent 365エージェントへのアクセスが割り当てられたユーザー\nプラットフォームとサービス\n• Microsoft 365 Copilot\n• Microsoft 365管理センター\n• Microsoft 365 Agents Toolkit\n• 宣言型エージェント\n今後の動作\n• 管理者は、Microsoft 365管理センターのAll agentsページから、Agent2AgentプロトコルをサポートするMicrosoft Agent 365エージェントをインストールできます。\n• 宣言型エージェントは、承認済みのAgent2Agent対応エージェントを接続エージェントとして使用できます。\n• Agent2Agentのサポートは、既存のOpenAPIおよびMCPサーバー接続のサポートに追加されます。\n• ユーザーがAgent2Agent対応のMicrosoft Agent 365エージェントを自分でインストールすることはできません。\n• 管理者は、承認前に宣言型エージェントの詳細ページのConnected agentsタブでAgent2Agent接続エージェントを確認できます。\n[必要な対応と推奨事項]\n対応が必要になる場合があります。\n展開前:\n• Microsoft 365管理センターのAll agentsページで利用可能なMicrosoft Agent 365エージェントを確認します。\n• 組織のユーザーに提供するAgent2Agent対応エージェントを決定します。\n• 承認前に、Connected agentsタブで宣言型エージェントに関連付けられた接続エージェントを確認します。\n• 必要に応じて、社内のガバナンス、エージェント承認、展開プロセスを更新します。\n管理者への通知を検討してください(以降は原文が途切れています)。",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "15c7bb0aedc6b1125f4f150abf02b43c88296a507bb515f261164f5980163ffd",
+      "validatedAt": "2026-11-12T23:46:49.5811831+00:00"
+    },
+    {
       "id": "MC1480873",
       "japaneseTitle": "Agent 365 がサードパーティ製エージェントの可観測性に対応",
       "japaneseFacts": {
@@ -2040,6 +2072,22 @@
       "validatedAt": "2026-11-05T09:42:28.3528752+00:00"
     },
     {
+      "id": "MC1530611",
+      "japaneseTitle": "Copilotアプリ内でOffice(Word/Excel/PowerPoint)をフル活用可能に",
+      "japaneseFacts": {
+        "change": "Microsoft Copilotアプリ内でWord、Excel、PowerPointファイルの作成・編集・共同作業ができるようになります。",
+        "impact": "ユーザーはCopilot経由でOfficeファイルの内容を閲覧・編集でき、変更は通常のOfficeアプリに同期されます。既存のMicrosoft 365 Copilot設定とポリシーが適用されます。",
+        "timing": "全世界GAは展開開始済みで2026年11月中旬に完了予定。遅延リリースは2026年12月上旬開始。",
+        "action": "管理者の対応は不要。ユーザーへの周知と既存のCopilot構成・ポリシーの確認を推奨します。"
+      },
+      "japaneseDetailedSummary": "2026年11月10日更新でタイムラインが変更されました。Microsoft Copilotアプリ内でWord、Excel、PowerPointファイルの作成、編集、共同作業がアプリを離れずに行えるようになります。コンテキスト切り替えが減り、アイデアから共有可能なOffice成果物までスムーズに進められます。全世界GAは展開中で2026年11月中旬に完了予定、遅延リリースは12月上旬に開始します。管理者の対応は不要ですが、ユーザーへの周知と既存のMicrosoft 365 Copilot構成・ポリシーの確認が推奨されます。コンプライアンス面では、Officeファイル内容へのアクセス・編集が可能になり、AI機能が拡張され、Entra IDグループ単位の既存ポリシーで管理できます。",
+      "japaneseBodyTranslation": "2026年11月10日更新:タイムラインを更新しました。ご理解に感謝します。\n[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの全機能を利用でき、アプリを離れずにWord、Excel、PowerPointファイルの作成、編集、共同作業が可能になります。\n[展開スケジュール]\n一般提供(全世界):展開を開始しており、2026年11月中旬までに完了する見込みです。\n• 遅延リリースは2026年12月上旬に開始します\n[組織への影響]\nCopilot内でOfficeの価値をフルに活用でき、Word、Excel、PowerPointがCopilot体験に直接組み込まれ、作業の流れを離れずにOfficeファイルの作成、レビュー、編集、共同作業ができます。コンテキストの切り替えが減り、アイデアや会話から共有可能なOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、ユーザーに新しい体験を周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認することを推奨します。\n[コンプライアンスに関する考慮事項]\n既存の顧客データの処理、保存、アクセス方法は変わりますか?はい。ユーザーはCopilot経由でOfficeファイルの内容にアクセス・編集でき、変更は通常のOfficeアプリに同期されます。\n顧客データにアクセスするAI/MLやエージェント機能を新たに導入または大幅に変更しますか?はい。Copilotは本機能の一部としてOfficeドキュメント内容を読み取り・編集する機能が拡張されます。\nエンドユーザーに生成AIとの新しい対話方法を提供しますか?はい。CopilotアプリでWord、Excel、PowerPointの内容を直接作成・編集できます。\n管理制御はありますか?Entra IDグループで制御できますか?はい。本機能は既存のMicrosoft 365 Copilotの構成とポリシーに従い、管理者はEntra IDのグループベース割り当てで管理できます。",
+      "sourceCharacterCount": 1974,
+      "sourceTruncated": false,
+      "sourceHash": "cd9e96a1ff3a3ed6bb440ce378828d1d90c173bd490288fc70e771132fda8c12",
+      "validatedAt": "2026-11-12T23:46:49.5768095+00:00"
+    },
+    {
       "id": "MC1536049",
       "japaneseTitle": "Entra ID SSPRでMicrosoft提供のSMS・音声認証が廃止",
       "japaneseFacts": {
@@ -2152,52 +2200,36 @@
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     },
     {
-      "id": "MC1146821",
-      "japaneseTitle": "Edge for BusinessにCopilotの文章作成支援が追加(時期変更)",
+      "id": "MC1545694",
+      "japaneseTitle": "Entra My Sign-insのパスキー登録画面が更新されます",
       "japaneseFacts": {
-        "change": "Edge for BusinessにMicrosoft 365 Copilot Chatによる文章作成支援(Writing Assistance)が追加され、既定で有効になります。",
-        "impact": "Edge for Businessユーザーが対象。DLPでCopilotのページ内容アクセスが制限されている場合、その内容では機能しません。",
-        "timing": "全世界GAは2027年1月下旬に開始し同月下旬に完了予定(従来は2026年10月末/下旬)。",
-        "action": "事前の管理者対応は不要。DLP構成の確認、ユーザーへの周知、社内ドキュメント更新を推奨。InlineComposeEnabledポリシーで管理可能。"
+        "change": "My Sign-insのパスキー登録に、チェックボックス追加、リンクテキスト更新、Authenticatorの+ボタン手順の案内が加わります。",
+        "impact": "My Sign-ins経由でMicrosoft Authenticatorにパスキーを登録するユーザーが対象です。",
+        "timing": "全世界で2026年11月中旬に開始し、原文では2027年11月末までに完了予定とされています。",
+        "action": "ユーザーへUI変更を周知し、社内のユーザー向けガイダンスを更新してください。"
       },
-      "japaneseDetailedSummary": "2026年11月9日更新でタイムラインが変更されました。Microsoft Edge for Businessに、Microsoft 365 Copilot Chatを利用したWriting Assistanceが追加されます。編集可能なテキストを選択して右クリックのコンテキストメニューから、文章の下書きや言い換えができます。Microsoft 365ロードマップID 420335に関連します。全世界GAは2027年1月下旬に展開開始・完了予定で、従来の2026年10月末から延期されました。既定で有効になり、管理者はInlineComposeEnabledポリシーで管理できます。DLPポリシーによりCopilotがページ内容にアクセスできない場合は機能しません。事前の管理者対応は不要ですが、DLP構成の確認、ユーザーへの周知、社内ドキュメント更新が推奨されます。原文は途中で切れており、以降は不明です。",
-      "japaneseBodyTranslation": "2026年11月9日更新:タイムラインを更新しました。ご理解に感謝します。\nはじめに\nMicrosoft Edge for Businessは、まもなくMicrosoft 365 Copilot Chatを利用した新機能Writing Assistanceをサポートします。この機能は、Edge内で編集可能なテキストの下書きや言い換えを支援し、生産性と文章品質を高めます。ユーザーは編集可能なテキストを選択して右クリックし、コンテキストメニューからWriting Assistanceにアクセスできます。\nこのメッセージはMicrosoft 365ロードマップID 420335に関連しています。\n実施時期\n一般提供(全世界):2027年1月下旬に展開を開始し(従来は2026年10月末)、2027年1月下旬までに展開を完了する予定です(従来は10月下旬)。\n組織への影響\n• Writing AssistanceはEdge for Businessユーザーに対して既定で有効になります。\n• ユーザーは編集可能なテキストを選択し、右クリックのコンテキストメニューからWriting Assistanceにアクセスできます。\n• Microsoft 365 Copilotがデータ損失防止(DLP)ポリシーによりページ内容へのアクセスを制限されている場合、そのコンテンツではWriting Assistanceは機能しません。\n• 管理者はInlineComposeEnabledポリシー設定でこの機能を管理できます。\n準備のためにできること\n展開前に管理者の対応は不要です。\n推奨事項:\n• 現在のDLP構成を確認し、Writing Assistanceの機能への影響を把握する。\n• 新機能についてユーザーに通知する。\n• 社内ドキュメントをこの変更に合わせて更新する。\nDLPがCopilotのページ内容アクセスに与える影響の詳細:Edgeでの Microsoft 365 Copilot Chat とページ内容へのアクセス | Microsoft Edge | Microsoft Learn\nコンプライアンスに関する考慮事項\n顧客データにアクセスするAI/MLやエージェント機能を新たに導入または大幅に変更しますか?はい。Microsoft 365 Copilot Chatによる新しい生成AI機能が導入され、Edge for Businessで直接テキストの書き換えや下書きができます。\nエンドユーザーに生成AIとの新しい対話方法を提供しますか?はい。編集可能なテキストを選択して右クリックメニューからWriting Assistanceを使い、AIによる下書きや言い換えができます。\nDLPポリシーまたはその適用を変更しますか?はい。DLPポリシーでCopilotのページ内容アクセスが制限されている場合、そのコンテンツではWriting Assistanceは機能しません。\n(以降は原文が途切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "c4184b467aefc3d7559c21795d8799f698a96a16f5a1c923363d00632721e285",
-      "validatedAt": "2026-11-12T23:46:49.5840177+00:00"
-    },
-    {
-      "id": "MC1530611",
-      "japaneseTitle": "Copilotアプリ内でOffice(Word/Excel/PowerPoint)をフル活用可能に",
-      "japaneseFacts": {
-        "change": "Microsoft Copilotアプリ内でWord、Excel、PowerPointファイルの作成・編集・共同作業ができるようになります。",
-        "impact": "ユーザーはCopilot経由でOfficeファイルの内容を閲覧・編集でき、変更は通常のOfficeアプリに同期されます。既存のMicrosoft 365 Copilot設定とポリシーが適用されます。",
-        "timing": "全世界GAは展開開始済みで2026年11月中旬に完了予定。遅延リリースは2026年12月上旬開始。",
-        "action": "管理者の対応は不要。ユーザーへの周知と既存のCopilot構成・ポリシーの確認を推奨します。"
-      },
-      "japaneseDetailedSummary": "2026年11月10日更新でタイムラインが変更されました。Microsoft Copilotアプリ内でWord、Excel、PowerPointファイルの作成、編集、共同作業がアプリを離れずに行えるようになります。コンテキスト切り替えが減り、アイデアから共有可能なOffice成果物までスムーズに進められます。全世界GAは展開中で2026年11月中旬に完了予定、遅延リリースは12月上旬に開始します。管理者の対応は不要ですが、ユーザーへの周知と既存のMicrosoft 365 Copilot構成・ポリシーの確認が推奨されます。コンプライアンス面では、Officeファイル内容へのアクセス・編集が可能になり、AI機能が拡張され、Entra IDグループ単位の既存ポリシーで管理できます。",
-      "japaneseBodyTranslation": "2026年11月10日更新:タイムラインを更新しました。ご理解に感謝します。\n[内容と理由]\nユーザーはMicrosoft CopilotアプリでOfficeの全機能を利用でき、アプリを離れずにWord、Excel、PowerPointファイルの作成、編集、共同作業が可能になります。\n[展開スケジュール]\n一般提供(全世界):展開を開始しており、2026年11月中旬までに完了する見込みです。\n• 遅延リリースは2026年12月上旬に開始します\n[組織への影響]\nCopilot内でOfficeの価値をフルに活用でき、Word、Excel、PowerPointがCopilot体験に直接組み込まれ、作業の流れを離れずにOfficeファイルの作成、レビュー、編集、共同作業ができます。コンテキストの切り替えが減り、アイデアや会話から共有可能なOffice成果物へ移行しやすくなります。\n[必要な対応/推奨事項]\n管理者の対応は不要です。管理者は、ユーザーに新しい体験を周知し、既存のMicrosoft 365 Copilotの構成とポリシーを確認することを推奨します。\n[コンプライアンスに関する考慮事項]\n既存の顧客データの処理、保存、アクセス方法は変わりますか?はい。ユーザーはCopilot経由でOfficeファイルの内容にアクセス・編集でき、変更は通常のOfficeアプリに同期されます。\n顧客データにアクセスするAI/MLやエージェント機能を新たに導入または大幅に変更しますか?はい。Copilotは本機能の一部としてOfficeドキュメント内容を読み取り・編集する機能が拡張されます。\nエンドユーザーに生成AIとの新しい対話方法を提供しますか?はい。CopilotアプリでWord、Excel、PowerPointの内容を直接作成・編集できます。\n管理制御はありますか?Entra IDグループで制御できますか?はい。本機能は既存のMicrosoft 365 Copilotの構成とポリシーに従い、管理者はEntra IDのグループベース割り当てで管理できます。",
-      "sourceCharacterCount": 1974,
+      "japaneseDetailedSummary": "Microsoft Entra の My Sign-ins で、Microsoft Authenticator にパスキーを登録するユーザー向けの登録画面が更新されます。追加のチェックボックスとリンクテキストの変更が表示され、Authenticator を開いて「+」ボタンを選択し登録を始める手順も案内されます。Authenticator 内で登録を完了できない場合は、更新されたリンクテキストから WebAuthn の登録フローに進めます。対象は My Sign-ins でパスキー登録の案内を受けるユーザーです。全世界で2026年11月中旬に開始され、完了予定は原文では2027年11月末と記載されています。管理者には、ユーザーへのUI変更の周知と社内ユーザー向けガイダンスの更新が推奨されています。コンプライアンス上の考慮事項は特定されていません。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Authenticator にパスキーを登録するユーザー向けに、My Sign-ins のパスキー登録体験を更新します。追加のチェックボックスと更新されたリンクテキストが表示され、Microsoft Authenticator を開いて + ボタンを選択し登録を開始する手順も案内されます。Authenticator 内で登録を完了できない場合は、更新されたリンクテキストにより WebAuthn 登録フローを見つけやすくなります。\n[展開スケジュール]\n• 一般提供(全世界):2026年11月中旬に開始し、2027年11月末までに完了予定\n[組織への影響]\n影響を受けるユーザー\n• My Sign-ins を通じて Microsoft Authenticator でパスキー登録を案内されるユーザー\nプラットフォームとサービス\n• Microsoft Entra My Sign-ins および Microsoft Authenticator\n発生する内容\n• パスキー登録中に、追加のチェックボックスと更新されたリンクテキストが表示されます。\n• Microsoft Authenticator を開き + ボタンを選択して登録を開始する手順が表示されます。\n• Authenticator 内で登録を完了できない場合は、更新されたリンクテキストが WebAuthn 登録フローの検索に役立ちます。\n[必要なアクションと推奨事項]\n• ユーザーに更新されたUIを周知し、社内のユーザー向けガイダンスをこの変更に合わせて更新してください。\n[コンプライアンスに関する考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 1409,
       "sourceTruncated": false,
-      "sourceHash": "cd9e96a1ff3a3ed6bb440ce378828d1d90c173bd490288fc70e771132fda8c12",
-      "validatedAt": "2026-11-12T23:46:49.5768095+00:00"
+      "sourceHash": "2f767c60c7291dfe1020cb0859f66b40f0d7128c18fbabb007cd464d70dc7ab7",
+      "validatedAt": "2026-11-13T07:01:10.3010484+00:00"
     },
     {
-      "id": "MC1478975",
-      "japaneseTitle": "Agent 365のA2Aエージェントを宣言型エージェントの接続先に利用可能",
+      "id": "MC1545695",
+      "japaneseTitle": "M365 Copilot Chatで対話内にインタラクティブなApp Blocksを表示",
       "japaneseFacts": {
-        "change": "Agent2Agent(A2A)対応のMicrosoft Agent 365エージェントを、宣言型エージェントの接続エージェントとして使用できるようになります。",
-        "impact": "Microsoft 365管理者、Agents Toolkitで宣言型エージェントを構築する開発者、承認済みエージェントへのアクセスを割り当てられたユーザーが対象です。",
-        "timing": "全世界GAは2026年8月下旬に開始し、2026年12月末までに完了予定。",
-        "action": "管理者センターのAll agentsページで利用可能エージェントを確認し、公開対象の決定、Connected agentsタブの確認、ガバナンス/承認プロセスの更新を行います。"
+        "change": "Copilot Chatの会話内でインタラクティブなApp Blocksが直接表示され、別のアプリキャンバスなしでプレビューできます。",
+        "impact": "Microsoft 365 Copilot(Premium)とCopilot Chat(Basic)のユーザーが対象です。",
+        "timing": "全世界で2026年10月下旬に展開開始、2026年11月上旬に完了予定です。",
+        "action": "必須の対応なし。ユーザーへの周知と、サイドバイサイドのアプリキャンバスに言及する社内資料の更新を推奨します。"
       },
-      "japaneseDetailedSummary": "2026年11月9日更新でタイムラインが変更されました。Microsoft 365 Agents Toolkitで構築する宣言型エージェントが、Agent2Agent(A2A)プロトコルを実装したMicrosoft Agent 365エージェントを接続エージェントとして利用できるようになります。既存のOpenAPIおよびMCPサーバー対応に加わります。管理者はMicrosoft 365管理センターのAll agentsページからA2A対応エージェントをインストールでき、ユーザー自身はインストールできません。Connected agentsタブで承認前に確認できます。全世界GAは2026年8月下旬に開始し12月末までに完了予定です。対応が必要な場合があり、展開前に利用可能エージェントの確認、提供対象の決定、ガバナンスや承認プロセスの更新が推奨されます。原文は途中で切れており、以降の内容は不明です。",
-      "japaneseBodyTranslation": "2026年11月9日更新:タイムラインを更新しました。ご理解に感謝します。\n[内容と理由]\nMicrosoftは、Agent2Agent(A2A)プロトコルを実装したMicrosoft Agent 365エージェントを、Microsoft 365 Agents Toolkitで構築した宣言型エージェントの接続エージェントとして使用できるようにします。\nこの機能強化により、宣言型エージェントが接続できる外部エージェントサービスの種類が拡大します。既存のOpenAPIおよびModel Context Protocol(MCP)サーバーのサポートに加え、Agent2Agent対応エージェントに接続でき、自然言語での対話やより複雑なワークフローが可能になります。\nこの機能により、開発者は宣言型エージェント構築の柔軟性が高まり、管理者はMicrosoft 365管理センターで一元的な管理とガバナンスを行えます。\n[展開スケジュール]\n• 一般提供(全世界):2026年8月下旬に開始し、2026年12月末までに完了する見込みです。\n[組織への影響]\n影響を受ける対象\n• Microsoft 365管理センターでエージェントを管理する管理者\n• Microsoft 365 Agents Toolkitで宣言型エージェントを構築する開発者\n• 承認済みMicrosoft Agent 365エージェントへのアクセスが割り当てられたユーザー\nプラットフォームとサービス\n• Microsoft 365 Copilot\n• Microsoft 365管理センター\n• Microsoft 365 Agents Toolkit\n• 宣言型エージェント\n今後の動作\n• 管理者は、Microsoft 365管理センターのAll agentsページから、Agent2AgentプロトコルをサポートするMicrosoft Agent 365エージェントをインストールできます。\n• 宣言型エージェントは、承認済みのAgent2Agent対応エージェントを接続エージェントとして使用できます。\n• Agent2Agentのサポートは、既存のOpenAPIおよびMCPサーバー接続のサポートに追加されます。\n• ユーザーがAgent2Agent対応のMicrosoft Agent 365エージェントを自分でインストールすることはできません。\n• 管理者は、承認前に宣言型エージェントの詳細ページのConnected agentsタブでAgent2Agent接続エージェントを確認できます。\n[必要な対応と推奨事項]\n対応が必要になる場合があります。\n展開前:\n• Microsoft 365管理センターのAll agentsページで利用可能なMicrosoft Agent 365エージェントを確認します。\n• 組織のユーザーに提供するAgent2Agent対応エージェントを決定します。\n• 承認前に、Connected agentsタブで宣言型エージェントに関連付けられた接続エージェントを確認します。\n• 必要に応じて、社内のガバナンス、エージェント承認、展開プロセスを更新します。\n管理者への通知を検討してください(以降は原文が途切れています)。",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "15c7bb0aedc6b1125f4f150abf02b43c88296a507bb515f261164f5980163ffd",
-      "validatedAt": "2026-11-12T23:46:49.5811831+00:00"
+      "japaneseDetailedSummary": "M365 Copilot Chatに「App Blocks」が追加され、電卓、ダッシュボード、フォーム、プランナー、可視化、シミュレーション、比較ツールなどのインタラクティブな体験を会話内で直接利用できるようになります。ユーザーは別のアプリキャンバスを開かずにプレビューでき、入力の調整や結果の可視化、ワークフローのシミュレーションをその場で行えます。最新情報を取得してから描画する場面にも対応します。対象はMicrosoft 365 Copilot(Premium)およびCopilot Chat(Basic)のユーザーです。全世界で2026年10月下旬から展開が始まり、2026年11月上旬に完了予定です。既存のワークフローやプロンプトは従来どおり動作し、必須の対応はありません。ユーザーへの周知と、サイドバイサイドのアプリキャンバスに言及する社内資料の更新が推奨されています。",
+      "japaneseBodyTranslation": "[内容と理由:]\nApp Blocksにより、M365 Copilot Chatのユーザーは、リクエストやデータを、電卓、ダッシュボード、フォーム、プランナー、可視化、シミュレーション、比較ツールなどのリッチでインタラクティブな体験に、会話内で直接変換できます。静的な応答を超えて、データの探索、入力の調整、結果の可視化、ワークフローのシミュレーションをその場で行えます。最新情報を取得してインタラクティブな体験として表示する、グラウンディングされたシナリオにも対応します。\n[展開スケジュール:]\n一般提供(全世界):2026年10月下旬に展開を開始し、2026年11月上旬に完了する予定です。\n[組織への影響:]\n影響を受けるユーザー:\n• Microsoft 365 Copilot(Premium)およびCopilot Chat(Basic)のユーザー。\nプラットフォーム/サービス:\n• Microsoft 365 Copilot Chat\n発生する内容:\n• App BlocksがCopilotの会話内で直接表示されます。\n• ユーザーは別のアプリキャンバスを開かずにアプリをプレビューできます。\n• 生成コンテンツとプレビューを会話の流れの中に保つことで、Copilot体験が効率化されます。\n• 既存のCopilotのワークフローとプロンプトは引き続き想定どおり動作します。\n[必要なアクション/推奨事項:]\n必要なアクションはありません。ユーザーにこの体験の更新を通知し、サイドバイサイドのアプリキャンバス体験に言及している社内のトレーニングや導入資料を更新することをお勧めします。\n[コンプライアンスに関する考慮事項:]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 1541,
+      "sourceTruncated": false,
+      "sourceHash": "bceace85794161f4b0b1fa577d4aeceb42b9280e8cc83e3d3dec0b99ef17e5d2",
+      "validatedAt": "2026-11-13T07:01:10.2969842+00:00"
     }
   ],
   "summaryGeneratedAt": "2026-11-12T10:01:40.6676019+00:00",
