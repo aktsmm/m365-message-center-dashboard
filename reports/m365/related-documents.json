@@ -357,7 +357,7 @@
         "9936804412a7b17d0ceb58d294c218a0f09a576babaaf83b9fc9bb27993c2a49"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:01:36.587827+00:00",
+      "checkedAt": "2026-11-14T09:22:16.439021+00:00",
       "documents": [],
       "reviewHash": "cdfbf21bc6b2823de91d97c9c0548929b8e57e8133b554f9051144f63885257f",
       "query": "Microsoft azure protection multifactor authentication",
@@ -378,14 +378,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:01:39.305743+00:00",
+      "nextAttemptAt": "2026-11-17T09:22:19.533900+00:00",
       "variants": {
         "e3d50645a6ddc3573a45880beda39c2daabed3199a1735b8327574d7134dd01a": {
           "sourceHashes": [
             "e3d50645a6ddc3573a45880beda39c2daabed3199a1735b8327574d7134dd01a"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:39.527934+00:00",
+          "checkedAt": "2026-11-14T09:22:19.711019+00:00",
           "documents": [],
           "reviewHash": "cdfbf21bc6b2823de91d97c9c0548929b8e57e8133b554f9051144f63885257f",
           "query": "Microsoft azure protection multifactor authentication",
@@ -406,7 +406,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:39.536318+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:19.719454+00:00"
         }
       }
     },
@@ -489,7 +489,7 @@
             "3c26394f3efde25181991affc1f696b2692a146cca34c6fb78486ad6ec6f20a6"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:39.702081+00:00",
+          "checkedAt": "2026-11-14T09:22:19.871869+00:00",
           "documents": [],
           "reviewHash": "b2ba9aacd0cf88cda3c40224d400e7ecf3cdc6eb4ef9512227879521be8178a5",
           "query": "Microsoft edge business copilot",
@@ -510,14 +510,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:43.740971+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:22.984510+00:00"
         },
         "f14ecfdb50233aec6fb351f85b65380888a2a5f12dfdc3f46abec3b31d645ca5": {
           "sourceHashes": [
             "f14ecfdb50233aec6fb351f85b65380888a2a5f12dfdc3f46abec3b31d645ca5"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:44.082067+00:00",
+          "checkedAt": "2026-11-14T09:22:23.327887+00:00",
           "documents": [],
           "reviewHash": "b2ba9aacd0cf88cda3c40224d400e7ecf3cdc6eb4ef9512227879521be8178a5",
           "query": "Microsoft edge business copilot",
@@ -538,14 +538,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:44.089225+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:23.335078+00:00"
         },
         "a31219bc3c947d0c45beb96547b35f832e6980cc02cc2e4c014203c5d64b2326": {
           "sourceHashes": [
             "a31219bc3c947d0c45beb96547b35f832e6980cc02cc2e4c014203c5d64b2326"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:43.917668+00:00",
+          "checkedAt": "2026-11-14T09:22:23.165072+00:00",
           "documents": [],
           "reviewHash": "b2ba9aacd0cf88cda3c40224d400e7ecf3cdc6eb4ef9512227879521be8178a5",
           "query": "Microsoft edge business copilot",
@@ -566,7 +566,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:43.924802+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:23.172296+00:00"
         },
         "af566812b2882e8bc3a46b98d82ec143a520a36e8d32dbe71af0e4701c2fbfa0": {
           "sourceHashes": [
@@ -1648,7 +1648,7 @@
         "ceffd9a6d7e923e1b3e66b175a8d85f9da43fdbd8bdd6229c2f1529175ac0cac"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:09.378899+00:00",
+      "checkedAt": "2026-11-14T09:20:51.670745+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot chat session persistence",
@@ -1664,14 +1664,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:09.383873+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:51.676413+00:00",
       "variants": {
         "095859f9942823690ff09215b8af7e03325aa6db8af2dcf1a5af3a31194be0af": {
           "sourceHashes": [
             "095859f9942823690ff09215b8af7e03325aa6db8af2dcf1a5af3a31194be0af"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:06.042137+00:00",
+          "checkedAt": "2026-11-14T09:20:48.448026+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot chat session persistence",
@@ -1687,7 +1687,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:09.230249+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:51.494795+00:00"
         }
       }
     },
@@ -1912,7 +1912,7 @@
             "476efde642588a7d7c98b39ab0214ea7c273655b46bbc46a1f427ccc9ea385af"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:44.236442+00:00",
+          "checkedAt": "2026-11-14T09:22:23.486031+00:00",
           "documents": [],
           "reviewHash": "07f299a8f087bd817e97b3e026977e56f8f5ce6bd44a78583fb4db4efdd7f542",
           "query": "Microsoft defender application guard office",
@@ -1933,14 +1933,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:47.054127+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:26.600397+00:00"
         },
         "d85e18640674860065d6dc5a5af029fdbdc90211ab3765de6353f8673599a91e": {
           "sourceHashes": [
             "d85e18640674860065d6dc5a5af029fdbdc90211ab3765de6353f8673599a91e"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:47.217965+00:00",
+          "checkedAt": "2026-11-14T09:22:26.776934+00:00",
           "documents": [],
           "reviewHash": "07f299a8f087bd817e97b3e026977e56f8f5ce6bd44a78583fb4db4efdd7f542",
           "query": "Microsoft defender application guard office",
@@ -1961,7 +1961,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:47.221285+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:26.780835+00:00"
         }
       }
     },
@@ -1970,7 +1970,7 @@
         "dc2ca0e6d1f35b4147313f90ef95d5e32670caddb179ad4daf5bafda215f6a66"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:12.957373+00:00",
+      "checkedAt": "2026-11-14T09:20:54.972772+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot read aloud voice",
@@ -1986,14 +1986,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:12.964638+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:54.980111+00:00",
       "variants": {
         "0b19cdf37900446da6368c2b3fd5f0ced13afead7eba05698c26ac05ef57eb74": {
           "sourceHashes": [
             "0b19cdf37900446da6368c2b3fd5f0ced13afead7eba05698c26ac05ef57eb74"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:09.532936+00:00",
+          "checkedAt": "2026-11-14T09:20:51.826854+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot read aloud voice",
@@ -2009,7 +2009,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:12.809271+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:54.797298+00:00"
         }
       }
     },
@@ -2883,7 +2883,7 @@
             "f404f7d9f67fb290cc33acff4bf2d488d472b4a44c4019a325954ea4dd6e2912"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:48.959108+00:00",
+          "checkedAt": "2026-11-14T09:22:29.085041+00:00",
           "documents": [],
           "reviewHash": "fc0da954ca44c21670ac464acbd8c2d76e1acf2d79db77724856bcbeb53d6081",
           "query": "Microsoft entra passkey fido2 authentication policy properties",
@@ -2904,14 +2904,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:48.964096+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:29.089935+00:00"
         },
         "3710612508f97bcd2a2ff008293e25a325b95580315608eadca1c1526c40e1a7": {
           "sourceHashes": [
             "3710612508f97bcd2a2ff008293e25a325b95580315608eadca1c1526c40e1a7"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:47.388012+00:00",
+          "checkedAt": "2026-11-14T09:22:26.935943+00:00",
           "documents": [],
           "reviewHash": "fc0da954ca44c21670ac464acbd8c2d76e1acf2d79db77724856bcbeb53d6081",
           "query": "Microsoft entra passkey fido2 authentication policy properties",
@@ -2932,7 +2932,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:48.811236+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:28.911301+00:00"
         }
       }
     },
@@ -3065,7 +3065,7 @@
         "3b6321458888ff5440650dc89f5c3d8d385f513a234d10dd74ff4123c72cbb38"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:40.820274+00:00",
+      "checkedAt": "2026-11-14T09:20:22.591020+00:00",
       "documents": [],
       "reviewHash": "9d88c949c892d750c9df90aba5b72abc56952119727ccb644492284392e5fce9",
       "query": "Microsoft entra authentication external content security policy",
@@ -3086,14 +3086,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:40.825684+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:22.596407+00:00",
       "variants": {
         "251a331fc4e60310d51e710237c8bfe9e76f5266806789fdb0ac9a34b53a10af": {
           "sourceHashes": [
             "251a331fc4e60310d51e710237c8bfe9e76f5266806789fdb0ac9a34b53a10af"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:37.868595+00:00",
+          "checkedAt": "2026-11-14T09:20:19.576484+00:00",
           "documents": [],
           "reviewHash": "9d88c949c892d750c9df90aba5b72abc56952119727ccb644492284392e5fce9",
           "query": "Microsoft entra authentication external content security policy",
@@ -3114,7 +3114,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:40.672122+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:22.441076+00:00"
         }
       }
     },
@@ -3123,7 +3123,7 @@
         "543e8d9bcae3344978e16de5c2f2d59f37519f9de0acf2887bb14ade39c5cd11"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:16.715235+00:00",
+      "checkedAt": "2026-11-14T09:20:58.276747+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft excel insert data image retirement",
@@ -3139,14 +3139,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:16.719399+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:58.280743+00:00",
       "variants": {
         "06a2fa059db0c8eeeda27d6bafd1b76b41f6f5dbd5ccb297984f060f336af079": {
           "sourceHashes": [
             "06a2fa059db0c8eeeda27d6bafd1b76b41f6f5dbd5ccb297984f060f336af079"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:13.112857+00:00",
+          "checkedAt": "2026-11-14T09:20:55.131113+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft excel insert data image retirement",
@@ -3162,7 +3162,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:16.547193+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:58.099933+00:00"
         }
       }
     },
@@ -3685,7 +3685,7 @@
             "dd8a21018f9e7d4440904cafff9220b1b5484c45bc49722bed091920cdfb87aa"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:14.212530+00:00",
+          "checkedAt": "2026-11-14T09:19:56.374421+00:00",
           "documents": [],
           "reviewHash": "34bd26683dd9d26ae9c68c94feaabc5f8806cc12b952d418c87104dbcfb7ea67",
           "query": "Microsoft entra passkey fido2 migration",
@@ -3706,14 +3706,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:14.218531+00:00"
+          "nextAttemptAt": "2026-11-17T09:19:56.380355+00:00"
         },
         "b2c89192c4585f88d95b691152c5edb6dc574313599a35cc18e710b5927bbb6d": {
           "sourceHashes": [
             "b2c89192c4585f88d95b691152c5edb6dc574313599a35cc18e710b5927bbb6d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:11.242887+00:00",
+          "checkedAt": "2026-11-14T09:19:53.074221+00:00",
           "documents": [],
           "reviewHash": "34bd26683dd9d26ae9c68c94feaabc5f8806cc12b952d418c87104dbcfb7ea67",
           "query": "Microsoft entra passkey fido2 migration",
@@ -3734,7 +3734,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:14.064475+00:00"
+          "nextAttemptAt": "2026-11-17T09:19:56.199315+00:00"
         },
         "d7e9c514b24d15614cc4e2cb2ce9f3e9355ba2d23d70d15a3c9b6c13dc78f83c": {
           "sourceHashes": [
@@ -4145,7 +4145,7 @@
         "86213651975c86bc81fd3c40f1fce3ae94776d6943a3383705299aea376607df"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:16.882036+00:00",
+      "checkedAt": "2026-11-14T09:20:58.464746+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot chat entity inserts input",
@@ -4162,14 +4162,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:21.458865+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:02.844311+00:00",
       "variants": {
         "d91c0248111765f3bf2f7746164e01171b237a1b431475133de8a578f0d7c91c": {
           "sourceHashes": [
             "d91c0248111765f3bf2f7746164e01171b237a1b431475133de8a578f0d7c91c"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:21.627544+00:00",
+          "checkedAt": "2026-11-14T09:21:03.024544+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot chat entity inserts input",
@@ -4186,14 +4186,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:21.641097+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:03.038507+00:00"
         },
         "f74a9f99ab2eaac9368809991b11bc8ddc4397e6c90064fe98a6f7f5d919b583": {
           "sourceHashes": [
             "f74a9f99ab2eaac9368809991b11bc8ddc4397e6c90064fe98a6f7f5d919b583"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:21.807477+00:00",
+          "checkedAt": "2026-11-14T09:21:03.220826+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot chat entity inserts input",
@@ -4210,7 +4210,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:21.821029+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:03.234868+00:00"
         }
       }
     },
@@ -4219,7 +4219,7 @@
         "dcdb67f42e2d3ca403edeec94b2ef09db485a24a6ab688e106e33101e5fc7513"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:22.800369+00:00",
+      "checkedAt": "2026-11-14T09:20:05.355354+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot app branded footer customization",
@@ -4236,14 +4236,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:22.812287+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:05.367458+00:00",
       "variants": {
         "9e7765839f676496f0e9623d0099420e3ebd167e147488b0232fc676838d865e": {
           "sourceHashes": [
             "9e7765839f676496f0e9623d0099420e3ebd167e147488b0232fc676838d865e"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:22.642177+00:00",
+          "checkedAt": "2026-11-14T09:20:05.194653+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app branded footer customization",
@@ -4260,14 +4260,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:22.654100+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:05.206496+00:00"
         },
         "181d4db98232b493c69028330853ec32ea26b44eaa3fd348f19de59d83d18cfa": {
           "sourceHashes": [
             "181d4db98232b493c69028330853ec32ea26b44eaa3fd348f19de59d83d18cfa"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:22.481356+00:00",
+          "checkedAt": "2026-11-14T09:20:05.006593+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app branded footer customization",
@@ -4284,14 +4284,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:22.493491+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:05.018608+00:00"
         },
         "0f46dc86f93a01e77b4b097c78ea242d1206b789dc83a5c30297dd527fce2dbb": {
           "sourceHashes": [
             "0f46dc86f93a01e77b4b097c78ea242d1206b789dc83a5c30297dd527fce2dbb"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:17.741757+00:00",
+          "checkedAt": "2026-11-14T09:20:00.048493+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app branded footer customization",
@@ -4308,7 +4308,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:22.334731+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:04.832024+00:00"
         }
       }
     },
@@ -4449,7 +4449,7 @@
         "b68601baffd8353e22033a44ab6bc1cdd0d5592ae5b3e1bda5e42d69ba10f175"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:26.851351+00:00",
+      "checkedAt": "2026-11-14T09:21:07.770621+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot license request custom flow",
@@ -4466,14 +4466,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:26.861651+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:07.781081+00:00",
       "variants": {
         "9ab18ff24aeea9915baca6238161145254c11548b7c54dd34bfee75d03a21a81": {
           "sourceHashes": [
             "9ab18ff24aeea9915baca6238161145254c11548b7c54dd34bfee75d03a21a81"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:21.968204+00:00",
+          "checkedAt": "2026-11-14T09:21:03.388080+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot license request custom flow",
@@ -4490,7 +4490,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:26.642650+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:07.592179+00:00"
         }
       }
     },
@@ -4499,7 +4499,7 @@
         "6294818cd86667e713c6a5470dcfb54bbb9c17e10af8682112b4382ca8864a9f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:32.199850+00:00",
+      "checkedAt": "2026-11-14T09:21:12.906657+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot mobile app chat first design",
@@ -4516,14 +4516,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:32.212777+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:12.919597+00:00",
       "variants": {
         "061cc116018ae5e5252583a18f5842ecc7ea931ebdd89155e11a9542de54dbb6": {
           "sourceHashes": [
             "061cc116018ae5e5252583a18f5842ecc7ea931ebdd89155e11a9542de54dbb6"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:27.009579+00:00",
+          "checkedAt": "2026-11-14T09:21:07.960729+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot mobile app chat first design",
@@ -4540,7 +4540,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:32.021177+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:12.729858+00:00"
         }
       }
     },
@@ -4761,7 +4761,7 @@
             "6065bb8c7ed90c3fb4b83def3293c1d04b1be5b00da69df5455432c0bcffddf8"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:52.387594+00:00",
+          "checkedAt": "2026-11-14T09:22:32.393187+00:00",
           "documents": [],
           "reviewHash": "fa732f2488a8820e19b77047a47b8e018d5c43a338225b663eb4091bce1149b4",
           "query": "Microsoft office ltsc support",
@@ -4782,14 +4782,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:52.392433+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:32.398007+00:00"
         },
         "032cf66c7feeda3f35b4704c318b201daff7e48bac61775f2fc690a3f23d53ea": {
           "sourceHashes": [
             "032cf66c7feeda3f35b4704c318b201daff7e48bac61775f2fc690a3f23d53ea"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:49.113237+00:00",
+          "checkedAt": "2026-11-14T09:22:29.241104+00:00",
           "documents": [],
           "reviewHash": "fa732f2488a8820e19b77047a47b8e018d5c43a338225b663eb4091bce1149b4",
           "query": "Microsoft office ltsc support",
@@ -4810,7 +4810,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:52.215801+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:32.218168+00:00"
         }
       }
     },
@@ -5399,7 +5399,7 @@
         "38f619d944cb4eb296c496463bde8c5717a9a09aad431103c44c365a73136564"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:22.959998+00:00",
+      "checkedAt": "2026-11-14T09:20:05.517225+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot excel",
@@ -5415,14 +5415,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:26.401212+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:08.717499+00:00",
       "variants": {
         "ddfdd222dde50bed5e6785b528b18830a24e2fbbd72fea722e1201f16a9d89de": {
           "sourceHashes": [
             "ddfdd222dde50bed5e6785b528b18830a24e2fbbd72fea722e1201f16a9d89de"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:26.547403+00:00",
+          "checkedAt": "2026-11-14T09:20:08.894372+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot excel",
@@ -5438,7 +5438,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:26.556779+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:08.903840+00:00"
         }
       }
     },
@@ -5719,7 +5719,7 @@
         "3e6aa42f33925469f0301cdd4fb53e61e3e2dfdcfa859f9d2c5d229b67921aad"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:40.972465+00:00",
+      "checkedAt": "2026-11-14T09:20:22.746357+00:00",
       "documents": [],
       "reviewHash": "f0b4d878f78ffcf219d21198dc48bd749b9f5d2a881046b71bcc536de55ecb54",
       "query": "Microsoft esignature recipient groups",
@@ -5740,14 +5740,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:43.694023+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:25.450254+00:00",
       "variants": {
         "4e5cd51809af5e87fb6170bed31263ae10c6c81a3076fc7caa50a855ca337cf5": {
           "sourceHashes": [
             "4e5cd51809af5e87fb6170bed31263ae10c6c81a3076fc7caa50a855ca337cf5"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:43.842233+00:00",
+          "checkedAt": "2026-11-14T09:20:25.624544+00:00",
           "documents": [],
           "reviewHash": "f0b4d878f78ffcf219d21198dc48bd749b9f5d2a881046b71bcc536de55ecb54",
           "query": "Microsoft esignature recipient groups",
@@ -5768,14 +5768,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:43.847703+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:25.630021+00:00"
         },
         "dbb767f983b67b9da0a7a0f4f44a643046a3e2a9fa3073e525e002576555ff85": {
           "sourceHashes": [
             "dbb767f983b67b9da0a7a0f4f44a643046a3e2a9fa3073e525e002576555ff85"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:44.148702+00:00",
+          "checkedAt": "2026-11-14T09:20:25.948328+00:00",
           "documents": [],
           "reviewHash": "f0b4d878f78ffcf219d21198dc48bd749b9f5d2a881046b71bcc536de55ecb54",
           "query": "Microsoft esignature recipient groups",
@@ -5796,14 +5796,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:44.154134+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:25.953732+00:00"
         },
         "670b8d32ca1a35217b313b68cbd0e93f7a1bf57492e70683e8e92dd1303c0171": {
           "sourceHashes": [
             "670b8d32ca1a35217b313b68cbd0e93f7a1bf57492e70683e8e92dd1303c0171"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:43.995321+00:00",
+          "checkedAt": "2026-11-14T09:20:25.791974+00:00",
           "documents": [],
           "reviewHash": "f0b4d878f78ffcf219d21198dc48bd749b9f5d2a881046b71bcc536de55ecb54",
           "query": "Microsoft esignature recipient groups",
@@ -5824,7 +5824,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:44.000671+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:25.797409+00:00"
         }
       }
     },
@@ -6243,7 +6243,7 @@
         "e54ca80c582ce7e4683a1169e3354d16b212786b48de2a9e6c2d76fb46d6ee40"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:14.366876+00:00",
+      "checkedAt": "2026-11-14T09:19:56.535883+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft outlook windows copilot insights",
@@ -6259,14 +6259,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:17.579237+00:00",
+      "nextAttemptAt": "2026-11-17T09:19:59.841953+00:00",
       "variants": {
         "a775ce0b3a1b80521f7c8216c66d415068b2507802cb568c4f783102eacb630f": {
           "sourceHashes": [
             "a775ce0b3a1b80521f7c8216c66d415068b2507802cb568c4f783102eacb630f"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:27.168078+00:00",
+          "checkedAt": "2026-11-14T09:20:09.531472+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft outlook windows copilot insights",
@@ -6282,14 +6282,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:27.176356+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:09.539763+00:00"
         },
         "a36a3c5aed5fd5f7a432062ef8524a12bdcd87e842034e888cac9c484d19b63c": {
           "sourceHashes": [
             "a36a3c5aed5fd5f7a432062ef8524a12bdcd87e842034e888cac9c484d19b63c"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:27.014655+00:00",
+          "checkedAt": "2026-11-14T09:20:09.374727+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft outlook windows copilot insights",
@@ -6305,14 +6305,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:27.022302+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:09.383102+00:00"
         },
         "70aaaf34b10741c26aa1a2e36104c8a6cad4f67df640b2bdac6b60552105c1a9": {
           "sourceHashes": [
             "70aaaf34b10741c26aa1a2e36104c8a6cad4f67df640b2bdac6b60552105c1a9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:26.859574+00:00",
+          "checkedAt": "2026-11-14T09:20:09.215065+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft outlook windows copilot insights",
@@ -6328,14 +6328,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:26.867324+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:09.223348+00:00"
         },
         "019f9b8336c944e3b490df0d609b32e5fb3f4e8cc8deacbc59940d8f0f7d5eee": {
           "sourceHashes": [
             "019f9b8336c944e3b490df0d609b32e5fb3f4e8cc8deacbc59940d8f0f7d5eee"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:26.704527+00:00",
+          "checkedAt": "2026-11-14T09:20:09.055815+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft outlook windows copilot insights",
@@ -6351,7 +6351,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:26.712250+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:09.064242+00:00"
         }
       }
     },
@@ -6498,7 +6498,7 @@
         "87722c99ad6f6406990061ba75c185b4d051b355a5b9be5cfcb02f0c165bc929"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:35.965428+00:00",
+      "checkedAt": "2026-11-14T09:21:16.688834+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot notebooks",
@@ -6514,14 +6514,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:35.976111+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:16.699413+00:00",
       "variants": {
         "7503e9d7da7deee5063546b116ba312af67a1ba50d8ac053a527d777b230053b": {
           "sourceHashes": [
             "7503e9d7da7deee5063546b116ba312af67a1ba50d8ac053a527d777b230053b"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:32.385048+00:00",
+          "checkedAt": "2026-11-14T09:21:13.071920+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot notebooks",
@@ -6537,7 +6537,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:35.797577+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:16.509543+00:00"
         }
       }
     },
@@ -6546,7 +6546,7 @@
         "0fa87f808babf1d30eb4581f51861754f52cced25828ef4721b4c44f2cfa4a4d"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:44.301838+00:00",
+      "checkedAt": "2026-11-14T09:20:26.104717+00:00",
       "documents": [],
       "reviewHash": "4345f5bf154bc2486573035a20b06e5fe129cef7bfdae83e90a7f0d14fdf8a3a",
       "query": "Microsoft teams meeting ai copilot",
@@ -6567,14 +6567,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:47.073529+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:28.776402+00:00",
       "variants": {
         "fac37a85400622c470730fc4f6537891c8ebbc085ea0b7384ec43f1584185c49": {
           "sourceHashes": [
             "fac37a85400622c470730fc4f6537891c8ebbc085ea0b7384ec43f1584185c49"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:47.529668+00:00",
+          "checkedAt": "2026-11-14T09:20:29.268191+00:00",
           "documents": [],
           "reviewHash": "4345f5bf154bc2486573035a20b06e5fe129cef7bfdae83e90a7f0d14fdf8a3a",
           "query": "Microsoft teams meeting ai copilot",
@@ -6595,14 +6595,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:47.535239+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:29.273512+00:00"
         },
         "5b4f43b3a06917830c5b1c32578759110a35990dffa5ecc7e61826c9deb6cfba": {
           "sourceHashes": [
             "5b4f43b3a06917830c5b1c32578759110a35990dffa5ecc7e61826c9deb6cfba"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:47.221661+00:00",
+          "checkedAt": "2026-11-14T09:20:28.954423+00:00",
           "documents": [],
           "reviewHash": "4345f5bf154bc2486573035a20b06e5fe129cef7bfdae83e90a7f0d14fdf8a3a",
           "query": "Microsoft teams meeting ai copilot",
@@ -6623,14 +6623,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:47.227059+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:28.959762+00:00"
         },
         "7e907442dcda38b7b7197022b2cfa8ce1279151f3a756f82390bf14a71641d70": {
           "sourceHashes": [
             "7e907442dcda38b7b7197022b2cfa8ce1279151f3a756f82390bf14a71641d70"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:47.374359+00:00",
+          "checkedAt": "2026-11-14T09:20:29.112073+00:00",
           "documents": [],
           "reviewHash": "4345f5bf154bc2486573035a20b06e5fe129cef7bfdae83e90a7f0d14fdf8a3a",
           "query": "Microsoft teams meeting ai copilot",
@@ -6651,7 +6651,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:47.379769+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:29.117509+00:00"
         }
       }
     },
@@ -6821,7 +6821,7 @@
         "6fb4fab30d43941553022ff458d31e9311b43265105efb7ad7a8588f2c0254ae"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:39.385459+00:00",
+      "checkedAt": "2026-11-14T09:21:20.118816+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot app chat",
@@ -6837,14 +6837,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:39.393705+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:20.127224+00:00",
       "variants": {
         "0b7f99a9d542479c1255bf6cc06b9ed6c96af4ec821bf3028b668e03fa1e27ea": {
           "sourceHashes": [
             "0b7f99a9d542479c1255bf6cc06b9ed6c96af4ec821bf3028b668e03fa1e27ea"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:36.129871+00:00",
+          "checkedAt": "2026-11-14T09:21:16.876854+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app chat",
@@ -6860,7 +6860,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:39.218273+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:19.944150+00:00"
         }
       }
     },
@@ -6927,7 +6927,7 @@
         "3f368f8892e2b2948fab30285be07ca995db8731853ee7af7431b82669ddccdc"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:39.553891+00:00",
+      "checkedAt": "2026-11-14T09:21:20.279878+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft admin center support retirement",
@@ -6943,14 +6943,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:42.501298+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:23.039466+00:00",
       "variants": {
         "71eae8ce0be198ef5735f3a4a736f5aed051d00758b2759da8ba2e9b2ce8c3a1": {
           "sourceHashes": [
             "71eae8ce0be198ef5735f3a4a736f5aed051d00758b2759da8ba2e9b2ce8c3a1"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:42.649130+00:00",
+          "checkedAt": "2026-11-14T09:21:23.212738+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft admin center support retirement",
@@ -6966,7 +6966,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:42.657765+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:23.221145+00:00"
         }
       }
     },
@@ -7271,7 +7271,7 @@
         "84e2c2c0f747ce0fe9f109049a5fa14de6ed14442fafaa94866cbd24a92c2b5b"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:42.805619+00:00",
+      "checkedAt": "2026-11-14T09:21:23.375864+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot chat basic users notebooks",
@@ -7288,14 +7288,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:47.524166+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:27.624308+00:00",
       "variants": {
         "aee8bd402999dc7d46ac4d5284467700d50bbf185f42e932314a14b9375142fc": {
           "sourceHashes": [
             "aee8bd402999dc7d46ac4d5284467700d50bbf185f42e932314a14b9375142fc"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:47.687023+00:00",
+          "checkedAt": "2026-11-14T09:21:27.802653+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot chat basic users notebooks",
@@ -7312,7 +7312,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:47.701675+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:27.817208+00:00"
         }
       }
     },
@@ -8347,7 +8347,7 @@
         "c78180a0486e7cbbefb13d1ba249f6a0bc221a21b39c7e4368dcce0997c44b57"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:52.908683+00:00",
+      "checkedAt": "2026-11-14T09:21:32.585025+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot release preferences group support",
@@ -8364,14 +8364,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:52.922770+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:32.599220+00:00",
       "variants": {
         "0bcf1f72619f932b016a11fc32bf5ed9f79e0f85ed936e8639d11c0e906bb0cf": {
           "sourceHashes": [
             "0bcf1f72619f932b016a11fc32bf5ed9f79e0f85ed936e8639d11c0e906bb0cf"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:47.866101+00:00",
+          "checkedAt": "2026-11-14T09:21:27.992886+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot release preferences group support",
@@ -8388,7 +8388,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:52.742311+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:32.410004+00:00"
         }
       }
     },
@@ -8979,7 +8979,7 @@
         "b6e513117d426d559b419aaeb0f07b2cf64436fb236e8191c87859257a745be3"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:56.306040+00:00",
+      "checkedAt": "2026-11-14T09:21:36.190822+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot studio agents roadmap",
@@ -8995,14 +8995,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:56.315136+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:36.200535+00:00",
       "variants": {
         "9aed966117401fe102b79034fb7fc0f7ad56550748122ca00348bc21426e066e": {
           "sourceHashes": [
             "9aed966117401fe102b79034fb7fc0f7ad56550748122ca00348bc21426e066e"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:53.083123+00:00",
+          "checkedAt": "2026-11-14T09:21:32.750102+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot studio agents roadmap",
@@ -9018,7 +9018,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:56.153197+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:36.011273+00:00"
         }
       }
     },
@@ -9213,7 +9213,7 @@
         "d5a7223aaf7c027f84efdeef4fb8e998dcba57c14e5750d654efb17a4e0d1091"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:01:01.406612+00:00",
+      "checkedAt": "2026-11-14T09:21:40.856760+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft powerpoint web copilot",
@@ -9230,14 +9230,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:01:01.420073+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:40.870335+00:00",
       "variants": {
         "792ce3719ff9ece4bfef79681f4fe39704dfed9ca04f7717df2d832dd2986acd": {
           "sourceHashes": [
             "792ce3719ff9ece4bfef79681f4fe39704dfed9ca04f7717df2d832dd2986acd"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:56.463032+00:00",
+          "checkedAt": "2026-11-14T09:21:36.350669+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft powerpoint web copilot",
@@ -9254,7 +9254,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:01.245404+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:40.679498+00:00"
         }
       }
     },
@@ -9871,7 +9871,7 @@
         "f88a56d2dfa30bc731a93c1099573c5209fb134eea6f0fbde4239fc074392635"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:01:06.326578+00:00",
+      "checkedAt": "2026-11-14T09:21:45.680841+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot usage report graph",
@@ -9888,14 +9888,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:01:06.339915+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:45.694026+00:00",
       "variants": {
         "aef8142078b55f820637c65d9b93c2c87c92be824a92722fce951d560fa11869": {
           "sourceHashes": [
             "aef8142078b55f820637c65d9b93c2c87c92be824a92722fce951d560fa11869"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:01.585950+00:00",
+          "checkedAt": "2026-11-14T09:21:41.048972+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot usage report graph",
@@ -9912,7 +9912,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:06.162979+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:45.505455+00:00"
         }
       }
     },
@@ -9921,7 +9921,7 @@
         "1fdf79c2de50390c823d8f0a93a58e01fb91caff5a8db17ef12e9c4f29f1bf46"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:50.506808+00:00",
+      "checkedAt": "2026-11-14T09:20:32.218535+00:00",
       "documents": [],
       "reviewHash": "745324a1bdef87658c4cb8ce1d3d5741e42fbb30299848a963c9e9eb7b0f2fea",
       "query": "Microsoft authenticator passkeys ios restore",
@@ -9942,14 +9942,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:50.509276+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:32.220970+00:00",
       "variants": {
         "90059de0a99a2b6da996cba3fec896db955798363b6161cabd92c438bebdc40c": {
           "sourceHashes": [
             "90059de0a99a2b6da996cba3fec896db955798363b6161cabd92c438bebdc40c"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:50.656812+00:00",
+          "checkedAt": "2026-11-14T09:20:32.383945+00:00",
           "documents": [],
           "reviewHash": "745324a1bdef87658c4cb8ce1d3d5741e42fbb30299848a963c9e9eb7b0f2fea",
           "query": "Microsoft authenticator passkeys ios restore",
@@ -9970,14 +9970,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:50.659183+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:32.386680+00:00"
         },
         "18421f4d0f19dbde9f37b00a95004fac3cd161647d5fd642558ca32b21a01bbc": {
           "sourceHashes": [
             "18421f4d0f19dbde9f37b00a95004fac3cd161647d5fd642558ca32b21a01bbc"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:47.683282+00:00",
+          "checkedAt": "2026-11-14T09:20:29.426204+00:00",
           "documents": [],
           "reviewHash": "745324a1bdef87658c4cb8ce1d3d5741e42fbb30299848a963c9e9eb7b0f2fea",
           "query": "Microsoft authenticator passkeys ios restore",
@@ -9998,7 +9998,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:50.359044+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:32.042152+00:00"
         }
       }
     },
@@ -10461,7 +10461,7 @@
         "8d0608dbe1830323f3bf23433f8825cbe9cb0ebaab8404b952de86a2216bd92b"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:01:09.906572+00:00",
+      "checkedAt": "2026-11-14T09:21:49.120268+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot excel brand kit",
@@ -10477,14 +10477,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:01:09.914215+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:49.128385+00:00",
       "variants": {
         "50acdc789f72f923d82752ab1a1c3495280c128e0d853453c8a409d7513dafe6": {
           "sourceHashes": [
             "50acdc789f72f923d82752ab1a1c3495280c128e0d853453c8a409d7513dafe6"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:06.487724+00:00",
+          "checkedAt": "2026-11-14T09:21:45.847960+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot excel brand kit",
@@ -10500,7 +10500,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:09.743520+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:48.887662+00:00"
         }
       }
     },
@@ -11477,7 +11477,7 @@
         "434dd18fb73361b2c526d049b7953304a5570887851de63d91d6294aefaa240f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:01:10.076637+00:00",
+      "checkedAt": "2026-11-14T09:21:49.279191+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft admin agent",
@@ -11493,7 +11493,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:01:13.044054+00:00",
+      "nextAttemptAt": "2026-11-17T09:21:52.215749+00:00",
       "variants": {}
     },
     "MC1437671": {
@@ -12937,7 +12937,7 @@
         "3cbadf9de3525b5a81f6ab2fce9b22a3d1390cda4ec119846030a506679d58b0"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:50.806642+00:00",
+      "checkedAt": "2026-11-14T09:20:32.536473+00:00",
       "documents": [],
       "reviewHash": "9c13e142f0adfef8b785892178178c562480f6d5e1140d36e3f1305ab0c77971",
       "query": "Microsoft all agents",
@@ -12958,7 +12958,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:53.646186+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:35.669883+00:00",
       "variants": {}
     },
     "MC1443523": {
@@ -14555,7 +14555,7 @@
             "1932d90772f1e949cd32733a01add582544c96f5e621a12c67e5a45b603d132b"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:13.201842+00:00",
+          "checkedAt": "2026-11-14T09:21:52.390922+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot app access",
@@ -14571,7 +14571,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:16.318800+00:00"
+          "nextAttemptAt": "2026-11-17T09:21:55.295551+00:00"
         }
       }
     },
@@ -14580,7 +14580,7 @@
         "727cc578f5843ac136bc6111658055e4b7fb952d5d41a9638b164dcd3e71a2ee"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:29.120827+00:00",
+      "checkedAt": "2026-11-14T09:20:11.620307+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft folder sharing",
@@ -14595,14 +14595,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:29.124639+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:11.624461+00:00",
       "variants": {
         "f27bd5b768c844d60549ffc39319426ec9b1c41a4dfa971d5116a7dcb1050653": {
           "sourceHashes": [
             "f27bd5b768c844d60549ffc39319426ec9b1c41a4dfa971d5116a7dcb1050653"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:29.423577+00:00",
+          "checkedAt": "2026-11-14T09:20:11.927622+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft folder sharing",
@@ -14617,14 +14617,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:29.427413+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:11.931516+00:00"
         },
         "19e5cc78e994e308646c4744a0fde7f1a114655b3de8bf7735186f9121038036": {
           "sourceHashes": [
             "19e5cc78e994e308646c4744a0fde7f1a114655b3de8bf7735186f9121038036"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:27.324277+00:00",
+          "checkedAt": "2026-11-14T09:20:09.689452+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft folder sharing",
@@ -14639,14 +14639,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:28.974191+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:11.470542+00:00"
         },
         "d89d6d1c74608787545db49414a6b89ec2bd982b13241b8086f683dfeeae16c6": {
           "sourceHashes": [
             "d89d6d1c74608787545db49414a6b89ec2bd982b13241b8086f683dfeeae16c6"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:29.273182+00:00",
+          "checkedAt": "2026-11-14T09:20:11.774492+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft folder sharing",
@@ -14661,7 +14661,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:29.277006+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:11.778366+00:00"
         }
       }
     },
@@ -14752,7 +14752,7 @@
         "ce6b04826f79c85a6cbb182f1ee7ea0ca1be7237f43da27df4c37255f9e1e410"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:56.734857+00:00",
+      "checkedAt": "2026-11-14T09:20:39.120510+00:00",
       "documents": [],
       "reviewHash": "81cac350353bb7111abb0d9e66bdc8849f1dad4350311ba5691118e3396ff9b5",
       "query": "Microsoft exchange external recipient rate limit trial education quotas",
@@ -14773,14 +14773,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:56.748888+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:39.135340+00:00",
       "variants": {
         "927225e175fceb152a730786f0bcb0796ec96051d40dcb10b929b61339938371": {
           "sourceHashes": [
             "927225e175fceb152a730786f0bcb0796ec96051d40dcb10b929b61339938371"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:53.793236+00:00",
+          "checkedAt": "2026-11-14T09:20:35.848510+00:00",
           "documents": [],
           "reviewHash": "81cac350353bb7111abb0d9e66bdc8849f1dad4350311ba5691118e3396ff9b5",
           "query": "Microsoft exchange external recipient rate limit trial education quotas",
@@ -14801,7 +14801,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:56.586653+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:38.943407+00:00"
         }
       }
     },
@@ -14810,7 +14810,7 @@
         "c4a624b2a3bcbcd0bd5618edd980cd4578e6f8a7350ad643d2bfa7db90bed098"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:08.219489+00:00",
+      "checkedAt": "2026-11-14T09:19:50.126406+00:00",
       "documents": [],
       "reviewHash": "604fbdcdc01b44e27bd1f902cd6284aa79e93e36d744f1b6c1aa7348b270f300",
       "query": "Microsoft edge copilot endpoint",
@@ -14831,7 +14831,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:11.094377+00:00",
+      "nextAttemptAt": "2026-11-17T09:19:52.887502+00:00",
       "variants": {
         "2d1f1c325a277bed29fd239b0fcde9c3963f308d2e3b226aadff29a670a9ce49": {
           "sourceHashes": [
@@ -15771,7 +15771,7 @@
             "100afcde810f1cb9897ec27a432040fdbe1fc77c3fc4f1601e428bbbd1124fb0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:16.496552+00:00",
+          "checkedAt": "2026-11-14T09:21:55.470986+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passkey b2b users",
@@ -15788,14 +15788,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:21.216898+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:00.148907+00:00"
         },
         "e20dfb87d80d81c8db32f65b23e024053eee640da1e58d84b34007fb570422ee": {
           "sourceHashes": [
             "e20dfb87d80d81c8db32f65b23e024053eee640da1e58d84b34007fb570422ee"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:21.553827+00:00",
+          "checkedAt": "2026-11-14T09:22:00.487909+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passkey b2b users",
@@ -15812,14 +15812,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:21.564383+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:00.498711+00:00"
         },
         "15e287a5c355ab9da460b056f32154ef8350c35bbc8b3c7a19317f353f0d1422": {
           "sourceHashes": [
             "15e287a5c355ab9da460b056f32154ef8350c35bbc8b3c7a19317f353f0d1422"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:21.384960+00:00",
+          "checkedAt": "2026-11-14T09:22:00.324926+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passkey b2b users",
@@ -15836,7 +15836,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:21.395648+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:00.335496+00:00"
         }
       }
     },
@@ -15845,7 +15845,7 @@
         "45d9581badcaba64ea2cd62772f163313e167a125bb9b2db32c2e25523238f79"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:29.575141+00:00",
+      "checkedAt": "2026-11-14T09:20:12.081250+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft admin center usage reports domains migration",
@@ -15862,7 +15862,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:34.242522+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:16.336179+00:00",
       "variants": {}
     },
     "MC1461528": {
@@ -16308,7 +16308,7 @@
             "b05039118c50fb236c898c237a0760121432030885db5b45b19c33cd15639475"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:24.737911+00:00",
+          "checkedAt": "2026-11-14T09:22:04.166954+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot endpoints",
@@ -16324,14 +16324,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:24.746780+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:04.176169+00:00"
         },
         "14b7683cf7c418c62a1310c9b4af038d7706f623016ec5867deb0b36d52080d4": {
           "sourceHashes": [
             "14b7683cf7c418c62a1310c9b4af038d7706f623016ec5867deb0b36d52080d4"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:21.711607+00:00",
+          "checkedAt": "2026-11-14T09:22:00.649022+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot endpoints",
@@ -16347,14 +16347,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:24.585933+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:03.992877+00:00"
         },
         "d156ab970347f837abafcba67b8a50e6aa835e12b76a4128690d93a15d7609ba": {
           "sourceHashes": [
             "d156ab970347f837abafcba67b8a50e6aa835e12b76a4128690d93a15d7609ba"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:24.893103+00:00",
+          "checkedAt": "2026-11-14T09:22:04.335966+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot endpoints",
@@ -16370,7 +16370,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:24.902056+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:04.345112+00:00"
         }
       }
     },
@@ -16427,7 +16427,7 @@
             "45e5c2322b4cb113f95215bb70abaa7613f42cb2414b569a8f5638fd5539ccba"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:25.050644+00:00",
+          "checkedAt": "2026-11-14T09:22:04.493907+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft admin app teams outlook retirement",
@@ -16443,7 +16443,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:27.999819+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:07.752484+00:00"
         }
       }
     },
@@ -16551,7 +16551,7 @@
         "5a0d46315b0d58b70ecbca5ff6ba72af097c014e591859977c518c5bfbe2fa51"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:34.390881+00:00",
+      "checkedAt": "2026-11-14T09:20:16.512457+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot chat",
@@ -16567,7 +16567,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:37.720860+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:19.401654+00:00",
       "variants": {}
     },
     "MC1467356": {
@@ -16575,7 +16575,7 @@
         "f16bb4f2827dcc6043351203c6955664506b2ce958e7e7a15ec3bb38bdb31aac"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:56.896186+00:00",
+      "checkedAt": "2026-11-14T09:20:39.310795+00:00",
       "documents": [],
       "reviewHash": "2f815c861200cfa190cb87d15ff2bfaac4222ca6dfb54810794da449e3a494cc",
       "query": "Microsoft edge manifest extensions",
@@ -16596,7 +16596,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:59.672626+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:42.122913+00:00",
       "variants": {}
     },
     "MC1469329": {
@@ -17103,7 +17103,7 @@
         "9f2dfcb440ce45aa0c3a37eb57069d544ac59f0721cba4f3536ce41b6bb49a7f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:59.820754+00:00",
+      "checkedAt": "2026-11-14T09:20:42.302635+00:00",
       "documents": [],
       "reviewHash": "31c4f5ffcf4e440d7ee160db974a90666a21d2dba196a5bb17cfc363cbb1a035",
       "query": "Microsoft graph readbasic all app role assignments license details",
@@ -17124,7 +17124,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:02.762546+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:44.974220+00:00",
       "variants": {}
     },
     "MC1470885": {
@@ -17202,7 +17202,7 @@
             "a168ee4ba67ae252e7703d7b9583e1fa708f6b2e6ff5742901742cd6754bb5d0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:28.177224+00:00",
+          "checkedAt": "2026-11-14T09:22:07.928956+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot word excel powerpoint prompts",
@@ -17218,7 +17218,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:31.733955+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:11.276567+00:00"
         },
         "3b11ed138c05e7f7210856270d9789459f081b4f594a2c4fd70711fb7baecc7f": {
           "sourceHashes": [
@@ -18412,7 +18412,7 @@
         "1fbf534a06409b391b01d7ef0ee96a49cf3fcf370b9d1d3e9824966111f0331f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T21:00:02.910232+00:00",
+      "checkedAt": "2026-11-14T09:20:45.150705+00:00",
       "documents": [],
       "reviewHash": "640719ea17cb6d20a5c6d974fe3e8a016461b0acaa05fbbd4b8ae9c6cd1e9592",
       "query": "Microsoft agent registry duplicate entries version history",
@@ -18433,14 +18433,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T21:00:05.735169+00:00",
+      "nextAttemptAt": "2026-11-17T09:20:48.107470+00:00",
       "variants": {
         "adb83fc6828343696499b8678737f2ba259c29fe04b3c33b7d29b1817420449e": {
           "sourceHashes": [
             "adb83fc6828343696499b8678737f2ba259c29fe04b3c33b7d29b1817420449e"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:00:05.884410+00:00",
+          "checkedAt": "2026-11-14T09:20:48.286690+00:00",
           "documents": [],
           "reviewHash": "640719ea17cb6d20a5c6d974fe3e8a016461b0acaa05fbbd4b8ae9c6cd1e9592",
           "query": "Microsoft agent registry duplicate entries version history",
@@ -18461,7 +18461,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:00:05.893857+00:00"
+          "nextAttemptAt": "2026-11-17T09:20:48.296361+00:00"
         }
       }
     },
@@ -18548,7 +18548,7 @@
             "0a6cb6cb8b1e46730a0e41c98bb99f2c5f50f8638391fc5d750a895e37b93c16"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T21:01:31.897588+00:00",
+          "checkedAt": "2026-11-14T09:22:11.454993+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft viva insights usage reports retirement",
@@ -18565,7 +18565,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T21:01:36.425592+00:00"
+          "nextAttemptAt": "2026-11-17T09:22:16.264204+00:00"
         }
       }
     },
@@ -21097,7 +21097,7 @@
         "08b2107a4a89930bc49662596d366fdfef436d306227dc03d16de974f4504e25"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:58:43.436184+00:00",
+      "checkedAt": "2026-11-14T09:19:23.003562+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft",
@@ -21113,7 +21113,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:58:46.553168+00:00",
+      "nextAttemptAt": "2026-11-17T09:19:26.732849+00:00",
       "variants": {
         "345119ed983650c42ea15a9723c7ebfc8fb3ae92d10771e5f847119ceec0bc57": {
           "sourceHashes": [
@@ -21691,7 +21691,7 @@
             "5f467f62070397114c0506884bae3f1b467e002f772fee3b340aacbbc68800df"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-10T20:59:04.856396+00:00",
+          "checkedAt": "2026-11-14T09:19:46.418475+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft authenticator ios android",
@@ -21707,7 +21707,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-13T20:59:08.071613+00:00"
+          "nextAttemptAt": "2026-11-17T09:19:49.952828+00:00"
         }
       }
     },
@@ -21925,7 +21925,7 @@
         "9c011769350feaa56c20c629c9268781ae56b6fa85aff607cecdfbde80b5caf9"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:58:46.703340+00:00",
+      "checkedAt": "2026-11-14T09:19:26.920624+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft admin center retirement search analytics",
@@ -21942,7 +21942,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:58:51.430013+00:00",
+      "nextAttemptAt": "2026-11-17T09:19:31.838950+00:00",
       "variants": {}
     },
     "MC1528006": {
@@ -21950,7 +21950,7 @@
         "cbef320952bdf4f1cc01f340c775ac01de51164d41f816abc32c2229dc1fa196"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:58:51.578870+00:00",
+      "checkedAt": "2026-11-14T09:19:32.014078+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft authenticator backup restore android",
@@ -21966,7 +21966,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:58:54.685801+00:00",
+      "nextAttemptAt": "2026-11-17T09:19:35.272570+00:00",
       "variants": {}
     },
     "MC1528000": {
@@ -22109,7 +22109,7 @@
         "6fcb87900da10a206fe47fd759a19b0e4af336f9e35780d7651799f1b0a8168c"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:58:54.833425+00:00",
+      "checkedAt": "2026-11-14T09:19:35.446319+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft admin center manage copilot search",
@@ -22126,7 +22126,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:58:59.452561+00:00",
+      "nextAttemptAt": "2026-11-17T09:19:40.557829+00:00",
       "variants": {}
     },
     "MC1526661": {
@@ -22134,7 +22134,7 @@
         "cf4928cfb41306dd7d3f9726583913ffdcec6391744e49803cc09bde2575fc97"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:58:59.601076+00:00",
+      "checkedAt": "2026-11-14T09:19:40.734247+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft update export",
@@ -22150,7 +22150,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:02.794338+00:00",
+      "nextAttemptAt": "2026-11-17T09:19:44.280450+00:00",
       "variants": {}
     },
     "MC1526468": {
@@ -22158,7 +22158,7 @@
         "3db7782d7ca6b2328ef930d84c6fc4fb0266065ae3c105af1837dec834698000"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-10T20:59:02.942393+00:00",
+      "checkedAt": "2026-11-14T09:19:44.458266+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft update admin",
@@ -22173,7 +22173,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-13T20:59:04.708974+00:00",
+      "nextAttemptAt": "2026-11-17T09:19:46.243969+00:00",
       "variants": {}
     },
     "MC1530611": {
@@ -23024,7 +23024,7 @@
     "snapshots": 48,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-10T00:04:06+00:00",
-    "checkedAt": "2026-11-13T20:58:33.672406+00:00",
+    "checkedAt": "2026-11-14T09:22:32.622698+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 61,
@@ -23039,7 +23039,7 @@
     },
     "latestTotal": 96,
     "pendingAttempts": 0,
-    "processedThisRun": 3,
+    "processedThisRun": 100,
     "variantCounts": {
       "fetch_failed": 0,
       "no_verified_document": 158,
