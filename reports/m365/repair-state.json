@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "observedAt": "2026-11-15T01:59:24.8395092+00:00",
+  "observedAt": "2026-11-15T09:37:04.4447298+00:00",
   "snapshotGeneratedAt": "2026-11-12T03:01:46.9594541+00:00",
   "summary": {
     "status": "current",
@@ -8,8 +8,8 @@
   },
   "translations": {
     "current": 96,
-    "total": 96,
-    "pending": 0
+    "pending": 0,
+    "total": 96
   },
   "attempts": {
     "translations": {
