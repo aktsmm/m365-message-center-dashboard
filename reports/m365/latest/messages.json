@@ -1,13 +1,13 @@
 {
   "meta": {
-    "runId": "43145364569",
-    "generatedAt": "2026-11-12T03:01:46.9594541+00:00",
+    "runId": "43790589049",
+    "generatedAt": "2026-11-16T02:11:12.7332540+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 96,
+    "total": 97,
     "majorChanges": 26,
     "highSeverity": 2,
     "actionRequired": 13,
@@ -21,7 +21,7 @@
     },
     {
       "name": "Microsoft Entra",
-      "count": 27
+      "count": 28
     },
     {
       "name": "Microsoft 365 Copilot Chat",
@@ -29,6 +29,38 @@
     }
   ],
   "messages": [
+    {
+      "id": "MC1551151",
+      "title": "Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice multi-factor authentication",
+      "category": "preventOrFixIssue",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-13T01:42:31.0000000+00:00",
+      "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-13T01:42:38.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の問題の予防または修正に関するお知らせ",
+      "japaneseSummary": "問題の予防または修正: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft Entra ID is adding safeguards to protect telephony-based multifactor authentication (MFA) from automated fraudulent activity. Some users who use SMS or voice for MFA may be asked to complete a risk-based anti-bot verification step (CAPTCHA) before Microsoft sends an SMS verification code or initiates a verification call.\nThis change is separate from the planned retirement of SMS and voice authentication and does not affect the retirement timeline.\n[Rollout schedule]\n• Worldwide: Beginning in mid-November 2026.\n[Impact on your organization]\nWho is affected\n• Users who use SMS or voice for Microsoft Entra ID multifactor authentication\nPlatforms and services\n• Microsoft Entra ID\n• SMS and voice authentication methods\nWhat will happen\n• Some users may be prompted to complete a risk-based anti-bot verification step (CAPTCHA) before Microsoft sends an SMS verification code or initiates a verification call.\n• The verification step will appear only for authentication attempts that meet sufficiently high-risk thresholds.\n• Users with restrictive network or firewall settings may be unable to complete SMS or voice MFA if the verification experience cannot load.\n[Action required and recommendations]\nWe recommend that administrators take the following actions:\n• Prepare your help desk and notify users that some SMS and voice MFA attempts may require an additional CAPTCHA verification step.\n• Review the risk-based anti-bot verification documentation for network-readiness guidance. If your organization uses restrictive firewalls, proxies, or web filtering, ensure that the required resources can load during authentication.\n• Continue moving users to phishing-resistant authentication methods, such as passkeys, where possible.\nLearn more\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n• Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in - Microsoft Entra ID | Microsoft Learn\n• Understanding telephony fraud risk for Microsoft Entra multifactor authentication - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Starting mid-November 2026, Microsoft Entra ID will add risk-based CAPTCHA verification for SMS and voice MFA to prevent automated fraud. Some users may need to complete CAPTCHA before receiving codes or calls. Administrators should prepare users, ensure network readiness, and promote phishing-resistant methods."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-telephony-fraud",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-telephony-risk-based-captcha"
+      ]
+    },
     {
       "id": "MC1470885",
       "title": "(Updated) M365 Copilot: Tell Copilot what you need directly from the Copilot button in Word, Excel, and PowerPoint",
@@ -115,6 +147,10 @@
       "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
       "bodyText": "Updated November 10, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nNow users have the full power of Office in Microsoft Copilot app, so users can create, edit and collaborate on Word, Excel and PowerPoint files, without leaving the app.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We have begun rolling out and expect to complete by mid-November 2026.\n• Deferred release will start early December 2026\n[Impact on Your Organization:]\nNow with the full value of Office in Copilot, Word, Excel, and PowerPoint is brought in directly into the Copilot experience, allowing users to create, review, edit, and collaborate on Office files without leaving their flow of work. This reduces context switching and makes it easier to move from an idea or conversation to a finished, shareable Office artifact.\n[Action Required/Recommendations:]\nNo admin action is required. Admins may want to inform users about the new experience and review their existing Microsoft 365 Copilot configuration and policies.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change alter how existing customer data is processed, stored, or accessed?Yes. Users can now access and edit Office file content through the Copilot experience, with changes synced back to the regular Office apps.\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Copilot gains expanded capability to read and edit Office document content as part of this feature.\nDoes the change provide end users any new way of interacting with generative AI?Yes. Users can create and edit Word, Excel, and PowerPoint content directly within the Copilot app.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This feature is subject to existing Microsoft 365 Copilot configuration and policies, which admins can manage via Entra ID group-based assignment.",
       "details": [
+        {
+          "name": "FeatureStatusJson",
+          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Desktop\",\"Status\":\"InRollout\",\"LastUpdateTime\":\"2026-11-16T02:11:15.9703654Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":\"StandardRelease\"},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Web\",\"Status\":\"InRollout\",\"LastUpdateTime\":\"2026-11-16T02:11:15.9703656Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":\"StandardRelease\"},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"All\",\"Status\":\"InRollout\",\"LastUpdateTime\":\"2026-11-16T02:11:15.9703657Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":\"StandardRelease\"}]}"
+        },
         {
           "name": "Summary",
           "value": "Office in Copilot now integrates full Word, Excel, and PowerPoint capabilities within the Microsoft Copilot app, enabling creation, editing, and collaboration without leaving the app. Rollout completes by mid-November 2026. No admin action is required, but admins should inform users and review policies. Data access and AI capabilities are expanded."
