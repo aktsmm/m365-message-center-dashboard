@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T02:20:04.2215089+00:00",
+  "generatedAt": "2026-11-16T02:25:16.5691877+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra SMS/音声認証の廃止準備、eMudhra証明書信頼削除、Targeted release廃止が最優先",
   "executiveSummary": "今週は Microsoft Entra の認証方式変更が中心です。Microsoft提供のSMS/音声認証は2027年2月1日以降に廃止が始まり(MC1528000)、SSPRでも利用不可になります(MC1536049)。またSMS/音声MFAでリスクベースのCAPTCHAが一部ユーザーに表示され始めます(MC1551151)。これは廃止時期には影響しません。Edge/WebView2では2026年11月16日にeMudhraルート証明書のデフォルト信頼が削除されます(MC1529467)。Targeted releaseは2027年1月に廃止予定で、2026年11月から登録ユーザーの変更ができなくなります(MC1490899)。Workforce Insightsエージェント向けMODS専用エンドポイントは2026年11月18日から廃止開始です(MC1542066)。なお、抜粋では各テナントへの正確な展開日や詳細要件が不明なものがあり、推測はしていません。",
@@ -2236,9 +2236,25 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1551151",
+      "japaneseTitle": "Entra ID:SMS/音声MFAにリスクベースのCAPTCHA検証を追加",
+      "japaneseFacts": {
+        "change": "SMS・音声MFAで、コード送信や通話開始の前にリスクベースのボット対策検証(CAPTCHA)が求められる場合がある。",
+        "impact": "Entra IDでSMS・音声MFAを使うユーザー。制限の厳しいネットワークやファイアウォール環境では検証画面が読み込めずMFAできない可能性がある。",
+        "timing": "全世界で2026年11月中旬から開始。",
+        "action": "ヘルプデスクの準備とユーザーへの通知、ファイアウォール/プロキシ/Webフィルターの確認、パスキー等への移行継続。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entra IDは、テレフォニーベースのMFAを自動化された不正行為から守るため、SMSや音声でMFAを使うユーザーの一部に、リスクベースのボット対策検証(CAPTCHA)を求める仕組みを追加します。検証は、SMS認証コードの送信や認証通話の開始前に、リスクが十分に高い認証試行でのみ表示されます。これはSMS・音声認証の廃止計画とは別の変更で、廃止スケジュールには影響しません。2026年11月中旬から全世界で開始されます。制限の厳しいネットワークやファイアウォール設定のユーザーは、検証が読み込めずMFAを完了できない可能性があります。管理者はヘルプデスクの準備、ユーザーへの周知、必要リソースが読み込めるようネットワーク設定の確認、パスキーなどフィッシング耐性のある方式への移行継続が推奨されます。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Entra IDは、テレフォニーベースの多要素認証(MFA)を自動化された不正行為から保護するための保護機能を追加します。MFAにSMSまたは音声を使用する一部のユーザーは、Microsoftが SMS認証コードを送信する前、または認証通話を開始する前に、リスクベースのボット対策検証(CAPTCHA)の完了を求められる場合があります。\nこの変更は、SMSおよび音声認証の廃止計画とは別であり、廃止のスケジュールには影響しません。\n[ロールアウトスケジュール]\n• 全世界:2026年11月中旬から開始。\n[組織への影響]\n影響を受けるユーザー\n• Microsoft Entra IDの多要素認証でSMSまたは音声を使用するユーザー\nプラットフォームとサービス\n• Microsoft Entra ID\n• SMSおよび音声認証方法\n発生すること\n• 一部のユーザーは、SMS認証コードの送信または認証通話の開始前に、リスクベースのボット対策検証(CAPTCHA)を求められる場合があります。\n• 検証手順は、十分に高いリスクしきい値を満たす認証試行でのみ表示されます。\n• ネットワークやファイアウォールの設定が厳しいユーザーは、検証画面を読み込めない場合、SMSまたは音声MFAを完了できない可能性があります。\n[必要なアクションと推奨事項]\n管理者には次の対応を推奨します。\n• ヘルプデスクを準備し、一部のSMS・音声MFA試行で追加のCAPTCHA検証が必要になる場合があることをユーザーに通知する。\n• ボット対策検証のドキュメントでネットワーク対応ガイダンスを確認する。制限の厳しいファイアウォール、プロキシ、Webフィルターを使用している場合は、認証中に必要なリソースを読み込めるようにする。\n• 可能な限り、パスキーなどのフィッシング耐性のある認証方法へのユーザー移行を継続する。\n詳細情報\n• パスキーの既定化とMicrosoft提供のSMS・音声認証の廃止 - Microsoft Entra ID | Microsoft Learn\n• テレフォニーベースのサインインに対するリスクベースのボット対策検証(CAPTCHA) - Microsoft Entra ID | Microsoft Learn\n• Microsoft Entra多要素認証におけるテレフォニー不正リスクの理解 - Microsoft Entra ID | Microsoft Learn\n[コンプライアンス上の考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 2250,
+      "sourceTruncated": false,
+      "sourceHash": "7bd94eaf2b28ffe07e1d7bee364a126e69ffcaecf4c19ddb252b53890ef6ffea",
+      "validatedAt": "2026-11-16T02:25:16.5592691+00:00"
     }
   ],
-  "summarySourceHash": "76abc2fded5e4c50fc9b997e36403441a77fc307c3ac5bdcf13083808e224b1a",
   "summaryGeneratedAt": "2026-11-16T02:20:04.0786412+00:00",
+  "summarySourceHash": "76abc2fded5e4c50fc9b997e36403441a77fc307c3ac5bdcf13083808e224b1a",
   "sourceAgentRunId": "43790662039"
 }
