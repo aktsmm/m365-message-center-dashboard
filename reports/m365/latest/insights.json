@@ -1,24 +1,23 @@
 {
-  "generatedAt": "2026-11-13T07:01:10.3089579+00:00",
+  "generatedAt": "2026-11-16T02:20:04.2215089+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra認証方式の廃止準備、eMudhra証明書失効、Targeted Release廃止、Entra Agent Blueprint既定変更が優先事項",
-  "executiveSummary": "今週は認証・信頼基盤に関する変更が中心です。MC1529467では、2026年11月16日にEdge/WebView2向けPKI Metadata更新で、eMudhraの残るルートの既定信頼が完全に削除されると記載されています。MC1528000では、Microsoft提供のSMS/音声認証が2027年2月1日から廃止されます。MC1536049では、これに伴いSSPRでも利用できなくなり、サインイン廃止展開後50日の移行期間があります。MC1506733では、2026年11月上旬から下旬にかけて、既定ユーザーがエージェントブループリントを作成可能になります(管理者が設定を無効化しない場合)。MC1490899ではTargeted Releaseが2027年1月に廃止され、2026年11月に登録の追加・削除・変更ができなくなります。MC1542066はFrontier preview中のWorkforce Insights向けMODSエンドポイントが2026年11月18日から廃止されます。各メッセージの抜粋は上限があり、抜粋にない日付・要件は不明として扱い、原文確認が必要です。",
-  "thisWeek": "MC1529467: 11月16日のEdge/WebView2 PKI Metadata更新でemSignルートの既定信頼が削除されるため、eMudhra発行証明書に依存する業務・サイトがないか確認する。\nMC1506733: 既定ユーザーによるエージェントブループリント作成を許可するか判断し、望まない場合は「Users can create agent blueprints」を無効化する。\nMC1542066: Workforce Insightsへカスタム属性を送る組織は、11月18日のMODSエンドポイント廃止前にMicrosoft 365 profile経由へ移行できるか確認する(非公開属性はprivate preview参加が必要)。\nMC1490899: Targeted Release登録ユーザーを棚卸しし、2026年11月の登録変更不可になる前にFrontier/Standard/Deferredの方針を決める。",
-  "thisMonth": "MC1528000: 2027年2月1日までに、SMS/音声利用ユーザーをパスキーなど他の方式へ移行するか、CYOT(顧客管理テレコムプロバイダー)の構成を検討する。\nMC1536049: SSPRの回復方法として十分な適格方式を持たないユーザーを特定し、ヘルプデスク影響に備える。\nMC1546411: Viva Learning利用状況レポートとViva Insights個人インサイトのアクティブユーザー推移グラフが管理センターから廃止されるため、関連手順書を更新し、Viva Learningは同アプリ内のメトリクスを案内する。\nMC1470885: Word/Excel/PowerPointのCopilotボタン新プロンプト入力が2026年12月末までに展開されるため、ユーザー向け案内を準備する。",
-  "watch": "MC1526468: カナダ2026年タイムゾーン変更の影響のうち、Teams関連の一部は検証中と記載されており、続報を監視する。\nMC1530611: Office in Copilotは2026年11月中旬までの展開、Deferred releaseは12月初旬開始のため進捗を監視する。\nMC1146821: Edge for BusinessのWriting Assistanceは2027年1月下旬への延期が示されており、変更を監視する。",
-  "customerQuestions": "eMudhra発行の証明書やコード署名に依存するシステム、アプリ、社内サイトはありますか。(MC1529467)\nSMS・音声認証を利用しているユーザー数と、パスキー等への移行計画・CYOT利用の要否は決まっていますか。(MC1528000, MC1536049)\nエージェントブループリントの作成を一般ユーザーに許可する方針ですか。(MC1506733)\nTargeted Releaseの登録ユーザーは誰で、移行先はFrontier、Standard、Deferredのどれにしますか。(MC1490899)\nWorkforce Insightsにカスタム属性をMODS経由で送信していますか。(MC1542066)",
+  "headline": "Entra SMS/音声認証の廃止準備、eMudhra証明書信頼削除、Targeted release廃止が最優先",
+  "executiveSummary": "今週は Microsoft Entra の認証方式変更が中心です。Microsoft提供のSMS/音声認証は2027年2月1日以降に廃止が始まり(MC1528000)、SSPRでも利用不可になります(MC1536049)。またSMS/音声MFAでリスクベースのCAPTCHAが一部ユーザーに表示され始めます(MC1551151)。これは廃止時期には影響しません。Edge/WebView2では2026年11月16日にeMudhraルート証明書のデフォルト信頼が削除されます(MC1529467)。Targeted releaseは2027年1月に廃止予定で、2026年11月から登録ユーザーの変更ができなくなります(MC1490899)。Workforce Insightsエージェント向けMODS専用エンドポイントは2026年11月18日から廃止開始です(MC1542066)。なお、抜粋では各テナントへの正確な展開日や詳細要件が不明なものがあり、推測はしていません。",
+  "thisWeek": "MC1529467: 11月16日のEdge/WebView2 PKI Metadata更新により、emSignルートの信頼が削除されます。emSign発行証明書を使う社内サイトやサービスへの影響を確認してください。\nMC1542066: 11月18日開始のMODS Workforce Insightsエンドポイント廃止に対し、カスタム属性を送信している組織管理者は、M365プロファイルエンドポイントへの移行要否を確認してください。非公開カスタム属性にはプライベートプレビュー参加が必要です。\nMC1490899: Targeted release登録ユーザーを棚卸しし、Frontier、Standard、Deferredのどれにするか決めてください。11月以降は登録変更ができなくなります。\nMC1551151: SMS/音声MFA利用ユーザーにCAPTCHAが表示される可能性をヘルプデスクへ周知してください。",
+  "thisMonth": "MC1528000: 2027年2月1日前に、パスキー等の別方式への移行か、CYOTによる顧客管理テレフォニープロバイダーの構成を計画してください。\nMC1536049: SSPRで十分な回復方法を持たないユーザーを特定してください。猶予は、サインイン廃止展開がテナントに到達してから50日です。\nMC1546411: Viva Learning利用状況レポートとViva Insights個人インサイトのアクティブユーザー推移グラフが管理センターから廃止されるため、関連ドキュメントを更新してください。\nMC1526468: カナダの2026年タイムゾーン変更について、予定表の移行と定期会議の確認状況を点検してください。",
+  "watch": "MC1536049: Global Administratorと外部ユーザーは別展開で、サインイン廃止の開始は2027年7月1日です。\nMC1325414: SSPRの登録済み認証方式必須化の展開状況を継続的に確認してください。\nMC1470885: Word、Excel、PowerPointのCopilotボタン新プロンプト入力は2026年12月末までに展開予定です。",
+  "customerQuestions": "SMS/音声MFAやSSPRに依存しているユーザー数と、パスキー等への移行計画はどうなっていますか。\nCYOTで顧客管理のテレフォニープロバイダーを使う予定はありますか。\nemSign証明書に依存する社内システムや外部サービスはありますか。\nTargeted releaseの登録ユーザーは誰で、各ユーザーにどの新リリース設定が適切ですか。\nMODSでWorkforce Insights向けにカスタム属性を送信していますか。\nカナダ拠点のユーザーや会議室で、タイムゾーン変更の影響を確認済みですか。",
   "referencedIds": [
-    "MC1146821",
+    "MC1325414",
     "MC1470885",
     "MC1490899",
-    "MC1506733",
     "MC1526468",
     "MC1528000",
     "MC1529467",
-    "MC1530611",
     "MC1536049",
     "MC1542066",
-    "MC1546411"
+    "MC1546411",
+    "MC1551151"
   ],
   "messageUpdates": [
     {
@@ -683,6 +682,13 @@
       "id": "MC1546411",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1551151",
+      "japaneseTitle": "Microsoft Entra の問題の予防または修正に関するお知らせ",
+      "japaneseSummary": "問題の予防または修正: Microsoft Entra。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -2168,38 +2174,6 @@
       "validatedAt": "2026-11-09T20:55:00.0913615+00:00"
     },
     {
-      "id": "MC1546411",
-      "japaneseTitle": "Viva Learning使用状況レポートとViva Insights傾向グラフの廃止",
-      "japaneseFacts": {
-        "change": "Microsoft 365管理センターからViva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフが廃止されます。",
-        "impact": "Microsoft 365テナント管理者、およびViva InsightsやViva Learningの使用状況レポートを利用する組織が対象です。",
-        "timing": "2026年11月上旬に展開開始、2026年11月中旬に完了予定です。",
-        "action": "廃止されたレポートを参照する文書の更新、レポート管理者への場所変更の周知、今後はViva Learning内のレポートを使用してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft 365管理センターから、Viva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフが廃止されます。Viva Learningの分析はViva Learningアプリ内のレポート機能で引き続き利用できます。対象はテナント管理者およびこれらのレポートを利用する組織です。ワールドワイドで2026年11月上旬から中旬にかけて展開されます。管理者は関連文書の更新、レポート管理者への周知、Viva Learning内のレポート利用への切り替えが推奨されます。管理コントロールに関連する変更を含むとされています。",
-      "japaneseBodyTranslation": "[内容と理由:]\nViva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフは、Microsoft 365管理センターから廃止されます。Viva Learningについては、管理者はViva Learningアプリで引き続き使用状況メトリックにアクセスできます。\n[展開スケジュール:]\n一般提供(ワールドワイド):2026年11月上旬に展開を開始し、2026年11月中旬までに完了する予定です。\n[組織への影響:]\n影響を受ける対象:\n• Microsoft 365テナント管理者\n• Microsoft Viva Insights、またはViva Learning使用状況レポートを利用する組織\nプラットフォーム/サービス:\n• Microsoft 365管理センター\n• Viva Insights\n• Viva Learning\n発生すること:\n• Viva Insightsパーソナルインサイトのアクティブユーザー傾向グラフは廃止されます。\n• Viva Learning使用状況レポートはMicrosoft 365管理センターから削除されます。\n• Viva Learningの分析は、Viva Learningのレポート機能で引き続き利用できます。\n[必要な対応/推奨事項:]\n• 廃止されたVivaレポートを参照する文書を更新する。\n• レポート管理者にレポートの場所の変更を周知する。\n• 今後はViva Learning内のレポートを使用する。\n[コンプライアンス上の考慮事項:]\nこの変更に管理コントロールがあり、Entra IDグループで制御できるか?はい。この機能は、本メッセージに記載のとおり、管理コントロール、ポリシー、権限、ロール、認証、管理設定を含むか影響します。グループベースの構成のサポートについては、リンク先のドキュメントまたは管理センターのコントロールを確認してください。",
-      "sourceCharacterCount": 1532,
-      "sourceTruncated": false,
-      "sourceHash": "09f94ae9607697b04f558cd51e0e5d2346ed24e04a86cc681799943e199219c3",
-      "validatedAt": "2026-11-12T18:29:15.4900734+00:00"
-    },
-    {
-      "id": "MC985483",
-      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
-      "japaneseFacts": {
-        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
-        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
-        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
-        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
-      "sourceCharacterCount": 1148,
-      "sourceTruncated": false,
-      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
-      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
       "id": "MC1545694",
       "japaneseTitle": "Entra My Sign-insのパスキー登録画面が更新されます",
       "japaneseFacts": {
@@ -2230,9 +2204,41 @@
       "sourceTruncated": false,
       "sourceHash": "bceace85794161f4b0b1fa577d4aeceb42b9280e8cc83e3d3dec0b99ef17e5d2",
       "validatedAt": "2026-11-13T07:01:10.2969842+00:00"
+    },
+    {
+      "id": "MC1546411",
+      "japaneseTitle": "Viva Learning使用状況レポートとViva Insights傾向グラフの廃止",
+      "japaneseFacts": {
+        "change": "Microsoft 365管理センターからViva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフが廃止されます。",
+        "impact": "Microsoft 365テナント管理者、およびViva InsightsやViva Learningの使用状況レポートを利用する組織が対象です。",
+        "timing": "2026年11月上旬に展開開始、2026年11月中旬に完了予定です。",
+        "action": "廃止されたレポートを参照する文書の更新、レポート管理者への場所変更の周知、今後はViva Learning内のレポートを使用してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft 365管理センターから、Viva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフが廃止されます。Viva Learningの分析はViva Learningアプリ内のレポート機能で引き続き利用できます。対象はテナント管理者およびこれらのレポートを利用する組織です。ワールドワイドで2026年11月上旬から中旬にかけて展開されます。管理者は関連文書の更新、レポート管理者への周知、Viva Learning内のレポート利用への切り替えが推奨されます。管理コントロールに関連する変更を含むとされています。",
+      "japaneseBodyTranslation": "[内容と理由:]\nViva Learning使用状況レポートとViva Insightsパーソナルインサイトのアクティブユーザー傾向グラフは、Microsoft 365管理センターから廃止されます。Viva Learningについては、管理者はViva Learningアプリで引き続き使用状況メトリックにアクセスできます。\n[展開スケジュール:]\n一般提供(ワールドワイド):2026年11月上旬に展開を開始し、2026年11月中旬までに完了する予定です。\n[組織への影響:]\n影響を受ける対象:\n• Microsoft 365テナント管理者\n• Microsoft Viva Insights、またはViva Learning使用状況レポートを利用する組織\nプラットフォーム/サービス:\n• Microsoft 365管理センター\n• Viva Insights\n• Viva Learning\n発生すること:\n• Viva Insightsパーソナルインサイトのアクティブユーザー傾向グラフは廃止されます。\n• Viva Learning使用状況レポートはMicrosoft 365管理センターから削除されます。\n• Viva Learningの分析は、Viva Learningのレポート機能で引き続き利用できます。\n[必要な対応/推奨事項:]\n• 廃止されたVivaレポートを参照する文書を更新する。\n• レポート管理者にレポートの場所の変更を周知する。\n• 今後はViva Learning内のレポートを使用する。\n[コンプライアンス上の考慮事項:]\nこの変更に管理コントロールがあり、Entra IDグループで制御できるか?はい。この機能は、本メッセージに記載のとおり、管理コントロール、ポリシー、権限、ロール、認証、管理設定を含むか影響します。グループベースの構成のサポートについては、リンク先のドキュメントまたは管理センターのコントロールを確認してください。",
+      "sourceCharacterCount": 1532,
+      "sourceTruncated": false,
+      "sourceHash": "09f94ae9607697b04f558cd51e0e5d2346ed24e04a86cc681799943e199219c3",
+      "validatedAt": "2026-11-12T18:29:15.4900734+00:00"
+    },
+    {
+      "id": "MC985483",
+      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
+      "japaneseFacts": {
+        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
+        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
+        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
+        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
+      "sourceCharacterCount": 1148,
+      "sourceTruncated": false,
+      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
+      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-11-12T10:01:40.6676019+00:00",
-  "summarySourceHash": "a8318096215af3901dd1cc1e6236b75f4766b24cf319015dbfd206cb50036ca5",
-  "sourceAgentRunId": "43196023190"
+  "summarySourceHash": "76abc2fded5e4c50fc9b997e36403441a77fc307c3ac5bdcf13083808e224b1a",
+  "summaryGeneratedAt": "2026-11-16T02:20:04.0786412+00:00",
+  "sourceAgentRunId": "43790662039"
 }
