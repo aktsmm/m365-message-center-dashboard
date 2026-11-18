@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "observedAt": "2026-11-18T07:42:17.9766976+00:00",
+  "observedAt": "2026-11-18T17:21:39.5012016+00:00",
   "snapshotGeneratedAt": "2026-11-16T02:11:12.733254+00:00",
   "summary": {
-    "status": "current",
-    "reason": ""
+    "reason": "",
+    "status": "current"
   },
   "translations": {
     "current": 97,
