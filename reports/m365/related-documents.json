@@ -21089,13 +21089,13 @@
             "345119ed983650c42ea15a9723c7ebfc8fb3ae92d10771e5f847119ceec0bc57"
           ],
           "status": "verified",
-          "checkedAt": "2026-10-19T00:14:24.934295+00:00",
+          "checkedAt": "2026-11-18T10:38:18.557369+00:00",
           "documents": [
             {
               "url": "https://learn.microsoft.com/ja-jp/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
               "title": "夏時間のヘルプとサポート",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-19T00:14:31.880255+00:00",
+              "checkedAt": "2026-11-18T10:38:22.310072+00:00",
               "bodySha256": "bfa6c8b86af3f5c8619385275ea97562cb829e42680c0fe45a96135a86490f9b",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
@@ -21104,7 +21104,7 @@
               "featureEvidence": {
                 "canonicalArticle": "https://learn.microsoft.com/en-us/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support",
                 "bodySha256": "2749e898fb769c29f2bb88efd75b1e6e9bbb5d1a405b895443e0c6f29684e172",
-                "reviewedAt": "2026-10-19T00:14:31.880303+00:00"
+                "reviewedAt": "2026-11-18T10:38:22.310118+00:00"
               }
             }
           ],
@@ -21130,7 +21130,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
-          "nextAttemptAt": "2026-11-18T00:14:31.880312+00:00"
+          "nextAttemptAt": "2026-12-18T10:38:22.310124+00:00"
         }
       }
     },
@@ -21139,13 +21139,13 @@
         "313ead09cd089fcfc44679d3fd2b97148a688c29f4f1fa660153ae09a4ea1560"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-19T00:14:31.944680+00:00",
+      "checkedAt": "2026-11-18T10:38:22.594218+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/lifecycle/faq/fixed-policy",
           "title": "ライフサイクルに関する FAQ - 固定ポリシー",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-19T00:14:40.713131+00:00",
+          "checkedAt": "2026-11-18T10:38:28.166037+00:00",
           "bodySha256": "47c1bd3cb7affb8da0c90498a49c1539cf872a2fdd14d31602303e8ac26e8be7",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -21154,7 +21154,7 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/lifecycle/faq/fixed-policy",
             "bodySha256": "ad8bd186a9c77ec34453babae904ac393f8de6a74dc8e69538bf73b010dc192f",
-            "reviewedAt": "2026-10-19T00:14:40.713187+00:00"
+            "reviewedAt": "2026-11-18T10:38:28.166091+00:00"
           }
         }
       ],
@@ -21180,7 +21180,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-18T00:14:40.713196+00:00",
+      "nextAttemptAt": "2026-12-18T10:38:28.166098+00:00",
       "variants": {}
     },
     "MC1509789": {
@@ -22150,7 +22150,7 @@
         "958f0cd093d7806fc5d43d5ba90ad2ea46bb81002b2f5f794fdc508267a3a9f4"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-15T09:49:01.145934+00:00",
+      "checkedAt": "2026-11-18T10:38:14.840128+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft office copilot power app",
@@ -22166,7 +22166,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-18T09:49:01.155893+00:00",
+      "nextAttemptAt": "2026-11-21T10:38:14.848787+00:00",
       "variants": {
         "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2": {
           "sourceHashes": [
@@ -22196,7 +22196,7 @@
             "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-15T09:49:05.274813+00:00",
+          "checkedAt": "2026-11-18T10:38:18.319548+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft office copilot power app",
@@ -22212,7 +22212,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-18T09:49:05.283781+00:00"
+          "nextAttemptAt": "2026-11-21T10:38:18.327684+00:00"
         }
       }
     },
@@ -22831,7 +22831,7 @@
         "26e68837374044b3dec25ade97ebe4c3e5e7110bd9202d8e5df819aec5505410"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-15T09:49:01.327138+00:00",
+      "checkedAt": "2026-11-18T10:38:15.079161+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft app copilot",
@@ -22847,7 +22847,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-18T09:49:05.102459+00:00",
+      "nextAttemptAt": "2026-11-21T10:38:18.091334+00:00",
       "variants": {}
     },
     "MC1545694": {
@@ -23118,7 +23118,7 @@
     "snapshots": 49,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-13T01:42:31+00:00",
-    "checkedAt": "2026-11-17T22:37:53.943032+00:00",
+    "checkedAt": "2026-11-18T10:38:28.653806+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 62,
@@ -23133,7 +23133,7 @@
     },
     "latestTotal": 97,
     "pendingAttempts": 0,
-    "processedThisRun": 52,
+    "processedThisRun": 5,
     "variantCounts": {
       "fetch_failed": 0,
       "no_verified_document": 158,
