@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T03:37:16.7754665+00:00",
+  "generatedAt": "2026-11-19T03:43:33.9687734+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
   "headline": "Entra SMS/音声認証の退役が最優先。Edge XSLT無効化・SharePoint検索メタデータ変更・リリース設定統合も準備が必要",
   "executiveSummary": "今週のMessage Center(101件)で最も影響が大きいのは、Microsoft EntraのMicrosoft提供SMS/音声認証の退役です。2027年2月1日開始で、MC1528000は期限前の移行またはCYOT構成を推奨しています。SSPRでも同様に利用不可となり、サインイン退役の展開後50日で移行期間が終わります(MC1536049)。一方、MC1551151では11月中旬からSMS/音声MFAで一部ユーザーにCAPTCHAが表示される可能性があります(退役時期への影響なし)。その他、Edgeのブラウザ内蔵XSLTが12月中旬に既定で無効化(MC1509789)、SharePoint検索のSiteLogoUrl更新仕様変更(2026年12月上旬〜2027年3月上旬、MC1556092)、管理センターのリリース設定統合(11月中旬〜下旬、MC1556082)、Conditional AccessのCustom Controls退役(2027年5月完全退役、MC1422061)があります。抜粋に無い要件・日付は不明として扱い、原文の確認が必要です。",
@@ -999,22 +999,6 @@
       "sourceTruncated": true,
       "sourceHash": "3cb85bc086f9de4bb26331b3bff4b510f897536a8b93645045f5be1e666ad4cb",
       "validatedAt": "2026-10-21T05:05:26.3897952+00:00"
-    },
-    {
-      "id": "MC1387526",
-      "japaneseTitle": "Microsoft 365 BackupにSharePoint等の全ワークロードバックアップ追加",
-      "japaneseFacts": {
-        "change": "単一ポリシーでSharePoint、OneDrive、Exchangeのワークロード全体を保護するFull Workload Backupが追加されます。",
-        "impact": "Microsoft 365 Backupポリシーを管理する管理者と、利用中または利用予定の組織。既存のカスタムポリシーが優先され変更されません。",
-        "timing": "パブリックプレビューは2026年7月上旬〜中旬、GAは2026年9月中旬に開始し10月中旬に完了予定です。",
-        "action": "展開前の対応は不要です。展開後はポリシーと適用範囲の確認、方針との適合評価、管理者への周知を推奨します。"
-      },
-      "japaneseDetailedSummary": "Microsoft 365 Backupに、SharePoint、OneDrive、Exchangeのいずれかのワークロード全体を単一ポリシーで保護するFull Workload Backupが追加されます(Roadmap ID 464990)。カスタムポリシーで保護されていない既存および新規作成の成果物が自動的に対象となり、既存のカスタムポリシーが優先されます。CSVのアップロードで特定の成果物を除外できます。機能は既定で利用可能ですが、有効化には管理者の構成が必要です。プレビューは2026年7月上旬から中旬、GAは9月中旬から10月中旬の展開予定です。事前対応は不要で、展開後にバックアップポリシーの確認、戦略との適合評価、管理者への周知、社内手順書の更新を推奨します。原文は途中で切れています。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 Backupの新機能Full Workload Backupを導入します。管理者は単一のポリシーでワークロード全体(SharePoint、OneDrive、またはExchange)を迅速に保護できます。この機能は、カスタムポリシーで対象になっていない既存および新規作成のすべての成果物を自動的に含め、データ保護の網羅性向上、管理負荷の軽減、重要な業務データの大規模な継続バックアップを支援します。\nこの強化により、エンタープライズ向けのデータ保護と自動化が可能になり、既存のポリシー構成による制御を維持しながら、より効率的にコンテンツを保護できます。\nこのメッセージはMicrosoft 365 ロードマップID 464990に関連しています。\n[ロールアウトスケジュール]\n• パブリックプレビュー(Worldwide):2026年7月上旬に開始し、2026年7月中旬までに完了予定\n• 一般提供:2026年9月中旬に開始し、2026年10月中旬までに完了予定\n[組織への影響]\n影響を受ける対象:\n• Microsoft 365 Backupポリシーを管理する管理者\n• Microsoft 365 Backupを現在利用中または利用予定の組織\nプラットフォーム/サービス:\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\n動作:\n• 選択したワークロード内のすべての成果物をバックアップする新しいオプションが利用可能になります。\n• 管理者はワークロード(SharePoint、OneDrive、Exchange)ごとにFull Workload Backupを有効にできます。\n• 既存のカスタムバックアップポリシーの対象外のすべての適格な成果物が自動的に保護されます。\n• 新規作成された成果物は、以降の実行で自動的にバックアップ対象に含まれます。\n• 既存のカスタムバックアップポリシーが引き続き優先され、変更されません。\n• 管理者はCSVファイルをアップロードして特定の成果物を除外できます。\n• この機能は既定で利用可能ですが、有効化には管理者の構成が必要です。\n[必要な対応/推奨事項]\n展開前の即時対応は不要です。\n展開後は次を推奨します:\n• 現在のMicrosoft 365 Backupポリシーと適用範囲を確認する。\n• Full Workload Backupがデータ保護戦略に合致するか評価する。\n• バックアップ管理者に新機能を周知する。\n• バックアップ手順を管理している場合は社内ドキュメントを更新する。\n有効化するには:\n• Microsoft 365管理センターのMicrosoft 365 Backupダッシュボードに移動します。\n• 保護するワークロードを選択し、すべての成果物をバックアップするオプションを選びます。\n• (任意)アップロード...(原文はここで途切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "33ed7c57dd620859d6f3bb7c06a3e0dce4806fee28f57f18d7a411592c0f2049",
-      "validatedAt": "2026-10-19T20:46:24.8089458+00:00"
     },
     {
       "id": "MC1422061",
@@ -2279,9 +2263,57 @@
       "sourceTruncated": false,
       "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
       "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
+    },
+    {
+      "id": "MC1556092",
+      "japaneseTitle": "SharePointサイトロゴURLの検索メタデータ更新方式の変更",
+      "japaneseFacts": {
+        "change": "サイトのロゴURLを変更しても、サイト内の各ファイルや項目のSiteLogoUrlプロパティは自動更新されなくなります。",
+        "impact": "検索APIで個々の項目からSiteLogoUrlを取得するアプリやカスタムソリューションは、古い値を受け取る可能性があります。",
+        "timing": "2026年12月上旬に展開開始、2027年3月上旬に完了予定(全世界GA)。",
+        "action": "該当プロパティを利用する場合は、関連するSharePointサイトから現在のロゴを直接取得してください。利用しなければ対応不要です。"
+      },
+      "japaneseDetailedSummary": "SharePointの検索インデックス効率と信頼性向上のため、サイトのロゴURL変更が、サイト内の個々のファイルや項目のSiteLogoUrlプロパティへ自動反映されなくなります。サイト自体のSiteLogoUrlは引き続き維持されますが、個々の項目には以前にインデックスされた値が残る場合があります。検索APIで項目単位にこの値を取得するアプリは古い値を受け取る可能性があります。展開は2026年12月上旬に始まり、2027年3月上旬に完了予定です。該当プロパティを使う場合のみ、サイトから直接ロゴを取得する方式への変更が推奨されます。コンプライアンス上の考慮事項は特定されていません。",
+      "japaneseBodyTranslation": "[内容と理由:]\n検索インデックスの効率と信頼性を向上させるため、SharePointサイトのロゴURLを検索メタデータで維持する方法を変更します。今後、SharePointサイトのロゴURLを変更しても、そのサイト内の個々のファイルやその他の項目のSiteLogoUrlプロパティは自動的に更新されなくなります。\n[展開スケジュール:]\n一般提供(全世界):2026年12月上旬に展開を開始し、2027年3月上旬までに完了する予定です。\n[組織への影響:]\nSiteLogoUrlプロパティはSharePointサイトでは引き続き維持されます。個々の項目では、サイトのロゴが変更された後も、以前にインデックスされたSiteLogoUrl値が残る場合があります。検索APIを通じて個々の項目からこのプロパティを取得するアプリケーションやカスタムソリューションは、古い値を受け取る可能性があります。\n[必要な対応/推奨事項:]\n組織が個々の検索結果のSiteLogoUrlプロパティを使用している可能性は低いですが、その場合は、関連するSharePointサイトから現在のサイトロゴを直接取得することを推奨します。このプロパティに依存していない場合、対応は不要です。\n[コンプライアンスに関する考慮事項:]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 1255,
+      "sourceTruncated": false,
+      "sourceHash": "8e7d3e9760af17f4afc028b9bb405f4155285c247dffb05377e0a7125f06ed5e",
+      "validatedAt": "2026-11-19T03:43:33.9500678+00:00"
+    },
+    {
+      "id": "MC1387526",
+      "japaneseTitle": "Microsoft 365 Backupにワークロード全体バックアップ機能(時期更新)",
+      "japaneseFacts": {
+        "change": "Microsoft 365 BackupにFull Workload Backupが追加され、SharePoint、OneDrive、Exchangeを単一ポリシーで丸ごと保護できます。",
+        "impact": "Microsoft 365 Backupのポリシーを管理する管理者と、利用中または利用予定の組織が対象です。",
+        "timing": "パブリックプレビューは2026年7月上旬〜中旬、GAは2027年1月開始・2027年2月末完了予定(従来は2026年9月中旬〜10月中旬)。",
+        "action": "展開前の対応は不要です。展開後は既存ポリシーの確認、適合性の評価、管理者への周知、手順書の更新を推奨します。"
+      },
+      "japaneseDetailedSummary": "2026年11月18日にタイムラインが更新されました。Microsoft 365 BackupにFull Workload Backupが導入され、SharePoint、OneDrive、Exchangeの各ワークロードを単一ポリシーで保護できます。カスタムポリシーで未カバーの既存および新規作成アーティファクトが自動的に対象となり、既存のカスタムポリシーが優先され変更されません。管理者はCSVのアップロードで特定アーティファクトを除外できます。機能は既定で利用可能ですが、有効化には管理者の設定が必要です。GAは2027年1月に開始し2027年2月末に完了予定です。展開前の対応は不要で、展開後にポリシーと適合性の確認、管理者への周知、ドキュメント更新が推奨されます。有効化手順の詳細は提供された本文が途切れているため不明です。",
+      "japaneseBodyTranslation": "2026年11月18日更新:タイムラインを更新しました。ご理解に感謝します。\n[内容と理由:]\nMicrosoft 365 Backup向けにFull Workload Backupを導入します。管理者は単一のポリシーでワークロード全体(SharePoint、OneDrive、Exchange)を迅速に保護できます。カスタムポリシーで未カバーのすべての既存および新規作成アーティファクトが自動的に含まれ、データ保護範囲の向上、管理負荷の軽減、重要な業務データの大規模な継続バックアップに役立ちます。既存のポリシー構成による制御を維持しつつ、エンタープライズ向けのデータ保護と自動化を支援します。このメッセージはMicrosoft 365ロードマップID 464990に関連しています。\n[展開スケジュール:]\n• パブリックプレビュー(全世界):2026年7月上旬に展開を開始し、2026年7月中旬までに完了予定。\n• 一般提供:2027年1月に展開を開始(従来は2026年9月中旬)、2027年2月末までに完了予定(従来は2026年10月中旬)。\n[組織への影響:]\n対象者:\n• Microsoft 365 Backupポリシーを管理する管理者\n• Microsoft 365 Backupを現在利用中または利用予定の組織\nプラットフォーム/サービス:Microsoft 365 Backup、SharePoint Online、OneDrive、Exchange Online\n発生すること:\n• 選択したワークロード内の全アーティファクトをバックアップする新オプションが利用可能になります。\n• 管理者はワークロード(SharePoint、OneDrive、Exchange)ごとに有効化できます。\n• 既存のカスタムバックアップポリシーで未カバーの対象アーティファクトは自動的に保護されます。\n• 新規作成アーティファクトは以降の実行で自動的にバックアップ対象になります。\n• 既存のカスタムバックアップポリシーが引き続き優先され、変更されません。\n• 管理者はCSVファイルをアップロードして特定のアーティファクトを除外できます。\n• 機能は既定で利用可能ですが、有効化には管理者の構成が必要です。\n[必要な対応/推奨事項:]\n展開前に直ちに必要な対応はありません。展開後は次を推奨します:\n• 現在のMicrosoft 365 Backupポリシーと対象範囲を確認する。\n• Full Workload Backupがデータ保護戦略に合うか評価する。\n• バックアップ管理者にこの新機能を周知する。\n• バックアップ手順を管理している場合は社内ドキュメントを更新する。\n機能を有効にするには:\n• Microsoft 365 Backupダッシュボードへ移動... (原文はここで途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "f54627d2d99de3204a72c34c6b339760bb46864739e48c3932e88441ad34b8fe",
+      "validatedAt": "2026-11-19T03:43:33.9558914+00:00"
+    },
+    {
+      "id": "MC1558033",
+      "japaneseTitle": "Copilot Managed RuntimeがGA、Cowork構築はFrontier不要に",
+      "japaneseFacts": {
+        "change": "Copilot Managed Runtimeが一般提供となり、Copilot Coworkでのアプリ構築がFrontier Programに限定されなくなります。",
+        "impact": "Managed Runtime上でアプリを構築・実行するライセンス保有ユーザーと、アプリ・環境・ガバナンス・Copilot Creditsを管理する管理者です。",
+        "timing": "GAは2026年11月中旬に展開開始、2026年12月中旬までに完了予定(全世界)。",
+        "action": "GA前にMicrosoft 365管理センターでCopilot Creditsを設定する等の準備が示されていますが、以降の詳細は原文に記載なし。"
+      },
+      "japaneseDetailedSummary": "Microsoft Copilot Managed Runtimeは、Microsoft 365テナント境界内でコードを実行するIT管理型プラットフォームで、2026年9月にパブリックプレビューとして導入され、一般提供となります。Copilot Cowork、Copilot Studio、Copilot Code、CLIでアプリを作成でき、管理者はMicrosoft 365管理センターで管理できます。GA後はCoworkでのアプリ構築にFrontier Program参加が不要になります。環境ルーティングが有効で、ルールがない場合は既定の環境グループ内の個人環境に振り分けられ、コネクタ・コンテンツセキュリティ・共有ポリシーを継承し、メーカーは上書きできません。アプリの共有は基盤データへのアクセスを付与しません。GAは2026年11月中旬に開始し12月中旬に完了予定です。GA前にCopilot Creditsの設定が推奨されますが、以降の本文は途切れています。",
+      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft Copilot Managed Runtimeは、Microsoft 365テナント境界内でコードを実行するためのIT管理型プラットフォームです。Copilot Cowork、Copilot Studio、Copilot Code、Copilot Managed Runtime CLIでのアプリ作成をサポートします。アプリは組織のポリシーで許可されたコネクタを通じて組織データを利用でき、管理者はMicrosoft 365管理センターでアプリを管理できます。\n2026年9月にパブリックプレビューとして導入されたMicrosoft Copilot Managed Runtime(MC1469329)が一般提供されます。Copilot Coworkでのアプリ構築は、Microsoft Copilot Frontier Programに限定されなくなります。\n[展開スケジュール]\n• パブリックプレビュー:2026年9月に展開開始、2026年11月中旬までに完了予定。\n• 一般提供(全世界):2026年11月中旬に展開開始、2026年12月中旬までに完了予定。\n[組織への影響]\n対象者:Managed Runtime上でアプリを構築・実行するライセンス保有ユーザー、およびそれらのアプリ、環境、ガバナンスポリシー、Copilot Creditsを管理する管理者。\nプラットフォームとサービス:Microsoft 365管理センター、Copilot Cowork、Copilot Studio、Copilot Code(Frontier)、Copilot Managed Runtime CLI、Power Platform環境。\n発生すること:\n• Copilot Managed Runtimeはプレビュー機能ではなくなります。\n• ライセンス保有ユーザーはFrontier Programに参加せずにCopilot Coworkでアプリを構築できます。\n• メーカーは、必要時に作成され以後再利用される個人環境で引き続き構築します。\n• Copilot Managed Runtimeでは環境ルーティングが有効です。テナントにルーティングルールがない場合、ユーザーは既定の環境グループの個人環境に振り分けられます。既存のルーティングルールは変更されません。\n• 個人環境は既定の環境グループのコネクタ、コンテンツセキュリティ、共有ポリシーを継承し、メーカーは上書きできません。管理者はMicrosoft 365管理センターのアプリ > 設定で管理できます。\n• アプリの共有はアプリへのアクセスを提供しますが、基盤データへのアクセスは提供しません。\n• ドラフトおよび公開済みアプリはアプリ > すべてのアプリに表示され、管理者は情報を確認し、ブロックや削除などのライフサイクル操作を実行できます。\n[必要な対応と推奨事項]\n一般提供前:\n• Copilot Creditsを設定:Microsoft 365管理センターでCopilot > コスト管理に移動し... (原文はここで途切れています)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "b4740d11979b330d97a1832a8270a43febf3fce6fd066056dcd46ed1b1b0aa18",
+      "validatedAt": "2026-11-19T03:43:33.9595407+00:00"
     }
   ],
+  "summaryGeneratedAt": "2026-11-19T03:37:16.603827+00:00",
   "summarySourceHash": "485c7af869be94f8b2324a148719e9309ca0b9319f56f3b38cb1d1f73c200b16",
-  "summaryGeneratedAt": "2026-11-19T03:37:16.6038270+00:00",
   "sourceAgentRunId": "44452050451"
 }
