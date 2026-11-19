@@ -1,23 +1,23 @@
 {
   "meta": {
-    "runId": "43790589049",
-    "generatedAt": "2026-11-16T02:11:12.7332540+00:00",
+    "runId": "44451947921",
+    "generatedAt": "2026-11-19T03:31:05.9544871+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 97,
-    "majorChanges": 26,
+    "total": 101,
+    "majorChanges": 27,
     "highSeverity": 2,
     "actionRequired": 13,
-    "actionDueWithin30Days": 1,
-    "updatedLast7Days": 10
+    "actionDueWithin30Days": 0,
+    "updatedLast7Days": 6
   },
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 54
+      "count": 58
     },
     {
       "name": "Microsoft Entra",
@@ -30,6 +30,169 @@
   ],
   "messages": [
     {
+      "id": "MC1387526",
+      "title": "(Updated) Microsoft 365 Backup: Full workload backup for SharePoint, OneDrive, and Exchange",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-06-11T16:46:49.0000000+00:00",
+      "endDateTime": "2027-04-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-18T22:42:48.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated November 18, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nWe are introducing Full Workload Backup for Microsoft 365 Backup, a new capability that allows admins to quickly protect an entire workload (SharePoint, OneDrive, or Exchange) with a single policy. This feature automatically includes all existing and newly created artifacts that are not already covered by custom policies, helping organizations improve data protection coverage, reduce administrative overhead, and ensure continuous backup for critical business data at scale.\nThis enhancement supports enterprise-ready data protection and automation, enabling organizations to safeguard content more efficiently while maintaining control through existing policy configurations.\nThis message is associated with Microsoft 365 Roadmap ID 464990.\n[Rollout Schedule:]\n• Public Preview (Worldwide): We will begin rolling out in early July 2026 and expect to complete by mid-July 2026.\n• General Availability: We will begin rolling out in January 2027 (previously mid-September 2026) and expect to complete by end of February 2027 (previously mid-October 2026).\n[Impact on Your Organization:]\nWho is affected:\n• Admins managing Microsoft 365 Backup policies\n• Organizations currently using or planning to use Microsoft 365 Backup\nPlatforms/Services:\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\nWhat will happen:\n• A new option to back up all artifacts within a selected workload will be available.\n• Admins can enable Full Workload Backup per workload (SharePoint, OneDrive, Exchange).\n• All eligible artifacts not covered by existing custom backup policies will be automatically protected.\n• Newly created artifacts will be included in backup coverage automatically on subsequent runs.\n• Existing custom backup policies will continue to take precedence and remain unchanged.\n• Admins can upload a CSV file to exclude specific artifacts.\n• The feature is available by default but requires admin configuration to enable.\n[Action Required/Recommendations:]\nNo immediate action is required before rollout.\nAfter rollout, we recommend that you:\n• Review your current Microsoft 365 Backup policies and coverage.\n• Evaluate whether Full Workload Backup aligns with your data protection strategy.\n• Inform backup administrators about this new capability.\n• Update internal documentation if you manage backup procedures.\nTo enable the feature:\n• Go to the Microsoft 365 Backup dashboard in the Microsoft 365 admin center.\n• Select the workload you want to protect and choose the option to back up all artifacts.\n• (Optional) Upload a CSV file on the Exclude sites step to exclude specific sites from the scope of the policy.\n• Review the coverage summary and confirm to create the Full Workload Backup policy.\nLearn more:\n• Create, view, and edit backup policies in Microsoft 365 Backup | Microsoft Learn (will be updated before rollout begins)\n• Overview of Microsoft 365 Backup | Microsoft Learn (will be updated before rollout begins)\n[Compliance considerations:]\nNo compliance considerations identified, review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "RoadmapIds",
+          "value": "464990"
+        },
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Backup introduces Full Workload Backup for SharePoint, OneDrive, and Exchange, enabling admins to protect entire workloads with a single policy. Rolling out from July 2026 (preview) to February 2027 (general availability), it automates backup of all artifacts while preserving existing policies and allows exclusions via CSV."
+        },
+        {
+          "name": "Platforms",
+          "value": "Web"
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/backup/backup-overview?view=o365-worldwide"
+      ]
+    },
+    {
+      "id": "MC1558033",
+      "title": "Microsoft 365 Copilot: Copilot Managed Runtime expands app building at general availability",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-17T23:01:10.0000000+00:00",
+      "endDateTime": "2026-12-17T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-17T23:01:18.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft Copilot Managed Runtime is an IT-governed platform for running code within the Microsoft 365 tenant boundary. It supports app creation in Copilot Cowork, Copilot Studio, Copilot Code, and the Copilot Managed Runtime CLI. Apps can use organizational data through connectors permitted by your organization's policies, and admins can manage apps through the Microsoft 365 admin center.\nMicrosoft Copilot Managed Runtime, introduced in public preview in September 2026 (MC1469329), will become generally available. App building in Copilot Cowork will no longer be limited to the Microsoft Copilot Frontier Program.\n[Rollout schedule]\n• Public Preview: Rollout began in September 2026 and is expected to be complete by mid-November 2026.\n• General Availability (Worldwide): Rollout will begin in mid-November 2026 and is expected to be complete by mid-December 2026.\n[Impact on your organization]\nWho is affected\n• Licensed users who build or run apps hosted on Microsoft Copilot Managed Runtime and admins who manage those apps, environments, governance policies, and Copilot Credits\nPlatforms and services\n• Microsoft 365 admin center\n• Microsoft Copilot Cowork\n• Microsoft Copilot Studio\n• Microsoft Copilot Code (Frontier)\n• Copilot Managed Runtime CLI\n• Power Platform environments\nWhat will happen\n• Copilot Managed Runtime will no longer be a preview feature.\n• Licensed users can build apps in Copilot Cowork without participating in the Microsoft Copilot Frontier Program.\n• Makers will continue to build in personal environments that are created when first needed and reused afterward.\n• Environment routing is enabled for Copilot Managed Runtime. If your tenant has no routing rules, users are routed to personal environments in the default environment group. Existing routing rules aren't changed.\n• Personal environments inherit the default environment group's connector, content security, and sharing policies. Makers can't override these policies. Admins can manage them under Apps > Settings in the Microsoft 365 admin center.\n• Sharing an app provides access to the app but doesn't provide access to its underlying data.\n• Draft and published apps appear under Apps > All apps, where admins can review app information and perform lifecycle operations such as blocking and deleting apps.\n[Action required and recommendations]\nBefore general availability:\n• Set up Copilot Credits: In the Microsoft 365 admin center, go to Copilot > Cost management and create a spending policy that covers all users and includes Copilot Managed Runtime. Note: A small per-user monthly limit, such as 100 Copilot Credits (US$1), covers typical use. Add policies with higher limits for groups that use apps more frequently. Users with a Power Apps Premium license can run apps without a spending policy.\n• Enable makers: For Copilot Cowork and Copilot Code, include makers in an applicable spending policy. For Copilot Studio, allocate credits to the environments where makers build.\n• Review governance: Review policies for personal environments, connectors, content security, and app sharing, as well as apps built during public preview.\n• Communicate the change: Let your organization and maker community know that app building in Copilot Cowork and Copilot Code is expanding beyond the Microsoft Copilot Frontier Program.\nLearn more\n• (PDF) Copilot Credits Guides\n• Licensing and billing\n• Environment routing for Microsoft Copilot Managed Runtime - Power Platform | Microsoft Learn\n• FAQ about Microsoft Copilot Managed Runtime - Microsoft 365 admin | Microsoft Learn\n• What is Microsoft Copilot Managed Runtime | Microsoft Learn\n[Compliance considerations]\nConsiderationExplanation\nDoes the change introduce or significantly modify AI/ML or agent capabilities that interact with or provide access to customer data?Yes. Apps can use organizational data through connectors permitted by your organization's policies.\nDoes the change provide end users any new way of interacting with generative AI?Yes. App building in Copilot Cowork and Copilot Code is expanding beyond the Microsoft Copilot Frontier Program.\nDoes the change include an admin control, and can it be controlled through Entra ID group membership?Yes. Admins can manage governance policies, environment routing, spending policies, and app lifecycle operations. Spending policies can be assigned to security groups.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Copilot Managed Runtime, now generally available, enables IT-governed app building within tenant boundaries across Copilot Cowork, Studio, and Code. Admins manage apps, policies, and credits via the Microsoft 365 admin center. App building expands beyond the Frontier Program with environment routing and governance controls."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/admin/manage/apps/?view=o365-worldwide",
+        "https://learn.microsoft.com/microsoft-365/managed-apps/?view=o365-worldwide",
+        "https://learn.microsoft.com/power-platform/admin/default-environment-routing-copilot-managed-runtime"
+      ]
+    },
+    {
+      "id": "MC1558024",
+      "title": "Microsoft 365 admin center: New multi-tenant management experiences",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-17T22:58:39.0000000+00:00",
+      "endDateTime": "2027-04-01T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-17T22:58:48.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft is introducing new multi-tenant management experiences in the Microsoft 365 admin center to help organizations centrally manage Microsoft 365 Copilot, agents, costs, and Microsoft 365 services across multiple tenants.\nThese capabilities provide administrators with a unified experience to view tenant information, review key insights, and manage AI costs, agents, and tenant configurations without having to navigate to each tenant individually. This provides a more scalable and consistent way for organizations to administer multiple Microsoft 365 tenants.\n[Rollout schedule]\n• Public Preview: Beginning in mid-November 2026 and expected to complete by early December 2026\n[Impact on your organization]\nWho is affected\n• Organizations that manage multiple Microsoft 365 tenants and administrators responsible for managing those tenants\nPlatforms and services\n• Microsoft 365 admin center, Microsoft 365 Copilot, agents, and Microsoft 365 services\nWhat will happen\nWith the new multi-tenant management experiences, administrators will be able to:\n• Link multiple tenants and manage them through a unified interface in the Microsoft 365 admin center.\n• View information and insights across linked tenants.\n• Manage AI costs and agents across tenants.\n• Perform tenant configuration management actions without navigating to each tenant individually.\n[Action required and recommendations]\nOrganizations that want to use the new multi-tenant management capabilities must first link their tenants using Microsoft Entra tenant governance.\n• Review the setup and licensing requirements for Microsoft Entra tenant governance.\n• Link the tenants you want to manage through the unified experience.\nLearn more\n• Add Tenants to Your Partner Center Account - Partner Center | Microsoft Learn\n• Governance relationships in Tenant Governance - Microsoft Entra ID Governance | Microsoft Learn\n• Manage agents across multiple tenants in the Microsoft 365 admin center | Microsoft Learn\n• Manage configurations across multiple tenants in the Microsoft 365 admin center - Microsoft 365 admin | Microsoft Learn\n• Manage costs across multiple tenants in the Microsoft 365 admin center - Microsoft 365 admin | Microsoft Learn\n• Microsoft 365 admin center\n[Compliance considerations]\nThis change introduces multi-tenant administrative capabilities, including centralized visibility and management of AI costs, agents, and tenant configurations.\nReview these capabilities against your organization's existing administrative access and compliance requirements.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 admin center will introduce multi-tenant management for centralized control of Copilot, agents, costs, and services across tenants. Available from mid-November 2026, it enables unified tenant linking, insights, and configuration management. Organizations must link tenants via Microsoft Entra tenant governance to use these features."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/id-governance/tenant-governance/governance-relationships",
+        "https://learn.microsoft.com/microsoft-365/admin/multi-tenant/configure-multi-tenant?view=o365-worldwide",
+        "https://learn.microsoft.com/microsoft-365/admin/multi-tenant/manage-costs-across-multiple-tenants?view=o365-worldwide",
+        "https://learn.microsoft.com/microsoft-agent-365/admin/agent-multi-tenant",
+        "https://learn.microsoft.com/partner-center/account-settings/multi-tenant-account"
+      ]
+    },
+    {
+      "id": "MC1556092",
+      "title": "Changes to site logo URL metadata in SharePoint search results",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": true,
+      "startDateTime": "2026-11-16T22:24:32.0000000+00:00",
+      "endDateTime": "2027-03-29T07:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-16T22:24:43.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "Feature update"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "bodyText": "[What and Why:]\nWe are making a change to how SharePoint site logo URLs are maintained in search metadata to improve search indexing efficiency and reliability.\nGoing forward, changes to a SharePoint site's logo URL will no longer automatically update the SiteLogoUrl property on individual files and other items within that site.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in early December 2026 and expect to complete by early March 2027.\n[Impact on Your Organization:]\nThe SiteLogoUrl property will continue to be maintained for SharePoint sites. Individual items may retain a previously indexed SiteLogoUrl value, even after the site's logo changes. Applications or custom solutions that retrieve this property from individual items through search APIs may receive an outdated value.\n[Action Required/Recommendations:]\nIn the unlikely case that your organization uses the SiteLogoUrl property from individual search results, we recommend retrieving the current site logo directly from the associated SharePoint site instead. No action is required if your organization does not rely on this property.\n[Compliance considerations:]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "SharePoint will change how site logo URLs are updated in search metadata, stopping automatic updates of the SiteLogoUrl property on individual items. Rollout is from December 2026 to March 2027. Organizations using this property in search results should retrieve logos directly from the site instead."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1556082",
+      "title": "Microsoft 365 admin center: Unified release preferences for Standard, Deferred, and Frontier",
+      "category": "planForChange",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-16T22:15:18.0000000+00:00",
+      "endDateTime": "2027-01-25T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-16T22:15:33.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and Why:]\nWe're introducing a unified release preferences experience in the Microsoft 365 admin center. This brings together Standard release, Deferred release, and Frontier settings, making it easier to manage when users receive eligible generally available features and who participates in eligible preview experiences.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 and expect to complete by end of November 2026.\n[Impact on Your Organization:]\nWho is affected: Administrators managing release preferences for their organization.\nPlatforms/Services: Microsoft 365 admin center (Settings > Org settings > Release preferences); Microsoft 365 Copilot release preferences; Targeted Release.\nWhat will happen:\n• Administrators will manage these settings in the unified Release preferences panel under Settings > Org settings > Release preferences.\n• Standard or Deferred release determines when users receive eligible generally available features. Standard users receive features as they roll out to the Standard audience. Deferred users receive eligible major features approximately 30 days after the start of their Standard rollout, allowing additional preparation time.\n• Frontier provides optional participation in eligible public preview experiences, independent of the Standard or Deferred preference. For example, users can participate in Frontier previews while remaining on Deferred release for eligible generally available features.\n• Organizations can set Standard or Deferred as their organization's release preference and assign selected users to the opposite preference through individual assignments or Microsoft Entra ID security groups.\n• Existing Standard/Deferred selections and exception assignments configured under Copilot release preferences: General availability will carry forward into the unified experience. The existing Copilot Frontier entry point will remain available and open the unified panel with Frontier settings in focus.\n• Existing Targeted Release settings will remain visible in the unified experience, but administrators will not be able to modify them or enroll new users or organizations in Targeted Release. Existing configurations will continue to apply to features delivered through that model until retirement. This update does not change the separately communicated Targeted Release retirement schedule.\n[Action Required/Recommendations:]\n• No action is required to receive the unified experience or to carry forward your existing Standard/Deferred configuration.\n• Review your organization's release preference, exception assignments, and Frontier participation.\n• Update internal administrator guidance to reflect the unified experience.\n• Organizations currently using Targeted Release should also review the separately communicated retirement guidance.\n[Compliance considerations:]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 admin center will unify Standard, Deferred, and Frontier release preferences into a single panel by late November 2026. Administrators can manage feature rollout timing and preview participation more easily. Existing settings carry forward, with no action required, but review and update guidance accordingly."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
       "id": "MC1551151",
       "title": "Microsoft Entra ID: Risk-based anti-bot verification (CAPTCHA) for SMS and voice multi-factor authentication",
       "category": "preventOrFixIssue",
@@ -37,7 +200,7 @@
       "isMajorChange": false,
       "startDateTime": "2026-11-13T01:42:31.0000000+00:00",
       "endDateTime": "2026-12-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-11-13T01:42:38.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-16T21:45:49.0000000+00:00",
       "actionRequiredByDateTime": null,
       "services": [
         "Microsoft Entra"
@@ -48,7 +211,7 @@
       ],
       "japaneseTitle": "Microsoft Entra の問題の予防または修正に関するお知らせ",
       "japaneseSummary": "問題の予防または修正: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "[What and why]\nMicrosoft Entra ID is adding safeguards to protect telephony-based multifactor authentication (MFA) from automated fraudulent activity. Some users who use SMS or voice for MFA may be asked to complete a risk-based anti-bot verification step (CAPTCHA) before Microsoft sends an SMS verification code or initiates a verification call.\nThis change is separate from the planned retirement of SMS and voice authentication and does not affect the retirement timeline.\n[Rollout schedule]\n• Worldwide: Beginning in mid-November 2026.\n[Impact on your organization]\nWho is affected\n• Users who use SMS or voice for Microsoft Entra ID multifactor authentication\nPlatforms and services\n• Microsoft Entra ID\n• SMS and voice authentication methods\nWhat will happen\n• Some users may be prompted to complete a risk-based anti-bot verification step (CAPTCHA) before Microsoft sends an SMS verification code or initiates a verification call.\n• The verification step will appear only for authentication attempts that meet sufficiently high-risk thresholds.\n• Users with restrictive network or firewall settings may be unable to complete SMS or voice MFA if the verification experience cannot load.\n[Action required and recommendations]\nWe recommend that administrators take the following actions:\n• Prepare your help desk and notify users that some SMS and voice MFA attempts may require an additional CAPTCHA verification step.\n• Review the risk-based anti-bot verification documentation for network-readiness guidance. If your organization uses restrictive firewalls, proxies, or web filtering, ensure that the required resources can load during authentication.\n• Continue moving users to phishing-resistant authentication methods, such as passkeys, where possible.\nLearn more\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n• Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in - Microsoft Entra ID | Microsoft Learn\n• Understanding telephony fraud risk for Microsoft Entra multifactor authentication - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
+      "bodyText": "[What and why]\nMicrosoft Entra ID is adding safeguards to protect telephony-based multifactor authentication (MFA) from automated fraudulent activity. Some users who use SMS or voice for MFA may be asked to complete a risk-based anti-bot verification step (CAPTCHA) before Microsoft sends an SMS verification code or initiates a verification call.\nThis change is separate from the planned retirement of SMS and voice authentication and does not affect the retirement timeline.\n[Rollout schedule]\n• Worldwide: Beginning in mid-November 2026.\n[Impact on your organization]\nWho is affected\n• Users who use SMS or voice for Microsoft Entra ID multifactor authentication\nPlatforms and services\n• Microsoft Entra ID\n• SMS and voice authentication methods\nWhat will happen\n• Some users may be prompted to complete a risk-based anti-bot verification step (CAPTCHA) before Microsoft sends an SMS verification code or initiates a verification call.\n• The verification step will appear only for authentication attempts that meet sufficiently high-risk thresholds.\n• Users with restrictive network or firewall settings may be unable to complete SMS or voice MFA if the verification experience cannot load.\n[Action required and recommendations]\nWe recommend that administrators take the following actions:\n• Prepare your help desk and notify users that some SMS and voice MFA attempts may require an additional CAPTCHA verification step.\n• Review the risk-based anti-bot verification documentation for network-readiness guidance. If your organization uses restrictive firewalls, proxies, or web filtering, ensure that the required resources can load during authentication.\n• Continue moving users to phishing-resistant authentication methods, such as passkeys, where possible.\nLearn more\n• Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in - Microsoft Entra ID | Microsoft Learn\n• Understanding telephony fraud risk for Microsoft Entra multifactor authentication - Microsoft Entra ID | Microsoft Learn\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
       "details": [
         {
           "name": "Summary",
@@ -149,7 +312,7 @@
       "details": [
         {
           "name": "FeatureStatusJson",
-          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Desktop\",\"Status\":\"InRollout\",\"LastUpdateTime\":\"2026-11-16T02:11:15.9703654Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":\"StandardRelease\"},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Web\",\"Status\":\"InRollout\",\"LastUpdateTime\":\"2026-11-16T02:11:15.9703656Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":\"StandardRelease\"},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"All\",\"Status\":\"InRollout\",\"LastUpdateTime\":\"2026-11-16T02:11:15.9703657Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":\"StandardRelease\"}]}"
+          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Desktop\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-19T03:31:10.6778341Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Web\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-19T03:31:10.6778342Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"All\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-19T03:31:10.6778343Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null}]}"
         },
         {
           "name": "Summary",
@@ -1522,44 +1685,6 @@
       "officialDocumentUrls": [
         "https://learn.microsoft.com/en-us/sharepoint/brand-center-overview",
         "https://learn.microsoft.com/en-us/sharepoint/brand-fonts"
-      ]
-    },
-    {
-      "id": "MC1387526",
-      "title": "Microsoft 365 Backup: Full workload backup for SharePoint, OneDrive, and Exchange",
-      "category": "planForChange",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-06-11T16:46:49.0000000+00:00",
-      "endDateTime": "2027-04-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-12T17:02:03.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
-      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nWe are introducing Full Workload Backup for Microsoft 365 Backup, a new capability that allows admins to quickly protect an entire workload (SharePoint, OneDrive, or Exchange) with a single policy. This feature automatically includes all existing and newly created artifacts that are not already covered by custom policies, helping organizations improve data protection coverage, reduce administrative overhead, and ensure continuous backup for critical business data at scale.\nThis enhancement supports enterprise-ready data protection and automation, enabling organizations to safeguard content more efficiently while maintaining control through existing policy configurations.\nThis message is associated with Microsoft 365 Roadmap ID 464990.\n[Rollout Schedule:]\n• Public Preview (Worldwide): We will begin rolling out in early July 2026 and expect to complete by mid-July 2026.\n• General Availability: We will begin rolling out in mid-September 2026 and expect to complete by mid-October 2026.\n[Impact on Your Organization:]\nWho is affected:\n• Admins managing Microsoft 365 Backup policies\n• Organizations currently using or planning to use Microsoft 365 Backup\nPlatforms/Services:\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive\n• Exchange Online\nWhat will happen:\n• A new option to back up all artifacts within a selected workload will be available.\n• Admins can enable Full Workload Backup per workload (SharePoint, OneDrive, Exchange).\n• All eligible artifacts not covered by existing custom backup policies will be automatically protected.\n• Newly created artifacts will be included in backup coverage automatically on subsequent runs.\n• Existing custom backup policies will continue to take precedence and remain unchanged.\n• Admins can upload a CSV file to exclude specific artifacts.\n• The feature is available by default but requires admin configuration to enable.\n[Action Required/Recommendations:]\nNo immediate action is required before rollout.\nAfter rollout, we recommend that you:\n• Review your current Microsoft 365 Backup policies and coverage.\n• Evaluate whether Full Workload Backup aligns with your data protection strategy.\n• Inform backup administrators about this new capability.\n• Update internal documentation if you manage backup procedures.\nTo enable the feature:\n• Go to the Microsoft 365 Backup dashboard in the Microsoft 365 admin center.\n• Select the workload you want to protect and choose the option to back up all artifacts.\n• (Optional) Upload a CSV file on the Exclude sites step to exclude specific sites from the scope of the policy.\n• Review the coverage summary and confirm to create the Full Workload Backup policy.\nLearn more:\n• Create, view, and edit backup policies in Microsoft 365 Backup | Microsoft Learn (will be updated before rollout begins)\n• Overview of Microsoft 365 Backup | Microsoft Learn (will be updated before rollout begins)\n[Compliance considerations:]\nNo compliance considerations identified, review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "RoadmapIds",
-          "value": "464990"
-        },
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 Backup introduces Full Workload Backup for SharePoint, OneDrive, and Exchange, enabling admins to protect entire workloads with one policy. It automatically covers all existing and new artifacts, reduces admin effort, and supports enterprise data protection. Rollout begins July 2026; admin configuration is required to enable."
-        },
-        {
-          "name": "Platforms",
-          "value": "Web"
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/microsoft-365/backup/backup-overview?view=o365-worldwide"
       ]
     },
     {
