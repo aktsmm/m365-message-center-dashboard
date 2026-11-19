@@ -1,23 +1,22 @@
 {
-  "generatedAt": "2026-11-16T02:25:16.5691877+00:00",
+  "generatedAt": "2026-11-19T03:37:16.7754665+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra SMS/音声認証の廃止準備、eMudhra証明書信頼削除、Targeted release廃止が最優先",
-  "executiveSummary": "今週は Microsoft Entra の認証方式変更が中心です。Microsoft提供のSMS/音声認証は2027年2月1日以降に廃止が始まり(MC1528000)、SSPRでも利用不可になります(MC1536049)。またSMS/音声MFAでリスクベースのCAPTCHAが一部ユーザーに表示され始めます(MC1551151)。これは廃止時期には影響しません。Edge/WebView2では2026年11月16日にeMudhraルート証明書のデフォルト信頼が削除されます(MC1529467)。Targeted releaseは2027年1月に廃止予定で、2026年11月から登録ユーザーの変更ができなくなります(MC1490899)。Workforce Insightsエージェント向けMODS専用エンドポイントは2026年11月18日から廃止開始です(MC1542066)。なお、抜粋では各テナントへの正確な展開日や詳細要件が不明なものがあり、推測はしていません。",
-  "thisWeek": "MC1529467: 11月16日のEdge/WebView2 PKI Metadata更新により、emSignルートの信頼が削除されます。emSign発行証明書を使う社内サイトやサービスへの影響を確認してください。\nMC1542066: 11月18日開始のMODS Workforce Insightsエンドポイント廃止に対し、カスタム属性を送信している組織管理者は、M365プロファイルエンドポイントへの移行要否を確認してください。非公開カスタム属性にはプライベートプレビュー参加が必要です。\nMC1490899: Targeted release登録ユーザーを棚卸しし、Frontier、Standard、Deferredのどれにするか決めてください。11月以降は登録変更ができなくなります。\nMC1551151: SMS/音声MFA利用ユーザーにCAPTCHAが表示される可能性をヘルプデスクへ周知してください。",
-  "thisMonth": "MC1528000: 2027年2月1日前に、パスキー等の別方式への移行か、CYOTによる顧客管理テレフォニープロバイダーの構成を計画してください。\nMC1536049: SSPRで十分な回復方法を持たないユーザーを特定してください。猶予は、サインイン廃止展開がテナントに到達してから50日です。\nMC1546411: Viva Learning利用状況レポートとViva Insights個人インサイトのアクティブユーザー推移グラフが管理センターから廃止されるため、関連ドキュメントを更新してください。\nMC1526468: カナダの2026年タイムゾーン変更について、予定表の移行と定期会議の確認状況を点検してください。",
-  "watch": "MC1536049: Global Administratorと外部ユーザーは別展開で、サインイン廃止の開始は2027年7月1日です。\nMC1325414: SSPRの登録済み認証方式必須化の展開状況を継続的に確認してください。\nMC1470885: Word、Excel、PowerPointのCopilotボタン新プロンプト入力は2026年12月末までに展開予定です。",
-  "customerQuestions": "SMS/音声MFAやSSPRに依存しているユーザー数と、パスキー等への移行計画はどうなっていますか。\nCYOTで顧客管理のテレフォニープロバイダーを使う予定はありますか。\nemSign証明書に依存する社内システムや外部サービスはありますか。\nTargeted releaseの登録ユーザーは誰で、各ユーザーにどの新リリース設定が適切ですか。\nMODSでWorkforce Insights向けにカスタム属性を送信していますか。\nカナダ拠点のユーザーや会議室で、タイムゾーン変更の影響を確認済みですか。",
+  "headline": "Entra SMS/音声認証の退役が最優先。Edge XSLT無効化・SharePoint検索メタデータ変更・リリース設定統合も準備が必要",
+  "executiveSummary": "今週のMessage Center(101件)で最も影響が大きいのは、Microsoft EntraのMicrosoft提供SMS/音声認証の退役です。2027年2月1日開始で、MC1528000は期限前の移行またはCYOT構成を推奨しています。SSPRでも同様に利用不可となり、サインイン退役の展開後50日で移行期間が終わります(MC1536049)。一方、MC1551151では11月中旬からSMS/音声MFAで一部ユーザーにCAPTCHAが表示される可能性があります(退役時期への影響なし)。その他、Edgeのブラウザ内蔵XSLTが12月中旬に既定で無効化(MC1509789)、SharePoint検索のSiteLogoUrl更新仕様変更(2026年12月上旬〜2027年3月上旬、MC1556092)、管理センターのリリース設定統合(11月中旬〜下旬、MC1556082)、Conditional AccessのCustom Controls退役(2027年5月完全退役、MC1422061)があります。抜粋に無い要件・日付は不明として扱い、原文の確認が必要です。",
+  "thisWeek": "MC1528000: SMS/音声認証の利用ユーザーを洗い出し、パスキー等への移行またはCYOT構成の方針を決める(2027年2月1日開始)\nMC1536049: SSPRの回復手段が不足するユーザーを特定する\nMC1551151: 11月中旬以降のSMS/音声MFAでのCAPTCHA表示に備え、ヘルプデスクへ周知する\nMC1556082: 管理センターのリリース設定(Standard/Deferred/Frontier)の統合UIと現在の設定を確認する",
+  "thisMonth": "MC1509789: 社内サイトや業務アプリでブラウザ内蔵XSLTへの依存を棚卸しする(12月中旬に既定で無効化)\nMC1556092: 検索APIで個別アイテムのSiteLogoUrlを利用するカスタム解決策の有無を確認する(12月上旬から展開)\nMC1422061: Conditional AccessのCustom Controls利用有無を確認し、External MFAへの移行計画を立てる",
+  "watch": "MC1536049: Global Administratorと外部ユーザーのSSPR移行は2027年7月1日開始の別展開として追跡する\nMC1558033: Copilot Managed Runtimeは11月中旬〜12月中旬にGA展開。管理方針を継続確認する\nMC1558024: マルチテナント管理のパブリックプレビュー(11月中旬〜12月上旬)",
+  "customerQuestions": "SMS/音声をMFAやSSPRで使っているユーザー数と、パスキー等への移行状況はどうなっていますか?\nCYOT(顧客管理の通信事業者)を使う必要がありますか?\n社内Webやデバイス管理画面でブラウザ内蔵XSLTに依存するものはありますか?\nSharePoint検索結果の個別アイテムのSiteLogoUrlを使うカスタム解決策はありますか?\nConditional AccessでCustom Controlsを使っていますか?",
   "referencedIds": [
-    "MC1325414",
-    "MC1470885",
-    "MC1490899",
-    "MC1526468",
+    "MC1422061",
+    "MC1509789",
     "MC1528000",
-    "MC1529467",
     "MC1536049",
-    "MC1542066",
-    "MC1546411",
-    "MC1551151"
+    "MC1551151",
+    "MC1556082",
+    "MC1556092",
+    "MC1558024",
+    "MC1558033"
   ],
   "messageUpdates": [
     {
@@ -689,6 +688,34 @@
       "id": "MC1551151",
       "japaneseTitle": "Microsoft Entra の問題の予防または修正に関するお知らせ",
       "japaneseSummary": "問題の予防または修正: Microsoft Entra。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1556082",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1556092",
+      "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
+      "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1558024",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1558033",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -2222,22 +2249,6 @@
       "validatedAt": "2026-11-12T18:29:15.4900734+00:00"
     },
     {
-      "id": "MC985483",
-      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
-      "japaneseFacts": {
-        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
-        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
-        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
-        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
-      "sourceCharacterCount": 1148,
-      "sourceTruncated": false,
-      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
-      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
       "id": "MC1551151",
       "japaneseTitle": "Entra ID:SMS/音声MFAにリスクベースのCAPTCHA検証を追加",
       "japaneseFacts": {
@@ -2252,9 +2263,25 @@
       "sourceTruncated": false,
       "sourceHash": "7bd94eaf2b28ffe07e1d7bee364a126e69ffcaecf4c19ddb252b53890ef6ffea",
       "validatedAt": "2026-11-16T02:25:16.5592691+00:00"
+    },
+    {
+      "id": "MC985483",
+      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
+      "japaneseFacts": {
+        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
+        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
+        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
+        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
+      "sourceCharacterCount": 1148,
+      "sourceTruncated": false,
+      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
+      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-11-16T02:20:04.0786412+00:00",
-  "summarySourceHash": "76abc2fded5e4c50fc9b997e36403441a77fc307c3ac5bdcf13083808e224b1a",
-  "sourceAgentRunId": "43790662039"
+  "summarySourceHash": "485c7af869be94f8b2324a148719e9309ca0b9319f56f3b38cb1d1f73c200b16",
+  "summaryGeneratedAt": "2026-11-19T03:37:16.6038270+00:00",
+  "sourceAgentRunId": "44452050451"
 }
