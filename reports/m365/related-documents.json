@@ -4844,7 +4844,7 @@
         "bc5a78d7cd0ea6bf28ab1215181955b28ac2e45a1d79765278c8b81976a99812"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:36:31.494961+00:00",
+      "checkedAt": "2026-11-21T10:08:04.309196+00:00",
       "documents": [],
       "reviewHash": "3a9b31e9dfbcd067eaf3c39f909915e172cd975ba8c7277aea9662511d573258",
       "query": "Microsoft management",
@@ -4865,14 +4865,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:36:31.499825+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:04.316630+00:00",
       "variants": {
         "84a33bdd4034c02f592738c05fbfd1a72e6791e66fa3a699d18ab63c5f12ea3b": {
           "sourceHashes": [
             "84a33bdd4034c02f592738c05fbfd1a72e6791e66fa3a699d18ab63c5f12ea3b"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:28.739633+00:00",
+          "checkedAt": "2026-11-21T10:08:01.126269+00:00",
           "documents": [],
           "reviewHash": "3a9b31e9dfbcd067eaf3c39f909915e172cd975ba8c7277aea9662511d573258",
           "query": "Microsoft management",
@@ -4893,7 +4893,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:31.276353+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:04.028435+00:00"
         }
       }
     },
@@ -6759,7 +6759,7 @@
             "1d0a4729e1a08cfe54fcae61b31764e1c3acfa5facc075eab98565df699d22ee"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:31.712357+00:00",
+          "checkedAt": "2026-11-21T10:08:04.601324+00:00",
           "documents": [],
           "reviewHash": "780705b8ee21c22c74485ac69168dd1e45851eaf335771fa58d6b824f240e7af",
           "query": "Microsoft entra self service password authentication",
@@ -6780,14 +6780,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:34.216005+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:07.253302+00:00"
         },
         "a2365e9101584f9017eaa0cbbf86fa4768d350669842e76bce7393b6933107d2": {
           "sourceHashes": [
             "a2365e9101584f9017eaa0cbbf86fa4768d350669842e76bce7393b6933107d2"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:34.647870+00:00",
+          "checkedAt": "2026-11-21T10:08:07.819137+00:00",
           "documents": [],
           "reviewHash": "780705b8ee21c22c74485ac69168dd1e45851eaf335771fa58d6b824f240e7af",
           "query": "Microsoft entra self service password authentication",
@@ -6808,14 +6808,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:34.653096+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:07.826152+00:00"
         },
         "2448f5e6b637839e48c248e36fd850a49d5b23e58f1b46ea2cd7880552e19bc0": {
           "sourceHashes": [
             "2448f5e6b637839e48c248e36fd850a49d5b23e58f1b46ea2cd7880552e19bc0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:34.429327+00:00",
+          "checkedAt": "2026-11-21T10:08:07.532136+00:00",
           "documents": [],
           "reviewHash": "780705b8ee21c22c74485ac69168dd1e45851eaf335771fa58d6b824f240e7af",
           "query": "Microsoft entra self service password authentication",
@@ -6836,7 +6836,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:34.434485+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:07.539189+00:00"
         }
       }
     },
@@ -6893,7 +6893,7 @@
         "fa0ca8f02b90e29519f3c929c58b06f23c7626818680fe9f55167b9bb0574ad3"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:36:37.567693+00:00",
+      "checkedAt": "2026-11-21T10:08:11.151618+00:00",
       "documents": [],
       "reviewHash": "5f9fd74282e9fb60e052dbea4aac6eabcc41723109615eea4830733ee3cab424",
       "query": "Microsoft conditional access windows hello business macos platform sso registration",
@@ -6914,14 +6914,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:36:37.573477+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:11.159933+00:00",
       "variants": {
         "772741a871d040e5885d5da24d09ef64e799b5273c1bbf1b1e9dc39a082dbecf": {
           "sourceHashes": [
             "772741a871d040e5885d5da24d09ef64e799b5273c1bbf1b1e9dc39a082dbecf"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:34.863528+00:00",
+          "checkedAt": "2026-11-21T10:08:08.106099+00:00",
           "documents": [],
           "reviewHash": "5f9fd74282e9fb60e052dbea4aac6eabcc41723109615eea4830733ee3cab424",
           "query": "Microsoft conditional access windows hello business macos platform sso registration",
@@ -6942,7 +6942,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:37.355472+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:10.869477+00:00"
         }
       }
     },
@@ -7345,7 +7345,7 @@
         "03d174ea37d198c731e7f6bc86d6ead8e84332f7d2a5b4e52f7420933eea6780"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:36:37.783669+00:00",
+      "checkedAt": "2026-11-21T10:08:11.442448+00:00",
       "documents": [],
       "reviewHash": "ec0174559db7653e46ff12dbb397e8cf86e5a0672486634afbee54fbf938d525",
       "query": "Microsoft organizational data custom attributes granular access policy",
@@ -7366,14 +7366,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:36:40.415542+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:14.275454+00:00",
       "variants": {
         "697071d0484b528320ca50703531ceca2d22e993129e1e8dbbd9d7941d27310d": {
           "sourceHashes": [
             "697071d0484b528320ca50703531ceca2d22e993129e1e8dbbd9d7941d27310d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:40.627557+00:00",
+          "checkedAt": "2026-11-21T10:08:14.556018+00:00",
           "documents": [],
           "reviewHash": "ec0174559db7653e46ff12dbb397e8cf86e5a0672486634afbee54fbf938d525",
           "query": "Microsoft organizational data custom attributes granular access policy",
@@ -7394,7 +7394,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:40.632302+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:14.563280+00:00"
         }
       }
     },
@@ -8411,7 +8411,7 @@
         "0975b62fe15dbd352d5065affaa1de0899d906c444bb94ca52745ffd2543b278"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:36:40.841728+00:00",
+      "checkedAt": "2026-11-21T10:08:14.842212+00:00",
       "documents": [],
       "reviewHash": "afa7e82d5f0d72cc579f2edcf0ce0fcb35b23092a3520341aa99f283aca2c065",
       "query": "Microsoft ecdn analytics data retention",
@@ -8432,14 +8432,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:36:43.623321+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:17.851590+00:00",
       "variants": {
         "c09507e9350548791e310d911be97ff4fb80317c32d506746dff3ef3af3a4181": {
           "sourceHashes": [
             "c09507e9350548791e310d911be97ff4fb80317c32d506746dff3ef3af3a4181"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:43.833980+00:00",
+          "checkedAt": "2026-11-21T10:08:18.134442+00:00",
           "documents": [],
           "reviewHash": "afa7e82d5f0d72cc579f2edcf0ce0fcb35b23092a3520341aa99f283aca2c065",
           "query": "Microsoft ecdn analytics data retention",
@@ -8460,7 +8460,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:43.842061+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:18.146140+00:00"
         }
       }
     },
@@ -8519,7 +8519,7 @@
         "ee5ae52e1f73ae0059cbe0f48a87c07815184987048f8cae16f7315655d00f46"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:36:47.387838+00:00",
+      "checkedAt": "2026-11-21T10:08:21.897502+00:00",
       "documents": [],
       "reviewHash": "c5b29d46e96d3f1f8629469a9d6be9f14a165bd981984726e1c0d0a72938f929",
       "query": "Microsoft entra partner tier support roles assignments",
@@ -8540,14 +8540,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:36:47.449386+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:21.987463+00:00",
       "variants": {
         "4285b2b12b6204a6abcdcda68dd58a272bd89d1ddb5064a4d9ae7e3fd6d20ac1": {
           "sourceHashes": [
             "4285b2b12b6204a6abcdcda68dd58a272bd89d1ddb5064a4d9ae7e3fd6d20ac1"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:44.051812+00:00",
+          "checkedAt": "2026-11-21T10:08:18.423308+00:00",
           "documents": [],
           "reviewHash": "c5b29d46e96d3f1f8629469a9d6be9f14a165bd981984726e1c0d0a72938f929",
           "query": "Microsoft entra partner tier support roles assignments",
@@ -8568,7 +8568,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:47.171893+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:21.614092+00:00"
         }
       }
     },
@@ -9287,7 +9287,7 @@
         "3a99e9bdcc997fc9a114c4cdf04d3841a6e8a95e4d1c3217f87ac3c59de3b469"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:36:47.660633+00:00",
+      "checkedAt": "2026-11-21T10:08:22.269291+00:00",
       "documents": [],
       "reviewHash": "15a2477ccb1410e8bdd4f93d2d31ea5f769985c54c26da268edd75f6147926c6",
       "query": "Microsoft copilot companion taskbar pinning",
@@ -9308,14 +9308,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:36:50.395525+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:25.012802+00:00",
       "variants": {
         "5219efa0855aae9366c6fd4b3d417f2383ead47509ed2483cb10f767e62e1fe0": {
           "sourceHashes": [
             "5219efa0855aae9366c6fd4b3d417f2383ead47509ed2483cb10f767e62e1fe0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:50.606822+00:00",
+          "checkedAt": "2026-11-21T10:08:25.292360+00:00",
           "documents": [],
           "reviewHash": "15a2477ccb1410e8bdd4f93d2d31ea5f769985c54c26da268edd75f6147926c6",
           "query": "Microsoft copilot companion taskbar pinning",
@@ -9336,7 +9336,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:50.611242+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:25.298867+00:00"
         }
       }
     },
@@ -9394,9 +9394,41 @@
       "sourceHashes": [
         "5e4936310ab748db2905f7c5c9cbc872e532acf0c906d940e8c825ff8016aee5"
       ],
-      "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:36:53.876094+00:00",
-      "documents": [],
+      "status": "verified",
+      "checkedAt": "2026-11-21T10:08:28.443409+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
+          "title": "Microsoft 365 バックアップ でバックアップ ポリシーを作成、表示、編集する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-15T19:59:14.789003+00:00",
+          "bodySha256": "f9d9f4fa03b75a1bcf6fd7cbb0a121f1c0ab822192ad288814c1ae512abaafec",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "reviewed_candidate",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "backup",
+            "matchedTerms": [
+              "configurable",
+              "recovery",
+              "window"
+            ],
+            "requiredFeatureTerms": [
+              "configurable",
+              "recovery",
+              "window"
+            ],
+            "coverage": 1.0,
+            "platforms": [],
+            "score": 1.0,
+            "articleExcerpt": "## Create backup policies\r\n\r\nTo use Microsoft 365 Backup for SharePoint, Exchange, OneDrive or Entra, you need to create a backup policy for each product. A *policy* represents the backup plan defined by admins for protecting the Microsoft 365 data of an organization.\r\n\r\nA policy contains details of what data (SharePoint sites, Exchange mailboxes, OneDrive accounts, and Entra objects) to protect. For SharePoint, Exchange, and OneDrive, you can set the **Recovery window** when you create a policy and change it later on an active policy. The backup frequency isn't currently variable or modifiable. For more information, see Configure the backup recovery window.\r\n\r\nYou can create more than one backup policy for each product (SharePoint, Exchange, and OneDrive) with a limit of 100 policies per product, and each backup policy can protect up to 100,000 items. This allows you to segregate your data by logical partitions such as department, geography, and so on for ease of management and administration. Note that any SharePoint site, Exchange mailbox, or OneDrive account can be part of one backup policy only. For more information about capacity limits, see [Backup scale limits](backup-overview?view=o365-worldwide#backup-scale-limits).\r\n\r\nMicrosoft Entra Backup and Recovery Premium (preview), enabled through Microsoft 365 Backup, supports a single policy and full tenant backup. You can back up all the [supported Entra objects](/en-us/entra/backup/scope-supported-objects-limitations) in your tenant via a single policy for Entra backup. There is no provision to create more than one policy. There is no limit on the number of objects that can be backed up within the single policy. Premium's backup recovery window is fixed at 30 days and isn't configurable. Available backup history accumulates after each daily backup cycle. The Standard plan, included with Microsoft Entra ID P1 or P2, retains up to seven days. For plan differences and what happens when Premium stops, see [Microsoft Entra Backup and Recovery plans](/en-us/entra/backup/backup-recovery-plans). Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authenti",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
+            "bodySha256": "7e198aa80f11a4c27f1f6d85794a3adf93b06a295323392b54bb71aea5614676",
+            "reviewedAt": "2026-11-21T10:08:28.456259+00:00"
+          }
+        }
+      ],
       "reviewHash": "11496b0507bc8a1914a151d73c0b6ae9a7a35008c53bec4f4c0bca1489663e0d",
       "query": "Microsoft backup recovery window",
       "explicitUrls": [],
@@ -9407,7 +9439,8 @@
         {
           "url": "https://learn.microsoft.com/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
           "source": "reviewed_candidate",
-          "decision": "rejected_feature_or_platform_mismatch"
+          "decision": "adopted",
+          "score": 1.0
         }
       ],
       "searchEvidenceKey": "search:Microsoft backup recovery window",
@@ -9415,16 +9448,48 @@
         "Microsoft backup recovery window"
       ],
       "searchSucceeded": true,
-      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:36:53.884252+00:00",
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-21T10:08:28.456270+00:00",
       "variants": {
         "31d562988c1c416b6ab21b30680292f57d7cab26f21d9b86e89b6a3a7f1cecc1": {
           "sourceHashes": [
             "31d562988c1c416b6ab21b30680292f57d7cab26f21d9b86e89b6a3a7f1cecc1"
           ],
-          "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:50.823311+00:00",
-          "documents": [],
+          "status": "verified",
+          "checkedAt": "2026-11-21T10:08:25.580886+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
+              "title": "Microsoft 365 バックアップ でバックアップ ポリシーを作成、表示、編集する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-15T19:59:14.789003+00:00",
+              "bodySha256": "f9d9f4fa03b75a1bcf6fd7cbb0a121f1c0ab822192ad288814c1ae512abaafec",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "reviewed_candidate",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "backup",
+                "matchedTerms": [
+                  "configurable",
+                  "recovery",
+                  "window"
+                ],
+                "requiredFeatureTerms": [
+                  "configurable",
+                  "recovery",
+                  "window"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "## Create backup policies\r\n\r\nTo use Microsoft 365 Backup for SharePoint, Exchange, OneDrive or Entra, you need to create a backup policy for each product. A *policy* represents the backup plan defined by admins for protecting the Microsoft 365 data of an organization.\r\n\r\nA policy contains details of what data (SharePoint sites, Exchange mailboxes, OneDrive accounts, and Entra objects) to protect. For SharePoint, Exchange, and OneDrive, you can set the **Recovery window** when you create a policy and change it later on an active policy. The backup frequency isn't currently variable or modifiable. For more information, see Configure the backup recovery window.\r\n\r\nYou can create more than one backup policy for each product (SharePoint, Exchange, and OneDrive) with a limit of 100 policies per product, and each backup policy can protect up to 100,000 items. This allows you to segregate your data by logical partitions such as department, geography, and so on for ease of management and administration. Note that any SharePoint site, Exchange mailbox, or OneDrive account can be part of one backup policy only. For more information about capacity limits, see [Backup scale limits](backup-overview?view=o365-worldwide#backup-scale-limits).\r\n\r\nMicrosoft Entra Backup and Recovery Premium (preview), enabled through Microsoft 365 Backup, supports a single policy and full tenant backup. You can back up all the [supported Entra objects](/en-us/entra/backup/scope-supported-objects-limitations) in your tenant via a single policy for Entra backup. There is no provision to create more than one policy. There is no limit on the number of objects that can be backed up within the single policy. Premium's backup recovery window is fixed at 30 days and isn't configurable. Available backup history accumulates after each daily backup cycle. The Standard plan, included with Microsoft Entra ID P1 or P2, retains up to seven days. For plan differences and what happens when Premium stops, see [Microsoft Entra Backup and Recovery plans](/en-us/entra/backup/backup-recovery-plans). Supported objects include users, groups, apps, service principals, Conditional Access policies, named locations, authenti",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
+                "bodySha256": "7e198aa80f11a4c27f1f6d85794a3adf93b06a295323392b54bb71aea5614676",
+                "reviewedAt": "2026-11-21T10:08:28.163933+00:00"
+              }
+            }
+          ],
           "reviewHash": "11496b0507bc8a1914a151d73c0b6ae9a7a35008c53bec4f4c0bca1489663e0d",
           "query": "Microsoft backup recovery window",
           "explicitUrls": [],
@@ -9435,7 +9500,8 @@
             {
               "url": "https://learn.microsoft.com/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
               "source": "reviewed_candidate",
-              "decision": "rejected_feature_or_platform_mismatch"
+              "decision": "adopted",
+              "score": 1.0
             }
           ],
           "searchEvidenceKey": "search:Microsoft backup recovery window",
@@ -9443,8 +9509,8 @@
             "Microsoft backup recovery window"
           ],
           "searchSucceeded": true,
-          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:53.663840+00:00"
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-12-21T10:08:28.163943+00:00"
         }
       }
     },
@@ -9453,7 +9519,7 @@
         "8388d4a3453f0152a5ad197333dac7de1c78c4873dae93ac8b8c5cd67fe2cead"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:36:54.094845+00:00",
+      "checkedAt": "2026-11-21T10:08:28.738686+00:00",
       "documents": [],
       "reviewHash": "b0b7d37325196b9de529c14f0871756d9532afcc7a29bf48e70f5c57b57af3fa",
       "query": "Microsoft copilot web content",
@@ -9474,14 +9540,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:36:56.773301+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:31.246497+00:00",
       "variants": {
         "b7cf067a18f96722d745ea027dc8bcc2c921fc6f6d004fba263bbbaf5225faef": {
           "sourceHashes": [
             "b7cf067a18f96722d745ea027dc8bcc2c921fc6f6d004fba263bbbaf5225faef"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:56.986787+00:00",
+          "checkedAt": "2026-11-21T10:08:31.527334+00:00",
           "documents": [],
           "reviewHash": "b0b7d37325196b9de529c14f0871756d9532afcc7a29bf48e70f5c57b57af3fa",
           "query": "Microsoft copilot web content",
@@ -9502,7 +9568,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:36:56.988809+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:31.530288+00:00"
         }
       }
     },
@@ -10699,9 +10765,49 @@
       "sourceHashes": [
         "c8c5e5b2ac5725d6d2d799f5c0e620c52abd16e8aec38363942dc72d2f9ad64f"
       ],
-      "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:01.130739+00:00",
-      "documents": [],
+      "status": "verified",
+      "checkedAt": "2026-11-21T10:08:36.134227+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes",
+          "title": "Microsoft 365 Copilot のリリース ノート",
+          "locale": "ja-jp",
+          "checkedAt": "2026-10-29T01:52:15.356436+00:00",
+          "bodySha256": "74a42e36f920666d2a49ac9d74a33d6e7381c4f3eb757deab1bebde324a5c259",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "reviewed_candidate",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "copilot",
+            "matchedTerms": [
+              "custom",
+              "defined",
+              "onedrive",
+              "powerpoint",
+              "skill",
+              "stored"
+            ],
+            "requiredFeatureTerms": [
+              "custom",
+              "defined",
+              "onedrive",
+              "powerpoint",
+              "skill",
+              "stored"
+            ],
+            "coverage": 1.0,
+            "platforms": [
+              "web"
+            ],
+            "score": 1.0,
+            "articleExcerpt": "### PowerPoint\r\n\r\n- **Create custom skills in Copilot in PowerPoint** [Windows]\r\n\r\n    Create custom skills in Copilot in PowerPoint for tailored workflows for your specific presentation needs.\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Copilot now supports user defined custom skills, allowing users to extend its capabilities with personalized commands and workflows in PowerPoint. Previously, Copilot operated only with built-in skills and predefined functions in PowerPoint. This update enables customization within Microsoft 365 security and compliance standards.\r\n\r\n    **Why:** Users need more flexibility to automate unique presentation tasks and workflows. Custom skills let users:\r\n- Define specific commands suited to their content style.\r\n- Automate repetitive or specialized tasks.\r\n- Enhance productivity by tailoring Copilot to their needs.\r\n\r\n    **Try this:**\r\n\r\n    1. Open PowerPoint and access the Copilot pane.\r\n    2. Select 'Create custom skill' to define new commands.\r\n    3. Test your custom skill within your presentation workflow.\r\n\r\n    **Why this matters:** Custom skills let users personalize Copilot to match their unique presentation workflows, reducing manual effort.\r\n\r\n    **Business impact:** Teams can standardize and automate specialized presentation tasks, improving consistency and efficiency.\r\n\r\n    **Personal impact:** You save time by automating repetitive tasks and gain more control over Copilot’s assistance.\r\n\r\n- **Reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint** [Windows, Mac, Web]\r\n\r\n    You can now reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint.\r\n\r\n    **Roadmap ID:**\r\n\r\n    - [555894](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555894)\r\n    - [555895](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555895)\r\n    - [555897](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555897)\r\n\r\n        **Details:**\r\n\r\n        **What changed:** Copilot in PowerPoint can now recognize references to files stored in SharePo",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+            "bodySha256": "0f568526c7c6dbc3794d49a9592fefe749877e3ec123c721a513c7643ed30248",
+            "reviewedAt": "2026-11-21T10:08:36.352051+00:00"
+          }
+        }
+      ],
       "reviewHash": "a98d1db7e59f05d0721672a45c3ff274005a135ce9cc36af82c929548698f4e8",
       "query": "Microsoft powerpoint copilot web onedrive custom skills",
       "explicitUrls": [],
@@ -10712,7 +10818,8 @@
         {
           "url": "https://learn.microsoft.com/microsoft-365/copilot/release-notes",
           "source": "reviewed_candidate",
-          "decision": "rejected_feature_or_platform_mismatch"
+          "decision": "adopted",
+          "score": 1.0
         }
       ],
       "searchEvidenceKey": "search:Microsoft powerpoint copilot web onedrive custom skills",
@@ -10720,16 +10827,56 @@
         "Microsoft powerpoint copilot web onedrive custom skills"
       ],
       "searchSucceeded": true,
-      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:01.261198+00:00",
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-21T10:08:36.352067+00:00",
       "variants": {
         "c71b8c95deb3e69ac641e8996a42d3d73239d50554611b67cc19e1767c2318b6": {
           "sourceHashes": [
             "c71b8c95deb3e69ac641e8996a42d3d73239d50554611b67cc19e1767c2318b6"
           ],
-          "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:00.789308+00:00",
-          "documents": [],
+          "status": "verified",
+          "checkedAt": "2026-11-21T10:08:35.636797+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes",
+              "title": "Microsoft 365 Copilot のリリース ノート",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-29T01:52:15.356436+00:00",
+              "bodySha256": "74a42e36f920666d2a49ac9d74a33d6e7381c4f3eb757deab1bebde324a5c259",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "reviewed_candidate",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "copilot",
+                "matchedTerms": [
+                  "custom",
+                  "defined",
+                  "onedrive",
+                  "powerpoint",
+                  "skill",
+                  "stored"
+                ],
+                "requiredFeatureTerms": [
+                  "custom",
+                  "defined",
+                  "onedrive",
+                  "powerpoint",
+                  "skill",
+                  "stored"
+                ],
+                "coverage": 1.0,
+                "platforms": [
+                  "web"
+                ],
+                "score": 1.0,
+                "articleExcerpt": "### PowerPoint\r\n\r\n- **Create custom skills in Copilot in PowerPoint** [Windows]\r\n\r\n    Create custom skills in Copilot in PowerPoint for tailored workflows for your specific presentation needs.\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Copilot now supports user defined custom skills, allowing users to extend its capabilities with personalized commands and workflows in PowerPoint. Previously, Copilot operated only with built-in skills and predefined functions in PowerPoint. This update enables customization within Microsoft 365 security and compliance standards.\r\n\r\n    **Why:** Users need more flexibility to automate unique presentation tasks and workflows. Custom skills let users:\r\n- Define specific commands suited to their content style.\r\n- Automate repetitive or specialized tasks.\r\n- Enhance productivity by tailoring Copilot to their needs.\r\n\r\n    **Try this:**\r\n\r\n    1. Open PowerPoint and access the Copilot pane.\r\n    2. Select 'Create custom skill' to define new commands.\r\n    3. Test your custom skill within your presentation workflow.\r\n\r\n    **Why this matters:** Custom skills let users personalize Copilot to match their unique presentation workflows, reducing manual effort.\r\n\r\n    **Business impact:** Teams can standardize and automate specialized presentation tasks, improving consistency and efficiency.\r\n\r\n    **Personal impact:** You save time by automating repetitive tasks and gain more control over Copilot’s assistance.\r\n\r\n- **Reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint** [Windows, Mac, Web]\r\n\r\n    You can now reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint.\r\n\r\n    **Roadmap ID:**\r\n\r\n    - [555894](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555894)\r\n    - [555895](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555895)\r\n    - [555897](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555897)\r\n\r\n        **Details:**\r\n\r\n        **What changed:** Copilot in PowerPoint can now recognize references to files stored in SharePo",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+                "bodySha256": "0f568526c7c6dbc3794d49a9592fefe749877e3ec123c721a513c7643ed30248",
+                "reviewedAt": "2026-11-21T10:08:35.849983+00:00"
+              }
+            }
+          ],
           "reviewHash": "a98d1db7e59f05d0721672a45c3ff274005a135ce9cc36af82c929548698f4e8",
           "query": "Microsoft powerpoint copilot web onedrive custom skills",
           "explicitUrls": [],
@@ -10740,7 +10887,8 @@
             {
               "url": "https://learn.microsoft.com/microsoft-365/copilot/release-notes",
               "source": "reviewed_candidate",
-              "decision": "rejected_feature_or_platform_mismatch"
+              "decision": "adopted",
+              "score": 1.0
             }
           ],
           "searchEvidenceKey": "search:Microsoft powerpoint copilot web onedrive custom skills",
@@ -10748,16 +10896,56 @@
             "Microsoft powerpoint copilot web onedrive custom skills"
           ],
           "searchSucceeded": true,
-          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:00.918648+00:00"
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-12-21T10:08:35.850003+00:00"
         },
         "66db7adbd3b9bdad7fae4d374973e45b457037040fa4fbacc89c8d264e133ba5": {
           "sourceHashes": [
             "66db7adbd3b9bdad7fae4d374973e45b457037040fa4fbacc89c8d264e133ba5"
           ],
-          "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:36:57.199200+00:00",
-          "documents": [],
+          "status": "verified",
+          "checkedAt": "2026-11-21T10:08:31.813248+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes",
+              "title": "Microsoft 365 Copilot のリリース ノート",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-29T01:52:15.356436+00:00",
+              "bodySha256": "74a42e36f920666d2a49ac9d74a33d6e7381c4f3eb757deab1bebde324a5c259",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "reviewed_candidate",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "copilot",
+                "matchedTerms": [
+                  "custom",
+                  "defined",
+                  "onedrive",
+                  "powerpoint",
+                  "skill",
+                  "stored"
+                ],
+                "requiredFeatureTerms": [
+                  "custom",
+                  "defined",
+                  "onedrive",
+                  "powerpoint",
+                  "skill",
+                  "stored"
+                ],
+                "coverage": 1.0,
+                "platforms": [
+                  "web"
+                ],
+                "score": 1.0,
+                "articleExcerpt": "### PowerPoint\r\n\r\n- **Create custom skills in Copilot in PowerPoint** [Windows]\r\n\r\n    Create custom skills in Copilot in PowerPoint for tailored workflows for your specific presentation needs.\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Copilot now supports user defined custom skills, allowing users to extend its capabilities with personalized commands and workflows in PowerPoint. Previously, Copilot operated only with built-in skills and predefined functions in PowerPoint. This update enables customization within Microsoft 365 security and compliance standards.\r\n\r\n    **Why:** Users need more flexibility to automate unique presentation tasks and workflows. Custom skills let users:\r\n- Define specific commands suited to their content style.\r\n- Automate repetitive or specialized tasks.\r\n- Enhance productivity by tailoring Copilot to their needs.\r\n\r\n    **Try this:**\r\n\r\n    1. Open PowerPoint and access the Copilot pane.\r\n    2. Select 'Create custom skill' to define new commands.\r\n    3. Test your custom skill within your presentation workflow.\r\n\r\n    **Why this matters:** Custom skills let users personalize Copilot to match their unique presentation workflows, reducing manual effort.\r\n\r\n    **Business impact:** Teams can standardize and automate specialized presentation tasks, improving consistency and efficiency.\r\n\r\n    **Personal impact:** You save time by automating repetitive tasks and gain more control over Copilot’s assistance.\r\n\r\n- **Reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint** [Windows, Mac, Web]\r\n\r\n    You can now reference files saved in SharePoint libraries and OneDrive folders when creating a presentation with Copilot in PowerPoint.\r\n\r\n    **Roadmap ID:**\r\n\r\n    - [555894](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555894)\r\n    - [555895](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555895)\r\n    - [555897](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=555897)\r\n\r\n        **Details:**\r\n\r\n        **What changed:** Copilot in PowerPoint can now recognize references to files stored in SharePo",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
+                "bodySha256": "0f568526c7c6dbc3794d49a9592fefe749877e3ec123c721a513c7643ed30248",
+                "reviewedAt": "2026-11-21T10:08:35.355038+00:00"
+              }
+            }
+          ],
           "reviewHash": "a98d1db7e59f05d0721672a45c3ff274005a135ce9cc36af82c929548698f4e8",
           "query": "Microsoft powerpoint copilot web onedrive custom skills",
           "explicitUrls": [],
@@ -10768,7 +10956,8 @@
             {
               "url": "https://learn.microsoft.com/microsoft-365/copilot/release-notes",
               "source": "reviewed_candidate",
-              "decision": "rejected_feature_or_platform_mismatch"
+              "decision": "adopted",
+              "score": 1.0
             }
           ],
           "searchEvidenceKey": "search:Microsoft powerpoint copilot web onedrive custom skills",
@@ -10776,8 +10965,8 @@
             "Microsoft powerpoint copilot web onedrive custom skills"
           ],
           "searchSucceeded": true,
-          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:00.576592+00:00"
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-12-21T10:08:35.355055+00:00"
         }
       }
     },
@@ -11614,7 +11803,7 @@
         "b42368662aee9c03b67896d19a26d298262cb2148b5b5811504d030c9bf3ebc2"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:40.683134+00:00",
+      "checkedAt": "2026-11-21T10:09:12.246586+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft entra passwordless password signin",
@@ -11630,7 +11819,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:42.180394+00:00",
+      "nextAttemptAt": "2026-11-24T10:09:13.649099+00:00",
       "variants": {
         "c8bbb1658d6d5f70e106de360554692a3201e93966e5caada1c407c06bef5d4b": {
           "sourceHashes": [
@@ -11776,7 +11965,7 @@
             "c213dfbfff6304f2c2df573c4efc473ccb2fe8b2c2eef9f87a973b2c0eea9f6d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:40.462468+00:00",
+          "checkedAt": "2026-11-21T10:09:11.952231+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passwordless password signin",
@@ -11792,14 +11981,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:40.469324+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:11.962087+00:00"
         },
         "3bb42fbb97b7b1ee8045981b2d9829c46b0ed794dd93a4b466f107b92be16c8b": {
           "sourceHashes": [
             "3bb42fbb97b7b1ee8045981b2d9829c46b0ed794dd93a4b466f107b92be16c8b"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:37.388742+00:00",
+          "checkedAt": "2026-11-21T10:09:08.742199+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft entra passwordless password signin",
@@ -11815,7 +12004,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:40.247580+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:11.667973+00:00"
         }
       }
     },
@@ -12934,7 +13123,7 @@
         "1f641089451a7cc5f876aaff598ac921750f6c13f66142df60ec006256ddb9ae"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:01.475981+00:00",
+      "checkedAt": "2026-11-21T10:08:36.633984+00:00",
       "documents": [],
       "reviewHash": "354d2520b17e1cdee8e614c7b42192f7dc073719050c805e5fe664a0df0828f4",
       "query": "Microsoft powerpoint copilot mac upload custom skills onedrive",
@@ -12955,14 +13144,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:03.061393+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:38.260199+00:00",
       "variants": {
         "f8eefd73b7eda74bee9585dfc08d47de98df87f2a996464b4950659df378d5de": {
           "sourceHashes": [
             "f8eefd73b7eda74bee9585dfc08d47de98df87f2a996464b4950659df378d5de"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:03.273022+00:00",
+          "checkedAt": "2026-11-21T10:08:38.541541+00:00",
           "documents": [],
           "reviewHash": "354d2520b17e1cdee8e614c7b42192f7dc073719050c805e5fe664a0df0828f4",
           "query": "Microsoft powerpoint copilot mac upload custom skills onedrive",
@@ -12983,7 +13172,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:03.406562+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:38.745039+00:00"
         }
       }
     },
@@ -12992,7 +13181,7 @@
         "ad05f7ba87838b83076d1e775ef90ab4ec0ccde75e712d891ed982b3e112499c"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:03.618160+00:00",
+      "checkedAt": "2026-11-21T10:08:39.029000+00:00",
       "documents": [],
       "reviewHash": "7745564eb50c1fd3d6c187e4e743227e3c11584af4c39d44064db9c8234058fc",
       "query": "Microsoft powerpoint copilot web upload custom skills",
@@ -13013,14 +13202,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:05.264930+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:40.684840+00:00",
       "variants": {
         "d120f0a97f93c02f4bff04fca1fc5afab14eeefd2307b56f2c6fa85d551c3ced": {
           "sourceHashes": [
             "d120f0a97f93c02f4bff04fca1fc5afab14eeefd2307b56f2c6fa85d551c3ced"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:05.475892+00:00",
+          "checkedAt": "2026-11-21T10:08:40.965759+00:00",
           "documents": [],
           "reviewHash": "7745564eb50c1fd3d6c187e4e743227e3c11584af4c39d44064db9c8234058fc",
           "query": "Microsoft powerpoint copilot web upload custom skills",
@@ -13041,7 +13230,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:05.607795+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:41.171938+00:00"
         }
       }
     },
@@ -14486,7 +14675,7 @@
             "f0dd577dfcb8cf942d346b537cc88f743938d5fefa9bf8473ecd4f59d7e0daca"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:08.696632+00:00",
+          "checkedAt": "2026-11-21T10:08:44.393458+00:00",
           "documents": [],
           "reviewHash": "f6e7193c4eae75037117ea0874beddfb8e3f6376fae0779b9628e2467e5dabd2",
           "query": "Microsoft entra windows hello business macos platform sso mfa",
@@ -14507,14 +14696,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:08.701294+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:44.400138+00:00"
         },
         "4ca1a4a267a9ec0cb586e79e5eebf2fea6ffb662423d764b00604b3c34c93810": {
           "sourceHashes": [
             "4ca1a4a267a9ec0cb586e79e5eebf2fea6ffb662423d764b00604b3c34c93810"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:05.817808+00:00",
+          "checkedAt": "2026-11-21T10:08:41.452975+00:00",
           "documents": [],
           "reviewHash": "f6e7193c4eae75037117ea0874beddfb8e3f6376fae0779b9628e2467e5dabd2",
           "query": "Microsoft entra windows hello business macos platform sso mfa",
@@ -14535,7 +14724,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:08.482826+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:44.113090+00:00"
         },
         "322551a8ed3108d867bf692fc5ca39b44f1db4ad35f6ae49fd64626234428b2a": {
           "sourceHashes": [
@@ -14878,7 +15067,7 @@
             "62bb1bb2966500bbf652c1d2797320825eaa8feabc73ec1c9062a568a47eccb2"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:08.912358+00:00",
+          "checkedAt": "2026-11-21T10:08:44.680186+00:00",
           "documents": [],
           "reviewHash": "7fd65a98dbb7a845b654909c8db5fe6eb1f58c211e9791d97828a414c6951c79",
           "query": "Microsoft copilot mobile chat access",
@@ -14899,7 +15088,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:12.025918+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:47.857347+00:00"
         }
       }
     },
@@ -14994,7 +15183,7 @@
             "2d1f1c325a277bed29fd239b0fcde9c3963f308d2e3b226aadff29a670a9ce49"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:37.173192+00:00",
+          "checkedAt": "2026-11-21T10:09:08.455556+00:00",
           "documents": [],
           "reviewHash": "604fbdcdc01b44e27bd1f902cd6284aa79e93e36d744f1b6c1aa7348b270f300",
           "query": "Microsoft edge copilot endpoint",
@@ -15015,7 +15204,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:37.177723+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:08.462150+00:00"
         }
       }
     },
@@ -15160,7 +15349,7 @@
         "e318ed5ac0591043c24182c965fd94f0dee8a8d66ef1969dc3b7219094187fd5"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:12.239531+00:00",
+      "checkedAt": "2026-11-21T10:08:48.139968+00:00",
       "documents": [],
       "reviewHash": "21f7d057886cc400349a9f27a27981dc92e1fd7081ddcd7db1dbfe5f1493ec1d",
       "query": "Microsoft copilot people connectors executive assistant",
@@ -15181,7 +15370,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:14.861595+00:00",
+      "nextAttemptAt": "2026-11-24T10:08:51.011076+00:00",
       "variants": {}
     },
     "MC1458474": {
@@ -15576,7 +15765,7 @@
             "70eb0cce01dfa93824db7d4dc6d1ffd01402f1502b32db1e46304fb069c70fec"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:17.905085+00:00",
+          "checkedAt": "2026-11-21T10:08:54.458464+00:00",
           "documents": [],
           "reviewHash": "05af67c6feb7f7cd69198275e65d3777e17cef7a6c7e8068e50905abcf41f06d",
           "query": "Microsoft edge management service security update",
@@ -15597,14 +15786,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:17.908977+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:54.464032+00:00"
         },
         "e397ee453636f48c53296ceaee04c8c6e20fbfea8ce3ed3deed9a51371104b1d": {
           "sourceHashes": [
             "e397ee453636f48c53296ceaee04c8c6e20fbfea8ce3ed3deed9a51371104b1d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:18.120580+00:00",
+          "checkedAt": "2026-11-21T10:08:54.746108+00:00",
           "documents": [],
           "reviewHash": "05af67c6feb7f7cd69198275e65d3777e17cef7a6c7e8068e50905abcf41f06d",
           "query": "Microsoft edge management service security update",
@@ -15625,14 +15814,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:18.124400+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:54.751760+00:00"
         },
         "5e6907a6763fb2a0581acbd0354f2e60f6315b831f2d7e3402175d0731d484a9": {
           "sourceHashes": [
             "5e6907a6763fb2a0581acbd0354f2e60f6315b831f2d7e3402175d0731d484a9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:15.074764+00:00",
+          "checkedAt": "2026-11-21T10:08:51.296256+00:00",
           "documents": [],
           "reviewHash": "05af67c6feb7f7cd69198275e65d3777e17cef7a6c7e8068e50905abcf41f06d",
           "query": "Microsoft edge management service security update",
@@ -15653,7 +15842,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:17.692188+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:54.178124+00:00"
         }
       }
     },
@@ -17242,7 +17431,7 @@
             "a094e60b45b15f8243c5880cf1c35d5b483ca8a4cdc74e1816cd6fc311d38e09"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:42.395090+00:00",
+          "checkedAt": "2026-11-21T10:09:13.932295+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot email sender address",
@@ -17258,7 +17447,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:45.381830+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:16.842472+00:00"
         }
       }
     },
@@ -17690,7 +17879,7 @@
             "484cc998695332ada8a19582dd4abcb30589f87c46bda91b3675982051634ec9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:24.594054+00:00",
+          "checkedAt": "2026-11-21T10:08:55.033902+00:00",
           "documents": [],
           "reviewHash": "66cf4886e10fec0032d00e2a38e9652f1058ae61c754d03dfe558b5e4f50e853",
           "query": "Microsoft office ltsc support",
@@ -17711,7 +17900,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:24.598116+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:55.039788+00:00"
         }
       }
     },
@@ -17836,7 +18025,7 @@
             "c6d96babe22cf32bf3d65b418b3916e45a08a8c2e4440492d1840b6e85dc75f0"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:27.575636+00:00",
+          "checkedAt": "2026-11-21T10:08:58.259565+00:00",
           "documents": [],
           "reviewHash": "e9fe31201ac60626fe2074787389b0f7e3a03997068bfe4788431749511331e9",
           "query": "Microsoft edge internet explorer mode support",
@@ -17857,14 +18046,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:27.579790+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:58.265619+00:00"
         },
         "3ad1234f2b6e8ce2a014bc65a4f687f69b42d9a8748eb48bf1065b528e68c9ac": {
           "sourceHashes": [
             "3ad1234f2b6e8ce2a014bc65a4f687f69b42d9a8748eb48bf1065b528e68c9ac"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:24.809527+00:00",
+          "checkedAt": "2026-11-21T10:08:55.320309+00:00",
           "documents": [],
           "reviewHash": "e9fe31201ac60626fe2074787389b0f7e3a03997068bfe4788431749511331e9",
           "query": "Microsoft edge internet explorer mode support",
@@ -17885,7 +18074,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:27.363249+00:00"
+          "nextAttemptAt": "2026-11-24T10:08:57.981604+00:00"
         }
       }
     },
@@ -18529,7 +18718,7 @@
         "e89a124cc5426ec91cb22ac8e18a8d2d829664d45e44a9b9e37e94c8fbb50f0d"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:27.793473+00:00",
+      "checkedAt": "2026-11-21T10:08:58.552422+00:00",
       "documents": [],
       "reviewHash": "1e769ac552274ffd8754bb53944c69ce0210ae85e9e96ff012c809f8d6dd3eef",
       "query": "Microsoft agent setup",
@@ -18550,7 +18739,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:30.577627+00:00",
+      "nextAttemptAt": "2026-11-24T10:09:01.510965+00:00",
       "variants": {}
     },
     "MC1477996": {
@@ -19015,7 +19204,7 @@
             "b779859aa27361bbce5061dbfed6426d02b6414d8c597ce9d45f60aecd55da80"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:30.790826+00:00",
+          "checkedAt": "2026-11-21T10:09:01.794748+00:00",
           "documents": [],
           "reviewHash": "e124ec2b4eb907eb219d0c276423f16afe6e9535346fbefba0f228daba379e68",
           "query": "Microsoft profile card",
@@ -19036,7 +19225,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:33.463693+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:04.422568+00:00"
         }
       }
     },
@@ -19656,7 +19845,7 @@
             "d2416ca9b1769e8a3445a95aa2a634fe151a5eaca5eec53ec83abc29a55fdd44"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:33.676942+00:00",
+          "checkedAt": "2026-11-21T10:09:04.707098+00:00",
           "documents": [],
           "reviewHash": "8a80e2abcfda80fc9d404c83d94bc89b04c3a107111ff9c8c2105ffa1a423ec7",
           "query": "Microsoft entra authentication external content security policy",
@@ -19677,7 +19866,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:33.681397+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:04.713900+00:00"
         }
       }
     },
@@ -20702,7 +20891,7 @@
             "1fef45b9602ef8438dd60e7e595d710d4c922da05b268b9ebdd19960ceb50e7d"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:33.892419+00:00",
+          "checkedAt": "2026-11-21T10:09:04.995278+00:00",
           "documents": [],
           "reviewHash": "1694e5762fa2a1ee51b6b3ec8d022a2a3123cc1c93a10e83078062e818ffca43",
           "query": "Microsoft graph default create api",
@@ -20723,14 +20912,14 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:36.724114+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:07.846843+00:00"
         },
         "2f3480af7f8883fbd78f97f9360cc425282dfda18e02d6f9fce4f190868826aa": {
           "sourceHashes": [
             "2f3480af7f8883fbd78f97f9360cc425282dfda18e02d6f9fce4f190868826aa"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:36.938376+00:00",
+          "checkedAt": "2026-11-21T10:09:08.129911+00:00",
           "documents": [],
           "reviewHash": "1694e5762fa2a1ee51b6b3ec8d022a2a3123cc1c93a10e83078062e818ffca43",
           "query": "Microsoft graph default create api",
@@ -20751,7 +20940,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:36.960479+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:08.173750+00:00"
         }
       }
     },
@@ -21434,14 +21623,14 @@
             "6a23494141a6da24e3aef7b32ef51813299280c8b7a4abde31f715898bfb0d76"
           ],
           "status": "verified",
-          "checkedAt": "2026-10-22T00:43:41.838074+00:00",
+          "checkedAt": "2026-11-21T10:09:26.495342+00:00",
           "documents": [
             {
               "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
-              "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
+              "title": "SMS と音声による認証用に任意のテレフォニー プロバイダーを選択する",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-22T00:43:47.101706+00:00",
-              "bodySha256": "83ec253a56a82222dde9352b5982fb64c74264fbaf8d0ad1dfaf4bf39c850adc",
+              "checkedAt": "2026-11-21T10:09:32.516185+00:00",
+              "bodySha256": "31b6366c0bd6da5b8cb703c995680f9f0459e21387e8ada75d8c806ba669afaf",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
               "source": "explicit_message_link",
@@ -21469,18 +21658,18 @@
                 "coverage": 1.0,
                 "platforms": [],
                 "score": 1.2,
-                "articleExcerpt": "# Choose a telephony provider for SMS and voice authentication\r\n\r\nMicrosoft Entra ID will support Choose Your Own Telephony Provider, which lets organizations continue using SMS or voice authentication with a supported telephony provider. You select a telephony provider through the Microsoft Security Store and manage the provider relationship for your organization.\r\n\r\nMicrosoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\r\n\r\nImportant\r\n\r\nChoose Your Own Telephony Provider isn't available to configure yet. Information about the providers participating in the private preview is available now. The configuration experience becomes available beginning October 30, 2026.\r\n\r\n",
+                "articleExcerpt": "# Choose your own telephony provider for SMS and voice authentication\r\n\r\nChoose Your Own Telephony Provider (CYOT) lets your organization use a supported telephony provider to deliver SMS and voice authentication for Microsoft Entra ID.\r\n\r\nWith CYOT, Microsoft Entra continues to manage the authentication experience, including one-time passcode (OTP) generation and validation, while SMS messages and voice calls are delivered through the telephony provider that your organization selects and configures.\r\n\r\nCYOT gives your organization more control over telephony provider selection, geographic coverage, pricing, and telephony delivery.\r\n\r\nImportant\r\n\r\nMicrosoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\r\n\r\n",
                 "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
-                "bodySha256": "142a1d683b21c28ff4bf67c052d3d6637317b0b5e28e476f12a5b0e34c7f3c39",
-                "reviewedAt": "2026-10-22T00:43:47.101745+00:00"
+                "bodySha256": "fc07ff0478f62a00fc560e34c4062774d371f74c45f2450288b58ccd7f2de8b4",
+                "reviewedAt": "2026-11-21T10:09:32.516235+00:00"
               }
             },
             {
               "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sms-voice-retirement",
               "title": "既定でのパスキーと、Microsoftが提供する SMS および音声認証の廃止",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-22T00:43:51.140481+00:00",
-              "bodySha256": "065e40588dae2ff7ec7f6dd578d03180d34e4c6e384f459b3bc2d7385849e5b9",
+              "checkedAt": "2026-11-21T10:09:34.946962+00:00",
+              "bodySha256": "b8bd0b958b2a8b3ad716062fd0e731dc97a05fe84a2b17762a45bbe186102c9b",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
               "source": "explicit_message_link",
@@ -21509,15 +21698,15 @@
                 "score": 1.057,
                 "articleExcerpt": "# Passkeys by default and retirement of Microsoft-provided SMS and voice authentication\r\n\r\nTo help enterprises adopt AI at scale, it is imperative for users to use secure authentication and move from phishable authentication methods to phishing-resistant authentication methods like [passkeys](concept-authentication-passkeys-fido2). Therefore, Microsoft Entra ID is making passkeys the default sign-in experience, so every organization gets phishing-resistant security by default. SMS and voice are no longer positioned as secure authentication methods and will no longer be provided natively in Entra ID.\r\n\r\nStarting September 1, 2026, passkeys become the default authentication experience and will be automatically enabled for users enabled for SMS or voice. From February 1, 2027, Microsoft-provided telephony delivery for SMS and voice will be retired for all users except Global Administrators and external users. For Global Administrators and external users, Microsoft-provided SMS and voice authentication will be retired on July 1, 2027. Customers who still require these methods should configure a telephony provider through Microsoft Security Store. Soprano and Telesign are the initial providers available during the private preview, and more providers will become available by general availability. For provider and offer information, see [Choose a telephony provider for SMS and voice authentication](concept-phone-providers).\r\n\r\nUsers who already sign in with passkeys, Windows Hello for Business, or another phishing-resistant method can continue using those methods. However, users who remain enabled for SMS or voice might still receive prompts to register passkeys on eligible devices. The July 1, 2027 retirement date applies to Global Administrators and external users. Internal guest users aren't included in that July 1 group and still follow the February 1, 2027 retirement date. To check who in your tenant still uses SMS or Voice, see Find active SMS or Voice users in your tenant.\r\n\r\n",
                 "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
-                "bodySha256": "d7df995ad5f4b8f334445ecea4cfc66a0301c17a0d165e62701b75933b44b658",
-                "reviewedAt": "2026-10-22T00:43:51.140593+00:00"
+                "bodySha256": "94edf8bd9d7b4cb31748634d2e9ef097b3cc5b79372e9fa645c11153c92054c2",
+                "reviewedAt": "2026-11-21T10:09:34.947040+00:00"
               }
             },
             {
               "url": "https://learn.microsoft.com/ja-jp/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
               "title": "SaaS ソリューションを購入し、リンクされたソリューションをデプロイする",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-22T00:43:55.171419+00:00",
+              "checkedAt": "2026-11-21T10:09:38.620749+00:00",
               "bodySha256": "1d1825f5c9add28cbf22e18e9b5e9e9580ea6ef573b4fec493e1966aca4b9529",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
@@ -21526,7 +21715,7 @@
               "featureEvidence": {
                 "canonicalArticle": "https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
                 "bodySha256": "7442a4e1f94b64e451f17ecfd1c74a465cb4536afd38ed8c54023bfbcff2c816",
-                "reviewedAt": "2026-10-22T00:43:55.171466+00:00"
+                "reviewedAt": "2026-11-21T10:09:38.620799+00:00"
               }
             }
           ],
@@ -21565,7 +21754,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
-          "nextAttemptAt": "2026-11-21T00:43:55.171474+00:00"
+          "nextAttemptAt": "2026-12-21T10:09:38.620806+00:00"
         }
       }
     },
@@ -21574,13 +21763,13 @@
         "1296efa3c37d924fe1ee0e7c79cc04ed019c1e1dd9d0dcc3a32c635ed7b8102b"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-22T00:43:55.278752+00:00",
+      "checkedAt": "2026-11-21T10:09:38.902801+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365-apps/admin-center/update-repair",
           "title": "[更新プログラムの修復] を使用して Microsoft 365 Apps の更新プログラムの問題を特定して修復する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-22T00:44:03.055548+00:00",
+          "checkedAt": "2026-11-21T10:09:46.293216+00:00",
           "bodySha256": "50276c9b52e514a6a4ba84c304d2db4571943e0f25170f45b4203dce58f41673",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -21602,7 +21791,7 @@
             "articleExcerpt": "## How Update Repair works\r\n\r\nUpdate Repair uses device data reported to Inventory, including the installed Microsoft 365 Apps version and build, the target version policy, and Click-to-Run error information. It compares the installed version with the latest version available for the device's configured update channel and assigns a status.\r\n\r\nThe report shows devices in the **Needs repair** and **Needs attention** states. Devices that are **Up to date** or **Outdated** aren't shown because they don't currently require remediation.\r\n\r\n| Status | What it means |\r\n| --- | --- |\r\n| **Up to date** | The device is on the latest available version for its update channel. |\r\n| **Outdated** | The device is one or two versions behind and has no reported error. |\r\n| **Needs repair** | The device is at least one version behind and has an error that doesn't require separate remediation, or it's at least three versions behind and has no reported error. |\r\n| **Needs attention** | The device has an error that requires separate remediation, or it otherwise qualifies for repair but is running a Microsoft 365 Apps build earlier than `16.0.20326.20000`. These devices aren't eligible for the **Repair** action. |\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365-apps/admin-center/update-repair",
             "bodySha256": "4ec8c72ef8739d7727a8e9276d2423077f30e779ba3796fd98495782c5f40038",
-            "reviewedAt": "2026-10-22T00:44:03.055595+00:00"
+            "reviewedAt": "2026-11-21T10:09:46.293263+00:00"
           }
         }
       ],
@@ -21629,7 +21818,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-21T00:44:03.055602+00:00",
+      "nextAttemptAt": "2026-12-21T10:09:46.293270+00:00",
       "variants": {}
     },
     "MC1515930": {
@@ -21725,7 +21914,7 @@
         "6341620e11a8d20ddbd58ae39301901c68de24a86c3fb9388bfd85c470de4e51"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:50.388212+00:00",
+      "checkedAt": "2026-11-21T10:09:22.773665+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft authenticator ios android",
@@ -21741,7 +21930,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:50.396319+00:00",
+      "nextAttemptAt": "2026-11-24T10:09:22.783613+00:00",
       "variants": {
         "5f467f62070397114c0506884bae3f1b467e002f772fee3b340aacbbc68800df": {
           "sourceHashes": [
@@ -22261,7 +22450,7 @@
             "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:50.609591+00:00",
+          "checkedAt": "2026-11-21T10:09:23.072113+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft office copilot power app",
@@ -22277,7 +22466,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:53.469281+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:25.916605+00:00"
         },
         "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9": {
           "sourceHashes": [
@@ -22309,7 +22498,7 @@
         "83a59287f810d825c5c8f29b619944e5b5a62f0f38593905b2a4b92047d8751d"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:45.597816+00:00",
+      "checkedAt": "2026-11-21T10:09:17.125962+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot update",
@@ -22325,14 +22514,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:48.482928+00:00",
+      "nextAttemptAt": "2026-11-24T10:09:20.657364+00:00",
       "variants": {
         "2e8e761824425b04bf2fd798e0385a8cb5d81b175928ff110bebe710bbb361de": {
           "sourceHashes": [
             "2e8e761824425b04bf2fd798e0385a8cb5d81b175928ff110bebe710bbb361de"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-17T22:37:53.684143+00:00",
+          "checkedAt": "2026-11-21T10:09:26.200416+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft copilot update",
@@ -22348,7 +22537,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-20T22:37:53.691492+00:00"
+          "nextAttemptAt": "2026-11-24T10:09:26.211045+00:00"
         }
       }
     },
@@ -22616,7 +22805,7 @@
         "80cda25b574b480a15aaddd3af72f76e7b26a5abdbdbe90dc50f95759b860d34"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-17T22:37:48.697220+00:00",
+      "checkedAt": "2026-11-21T10:09:20.941345+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft limit release preferences",
@@ -22631,7 +22820,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-20T22:37:50.173438+00:00",
+      "nextAttemptAt": "2026-11-24T10:09:22.489807+00:00",
       "variants": {}
     },
     "MC1536049": {
@@ -23750,12 +23939,12 @@
     "snapshots": 50,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-17T23:01:10+00:00",
-    "checkedAt": "2026-11-20T22:00:04.395596+00:00",
+    "checkedAt": "2026-11-21T10:09:46.698231+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 63,
+      "no_verified_document": 61,
       "not_researched": 0,
-      "verified": 114
+      "verified": 116
     },
     "latestCounts": {
       "fetch_failed": 0,
@@ -23765,12 +23954,12 @@
     },
     "latestTotal": 101,
     "pendingAttempts": 0,
-    "processedThisRun": 100,
+    "processedThisRun": 53,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 159,
+      "no_verified_document": 154,
       "not_researched": 0,
-      "verified": 218
+      "verified": 223
     },
     "retrievalErrors": 0,
     "coverage": "complete",
