@@ -5472,13 +5472,13 @@
         "f7b1bb1724a34041227b08f0eab1cbfb6915cb8acb8d6559eb4ff66718838564"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-22T18:45:55.763792+00:00",
+      "checkedAt": "2026-11-21T20:39:34.266118+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/troubleshoot/exchange/calendars/permissions/fix-full-access-delegate-conflicts",
           "title": "従来の予定表でのフル アクセスと委任の競合を解決する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-22T18:45:55.657243+00:00",
+          "checkedAt": "2026-11-21T20:39:34.045139+00:00",
           "bodySha256": "b8dd36d496b011a2de2487cf8611e8d1c179d63591ee8021dfd1978a76bd1365",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -5512,7 +5512,7 @@
             "articleExcerpt": "## Resolution\r\n\r\n1. Confirm that both mailboxes are hosted in Exchange Online.\r\n2. In classic Outlook, open the shared calendar folder properties and confirm whether the folder type includes `(REST)`.\r\n3. If the calendar uses the legacy model, remove the old shared-calendar entry from Outlook.\r\n4. Add the calendar again by using **Add Calendar** &gt; **Open Shared Calendar**, or have the mailbox owner send a new calendar-sharing invitation.\r\n5. Open the folder properties again and confirm that the folder type includes `(REST)`.\r\n\r\nFor information about the legacy conflict, see [Conflicting permission sets when working with shared or delegated folders in Outlook](https://techcommunity.microsoft.com/blog/outlookglobalcustomerservice/conflicting-permission-sets-when-working-with-shared-or-delegated-folders-in-out/388842). For information about the modern model and upgrade behavior, see [Calendar sharing in Microsoft 365](https://support.microsoft.com/outlook/calendar-sharing-in-microsoft-365).\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/troubleshoot/exchange/calendars/permissions/fix-full-access-delegate-conflicts",
             "bodySha256": "c5780a6ec0489ad3168cf7133b2f82e8726c45899fa9e258c1dd4fc66050a453",
-            "reviewedAt": "2026-10-22T18:45:55.768272+00:00"
+            "reviewedAt": "2026-11-21T20:39:34.270641+00:00"
           }
         }
       ],
@@ -5536,20 +5536,20 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-21T18:45:55.768283+00:00",
+      "nextAttemptAt": "2026-12-21T20:39:34.270650+00:00",
       "variants": {
         "19a3b840c05206bf8a230837fa8fa8bba179c764feee2a4ae16dc41f77c5a724": {
           "sourceHashes": [
             "19a3b840c05206bf8a230837fa8fa8bba179c764feee2a4ae16dc41f77c5a724"
           ],
           "status": "verified",
-          "checkedAt": "2026-10-22T18:45:49.561965+00:00",
+          "checkedAt": "2026-11-21T20:39:28.219585+00:00",
           "documents": [
             {
               "url": "https://learn.microsoft.com/ja-jp/troubleshoot/exchange/calendars/permissions/fix-full-access-delegate-conflicts",
               "title": "従来の予定表でのフル アクセスと委任の競合を解決する",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-22T18:45:55.657243+00:00",
+              "checkedAt": "2026-11-21T20:39:34.045139+00:00",
               "bodySha256": "b8dd36d496b011a2de2487cf8611e8d1c179d63591ee8021dfd1978a76bd1365",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
@@ -5583,7 +5583,7 @@
                 "articleExcerpt": "## Resolution\r\n\r\n1. Confirm that both mailboxes are hosted in Exchange Online.\r\n2. In classic Outlook, open the shared calendar folder properties and confirm whether the folder type includes `(REST)`.\r\n3. If the calendar uses the legacy model, remove the old shared-calendar entry from Outlook.\r\n4. Add the calendar again by using **Add Calendar** &gt; **Open Shared Calendar**, or have the mailbox owner send a new calendar-sharing invitation.\r\n5. Open the folder properties again and confirm that the folder type includes `(REST)`.\r\n\r\nFor information about the legacy conflict, see [Conflicting permission sets when working with shared or delegated folders in Outlook](https://techcommunity.microsoft.com/blog/outlookglobalcustomerservice/conflicting-permission-sets-when-working-with-shared-or-delegated-folders-in-out/388842). For information about the modern model and upgrade behavior, see [Calendar sharing in Microsoft 365](https://support.microsoft.com/outlook/calendar-sharing-in-microsoft-365).\r\n\r\n",
                 "canonicalArticle": "https://learn.microsoft.com/en-us/troubleshoot/exchange/calendars/permissions/fix-full-access-delegate-conflicts",
                 "bodySha256": "c5780a6ec0489ad3168cf7133b2f82e8726c45899fa9e258c1dd4fc66050a453",
-                "reviewedAt": "2026-10-22T18:45:55.657290+00:00"
+                "reviewedAt": "2026-11-21T20:39:34.045182+00:00"
               }
             }
           ],
@@ -5607,7 +5607,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
-          "nextAttemptAt": "2026-11-21T18:45:55.657297+00:00"
+          "nextAttemptAt": "2026-12-21T20:39:34.045189+00:00"
         }
       }
     },
@@ -18821,125 +18821,47 @@
       "sourceHashes": [
         "1acc19b9ad2f4f62f4ef2d2f78df2c20a9cd229d1cea747049c8dbd681de768f"
       ],
-      "status": "verified",
-      "checkedAt": "2026-10-22T18:48:09.739953+00:00",
-      "documents": [
-        {
-          "url": "https://learn.microsoft.com/ja-jp/copilot/manage",
-          "title": "Microsoft Copilot Chatの管理",
-          "locale": "ja-jp",
-          "checkedAt": "2026-10-22T18:48:15.653187+00:00",
-          "bodySha256": "215f0a0894b3f18fe17a58ab26f15ea71356e97ba7a6796d497d56862369e4f4",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "automatic_learn_search",
-          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
-          "featureEvidence": {
-            "product": "teams",
-            "matchedTerms": [
-              "chat",
-              "copilot",
-              "removing"
-            ],
-            "requiredFeatureTerms": [
-              "chat",
-              "copilot",
-              "list",
-              "removing"
-            ],
-            "coverage": 0.75,
-            "platforms": [],
-            "score": 0.95,
-            "articleExcerpt": "## Block users from using Copilot Chat\r\n\r\n[Blocking Copilot through Integrated Apps](/en-us/microsoft-365/admin/manage/teams-apps-work-on-outlook-and-m365#how-to-block-an-app) is a tenant-wide control that you can scope to specific users or groups, including licensed users. This setting blocks Copilot in the Microsoft Copilot app, Teams, Outlook, and Copilot Chat on the web for all users. To remove access to the Copilot app only for unlicensed users while retaining access for licensed users, see Removing access to Copilot Chat.\r\n\r\nUsers blocked through Integrated Apps see the *Copilot Chat was turned off for your organization* experience when opening Copilot Chat in the Copilot app.\r\n\r\n",
-            "canonicalArticle": "https://learn.microsoft.com/en-us/copilot/manage",
-            "bodySha256": "3c4d864e16557b7dadb825a34957b3ff7560a5dea7463b41e80d78e5516aacb4",
-            "reviewedAt": "2026-10-22T18:48:15.653273+00:00"
-          }
-        }
-      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-21T20:39:43.244627+00:00",
+      "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft teams copilot chat",
       "explicitUrls": [],
       "searchProvider": "Microsoft Learn public MCP",
       "researchVersion": 4,
       "errors": [],
-      "candidates": [
-        {
-          "url": "https://learn.microsoft.com/copilot/manage",
-          "source": "automatic_learn_search",
-          "decision": "adopted",
-          "score": 0.95
-        }
-      ],
+      "candidates": [],
       "searchEvidenceKey": "search:Microsoft teams copilot chat",
       "searchedQueries": [
-        "Microsoft teams copilot chat"
+        "Microsoft teams copilot chat",
+        "teams copilot chat"
       ],
       "searchSucceeded": true,
-      "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-21T18:48:15.653280+00:00",
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-24T20:39:46.197855+00:00",
       "variants": {
         "44843c9ced22ab77533375c74e2fefcef1600cc149acd66236815496a0308f56": {
           "sourceHashes": [
             "44843c9ced22ab77533375c74e2fefcef1600cc149acd66236815496a0308f56"
           ],
-          "status": "verified",
-          "checkedAt": "2026-10-22T18:48:15.759114+00:00",
-          "documents": [
-            {
-              "url": "https://learn.microsoft.com/ja-jp/copilot/manage",
-              "title": "Microsoft Copilot Chatの管理",
-              "locale": "ja-jp",
-              "checkedAt": "2026-10-22T18:48:15.653187+00:00",
-              "bodySha256": "215f0a0894b3f18fe17a58ab26f15ea71356e97ba7a6796d497d56862369e4f4",
-              "localeEvidence": "GET locale metadata and fetched article body",
-              "localeFallback": [],
-              "source": "automatic_learn_search",
-              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
-              "featureEvidence": {
-                "product": "teams",
-                "matchedTerms": [
-                  "chat",
-                  "copilot",
-                  "removing"
-                ],
-                "requiredFeatureTerms": [
-                  "chat",
-                  "copilot",
-                  "list",
-                  "removing"
-                ],
-                "coverage": 0.75,
-                "platforms": [],
-                "score": 0.95,
-                "articleExcerpt": "## Block users from using Copilot Chat\r\n\r\n[Blocking Copilot through Integrated Apps](/en-us/microsoft-365/admin/manage/teams-apps-work-on-outlook-and-m365#how-to-block-an-app) is a tenant-wide control that you can scope to specific users or groups, including licensed users. This setting blocks Copilot in the Microsoft Copilot app, Teams, Outlook, and Copilot Chat on the web for all users. To remove access to the Copilot app only for unlicensed users while retaining access for licensed users, see Removing access to Copilot Chat.\r\n\r\nUsers blocked through Integrated Apps see the *Copilot Chat was turned off for your organization* experience when opening Copilot Chat in the Copilot app.\r\n\r\n",
-                "canonicalArticle": "https://learn.microsoft.com/en-us/copilot/manage",
-                "bodySha256": "3c4d864e16557b7dadb825a34957b3ff7560a5dea7463b41e80d78e5516aacb4",
-                "reviewedAt": "2026-10-22T18:48:15.765505+00:00"
-              }
-            }
-          ],
+          "status": "no_verified_document",
+          "checkedAt": "2026-11-21T20:39:46.420093+00:00",
+          "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft teams copilot chat",
           "explicitUrls": [],
           "searchProvider": "Microsoft Learn public MCP",
           "researchVersion": 4,
           "errors": [],
-          "candidates": [
-            {
-              "url": "https://learn.microsoft.com/copilot/manage",
-              "source": "automatic_learn_search",
-              "decision": "adopted",
-              "score": 0.95
-            }
-          ],
+          "candidates": [],
           "searchEvidenceKey": "search:Microsoft teams copilot chat",
           "searchedQueries": [
-            "Microsoft teams copilot chat"
+            "Microsoft teams copilot chat",
+            "teams copilot chat"
           ],
           "searchSucceeded": true,
-          "rationale": "Articles verified against this snapshot version.",
-          "nextAttemptAt": "2026-11-21T18:48:15.765516+00:00"
+          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+          "nextAttemptAt": "2026-11-24T20:39:46.427858+00:00"
         }
       }
     },
@@ -19394,14 +19316,14 @@
             "effee8532c30c4acf3b511ac6f7cf75a9e26b6cf19af553beeac2b2b7c9af13a"
           ],
           "status": "verified",
-          "checkedAt": "2026-10-22T18:46:40.179442+00:00",
+          "checkedAt": "2026-11-21T20:39:43.016965+00:00",
           "documents": [
             {
-              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+              "url": "https://learn.microsoft.com/ja-jp/plugins/declarative-agent-connected-agent",
               "title": "宣言型エージェントから他のエージェントに接続する",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-22T18:46:40.072018+00:00",
-              "bodySha256": "78ea84fa0779914594d8b3f0eb23ed91847629eba4fdf04ba6a0ad326fa21b89",
+              "checkedAt": "2026-11-21T20:39:40.565102+00:00",
+              "bodySha256": "7e6a50ab45b61e4ea68a57e22aeabee4005905aea3d64c42cbf9cd7437ea24f6",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
               "source": "reviewed_candidate",
@@ -19421,10 +19343,10 @@
                 "coverage": 1.0,
                 "platforms": [],
                 "score": 1.0,
-                "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
+                "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
                 "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
-                "bodySha256": "c0cfb94451816a8d5d403747eabb4e3ed42575ef570356469f034ebc5e4e2f70",
-                "reviewedAt": "2026-10-22T18:46:40.184160+00:00"
+                "bodySha256": "a0f1066291a0136cfa096eb315aedaa0dfbf01b0f02eaef4bd584a513f49157f",
+                "reviewedAt": "2026-11-21T20:39:43.021428+00:00"
               }
             }
           ],
@@ -19440,6 +19362,11 @@
               "source": "reviewed_candidate",
               "decision": "adopted",
               "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/plugins/declarative-agent-connected-agent",
+              "source": "automatic_learn_search",
+              "decision": "duplicate_after_official_redirect"
             }
           ],
           "searchEvidenceKey": "search:Microsoft agent connected agents declarative",
@@ -19448,21 +19375,21 @@
           ],
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
-          "nextAttemptAt": "2026-11-21T18:46:40.184172+00:00"
+          "nextAttemptAt": "2026-12-21T20:39:43.022884+00:00"
         },
         "aa1eb7319057ba0b425114664bf910ebf1a5340224a1a3d4b65def90cedcd68f": {
           "sourceHashes": [
             "aa1eb7319057ba0b425114664bf910ebf1a5340224a1a3d4b65def90cedcd68f"
           ],
           "status": "verified",
-          "checkedAt": "2026-10-22T18:46:34.923093+00:00",
+          "checkedAt": "2026-11-21T20:39:34.490254+00:00",
           "documents": [
             {
-              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+              "url": "https://learn.microsoft.com/ja-jp/plugins/declarative-agent-connected-agent",
               "title": "宣言型エージェントから他のエージェントに接続する",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-22T18:46:40.072018+00:00",
-              "bodySha256": "78ea84fa0779914594d8b3f0eb23ed91847629eba4fdf04ba6a0ad326fa21b89",
+              "checkedAt": "2026-11-21T20:39:40.565102+00:00",
+              "bodySha256": "7e6a50ab45b61e4ea68a57e22aeabee4005905aea3d64c42cbf9cd7437ea24f6",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
               "source": "reviewed_candidate",
@@ -19482,10 +19409,10 @@
                 "coverage": 1.0,
                 "platforms": [],
                 "score": 1.0,
-                "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
+                "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
                 "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
-                "bodySha256": "c0cfb94451816a8d5d403747eabb4e3ed42575ef570356469f034ebc5e4e2f70",
-                "reviewedAt": "2026-10-22T18:46:40.072096+00:00"
+                "bodySha256": "a0f1066291a0136cfa096eb315aedaa0dfbf01b0f02eaef4bd584a513f49157f",
+                "reviewedAt": "2026-11-21T20:39:40.565163+00:00"
               }
             }
           ],
@@ -19501,6 +19428,11 @@
               "source": "reviewed_candidate",
               "decision": "adopted",
               "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/plugins/declarative-agent-connected-agent",
+              "source": "automatic_learn_search",
+              "decision": "duplicate_after_official_redirect"
             }
           ],
           "searchEvidenceKey": "search:Microsoft agent connected agents declarative",
@@ -19509,7 +19441,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
-          "nextAttemptAt": "2026-11-21T18:46:40.072104+00:00"
+          "nextAttemptAt": "2026-12-21T20:39:42.795556+00:00"
         },
         "e8c0dd0053f5b3ae4d7bd49dab7660502160cdc4cba412f2bedfb037be1d9844": {
           "sourceHashes": [
@@ -22427,7 +22359,7 @@
         "958f0cd093d7806fc5d43d5ba90ad2ea46bb81002b2f5f794fdc508267a3a9f4"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-18T10:38:14.840128+00:00",
+      "checkedAt": "2026-11-21T20:39:24.230804+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft office copilot power app",
@@ -22443,7 +22375,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-21T10:38:14.848787+00:00",
+      "nextAttemptAt": "2026-11-24T20:39:24.238695+00:00",
       "variants": {
         "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2": {
           "sourceHashes": [
@@ -22473,7 +22405,7 @@
             "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-18T10:38:18.319548+00:00",
+          "checkedAt": "2026-11-21T20:39:27.988827+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft office copilot power app",
@@ -22489,7 +22421,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-21T10:38:18.327684+00:00"
+          "nextAttemptAt": "2026-11-24T20:39:27.996412+00:00"
         }
       }
     },
@@ -23108,7 +23040,7 @@
         "26e68837374044b3dec25ade97ebe4c3e5e7110bd9202d8e5df819aec5505410"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-18T10:38:15.079161+00:00",
+      "checkedAt": "2026-11-21T20:39:24.462562+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft app copilot",
@@ -23124,7 +23056,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-21T10:38:18.091334+00:00",
+      "nextAttemptAt": "2026-11-24T20:39:27.767888+00:00",
       "variants": {}
     },
     "MC1545694": {
@@ -23939,12 +23871,12 @@
     "snapshots": 50,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-17T23:01:10+00:00",
-    "checkedAt": "2026-11-21T10:09:46.698231+00:00",
+    "checkedAt": "2026-11-21T20:39:46.726222+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 61,
+      "no_verified_document": 62,
       "not_researched": 0,
-      "verified": 116
+      "verified": 115
     },
     "latestCounts": {
       "fetch_failed": 0,
@@ -23954,12 +23886,12 @@
     },
     "latestTotal": 101,
     "pendingAttempts": 0,
-    "processedThisRun": 53,
+    "processedThisRun": 9,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 154,
+      "no_verified_document": 156,
       "not_researched": 0,
-      "verified": 223
+      "verified": 221
     },
     "retrievalErrors": 0,
     "coverage": "complete",
