@@ -23061,10 +23061,10 @@
     },
     "MC1545694": {
       "sourceHashes": [
-        "21188736afd5fbf9c84cc7fca9f1ce840149cff314ce8737397e349f89b76f46"
+        "1f6c1c77df3c8b65366e5bd6dbf95b677aece9aac409d664e834d60519f45994"
       ],
       "status": "verified",
-      "checkedAt": "2026-11-12T03:04:05.982182+00:00",
+      "checkedAt": "2026-11-23T02:49:34.803843+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-entra-passkey-windows",
@@ -23094,7 +23094,7 @@
             "articleExcerpt": "# Register a Microsoft Entra passkey on Windows\r\n\r\nThis article shows how to register a Microsoft Entra passkey on Windows. A Microsoft Entra passkey on Windows is a device-bound passkey stored in the local Windows Hello container. Unlike synced passkeys, a passkey on Windows doesn't sync across devices — each device requires a separate passkey registration. This approach enables phishing-resistant sign-in with a Windows Hello biometric or PIN, without requiring the device to be Microsoft Entra joined or registered.\r\n\r\nFor an overview of Microsoft Entra passkey on Windows and how it compares with Windows Hello for Business, see [Microsoft Entra passkey on Windows](how-to-authentication-entra-passkeys-on-windows).\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-entra-passkey-windows",
             "bodySha256": "3e1e98c3215f22b01482149967c64c579b79ce3734941725d479bc5c7dda35d7",
-            "reviewedAt": "2026-11-12T03:04:10.165567+00:00"
+            "reviewedAt": "2026-11-23T02:49:37.613351+00:00"
           }
         },
         {
@@ -23125,7 +23125,7 @@
             "articleExcerpt": "### Register a passkey\r\n\r\nRegister a passkey that's stored on your device or password manager:\r\n\r\n1. Go to [Security info](https://mysignins.microsoft.com/security-info) and sign in with your administrator account.\r\n2. Select **Add sign-in method**.\r\n3. Select **Passkey**.\r\n4. Follow the prompts to create the passkey with your device, such as Windows Hello, Face ID, Touch ID, or a synced password manager.\r\n\r\nAfter registration finishes, the new passkey appears under your registered sign-in methods.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-passwordless-authentication",
             "bodySha256": "4e64b4f35b4b58da76c44dd77bc343c36dca5b3de96c8e8ba5672c2ff3da1abe",
-            "reviewedAt": "2026-11-12T03:04:14.351708+00:00"
+            "reviewedAt": "2026-11-23T02:49:38.898814+00:00"
           }
         },
         {
@@ -23156,7 +23156,7 @@
             "articleExcerpt": "# Run a registration campaign to set up a passkey or Microsoft Authenticator\r\n\r\nThe registration campaign allows you to nudge users to set up a passkey or Microsoft Authenticator during sign-in. When a user performs an interactive sign-in with multifactor authentication (MFA), they can be prompted to set up the targeted authentication method. You can include or exclude users or groups to control who gets nudged and create targeted campaigns that move users from less secure authentication methods to passkeys or Authenticator.\r\n\r\nThe registration campaign supports two authentication methods:\r\n\r\n- **Passkey (FIDO2)**: Nudges users to register a passkey.\r\n- **Authenticator**: Nudges users to download and set up Authenticator for push notifications.\r\n\r\nThe registration campaign can target one authentication method at a time.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-registration-campaign",
             "bodySha256": "77d8ac07c887c1da73eecaf8a2328cf034b613fcea2f56dd5aa54528b8dfba11",
-            "reviewedAt": "2026-11-12T03:04:20.089908+00:00"
+            "reviewedAt": "2026-11-23T02:49:40.791962+00:00"
           }
         }
       ],
@@ -23192,15 +23192,151 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-12-12T03:04:20.089914+00:00",
-      "variants": {}
+      "nextAttemptAt": "2026-12-23T02:49:40.791971+00:00",
+      "variants": {
+        "21188736afd5fbf9c84cc7fca9f1ce840149cff314ce8737397e349f89b76f46": {
+          "sourceHashes": [
+            "21188736afd5fbf9c84cc7fca9f1ce840149cff314ce8737397e349f89b76f46"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-11-12T03:04:05.982182+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-entra-passkey-windows",
+              "title": "WindowsにMicrosoft Entraパスキーを登録する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-02T01:33:47.696269+00:00",
+              "bodySha256": "9f8d4001823adb1c06be14bd466477016ce9e1b9c22efa74bdd7426ab81dde3a",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "automatic_learn_search",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "passkey",
+                  "registration",
+                  "signin"
+                ],
+                "requiredFeatureTerms": [
+                  "passkey",
+                  "registration",
+                  "signin"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "# Register a Microsoft Entra passkey on Windows\r\n\r\nThis article shows how to register a Microsoft Entra passkey on Windows. A Microsoft Entra passkey on Windows is a device-bound passkey stored in the local Windows Hello container. Unlike synced passkeys, a passkey on Windows doesn't sync across devices — each device requires a separate passkey registration. This approach enables phishing-resistant sign-in with a Windows Hello biometric or PIN, without requiring the device to be Microsoft Entra joined or registered.\r\n\r\nFor an overview of Microsoft Entra passkey on Windows and how it compares with Windows Hello for Business, see [Microsoft Entra passkey on Windows](how-to-authentication-entra-passkeys-on-windows).\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-entra-passkey-windows",
+                "bodySha256": "3e1e98c3215f22b01482149967c64c579b79ce3734941725d479bc5c7dda35d7",
+                "reviewedAt": "2026-11-12T03:04:10.165567+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/hybrid/connect/how-to-connect-passwordless-authentication",
+              "title": "パスワードレス認証を使用して Microsoft Entra Connect Sync にサインインする",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-12T03:04:14.351669+00:00",
+              "bodySha256": "f30fe0c97ebef3497d4f7dac631f0162f40515e24211ea04b46b09baa734707f",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "automatic_learn_search",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "passkey",
+                  "registration",
+                  "signin"
+                ],
+                "requiredFeatureTerms": [
+                  "passkey",
+                  "registration",
+                  "signin"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "### Register a passkey\r\n\r\nRegister a passkey that's stored on your device or password manager:\r\n\r\n1. Go to [Security info](https://mysignins.microsoft.com/security-info) and sign in with your administrator account.\r\n2. Select **Add sign-in method**.\r\n3. Select **Passkey**.\r\n4. Follow the prompts to create the passkey with your device, such as Windows Hello, Face ID, Touch ID, or a synced password manager.\r\n\r\nAfter registration finishes, the new passkey appears under your registered sign-in methods.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-passwordless-authentication",
+                "bodySha256": "4e64b4f35b4b58da76c44dd77bc343c36dca5b3de96c8e8ba5672c2ff3da1abe",
+                "reviewedAt": "2026-11-12T03:04:14.351708+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-mfa-registration-campaign",
+              "title": "登録キャンペーンを実行してパスキーまたはMicrosoft Authenticatorを設定する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-12T03:04:20.089787+00:00",
+              "bodySha256": "2b30c526296fa2c74adfafeac49c5c9f104823a7d4cbfcdd5c29b24e169d8ea8",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "automatic_learn_search",
+              "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "passkey",
+                  "registration",
+                  "signin"
+                ],
+                "requiredFeatureTerms": [
+                  "passkey",
+                  "registration",
+                  "signin"
+                ],
+                "coverage": 1.0,
+                "platforms": [],
+                "score": 1.2,
+                "articleExcerpt": "# Run a registration campaign to set up a passkey or Microsoft Authenticator\r\n\r\nThe registration campaign allows you to nudge users to set up a passkey or Microsoft Authenticator during sign-in. When a user performs an interactive sign-in with multifactor authentication (MFA), they can be prompted to set up the targeted authentication method. You can include or exclude users or groups to control who gets nudged and create targeted campaigns that move users from less secure authentication methods to passkeys or Authenticator.\r\n\r\nThe registration campaign supports two authentication methods:\r\n\r\n- **Passkey (FIDO2)**: Nudges users to register a passkey.\r\n- **Authenticator**: Nudges users to download and set up Authenticator for push notifications.\r\n\r\nThe registration campaign can target one authentication method at a time.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-registration-campaign",
+                "bodySha256": "77d8ac07c887c1da73eecaf8a2328cf034b613fcea2f56dd5aa54528b8dfba11",
+                "reviewedAt": "2026-11-12T03:04:20.089908+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft entra passkey registration signin",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-register-entra-passkey-windows",
+              "source": "automatic_learn_search",
+              "decision": "adopted",
+              "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-passwordless-authentication",
+              "source": "automatic_learn_search",
+              "decision": "adopted",
+              "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/how-to-mfa-registration-campaign",
+              "source": "automatic_learn_search",
+              "decision": "adopted",
+              "score": 1.2
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft entra passkey registration signin",
+          "searchedQueries": [
+            "Microsoft entra passkey registration signin"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-12-12T03:04:20.089914+00:00"
+        }
+      }
     },
     "MC1551151": {
       "sourceHashes": [
-        "7ca7e6eb9e1d9070d2b3712c6b7ae324cc20ca78ba2fb59dfa625282d7c54785"
+        "5c413b368ea2912981699fff5bfb33818305a22eb0754910d6918411ecff576e"
       ],
       "status": "verified",
-      "checkedAt": "2026-11-19T03:32:34.524413+00:00",
+      "checkedAt": "2026-11-23T02:49:41.073488+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-mfa-telephony-fraud",
@@ -23215,15 +23351,15 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-telephony-fraud",
             "bodySha256": "9187c8c049c8d1a2e827da9d5a1e8c9b3337e2636f2d45fc3aa272aac8012321",
-            "reviewedAt": "2026-11-19T03:32:40.378092+00:00"
+            "reviewedAt": "2026-11-23T02:49:47.247093+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sms-voice-retirement",
           "title": "既定でのパスキーと、Microsoftが提供する SMS および音声認証の廃止",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-22T00:43:51.140481+00:00",
-          "bodySha256": "065e40588dae2ff7ec7f6dd578d03180d34e4c6e384f459b3bc2d7385849e5b9",
+          "checkedAt": "2026-11-21T10:09:34.946962+00:00",
+          "bodySha256": "b8bd0b958b2a8b3ad716062fd0e731dc97a05fe84a2b17762a45bbe186102c9b",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "explicit_message_link",
@@ -23231,7 +23367,7 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
             "bodySha256": "94edf8bd9d7b4cb31748634d2e9ef097b3cc5b79372e9fa645c11153c92054c2",
-            "reviewedAt": "2026-11-19T03:32:41.525388+00:00"
+            "reviewedAt": "2026-11-23T02:49:48.469230+00:00"
           }
         },
         {
@@ -23277,7 +23413,7 @@
             "articleExcerpt": "# Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in\r\n\r\nMicrosoft Entra ID uses safeguards to help reduce automated abuse of telephony-based sign-in. In some cases, users might be asked to complete a risk-based anti-bot verification step, such as a CAPTCHA, before Microsoft sends an SMS message or places a voice call for sign-in. This safeguard helps protect against telephony fraud, such as International Revenue Share Fraud (IRSF).\r\n\r\nFor more information about telephony fraud and how Microsoft helps limit the impact of fraudulent activity, see [Understanding telephony fraud risk](concept-mfa-telephony-fraud).\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-telephony-risk-based-captcha",
             "bodySha256": "4e8e7711f28de6239500ebf486958bb7e12db7c31d50738f58f7d9ce3fa4476b",
-            "reviewedAt": "2026-11-19T03:32:42.751136+00:00"
+            "reviewedAt": "2026-11-23T02:49:49.757681+00:00"
           }
         }
       ],
@@ -23317,7 +23453,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-12-19T03:32:42.751145+00:00",
+      "nextAttemptAt": "2026-12-23T02:49:49.757690+00:00",
       "variants": {
         "2f9ddbcb32c0560f5848a1f1925bc7f2cde69a3cc0313702249120e08642b513": {
           "sourceHashes": [
@@ -23442,6 +23578,130 @@
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
           "nextAttemptAt": "2026-12-16T02:12:28.961205+00:00"
+        },
+        "7ca7e6eb9e1d9070d2b3712c6b7ae324cc20ca78ba2fb59dfa625282d7c54785": {
+          "sourceHashes": [
+            "7ca7e6eb9e1d9070d2b3712c6b7ae324cc20ca78ba2fb59dfa625282d7c54785"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-11-19T03:32:34.524413+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-mfa-telephony-fraud",
+              "title": "テレフォニー詐欺について",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-02T01:34:28.221573+00:00",
+              "bodySha256": "055a21fe86c7d8d48a4cb06bd6a5a98e9691926db6f82bf9002e1b2ac6b39154",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-mfa-telephony-fraud",
+                "bodySha256": "9187c8c049c8d1a2e827da9d5a1e8c9b3337e2636f2d45fc3aa272aac8012321",
+                "reviewedAt": "2026-11-19T03:32:40.378092+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-sms-voice-retirement",
+              "title": "既定でのパスキーと、Microsoftが提供する SMS および音声認証の廃止",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-22T00:43:51.140481+00:00",
+              "bodySha256": "065e40588dae2ff7ec7f6dd578d03180d34e4c6e384f459b3bc2d7385849e5b9",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
+                "bodySha256": "94edf8bd9d7b4cb31748634d2e9ef097b3cc5b79372e9fa645c11153c92054c2",
+                "reviewedAt": "2026-11-19T03:32:41.525388+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-telephony-risk-based-captcha",
+              "title": "電話ベースのサインイン向けのリスクベースのボット対策認証 (CAPTCHA)",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-02T01:34:32.546319+00:00",
+              "bodySha256": "201b5dc3a14db062872a911e8a28a5a6d503b8696eedf9a12b49bbab1591ae2f",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "anti",
+                  "based",
+                  "bot",
+                  "captcha",
+                  "id",
+                  "risk",
+                  "sms",
+                  "verification",
+                  "voice"
+                ],
+                "requiredFeatureTerms": [
+                  "anti",
+                  "authentication",
+                  "based",
+                  "bot",
+                  "captcha",
+                  "factor",
+                  "id",
+                  "multi",
+                  "risk",
+                  "sms",
+                  "verification",
+                  "voice"
+                ],
+                "coverage": 0.75,
+                "platforms": [],
+                "score": 0.95,
+                "articleExcerpt": "# Risk-based anti-bot verification (CAPTCHA) for telephony-based sign-in\r\n\r\nMicrosoft Entra ID uses safeguards to help reduce automated abuse of telephony-based sign-in. In some cases, users might be asked to complete a risk-based anti-bot verification step, such as a CAPTCHA, before Microsoft sends an SMS message or places a voice call for sign-in. This safeguard helps protect against telephony fraud, such as International Revenue Share Fraud (IRSF).\r\n\r\nFor more information about telephony fraud and how Microsoft helps limit the impact of fraudulent activity, see [Understanding telephony fraud risk](concept-mfa-telephony-fraud).\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-telephony-risk-based-captcha",
+                "bodySha256": "4e8e7711f28de6239500ebf486958bb7e12db7c31d50738f58f7d9ce3fa4476b",
+                "reviewedAt": "2026-11-19T03:32:42.751136+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft entra captcha sms voice factor authentication",
+          "explicitUrls": [
+            "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-telephony-fraud",
+            "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+            "https://learn.microsoft.com/entra/identity/authentication/concept-telephony-risk-based-captcha"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-telephony-fraud",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/concept-telephony-risk-based-captcha",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 0.95
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft entra captcha sms voice factor authentication",
+          "searchedQueries": [
+            "Microsoft entra captcha sms voice factor authentication",
+            "entra sms voice factor authentication",
+            "entra captcha sms voice"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-12-19T03:32:42.751145+00:00"
         }
       }
     },
@@ -23863,35 +24123,59 @@
       "rationale": "Articles verified against this snapshot version.",
       "nextAttemptAt": "2026-12-19T03:33:23.568728+00:00",
       "variants": {}
+    },
+    "MC1562269": {
+      "sourceHashes": [
+        "e6e6b17d9eb5f90f007ea2b24511880fb5f93437db82ac227e9859de38a3b561"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-23T02:49:50.038272+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft copilot desktop app edge",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft copilot desktop app edge",
+      "searchedQueries": [
+        "Microsoft copilot desktop app edge",
+        "edge copilot desktop app"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-26T02:49:53.257876+00:00",
+      "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 177,
-    "snapshotOccurrences": 4224,
-    "snapshots": 50,
+    "uniqueMessages": 178,
+    "snapshotOccurrences": 4323,
+    "snapshots": 51,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-11-17T23:01:10+00:00",
-    "checkedAt": "2026-11-22T20:49:26.349931+00:00",
+    "publicationEnd": "2026-11-20T23:31:32+00:00",
+    "checkedAt": "2026-11-23T02:49:53.675509+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 62,
+      "no_verified_document": 63,
       "not_researched": 0,
       "verified": 115
     },
     "latestCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 25,
+      "no_verified_document": 26,
       "not_researched": 0,
-      "verified": 76
+      "verified": 74
     },
-    "latestTotal": 101,
+    "latestTotal": 100,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 3,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 156,
+      "no_verified_document": 157,
       "not_researched": 0,
-      "verified": 221
+      "verified": 223
     },
     "retrievalErrors": 0,
     "coverage": "complete",
