@@ -18822,7 +18822,7 @@
         "1acc19b9ad2f4f62f4ef2d2f78df2c20a9cd229d1cea747049c8dbd681de768f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-21T20:39:43.244627+00:00",
+      "checkedAt": "2026-11-24T23:37:36.079322+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft teams copilot chat",
@@ -18838,14 +18838,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-24T20:39:46.197855+00:00",
+      "nextAttemptAt": "2026-11-27T23:37:39.332214+00:00",
       "variants": {
         "44843c9ced22ab77533375c74e2fefcef1600cc149acd66236815496a0308f56": {
           "sourceHashes": [
             "44843c9ced22ab77533375c74e2fefcef1600cc149acd66236815496a0308f56"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-21T20:39:46.420093+00:00",
+          "checkedAt": "2026-11-24T23:37:39.710177+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft teams copilot chat",
@@ -18861,7 +18861,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-24T20:39:46.427858+00:00"
+          "nextAttemptAt": "2026-11-27T23:37:39.720843+00:00"
         }
       }
     },
@@ -22359,7 +22359,7 @@
         "958f0cd093d7806fc5d43d5ba90ad2ea46bb81002b2f5f794fdc508267a3a9f4"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-21T20:39:24.230804+00:00",
+      "checkedAt": "2026-11-24T23:37:31.180954+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft office copilot power app",
@@ -22375,7 +22375,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-24T20:39:24.238695+00:00",
+      "nextAttemptAt": "2026-11-27T23:37:31.191580+00:00",
       "variants": {
         "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2": {
           "sourceHashes": [
@@ -22405,7 +22405,7 @@
             "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-21T20:39:27.988827+00:00",
+          "checkedAt": "2026-11-24T23:37:35.756416+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft office copilot power app",
@@ -22421,7 +22421,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-24T20:39:27.996412+00:00"
+          "nextAttemptAt": "2026-11-27T23:37:35.766363+00:00"
         }
       }
     },
@@ -23040,7 +23040,7 @@
         "26e68837374044b3dec25ade97ebe4c3e5e7110bd9202d8e5df819aec5505410"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-21T20:39:24.462562+00:00",
+      "checkedAt": "2026-11-24T23:37:31.581110+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft app copilot",
@@ -23056,7 +23056,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-24T20:39:27.767888+00:00",
+      "nextAttemptAt": "2026-11-27T23:37:35.358517+00:00",
       "variants": {}
     },
     "MC1545694": {
@@ -24155,7 +24155,7 @@
     "snapshots": 51,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-20T23:31:32+00:00",
-    "checkedAt": "2026-11-24T12:54:18.017317+00:00",
+    "checkedAt": "2026-11-24T23:37:40.208870+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 63,
@@ -24170,7 +24170,7 @@
     },
     "latestTotal": 100,
     "pendingAttempts": 0,
-    "processedThisRun": 46,
+    "processedThisRun": 5,
     "variantCounts": {
       "fetch_failed": 0,
       "no_verified_document": 157,
