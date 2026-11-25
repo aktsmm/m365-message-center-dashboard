@@ -17456,7 +17456,7 @@
         "b4b3e641eee49dd06f7d47a8c0f5e68d18313751ae366b4b9c45751e98ceb1b8"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-22T10:10:34.207892+00:00",
+      "checkedAt": "2026-11-25T11:39:18.213155+00:00",
       "documents": [],
       "reviewHash": "24cbec6c98ca22d7190c240fd741cc93a2d9d67572e25d835180433c1b726bf9",
       "query": "Microsoft copilot cost management",
@@ -17477,7 +17477,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-25T10:10:37.004605+00:00",
+      "nextAttemptAt": "2026-11-28T11:39:21.833188+00:00",
       "variants": {}
     },
     "MC1470871": {
@@ -21782,14 +21782,14 @@
         "15f002712593768cce244ca9d68f6a0f0fa5a740955dbebbf890a8f7163b9fdd"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-26T00:26:00.025492+00:00",
+      "checkedAt": "2026-11-25T11:39:22.022267+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview",
           "title": "Microsoft 365 Copilot Cost Management API の概要",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-26T00:26:05.162935+00:00",
-          "bodySha256": "c7b5050a41f76b8e82e8d26b5ebab3471ce06ba44921ae264eb09e4d3889365e",
+          "checkedAt": "2026-11-25T11:39:29.563697+00:00",
+          "bodySha256": "2d89916f63d1a504c8d13da0dbf3f2d70240d0fca319a6714b74cb4f60cae22a",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "explicit_message_link",
@@ -21809,10 +21809,10 @@
             "coverage": 1.0,
             "platforms": [],
             "score": 1.2,
-            "articleExcerpt": "# Microsoft 365 Copilot Cost Management API overview\r\n\r\nImportant\r\n\r\nAPIs under the `/beta` version are subject to change. Use of these APIs in production applications is not supported.\r\n\r\nThe Microsoft 365 Copilot Cost Management API lets administrators govern and observe tenant consumption of Copilot and AI **credits** through Microsoft Graph, rooted at `/copilot/costManagement`. The contract is unit-aware and credit-denominated. It covers the tenant credit balance snapshot, spending-policy management, group audience scoping, per-service settings, notify-only threshold alerts and their recipients, and per-user consumption balances.\r\n\r\nThe API is credit-denominated and deliberately excludes rated currency, invoices, prices, and purchase forecasts.\r\n\r\n",
+            "articleExcerpt": "# Microsoft 365 Copilot Cost Management API overview\r\n\r\nImportant\r\n\r\nAPIs under the `/beta` version are subject to change. Use of these APIs in production applications is not supported.\r\n\r\nThe Microsoft 365 Copilot Cost Management API helps administrators govern and observe tenant consumption of Copilot and AI **credits** through Microsoft Graph, rooted at `/copilot/costManagement`. The contract is unit-aware and credit-denominated. It covers the tenant credit balance snapshot, spending policy management, group audience scoping, per-service settings, notify-only threshold alerts and their recipients, per-user consumption balances, the review of users' credit requests, and usage reports that break down consumption by user, security group, governed service, and funding class.\r\n\r\nThe API is credit-denominated and deliberately excludes purchase forecasts. It doesn't return any currency, invoice, price, or settlement amounts.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/api/admin-settings/cost-management/overview",
-            "bodySha256": "db921932344e3722a19fd534256426ab5de1c89d5d101f6fb3aa49147e424954",
-            "reviewedAt": "2026-10-26T00:26:05.162999+00:00"
+            "bodySha256": "ebd7416f6672a3809060527ca075bab7f948eece79d39269c41291d785df6353",
+            "reviewedAt": "2026-11-25T11:39:29.563768+00:00"
           }
         }
       ],
@@ -21838,7 +21838,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-25T00:26:05.163006+00:00",
+      "nextAttemptAt": "2026-12-25T11:39:29.563774+00:00",
       "variants": {}
     },
     "MC1521604": {
@@ -23957,7 +23957,7 @@
         "536c185a8b8107a1bb8c05d4fd48fac5bf1694f0a8710a349b80f7ff52667e65"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-22T10:10:30.776687+00:00",
+      "checkedAt": "2026-11-25T11:39:15.101506+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft metadata sharepoint search",
@@ -23973,7 +23973,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-25T10:10:33.885093+00:00",
+      "nextAttemptAt": "2026-11-28T11:39:18.024531+00:00",
       "variants": {}
     },
     "MC1556082": {
@@ -24155,7 +24155,7 @@
     "snapshots": 51,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-20T23:31:32+00:00",
-    "checkedAt": "2026-11-24T23:37:40.208870+00:00",
+    "checkedAt": "2026-11-25T11:39:30.400008+00:00",
     "counts": {
       "fetch_failed": 0,
       "no_verified_document": 63,
@@ -24170,7 +24170,7 @@
     },
     "latestTotal": 100,
     "pendingAttempts": 0,
-    "processedThisRun": 5,
+    "processedThisRun": 3,
     "variantCounts": {
       "fetch_failed": 0,
       "no_verified_document": 157,
