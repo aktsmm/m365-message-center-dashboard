@@ -1,26 +1,22 @@
 {
-  "generatedAt": "2026-11-23T02:59:17.2546962+00:00",
+  "generatedAt": "2026-11-26T04:16:14.8284065+00:00",
   "source": "GitHub Agentic Workflows / Copilot",
-  "headline": "Entra認証(SMS/音声・SSPR・パスキー)の変更とリリース設定の再編が今週の最優先",
-  "executiveSummary": "今週のMessage Centerは、Microsoft Entraの認証方式の変更が中心です。Microsoft提供のSMS/音声認証はSSPRでも利用できなくなる予定で、MC1536049では2027年2月に展開が開始・完了と記載されています。また、SSPRでは明示的に登録された認証方式が必須になる旨がMC1325414に記載されています。SMS/音声MFAには、リスクに応じたCAPTCHAが追加されます。制限的なファイアウォール環境では、ドキュメントに沿った準備が必要です(MC1551151)。リリース管理では、Targeted Releaseが2027年1月に廃止され、Standard・Deferred・Frontierの3区分に移行します。2026年11月にはTargeted Release登録の変更ができなくなります(MC1490899)。統合されたリリース設定画面も展開中です(MC1556082)。そのほか、eMudhra CAルートの信頼削除(MC1529467)、Search Analyticsの一部廃止(MC1528009)、SharePoint検索のSiteLogoUrl仕様変更(MC1556092)も影響確認の対象です。抜粋に含まれない期日や要件は不明であり、原文での確認が必要です。",
-  "thisWeek": "MC1490899: Targeted Release登録の変更が2026年11月に不可となるため、現在の登録ユーザーを確認し、Frontier/Standard/Deferredのどれにするか決める。\nMC1556082: 管理センターの「設定 > 組織設定 > リリース設定」で統合画面の展開状況と現在の設定を確認する。\nMC1551151: SMS/音声MFAのCAPTCHAに備え、ファイアウォール/ネットワーク制限がある場合は記載のドキュメントを確認する。\nMC1325414: SSPR利用ユーザーが明示的に登録された認証方式を持っているか確認する(抜粋はタイムラインを含め一部のみ)。\nMC1529467: Edge/WebView2のPKI Metadata更新(2026/11/16)後、emSignルートに依存する証明書の影響がないか確認する。",
-  "thisMonth": "MC1536049: SMS/音声に依存するSSPRユーザーを洗い出し、2027年2月の展開に備えて代替の回復方法を登録させる計画を立てる。パスキーはSSPR要件を自動的に満たさない点に注意する。\nMC1528009: Search Analyticsの該当機能(Summary、User/Query、Answer)を利用している管理者に、2026年11月下旬〜12月中旬の廃止を周知する。\nMC1556092: 検索APIで個別アイテムのSiteLogoUrlを利用しているカスタムソリューションがないか確認する(2026年12月上旬〜2027年3月上旬に展開)。\nMC1545694: 12月上旬からのMy Sign-insパスキー登録画面の変更について、ヘルプデスクとユーザーに周知する。\nMC1562269: Copilotデスクトップアプリ/Edgeの同期(任意・12月中旬〜下旬に展開)を許可するかをデータガバナンスの観点で判断する。",
-  "watch": "MC1558033: Copilot Managed RuntimeのGA展開(2026年11月中旬〜12月中旬)と、管理センターでのアプリ管理への影響を継続確認する。\nMC1558024: マルチテナント管理のパブリックプレビュー(2026年11月中旬〜12月上旬)を、複数テナント管理の顧客向けに確認する。\nMC1387526: Microsoft 365 Backupのフルワークロードバックアップのタイムライン更新を確認する。",
-  "customerQuestions": "Targeted Releaseに登録されているユーザーはどの程度いますか。移行先はFrontier、Standard、Deferredのどれにしますか。\nSSPRでSMS/音声や、明示的に登録されていないディレクトリ属性に依存しているユーザーはいますか。\nSMS/音声MFAを利用していて、ネットワーク/ファイアウォール制限が厳しい拠点はありますか。\nCopilotデスクトップアプリとのブラウザーデータ同期を、組織として許可する方針ですか。\nSharePoint検索APIのSiteLogoUrlや、Search Analyticsの該当レポートを業務で利用していますか。",
+  "headline": "Entra の SMS/音声認証廃止(2027/2/1)と Copilot/Edge データ同期への備えが今週の最優先",
+  "executiveSummary": "今週のMessage Center(98件)では、Entra認証まわりの変更が最も影響が大きい。Microsoft提供のSMS・音声認証は2027年2月1日から廃止が始まり(MC1528000)、SSPRでも利用不可となる(MC1536049、2027年2月ロールアウト予定、移行猶予はテナント到達後50日)。移行完了または顧客管理の通信事業者(CYOT)設定は2027年2月1日より前に行うよう案内されている(MC1528000)。SMS/音声MFAには、リスクに応じたCAPTCHAが2026年11月中旬から段階導入される(MC1551151)。ファイアウォール等が厳しい環境は公式ドキュメントに従った準備が必要。また、Copilotデスクトップアプリ とEdge間のブラウザデータ同期(パスワード等を含む、任意オプトイン)が2026年12月中旬から展開される(MC1562269)。データガバナンス方針の確認が推奨されている。Microsoft 365 Backupでは SharePoint/OneDriveの復旧期間が最大10年に拡張済み(MC1562262は誤り→MC1567262)。ターゲットリリースは2027年1月に廃止され、2026年11月以降は登録変更ができなくなる(MC1490899)。なお、プロファイルカードの点線マネージャー表示は無期限延期となり、準備は不要(MC1478957)。抜粋に記載のない展開日・要件は不明として扱い、推測していない。",
+  "thisWeek": "MC1528000: SMS/音声認証を利用しているユーザーを棚卸しし、パスキー等への移行またはCYOT構成の方針を決める(廃止開始は2027年2月1日)\nMC1551151: SMS/音声MFA向けCAPTCHA(2026年11月中旬開始)に備え、ネットワーク/ファイアウォール設定が公式ガイダンスに沿っているか確認する\nMC1490899: ターゲットリリース登録者を確認し、Frontier/Standard/Deferredのどれに移すか決める(2026年11月以降は登録変更不可)",
+  "thisMonth": "MC1536049: SSPRで必要な回復手段(SMS/音声以外)を持たないユーザーを特定し、移行計画を立てる(2027年2月ロールアウト予定、猶予は50日)\nMC1562269: Copilotデスクトップアプリ とEdgeのデータ同期(2026年12月中旬〜末展開)を許可するか、ブラウザ/データガバナンス方針を確認する\nMC1567263: Copilotのタスクバー固定時の通知オプション(2026年11月下旬〜12月下旬展開)を利用するか検討する\nMC1556092: 検索APIで個々のアイテムのSiteLogoUrlを利用するカスタムソリューションがないか確認する(2026年12月上旬展開開始)",
+  "watch": "MC1478957: 点線マネージャー機能は無期限延期で改定日程は未提示。追加の更新を監視する\nMC1567262: Microsoft 365 Backupの復旧期間延長はSharePoint/OneDriveが対象で、Exchangeは変更なし。保持ポリシーの見直し要否を検討する",
+  "customerQuestions": "SMS・音声認証を利用しているユーザーと、パスキー等への移行状況はどの程度か。CYOTを利用する予定はあるか(MC1528000)\nSSPRの回復手段としてSMS/音声のみに依存しているユーザーはいるか(MC1536049)\nCopilotデスクトップアプリ とEdgeのデータ同期(パスワード等を含む)を組織として許可する方針か(MC1562269)\nターゲットリリースの登録ユーザーをどのリリース設定に移行する予定か(MC1490899)\nSharePoint/OneDriveのバックアップ復旧期間を延長する要件はあるか(MC1567262)",
   "referencedIds": [
-    "MC1325414",
-    "MC1387526",
+    "MC1478957",
     "MC1490899",
-    "MC1528009",
-    "MC1529467",
+    "MC1528000",
     "MC1536049",
-    "MC1545694",
     "MC1551151",
-    "MC1556082",
     "MC1556092",
-    "MC1558024",
-    "MC1558033",
-    "MC1562269"
+    "MC1562269",
+    "MC1567262",
+    "MC1567263"
   ],
   "messageUpdates": [
     {
@@ -62,13 +58,6 @@
       "id": "MC1188230",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。主要な変更として確認してください。対応期限は 2027年10月14日 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1191924",
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -262,13 +251,6 @@
       "learnUrls": []
     },
     {
-      "id": "MC1461528",
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
       "id": "MC1462460",
       "japaneseTitle": "Microsoft Entra の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft Entra。重要度は 通常 です。",
@@ -300,13 +282,6 @@
       "id": "MC1469329",
       "japaneseTitle": "Microsoft 365 Copilot Chat の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1469962",
-      "japaneseTitle": "Microsoft 365 Copilot Chat、Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat、Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -370,13 +345,6 @@
       "id": "MC1474455",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。",
-      "messageUrl": null,
-      "learnUrls": []
-    },
-    {
-      "id": "MC1477184",
-      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ",
-      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。",
       "messageUrl": null,
       "learnUrls": []
     },
@@ -717,6 +685,20 @@
       "learnUrls": []
     },
     {
+      "id": "MC1567262",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
+      "id": "MC1567263",
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "messageUrl": null,
+      "learnUrls": []
+    },
+    {
       "id": "MC985483",
       "japaneseTitle": "Microsoft 365 suite の変更予定に関するお知らせ（主要な変更）",
       "japaneseSummary": "変更予定: Microsoft 365 suite。重要度は 通常 です。主要な変更として確認してください。",
@@ -820,22 +802,6 @@
       "sourceTruncated": false,
       "sourceHash": "047496cbb5c9751edd6ac5c3da7e2a7b27abf3190603d7754af797042b734d47",
       "validatedAt": "2026-10-21T12:06:52.9262586+00:00"
-    },
-    {
-      "id": "MC1191924",
-      "japaneseTitle": "Entra IDサインインで外部スクリプト挿入をCSPでブロック",
-      "japaneseFacts": {
-        "change": "Entra IDサインインページにContent Security Policyヘッダーが追加され、Microsoft信頼CDNドメインのスクリプトのみ許可されます。",
-        "impact": "login.microsoftonline.comのブラウザサインインを使う組織が対象で、コードを挿入するブラウザ拡張やツールは動作しなくなります(サインインは可能)。External ID テナントは影響なしです。",
-        "timing": "2026年10月中旬に展開開始、10月下旬に完了予定です(本番/Worldwideのみ)。",
-        "action": "コード挿入ツールを使っていなければ不要です。使用中なら非挿入型の代替へ切り替え、展開前にサインインフローをテストしてください。"
-      },
-      "japaneseDetailedSummary": "Microsoftの Secure Future Initiative の一環として、Microsoft Entra IDサインイン体験のContent Security Policyが更新されます。認証中は信頼されたMicrosoftドメインのスクリプトのみ実行を許可し、XSSなどの外部・挿入コードをブロックします。対象はlogin.microsoftonline.comで始まるURLのブラウザサインインを使う組織で、Entra External IDテナントは影響を受けません。サインインページにCSPヘッダーが追加され、スクリプトは信頼されたMicrosoft CDNドメインから、インラインスクリプトは信頼されたMicrosoftソースからのみ許可されます。ページにコードを挿入するブラウザ拡張やツールは動作しなくなりますが、サインイン自体は可能です。展開は2026年10月中旬開始、10月下旬完了予定(本番/Worldwideのみ)。該当ツールを使わなければ対応不要で、使う場合は代替へ切り替え、事前にテストしてください。",
-      "japaneseBodyTranslation": "はじめに\nMicrosoftのSecure Future Initiativeの一環として、Microsoft Entra IDサインイン体験のContent Security Policyを更新します。この変更により、認証中は信頼されたMicrosoftドメインのスクリプトのみ実行を許可し、未承認または挿入された外部コードをブロックする保護が追加されます。この事前対策は、クロスサイトスクリプティング(XSS)などの脅威からユーザーを保護し、組織のセキュリティをさらに強化します。\n実施時期\n一般提供(本番/Worldwideのみ):\n• 2026年10月中旬に展開開始\n• 2026年10月下旬に完了予定\nリリースが近づいたら定期的に通知します。\n組織への影響\n影響を受ける対象:\n• login.microsoftonline.comで始まるURLのブラウザベースのサインインを使用する組織。\n• Microsoft Entra External IDテナントへの影響はありません。\n実施される内容:\n• Microsoft Entraサインインページに新しいContent Security Policyヘッダーが追加されます。\n• スクリプトはMicrosoftの信頼されたCDNドメインからのみ許可されます。\n• インラインスクリプトの実行は信頼されたMicrosoftソースからのみ許可されます。\n• サインインページにコードを挿入するブラウザ拡張やツールは動作しなくなりますが、ユーザーはサインインできます。\n準備のためにできること\n• サインイン体験にコードを挿入するツールや拡張機能を使用していない場合、対応は不要です。\n• そのようなツールを使用している場合は、コードを挿入しない代替手段に切り替えてください。\n• 展開前にサインインフローを十分にテストし、問題を早期に特定・解決してください。テスト手順はMicrosoft Entra IDのCSPガイドにあります。\n詳細情報:\n• Microsoft Entra IDのContent Security Policy概要\n• TechcommunityのMicrosoft Entra ID Content Security Policy公開ブログ\n• Microsoft Secure Future Initiative\n• CSP nonceガイド | CSPクイックリファレンスガイド\n• CSP script-srcディレクティブガイド | CSPクイックリファレンスガイド\n• なぜXSSは今も重要か:25年来の脅威に関するMSRCの見解 | Microsoftブログ\nコンプライアンス上の考慮事項\n特記すべきコンプライアンス上の考慮事項は確認されていません。組織に応じて確認してください。",
-      "sourceCharacterCount": 2195,
-      "sourceTruncated": false,
-      "sourceHash": "6ec6403f323f5096fb9518b3965ab4633cf0acd1de0f3109d17736bd761bc664",
-      "validatedAt": "2026-10-26T21:09:03.6630039+00:00"
     },
     {
       "id": "MC1192661",
@@ -1270,22 +1236,6 @@
       "validatedAt": "2026-10-22T23:31:54.4340566+00:00"
     },
     {
-      "id": "MC1461528",
-      "japaneseTitle": "Microsoft 365 RoadmapがAI at Work Roadmapに名称変更",
-      "japaneseFacts": {
-        "change": "Microsoft 365 RoadmapがAI at Work Roadmapに改称され、9月からDynamics 365等の情報も掲載されます。",
-        "impact": "管理者、IT担当者、変更管理チーム等が対象ですが、アクセスや利用方法に変更はありません。",
-        "timing": "2026年8月25日に改称、2026年9月に新たなロードマップ情報の公開が始まります。",
-        "action": "即時対応は不要で、新ロードマップの確認や社内資料・ブックマークの更新が推奨されています。"
-      },
-      "japaneseDetailedSummary": "2026年8月25日にMicrosoft 365 RoadmapはAI at Work Roadmapに名称変更されます。2026年9月からはDynamics 365、Power Platform、Dataverseのロードマップ情報も同ロードマップに掲載され始め、Microsoft 365、Copilot、エージェントなどの情報を一か所で確認できます。アクセス方法や利用方法に変更はなく、既存の計画・追跡ワークフローは修正なしで継続できます。対象はMicrosoft 365管理者、IT担当者、変更管理チーム、意思決定者です。即時の対応は不要で、新しいロードマップの確認、フィルター・CSVエクスポート・RSS等の機能の把握、MCPサーバーのドキュメント確認、社内資料やブックマークの更新が推奨されています。本文は途中で切れています。",
-      "japaneseBodyTranslation": "[概要と理由]\n2026年8月25日に、Microsoft 365 RoadmapはAI at Work Roadmapに名称変更されます。\nAI at Work Roadmapは、Microsoft 365、Copilot、エージェント、関連するAI体験における今後のイノベーションを確認できる単一の窓口です。2026年9月以降、Dynamics 365、Power Platform、Dataverseのロードマップ情報もAI at Work Roadmapに公開され始め、ビジネスアプリケーション、生産性、AIのポートフォリオ全体のイノベーションを追跡しやすくなります。\nロードマップは引き続き、今後の機能や変更の可視性を提供し、計画と準備活動を支援します。\n[展開スケジュール]\n• 2026年8月25日:Microsoft 365 RoadmapがAI at Work Roadmapに名称変更\n• 2026年9月:Dynamics 365、Power Platform、Dataverseの新機能がAI at Work Roadmapに公開され始める\n[組織への影響]\n対象\n• Microsoft 365管理者\n• IT担当者\n• 変更管理チーム\n• 計画や準備活動でロードマップ情報を使う意思決定者\nプラットフォーム/サービス\n• AI at Work Roadmap(旧Microsoft 365 Roadmap)\n発生すること\n• 2026年8月25日にMicrosoft 365 RoadmapがAI at Work Roadmapに名称変更されます。\n• 2026年9月以降、Dynamics 365、Power Platform、Dataverseの新しいロードマップ内容が公開され始めます。\n• ビジネスアプリケーション、生産性体験、Copilot、エージェント、AIソリューションのロードマップ情報を一か所で確認できます。\n• フィルター、エクスポート、RSS、MCP連携などの機能の活用が推奨されます。\n• ロードマップへのアクセス、利用方法に変更はありません。\n• 既存のロードマップ計画・追跡ワークフローは変更なしで継続できます。\n[必要なアクション/推奨事項]\n• 即時の対応は不要です。\n• 推奨事項:\n• 新しいランディングが利用可能になったらAI at Work Roadmapを確認する。\n• フィルター、CSVエクスポート、RSS購読、AI at Work Roadmap Guideによる管理のベストプラクティスなどの機能に慣れておく。\n• AIを活用したワークフローやツールでロードマップデータを利用する場合は、Release Communications MCP Serverのドキュメントを確認する。\n• 旧Microsoft 365 Roadmapを参照する社内ドキュメント、ブックマーク、トレーニング資料などを更新する。(本文は途中で切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "9d9561f40b0161cef1c614bc70f2328902af36b2d7e400552ecc6c7d382ade35",
-      "validatedAt": "2026-10-25T11:50:23.6984491+00:00"
-    },
-    {
       "id": "MC1462460",
       "japaneseTitle": "Entra My Account等のドメインがcloud.microsoftへ移行",
       "japaneseFacts": {
@@ -1364,22 +1314,6 @@
       "sourceTruncated": true,
       "sourceHash": "8df2f4022f3a82ad5fd0ae0c3f972a6a6dd10c211ae58f14b68c8c8344235d3f",
       "validatedAt": "2026-10-19T08:57:06.6122284+00:00"
-    },
-    {
-      "id": "MC1469962",
-      "japaneseTitle": "Copilotメールの送信者アドレスが変更されます",
-      "japaneseFacts": {
-        "change": "Copilotの教育・製品案内メールの送信元が m365copilotupdates@microsoft.com から microsoftcopilotupdates@microsoft.com に変わります。",
-        "impact": "Microsoft製品通信を受け取る設定の組織、メールフロー規則や許可リストを管理する管理者、Copilot有効ユーザー。",
-        "timing": "全世界で2026年9月中旬に一般提供されます。",
-        "action": "旧アドレスを参照する規則や許可リストを新アドレスに更新し、安全な送信者に追加、社内資料も見直します。"
-      },
-      "japaneseDetailedSummary": "Microsoft 365 CopilotからMicrosoft Copilotへの移行に合わせ、Copilotの教育・製品案内メールとサービス有効化メールの送信者がMicrosoft Copilot (microsoftcopilotupdates@microsoft.com) に変更されます。旧アドレスm365copilotupdates@microsoft.comからは送信されなくなります。内容や目的は変わらず、テナント設定なしで自動的に有効になります。Exchange OnlineやDefender for Office 365のメールフロー規則、セーフ送信者、許可/拒否リストが旧アドレスを参照している場合は更新が必要になる可能性があります。推奨対応は、該当設定の確認と更新、新アドレスの許可リスト追加、社内ドキュメントの見直しです。時期は2026年9月中旬です。本文は途中で切れています。",
-      "japaneseBodyTranslation": "[内容と理由]\nMicrosoft 365 CopilotからMicrosoft Copilotへの移行に合わせ、Microsoft Copilotの教育および製品導入支援メールの送信者IDを更新します。これらのメールは、ユーザーがサブスクリプションに含まれるMicrosoft Copilotの機能を学び、新機能を知り、利用可能なツールで生産性を高める助けとなります。この変更によりMicrosoft Copilot体験全体で一貫したブランディングとなり、ユーザーは引き続きガイダンス、ヒント、サービス更新を受け取れます。\nロールアウト スケジュール:\n• 一般提供(全世界):2026年9月中旬\n[組織への影響]\n影響を受けるもの:\n• Microsoftの製品およびサービスに関する通信の受信にオプトインしている、Microsoft Copilot機能が有効なユーザーの組織\n• メールフロー規則、許可リスト、セーフ送信者設定を管理するMicrosoft 365管理者\n• Microsoft Copilotサービスと機能が新たに有効化されたユーザー、または既に有効化されメールを受信しているユーザー\nプラットフォーム/サービス:\n• Microsoft Copilot\n• Exchange Online\n• Microsoft Defender for Office 365\n• Microsoft 365 エンドユーザー向け通信\n発生すること:\n• ユーザーは、Microsoft Copilot機能へのアクセス付与時に、引き続きトランザクション型のサービス有効化メールを受け取ります。送信者アドレスはMicrosoft Copilot (microsoftcopilotupdates@microsoft.com) に更新されます。\n• ユーザーは引き続き教育・製品導入メールを受け取ります。送信者アドレスはMicrosoft Copilot (microsoftcopilotupdates@microsoft.com) に更新されます。\n• Microsoft 365 Copilot (m365copilotupdates@microsoft.com) からはメールが送信されなくなります。\n• これらのメールの内容と目的は変わりません。\n• 以前の送信者アドレスを参照する既存のメールフロー規則、セーフ送信者エントリ、許可リストは更新が必要になる場合があります。\n• この変更は自動的に有効となり、テナント構成は不要です。\n[必要な対応/推奨事項]\n• m365copilotupdates@microsoft.com を参照するメールフロー規則、トランスポート規則、セーフ送信者設定、許可/ブロック リストを確認してください。\n• それらの構成を microsoftcopilotupdates@microsoft.com を使用するよう更新してください。\n• 配信を確実にするため、microsoftcopilotupdates@microsoft.com を組織のセーフ送信者または許可リストに追加してください。\n• 以前の送信者アドレスを参照する社内ドキュメントやヘルプデスクのガイダンスを確認してください。\n• この変更を、ユーザーを支援するサポート チームに周知してください...(原文はここで途切れています)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "6947ecf091fce36ba22867af8d9f4ac29ea051cf8e0e7bb408a10ce882d45326",
-      "validatedAt": "2026-10-24T17:34:07.1982391+00:00"
     },
     {
       "id": "MC1470425",
@@ -1524,22 +1458,6 @@
       "sourceTruncated": true,
       "sourceHash": "3c2004256ecf8dfea59f990d6ede34a82d68d36d89d222d19a66cb0cacdd01a1",
       "validatedAt": "2026-10-24T00:53:08.5582206+00:00"
-    },
-    {
-      "id": "MC1477184",
-      "japaneseTitle": "Agent Registryが重複エントリを統合しバージョン履歴を追加",
-      "japaneseFacts": {
-        "change": "Agent Registry で重複エージェントが1件に統合され、バージョンセレクターとバージョン別エクスポートが追加される。",
-        "impact": "グローバル管理者、グローバル閲覧者、AI 管理者、Agent Registry 利用組織。件数や集計値が変わる可能性。",
-        "timing": "全世界で2026年9月中旬開始、2026年10月中旬完了予定(従来は9月下旬)。",
-        "action": "対応不要。件数減少を関係チームへ周知し、社内レポート等を確認することを推奨。"
-      },
-      "japaneseDetailedSummary": "2026年9月29日更新でスケジュールが変更されました。Microsoft 365 管理センターの Agent Registry で、公開スコープや複数の公開バージョンにより重複表示されていた同一エージェントが1つのレコードに統合されます。一覧には最新の組織公開バージョンが表示され、詳細フライアウトのバージョンセレクターから公開済み・進行中ドラフトのバージョンを確認できます。Block などのガバナンス操作はエージェント全体に適用されます。エージェントの総数は減少する可能性がありますが、削除されるものはありません。レポートやエクスポートの件数が変わる可能性があり、エクスポートにはバージョンのオプションが加わります。既定で有効で設定不要です。ロールアウトは全世界で9月中旬開始、10月中旬完了予定(従来は9月下旬)。対応は不要ですが、関係チームへの周知と社内レポート等の確認が推奨されます(抜粋は途中で終了)。",
-      "japaneseBodyTranslation": "2026年9月29日更新: タイムラインを更新しました。ご理解ありがとうございます。\n[内容と理由]\nMicrosoft 365 管理センターの Agent Registry で、同じエージェントの重複エントリを1つのレコードに統合します。これまでは、異なるスコープで公開された場合や複数の公開バージョンが存在する場合に、同じエージェントが複数回表示されることがありました。\nこの更新によりエージェントのガバナンスが簡素化され、展開済みエージェントの一覧が明確になり、管理者がエージェントのライフサイクルとバージョン履歴を一か所で管理しやすくなります。すべてのバージョンはエージェント詳細フライアウトからアクセスでき、ガバナンス操作はエージェント全体に引き続き適用されます。\n[ロールアウトスケジュール]\n• 全世界: 2026年9月中旬に開始し、2026年10月中旬に完了予定(従来は9月下旬)\n[組織への影響]\n影響を受ける対象\n• グローバル管理者\n• グローバル閲覧者\n• AI 管理者\n• Agent Registry を使用する組織\nプラットフォームとサービス\n• Microsoft 365 管理センター\n• Agent Registry\n今後の動作\n• 各エージェントは Agent Registry に1回だけ表示されます。\n• 公開スコープや公開バージョンの違いで複数エントリだったエージェントは1つに統合されます。\n• 一覧には、最後に公開された組織バージョンが既定で表示されます。\n• エージェントを選択すると、バージョンセレクター付きの詳細フライアウトが開きます。\n• バージョンセレクターには、公開済みバージョンと、該当する場合は進行中のドラフトバージョンが表示され、選択すると詳細が更新されます。\n• Block などのガバナンス操作は、全バージョンにわたりエージェント全体に適用されます。\n• 重複エントリの統合により、Agent Registry のエージェント総数が減少する場合があります。エージェントが削除されるわけではありません。\n• 従来のエントリ単位の件数に依存したレポート、ダッシュボード、エクスポート、カスタムプロセスでは、ロールアウト後に合計値が異なる場合があります。\n• レジストリのエクスポートには、エージェントと関連バージョンのエクスポートオプションが含まれます。\n• この変更は既定で有効で、設定は不要です。\n[必要なアクションと推奨事項]\n対応は不要です。\n管理者には次を推奨します:\n• 重複エントリの統合により Agent Registry の件数が減る可能性があることを、ガバナンス/運用チームに周知する。\n• 社内のレポート、ダッシュボード、スクリプト、プロセスを確認する。(原文はここで途中終了)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "42249239c656fcfec1fba55f2cf3ffe041665c59a6e85c32a63f6971f1a1a61d",
-      "validatedAt": "2026-10-23T17:21:36.9584143+00:00"
     },
     {
       "id": "MC1477996",
@@ -2166,6 +2084,22 @@
       "validatedAt": "2026-11-09T20:55:00.0913615+00:00"
     },
     {
+      "id": "MC1545694",
+      "japaneseTitle": "Entra My Sign-insのパスキー登録画面が更新、時期変更",
+      "japaneseFacts": {
+        "change": "My Sign-insのパスキー登録にチェックボックス追加、リンク文言更新、Authenticatorで+ボタンを選ぶ手順の案内が加わります。",
+        "impact": "My Sign-ians経由でMicrosoft Authenticatorにパスキーを登録するユーザーが対象です。",
+        "timing": "全世界で2026年12月上旬に開始(従来は11月中旬)、2026年12月末までに完了予定です。",
+        "action": "ユーザーに新しいUIを周知し、社内ガイダンスを更新してください。"
+      },
+      "japaneseDetailedSummary": "Microsoft AuthenticatorでパスキーをMy Sign-insから登録するユーザー向けに、登録画面が更新されます。チェックボックスの追加、リンク文言の変更、Authenticatorを開いて+ボタンを選択する手順の案内が表示されます。Authenticator内で登録を完了できない場合、更新されたリンクからWebAuthn登録フローを見つけられます。2026年11月20日にタイムラインが更新され、一般提供(全世界)は2026年12月上旬(従来は11月中旬)に開始し、2026年12月末(従来は2027年11月末)までに完了予定です。管理者はユーザーに新しいUIを周知し、社内ガイダンスを更新することが推奨されます。コンプライアンス上の考慮事項は特定されていません。",
+      "japaneseBodyTranslation": "2026年11月20日更新:タイムラインを更新しました。ご理解に感謝します。\n[内容と理由]\nMicrosoft Authenticatorでパスキーを登録するユーザー向けに、My Sign-insでのパスキー登録体験を更新します。ユーザーにはチェックボックスの追加とリンク文言の更新が表示され、Microsoft Authenticatorを開いて+ボタンを選択し登録を始める手順も案内されます。Authenticator内で直接登録を完了できない場合、更新されたリンク文言がWebAuthn登録フローを見つける助けになります。\n[ロールアウトスケジュール]\n• 一般提供(全世界):2026年12月上旬に開始(従来は11月中旬)し、2026年12月末までに完了予定(従来は2027年11月末)。\n[組織への影響]\n影響を受ける対象\n• My Sign-insを通じてMicrosoft Authenticatorでパスキー登録を案内されるユーザー\nプラットフォームとサービス\n• Microsoft Entra My Sign-insおよびMicrosoft Authenticator\n今後起こること\n• パスキー登録中にチェックボックスの追加とリンク文言の更新が表示されます。\n• Microsoft Authenticatorを開き+ボタンを選択して登録を始める手順が表示されます。\n• Authenticator内で直接登録を完了できない場合、更新されたリンク文言がWebAuthn登録フローを見つける助けになります。\n[必要なアクションと推奨事項]\n• 更新されたUIをユーザーに周知し、社内のユーザー向けガイダンスをこれに合わせて更新してください。\n[コンプライアンスに関する考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
+      "sourceCharacterCount": 1557,
+      "sourceTruncated": false,
+      "sourceHash": "b8e699c3bd879eadccf323cc52d1aadb1021ac2d9ae597b7df92fbbc8538599d",
+      "validatedAt": "2026-11-23T02:59:17.2458912+00:00"
+    },
+    {
       "id": "MC1545695",
       "japaneseTitle": "M365 Copilot Chatで対話内にインタラクティブなApp Blocksを表示",
       "japaneseFacts": {
@@ -2196,6 +2130,22 @@
       "sourceTruncated": false,
       "sourceHash": "09f94ae9607697b04f558cd51e0e5d2346ed24e04a86cc681799943e199219c3",
       "validatedAt": "2026-11-12T18:29:15.4900734+00:00"
+    },
+    {
+      "id": "MC1551151",
+      "japaneseTitle": "Entra IDのSMS/音声MFAにリスクベースのCAPTCHAを追加",
+      "japaneseFacts": {
+        "change": "SMS/音声MFAで、コード送信や通話開始の前にリスクベースのCAPTCHAが求められる場合があります。",
+        "impact": "SMS/音声MFAを使うユーザーが対象で、制限の厳しいネットワーク環境では検証画面が読み込めずMFAを完了できない可能性があります。",
+        "timing": "全世界で2026年11月中旬から開始します。",
+        "action": "ヘルプデスクの準備とユーザーへの通知、ネットワーク準備ガイダンスの確認、パスキー等への移行継続を行ってください。"
+      },
+      "japaneseDetailedSummary": "Microsoft Entra IDは、電話ベースのMFAを自動化された不正行為から守るため、SMSまたは音声でMFAを使うユーザーの一部に、SMS認証コード送信や認証通話の開始前にリスクベースのボット対策検証(CAPTCHA)を求めます。表示されるのは十分に高リスクと判断される認証試行のみです。制限の厳しいネットワークやファイアウォール環境では、検証画面を読み込めずSMS/音声MFAを完了できない可能性があります。この変更はSMS・音声認証の廃止計画とは別で、廃止時期には影響しません。展開は全世界で2026年11月中旬から開始されます。管理者はヘルプデスクの準備とユーザーへの周知、ネットワーク準備に関するドキュメントの確認、パスキーなどフィッシング耐性のある認証方法への移行継続が推奨されます。(原文は途中で切れています。)",
+      "japaneseBodyTranslation": "2026年11月19日更新:内容を更新しました。ご理解に感謝します。\n[内容と理由]\nMicrosoft Entra IDは、電話ベースの多要素認証(MFA)を自動化された不正行為から保護するための保護策を追加します。MFAにSMSまたは音声を使う一部のユーザーは、Microsoftが SMS認証コードを送信する前、または認証通話を開始する前に、リスクベースのボット対策検証(CAPTCHA)を完了するよう求められる場合があります。\n組織で制限の厳しいネットワークやファイアウォール設定を使用している場合は、この変更に備えるため、Microsoft Learnの「電話ベースのサインインのリスクベースのボット対策検証(CAPTCHA) - Microsoft Entra ID」のガイダンスに従ってください。\nこの変更はSMSおよび音声認証の廃止計画とは別であり、廃止のタイムラインには影響しません。\n[ロールアウトスケジュール]\n• 全世界:2026年11月中旬から開始。\n[組織への影響]\n影響を受ける対象\n• Microsoft Entra IDのMFAでSMSまたは音声を使用するユーザー\nプラットフォームとサービス\n• Microsoft Entra ID\n• SMSおよび音声認証方法\n今後起こること\n• 一部のユーザーは、SMS認証コード送信または認証通話開始の前に、リスクベースのボット対策検証(CAPTCHA)を求められる場合があります。\n• 検証手順は、十分に高いリスクのしきい値を満たす認証試行にのみ表示されます。\n• 制限の厳しいネットワークやファイアウォール設定のユーザーは、検証画面を読み込めない場合、SMSまたは音声MFAを完了できない可能性があります。\n[必要なアクションと推奨事項]\n管理者には次の対応を推奨します。\n• ヘルプデスクを準備し、一部のSMS/音声MFA試行で追加のCAPTCHA検証が必要になる可能性をユーザーに通知する。\n• ネットワーク準備に関するボット対策検証のドキュメントを確認する。制限の厳しいファイアウォール、プロキシ、Webフィルターを使用している場合は、認証中に必要なリソースを読み込めるようにする。\n• 可能な限り、パスキーなどフィッシング耐性のある認証方法への移行を継続する。\n詳細\n• 電話ベースのサインインのリスクベースのボット対策検証(CAPTCHA) - Microsoft Entra ID | Microsoft Learn\n• Microsoft Entra多要素認証における通話詐欺リスクの理解 - Microsoft Entra ID | Microsoft Learn\n• 既定のパスキーとMicrosoft提供のSMS・音声認証の廃止 - Microsoft Entra ID | Microsoft Learn\n[コンプライアンス...(原文はここで途中終了)",
+      "sourceCharacterCount": 2500,
+      "sourceTruncated": true,
+      "sourceHash": "e523482471adbfe9265f07c04bfb408386dbf215f2ae1b33fd3f45443578cec9",
+      "validatedAt": "2026-11-23T02:59:17.2481966+00:00"
     },
     {
       "id": "MC1556082",
@@ -2262,22 +2212,6 @@
       "validatedAt": "2026-11-19T03:43:33.9595407+00:00"
     },
     {
-      "id": "MC985483",
-      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
-      "japaneseFacts": {
-        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
-        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
-        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
-        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
-      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
-      "sourceCharacterCount": 1148,
-      "sourceTruncated": false,
-      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
-      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
-    },
-    {
       "id": "MC1562269",
       "japaneseTitle": "CopilotデスクトップアプリとEdgeのブラウザーデータをオプトインでSync",
       "japaneseFacts": {
@@ -2294,39 +2228,23 @@
       "validatedAt": "2026-11-23T02:59:17.2419225+00:00"
     },
     {
-      "id": "MC1551151",
-      "japaneseTitle": "Entra IDのSMS/音声MFAにリスクベースのCAPTCHAを追加",
+      "id": "MC985483",
+      "japaneseTitle": "Graph 会議作成 API の既定でパスコードが必須に変更",
       "japaneseFacts": {
-        "change": "SMS/音声MFAで、コード送信や通話開始の前にリスクベースのCAPTCHAが求められる場合があります。",
-        "impact": "SMS/音声MFAを使うユーザーが対象で、制限の厳しいネットワーク環境では検証画面が読み込めずMFAを完了できない可能性があります。",
-        "timing": "全世界で2026年11月中旬から開始します。",
-        "action": "ヘルプデスクの準備とユーザーへの通知、ネットワーク準備ガイダンスの確認、パスキー等への移行継続を行ってください。"
+        "change": "Create onlineMeeting API で isPasscodeRequired の既定値が false から true に変わります。",
+        "impact": "Create onlineMeeting API とパスコード指定を利用するアプリケーションが対象です。",
+        "timing": "既定値の変更は 2025年2月24日に有効となり、2027年10月にパスコード指定オプションを削除する予定です。",
+        "action": "新しい既定動作を考慮するよう、該当アプリケーションを確認・更新してください。"
       },
-      "japaneseDetailedSummary": "Microsoft Entra IDは、電話ベースのMFAを自動化された不正行為から守るため、SMSまたは音声でMFAを使うユーザーの一部に、SMS認証コード送信や認証通話の開始前にリスクベースのボット対策検証(CAPTCHA)を求めます。表示されるのは十分に高リスクと判断される認証試行のみです。制限の厳しいネットワークやファイアウォール環境では、検証画面を読み込めずSMS/音声MFAを完了できない可能性があります。この変更はSMS・音声認証の廃止計画とは別で、廃止時期には影響しません。展開は全世界で2026年11月中旬から開始されます。管理者はヘルプデスクの準備とユーザーへの周知、ネットワーク準備に関するドキュメントの確認、パスキーなどフィッシング耐性のある認証方法への移行継続が推奨されます。(原文は途中で切れています。)",
-      "japaneseBodyTranslation": "2026年11月19日更新:内容を更新しました。ご理解に感謝します。\n[内容と理由]\nMicrosoft Entra IDは、電話ベースの多要素認証(MFA)を自動化された不正行為から保護するための保護策を追加します。MFAにSMSまたは音声を使う一部のユーザーは、Microsoftが SMS認証コードを送信する前、または認証通話を開始する前に、リスクベースのボット対策検証(CAPTCHA)を完了するよう求められる場合があります。\n組織で制限の厳しいネットワークやファイアウォール設定を使用している場合は、この変更に備えるため、Microsoft Learnの「電話ベースのサインインのリスクベースのボット対策検証(CAPTCHA) - Microsoft Entra ID」のガイダンスに従ってください。\nこの変更はSMSおよび音声認証の廃止計画とは別であり、廃止のタイムラインには影響しません。\n[ロールアウトスケジュール]\n• 全世界:2026年11月中旬から開始。\n[組織への影響]\n影響を受ける対象\n• Microsoft Entra IDのMFAでSMSまたは音声を使用するユーザー\nプラットフォームとサービス\n• Microsoft Entra ID\n• SMSおよび音声認証方法\n今後起こること\n• 一部のユーザーは、SMS認証コード送信または認証通話開始の前に、リスクベースのボット対策検証(CAPTCHA)を求められる場合があります。\n• 検証手順は、十分に高いリスクのしきい値を満たす認証試行にのみ表示されます。\n• 制限の厳しいネットワークやファイアウォール設定のユーザーは、検証画面を読み込めない場合、SMSまたは音声MFAを完了できない可能性があります。\n[必要なアクションと推奨事項]\n管理者には次の対応を推奨します。\n• ヘルプデスクを準備し、一部のSMS/音声MFA試行で追加のCAPTCHA検証が必要になる可能性をユーザーに通知する。\n• ネットワーク準備に関するボット対策検証のドキュメントを確認する。制限の厳しいファイアウォール、プロキシ、Webフィルターを使用している場合は、認証中に必要なリソースを読み込めるようにする。\n• 可能な限り、パスキーなどフィッシング耐性のある認証方法への移行を継続する。\n詳細\n• 電話ベースのサインインのリスクベースのボット対策検証(CAPTCHA) - Microsoft Entra ID | Microsoft Learn\n• Microsoft Entra多要素認証における通話詐欺リスクの理解 - Microsoft Entra ID | Microsoft Learn\n• 既定のパスキーとMicrosoft提供のSMS・音声認証の廃止 - Microsoft Entra ID | Microsoft Learn\n[コンプライアンス...(原文はここで途中終了)",
-      "sourceCharacterCount": 2500,
-      "sourceTruncated": true,
-      "sourceHash": "e523482471adbfe9265f07c04bfb408386dbf215f2ae1b33fd3f45443578cec9",
-      "validatedAt": "2026-11-23T02:59:17.2481966+00:00"
-    },
-    {
-      "id": "MC1545694",
-      "japaneseTitle": "Entra My Sign-insのパスキー登録画面が更新、時期変更",
-      "japaneseFacts": {
-        "change": "My Sign-insのパスキー登録にチェックボックス追加、リンク文言更新、Authenticatorで+ボタンを選ぶ手順の案内が加わります。",
-        "impact": "My Sign-ians経由でMicrosoft Authenticatorにパスキーを登録するユーザーが対象です。",
-        "timing": "全世界で2026年12月上旬に開始(従来は11月中旬)、2026年12月末までに完了予定です。",
-        "action": "ユーザーに新しいUIを周知し、社内ガイダンスを更新してください。"
-      },
-      "japaneseDetailedSummary": "Microsoft AuthenticatorでパスキーをMy Sign-insから登録するユーザー向けに、登録画面が更新されます。チェックボックスの追加、リンク文言の変更、Authenticatorを開いて+ボタンを選択する手順の案内が表示されます。Authenticator内で登録を完了できない場合、更新されたリンクからWebAuthn登録フローを見つけられます。2026年11月20日にタイムラインが更新され、一般提供(全世界)は2026年12月上旬(従来は11月中旬)に開始し、2026年12月末(従来は2027年11月末)までに完了予定です。管理者はユーザーに新しいUIを周知し、社内ガイダンスを更新することが推奨されます。コンプライアンス上の考慮事項は特定されていません。",
-      "japaneseBodyTranslation": "2026年11月20日更新:タイムラインを更新しました。ご理解に感謝します。\n[内容と理由]\nMicrosoft Authenticatorでパスキーを登録するユーザー向けに、My Sign-insでのパスキー登録体験を更新します。ユーザーにはチェックボックスの追加とリンク文言の更新が表示され、Microsoft Authenticatorを開いて+ボタンを選択し登録を始める手順も案内されます。Authenticator内で直接登録を完了できない場合、更新されたリンク文言がWebAuthn登録フローを見つける助けになります。\n[ロールアウトスケジュール]\n• 一般提供(全世界):2026年12月上旬に開始(従来は11月中旬)し、2026年12月末までに完了予定(従来は2027年11月末)。\n[組織への影響]\n影響を受ける対象\n• My Sign-insを通じてMicrosoft Authenticatorでパスキー登録を案内されるユーザー\nプラットフォームとサービス\n• Microsoft Entra My Sign-insおよびMicrosoft Authenticator\n今後起こること\n• パスキー登録中にチェックボックスの追加とリンク文言の更新が表示されます。\n• Microsoft Authenticatorを開き+ボタンを選択して登録を始める手順が表示されます。\n• Authenticator内で直接登録を完了できない場合、更新されたリンク文言がWebAuthn登録フローを見つける助けになります。\n[必要なアクションと推奨事項]\n• 更新されたUIをユーザーに周知し、社内のユーザー向けガイダンスをこれに合わせて更新してください。\n[コンプライアンスに関する考慮事項]\n特定されたコンプライアンス上の考慮事項はありません。組織に応じて確認してください。",
-      "sourceCharacterCount": 1557,
+      "japaneseDetailedSummary": "Microsoft Graph の Create onlineMeeting API では、従来は値を指定しない場合パスコード不要でした。2025年2月24日以降、isPasscodeRequired の既定値が false から true に変更され、未指定の場合はパスコードが必須になります。ユーザーは引き続きパスコード要否を指定できます。2027年10月には、パスコード要否を指定するオプション自体が削除され、joinMeetingIdSettings リソースの isPasscodeRequired プロパティも削除される予定です。Create onlineMeeting API を使うアプリケーションは、新しい既定動作を考慮して確認・更新する必要があります。",
+      "japaneseBodyTranslation": "この廃止の前は、Microsoft Graph API でオンライン会議を作成する際、管理者やユーザーはパスコードを必須にするか選択できました。値が指定されない場合、既定ではパスコードは不要でした。\nこの更新後:セキュリティ強化のため、会議作成時にパスコードの要否を指定するオプションは引き続き利用できます。値が指定されない場合、既定で会議にパスコードが必須になります。\n2025年2月24日より、isPasscodeRequired プロパティの既定値が false から true に変更されます。\nアプリケーションの更新\nCreate onlineMeeting API とパスコードを使用するアプリケーションを確認・更新し、新しい既定動作に対応してください。\n今後の予定\n2027年10月に、パスコードの要否を指定するオプションを削除します。これによりすべての会議が一貫してパスコードで保護されます。Microsoft Graph オンライン会議 API の joinMeetingIdSettings リソースから isPasscodeRequired プロパティを削除します。",
+      "sourceCharacterCount": 1148,
       "sourceTruncated": false,
-      "sourceHash": "b8e699c3bd879eadccf323cc52d1aadb1021ac2d9ae597b7df92fbbc8538599d",
-      "validatedAt": "2026-11-23T02:59:17.2458912+00:00"
+      "sourceHash": "3fb69ac451003668023ea4955c6d63d7abfcd3c319beb136ecd9d1fbfac6ea44",
+      "validatedAt": "2026-10-22T13:58:57.5798294+00:00"
     }
   ],
-  "summaryGeneratedAt": "2026-11-23T02:53:59.2354518+00:00",
-  "summarySourceHash": "17dd1a4b7d91dbc5a27a25ecfbf17d2b6387412d1d1ada578c79e27cd93f36ec",
-  "sourceAgentRunId": "45102294879"
+  "summarySourceHash": "f834f5f323ce04e30ad4887d6a7126ff2c07336cb39da27695411401d21e871d",
+  "summaryGeneratedAt": "2026-11-26T04:16:14.6900313+00:00",
+  "sourceAgentRunId": "45753542119"
 }
