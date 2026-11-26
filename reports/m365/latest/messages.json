@@ -1,13 +1,13 @@
 {
   "meta": {
-    "runId": "45102214056",
-    "generatedAt": "2026-11-23T02:48:00.5683619+00:00",
+    "runId": "45753425686",
+    "generatedAt": "2026-11-26T04:10:02.2611631+00:00",
     "source": "Microsoft Graph",
     "lookbackDays": 180,
     "publicFieldPolicy": "Lab-public content. Readable message body text and name/value details are included; credential-like values are redacted."
   },
   "summary": {
-    "total": 100,
+    "total": 98,
     "majorChanges": 27,
     "highSeverity": 2,
     "actionRequired": 13,
@@ -17,18 +17,178 @@
   "topServices": [
     {
       "name": "Microsoft 365 suite",
-      "count": 56
+      "count": 55
     },
     {
       "name": "Microsoft Entra",
-      "count": 28
+      "count": 27
     },
     {
       "name": "Microsoft 365 Copilot Chat",
-      "count": 18
+      "count": 17
     }
   ],
   "messages": [
+    {
+      "id": "MC1567263",
+      "title": "Microsoft 365 Copilot: New notification option when pinning Copilot to the Windows taskbar",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-24T22:45:51.0000000+00:00",
+      "endDateTime": "2027-01-28T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-24T22:45:53.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nWe’re introducing a new notification option in the Pin Microsoft Copilot to the Windows taskbar setting in the Microsoft 365 admin center. When admins pin Microsoft Copilot for selected groups, they can choose to notify eligible users that Copilot has been pinned by their organization. The notification includes an Open Copilot action that launches the Microsoft Copilot desktop app.\nThis optional notification helps organizations pair admin-led deployment with clear end-user communication so users understand why Copilot appears on their taskbar and can quickly start using it.\n[Rollout schedule]\n• General Availability (Worldwide): We will begin rolling out in late November 2026 and expect to complete by late December 2026\n[Impact on your organization]\nWho is affected\n• Admins with the Intune Administrator or Global Administrator role who manage Microsoft Copilot taskbar pinning\n• Intune-managed users on Windows 11 devices who are included in selected groups targeted by the admin\n• Users must have the Microsoft Copilot app installed to receive the pin and notification\nPlatforms and services\n• Microsoft 365 admin center\n• Organizational Messages\n• Windows 11\n• Microsoft Copilot desktop app\n• Microsoft Intune\nWhat will happen\n• This capability is not enabled by default. Admins must choose to notify users when configuring the taskbar pin for selected groups.\n• After selecting groups to receive the Copilot taskbar pin, admins can choose to schedule a one-time notification for eligible users.\n• Users who receive the notification will be informed that their organization has made Copilot easier to access from their taskbar.\n• The notification includes an Open Copilot action. Selecting it launches the Microsoft Copilot desktop app.\n• The notification is delivered through Organizational Messages and can be managed there after it is scheduled.\n• Only users who receive the taskbar pin and have the Microsoft Copilot app installed will receive the notification. If the app isn’t installed, the pin and notification won’t appear.\n• At launch, the notification can be scheduled only when using Pin for selected groups. Support for additional taskbar pinning options is planned for a future release.\nScreenshot 1 - OM detail screen view:\nScreenshot 2 - Notification scheduled view:\nScreenshot 3 -User pinning notification flyout view:\n[Action required and recommendations]\nNo action is required unless you want to use this capability.\nTo notify users when deploying the Microsoft Copilot taskbar pin:\n• Confirm that your tenant has at least one active Microsoft Intune license.\n• Ensure the Microsoft Copilot app is installed for the users you plan to target.\n• In the Microsoft 365 admin center, open the Pin Microsoft Copilot to the Windows taskbar setting.\n• Choose Pin for selected groups and select the groups you want to target.\n• Choose the option to notify users after pinning Copilot.\n• Schedule the notification.\n• After scheduling, manage the notification through Organizational Messages as needed.\nIf your tenant doesn’t have an Intune license, you can use an XML configuration file to pin the Microsoft Copilot app. However, the notification capability described in this message requires the Microsoft 365 admin center experience and is currently available only when using Pin for selected groups.\nLearn more\nAdditional documentation will be available in a Microsoft Learn article when this capability is released.\n[Compliance considerations]\nQuestionAnswer\nDoes the change provide a new way of communicating between users, tenants, or subscriptions?Yes. The change allows admins to schedule a one-time notification for eligible users through Organizational Messages when pinning Microsoft Copilot for selected groups.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. The capability is admin controlled and opt-in. Admins can target selected groups when configuring the Microsoft Copilot taskbar pin and associated notification.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 introduces an optional notification for admins pinning Microsoft Copilot to the Windows taskbar for selected groups. This notifies users with an Open Copilot action, enhancing communication and adoption. Rollout begins late November 2026. Admins must enable and schedule notifications via the Microsoft 365 admin center."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1567262",
+      "title": "Microsoft 365 Backup: Up to 10-year recovery windows for SharePoint and OneDrive",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-11-24T22:45:20.0000000+00:00",
+      "endDateTime": "2026-12-10T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-24T22:45:25.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Feature update"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "[What and why]\nMicrosoft 365 Backup now supports configurable recovery windows of up to 10 years for SharePoint sites and OneDrive accounts, extending the previous maximum of two years. This update gives organizations greater flexibility to configure how long backup recovery points are retained.\n[Rollout schedule]\n• General Availability (Worldwide): Available now\n[Impact on your organization]\nWho is affected\n• Organizations using Microsoft 365 Backup for SharePoint and OneDrive\nPlatforms and services\n• Microsoft 365 Backup\n• SharePoint Online\n• OneDrive for Business\nWhat will happen\n• Administrators can configure recovery windows of 3 months, 6 months, 1 year, 2 years, 3 years, 4 years, 5 years, 6 years, 7 years, 8 years, 9 years, or 10 years for SharePoint and OneDrive backup policies.\n• Exchange backup policies are unchanged. Supported recovery windows remain 3 months, 6 months, 1 year, or 2 years.\n• The existing one-year default recovery window remains unchanged. Longer recovery windows must be configured on the applicable backup policies.\n• Weekly SharePoint and OneDrive recovery points beyond the previous 52-week horizon continue through the configured recovery window, up to 10 years.\n• Configuring a longer recovery window does not make 10 years of backup history immediately available.\n[Action required and recommendations]\nNo action is required if your organization wants to keep its current recovery-window settings.\nTo configure a longer recovery window:\n• In the Microsoft 365 admin center, go to Settings > Microsoft 365 Backup.\n• Create a SharePoint or OneDrive backup policy and configure the Recovery window on the Backup Settings page or open an existing active policy and update its recovery window.\n• Select a supported recovery window of up to 10 years.\n• Review your settings and select Create policy or Update policy, as applicable.\nWe recommend that you:\n• Review your organization's SharePoint and OneDrive backup requirements to determine whether longer recovery windows are needed.\n• Notify your backup administrators about the additional recovery-window options.\n• Update your internal documentation as appropriate.\nLearn more\n• Create, view, and edit backup policies in Microsoft 365 Backup | Microsoft Learn\n• Overview of Microsoft 365 Backup | Microsoft Learn\n[Compliance considerations]\nThis update introduces longer configurable recovery windows for SharePoint and OneDrive backup policies. Organizations should review their applicable backup, data retention, and compliance requirements before configuring longer recovery windows.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft 365 Backup now allows configurable recovery windows up to 10 years for SharePoint and OneDrive, extending from the previous 2 years. Administrators can set recovery periods from 3 months to 10 years, while Exchange backup windows remain unchanged. No action is needed unless longer retention is desired."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/microsoft-365/backup/backup-overview?view=o365-worldwide",
+        "https://learn.microsoft.com/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide"
+      ]
+    },
+    {
+      "id": "MC1478957",
+      "title": "(Updated) Microsoft 365 profile card: View dotted-line managers in the organization panel",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-09-24T23:36:27.0000000+00:00",
+      "endDateTime": "2026-12-04T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-24T17:20:28.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 suite"
+      ],
+      "tags": [
+        "Feature update",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
+      "bodyText": "Updated November 24, 2026: We have decided not to move forward with this change at this time. We apologize for any inconvenience.\n[What and why]\nThe dotted-line manager feature announced in MC1478957 has been postponed indefinitely. We are prioritizing improvements to the profile experience in Microsoft 365 Copilot and do not have a revised rollout date to share.\n[When this will happen]\nThe previously communicated October 2026 rollout timeline no longer applies. We will update this Message Center post when we have further information about future availability.\n[How this affects your organization]\nYour organization should not plan on availability of this feature based on the earlier announcement. We recognize that the previous timeline caused confusion and led some customers to spend time investigating why dotted-line manager information was not appearing. We apologize for the inconvenience.\n[What you need to do to prepare]\nNo action is required to prepare for this postponed rollout. Please update any internal rollout plans or communications that reference the previous timeline.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "The dotted-line manager feature in Microsoft 365 profile cards has been postponed indefinitely, with no new rollout date. Organizations should not expect this feature soon and need to update any related plans or communications accordingly. No preparation is required at this time."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1530595",
+      "title": "(Updated) Microsoft Copilot Feedback UX update",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-29T18:13:33.0000000+00:00",
+      "endDateTime": "2027-01-11T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-24T00:36:31.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft 365 Copilot Chat"
+      ],
+      "tags": [
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
+      "bodyText": "Updated November 23, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nWe’re updating the thumbs-down feedback experience in Microsoft Copilot to make it easier for users to provide specific, actionable feedback. Today, many thumbs-down responses are submitted without comments, providing sentiment but limited information about the issue. When users select thumbs down, they’ll be able to select one or more feedback categories and optionally provide additional comments, giving each categorized response a signal that can be routed to the appropriate team or issue type.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 (previously late October) and expect to complete early December 2026 (previously mid-November).\n[Impact on Your Organization:]\nUsers who can submit feedback in supported Microsoft Copilot experiences may see the updated thumbs-down feedback form. The planned audience includes users signed in with Microsoft Entra ID organizational accounts, users signed in with consumer Microsoft accounts, and users in Education tenants. The feature isn’t currently planned for Mobile, GCC, GCC High, DoD, or other sovereign cloud environments.\nThe updated feedback experience is planned for Microsoft Copilot, Copilot in Microsoft Edge, Copilot in Microsoft Outlook, and Copilot in Microsoft Teams, across web browsers, Windows, and macOS. The WXPN/Catalyst experience isn’t currently included.\nWhen a user selects thumbs down on a Copilot response, they may see selectable categories describing the issue, can select more than one category, and can optionally enter additional feedback in a free-text field. The thumbs-up feedback experience isn’t changing. This update applies only to the existing “Allow users to submit feedback to Microsoft” admin policy; all other feedback policy experiences remain unchanged. During the controlled rollout, some users will continue to see the existing feedback experience.\n[Action Required/Recommendations:]\nNo admin action is required for this change. It will be visible to users who are already allowed to submit feedback under the existing policy.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change store new customer data?Yes. When a user chooses to submit thumbs-down feedback, the selected categories, optional free-text comment, and optional screenshot are new data captured as part of that submission.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This UX change applies to the existing \"Allow users to submit feedback to Microsoft\" admin policy; all other feedback policy experiences remain unchanged.",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Copilot is updating its thumbs-down feedback to include selectable categories and optional comments for clearer, actionable input. The rollout starts mid-November 2026, completing by early December, affecting users with Microsoft Entra ID and consumer accounts, excluding some environments. No admin action is needed."
+        }
+      ],
+      "officialDocumentUrls": []
+    },
+    {
+      "id": "MC1519855",
+      "title": "(Updated) Microsoft Entra: Choose your own telephony provider now generally available",
+      "category": "stayInformed",
+      "severity": "normal",
+      "isMajorChange": false,
+      "startDateTime": "2026-10-21T23:24:44.0000000+00:00",
+      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
+      "lastModifiedDateTime": "2026-11-23T22:07:24.0000000+00:00",
+      "actionRequiredByDateTime": null,
+      "services": [
+        "Microsoft Entra"
+      ],
+      "tags": [
+        "Admin impact",
+        "New feature",
+        "Updated message",
+        "User impact"
+      ],
+      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
+      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
+      "bodyText": "Updated November 23, 2026: Bring Your Own Telephony (BYOT) is now generally available. We've updated this post with BYOT details.\nUpdated October 30, 2026: We have updated this post with additional information as the feature is now generally available. Thank you for your patience.\n[What and why]\nChoose Your Own Telephony Provider (CYOT) and Bring Your Own Telephony Provider (BYOT) are now generally available in Microsoft Entra ID. Both connect Microsoft Entra to a telephony provider through an integration in your Azure subscription, but you purchase and deploy them differently. Microsoft Entra continues to manage the authentication experience, including one-time passcode (OTP) generation and validation, and your provider delivers the SMS messages and voice calls.\n• CYOT is the recommended option when a supported offering meets your coverage, contractual and compliance requirements. It gives you providers evaluated by Microsoft for geographic coverage and fraud protection, purchasing through Microsoft Security Store, billing through your Azure subscription and guided deployment in the Microsoft Entra admin center.\n• BYOT is for cases where an existing provider agreement or a specific requirement can't be met by the supported CYOT offerings. You get your provider's ready-to-deploy integration package, set up your account directly with the provider, and configure the integration through APIs.\nWith either option, your organization owns the Azure resources in your subscription and your telephony provider account.\nMicrosoft-provided SMS and voice authentication starts retiring on February 1, 2027. If your users need SMS or voice after that date, set up CYOT or BYOT before then.\nMicrosoft recommends phishing-resistant authentication methods, such as passkeys, instead of SMS or voice. Use a telephony provider only for user groups that have a business, regulatory or technical need for telephony-based authentication.\n[What you need to do]\nIf your organization needs to keep SMS or voice authentication:\n• Identify users who need SMS or voice. Confirm which users have a requirement that phishing-resistant methods can't meet.\n• Choose your option and provider. Review CYOT and BYOT. Use CYOT when a supported provider meets your coverage, contractual and compliance requirements. Otherwise, use BYOT.\n• Check prerequisites. You need an Azure subscription with a valid payment method to host the integration, plus the Owner role or Contributor plus Role Based Access Control Administrator. For CYOT, the subscription must also be eligible for Security Store purchases.\n• Estimate costs. Review provider pricing and Azure hosting costs.\n• Set up and roll out. Follow the setup guide for CYOT or BYOT. Start in evaluation mode, then move traffic to your provider in stages.\n• Complete your transition before February 1, 2027. Review the guidance for the retirement of Microsoft-provided SMS and voice authentication.\nLearn more\n• Choose your own telephony provider for SMS and voice authentication\n• Set up SMS and voice with your own telecom provider\n• Troubleshoot SMS and voice\n• Protect against telephony fraud\n• Plan for resiliency and high availability\n• Frequently asked questions\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication",
+      "details": [
+        {
+          "name": "Summary",
+          "value": "Microsoft Entra now generally supports Choose Your Own Telephony Provider (CYOT) and Bring Your Own Telephony Provider (BYOT) for SMS and voice authentication. Microsoft-provided SMS/voice retires February 1, 2027. Organizations must transition by then, prioritizing phishing-resistant methods and using telephony only when necessary."
+        }
+      ],
+      "officialDocumentUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/bring-your-own-telephony-set-up",
+        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
+        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-set-up",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-telephony-providers",
+        "https://learn.microsoft.com/entra/identity/authentication/how-to-set-up-sms-voice-api",
+        "https://learn.microsoft.com/entra/identity/authentication/phone-providers-faq",
+        "https://learn.microsoft.com/entra/identity/authentication/troubleshoot-voice-call-sms",
+        "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
+      ]
+    },
     {
       "id": "MC1562269",
       "title": "Sync between Copilot desktop app and Microsoft Edge",
@@ -370,7 +530,7 @@
       "details": [
         {
           "name": "FeatureStatusJson",
-          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Desktop\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-23T02:48:06.69478Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Web\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-23T02:48:06.6947803Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"All\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-23T02:48:06.6947804Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null}]}"
+          "value": "{\"0\":[{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Desktop\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-26T04:10:06.8191807Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"Web\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-26T04:10:06.8191809Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null},{\"RoadmapId\":0,\"McPostId\":\"MC1530611\",\"Platform\":\"All\",\"Status\":\"Launched\",\"LastUpdateTime\":\"2026-11-26T04:10:06.819181Z\",\"LatestRing\":\"StandardRelease\",\"TenantRolloutRing\":null}]}"
         },
         {
           "name": "Summary",
@@ -443,35 +603,6 @@
         {
           "name": "Platforms",
           "value": "Android, Desktop, iOS, Web"
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1530595",
-      "title": "(Updated) Microsoft Copilot Feedback UX update",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-29T18:13:33.0000000+00:00",
-      "endDateTime": "2026-12-28T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-11-09T17:41:45.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat"
-      ],
-      "tags": [
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat。重要度は 通常 です。",
-      "bodyText": "Updated November 3, 2026: We have updated the timeline. Thank you for your patience.\n[What and Why:]\nWe’re updating the thumbs-down feedback experience in Microsoft Copilot to make it easier for users to provide specific, actionable feedback. Today, many thumbs-down responses are submitted without comments, providing sentiment but limited information about the issue. When users select thumbs down, they’ll be able to select one or more feedback categories and optionally provide additional comments, giving each categorized response a signal that can be routed to the appropriate team or issue type.\n[Rollout Schedule:]\nGeneral Availability (Worldwide): We will begin rolling out in mid-November 2026 (previously late October) and expect to complete by mid-November 2026 (previously late October).\n[Impact on Your Organization:]\nUsers who can submit feedback in supported Microsoft Copilot experiences may see the updated thumbs-down feedback form. The planned audience includes users signed in with Microsoft Entra ID organizational accounts, users signed in with consumer Microsoft accounts, and users in Education tenants. The feature isn’t currently planned for Mobile, GCC, GCC High, DoD, or other sovereign cloud environments.\nThe updated feedback experience is planned for Microsoft Copilot, Copilot in Microsoft Edge, Copilot in Microsoft Outlook, and Copilot in Microsoft Teams, across web browsers, Windows, and macOS. The WXPN/Catalyst experience isn’t currently included.\nWhen a user selects thumbs down on a Copilot response, they may see selectable categories describing the issue, can select more than one category, and can optionally enter additional feedback in a free-text field. The thumbs-up feedback experience isn’t changing. This update applies only to the existing “Allow users to submit feedback to Microsoft” admin policy; all other feedback policy experiences remain unchanged. During the controlled rollout, some users will continue to see the existing feedback experience.\n[Action Required/Recommendations:]\nNo admin action is required for this change. It will be visible to users who are already allowed to submit feedback under the existing policy.\n[Compliance considerations:]\nQuestionAnswer\nDoes the change store new customer data?Yes. When a user chooses to submit thumbs-down feedback, the selected categories, optional free-text comment, and optional screenshot are new data captured as part of that submission.\nDoes the change include an admin control and can it be controlled through Entra ID group membership?Yes. This UX change applies to the existing \"Allow users to submit feedback to Microsoft\" admin policy; all other feedback policy experiences remain unchanged.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Copilot is updating the thumbs-down feedback to include selectable categories and optional comments for more actionable input. The rollout begins mid-November 2026 worldwide, affecting organizational, consumer, and education accounts on web, Windows, and macOS. No admin action is needed; data is stored per existing feedback policies."
         }
       ],
       "officialDocumentUrls": []
@@ -803,45 +934,6 @@
       "officialDocumentUrls": [
         "https://learn.microsoft.com/DeployEdge/edge-learnmore-copilot-page-summary-results",
         "https://learn.microsoft.com/deployedge/microsoft-edge-policies"
-      ]
-    },
-    {
-      "id": "MC1519855",
-      "title": "(Updated) Microsoft Entra: Choose your own telephony provider now generally available",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-10-21T23:24:44.0000000+00:00",
-      "endDateTime": "2026-11-30T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-10-30T19:34:52.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "New feature",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Updated October 30, 2026: We have updated this post with additional information as the feature is now generally available. Thank you for your patience.\n[What and why]\nChoose Your Own Telephony Provider (CYOT) is now generally available in Microsoft Entra ID. With CYOT, your organization can deliver SMS and voice authentication through a supported telecom provider of its choice. You purchase the provider's offer in Microsoft Security Store and manage the commercial relationship directly with the provider.\nMicrosoft-provided SMS and voice authentication begins retiring on February 1, 2027. To keep SMS and voice authentication available for users who need it, set up CYOT before that date.\nMicrosoft recommends phishing-resistant authentication methods, such as passkeys, instead of SMS or voice. Use telephony-based authentication only for users who have a business, regulatory, or technical need for it.\n[What you need to do]\nIf your organization plans to use CYOT:\n• Identify users who need SMS or voice. Confirm which users have a requirement that phishing-resistant methods can't meet.\n• Choose a provider. Compare the supported telecom providers on coverage, channels, pricing, support, and compliance.\n• Check purchasing requirements. Confirm that you have a paid Azure subscription that is eligible for Security Store purchases, and that you have the Owner role, or Contributor plus Role Based Access Control Administrator.\n• Estimate costs. Review provider pricing and Azure hosting costs.\n• Set up and roll out. Follow Set up SMS and voice. Start in evaluation mode, then increase traffic to your provider in stages.\n• Complete your transition before February 1, 2027. Review the guidance for the retirement of Microsoft-provided SMS and voice authentication.\nLearn more\n• Choose your own telephony provider for SMS and voice authentication\n• Set up SMS and voice with your own telecom provider\n• Troubleshoot SMS and voice\n• Protect against telephony fraud\n• Plan for resiliency and high availability\n• Frequently asked questions\n• Passkeys by default and retirement of Microsoft-provided SMS and voice authentication",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra ID now generally supports Choose Your Own Telephony Provider (CYOT) for SMS and voice authentication, retiring Microsoft-provided services by February 1, 2027. Organizations must select a provider, set up CYOT, and transition before that date, while Microsoft recommends phishing-resistant methods like passkeys."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
-        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
-        "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
-        "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
-        "https://learn.microsoft.com/entra/identity/authentication/how-to-set-up-sms-voice-api",
-        "https://learn.microsoft.com/entra/identity/authentication/phone-providers-faq",
-        "https://learn.microsoft.com/entra/identity/authentication/troubleshoot-voice-call-sms",
-        "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
       ]
     },
     {
@@ -1914,35 +2006,6 @@
       ]
     },
     {
-      "id": "MC1477184",
-      "title": "(Updated) Microsoft 365 admin center: Agent Registry consolidates duplicate agent entries and adds version history",
-      "category": "preventOrFixIssue",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-22T23:30:11.0000000+00:00",
-      "endDateTime": "2026-11-23T07:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-29T18:06:02.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Updated message",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の問題の予防または修正に関するお知らせ",
-      "japaneseSummary": "問題の予防または修正: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "Updated September 29, 2026: We have updated the timeline. Thank you for your patience.\n[What and why]\nWe're improving the Agent Registry experience in the Microsoft 365 admin center by consolidating duplicate entries for the same agent into a single record. Previously, the same agent could appear multiple times when published across different scopes or when multiple published versions existed.\nThis update simplifies agent governance, provides a clearer inventory of deployed agents, and makes it easier for admins to manage agent lifecycle and version history from a single location. All versions of an agent will be accessible from the agent details flyout while governance actions continue to apply across the entire agent.\n[Rollout schedule]\n• Worldwide: Beginning in mid-September 2026 and expected to complete in mid-October 2026 (previously late September)\n[Impact on your organization]\nWho is affected\n• Global Administrators\n• Global Readers\n• AI Administrators\n• Organizations using the Agent Registry\nPlatforms and services\n• Microsoft 365 admin center\n• Agent Registry\nWhat will happen\n• Each agent will appear only once in the Agent Registry.\n• Agents that previously appeared as multiple entries due to different publishing scopes or published versions will be consolidated into a single entry.\n• The Registry list will display the most recently published organizational version by default.\n• Selecting an agent will open an agent details flyout that includes a version selector.\n• The version selector will display available published versions and any in-progress draft versions where applicable. Selecting a version will update the agent details shown in the flyout.\n• Governance actions, such as Block, will continue to apply to the entire agent across all versions.\n• Total agent counts in the Agent Registry may decrease because duplicate entries are being consolidated. No agents are being removed.\n• Reports, dashboards, exports, and custom processes that relied on previous per-entry counts may show different totals after rollout.\n• Registry exports will include options for exporting agents and their associated versions.\n• This change is enabled by default and requires no configuration.\n[Action required and recommendations]\nNo action is required.\nWe recommend that administrators:\n• Inform governance and operations teams that Agent Registry counts may decrease as duplicate entries are consolidated.\n• Review internal reports, dashboards, scripts, and processes that depend on Agent Registry counts or export data.\n• Update internal documentation and training materials to reflect the new version selector experience in the agent details flyout.\n• Validate any downstream reporting that uses Agent Registry export data after rollout is complete.\n[Compliance considerations]\nQuestionAnswer\nDoes the change alter how admins can monitor, report on, or demonstrate compliance activities?Yes. Agent Registry counts will change because duplicate entries are consolidated. Reports, dashboards, exports, and other administrative reporting based on prior count logic may show different totals after rollout.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 admin center's Agent Registry now consolidates duplicate agent entries into single records with version history, simplifying management and governance. Rollout occurs mid-September to mid-October 2026. Admins should update reports and documentation due to changes in agent counts; no action is required."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
       "id": "MC1454397",
       "title": "(Updated) Updates to Tenant External Recipient Rate Limit (TERRL) Quotas for New, Trial, and Education Tenants",
       "category": "stayInformed",
@@ -2032,38 +2095,6 @@
         }
       ],
       "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1478957",
-      "title": "Microsoft 365 profile card: View dotted-line managers in the organization panel",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-24T23:36:27.0000000+00:00",
-      "endDateTime": "2026-12-04T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-24T23:36:46.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Feature update",
-        "New feature",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and why]\nWe're introducing an additive user interface update to the organization panel in the Microsoft 365 profile card that can display a person's dotted-line manager relationship, in addition to their direct manager, when that data is available. This update helps employees better understand organizational structures in companies where reporting relationships span projects, business units, regions, or functions.\n[Rollout schedule]\n• General Availability (Worldwide): Rollout begins in early October 2026 and is expected to complete by late October 2026.\n[Impact on your organization]\nWho is affected\n• Users in organizations that provide dotted-line manager relationship data.\nPlatforms and services\n• Microsoft 365 profile card\nWhat will happen\n• Users may see an additional manager relationship in the organization panel representing a dotted-line manager. Organizations may use different labels for this relationship, such as People Lead or Capability Manager.\n• Users can open the dotted-line manager's profile directly from the profile card to learn more about that person's role and organizational context.\n• This is an additive update to the user interface. If dotted-line manager data is not available, no additional manager relationship will be shown.\n[Action required and recommendations]\nNo action is required. If your organization wants dotted-line manager relationships to appear in the Microsoft 365 profile card:\n• Ensure dotted-line manager attributes exist in your HR system and are available for ingestion.\n• Confirm your HR integration is configured through supported organizational data integrations, such as SAP SuccessFactors or Workday.\n• Review internal help desk guidance and documentation so support teams understand why users may see an additional manager relationship label in the organization panel. The displayed relationship name depends on your HR system's role labels.\n[Learn more]\n• Overview of people relationships in Microsoft 365 - Microsoft 365 admin | Microsoft Learn\n• Use your organizational data in Microsoft 365 and Microsoft Viva - Microsoft 365 Apps | Microsoft Learn\n[Compliance considerations]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft 365 profile cards will show dotted-line managers in the organization panel starting October 2026, helping users understand complex reporting structures. This additive update requires organizations to provide dotted-line manager data via HR systems like SAP SuccessFactors or Workday. No action is required unless enabling this feature."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
-        "https://learn.microsoft.com/microsoft-365/admin/people-relationships-m365"
-      ]
     },
     {
       "id": "MC1478946",
@@ -2448,38 +2479,6 @@
       "officialDocumentUrls": []
     },
     {
-      "id": "MC1469962",
-      "title": "Change in sender email address for Copilot emails",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-09-09T22:31:37.0000000+00:00",
-      "endDateTime": "2026-11-24T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-09-09T22:32:05.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 Copilot Chat",
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 Copilot Chat、Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 Copilot Chat、Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and Why:]\nTo align with the Microsoft 365 Copilot transition to Microsoft Copilot, we are updating the sender identity for Microsoft Copilot educational and product enablement emails. These emails help users learn about Microsoft Copilot capabilities included in their subscriptions, discover new features, and improve productivity with the tools available to them. This change provides consistent branding across Microsoft Copilot experiences while ensuring users continue to receive guidance, tips, and service updates.\nRollout Schedule:\n• General Availability (Worldwide): Mid-September 2026\n[Impact on Your Organization:]\nWho is affected:\n• Organizations that have opted in to receive Microsoft product and service communications for users with Microsoft Copilot features enabled.\n• Microsoft 365 administrators who manage mail flow rules, allow lists, or safe sender configurations.\n• Users who are newly enabled for Microsoft Copilot services and capabilities and/or users previously enabled who are already receiving emails.\nPlatforms/Services:\n• Microsoft Copilot\n• Exchange Online\n• Microsoft Defender for Office 365\n• Microsoft 365 end-user communications\nWhat will happen:\n• Users continue to receive transactional service-enablement emails when they are granted access to Microsoft Copilot capabilities. Sender address will be updated to Microsoft Copilot (microsoftcopilotupdates@microsoft.com).\n• Users continue to receive educational and product enablement emails. Sender address will be updated to Microsoft Copilot (microsoftcopilotupdates@microsoft.com).\n• Emails will no longer be sent from Microsoft 365 Copilot (m365copilotupdates@microsoft.com).\n• The content and purpose of these emails remain unchanged.\n• Existing mail flow rules, safe sender entries, and allow lists that reference the previous sender address may need to be updated.\n• This change is enabled automatically and does not require tenant configuration to take effect.\n[Action Required/Recommendations:]\n• Review mail flow rules, transport rules, safe sender configurations, and allow/block lists that reference m365copilotupdates@microsoft.com.\n• Update those configurations to use microsoftcopilotupdates@microsoft.com.\n• Add microsoftcopilotupdates@microsoft.com to your organization's safe sender or allow list to help ensure delivery.\n• Review internal documentation or help desk guidance that references the previous sender address.\n• Communicate this change to support teams if they assist users with email filtering or message delivery issues.\n• Configure allow entries in Microsoft Defender for Office 365\n• Ensure users receive Microsoft Copilot educational emails\n[Compliance Considerations:]\nNo compliance considerations identified, review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft is updating the sender email for Copilot-related educational and enablement emails to microsoftcopilotupdates@microsoft.com by mid-September 2026. Organizations should update mail flow rules and safe sender lists accordingly. The email content remains unchanged, and no tenant action is required for rollout."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/defender-office-365/tenant-allow-block-list-email-spoof-configure"
-      ]
-    },
-    {
       "id": "MC1467356",
       "title": "Deprecation for Manifest V2 (MV2) browser extensions support in Microsoft Edge",
       "category": "planForChange",
@@ -2713,37 +2712,6 @@
       ],
       "officialDocumentUrls": [
         "https://learn.microsoft.com/en-us/copilot/manage"
-      ]
-    },
-    {
-      "id": "MC1461528",
-      "title": "Microsoft 365 Roadmap is becoming the AI at Work Roadmap",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2026-08-25T15:17:07.0000000+00:00",
-      "endDateTime": "2026-11-23T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2026-08-25T15:17:31.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft 365 suite"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft 365 suite の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft 365 suite。重要度は 通常 です。",
-      "bodyText": "[What and why:]\nOn August 25, 2026, the Microsoft 365 Roadmap will be renamed the AI at Work Roadmap.\nThe AI at Work Roadmap provides a single destination to discover upcoming innovations across Microsoft 365, Copilot, agents, and related AI-powered experiences. Beginning in September 2026, roadmap information for Dynamics 365, Power Platform, and Dataverse will also begin publishing to the AI at Work Roadmap, making it easier to track innovation across Microsoft's business applications, productivity, and AI portfolio.\nThe roadmap continues to support planning and readiness activities by providing visibility into upcoming features and changes.\n[Rollout Schedule:]\n• August 25, 2026: Microsoft 365 Roadmap is renamed to AI at Work Roadmap\n• September 2026: New Dynamics 365, Power Platform, and Dataverse capabilities begin publishing to the AI at Work Roadmap\n[Impact on your organization:]\nWho is affected\n• Microsoft 365 administrators\n• IT professionals\n• Change management teams\n• Technology decision makers who use roadmap information for planning and readiness activities\nPlatforms/Services\n• AI at Work Roadmap (formerly Microsoft 365 Roadmap)\nWhat will happen\n• The Microsoft 365 Roadmap will be renamed to AI at Work Roadmap on August 25, 2026.\n• Beginning in September 2026, new roadmap content for Dynamics 365, Power Platform, and Dataverse will begin publishing to the AI at Work Roadmap.\n• Customers will be able to discover roadmap information across Microsoft's business applications, productivity experiences, Copilot, agents, and AI-powered solutions in a single location.\n• Organizations are encouraged to take advantage of roadmap capabilities including filtering, export, RSS, and MCP integration.\n• There are no changes to how customers access, use, or consume roadmap information.\n• Existing roadmap planning and tracking workflows can continue without modification.\n[Action required / Recommendations:]\n• No immediate action is required.\n• We recommend:\n• Reviewing the AI at Work Roadmap once the new panding becomes available.\n• Familiarizing your organization with roadmap capabilities such as filtering, CSV export, RSS subscriptions, and roadmap management best practices using the AI at Work Roadmap Guide.\n• Exploring the Release Communications MCP Server documentation if your organization uses AI-powered workflows or planning tools that consume roadmap data.\n• Updating any internal documentation, bookmarks, training materials, or references that use the Microsoft 365 Roadmap name, as appropriate.\n• Reviewing and updating any existing links to Release Planner or release wave materials as your organization transitions to the AI at Work Roadmap.\n[Compliance Considerations:]\nNo compliance considerations identified. Review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "On August 25, 2026, Microsoft 365 Roadmap will be renamed AI at Work Roadmap, expanding to include Dynamics 365, Power Platform, and Dataverse updates from September 2026. It centralizes AI-powered innovation tracking without changing access or workflows; no immediate action is required."
-        }
-      ],
-      "officialDocumentUrls": [
-        "https://learn.microsoft.com/microsoft-365/admin/manage/mrc-mcp"
       ]
     },
     {
@@ -3087,35 +3055,6 @@
         {
           "name": "Summary",
           "value": "Microsoft Edge Workspaces will migrate saved data from OneDrive/SharePoint to Edge Sync starting mid-February 2026, removing collaboration features. Migration is automatic for all organizations using Workspaces, with no admin action needed. Sync-disabled devices will have local-only new Workspaces. Opt-out requires contacting Microsoft CSS."
-        }
-      ],
-      "officialDocumentUrls": []
-    },
-    {
-      "id": "MC1191924",
-      "title": "Microsoft Entra ID: Enhance protection of the authentication experience by blocking external script injection",
-      "category": "stayInformed",
-      "severity": "normal",
-      "isMajorChange": false,
-      "startDateTime": "2025-12-03T21:44:46.0000000+00:00",
-      "endDateTime": "2026-11-25T08:00:00.0000000+00:00",
-      "lastModifiedDateTime": "2025-12-03T21:44:55.0000000+00:00",
-      "actionRequiredByDateTime": null,
-      "services": [
-        "Microsoft Entra"
-      ],
-      "tags": [
-        "Admin impact",
-        "Feature update",
-        "User impact"
-      ],
-      "japaneseTitle": "Microsoft Entra の情報提供に関するお知らせ",
-      "japaneseSummary": "情報提供: Microsoft Entra。重要度は 通常 です。",
-      "bodyText": "Introduction\nAs part of Microsoft’s Secure Future Initiative, we’re updating our Content Security Policy for the Microsoft Entra ID sign-in experience. This change adds an extra layer of protection by allowing only scripts from trusted Microsoft domains to run during authentication, blocking unauthorized or injected external code. This proactive measure helps safeguard users against threats like cross-site scripting (XSS), further strengthening security for your organization.\nWhen this will happen\nGeneral Availability (Production/Worldwide only):\n• Rollout begins mid-October 2026\n• Expected completion by late October 2026\nPeriodic communications will be sent closer to release.\nHow this affects your organization\nWho is affected:\n• Organizations using browser-based sign-in experiences on URLs starting with login.microsoftonline.com.\n• No impact to Microsoft Entra External ID tenants.\nWhat will happen:\n• A new Content Security Policy header will be added to Microsoft Entra sign-in pages.\n• Scripts will only be allowed from Microsoft trusted CDN domains.\n• Inline script execution will only be allowed from trusted Microsoft sources.\n• Browser extensions or tools that inject code into the sign-in page will stop working, though users can still sign in.\nWhat you can do to prepare\n• If you do not use tools or extensions that inject code into the sign-in experience, no action is required.\n• If you do use such tools, switch to alternatives that don’t inject code.\n• Test your sign-in flows thoroughly before rollout to identify and resolve any issues early. Testing instructions can be found on our CSP Guide for Microsoft Entra ID.\nLearn more:\n• Content Security Policy Overview for Microsoft Entra ID\n• Microsoft Entra ID Content Security Policy Public Blog Post on Techcommunity\n• Microsoft Secure Future Initiative\n• The CSP nonce guide | Content Security Policy (CSP) quick reference guide\n• The CSP script-src directive guide | Content Security Policy (CSP) quick reference guide\n• Why XSS still matters: MSRC’s perspective on a 25-year-old threat | Microsoft Blog\nCompliance considerations\nNo compliance considerations identified; review as appropriate for your organization.",
-      "details": [
-        {
-          "name": "Summary",
-          "value": "Microsoft Entra ID will enhance authentication security by enforcing a Content Security Policy that blocks external script injection, allowing only trusted Microsoft scripts. This rollout begins mid-October 2026, affecting browser-based sign-ins on login.microsoftonline.com, with no impact on Entra External ID tenants."
         }
       ],
       "officialDocumentUrls": []
