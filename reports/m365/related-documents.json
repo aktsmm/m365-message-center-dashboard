@@ -19049,64 +19049,18 @@
     },
     "MC1478957": {
       "sourceHashes": [
-        "3d0b6abb82ee4c13cba50eeeccaf2b8a9808ad4d156db318301952b78a8fafa6"
+        "0b14e0fe2153523721826d38813d7858491a3f23d78d4075c50a824d6877d8f0"
       ],
-      "status": "verified",
-      "checkedAt": "2026-11-15T20:02:26.094023+00:00",
-      "documents": [
-        {
-          "url": "https://learn.microsoft.com/ja-jp/microsoft-365-apps/org-data-service/organizational-data",
-          "title": "Microsoft 365 組織データ サービスの概要",
-          "locale": "ja-jp",
-          "checkedAt": "2026-11-09T01:46:21.179847+00:00",
-          "bodySha256": "1486c2c25745153a82859f5540ef90d008bd881376bb14bc3762c89367610a44",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "explicit_message_link",
-          "rationale": "Explicit official article from this approved notification.",
-          "featureEvidence": {
-            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365-apps/org-data-service/organizational-data",
-            "bodySha256": "01d2397112676fdc3f0bb338a3bb22c95bd51645edfc6eb06e18b972ec13fa2d",
-            "reviewedAt": "2026-11-15T20:02:27.700355+00:00"
-          }
-        },
-        {
-          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/admin/people-relationships-m365?view=o365-worldwide",
-          "title": "Microsoft 365 のPeople関係",
-          "locale": "ja-jp",
-          "checkedAt": "2026-11-15T20:02:32.245747+00:00",
-          "bodySha256": "966f55b4ebb7d94ce337e22567e11f3afc6789fbc28f898e826187e303881197",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "explicit_message_link",
-          "rationale": "Explicit official article from this approved notification.",
-          "featureEvidence": {
-            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/admin/people-relationships-m365",
-            "bodySha256": "8e2368c170e8ffa3106f00dd46d581cc9a6bb0bdd8ef82577b1a35c5c2649d8d",
-            "reviewedAt": "2026-11-15T20:02:32.245786+00:00"
-          }
-        }
-      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-26T04:11:41.833853+00:00",
+      "documents": [],
       "reviewHash": "e124ec2b4eb907eb219d0c276423f16afe6e9535346fbefba0f228daba379e68",
       "query": "Microsoft profile card",
-      "explicitUrls": [
-        "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
-        "https://learn.microsoft.com/microsoft-365/admin/people-relationships-m365"
-      ],
+      "explicitUrls": [],
       "searchProvider": "Microsoft Learn public MCP",
       "researchVersion": 4,
       "errors": [],
       "candidates": [
-        {
-          "url": "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
-          "source": "explicit_message_link",
-          "decision": "adopted"
-        },
-        {
-          "url": "https://learn.microsoft.com/microsoft-365/admin/people-relationships-m365",
-          "source": "explicit_message_link",
-          "decision": "adopted"
-        },
         {
           "url": "https://learn.microsoft.com/microsoft-365/admin/people-relationships-m365?view=o365-worldwide",
           "source": "reviewed_candidate",
@@ -19118,8 +19072,8 @@
         "Microsoft profile card"
       ],
       "searchSucceeded": true,
-      "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-12-15T20:02:32.246452+00:00",
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-29T04:11:41.839616+00:00",
       "variants": {
         "b779859aa27361bbce5061dbfed6426d02b6414d8c597ce9d45f60aecd55da80": {
           "sourceHashes": [
@@ -19148,6 +19102,80 @@
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
           "nextAttemptAt": "2026-11-27T12:53:56.237602+00:00"
+        },
+        "3d0b6abb82ee4c13cba50eeeccaf2b8a9808ad4d156db318301952b78a8fafa6": {
+          "sourceHashes": [
+            "3d0b6abb82ee4c13cba50eeeccaf2b8a9808ad4d156db318301952b78a8fafa6"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-11-15T20:02:26.094023+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365-apps/org-data-service/organizational-data",
+              "title": "Microsoft 365 組織データ サービスの概要",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-09T01:46:21.179847+00:00",
+              "bodySha256": "1486c2c25745153a82859f5540ef90d008bd881376bb14bc3762c89367610a44",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365-apps/org-data-service/organizational-data",
+                "bodySha256": "01d2397112676fdc3f0bb338a3bb22c95bd51645edfc6eb06e18b972ec13fa2d",
+                "reviewedAt": "2026-11-15T20:02:27.700355+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/admin/people-relationships-m365?view=o365-worldwide",
+              "title": "Microsoft 365 のPeople関係",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-15T20:02:32.245747+00:00",
+              "bodySha256": "966f55b4ebb7d94ce337e22567e11f3afc6789fbc28f898e826187e303881197",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/admin/people-relationships-m365",
+                "bodySha256": "8e2368c170e8ffa3106f00dd46d581cc9a6bb0bdd8ef82577b1a35c5c2649d8d",
+                "reviewedAt": "2026-11-15T20:02:32.245786+00:00"
+              }
+            }
+          ],
+          "reviewHash": "e124ec2b4eb907eb219d0c276423f16afe6e9535346fbefba0f228daba379e68",
+          "query": "Microsoft profile card",
+          "explicitUrls": [
+            "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
+            "https://learn.microsoft.com/microsoft-365/admin/people-relationships-m365"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/microsoft-365-apps/org-data-service/organizational-data",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/admin/people-relationships-m365",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/microsoft-365/admin/people-relationships-m365?view=o365-worldwide",
+              "source": "reviewed_candidate",
+              "decision": "rejected_feature_or_platform_mismatch"
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft profile card",
+          "searchedQueries": [
+            "Microsoft profile card"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-12-15T20:02:32.246452+00:00"
         }
       }
     },
@@ -21418,11 +21446,45 @@
     },
     "MC1519855": {
       "sourceHashes": [
-        "4dc836693caae4d97da86db67ae735a17536cc7e4de06b7e3c7605cef7eb264c"
+        "e6f680688396bc0878f7a6b60011e60a29ad106aceba3be4f3dab12ace10ee48"
       ],
       "status": "verified",
-      "checkedAt": "2026-11-02T01:34:03.689959+00:00",
+      "checkedAt": "2026-11-26T04:11:42.103250+00:00",
       "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/bring-your-own-telephony-set-up",
+          "title": "API (BYOT) を使用して独自のテレフォニー プロバイダーで SMS と音声を設定する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-26T04:11:47.271058+00:00",
+          "bodySha256": "f3804502ac619602028336a4a57ff91b14cb2e4c7999337f1564b078f2b3c8b7",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "product": "entra",
+            "matchedTerms": [
+              "choose",
+              "own",
+              "provider",
+              "telephony"
+            ],
+            "requiredFeatureTerms": [
+              "choose",
+              "generally",
+              "own",
+              "provider",
+              "telephony"
+            ],
+            "coverage": 0.8,
+            "platforms": [],
+            "score": 1.0,
+            "articleExcerpt": "# Set up SMS and voice with your own telephony provider by using APIs (BYOT)\r\n\r\n**Audience:** Customers deploying a telephony provider's published Bring Your Own Telephony (BYOT) integration in their own Azure subscription.\r\n\r\n> \r\n> **Are you a telephony provider building an integration?** Use the [Telephony provider guide: Bring Your Own Telephony (BYOT)](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/Telephony%20provider%20guide-%20Bring%20Your%20Own%20Telephony%20%28BYOT%29.md) instead.\r\n\r\nChoose Your Own Telephony Provider (CYOT) is the recommended option for SMS and voice authentication. Use a supported CYOT provider whenever it meets your organization's needs. For setup instructions, see [Set up SMS and voice with a CYOT provider](choose-your-own-telephony-set-up). Use Bring Your Own Telephony (BYOT) only when regulatory, compliance, or other specific requirements call for a provider outside the supported CYOT offerings. With BYOT, you set up an account directly with your provider, deploy the provider's published integration in your Azure subscription, and configure Microsoft Entra to route SMS or voice authentication through your provider.\r\n\r\nImportant\r\n\r\nBefore following this guide, obtain a ready-to-deploy integration package containing an adapter for your telephony provider, along with its setup instructions. Your provider can use the [Telephony provider guide: Bring Your Own Telephony (BYOT)](https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/Telephony%20provider%20guide-%20Bring%20Your%20Own%20Telephony%20%28BYOT%29.md) to prepare the integration.\r\n\r\nThis article walks you through the end-to-end setup, including setting up your provider account, deploying the integration, configuring the authentication method policy, and testing the experience before moving to production.\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/bring-your-own-telephony-set-up",
+            "bodySha256": "23b7610c01ac2500988fb72cbd042291c075b3cbf7daa1d1f1ec5899aa258e30",
+            "reviewedAt": "2026-11-26T04:11:47.271135+00:00"
+          }
+        },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
           "title": "自社の通信事業者を利用して電話詐欺を防ぐ",
@@ -21451,10 +21513,10 @@
             "coverage": 0.8,
             "platforms": [],
             "score": 1.0,
-            "articleExcerpt": "# Protect against telephony fraud with your own telecom provider\r\n\r\nWith Choose Your Own Telephony Provider (CYOT), SMS and voice traffic runs through your own telecom provider account. You control the fraud protections, allowed destinations, and spending limits that match your organization's traffic and risk profile.\r\n\r\nImportant\r\n\r\nSet up your provider's fraud and spending controls before you move production traffic to CYOT.\r\n\r\n",
+            "articleExcerpt": "# Protect against telephony fraud with your own telephony provider\r\n\r\nWith Choose Your Own Telephony Provider (CYOT) or Bring Your Own Telephony (BYOT), SMS and voice traffic runs through your own telephony provider account. You control the fraud protections, allowed destinations, and spending limits that match your organization's traffic and risk profile. The guidance in this article applies to both options; available controls depend on your provider.\r\n\r\nImportant\r\n\r\nSet up your provider's fraud and spending controls before you move production traffic to CYOT or BYOT.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
-            "bodySha256": "a84875b053f5a0009740b9c8b7b1b2632f6d9d013c48939b62924b35b54642ea",
-            "reviewedAt": "2026-11-02T01:34:08.630136+00:00"
+            "bodySha256": "79f4f467627bbe79624e263ee18f8d8737c59e3c8919c02db570e517efa9b02f",
+            "reviewedAt": "2026-11-26T04:11:48.494361+00:00"
           }
         },
         {
@@ -21469,52 +21531,21 @@
           "rationale": "Explicit official article from this approved notification.",
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability",
-            "bodySha256": "3f4015fdcd33e7b885e348823bf4d8203f2ad1c438d2059275648744d0a24798",
-            "reviewedAt": "2026-11-02T01:34:12.096147+00:00"
-          }
-        },
-        {
-          "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
-          "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
-          "locale": "ja-jp",
-          "checkedAt": "2026-10-22T00:43:47.101706+00:00",
-          "bodySha256": "83ec253a56a82222dde9352b5982fb64c74264fbaf8d0ad1dfaf4bf39c850adc",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "explicit_message_link",
-          "rationale": "Explicit official article from this approved notification.",
-          "featureEvidence": {
-            "product": "entra",
-            "matchedTerms": [
-              "choose",
-              "own",
-              "provider",
-              "telephony"
-            ],
-            "requiredFeatureTerms": [
-              "choose",
-              "generally",
-              "own",
-              "provider",
-              "telephony"
-            ],
-            "coverage": 0.8,
-            "platforms": [],
-            "score": 1.0,
-            "articleExcerpt": "# Choose your own telephony provider for SMS and voice authentication\r\n\r\nChoose Your Own Telephony Provider (CYOT) lets your organization use a supported telecom provider to deliver SMS and voice authentication for Microsoft Entra ID.\r\n\r\nWith CYOT, Microsoft Entra continues to manage the authentication experience, including one-time passcode (OTP) generation and validation, while SMS messages and voice calls are delivered through the telecom provider that your organization selects and configures.\r\n\r\nCYOT gives your organization more control over telecom provider selection, geographic coverage, pricing, and telecom delivery.\r\n\r\nImportant\r\n\r\nMicrosoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\r\n\r\n",
-            "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
-            "bodySha256": "89b3a55618121f3acdff945ec1fc51f2202e520ab824324910063d70ca79f802",
-            "reviewedAt": "2026-11-02T01:34:13.183437+00:00"
+            "bodySha256": "0b46e243ab941dbfadb999ca5e76a0c4684ab1de598bf19ffa72fa8a3daaa8cb",
+            "reviewedAt": "2026-11-26T04:11:49.878035+00:00"
           }
         }
       ],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft entra",
       "explicitUrls": [
+        "https://learn.microsoft.com/entra/identity/authentication/bring-your-own-telephony-set-up",
         "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
         "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
+        "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-set-up",
         "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
         "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+        "https://learn.microsoft.com/entra/identity/authentication/concept-telephony-providers",
         "https://learn.microsoft.com/entra/identity/authentication/how-to-set-up-sms-voice-api",
         "https://learn.microsoft.com/entra/identity/authentication/phone-providers-faq",
         "https://learn.microsoft.com/entra/identity/authentication/troubleshoot-voice-call-sms",
@@ -21525,6 +21556,12 @@
       "errors": [],
       "candidates": [
         {
+          "url": "https://learn.microsoft.com/entra/identity/authentication/bring-your-own-telephony-set-up",
+          "source": "explicit_message_link",
+          "decision": "adopted",
+          "score": 1.0
+        },
+        {
           "url": "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
           "source": "explicit_message_link",
           "decision": "adopted",
@@ -21534,12 +21571,6 @@
           "url": "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
           "source": "explicit_message_link",
           "decision": "adopted"
-        },
-        {
-          "url": "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
-          "source": "explicit_message_link",
-          "decision": "adopted",
-          "score": 1.0
         }
       ],
       "searchEvidenceKey": "search:Microsoft entra",
@@ -21548,7 +21579,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-12-02T01:34:13.183445+00:00",
+      "nextAttemptAt": "2026-12-26T04:11:49.878043+00:00",
       "variants": {
         "6a23494141a6da24e3aef7b32ef51813299280c8b7a4abde31f715898bfb0d76": {
           "sourceHashes": [
@@ -21687,6 +21718,140 @@
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
           "nextAttemptAt": "2026-12-21T10:09:38.620806+00:00"
+        },
+        "4dc836693caae4d97da86db67ae735a17536cc7e4de06b7e3c7605cef7eb264c": {
+          "sourceHashes": [
+            "4dc836693caae4d97da86db67ae735a17536cc7e4de06b7e3c7605cef7eb264c"
+          ],
+          "status": "verified",
+          "checkedAt": "2026-11-02T01:34:03.689959+00:00",
+          "documents": [
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+              "title": "自社の通信事業者を利用して電話詐欺を防ぐ",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-02T01:34:08.630103+00:00",
+              "bodySha256": "2498c4a36b240a114d28f2323c427d3fd3a29c8fec8210f9818d12470f79944e",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "choose",
+                  "own",
+                  "provider",
+                  "telephony"
+                ],
+                "requiredFeatureTerms": [
+                  "choose",
+                  "generally",
+                  "own",
+                  "provider",
+                  "telephony"
+                ],
+                "coverage": 0.8,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "# Protect against telephony fraud with your own telecom provider\r\n\r\nWith Choose Your Own Telephony Provider (CYOT), SMS and voice traffic runs through your own telecom provider account. You control the fraud protections, allowed destinations, and spending limits that match your organization's traffic and risk profile.\r\n\r\nImportant\r\n\r\nSet up your provider's fraud and spending controls before you move production traffic to CYOT.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+                "bodySha256": "a84875b053f5a0009740b9c8b7b1b2632f6d9d013c48939b62924b35b54642ea",
+                "reviewedAt": "2026-11-02T01:34:08.630136+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/choose-your-own-telephony-reliability",
+              "title": "回復性と高可用性を計画する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-11-02T01:34:12.096104+00:00",
+              "bodySha256": "c00233bc3655853fc2467705bb31313dd133e467d31a52d1eb5f6ea58cc0aeff",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/choose-your-own-telephony-reliability",
+                "bodySha256": "3f4015fdcd33e7b885e348823bf4d8203f2ad1c438d2059275648744d0a24798",
+                "reviewedAt": "2026-11-02T01:34:12.096147+00:00"
+              }
+            },
+            {
+              "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
+              "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
+              "locale": "ja-jp",
+              "checkedAt": "2026-10-22T00:43:47.101706+00:00",
+              "bodySha256": "83ec253a56a82222dde9352b5982fb64c74264fbaf8d0ad1dfaf4bf39c850adc",
+              "localeEvidence": "GET locale metadata and fetched article body",
+              "localeFallback": [],
+              "source": "explicit_message_link",
+              "rationale": "Explicit official article from this approved notification.",
+              "featureEvidence": {
+                "product": "entra",
+                "matchedTerms": [
+                  "choose",
+                  "own",
+                  "provider",
+                  "telephony"
+                ],
+                "requiredFeatureTerms": [
+                  "choose",
+                  "generally",
+                  "own",
+                  "provider",
+                  "telephony"
+                ],
+                "coverage": 0.8,
+                "platforms": [],
+                "score": 1.0,
+                "articleExcerpt": "# Choose your own telephony provider for SMS and voice authentication\r\n\r\nChoose Your Own Telephony Provider (CYOT) lets your organization use a supported telecom provider to deliver SMS and voice authentication for Microsoft Entra ID.\r\n\r\nWith CYOT, Microsoft Entra continues to manage the authentication experience, including one-time passcode (OTP) generation and validation, while SMS messages and voice calls are delivered through the telecom provider that your organization selects and configures.\r\n\r\nCYOT gives your organization more control over telecom provider selection, geographic coverage, pricing, and telecom delivery.\r\n\r\nImportant\r\n\r\nMicrosoft recommends phishing-resistant authentication methods, such as [passkeys](concept-authentication-passkeys-fido2), instead of SMS or voice. Use a telephony provider only for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.\r\n\r\n",
+                "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
+                "bodySha256": "89b3a55618121f3acdff945ec1fc51f2202e520ab824324910063d70ca79f802",
+                "reviewedAt": "2026-11-02T01:34:13.183437+00:00"
+              }
+            }
+          ],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft entra",
+          "explicitUrls": [
+            "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+            "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
+            "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+            "https://learn.microsoft.com/entra/identity/authentication/concept-sms-voice-retirement",
+            "https://learn.microsoft.com/entra/identity/authentication/how-to-set-up-sms-voice-api",
+            "https://learn.microsoft.com/entra/identity/authentication/phone-providers-faq",
+            "https://learn.microsoft.com/entra/identity/authentication/troubleshoot-voice-call-sms",
+            "https://learn.microsoft.com/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution"
+          ],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-fraud-costs",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/choose-your-own-telephony-reliability",
+              "source": "explicit_message_link",
+              "decision": "adopted"
+            },
+            {
+              "url": "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
+              "source": "explicit_message_link",
+              "decision": "adopted",
+              "score": 1.0
+            }
+          ],
+          "searchEvidenceKey": "search:Microsoft entra",
+          "searchedQueries": [
+            "Microsoft entra"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Articles verified against this snapshot version.",
+          "nextAttemptAt": "2026-12-02T01:34:13.183445+00:00"
         }
       }
     },
@@ -22427,10 +22592,10 @@
     },
     "MC1530595": {
       "sourceHashes": [
-        "83a59287f810d825c5c8f29b619944e5b5a62f0f38593905b2a4b92047d8751d"
+        "6674010d9b87ecac55880fffe1c54cc167ac1bdcf47f2ae0d104334fe20e942f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-24T12:54:08.463851+00:00",
+      "checkedAt": "2026-11-26T04:11:50.115506+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot update",
@@ -22446,7 +22611,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-27T12:54:11.841622+00:00",
+      "nextAttemptAt": "2026-11-29T04:11:50.124413+00:00",
       "variants": {
         "2e8e761824425b04bf2fd798e0385a8cb5d81b175928ff110bebe710bbb361de": {
           "sourceHashes": [
@@ -22470,6 +22635,29 @@
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
           "nextAttemptAt": "2026-11-27T12:54:17.696723+00:00"
+        },
+        "83a59287f810d825c5c8f29b619944e5b5a62f0f38593905b2a4b92047d8751d": {
+          "sourceHashes": [
+            "83a59287f810d825c5c8f29b619944e5b5a62f0f38593905b2a4b92047d8751d"
+          ],
+          "status": "no_verified_document",
+          "checkedAt": "2026-11-24T12:54:08.463851+00:00",
+          "documents": [],
+          "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "query": "Microsoft copilot update",
+          "explicitUrls": [],
+          "searchProvider": "Microsoft Learn public MCP",
+          "researchVersion": 4,
+          "errors": [],
+          "candidates": [],
+          "searchEvidenceKey": "search:Microsoft copilot update",
+          "searchedQueries": [
+            "Microsoft copilot update",
+            "copilot update"
+          ],
+          "searchSucceeded": true,
+          "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+          "nextAttemptAt": "2026-11-27T12:54:11.841622+00:00"
         }
       }
     },
@@ -24129,7 +24317,7 @@
         "e6e6b17d9eb5f90f007ea2b24511880fb5f93437db82ac227e9859de38a3b561"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-23T02:49:50.038272+00:00",
+      "checkedAt": "2026-11-26T04:11:58.864748+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft copilot desktop app edge",
@@ -24145,20 +24333,155 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-26T02:49:53.257876+00:00",
+      "nextAttemptAt": "2026-11-29T04:12:01.695806+00:00",
+      "variants": {}
+    },
+    "MC1567263": {
+      "sourceHashes": [
+        "2d34501f7b4dd1ae6f1ebf7c050781ce726b70108b6ab793f87d1676ba6809d7"
+      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-26T04:11:50.360879+00:00",
+      "documents": [],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft copilot pinning windows taskbar",
+      "explicitUrls": [],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [],
+      "searchEvidenceKey": "search:Microsoft copilot pinning windows taskbar",
+      "searchedQueries": [
+        "Microsoft copilot pinning windows taskbar",
+        "copilot pinning windows taskbar"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-11-29T04:11:53.157573+00:00",
+      "variants": {}
+    },
+    "MC1567262": {
+      "sourceHashes": [
+        "64bc7b58fc3aa50eaf161a99eb75b88964fcd5166705b28316feb268ce4ff045"
+      ],
+      "status": "verified",
+      "checkedAt": "2026-11-26T04:11:53.457391+00:00",
+      "documents": [
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/backup/backup-overview?view=o365-worldwide",
+          "title": "Microsoft 365 バックアップの概要",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-15T19:59:12.483802+00:00",
+          "bodySha256": "8478e82d746c979d3a47b01454204aceaad3b348461827029ea9dd97cca326be",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-overview?view=o365-worldwide",
+            "bodySha256": "8a81d1c3debbcfbd61e8ade2d5e264af00e180057167ce86037cbe28b5d25ea1",
+            "reviewedAt": "2026-11-26T04:11:56.304530+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
+          "title": "Microsoft 365 バックアップ でバックアップ ポリシーを作成、表示、編集する",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-15T19:59:14.789003+00:00",
+          "bodySha256": "f9d9f4fa03b75a1bcf6fd7cbb0a121f1c0ab822192ad288814c1ae512abaafec",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "explicit_message_link",
+          "rationale": "Explicit official article from this approved notification.",
+          "featureEvidence": {
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
+            "bodySha256": "7e198aa80f11a4c27f1f6d85794a3adf93b06a295323392b54bb71aea5614676",
+            "reviewedAt": "2026-11-26T04:11:57.473992+00:00"
+          }
+        },
+        {
+          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/backup/backup-whats-new?view=o365-worldwide",
+          "title": "Microsoft 365 バックアップ の新機能",
+          "locale": "ja-jp",
+          "checkedAt": "2026-11-15T19:56:33.305471+00:00",
+          "bodySha256": "b9c07590bb82cae7881281b3e46e82947d19428d6086220448eba6812dff8ba3",
+          "localeEvidence": "GET locale metadata and fetched article body",
+          "localeFallback": [],
+          "source": "automatic_learn_search",
+          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
+          "featureEvidence": {
+            "product": "sharepoint",
+            "matchedTerms": [
+              "backup",
+              "onedrive",
+              "recovery",
+              "year"
+            ],
+            "requiredFeatureTerms": [
+              "backup",
+              "onedrive",
+              "recovery",
+              "year"
+            ],
+            "coverage": 1.0,
+            "platforms": [
+              "windows"
+            ],
+            "score": 1.0,
+            "articleExcerpt": "### Extend SharePoint and OneDrive recovery windows up to 10 years\r\n\r\n**October 31, 2026**\r\n\r\nSharePoint and OneDrive backup policies now support recovery windows of 3 months, 6 months, or any whole number of years from 1 through 10. Exchange options remain 3 months, 6 months, 1 year, or 2 years. The existing one-year default is unchanged.\r\n\r\nFor full SharePoint site and OneDrive account restores, weekly recovery points beyond the prior two weeks remain available through the configured recovery window, up to 10 years. Granular file and folder restore is available only for recovery points within the most recent 14 days, regardless of the configured recovery window. Increasing the recovery window doesn't create older recovery points or recover points that have already expired.\r\n\r\nFor more information, see [Configure the backup recovery window](backup-view-edit-policies?view=o365-worldwide#configure-the-backup-recovery-window) and [Restore point frequency](backup-restore-data?view=o365-worldwide#restore-point-frequency).\r\n\r\n",
+            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/backup/backup-whats-new?view=o365-worldwide",
+            "bodySha256": "a8cc4c9dff1fba16d550c1f6f89a6fa0195b2108be37a68bc968575637a9627f",
+            "reviewedAt": "2026-11-26T04:11:58.626578+00:00"
+          }
+        }
+      ],
+      "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "query": "Microsoft backup recovery windows sharepoint onedrive",
+      "explicitUrls": [
+        "https://learn.microsoft.com/microsoft-365/backup/backup-overview?view=o365-worldwide",
+        "https://learn.microsoft.com/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide"
+      ],
+      "searchProvider": "Microsoft Learn public MCP",
+      "researchVersion": 4,
+      "errors": [],
+      "candidates": [
+        {
+          "url": "https://learn.microsoft.com/microsoft-365/backup/backup-overview?view=o365-worldwide",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/microsoft-365/backup/backup-view-edit-policies?view=o365-worldwide",
+          "source": "explicit_message_link",
+          "decision": "adopted"
+        },
+        {
+          "url": "https://learn.microsoft.com/microsoft-365/backup/backup-whats-new?view=o365-worldwide",
+          "source": "automatic_learn_search",
+          "decision": "adopted",
+          "score": 1.0
+        }
+      ],
+      "searchEvidenceKey": "search:Microsoft backup recovery windows sharepoint onedrive",
+      "searchedQueries": [
+        "Microsoft backup recovery windows sharepoint onedrive"
+      ],
+      "searchSucceeded": true,
+      "rationale": "Articles verified against this snapshot version.",
+      "nextAttemptAt": "2026-12-26T04:11:58.626587+00:00",
       "variants": {}
     }
   },
   "audit": {
-    "uniqueMessages": 178,
-    "snapshotOccurrences": 4323,
-    "snapshots": 51,
+    "uniqueMessages": 180,
+    "snapshotOccurrences": 4419,
+    "snapshots": 52,
     "publicationStart": "2025-01-22T02:03:58+00:00",
-    "publicationEnd": "2026-11-20T23:31:32+00:00",
-    "checkedAt": "2026-11-25T23:15:59.255369+00:00",
+    "publicationEnd": "2026-11-24T22:45:51+00:00",
+    "checkedAt": "2026-11-26T04:12:01.985241+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 63,
+      "no_verified_document": 65,
       "not_researched": 0,
       "verified": 115
     },
@@ -24166,16 +24489,16 @@
       "fetch_failed": 0,
       "no_verified_document": 26,
       "not_researched": 0,
-      "verified": 74
+      "verified": 72
     },
-    "latestTotal": 100,
+    "latestTotal": 98,
     "pendingAttempts": 0,
-    "processedThisRun": 0,
+    "processedThisRun": 6,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 157,
+      "no_verified_document": 160,
       "not_researched": 0,
-      "verified": 223
+      "verified": 225
     },
     "retrievalErrors": 0,
     "coverage": "complete",
