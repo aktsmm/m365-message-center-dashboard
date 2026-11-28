@@ -6,13 +6,13 @@
         "e53b2fd27472a4411c2e1116d8e75f03ef42dddd9bcd393d3d4077b2e3c789b0"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:51:22.459419+00:00",
+      "checkedAt": "2026-11-28T10:48:25.032198+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/admin/activity-reports/microsoft-365-copilot-credits?view=o365-worldwide",
           "title": "Microsoft Copilot クレジット レポート",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:51:30.941449+00:00",
+          "checkedAt": "2026-11-28T10:48:33.676757+00:00",
           "bodySha256": "9f763cb5880f1834ef8c3fc6f0cc5a5c608201c40271a290fbbc59572a7ef538",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -42,7 +42,7 @@
             "articleExcerpt": "# Microsoft Copilot Credits report\r\n\r\nTip\r\n\r\nFor the most complete and up-to-date Copilot Credit licensing and billing information, see the [Copilot Credit Guide](https://go.microsoft.com/fwlink/p/?linkid=2368800).\r\n\r\nThe Microsoft Copilot Credits report helps you manage metered consumption costs for Microsoft Copilot Chat. This report gives you visibility into credits used for your Microsoft Copilot pay-as-you-go billing policies. It includes key metrics such as:\r\n\r\n- Total credits used\r\n- Cumulative and daily time series\r\n- Credits used per user, per agent, per billing policy, and per agent-user pair\r\n\r\nTo learn more about meters, see [Meters for Microsoft Copilot pay-as-you-go for IT admins](/en-us/microsoft-365/copilot/pay-as-you-go/meters).\r\n\r\nFor general information about usage reports in the Microsoft 365 admin center, and to see a list of all available reports, see [Microsoft 365 admin center usage reports overview](activity-reports?view=o365-worldwide).\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/message-consumption",
             "bodySha256": "edd7fdfa1acc00d33880901e2519d783d8d34ea2ac1066856df9661c25a1c43f",
-            "reviewedAt": "2026-10-29T01:51:30.941515+00:00"
+            "reviewedAt": "2026-11-28T10:48:33.676813+00:00"
           }
         }
       ],
@@ -73,7 +73,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:51:33.612099+00:00",
+      "nextAttemptAt": "2026-12-28T10:48:35.988162+00:00",
       "variants": {
         "ac9ad0022956b74126cb910d4145025e27e293a6be5b9c1f7360512d7079dedd": {
           "sourceHashes": [
@@ -13839,13 +13839,13 @@
         "2605ee786354b5562183082b712873c8b6f3bee094b1e4963d8963a2d2865345"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:51:42.692808+00:00",
+      "checkedAt": "2026-11-28T10:48:43.773037+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-passkey",
           "title": "同期されたパスキー (FIDO2) を登録する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:51:47.877576+00:00",
+          "checkedAt": "2026-11-28T10:48:49.325468+00:00",
           "bodySha256": "ece373f8243ee9bdbbad0907d122033d9e47df51db5ab669abf05066192183a9",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -13854,14 +13854,14 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey",
             "bodySha256": "042eb7583268503c52f7f22f88504bff15c385d2ed69b10acf0d38d044d9b4bc",
-            "reviewedAt": "2026-10-29T01:51:47.877616+00:00"
+            "reviewedAt": "2026-11-28T10:48:49.325506+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
           "title": "Microsoft Entra ID で耐フィッシング パスワードレス認証の展開を計画する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:51:53.061326+00:00",
+          "checkedAt": "2026-11-28T10:48:53.021026+00:00",
           "bodySha256": "bdf903fb0f527795ce5ea504e29116bcc65fc750b0be0b66c0dc282056241069",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -13896,14 +13896,14 @@
             "articleExcerpt": "### Step 2: Bootstrap a portable credential\r\n\r\nTo bootstrap existing users to phishing-resistant passwordless credentials, first determine if your users are registered for traditional MFA already. Users with traditional MFA methods registered can be targeted with phishing-resistant passwordless registration policies. They can use their traditional MFA to register for their first portable phishing-resistant credential, and then move on to register for local credentials as needed. It's best practice to use the Microsoft Entra Verified ID integration in order to register a phishing-resistant authentication method using a Temporary Access Pass (TAP).\r\n\r\nFor new users or users without MFA, go through a process to issue users a TAP. You can issue a TAP the same way you give new users their first credential, or by using Microsoft Entra Verified ID integrations. Once users have a TAP, they're ready to bootstrap their first phishing-resistant credential.\r\n\r\nIt's important for the user’s first passwordless credential to be a portable credential that can be used to authenticate on other computing devices. For example, passkeys can be used to authenticate locally on an iOS phone, but they can also be used to authenticate on a Windows PC using a cross-device authentication flow. This cross-device capability allows portable passkeys to be used to bootstrap Windows Hello for Business on the Windows PC, when using a device joined to Microsoft Entra ID and [Web sign-in for Windows](/en-us/windows/security/identity-protection/web-sign-in).\r\n\r\nThe following table lists recommended portable credentials for different personas:\r\n\r\n| User Persona | Recommended portable credential | Alternative portable credentials |\r\n| --- | --- | --- |\r\n| Admins and highly regulated users | FIDO2 security keys | Passkey for Microsoft Authenticator, Certificate-based authentication (Smart Card) |\r\n| Any other user | Synced passkey | FIDO2 security key, Passkeys for Microsoft Authenticator App |\r\n\r\nThe passkey authentication credential can be scoped to specific user groups using [passkey profiles](how-to-authentication-passkeys-fido2). A passkey profile should be set up for each persona with the recomm",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-deploy-phishing-resistant-passwordless-authentication",
             "bodySha256": "dbc24dd6c9ef9b16abe6904d4ec2e8e15937ff5e2363b472d48cfb446d2674cf",
-            "reviewedAt": "2026-10-29T01:51:53.061481+00:00"
+            "reviewedAt": "2026-11-28T10:48:53.021141+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/how-to-register-passkey-with-security-key",
           "title": "パスキーを FIDO2 セキュリティ キーに登録する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:51:58.718427+00:00",
+          "checkedAt": "2026-11-28T10:48:56.686286+00:00",
           "bodySha256": "4cc69a5f4379a8f06551ac922dc93fa36d531e2da69a04ea2865be2501c9290f",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -13937,7 +13937,7 @@
             "articleExcerpt": "## First-time registration\r\n\r\nTo register a passkey for the first time, open [Security info](https://mysignins.microsoft.com/security-info) in a web browser to complete the registration.\r\n\r\n1. Open a web browser and sign in to [Security info](https://mysignins.microsoft.com/security-info).\r\n2. Sign in with multifactor authentication (MFA).\r\n3. Tap **Add sign-in method** &gt; **Choose a method** &gt; **Passkey**.\r\n4. Tap **Next**.\r\n5. Select where you want to save your passkey (FIDO2).\r\n\r\n    Note\r\n\r\n    Options displayed vary depending on your browser and device operating system. If the device where you started the registration process supports passkeys (FIDO2), you'll be asked to save the passkey to that device. Select **Use another device** or **More options** to display additional ways for you to save the passkey.\r\n6. (Optional) If you previously set up a passkey (FIDO2) on a mobile device and selected the option to remember that device for quicker sign-in, the device name might appear as a selectable option. In this case, do the following steps:\r\n\r\n    1. Choose **Security key**.\r\n    2. Follow the prompts to connect your security key and provide a PIN or biometric method.\r\n    3. After you complete these steps, you're redirected to the **My Security info** screen, where you can change the default name for the new sign-in method.\r\n    4. Select **Done** to finish registering the new method.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-register-passkey-with-security-key",
             "bodySha256": "90d64ad703282366d1439c73d655f8dfc15b42cf216cfbde2c2956f6518462b1",
-            "reviewedAt": "2026-10-29T01:51:58.718466+00:00"
+            "reviewedAt": "2026-11-28T10:48:56.686321+00:00"
           }
         }
       ],
@@ -13974,7 +13974,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:51:58.718473+00:00",
+      "nextAttemptAt": "2026-12-28T10:48:56.686326+00:00",
       "variants": {
         "babf69a99e33aa715025f4153e118fe492e10e6be83bb3246a213bfe83a486c6": {
           "sourceHashes": [
@@ -14601,13 +14601,13 @@
         "6e371e9e540bae9ce33e277ab744ef0181ca5ae178023871e93104789f66700f"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:51:33.723752+00:00",
+      "checkedAt": "2026-11-28T10:48:36.176477+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/windows/security/identity-protection/hello-for-business/deploy/",
           "title": "Windows Hello for Businessデプロイを計画する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:51:38.279137+00:00",
+          "checkedAt": "2026-11-28T10:48:39.935258+00:00",
           "bodySha256": "59bc6839a4be8718030325e1cf3ad8c504270b4055dd6e76c1c82a731c67e468",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -14616,14 +14616,14 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/",
             "bodySha256": "89547d5a98d381f9c60f881101f1ee82ee818aa190d2afe579f2b42b43fa6fa3",
-            "reviewedAt": "2026-10-29T01:51:38.279296+00:00"
+            "reviewedAt": "2026-11-28T10:48:39.935379+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/windows/security/identity-protection/hello-for-business/deploy/prepare-users",
           "title": "Windows Hello for Businessをプロビジョニングして使用するユーザーを準備する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:51:42.556192+00:00",
+          "checkedAt": "2026-11-28T10:48:43.443313+00:00",
           "bodySha256": "42134dfabdd94998d4000dba596bff1b81a7dfadf2e312aca0aec2deb23ac670",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -14632,7 +14632,7 @@
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/prepare-users",
             "bodySha256": "39835d6771f9b537c0acefff142c67bc7eae189359453a6c70521c4e73826281",
-            "reviewedAt": "2026-10-29T01:51:42.556230+00:00"
+            "reviewedAt": "2026-11-28T10:48:43.443349+00:00"
           }
         }
       ],
@@ -14668,7 +14668,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:51:42.557603+00:00",
+      "nextAttemptAt": "2026-12-28T10:48:43.444202+00:00",
       "variants": {
         "f0dd577dfcb8cf942d346b537cc88f743938d5fefa9bf8473ecd4f59d7e0daca": {
           "sourceHashes": [
@@ -17679,13 +17679,13 @@
         "3774e4af907d3387d3d602724dd7d68a0cec50dbdaa2b8615040e430717f43d6"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:51:58.852969+00:00",
+      "checkedAt": "2026-11-28T10:48:56.987621+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/graph/outlook-calendar-meeting-proposals",
           "title": "Outlook カレンダーで会議の新しい日時を提案する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:52:04.209281+00:00",
+          "checkedAt": "2026-11-28T10:49:02.707908+00:00",
           "bodySha256": "cf5f157b0306417ee5613e06cf8e4cc8faf542e47abc2089d9c03613baad40a5",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -17710,7 +17710,7 @@
             "articleExcerpt": "# Propose new meeting times in Outlook calendar\r\n\r\nIn Outlook, a meeting organizer can allow invitees to propose alternative meeting times, if they cannot meet at the original set date/time and accept tentatively or decline. The organizer can accept a proposal by adjusting the meeting time as appropriate.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/graph/outlook-calendar-meeting-proposals",
             "bodySha256": "b60524b5ec050e680f9a70849a960db720d7b9c62eebcdb4a8ee26f1977de366",
-            "reviewedAt": "2026-10-29T01:52:04.209345+00:00"
+            "reviewedAt": "2026-11-28T10:49:02.707964+00:00"
           }
         }
       ],
@@ -17734,7 +17734,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:52:04.209352+00:00",
+      "nextAttemptAt": "2026-12-28T10:49:02.707969+00:00",
       "variants": {
         "c3cfed384bf35d58e292e1842baa823161924d12c1c603a4546d4f197d40fab4": {
           "sourceHashes": [
@@ -18822,7 +18822,7 @@
         "1acc19b9ad2f4f62f4ef2d2f78df2c20a9cd229d1cea747049c8dbd681de768f"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-24T23:37:36.079322+00:00",
+      "checkedAt": "2026-11-28T10:48:21.357971+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft teams copilot chat",
@@ -18838,14 +18838,14 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-27T23:37:39.332214+00:00",
+      "nextAttemptAt": "2026-12-01T10:48:24.640128+00:00",
       "variants": {
         "44843c9ced22ab77533375c74e2fefcef1600cc149acd66236815496a0308f56": {
           "sourceHashes": [
             "44843c9ced22ab77533375c74e2fefcef1600cc149acd66236815496a0308f56"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-24T23:37:39.710177+00:00",
+          "checkedAt": "2026-11-28T10:48:24.833004+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft teams copilot chat",
@@ -18861,7 +18861,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-27T23:37:39.720843+00:00"
+          "nextAttemptAt": "2026-12-01T10:48:24.839225+00:00"
         }
       }
     },
@@ -19476,14 +19476,14 @@
             "e8c0dd0053f5b3ae4d7bd49dab7660502160cdc4cba412f2bedfb037be1d9844"
           ],
           "status": "verified",
-          "checkedAt": "2026-10-29T01:52:04.349844+00:00",
+          "checkedAt": "2026-11-28T10:49:02.961908+00:00",
           "documents": [
             {
-              "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
+              "url": "https://learn.microsoft.com/ja-jp/plugins/declarative-agent-connected-agent",
               "title": "宣言型エージェントから他のエージェントに接続する",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-22T18:46:40.072018+00:00",
-              "bodySha256": "78ea84fa0779914594d8b3f0eb23ed91847629eba4fdf04ba6a0ad326fa21b89",
+              "checkedAt": "2026-11-21T20:39:40.565102+00:00",
+              "bodySha256": "7e6a50ab45b61e4ea68a57e22aeabee4005905aea3d64c42cbf9cd7437ea24f6",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
               "source": "reviewed_candidate",
@@ -19503,10 +19503,10 @@
                 "coverage": 1.0,
                 "platforms": [],
                 "score": 1.0,
-                "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
+                "articleExcerpt": "## Enabling connected agents\r\n\r\nYou must register connected agents in the [Microsoft Agent 365 agent registry](/en-us/microsoft-365/admin/manage/agent-registry). Connect to other agents by including the agents' title IDs in the existing [declarative agent's manifest](/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9). The other agent must be a declarative agent or have a [registered Agent2Agent agent card](/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/overview).\r\n\r\nFirst, get the title ID of the agent to connect. The title ID of an agent is a string of a single letter, an underscore, and a GUID. For a declarative agent, find it in the output of the **Provision** command in the Microsoft 365 Agents Toolkit or in [developer mode](debugging-agents-copilot-studio). For a Microsoft 365 Agent Registration, it's the `id` property of the [agentRegistration object](/en-us/microsoft-365/copilot/extensibility/api/admin-settings/agent-registration/resources/agentregistration).\r\n\r\n![Screenshot of Microsoft 365 Copilot session where Copilot has returned a card with debugging information showing the title ID](assets/images/declarative-agents/developer-mode-title-id.png)\r\n\r\nAdd the title ID to the [worker_agents](/en-us/microsoft-365/copilot/extensibility/declarative-agent-manifest-1.9) property as the `id`. The `worker_agents` property was added in declarative agent schema version 1.6.\r\n\r\n",
                 "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-connected-agent",
-                "bodySha256": "c0cfb94451816a8d5d403747eabb4e3ed42575ef570356469f034ebc5e4e2f70",
-                "reviewedAt": "2026-10-29T01:52:07.179902+00:00"
+                "bodySha256": "a0f1066291a0136cfa096eb315aedaa0dfbf01b0f02eaef4bd584a513f49157f",
+                "reviewedAt": "2026-11-28T10:49:06.393197+00:00"
               }
             }
           ],
@@ -19522,6 +19522,11 @@
               "source": "reviewed_candidate",
               "decision": "adopted",
               "score": 1.0
+            },
+            {
+              "url": "https://learn.microsoft.com/plugins/declarative-agent-connected-agent",
+              "source": "automatic_learn_search",
+              "decision": "duplicate_after_official_redirect"
             }
           ],
           "searchEvidenceKey": "search:Microsoft agent connected agents declarative",
@@ -19530,7 +19535,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
-          "nextAttemptAt": "2026-11-28T01:52:07.179912+00:00"
+          "nextAttemptAt": "2026-12-28T10:49:07.548360+00:00"
         }
       }
     },
@@ -20609,13 +20614,13 @@
         "bd1cef978f89c00eb41aa642ed7475257a1bb3e9f37c41efcac486dfe8394735"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:52:07.316951+00:00",
+      "checkedAt": "2026-11-28T10:49:07.792185+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/previous-year-release-notes",
           "title": "2025 Microsoft 365 Copilot リリース ノート",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:52:11.665130+00:00",
+          "checkedAt": "2026-11-28T10:49:11.965755+00:00",
           "bodySha256": "71dda2f368e299ec5d2f5c7c230dec86db27525499e4fd11f76c62cf7d6959bc",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -20636,16 +20641,16 @@
             "score": 1.0,
             "articleExcerpt": "### Microsoft 365 Copilot app\r\n\r\n- **Customize audio overviews for Copilot notebooks** [Web]\r\n\r\n    Personalize the content and tone of audio summaries from your Copilot notebooks by using natural language input.\r\n\r\n    **Roadmap ID:**[499150](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=499150)\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Notebook audio overviews are now creator-driven with prompt-based customization.\r\n\r\n    **Why:** Supports diverse use cases-like executive briefings or quick-learning sessions-without extra editing work.\r\n\r\n    **Try this:**\r\n\r\n    - Type: *\"Create an upbeat 2-minute audio summary focused on key sales drivers.\"*\r\n\r\n    **Why this matters:**\r\n\r\n    **Business Impact:** Enhances the value of notebooks for communication and leadership updates.\r\n\r\n    **Personal Impact:** Saves time creating engaging summaries without additional tools.\r\n\r\n    **Additional resources:**\r\n\r\n    **Support:**\r\n\r\n    [Get an audio overview of your notebook with Microsoft 365 Copilot Notebooks](https://support.microsoft.com/topic/get-an-audio-overview-of-your-notebook-with-microsoft-365-copilot-notebooks-a22df989-b9cd-47fb-abac-e888d8f10cd9)\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/previous-year-release-notes",
-            "bodySha256": "bbd540814ec4ab775295480b4257e2247d5b5633c2a6f9bfef03930448852b28",
-            "reviewedAt": "2026-10-29T01:52:11.666847+00:00"
+            "bodySha256": "7b8287095a1e381465adf10b49499f0a49bc2b2713e81011660bb24e6316358d",
+            "reviewedAt": "2026-11-28T10:49:11.966935+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/release-notes",
           "title": "Microsoft 365 Copilot のリリース ノート",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:52:15.356436+00:00",
-          "bodySha256": "74a42e36f920666d2a49ac9d74a33d6e7381c4f3eb757deab1bebde324a5c259",
+          "checkedAt": "2026-11-28T10:49:15.239692+00:00",
+          "bodySha256": "f22f33912ea2e7f3974f9957144f630f2fabf9d7ae77e6afcac0f32ad3bc71d4",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "automatic_learn_search",
@@ -20665,8 +20670,8 @@
             "score": 1.0,
             "articleExcerpt": "### Word\r\n\r\n- **Real-time voice interactions with Audio Overview** [Web]\r\n\r\n    Today, audio overview help you absorb content on the go, but they're one-way—listeners can't clarify or explore without stopping. With real time voice interactions, you can ask questions verbally while listening and get answers instantly - all while staying in the audio experience. \r\n\r\n    **Roadmap ID:**[523206](https://www.microsoft.com/microsoft-365/roadmap?filters=&amp;searchterms=523206)\r\n\r\n    **Details:**\r\n\r\n    **What changed:** Audio Overview in Word now supports real-time voice interactions, allowing listeners to ask questions and receive immediate answers without pausing or switching apps. Previously, audio summaries were one-way experiences requiring manual searches to explore content further. This update maintains continuous listening while enabling dynamic, conversational engagement.\r\n\r\n    **Why:** This change removes interruptions caused by pausing and searching, helping users understand content faster and stay focused on the discussion. It transforms passive listening into an interactive experience that supports deeper comprehension.\r\n\r\n    **Try this:**\r\n\r\n    - Open a Word document in Web and generate an audio overview summary.\r\n    - While listening, unmute and ask a question related to the content.\r\n    - Hear instant answers without stopping the audio playback.\r\n\r\n    **Why this matters:** Users can explore and clarify information naturally during audio playback, improving comprehension without breaking their flow.\r\n\r\n    **Business impact:** Teams benefit from more efficient knowledge sharing and faster understanding of document content during meetings or commutes.\r\n\r\n    **Personal impact:** You save time by getting answers instantly while listening, reducing the need to pause and manually search for information.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes",
-            "bodySha256": "89709154ac07456301ae6f22575e388d80649bcb77bfeda0f5c6ccb25879177c",
-            "reviewedAt": "2026-10-29T01:52:15.359327+00:00"
+            "bodySha256": "0f568526c7c6dbc3794d49a9592fefe749877e3ec123c721a513c7643ed30248",
+            "reviewedAt": "2026-11-28T10:49:15.241941+00:00"
           }
         }
       ],
@@ -20696,7 +20701,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:52:15.359339+00:00",
+      "nextAttemptAt": "2026-12-28T10:49:15.241951+00:00",
       "variants": {
         "794b7e32ab4a1162162c5aa1e9552fa430cf6bfac7606b4fd725d061e937fe5e": {
           "sourceHashes": [
@@ -22058,42 +22063,9 @@
       "sourceHashes": [
         "bc47da8ce5dac08c9ad7e38b7d43e3819d95a36b3003ab755202a1be26ba8a69"
       ],
-      "status": "verified",
-      "checkedAt": "2026-10-29T01:53:07.408012+00:00",
-      "documents": [
-        {
-          "url": "https://learn.microsoft.com/ja-jp/microsoft-365/copilot/extensibility/insights-agent-overview",
-          "title": "Microsoft 365 Insights エージェントの概要",
-          "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:53:12.429038+00:00",
-          "bodySha256": "444753a805e31c18975be43f3f3bec7281f14681ef659a8788fc821cbcb1ce05",
-          "localeEvidence": "GET locale metadata and fetched article body",
-          "localeFallback": [],
-          "source": "automatic_learn_search",
-          "rationale": "Automatic local product/feature/platform match against a fetched official article; rollout dates and stage remain authoritative in the notification.",
-          "featureEvidence": {
-            "product": "microsoft365",
-            "matchedTerms": [
-              "agent",
-              "frontier",
-              "insights"
-            ],
-            "requiredFeatureTerms": [
-              "agent",
-              "frontier",
-              "insights",
-              "v2"
-            ],
-            "coverage": 0.75,
-            "platforms": [],
-            "score": 0.95,
-            "articleExcerpt": "# Microsoft 365 Insights Agent overview\r\n\r\nThe Microsoft 365 Insights Agent is a Copilot agent that answers natural language questions about how the agents in your tenant are used. Ask about daily, weekly, and monthly active users, rolling retention, stickiness, adoption trends, or how one agent compares to another. The agent returns a grounded, aggregate answer right in chat.\r\n\r\nFeedback and Ratings is currently available in Frontier preview. Agent owners can ask for feedback submitted for agents they own, including thumbs-up and thumbs-down ratings and user-submitted verbatim comments. For details about the sharing control and how it relates to users submitting ratings and comments, see [Agent feedback sharing](/en-us/microsoft-365/admin/manage/agent-settings?view=o365-worldwide#agent-feedback-sharing).\r\n\r\n",
-            "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/insights-agent-overview",
-            "bodySha256": "792b39d10006227406e6e118ef76688efa525204c7613430cf1ad82169f3df25",
-            "reviewedAt": "2026-10-29T01:53:12.429112+00:00"
-          }
-        }
-      ],
+      "status": "no_verified_document",
+      "checkedAt": "2026-11-28T10:49:41.350270+00:00",
+      "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft insights agent",
       "explicitUrls": [],
@@ -22102,10 +22074,9 @@
       "errors": [],
       "candidates": [
         {
-          "url": "https://learn.microsoft.com/microsoft-365/copilot/extensibility/insights-agent-overview",
+          "url": "https://learn.microsoft.com/plugins/insights-agent-overview",
           "source": "automatic_learn_search",
-          "decision": "adopted",
-          "score": 0.95
+          "decision": "rejected_feature_or_platform_mismatch"
         }
       ],
       "searchEvidenceKey": "search:Microsoft insights agent",
@@ -22113,8 +22084,8 @@
         "Microsoft insights agent"
       ],
       "searchSucceeded": true,
-      "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:53:12.429120+00:00",
+      "rationale": "Automatic Learn research completed without a sufficiently matching article.",
+      "nextAttemptAt": "2026-12-01T10:49:44.124580+00:00",
       "variants": {}
     },
     "MC1529472": {
@@ -22122,22 +22093,22 @@
         "6d7644eaeab729b731aa1f9aa05ae7d165d84517d49b125587b57fa9118e1d76"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:52:18.853744+00:00",
+      "checkedAt": "2026-11-28T10:49:15.651204+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/microsoft-365/admin/manage/get-started-frontier?view=o365-worldwide",
           "title": "Microsoft Frontier プログラムの使用を開始する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:52:28.312050+00:00",
-          "bodySha256": "8f6a3b9f796d44799449747a9cd8d8b1f5665f75235bf961118270a8b7a830c5",
+          "checkedAt": "2026-11-28T10:49:24.956469+00:00",
+          "bodySha256": "d2ae59153919c562eecdf61d5396cddd6fac5c4faed1fcdcf7c4caaeb4150daf",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "explicit_message_link",
           "rationale": "Explicit official article from this approved notification.",
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/get-started-frontier",
-            "bodySha256": "90ff9571b7929854931cc000808a3c607ba468ffd49ad36925c0b6465ac39de2",
-            "reviewedAt": "2026-10-29T01:52:28.312110+00:00"
+            "bodySha256": "aa87ed9327890ae605502c74b851a32e0f3f632338a5d09d790bf974bb4a87e0",
+            "reviewedAt": "2026-11-28T10:49:24.956525+00:00"
           }
         }
       ],
@@ -22164,7 +22135,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:52:28.312117+00:00",
+      "nextAttemptAt": "2026-12-28T10:49:24.956531+00:00",
       "variants": {}
     },
     "MC1529467": {
@@ -22219,13 +22190,13 @@
             "7e3055695914cd5d4b83970f7a57dbd65951cbfacb7f625052ee77d9c38091c5"
           ],
           "status": "verified",
-          "checkedAt": "2026-10-29T01:52:28.464010+00:00",
+          "checkedAt": "2026-11-28T10:49:25.187422+00:00",
           "documents": [
             {
               "url": "https://learn.microsoft.com/ja-jp/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
               "title": "信頼されたルートおよび許可されない証明書を Windows で構成する",
               "locale": "ja-jp",
-              "checkedAt": "2026-10-29T01:52:34.016789+00:00",
+              "checkedAt": "2026-11-28T10:49:30.473853+00:00",
               "bodySha256": "00b70883c0d2ededc8dcfbd5c9882c7a025d9750ce3ea476cf6e1046d0641754",
               "localeEvidence": "GET locale metadata and fetched article body",
               "localeFallback": [],
@@ -22234,7 +22205,7 @@
               "featureEvidence": {
                 "canonicalArticle": "https://learn.microsoft.com/en-us/windows-server/identity/ad-cs/configure-trusted-roots-disallowed-certificates",
                 "bodySha256": "66f2494e4e0109117d1e714d4052148f233dca9254617576203558da4fc819d9",
-                "reviewedAt": "2026-10-29T01:52:34.016876+00:00"
+                "reviewedAt": "2026-11-28T10:49:30.473927+00:00"
               }
             }
           ],
@@ -22259,7 +22230,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Articles verified against this snapshot version.",
-          "nextAttemptAt": "2026-11-28T01:52:34.016882+00:00"
+          "nextAttemptAt": "2026-12-28T10:49:30.473933+00:00"
         }
       }
     },
@@ -22317,66 +22288,45 @@
         "38126ec7aec8d9cbfeeca98f824a7c61c77f5d626252fe38ac9bea6d20f64de0"
       ],
       "status": "verified",
-      "checkedAt": "2026-10-29T01:52:42.437200+00:00",
+      "checkedAt": "2026-11-28T10:49:30.699903+00:00",
       "documents": [
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-authentication-passkeys-fido2",
           "title": "Microsoft Entra IDの認証メソッド - パスキー (FIDO2)",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:52:48.036312+00:00",
-          "bodySha256": "94f8ae1d0739f1cc3830053ff7340f920f1ab4bd1473d09b72fb26d66605fd3e",
+          "checkedAt": "2026-11-28T10:49:35.783627+00:00",
+          "bodySha256": "b192fba4872ebacd3f4cef89ee0d5acfb057edde1bde611b3273ac05876353d3",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "explicit_message_link",
           "rationale": "Explicit official article from this approved notification.",
           "featureEvidence": {
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passkeys-fido2",
-            "bodySha256": "4a4a44dda49ab564b1f1693fe10c319ff26c40f00a73f41e80fbe25079e23582",
-            "reviewedAt": "2026-10-29T01:52:48.036363+00:00"
+            "bodySha256": "da4dac303b7854201dcbb7f42475a82715b7a904c4d2cf8e09a32fd46ff0e081",
+            "reviewedAt": "2026-11-28T10:49:35.783688+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-phone-providers",
-          "title": "SMS および音声認証用のテレフォニー プロバイダーを選択する",
+          "title": "SMS と音声による認証用に任意のテレフォニー プロバイダーを選択する",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-22T00:43:47.101706+00:00",
-          "bodySha256": "83ec253a56a82222dde9352b5982fb64c74264fbaf8d0ad1dfaf4bf39c850adc",
+          "checkedAt": "2026-11-21T10:09:32.516185+00:00",
+          "bodySha256": "31b6366c0bd6da5b8cb703c995680f9f0459e21387e8ada75d8c806ba669afaf",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
           "source": "explicit_message_link",
           "rationale": "Explicit official article from this approved notification.",
           "featureEvidence": {
-            "product": "entra",
-            "matchedTerms": [
-              "authentication",
-              "id",
-              "provided",
-              "sms",
-              "voice"
-            ],
-            "requiredFeatureTerms": [
-              "authentication",
-              "id",
-              "migrate",
-              "provided",
-              "reminder",
-              "sms",
-              "voice"
-            ],
-            "coverage": 0.714,
-            "platforms": [],
-            "score": 0.914,
-            "articleExcerpt": "## How Choose Your Own Telephony Provider works\r\n\r\nYour selected telephony provider delivers the SMS messages or voice calls that users need to complete authentication. Microsoft Entra ID continues to enforce your authentication method policies and coordinates the authentication experience.\r\n\r\nYour organization is responsible for selecting a telephony provider, reviewing its regional coverage and terms, completing the provider agreement, configuring the provider for Microsoft Entra ID, and monitoring the service.\r\n\r\nFor the full transition schedule, see [Passkeys by default and retirement of Microsoft-provided SMS and voice authentication](concept-sms-voice-retirement).\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
-            "bodySha256": "142a1d683b21c28ff4bf67c052d3d6637317b0b5e28e476f12a5b0e34c7f3c39",
-            "reviewedAt": "2026-10-29T01:52:49.283561+00:00"
+            "bodySha256": "b01205ecbb2c08d7c5c0f8066dd171625e9abeb4dea31651a9e2b5fd13d354f6",
+            "reviewedAt": "2026-11-28T10:49:37.245788+00:00"
           }
         },
         {
           "url": "https://learn.microsoft.com/ja-jp/entra/identity/authentication/concept-authentication-phone-options",
           "title": "Microsoft Entra ID の認証方法 - 音声通話",
           "locale": "ja-jp",
-          "checkedAt": "2026-10-29T01:52:53.018945+00:00",
+          "checkedAt": "2026-11-28T10:49:41.092618+00:00",
           "bodySha256": "e2a5b81f04dc653eceeb79d239f6bd0d9e1ba204190fc129ccd146a07ee1ddc7",
           "localeEvidence": "GET locale metadata and fetched article body",
           "localeFallback": [],
@@ -22406,7 +22356,7 @@
             "articleExcerpt": "# Authentication methods in Microsoft Entra ID - Voice call\r\n\r\nMicrosoft recommends users move away from using text messages or voice calls for multifactor authentication. Modern authentication methods like [Microsoft Authenticator](concept-authentication-authenticator-app) are a recommended alternative. For more information, see [It's Time to Hang Up on Phone Transports for Authentication](https://aka.ms/hangup). Users can still verify themselves using a mobile phone or office phone as secondary form of authentication used for multifactor authentication or self-service password reset (SSPR).\r\n\r\nYou can [configure and enable users for SMS-based authentication](howto-authentication-sms-signin) for direct authentication using text message. Text messages are convenient for Frontline workers. With text messages, users don't need to know a username and password to access applications and services. The user instead enters their registered mobile phone number, receives a text message with a verification code, and enters that in the sign-in interface.\r\n\r\nNote\r\n\r\nPhone call verification isn't available for Microsoft Entra tenants with trial subscriptions. For example, if you sign up for a trial license Microsoft Enterprise Mobility and Security (EMS), phone call verification isn't available. Phone numbers must be provided in the format *+CountryCode PhoneNumber*, for example, *+1 4251234567*. There must be a space between the country/region code and the phone number.\r\n\r\n",
             "canonicalArticle": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-phone-options",
             "bodySha256": "b2380c15f188a39b0c409025088e9db37d6d6f9ba1b6415d1ad3ffff93e6b5a2",
-            "reviewedAt": "2026-10-29T01:52:53.018999+00:00"
+            "reviewedAt": "2026-11-28T10:49:41.092666+00:00"
           }
         }
       ],
@@ -22428,8 +22378,7 @@
         {
           "url": "https://learn.microsoft.com/entra/identity/authentication/concept-phone-providers",
           "source": "explicit_message_link",
-          "decision": "adopted",
-          "score": 0.914
+          "decision": "adopted"
         },
         {
           "url": "https://learn.microsoft.com/entra/identity/authentication/concept-authentication-phone-options",
@@ -22444,7 +22393,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Articles verified against this snapshot version.",
-      "nextAttemptAt": "2026-11-28T01:52:53.019007+00:00",
+      "nextAttemptAt": "2026-12-28T10:49:41.092672+00:00",
       "variants": {}
     },
     "MC1526676": {
@@ -22524,7 +22473,7 @@
         "958f0cd093d7806fc5d43d5ba90ad2ea46bb81002b2f5f794fdc508267a3a9f4"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-24T23:37:31.180954+00:00",
+      "checkedAt": "2026-11-28T10:48:17.933890+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft office copilot power app",
@@ -22540,7 +22489,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-27T23:37:31.191580+00:00",
+      "nextAttemptAt": "2026-12-01T10:48:17.940357+00:00",
       "variants": {
         "99896e73f4e5e1a2ccb796fc9c025f138be15f3e097131aad09c98e6adc05bc2": {
           "sourceHashes": [
@@ -22570,7 +22519,7 @@
             "d45a4310c76002c5a0f1849874715d277784853e442b6de5e5290cba118f71d9"
           ],
           "status": "no_verified_document",
-          "checkedAt": "2026-11-24T23:37:35.756416+00:00",
+          "checkedAt": "2026-11-28T10:48:21.151513+00:00",
           "documents": [],
           "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
           "query": "Microsoft office copilot power app",
@@ -22586,7 +22535,7 @@
           ],
           "searchSucceeded": true,
           "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-          "nextAttemptAt": "2026-11-27T23:37:35.766363+00:00"
+          "nextAttemptAt": "2026-12-01T10:48:21.157925+00:00"
         }
       }
     },
@@ -23228,7 +23177,7 @@
         "26e68837374044b3dec25ade97ebe4c3e5e7110bd9202d8e5df819aec5505410"
       ],
       "status": "no_verified_document",
-      "checkedAt": "2026-11-24T23:37:31.581110+00:00",
+      "checkedAt": "2026-11-28T10:48:18.130986+00:00",
       "documents": [],
       "reviewHash": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
       "query": "Microsoft app copilot",
@@ -23244,7 +23193,7 @@
       ],
       "searchSucceeded": true,
       "rationale": "Automatic Learn research completed without a sufficiently matching article.",
-      "nextAttemptAt": "2026-11-27T23:37:35.358517+00:00",
+      "nextAttemptAt": "2026-12-01T10:48:20.957108+00:00",
       "variants": {}
     },
     "MC1545694": {
@@ -24478,27 +24427,27 @@
     "snapshots": 52,
     "publicationStart": "2025-01-22T02:03:58+00:00",
     "publicationEnd": "2026-11-24T22:45:51+00:00",
-    "checkedAt": "2026-11-27T22:55:19.830409+00:00",
+    "checkedAt": "2026-11-28T10:49:44.559227+00:00",
     "counts": {
       "fetch_failed": 0,
-      "no_verified_document": 65,
+      "no_verified_document": 66,
       "not_researched": 0,
-      "verified": 115
+      "verified": 114
     },
     "latestCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 26,
+      "no_verified_document": 27,
       "not_researched": 0,
-      "verified": 72
+      "verified": 71
     },
     "latestTotal": 98,
     "pendingAttempts": 0,
-    "processedThisRun": 46,
+    "processedThisRun": 15,
     "variantCounts": {
       "fetch_failed": 0,
-      "no_verified_document": 160,
+      "no_verified_document": 161,
       "not_researched": 0,
-      "verified": 225
+      "verified": 224
     },
     "retrievalErrors": 0,
     "coverage": "complete",
